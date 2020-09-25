@@ -54,4 +54,5 @@ Report
 ## Bibliography
 
 Dimou, M., 2020. CERN-Solid Code Investigation | IT Student Projects. [online] Available at: <https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation> [Accessed 25 September 2020].
+
 W3C Solid Community Group, 2020. The Solid Ecosystem. [online] Available at: <https://solid.github.io/specification/> [Accessed 25 September 2020].
