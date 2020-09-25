@@ -13,9 +13,9 @@
 
 1. Solid pod on DigitalOcean
 2. Solid pod on ITU
-3. Extensive written knowledge about Solid specifications
-4. Extensive written knowledge about Solid implementations
-5. Extensive written knowledge about CERN implementations
+3. Extensive knowledge and written in report about Solid specifications
+4. Extensive knowledge and written in report about Solid implementations
+5. Extensive knowledge and written in report about CERN implementations
 6. Comparision of CERN and Solid
 
 | Week | Date (yy/mm/dd) | Task |
@@ -26,5 +26,5 @@
 | W44 |  | M2 & M3 done; M5 started |
 | W46 |  | M4 done; M6 started |
 | W48 |  | M5 done; M6 started |
-| W50 |  | M6 |
+| W50 |  | M6 done |
 | W51 | 20/12/15 | Deadline for submitting project report |
