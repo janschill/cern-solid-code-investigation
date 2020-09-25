@@ -33,13 +33,15 @@ The motivation of doing it on CERN‘s products lies in the interest of CERN col
 
 ### Intended learning outcomes
 
-- Understand and be able to reason about the architecture of a Solid pod
-- Be able to set up a pod and expose it on the internet
-- Identify the benefits of using the Solid specifications when:
-  - Being a user of it
-  - Developing an application for it
-- Respectively be able to conclude drawbacks that come with the usage of Solid
-- Be able to reason about a migration of an existing application towards the Solid specifications by being able to apply the prior two points (pros and cons of Solid).
+- Describe the Solid project
+  - In general
+  - A Solid pod in some greater detail
+  - The Solid specifications
+- Study and review the Solid specifications
+  - Identify the benefits and drawbacks of using the Solid specifications
+- Be able to set up a Solid pod and expose it on the internet
+- Evaluate the first Solid implementations
+- Compare the Solid approach with the design principles adopted by the relevant CERN applications
 
 ## Method
 
