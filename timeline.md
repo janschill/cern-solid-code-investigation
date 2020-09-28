@@ -20,7 +20,7 @@
 
 | Week | Date (yy/mm/dd) | Task |
 |---|---|---|
-| W40 | 20/09/28 | Start |
+| W40 | 20/09/28 | Start, M1 started |
 | W41 |  | M1 done; M2 started |
 | W42 |  | M2 nearly done; M3 & M4 started |
 | W44 |  | M2 & M3 done; M5 started |
