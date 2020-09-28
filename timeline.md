@@ -13,9 +13,9 @@
 
 1. Solid pod on DigitalOcean
 2. Solid pod on ITU
-3. Extensive knowledge and written in report about Solid specifications
-4. Extensive knowledge and written in report about Solid implementations
-5. Extensive knowledge and written in report about CERN implementations
+3. Extensive knowledge and written report about Solid specifications
+4. Extensive knowledge and written report about Solid implementations
+5. Extensive knowledge and written report about CERN implementations
 6. Comparision of CERN and Solid
 
 | Week | Date (yy/mm/dd) | Task |
