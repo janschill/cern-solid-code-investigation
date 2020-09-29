@@ -21,10 +21,11 @@
 | Week | Date (yy/mm/dd) | Task |
 |---|---|---|
 | W40 | 20/09/28 | Start, M1 started |
-| W41 |  | M1 done; M2 started |
-| W42 |  | M2 nearly done; M3 & M4 started |
-| W44 |  | M2 & M3 done; M5 started |
-| W46 |  | M4 done; M6 started |
-| W48 |  | M5 done; M6 started |
-| W50 |  | M6 done |
+| W41 | 20/10/05 | M1 done; M2 started |
+| W42 | 20/10/12 | M2 nearly done; M3 & M4 started |
+| W44 | 20/10/26 | M2 & M3 done; M5 started |
+| W46 | 20/11/09 | M4 done; M6 started |
+| W48 | 20/11/23 | M5 done; M6 started |
+| W50 | 20/12/07 | M6 done |
 | W51 | 20/12/15 | Deadline for submitting project report |
+
