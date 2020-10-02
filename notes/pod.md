@@ -206,7 +206,7 @@ Or when using flags:
 solid start --multiuser …
 ```
 
-The UI for the server changes to this register form and gives a brief explanation on what happens when a new user register.
+The UI for the server changes to this register form and gives a brief explanation on what happens when a new user registers.
 
 ![](./assets/solid-pod-multiuser-ui.png)
 
