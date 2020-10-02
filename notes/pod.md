@@ -15,9 +15,7 @@ TODO: understand this completely.
 
 This mechanism is called [TLS Client Auth](https://blog.cloudflare.com/introducing-tls-client-auth/#handshakeswithtlsclientauth) and adds an extra layer of security, when API keys are comprimised mid-connection, the certificates are encrypted and cannot be reused.
 
-See the following source for working solutions:
-
-*[Source](https://github.com/solid/node-solid-server/wiki/Running-Solid-behind-a-reverse-proxy)*
+See the [source](https://github.com/solid/node-solid-server/wiki/Running-Solid-behind-a-reverse-proxy) for a working solutions.
 
 ### Without Docker
 
@@ -56,7 +54,7 @@ This is strictly speaking not needed and at the moment not being capitalized. A 
 
 >One of Solid's authentication mechanisms is WebID-TLS: the client [sends its client certificate during the TLS handshake](https://blog.cloudflare.com/introducing-tls-client-auth/#handshakeswithtlsclientauth). However, by default, this requires the client to set up a TLS connection directly with the Solid server: if the TLS handshake is performed by an intermediary, the Solid server cannot see the client certificate [Source](https://github.com/solid/node-solid-server/wiki/Running-Solid-behind-a-reverse-proxy).
 
-Configuration for NGiNX as reverse proxy to make Solid work.
+Configuration for NGiNX as reverse proxy to make it work with the Node Solid Server (NSS).
 
 ```
 # Configuration for NGiNX as reverse proxy
