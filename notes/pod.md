@@ -9,24 +9,54 @@
 
 ### Running Solid behind a reverse proxy
 
+TODO: understand this completely.
+
+>One of Solid's authentication mechanisms is WebID-TLS: the client sends its client certificate during the TLS handshake. However, by default, this requires the client to set up a TLS connection directly with the Solid server: if the TLS handshake is performed by an intermediary, the Solid server cannot see the client certificate.
+
+This mechanism is called [TLS Client Auth](https://blog.cloudflare.com/introducing-tls-client-auth/#handshakeswithtlsclientauth) and adds an extra layer of security, when API keys are comprimised mid-connection, the certificates are encrypted and cannot be reused.
+
+See the following source for working solutions:
+
 *[Source](https://github.com/solid/node-solid-server/wiki/Running-Solid-behind-a-reverse-proxy)*
-
-The Solid server needs to receive the client's certificate. If behind a reverse proxy it cannot to that.
-This mechanism is called [TLS Client Auth](https://blog.cloudflare.com/introducing-tls-client-auth/#handshakeswithtlsclientauth) and adds an extra layer of security, when API keys are comprimised mid-connection, the certificates are encrypted and cannot be reused. TODO: understand this completely.
-
-### Lessons learned
-
-- Wildcard certificates is not available with the popular letsencrypt Docker image. This is because it does not support. More information around this, can be found in this [issue](https://github.com/nginx-proxy/docker-letsencrypt-nginx-proxy-companion/issues/319). Why was this needed in the first place? Because when wanting to set up and run a multiuser Solid pod, wildcard certificates are needed, as the server will create {username}.janschill.de subdomains to host their user base.
-  - [Docker NGiNX with Let's Encrypt](https://github.com/evertramos/docker-compose-letsencrypt-nginx-proxy-companion)
-  - [Docker with Solid pod, NGiNX reverse proxy, Let's Encrypt](https://github.com/angelo-v/docker-solid-server/blob/master/examples/docker-compose.all-in-one.yml). This is nice, but only allows single-user mode and not multiuser.
-  - When setting up the one-click version use janschill.de as host
-- Running Solid behind a reverse proxy. [Source](https://github.com/solid/node-solid-server/wiki/Running-Solid-behind-a-reverse-proxy)
 
 ### Without Docker
 
-#### NGiNX as reverse proxy
+This [tutorial](https://solidproject.org/for-developers/pod-server) was followed when the pod was set up without the usage of any containerization.
 
-[Source](https://solidproject.org/for-developers/pod-server/nginx)
+1. Set up wild card certificate to be able to issue HTTPS to new subdomains for multiuser
+
+```bash
+# Install certbot
+apt install certbot
+# Issue certificates
+certbot certonly \
+--manual \
+--preferred-challenges=dns \
+--email schill@hey.com \
+--server https://acme-v02.api.letsencrypt.org/directory \
+--agree-tos \
+-d janschill.de -d *.janschill.de
+```
+
+2. Add TXT DNS records on DNS host. The command above will deliver the key and value. This can take a bit of time, so make sure the entries are registered before continuing.
+
+```bash
+nslookup -type=txt _acme-challenge.janschill.de
+```
+
+3. Make sure correct user permissions are given to the new certificate files.
+
+```bash
+chmod -R 755 /etc/letsencrypt/live/
+```
+
+4. Configure reverse proxy
+
+This is strictly speaking not needed and at the moment not being capitalized. A reverse proxy allows a server to run multiple services on the same port. A reverse proxy receives the initial request on the host and port and then forwards it to the configured local service on the machine.
+
+>One of Solid's authentication mechanisms is WebID-TLS: the client [sends its client certificate during the TLS handshake](https://blog.cloudflare.com/introducing-tls-client-auth/#handshakeswithtlsclientauth). However, by default, this requires the client to set up a TLS connection directly with the Solid server: if the TLS handshake is performed by an intermediary, the Solid server cannot see the client certificate [Source](https://github.com/solid/node-solid-server/wiki/Running-Solid-behind-a-reverse-proxy).
+
+Configuration for NGiNX as reverse proxy to make Solid work.
 
 ```
 # Configuration for NGiNX as reverse proxy
@@ -86,31 +116,14 @@ root /var/www/janschill.de; #webroot
 }
 ```
 
-#### Solid
+*[Source for the configuration](https://solidproject.org/for-developers/pod-server/nginx)*
 
-[Tutorial](https://solidproject.org/for-developers/pod-server)
-
-- Don't use certbot-auto with Ubuntu
-- Make sure the correct config.json is getting populated
-
-1. Set up wild card certificate to be able to issue HTTPS to new subdomains for multiuser
+Restart NGiNX
 
 ```bash
-# Install certbot
-apt install certbot
-# Issue certificates
-certbot certonly \
---manual \
---preferred-challenges=dns \
---email schill@hey.com \
---server https://acme-v02.api.letsencrypt.org/directory \
---agree-tos \
--d janschill.de -d *.janschill.de
+systemctl restart nginx
 ```
 
-2. Add TXT DNS records on DNS host. The command above will deliver the key and value.
-3. Make sure correct user permissions are given `chmod -R 755 /etc/letsencrypt/live/`
-4. Configure reverse proxy
 5. Initialize Solid
 
 ```bash
@@ -162,3 +175,43 @@ mkdir /var/www/janschill.de/.db
 ```
 
 6. Make sure correct user permissions are given `chown -R 1000:1000 /var/www/janschill.de/`
+
+## Lessons learned
+
+- Wildcard certificates are not available with the popular Let's Encrypt Docker image. This is because it does not support. More information around this, can be found in this [issue](https://github.com/nginx-proxy/docker-letsencrypt-nginx-proxy-companion/issues/319). Why was this needed in the first place? Because when wanting to set up and run a multiuser Solid pod, wildcard certificates are needed, as the server will create {username}.janschill.de subdomains to host their user base.
+  - [Docker NGiNX with Let's Encrypt](https://github.com/evertramos/docker-compose-letsencrypt-nginx-proxy-companion)
+  - [Docker with Solid pod, NGiNX reverse proxy, Let's Encrypt](https://github.com/angelo-v/docker-solid-server/blob/master/examples/docker-compose.all-in-one.yml). This is nice, but only allows single-user mode and not multiuser.
+  - When setting up the one-click version use janschill.de as host
+- Running Solid behind a reverse proxy. [Source](https://github.com/solid/node-solid-server/wiki/Running-Solid-behind-a-reverse-proxy)
+- Do not use certbot-auto with Ubuntu
+- Make sure the correct config.json is getting populated and used by the Solid server
+
+## Explanation
+
+### Single-user
+
+### Multi-user
+
+Multiuser mode enables visitors to register their WebIDs: username.janschill.de
+
+```bash
+solid init
+..
+? Allow users to register their WebID (y/N) # write `y` here
+..
+solid start
+```
+
+Or when using flags:
+
+```bash
+solid start --multiuser …
+```
+
+The UI for the server changes to this register form and gives a brief explanation on what happens when a new user register.
+
+![](./assets/solid-pod-multiuser-ui.png)
+
+### WebID
+
+### WebID-TLS
