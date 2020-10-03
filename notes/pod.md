@@ -183,6 +183,7 @@ mkdir /var/www/janschill.de/.db
 - Running Solid behind a reverse proxy. [Source](https://github.com/solid/node-solid-server/wiki/Running-Solid-behind-a-reverse-proxy)
 - Do not use certbot-auto with Ubuntu
 - Make sure the correct config.json is getting populated and used by the Solid server
+- Use `netstat -tulpen` to debug running applications and their ports.
 
 ## Explanation
 
