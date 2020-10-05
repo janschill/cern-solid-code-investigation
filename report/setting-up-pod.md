@@ -180,6 +180,15 @@ mkdir /var/www/janschill.de/.db
 chown -R 1000:1000 /var/www/janschill.de/
 ```
 
+Within the directory start up the server.
+
+```bash
+# Change directory
+cd /var/www/janschill.de
+# Start server
+solid start
+```
+
 ## References
 
 W3C Solid Community Group, 2020. The Solid Ecosystem. [online] Available at: <https://solid.github.io/specification/> [Accessed 05 October 2020].
