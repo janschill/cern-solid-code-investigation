@@ -9,6 +9,10 @@
 
 ## Project
 
+### Thesis
+
+- [https://www.itu.dk/people/sestoft/itu/thesis-checklist.html](https://www.itu.dk/people/sestoft/itu/thesis-checklist.html)
+
 ### CERN
 
 - [Meetings CERN-Solid](https://indico.cern.ch/category/11962/)
