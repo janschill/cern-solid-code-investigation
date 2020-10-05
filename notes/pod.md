@@ -21,7 +21,7 @@ See the [source](https://github.com/solid/node-solid-server/wiki/Running-Solid-b
 
 This [tutorial](https://solidproject.org/for-developers/pod-server) was followed when the pod was set up without the usage of any containerization.
 
-1. Set up wild card certificate to be able to issue HTTPS to new subdomains for multiuser
+1. Set up wildcard certificate issuing to be able to use HTTPS on new subdomains for a multiuser Solid pod.
 
 ```bash
 # Install certbot
