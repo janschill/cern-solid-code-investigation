@@ -25,6 +25,7 @@
 
 - [Solid architecture](https://rubenverborgh.github.io/solid-server-architecture/solid-architecture-v1-3-0.pdf)
 - [Solid ecosystem specification](https://solid.github.io/specification/)
+- [An introduction to SOLID, Tim Berners-Lee’s new, re-decentralized Web](https://www.freecodecamp.org/news/an-introduction-to-solid-tim-berners-lees-new-re-decentralized-web-25d6b78c523b/)
 
 ### Related work
 
