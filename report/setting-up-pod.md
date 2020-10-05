@@ -45,7 +45,7 @@ Therefore, the NSS makes it mandatory to provide the location of a valid certifi
 A reverse proxy allows a server to run multiple services on the same port. A reverse proxy receives the initial request on the host and port and then forwards it to the configured local service on the machine.
 Solid has WebID-TLS implemented as one of its authentication mechanisms. A reverse proxy – when not configured correctly – does not permit the usage of this, as the client when performing the handshake with the server also [sends its certificate](https://blog.cloudflare.com/introducing-tls-client-auth/#handshakeswithtlsclientauth), which means with the usage of a reverse proxy that performs the handshake, the certificate is not sent to the Solid server, denying the possibility of authenticating properly.
 A solution is the correct configuration of the reverse proxy
-[This document]([Source](https://github.com/solid/node-solid-server/wiki/Running-Solid-behind-a-reverse-proxy)) introduces this issue and a few solutions to it.
+[This document](https://github.com/solid/node-solid-server/wiki/Running-Solid-behind-a-reverse-proxy) introduces this issue and a few solutions to it.
 Therefore, the same NGiNX configuration with necessary steps to set up can be found [here](https://solidproject.org/for-developers/pod-server/nginx):
 
 1. Open the default configuration after installing NGiNX
@@ -183,3 +183,17 @@ chown -R 1000:1000 /var/www/janschill.de/
 ## References
 
 W3C Solid Community Group, 2020. The Solid Ecosystem. [online] Available at: <https://solid.github.io/specification/> [Accessed 05 October 2020].
+
+solid-server in Node. [online] Available at: <https://github.com/solid/node-solid-server> [Accessed 05 October 2020].
+
+Example config for NSS on a root server. [online] Available at: <https://solidproject.org/for-developers/pod-server> [Accessed 05 October 2020].
+
+solid-server in Node. [online] Available at: <https://github.com/solid/node-solid-server/issues/1349> [Accessed 05 October 2020].
+
+Wildcard certificate. [online] Available at: <https://en.wikipedia.org/wiki/Wildcard_certificate> [Accessed 05 October 2020].
+
+Dani Grant. Introducing TLS with Client Authentication. [online] Available at: <https://blog.cloudflare.com/introducing-tls-client-auth/#handshakeswithtlsclientauth> [Accessed 05 October 2020].
+
+solid-server in Node. [online] Available at: <https://github.com/solid/node-solid-server/wiki/Running-Solid-behind-a-reverse-proxy> [Accessed 05 October 2020].
+
+Use Nginx as a reverse proxy. [online] Available at: <https://solidproject.org/for-developers/pod-server/nginx> [Accessed 05 October 2020].
