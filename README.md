@@ -20,6 +20,8 @@
 #### Applications
 
 - [Indico repository](https://github.com/indico/indico)
+- [What is Indico presentation?](https://pferreir.github.io/indico-presentations/20200207-solid-brainstorming/)
+- [Event where presentation was shown](https://indico.cern.ch/event/866085/)
 
 ### Solid
 
