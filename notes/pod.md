@@ -185,6 +185,13 @@ mkdir /var/www/janschill.de/.db
 - Make sure the correct config.json is getting populated and used by the Solid server
 - Use `netstat -tulpen` to debug running applications and their ports.
 
+## Useful commands
+
+```
+netstat -tulpen # List of running servers
+nmap janschill.de # Scan all open ports
+```
+
 ## Explanation
 
 ### Single-user
