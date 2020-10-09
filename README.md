@@ -20,6 +20,7 @@
 #### Applications
 
 - [Indico repository](https://github.com/indico/indico)
+- [Learn Indico](https://indico.docs.cern.ch/)
 - [What is Indico presentation?](https://pferreir.github.io/indico-presentations/20200207-solid-brainstorming/)
 - [Event where presentation was shown](https://indico.cern.ch/event/866085/)
 
@@ -54,6 +55,10 @@
 #### Solid World
 
 [Solid World 2020-10-01 notes](https://codimd.web.cern.ch/s/SJIriOm8D#)
+
+### CERN-Solid
+
+- [Presentation: The CERN-Solid collaboration project](https://indico.cern.ch/event/883268/contributions/3995749/)
 
 ### Related work
 
