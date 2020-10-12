@@ -18,7 +18,7 @@
 * **M3**: Extensive knowledge and written report about Solid specifications
 * **M4**: Extensive knowledge and written report about Solid implementations
 * **M5**: Extensive knowledge and written report about CERN implementations
-* **M6**: Compare Solid approach with desgin principles of CERN applications
+* **M6**: Compare Solid approach with design principles of CERN applications
 
 ### Master's thesis (February–June)
 
