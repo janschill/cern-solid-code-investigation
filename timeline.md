@@ -20,7 +20,7 @@
 * **M5**: Extensive knowledge and written report about CERN implementations
 * **M6**: Compare Solid approach with desgin principles of CERN applications
 
-### Master thesis (February–June)
+### Master's thesis (February–June)
 
 * **M7**: Revisit and evaluate the research project, identify gaps
 * **M8**: Explore Indico to test Solid principles
