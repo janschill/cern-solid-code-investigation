@@ -16,3 +16,5 @@ jobs:
         with:
           bucket: .github/actions
           project: spelling
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
