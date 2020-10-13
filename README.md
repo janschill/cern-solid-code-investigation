@@ -66,4 +66,4 @@
 - [Storing and Querying Evolving Knowledge Graphs on the Web](https://phd.rubensworks.net/)
 
 
-Test if this PR is being checked by the GitHub Action Spellcheck, or not? A couple of misspelled words: Afrikka, cofffee, schooll, weekent.
+Test if this PR is being checked by the GitHub Action Spellcheck, or not? A couple of misspelled words: Afrikka, cofffee, schooll, weekent. Let's test this again.
