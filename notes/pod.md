@@ -13,7 +13,7 @@ TODO: understand this completely.
 
 >One of Solid's authentication mechanisms is WebID-TLS: the client sends its client certificate during the TLS handshake. However, by default, this requires the client to set up a TLS connection directly with the Solid server: if the TLS handshake is performed by an intermediary, the Solid server cannot see the client certificate.
 
-This mechanism is called [TLS Client Auth](https://blog.cloudflare.com/introducing-tls-client-auth/#handshakeswithtlsclientauth) and adds an extra layer of security, when API keys are comprimised mid-connection, the certificates are encrypted and cannot be reused.
+This mechanism is called [TLS Client Auth](https://blog.cloudflare.com/introducing-tls-client-auth/#handshakeswithtlsclientauth) and adds an extra layer of security, when API keys are compromised mid-connection, the certificates are encrypted and cannot be reused.
 
 See the [source](https://github.com/solid/node-solid-server/wiki/Running-Solid-behind-a-reverse-proxy) for a working solutions.
 
