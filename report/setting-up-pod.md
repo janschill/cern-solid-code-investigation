@@ -77,7 +77,9 @@ server {
   listen [::]:80;
   server_name janschill.de;
   server_tokens off;
+
   return 301 https://$http_host$request_uri;
+
   access_log  /var/log/nginx/solid_access.log;
   error_log   /var/log/nginx/solid_error.log;
 }
@@ -91,10 +93,10 @@ server {
   access_log  /var/log/nginx/solid_ssl_access.log;
   error_log   /var/log/nginx/solid_ssl_error.log;
 
-ssl_certificate /etc/letsencrypt/live/janschill.de/fullchain.pem;
-ssl_certificate_key /etc/letsencrypt/live/janschill.de/privkey.pem;
+  ssl_certificate /etc/letsencrypt/live/janschill.de/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/janschill.de/privkey.pem;
 
-root /var/www/janschill.de;
+  root /var/www/janschill.de;
 
   add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
 
@@ -116,11 +118,13 @@ root /var/www/janschill.de;
     proxy_set_header    X-Forwarded-For     $proxy_add_x_forwarded_for;
     proxy_set_header    X-Forwarded-Proto   $scheme;
   }
-
 }
 ```
 
 As per default the logs for the server will the written in `/var/log/nginx/solid_*.log` files.
+
+An additional interesting part of the configuration is that it sets the `Strict-Transport-Security` header. This header instructs the user's browser to use HTTP Strict Transport Security (HSTS) – meaning that it should use HTTPS for every request. This is beneficial as requests that are addressed to http://janschill.de, or just janschill.de will usually connect on HTTP to the server and then get redirected. This leaves an open window for a man-in-the-middle attack. HSTS solves this by instructing the browser upon first visit to always use HTTPS when connecting to janschill.de. HSTS is not perfect, as it still needs one initial request to even be able to cache the `Strict-Transport-Security` header ([Source](https://www.nginx.com/blog/http-strict-transport-security-hsts-and-nginx/)).
+
 
 3. Restart the Nginx server
 
@@ -200,6 +204,14 @@ cd /var/www/janschill.de
 solid start
 ```
 
+## Difficulties
+
+### Setting up with Docker
+
+In the beginning the thought of using Docker seemed tempting. Installing all dependencies in isolated environments gives the benefit of having all configurations as code. A Dockerfile holds all commands that are needed to set up a Nginx reverse proxy for example.
+Because this setup needs multiple running services (Nginx reverse proxy, certification issuing, the Solid server) that all need to communicate to each other, the Docker configuration can get easily out of control and not offer a one-click solution anymore. Docker Compose tackles this problem by offering a configuration file to easily define how these different services/container should be connected.
+To not reinvent the wheel and spend too much time on configuring for example an Nginx reverse proxy, well-established Docker images can be used.
+
 ## References
 
 W3C Solid Community Group, 2020. The Solid Ecosystem. [online] Available at: <https://solid.github.io/specification/> [Accessed 05 October 2020].
@@ -217,3 +229,7 @@ Dani Grant. Introducing TLS with Client Authentication. [online] Available at: <
 solid-server in Node. [online] Available at: <https://github.com/solid/node-solid-server/wiki/Running-Solid-behind-a-reverse-proxy> [Accessed 05 October 2020].
 
 Use Nginx as a reverse proxy. [online] Available at: <https://solidproject.org/for-developers/pod-server/nginx> [Accessed 05 October 2020].
+
+Certbot User Guide. [online] Available at: <https://certbot.eff.org/docs/using.html> [Accessed 13 October 2020].
+
+HTTP Strict Transport Security (HSTS) and NGINX. [online] Available at: <https://www.nginx.com/blog/http-strict-transport-security-hsts-and-nginx/> [Accessed 13 October 2020].
