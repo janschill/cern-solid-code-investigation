@@ -12,7 +12,7 @@
 ### Thesis
 
 - [https://www.itu.dk/people/sestoft/itu/thesis-checklist.html](https://www.itu.dk/people/sestoft/itu/thesis-checklist.html)
-- [https://github.com/janschill/uni-research_project/milestones](Milestones)
+- [Milestones](https://github.com/janschill/uni-research_project/milestones)
 
 ### CERN
 
