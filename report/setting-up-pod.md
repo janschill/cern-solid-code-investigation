@@ -1,19 +1,19 @@
 # Setting up a Solid pod
 
-The goal by the end of this tutorial is a working multiuser Solid pod behind an NGiNX reverse proxy. The current available implementation of a Solid pod is the open source [Node Solid Server (NSS)](https://github.com/solid/node-solid-server).
+The goal by the end of this tutorial is a working multiuser Solid pod behind an Nginx reverse proxy. The current available implementation of a Solid pod is the open source [Node Solid Server (NSS)](https://github.com/solid/node-solid-server).
 
 This write-down mostly follows [this tutorial](https://solidproject.org/for-developers/pod-server) from the official Solid website, the documentation in the [repository](https://github.com/solid/node-solid-server) of the NSS and other sources from the web, which shall be referenced as used.
 
 ## Web server
 
 Before installing the NSS, a physical web server, preferably running a Linux distribution is needed. A domain should be configured to point to this web server. This can be done at the DNS hosting and domain name registration service that holds the domain.
-The domain that will be used in this tutorial is janschill.de and is configured at Hetzner Online.
+The domain that will be used in this tutorial is `janschill.de` and is configured at Hetzner Online.
 
 ## Digital wildcard certificate
 
-NSS uses instead of a subdirectory approach a subdomain one to create the space for an isolated user pod. This means a new user registers and gets as his/her pod location at the address https://username.janschill.de and not https://janschill.de/username.
+NSS uses instead of a subdirectory approach a subdomain one to create the space for an isolated user pod. This means a new user registers and gets his/her pod location at the address https://username.janschill.de and not https://janschill.de/username.
 This is a design decision and there has been some [discussion](https://github.com/solid/node-solid-server/issues/1349) about moving or allowing the setting of the latter. There are benefits and drawbacks to these approaches that shall not be discussed in this context.
-One drawback needs to be addressed – as it is essential for this setup. It is the need for [wildcard certificates](https://en.wikipedia.org/wiki/Wildcard_certificate). This is only a drawback, if a developer has not heard about this concept or has never set up digital certificates in general, as the process is quite straightforward.
+One drawback of this needs to be addressed – as it is essential for this setup. It is the need for [wildcard certificates](https://en.wikipedia.org/wiki/Wildcard_certificate). This is only a drawback, if a developer has not heard about this concept or has never set up digital certificates in general, as the process is quite straightforward.
 In short a wildcard certificate allows a certificate to be used with multiple subdomains and is created with `certbot`, a program offered by Let's Encrypt, as follows:
 
 ```bash
@@ -29,9 +29,20 @@ certbot certonly \
 -d janschill.de -d *.janschill.de
 ```
 
-<!-- TODO: Explain all flags -->
+This command shows that a certificate for the `janschill.de` domain is created, but also for the wildcard `*.janschill.de` domain. It means any string in front of the `janschill.de` domain, separated by a period, is allowed and will have a valid certificate.
+
+* `certonly` obtains or renews a certificate, but does not install it (it does not edit any of the server's configuration – this will be done manually in the next step).
+* `manual` will make the process of obtaining the certificate interactive.
+* `preferred-challenges=dns` this is a challenge that needs to be successfully completed in order to get certificates. Let's Encrypt will not allow HTTP-01 challenges for wildcard certificates. Therefore, DNS is set for the DNS-01 challenge ([Challenge types](https://letsencrypt.org/docs/challenge-types/)).
+* `email` which will be used to send important notifications.
+* `server` the address `certbot` will connect to.
+* `agree-tos` agree to the server's Subscriber Agreement.
+
+DNS-01 challenge asks to prove the control of the DNS for the specified domain. This is done by placing a TXT record with a defined value under the domain name. Let's Encrypt will then verify the key and value (TXT record) by quering the DNS system.
 
 Make sure the certificate directory has the correct permissions set.
+
+>For historical reasons, the containing directories are created with permissions of 0700 meaning that certificates are accessible only to servers that run as the root user. If you will never downgrade to an older version of Certbot, then you can safely fix this using chmod 0755 /etc/letsencrypt/{live,archive} ([Where are my certificates](https://certbot.eff.org/docs/using.html#where-are-my-certificates)).
 
 ```bash
 chmod -R 755 /etc/letsencrypt/live
@@ -46,12 +57,12 @@ A reverse proxy allows a server to run multiple services on the same port. A rev
 Solid has WebID-TLS implemented as one of its authentication mechanisms. A reverse proxy – when not configured correctly – does not permit the usage of this, as the client when performing the handshake with the server also [sends its certificate](https://blog.cloudflare.com/introducing-tls-client-auth/#handshakeswithtlsclientauth), which means with the usage of a reverse proxy that performs the handshake, the certificate is not sent to the Solid server, denying the possibility of authenticating properly.
 A solution is the correct configuration of the reverse proxy
 [This document](https://github.com/solid/node-solid-server/wiki/Running-Solid-behind-a-reverse-proxy) introduces this issue and a few solutions to it.
-Therefore, the same NGiNX configuration with necessary steps to set up can be found [here](https://solidproject.org/for-developers/pod-server/nginx):
+Therefore, the same Nginx configuration with necessary steps to set up can be found [here](https://solidproject.org/for-developers/pod-server/nginx):
 
-1. Open the default configuration after installing NGiNX
+1. Open the default configuration after installing Nginx
 
 ```bash
-# Installing NGiNX
+# Installing Nginx
 sudo apt update
 sudo apt install nginx
 # Editing the default configuration
@@ -111,7 +122,7 @@ root /var/www/janschill.de;
 
 As per default the logs for the server will the written in `/var/log/nginx/solid_*.log` files.
 
-3. Restart the NGiNX server
+3. Restart the Nginx server
 
 ```bash
 systemctl restart nginx
