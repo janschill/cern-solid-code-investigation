@@ -4,7 +4,7 @@
 
 ### Context
 
-Sir Tim Berners-Lee invented the Web with the intention of providing “access to knowledge, free for all and respecting each one”. This intention lost its meaning to a certain level, with a lot of companies harvesting personal data and generating massiv amounts of revenue by selling it directly or analyzing it and providing a platform for targeted advertisements (Dimou, 2020).\
+Sir Tim Berners-Lee invented the Web with the intention of providing “access to knowledge, free for all and respecting each one”. This intention lost its meaning to a certain level, with a lot of companies harvesting personal data and generating massive amounts of revenue by selling it directly or analyzing it and providing a platform for targeted advertisements (Dimou, 2020).\
 The Solid project, which is also led by Sir Tim has its purpose in handing the control of this data back to the content owner. It does so by decoupling the applications, the storage of data and authentication (Dimou, 2020).
 
 This is realized with the [Solid specifications](https://solid.github.io/specification/), which defines a set of rules and protocols on how to implement server and client in the Solid ecosystem (W3C Solid Community Group, 2020).

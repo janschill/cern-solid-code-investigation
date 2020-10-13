@@ -152,7 +152,7 @@ Yes
 N
 # A name for your server (not required)
 janschill.de
-# A description of your server (not requred)
+# A description of your server (not required)
 undefined
 # A logo (not required)
 undefined

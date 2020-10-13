@@ -38,7 +38,7 @@ This command shows that a certificate for the `janschill.de` domain is created, 
 * `server` the address `certbot` will connect to.
 * `agree-tos` agree to the server's Subscriber Agreement.
 
-DNS-01 challenge asks to prove the control of the DNS for the specified domain. This is done by placing a TXT record with a defined value under the domain name. Let's Encrypt will then verify the key and value (TXT record) by quering the DNS system.
+DNS-01 challenge asks to prove the control of the DNS for the specified domain. This is done by placing a TXT record with a defined value under the domain name. Let's Encrypt will then verify the key and value (TXT record) by querying the DNS system.
 
 Make sure the certificate directory has the correct permissions set.
 

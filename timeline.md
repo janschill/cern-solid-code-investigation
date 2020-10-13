@@ -16,7 +16,7 @@
 ### Research project (September–December)
 
 * **M1**: Solid Pod with multiuser on DigitalOcean
-* **M2**: Solid Pod with muliuser on ITU
+* **M2**: Solid Pod with multiuser on ITU
 * **M3**: Extensive knowledge and written report about Solid specifications
 * **M4**: Extensive knowledge and written report about Solid implementations
 * **M5**: Extensive knowledge and written report about CERN implementations
