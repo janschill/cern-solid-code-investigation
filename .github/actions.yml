@@ -1,0 +1,2 @@
+- name: Check spelling
+  uses: check-spelling/check-spelling@0.0.16-alpha
