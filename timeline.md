@@ -1,5 +1,7 @@
 # Timeline
 
+*A better overview of the milestones and timeline can be found on this repository's [milestone overview](https://github.com/janschill/uni-research_project/milestones?direction=asc&sort=due_date&state=open)*
+
 ## Tasks
 
 1. Set up a pod on Digital Ocean
