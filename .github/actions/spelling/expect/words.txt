@@ -4,9 +4,11 @@ angelo
 api
 apps
 asc
+backend
 berners
 blog
 Capadisli
+cernbox
 certbot
 certonly
 chmod
@@ -20,6 +22,7 @@ dasya
 datastore
 digitalocean
 Dimou
+disqus
 dns
 Dockerfile
 dokie
@@ -28,10 +31,12 @@ ECTS
 edu
 evertramos
 freecodecamp
+frontend
 fullchain
 gdac
 Ghanem
 github
+Google
 gzip
 handshakeswithtlsclientauth
 Hawke
@@ -43,6 +48,7 @@ howto
 hsts
 html
 http
+hyperlink
 independetly
 inox
 interoperability
@@ -51,7 +57,9 @@ itustudent
 jan
 janschill
 json
+Kanban
 letsencrypt
+linkeddata
 Linux
 localhost
 Maged
@@ -69,6 +77,8 @@ npm
 nslookup
 NSS
 NX
+OAuth
+openid
 ouvertes
 pdf
 pdos
@@ -77,6 +87,7 @@ pferreir
 phd
 png
 privkey
+rdflib
 roadmap
 rubensworks
 rubenverborgh
