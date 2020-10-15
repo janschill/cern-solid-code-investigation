@@ -12,7 +12,7 @@ This GitHub Kanban board links the [issues]() and are organized into different c
 
 ## [Milestones](https://github.com/janschill/uni-research_project/milestones?direction=asc&sort=due_date&state=open)
 
-The defined milestones give detailed descriptions on what should be when achieved.
+The defined milestones give detailed descriptions on what should be when achieved. This list is subject to change as the project evolves, but should remain scoped to its set [goal](https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation).
 
 ## Useful links
 
@@ -29,17 +29,19 @@ The defined milestones give detailed descriptions on what should be when achieve
 
 - [https://www.itu.dk/people/sestoft/itu/thesis-checklist.html](https://www.itu.dk/people/sestoft/itu/thesis-checklist.html)
 - [Milestones](https://github.com/janschill/uni-research_project/milestones?direction=asc&sort=due_date&state=open)
+- [Kanban board](https://github.com/janschill/uni-research_project/projects/1)
 
 #### CERN
 
 - [Meetings CERN-Solid](https://indico.cern.ch/category/11962/)
 
-##### Applications
+##### Indico
 
 - [Indico repository](https://github.com/indico/indico)
 - [Learn Indico](https://indico.docs.cern.ch/)
 - [What is Indico presentation?](https://pferreir.github.io/indico-presentations/20200207-solid-brainstorming/)
 - [Event where presentation was shown](https://indico.cern.ch/event/866085/)
+- [Registration at a conference](https://indico.docs.cern.ch/conferences/registration/)
 
 #### Solid
 
