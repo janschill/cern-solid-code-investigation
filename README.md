@@ -6,6 +6,14 @@ In a the second part a proof of concept where parts of Indico will be switched o
 For more details around the project, see the [CERN project description](https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation).\
 For a preliminary timeline with milestones, see the [GitHub milestones](https://github.com/janschill/uni-research_project/milestones?direction=asc&sort=due_date&state=open).
 
+## [Kanban board](https://github.com/janschill/uni-research_project/projects/1)
+
+This GitHub Kanban board links the [issues]() and are organized into different columns as they are worked on.
+
+## [Milestones](https://github.com/janschill/uni-research_project/milestones?direction=asc&sort=due_date&state=open)
+
+The defined milestones give detailed descriptions on what should be when achieved.
+
 ## Useful links
 
 ### Project proposal
