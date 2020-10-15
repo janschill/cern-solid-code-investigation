@@ -114,3 +114,4 @@ No extra login, Disqus: logs in and then is able to comment. Hyperlink to other 
 - [Disqus](https://about.disqus.com/disqus-demo-page)
 - [CERNBox](https://cernbox.web.cern.ch/cernbox/)
 - [rdflib.js](https://github.com/linkeddata/rdflib.js)
+- [Empty Solid app](https://github.com/michielbdejong/empty-solid-app)
