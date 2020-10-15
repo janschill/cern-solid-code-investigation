@@ -51,9 +51,8 @@ For a preliminary timeline with milestones, see the [GitHub milestones](https://
 - [Docker Let's Encrypt & NGiNX-proxy](https://github.com/nginx-proxy/docker-letsencrypt-nginx-proxy-companion)
 - [DigitalOcean NGiNX reverse proxy](https://www.digitalocean.com/community/tutorials/how-to-configure-nginx-as-a-web-server-and-reverse-proxy-for-apache-on-one-ubuntu-20-04-server)
 - [Let's Encrypt](https://letsencrypt.org/getting-started/)
--
 
-##### Application
+##### Applications
 
 - [Official list of apps](https://solidproject.org/use-solid/apps)
 - [dokieli](https://dokie.li/)
