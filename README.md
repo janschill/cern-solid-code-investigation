@@ -1,31 +1,39 @@
-# uni-research_project
+# CERN-Solid code investigation
 
-## Project proposal
+This repository will hold all information for a CERN-Solid code investigation. This investigation is carried out in the form of a research project (7.5 ECTS) and a following Master‘s thesis.
+The first part of this project will be to familiarize with the Solid principles and the CERN web application [Indico](https://github.com/indico/indico/).
+In a the second part a proof of concept where parts of Indico will be switched by modules that apply to Solid principles.
+For more details around the whole project, see the [CERN project description](https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation).
+For a preliminary timeline with milestones, see the [GitHub milestones](https://github.com/janschill/uni-research_project/milestones?direction=asc&sort=due_date&state=open).
 
-- Submit: [mit.itu.dk](mit.itu.dk)
-- Infos: [itustudent.itu.dk](https://itustudent.itu.dk/study-administration/project-work/register-for-the-project)
+## Useful links
+
+### Project proposal
+
+- Submission: [mit.itu.dk](mit.itu.dk)
+- Information: [itustudent.itu.dk](https://itustudent.itu.dk/study-administration/project-work/register-for-the-project)
 - [How to write a proposal](https://dasya.itu.dk/for-students/howto/proposal/)
 - [CERN project description](https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation)
 
-## Project
+### Project
 
-### Thesis
+#### Thesis
 
 - [https://www.itu.dk/people/sestoft/itu/thesis-checklist.html](https://www.itu.dk/people/sestoft/itu/thesis-checklist.html)
 - [Milestones](https://github.com/janschill/uni-research_project/milestones?direction=asc&sort=due_date&state=open)
 
-### CERN
+#### CERN
 
 - [Meetings CERN-Solid](https://indico.cern.ch/category/11962/)
 
-#### Applications
+##### Applications
 
 - [Indico repository](https://github.com/indico/indico)
 - [Learn Indico](https://indico.docs.cern.ch/)
 - [What is Indico presentation?](https://pferreir.github.io/indico-presentations/20200207-solid-brainstorming/)
 - [Event where presentation was shown](https://indico.cern.ch/event/866085/)
 
-### Solid
+#### Solid
 
 - [Solid architecture](https://rubenverborgh.github.io/solid-server-architecture/solid-architecture-v1-3-0.pdf)
 - [Solid ecosystem specification](https://solid.github.io/specification/)
@@ -35,7 +43,7 @@
 - [Data ownership and interoperability for a decentralized social semantic web](https://tel.archives-ouvertes.fr/tel-00917965/document)
 - [Linked Research on the Decentralised Web](https://csarven.ca/linked-research-decentralised-web)
 
-#### Solid Pod
+##### Solid Pod
 
 - [NSS homepage](https://github.com/solid/node-solid-server)
 - [NSS Docker homepage](https://github.com/angelo-v/docker-solid-server)
@@ -45,7 +53,7 @@
 - [Let's Encrypt](https://letsencrypt.org/getting-started/)
 -
 
-#### Application
+##### Application
 
 - [Official list of apps](https://solidproject.org/use-solid/apps)
 - [dokieli](https://dokie.li/)
@@ -53,14 +61,14 @@
 - [Media Kraken](https://noeldemartin.github.io/media-kraken/login)
 - [Po Pock](https://scenaristeur.github.io/solid-vue-panes/)
 
-#### Solid World
+##### Solid World
 
 [Solid World 2020-10-01 notes](https://codimd.web.cern.ch/s/SJIriOm8D#)
 
-### CERN-Solid
+#### CERN-Solid
 
 - [Presentation: The CERN-Solid collaboration project](https://indico.cern.ch/event/883268/contributions/3995749/)
 
-### Related work
+#### Related work
 
 - [Storing and Querying Evolving Knowledge Graphs on the Web](https://phd.rubensworks.net/)
