@@ -8,7 +8,7 @@ For a preliminary timeline with milestones, see the [GitHub milestones](https://
 
 ## [Kanban board](https://github.com/janschill/uni-research_project/projects/1)
 
-This GitHub Kanban board links the [issues]() and are organized into different columns as they are worked on.
+This GitHub Kanban board links the [issues]() and organizes them into different columns as they are worked on.
 
 ## [Milestones](https://github.com/janschill/uni-research_project/milestones?direction=asc&sort=due_date&state=open)
 
