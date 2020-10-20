@@ -1,0 +1,3 @@
+[submodule "code/empty-solid-app"]
+	path = code/empty-solid-app
+	url = https://github.com/janschill/empty-solid-app
