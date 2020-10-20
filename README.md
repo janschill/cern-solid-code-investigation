@@ -69,6 +69,8 @@ The defined milestones give detailed descriptions on what should be when achieve
 - [Inox](https://www.inox.app/)
 - [Media Kraken](https://noeldemartin.github.io/media-kraken/login)
 - [Po Pock](https://scenaristeur.github.io/solid-vue-panes/)
+- [Notepod](https://gitlab.com/vincenttunru/notepod)
+- [Empty Solid App](https://github.com/michielbdejong/empty-solid-app)
 
 ##### Solid World
 
