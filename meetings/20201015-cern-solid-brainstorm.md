@@ -1,5 +1,9 @@
 # CERN-Solid code investigation - Meeting with the Indico developers
 
+*Present: Maria Dimou, Michiel de Jong, Pedro Ferreira, Adrian Moennich, Jan Schill*
+
+[Link to Indico event](https://indico.cern.ch/event/963608/)
+
 Maria Dimou:
 
 >The purpose of this meeting is to discuss point 4 of Jan's project, namely give some inside info of the Indico code, structure, philosophy, update methods and advice on how to:
