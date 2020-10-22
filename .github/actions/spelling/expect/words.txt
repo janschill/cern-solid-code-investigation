@@ -57,6 +57,7 @@ itu
 itustudent
 jan
 janschill
+Jong
 json
 Kanban
 letsencrypt
@@ -66,9 +67,11 @@ localhost
 Maged
 Mansour
 metadata
+Michiel
 michielbdejong
 MITM
 mkdir
+Moennich
 netstat
 NGi
 nginx
