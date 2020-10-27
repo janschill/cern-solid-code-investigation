@@ -1,6 +1,8 @@
 # Timeline
 
-*A better overview of the milestones and timeline can be found on this repository's [milestone overview](https://github.com/janschill/uni-research_project/milestones?direction=asc&sort=due_date&state=open)*
+**IMPORTANT: This file is currently no longer maintained. The source of truth is found in the milestone overview linked just below.**
+
+*A better overview of the milestones and timeline can be found in this repository's [milestone overview](https://github.com/janschill/uni-research_project/milestones?direction=asc&sort=due_date&state=open)*
 
 ## Tasks
 
