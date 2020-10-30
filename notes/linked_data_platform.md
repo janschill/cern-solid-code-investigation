@@ -5,7 +5,6 @@
 An organizing concept: blog posts are grouped into blogs.
 ”The contents of a container is defined by a set of triples in its representation (and state) called the containment triples that follow a fixed pattern” [Source](https://www.w3.org/TR/ldp/#h-ldpc-informative).
 
-
 ## Use Cases and Requirements
 
 * Maintaining social contact information

@@ -5,3 +5,4 @@
 - Certificates
 - Identity provider
 - 0.0.0.0 vs 127.0.0.1
+- Linked Data Platform
