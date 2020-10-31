@@ -52,6 +52,7 @@ The defined milestones give detailed descriptions on what should be when achieve
 - [Amber: Decoupling User Data from Web Applications](https://pdos.csail.mit.edu/papers/amber:hotos15.pdf)
 - [Data ownership and interoperability for a decentralized social semantic web](https://tel.archives-ouvertes.fr/tel-00917965/document)
 - [Linked Research on the Decentralised Web](https://csarven.ca/linked-research-decentralised-web)
+- [User guide](https://github.com/solid/userguide)
 
 ##### Solid Pod
 
