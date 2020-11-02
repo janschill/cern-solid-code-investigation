@@ -68,7 +68,7 @@ The identity is linked with storage and accessed by applications.
 solid-auth-client is a HTML and JavaScript framework to retrieve the authentication token from the identity provider. It can also retrieve the data from a pod.
 This is all client side, in the browser.
 
-When receiving data from Solid it needs to be parse as it is in RDF. This can be done with [rdflib.js](https://github.com/linkeddata/rdflib.js).
+When receiving data from Solid it needs to be parsed as it is in RDF. This can be done with [rdflib.js](https://github.com/linkeddata/rdflib.js).
 
 ### Indico
 
