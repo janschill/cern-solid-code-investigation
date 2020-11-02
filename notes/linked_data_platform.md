@@ -11,7 +11,7 @@ An organizing concept: blog posts are grouped into blogs.
   * One single definition in specific location for contact information
 * Keeping track of personal and business relationships
   * One consistent interface for identifying oneself
-* System and software development tool intergration
+* System and software development tool integration
   *
 * Library Linked Data
   *
