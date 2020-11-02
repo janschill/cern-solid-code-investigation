@@ -65,6 +65,8 @@ Jong
 json
 Kanban
 LDFLAGS
+ldp
+ldpc
 letsencrypt
 linkeddata
 Linux
@@ -125,6 +127,7 @@ uninstall
 uqam
 uri
 URL
+userguide
 username
 usr
 vincenttunru
