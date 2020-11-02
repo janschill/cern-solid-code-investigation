@@ -9,5 +9,5 @@
 
 ## HTTP request methods
 
-The `HEAD` method requests the resources the same way as GET, but without the repsonse body.
+The `HEAD` method requests the resources the same way as GET, but without the response body.
 The `OPTIONS` method requests a response with the implemented HTTP methods of a server
