@@ -56,3 +56,15 @@ pip install indico
 Xcode development tools
 
 https://developer.apple.com/download/more/
+
+## Investigations
+
+```
+Conference
+Registration form
+Open registration for conference
+Indico account not needed for registration
+
+POST /event/1/registrations/1/
+GET /event/1/registrations/1/?token=1389da6e-4d03-4213-b85f-0d819b56ac23
+```
