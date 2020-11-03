@@ -22,6 +22,6 @@ The main document brings together a set of specifications, either specifications
 - Reflecting both its strengths and weaknesses
 - Assessment of the quality, novelty, and importance of the article on the good and bad
 
-A. Summary of the specification
-B. Assessment of strengths and weaknesses
+A. Summary of the specification\
+B. Assessment of strengths and weaknesses\
 C. Recommendation
