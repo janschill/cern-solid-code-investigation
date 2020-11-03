@@ -34,6 +34,11 @@ The definitions shall not be introduce using other terminalogy as the original d
 
 "An append operation entails that information can be added but not removed." [[Source]](https://github.com/solid/specification/issues/118#issuecomment-569648485)
 
+## Remarks
+
+
+- Does not do a good job on explaining the reason for LDP.
+
 ## Notes on reviewing
 
 - Reflecting both its strengths and weaknesses
@@ -42,3 +47,17 @@ The definitions shall not be introduce using other terminalogy as the original d
 A. Summary of the specification\
 B. Assessment of strengths and weaknesses\
 C. Recommendation
+
+[Source](https://www.cs.colostate.edu/~cs656/alan-meier.pdf):
+
+(1) Title and author of paper
+(2) Summary of paper
+  This needs to be only 1-3 sentences, but it demonstrates that you understand the paper and, moreover, can summarize it more concisely than the author in his abstract.
+(3) Good things about the paper (one paragraph)
+  This is not always necessary, especially when the review is generally favorable. However, it is strongly recommended if the review is critical. Such introductions are good psychology if you want the author to drastically revise the paper.
+(4) Major comments
+  Discuss the author's assumptions, technical approach, analysis, results, conclusions, reference, etc. Be constructive, if possible, by suggesting improvements.
+(5) Minor comments
+  This section contains comments on style, figures, grammar, etc. If any of these are especially poor and detract from the overall presentation, then they might escalate to the 'major comments' section. It is acceptable to write these comments in list (or bullet) form.
+(6) Recommendations
+  Some referees will shower papers with invective even when they like it. An editor may not recognize this habit, and interpret the criticism as grounds not to publish the paper. For these reasons, it is worthwhile to tell the editor if the paper should be published. Three major categories of recommendations are: "publish as is", "publish after corrections have been made", and "reject". Sometimes the recommendations fit better in the cover letter.
