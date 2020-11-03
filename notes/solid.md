@@ -9,6 +9,11 @@
 * [Resource type heuristics - Why do I want this feature?](https://solid.github.io/specification/#resource-type-heuristics)
 * HEAD and OPTIONS methods
 
+### Summary
+
+Definitions: data pod,
+
+
 ## Paper: Solid Platform for Social Web Applications
 
 Notes and direct quotes from the paper "A Demonstration of the Solid Platform for Social Web Applications" by Essam Mansour, Andrei Vlad Sambra, Sandro Hawke, Maged Zereba, Sarven Capadisli, Abdurrahman Ghanem, Ashraf Aboulnaga and Tim Berners-Lee
