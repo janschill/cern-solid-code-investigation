@@ -55,6 +55,7 @@ hyperlink
 independetly
 inox
 interoperability
+interoperable
 issuecomment
 itu
 itustudent
