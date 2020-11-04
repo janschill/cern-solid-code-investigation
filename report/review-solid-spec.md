@@ -36,6 +36,7 @@ The definitions shall not be introduce using other terminology as the original d
 
 ## Remarks
 
+- Uses concepts that are also WIP (WebID)
 - Does not do a good job on explaining the reason for LDP.
 
 ## Notes on reviewing
