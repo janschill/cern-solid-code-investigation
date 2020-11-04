@@ -29,7 +29,9 @@ The main document consists of six sections: *(1) Introduction, (2) Authenticated
 
 
 The Solid Ecosystem introduces two crucial terms a **data pod**, which is the decentralized location for the storage of data and a **Solid app** that reads and writes from and to a data pod.\
-Section 3 of The Solid Ecosystem is titled *Clients and Apps* and states that
+
+
+Section 3 of The Solid Ecosystem is titled *Clients and Apps* and states that it will give an implementation guidance, but because it is missing, it cannot be reasoned about. Therefore, an evaluation of existing Solid applications will be conducted.
 
 
 
