@@ -22,6 +22,9 @@
 
 * Decentralized, user-centric identity management offers better privacy and control over the use of identity credentials, because it allows the user to choose flexibly what indentity information is being released. p[11]
 
-* Three instance: user/browser/client; service provider, identity provider
-
+* Three entities: user/browser/client; service provider, identity provider
+* OpenID is a lightweight identity management system
+* RelayState, HTTP parameter with location of original resource requested
+* Content negotation, offering different format and language versions of the same web document over HTTP
+  * HTTP headers to determine the format
 
