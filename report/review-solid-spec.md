@@ -32,8 +32,21 @@ The main document consists of six sections: *(1) Introduction, (2) Authenticated
 
 <!-- This is not always necessary, especially when the review is generally favorable. However, it is strongly recommended if the review is critical. Such introductions are good psychology if you want the author to drastically revise the paper. -->
 
+TODO: Good things
+
+- [] Clear structure
+- []
+
 ## Major comments
 
+TODO: Major comments
+
+- [] It seems messy, need to confirm
+
+## Minor comments
+
+### Incomplete draft
+<!--
 The specifications are currently published as an incomplete draft, a lot of sections are undefined and new work is being merged frequently into the documents.\
 Contributions to the specifications are heavily discussed using the GitHub issue and pull request features, but also chat platforms like Gitter. A review of such a contribution follows strict regulations. A contribution is encouraged to come with a sophisticated explanation on why this change is appropriate. Each topic within the specifications have editors to them assigned who are responsible . A few example topics are:
 
@@ -41,10 +54,7 @@ Contributions to the specifications are heavily discussed using the GitHub issue
 * Authentication
 * Data Interoperability
 * …
-
-## Minor comments
-
-### Incomplete draft
+ -->
 
 Due to the fact that the specifications are work in progress and even some crucial *sub-specifications*, like WebID-OIDC, are not even started, makes a review challenging, as the documents are subject to additions, removals or changes.
 Even though it can be assumed the general direction of its underlying principles does not change.
@@ -59,15 +69,12 @@ If a missing section in The Solid Ecosystem links to an external specification, 
 
 TODO: more minor comments
 
+- [x] Uses concepts that are also WIP (WebID)
+- [] Does not do a good job on explaining the reason for LDP.
 
 ## Recommendations
 
 TODO: Recommendations
-
-## Remarks
-
-- [x] Uses concepts that are also WIP (WebID)
-- [] Does not do a good job on explaining the reason for LDP.
 
 ## Notes on reviewing
 
