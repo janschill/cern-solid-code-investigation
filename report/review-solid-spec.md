@@ -28,6 +28,11 @@ The main document, titled "The Solid Ecosystem" brings together a set of specifi
 The main document consists of six sections: *(1) Introduction, (2) Authenticated Resource Access, (3) Clients and Apps, (4) Optional Integrations, (5) HTTP Definitions and (6) Security Considerations*.
 
 
+The Solid Ecosystem introduces two crucial terms a **data pod**, which is the decentralized location for the storage of data and a **Solid app** that reads and writes from and to a data pod.\
+Section 3 of The Solid Ecosystem is titled *Clients and Apps* and states that
+
+
+
 ## Good things
 
 <!-- This is not always necessary, especially when the review is generally favorable. However, it is strongly recommended if the review is critical. Such introductions are good psychology if you want the author to drastically revise the paper. -->
@@ -70,11 +75,21 @@ If a missing section in The Solid Ecosystem links to an external specification, 
 TODO: more minor comments
 
 - [x] Uses concepts that are also WIP (WebID)
-- [] Does not do a good job on explaining the reason for LDP.
+- [ ] Does not do a good job on explaining the reason for LDP.
 
 ## Recommendations
 
 TODO: Recommendations
+
+## Notes
+
+### Solid sub-specifications
+
+* [WebID-OIDC](https://solid.github.io/specification/webid-oidc/)
+* [WebID-TLS](https://solid.github.io/specification/webid-tls/)
+* [Web Access Control](https://solid.github.io/specification/wac/)
+* [Data Footprints](https://solid.github.io/specification/forms/)
+* [Data Pod Management](https://solid.github.io/specification/pod-management/)
 
 ## Notes on reviewing
 
