@@ -20,11 +20,11 @@
   * Is a protocol
   * Requests the certificate from client (no need to be signed by well known CA); relies then on, that client has private key matching public key on WebID
 
-* Decentralized, user-centric identity management offers better privacy and control over the use of identity credentials, because it allows the user to choose flexibly what indentity information is being released. p[11]
+* Decentralized, user-centric identity management offers better privacy and control over the use of identity credentials, because it allows the user to choose flexibly what identity information is being released. p[11]
 
 * Three entities: user/browser/client; service provider, identity provider
 * OpenID is a lightweight identity management system
 * RelayState, HTTP parameter with location of original resource requested
-* Content negotation, offering different format and language versions of the same web document over HTTP
+* Content negotiation, offering different format and language versions of the same web document over HTTP
   * HTTP headers to determine the format
 

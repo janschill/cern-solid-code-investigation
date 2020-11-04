@@ -36,7 +36,6 @@ The definitions shall not be introduce using other terminology as the original d
 
 ## Remarks
 
-
 - Does not do a good job on explaining the reason for LDP.
 
 ## Notes on reviewing
