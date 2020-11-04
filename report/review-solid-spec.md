@@ -39,14 +39,14 @@ Section 3 of The Solid Ecosystem is titled *Clients and Apps* and states that
 
 TODO: Good things
 
-- [] Clear structure
-- []
+- [ ] Clear structure
+- [ ]
 
 ## Major comments
 
 TODO: Major comments
 
-- [] It seems messy, need to confirm
+- [ ] It seems messy, need to confirm
 
 ## Minor comments
 
