@@ -15,6 +15,7 @@ chmod
 chown
 cloudflare
 codimd
+colostate
 config
 CPPFLAGS
 csail
@@ -52,6 +53,7 @@ hsts
 html
 http
 hyperlink
+hypertext
 independetly
 inox
 interoperability
@@ -68,12 +70,14 @@ Kanban
 LDFLAGS
 ldp
 ldpc
+LDPR
 letsencrypt
 linkeddata
 Linux
 localhost
 Maged
 Mansour
+meier
 metadata
 Michiel
 michielbdejong
@@ -92,6 +96,7 @@ nslookup
 NSS
 NX
 OAuth
+OIDC
 openid
 openssl
 ouvertes
@@ -113,6 +118,7 @@ scenaristeur
 schill
 sestoft
 solidproject
+SPARQL
 ssl
 SSO
 stackoverflow
@@ -143,7 +149,3 @@ Xcode
 yml
 yy
 zlib
-colostate
-LDPR
-meier
-SPARQL
