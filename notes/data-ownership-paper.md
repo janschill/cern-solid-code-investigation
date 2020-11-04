@@ -12,4 +12,4 @@
   * RDF and Turtle format to let the computer understand the resources and its relationship
   * RDF is about making statements about resources in form subject-predicate-object expressions (triples)
 * WebID
-  * HTTP URI uniquily
+  * HTTP URI uniquely
