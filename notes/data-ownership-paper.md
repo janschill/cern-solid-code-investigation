@@ -13,3 +13,15 @@
   * RDF is about making statements about resources in form subject-predicate-object expressions (triples)
 * WebID
   * HTTP URI uniquely
+  * Can link to other WebID for web of trust (friends)
+  * Work in progress by WWW consortium
+* WebID-TLS
+  * Authentication by using WebID and TLS
+  * Is a protocol
+  * Requests the certificate from client (no need to be signed by well known CA); relies then on, that client has private key matching public key on WebID
+
+* Decentralized, user-centric identity management offers better privacy and control over the use of identity credentials, because it allows the user to choose flexibly what indentity information is being released. p[11]
+
+* Three instance: user/browser/client; service provider, identity provider
+
+
