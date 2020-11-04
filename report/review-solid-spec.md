@@ -62,7 +62,7 @@ An application developed to the rules of today's Solid rules could result in the
 
 ### Usage of incomplete concepts
 
-The Solid Ecosystem uses not only its own specifications, but also external specifications and capitilizes on sophosticated technologies like the hypertext transfer protocol (HTTP).
+The Solid Ecosystem uses not only its own specifications, but also external specifications and capitalizes on sophisticated technologies like the hypertext transfer protocol (HTTP).
 But it also references some technologies that have not been around for as long as HTTP, like WebID.\
 WebID in itself is also defined in an incomplete technical report. It being incomplete as well, creates a chain of uncertainty towards their definitions.\
 If a missing section in The Solid Ecosystem links to an external specification, one could use that document as a source of truth, but if it is also incomplete, the risk of building something that becomes inaccurate increases.
