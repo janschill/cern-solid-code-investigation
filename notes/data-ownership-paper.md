@@ -28,3 +28,14 @@
 * Content negotiation, offering different format and language versions of the same web document over HTTP
   * HTTP headers to determine the format
 
+```
+Request:
+GET /people HTTP/1.1
+Host barry.example
+Accept: text/turtle
+
+Response:
+HTTP/1.1 200 OK
+Content-Type: text/turtle
+Content-Location: https://barry.example/people
+```
