@@ -22,7 +22,7 @@ The main document consists of six sections: *(1) Introduction, (2) Authenticated
 ## Summary
 
 The specification defines a few terms in the beginning, which are crucial in understanding the document and Solid generally.
-The definitions shall not be introduce using other terminalogy as the original definitons are already short and concise:
+The definitions shall not be introduce using other terminology as the original definitions are already short and concise:
 
 "A data pod is a place for storing documents, with mechanisms for controlling who can access what."
 
