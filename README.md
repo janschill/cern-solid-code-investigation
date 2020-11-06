@@ -53,6 +53,7 @@ The defined milestones give detailed descriptions on what should be when achieve
 - [Data ownership and interoperability for a decentralized social semantic web](https://tel.archives-ouvertes.fr/tel-00917965/document)
 - [Linked Research on the Decentralised Web](https://csarven.ca/linked-research-decentralised-web)
 - [User guide](https://github.com/solid/userguide)
+- [OpenID Connect](https://openid.net/connect/)
 
 ##### Solid Pod
 
@@ -64,6 +65,16 @@ The defined milestones give detailed descriptions on what should be when achieve
 - [Let's Encrypt](https://letsencrypt.org/getting-started/)
 - [ESS documentation](https://docs.inrupt.com/ess/)
 - [ESS product page](https://inrupt.com/products/enterprise-solid-server/)
+
+##### Solid development tools
+
+- [OpenID Connect Resource Server]https://github.com/solid/oidc-rs
+
+##### Solid specifications
+
+- [Official specifications](https://solid.github.io/specification/)
+- [Repository of specifications](https://github.com/solid/specification/)
+- [Unpublished specifications](https://github.com/solid/solid-spec/)
 
 ##### Applications
 
