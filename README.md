@@ -68,7 +68,7 @@ The defined milestones give detailed descriptions on what should be when achieve
 
 ##### Solid development tools
 
-- [OpenID Connect Resource Server]https://github.com/solid/oidc-rs
+- [OpenID Connect Resource Server](https://github.com/solid/oidc-rs)
 
 ##### Solid specifications
 
