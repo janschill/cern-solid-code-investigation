@@ -78,9 +78,10 @@ The defined milestones give detailed descriptions on what should be when achieve
 
 ##### Applications
 
+- [Official list of apps](https://solidproject.org/use-solid/apps)
 - [PodBrowser product page](https://inrupt.com/products/podbrowser/)
 - [PodBrowser application](https://podbrowser.inrupt.com/)
-- [Official list of apps](https://solidproject.org/use-solid/apps)
+- [PodBrowser repository](https://github.com/inrupt/pod-browser)
 - [dokieli](https://dokie.li/)
 - [Inox](https://www.inox.app/)
 - [Media Kraken](https://noeldemartin.github.io/media-kraken/login)
