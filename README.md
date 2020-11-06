@@ -58,13 +58,17 @@ The defined milestones give detailed descriptions on what should be when achieve
 
 - [NSS homepage](https://github.com/solid/node-solid-server)
 - [NSS Docker homepage](https://github.com/angelo-v/docker-solid-server)
-- [Setting up a Pod server](https://solidproject.org/for-developers/pod-server)
+- [NSS setting up a Pod server](https://solidproject.org/for-developers/pod-server)
 - [Docker Let's Encrypt & NGiNX-proxy](https://github.com/nginx-proxy/docker-letsencrypt-nginx-proxy-companion)
 - [DigitalOcean NGiNX reverse proxy](https://www.digitalocean.com/community/tutorials/how-to-configure-nginx-as-a-web-server-and-reverse-proxy-for-apache-on-one-ubuntu-20-04-server)
 - [Let's Encrypt](https://letsencrypt.org/getting-started/)
+- [ESS documentation](https://docs.inrupt.com/ess/)
+- [ESS product page](https://inrupt.com/products/enterprise-solid-server/)
 
 ##### Applications
 
+- [PodBrowser product page](https://inrupt.com/products/podbrowser/)
+- [PodBrowser application](https://podbrowser.inrupt.com/)
 - [Official list of apps](https://solidproject.org/use-solid/apps)
 - [dokieli](https://dokie.li/)
 - [Inox](https://www.inox.app/)
@@ -75,7 +79,9 @@ The defined milestones give detailed descriptions on what should be when achieve
 
 ##### Solid World
 
-[Solid World 2020-10-01 notes](https://codimd.web.cern.ch/s/SJIriOm8D#)
+- [Solid event page](https://solidproject.org/events)
+- [Solid World 2020-10-01 Maria's notes](https://codimd.web.cern.ch/s/SJIriOm8D#)
+- [Solid World 2020-11-05 Maria's notes](https://codimd.web.cern.ch/s/LXhE5VyrO#)
 
 #### CERN-Solid
 
