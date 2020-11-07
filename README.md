@@ -89,6 +89,19 @@ The defined milestones give detailed descriptions on what should be when achieve
 - [Notepod](https://gitlab.com/vincenttunru/notepod)
 - [Empty Solid App](https://github.com/michielbdejong/empty-solid-app)
 
+##### Technologies
+
+- [RDF 1.1 Concepts and Abstract Syntax](https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/)
+- [RDF Schema 1.1](https://www.w3.org/TR/rdf-schema/)
+- [RDF 1.1 Semantics](https://www.w3.org/TR/2014/REC-rdf11-mt-20140225/#bib-RDF11-CONCEPTS)
+- [RDF 1.1 Turtle](https://www.w3.org/TR/2014/REC-turtle-20140225/)
+- [Linked Data](https://www.w3.org/DesignIssues/LinkedData.html)
+- [Linked Data Platform 1.0](https://www.w3.org/TR/ldp/)
+- [Linked Data Platform Use Cases and Requirements](https://www.w3.org/TR/ldp-ucr/)
+- [Linked Data Platform Best Practices and Guidelines](https://www.w3.org/TR/ldp-bp/)
+- [SPARQL 1.1 Query Language](https://www.w3.org/TR/sparql11-query/)
+
+
 ##### Solid World
 
 - [Solid event page](https://solidproject.org/events)
