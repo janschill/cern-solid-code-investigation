@@ -18,12 +18,27 @@ The definitions shall not be introduce using other terminology as the original d
 
 --- -->
 
+[The Solid Ecosystem](https://solid.github.io/specification/) is a publication that outlines "how Solid servers and clients can be interoperable by using communication protocols, global identifiers, authentication and authorization mechanisms, data formats and shapes, and query interfaces" [Source](https://solid.github.io/specification/#intro).
+It does so by combining a set of technical specifications that were either defined by the Solid team in the progress or are existing specifications
 
-[The Solid Ecosystem](https://solid.github.io/specification/) is a publication that outlines all technical and non-technical parts of the Solid Ecosystem. It does so in the form of specifications which define their correct means of implementation to ensure the proper usage of the Solid idea.
 
-The main specification describes Solid as "applications with secure and permissioned access to externally stored data in an interoperable way".
+all technical and non-technical parts of how Solid works. It does so in the form of specifications which define their correct means of implementation to ensure the proper usage of the Solid idea. It uses
 
-The main document, titled "The Solid Ecosystem" brings together a set of specifications, either specifications that coin new terms and are being devised at the same time or it reuses existing technical reports by linking to it – mostly being Request for Comments (RFC).\
+
+
+Currently, the document is still in an incomplete draft status and has therefore, a few sections that are not yet defined and written down. In an initial approach of writing down everything about Solid [this](https://github.com/solid/solid-spec/) informal specification was produced.
+It is used as a guide while formulating the real specifications.
+
+
+
+
+The main document, the "The Solid Ecosystem", brings together a set of specifications, either specifications that coin new terms and are being devised at the same time or it reuses existing technical reports by linking to it – mostly being Request for Comments (RFC).\
+
+
+
+
+The main document describes Solid as "applications with secure and permissioned access to externally stored data in an interoperable way".
+
 
 The main document consists of six sections: *(1) Introduction, (2) Authenticated Resource Access, (3) Clients and Apps, (4) Optional Integrations, (5) HTTP Definitions and (6) Security Considerations*.
 
@@ -32,6 +47,22 @@ The Solid Ecosystem introduces two crucial terms a **data pod**, which is the de
 
 
 Section 3 of The Solid Ecosystem is titled *Clients and Apps* and states that it will give an implementation guidance, but because it is missing, it cannot be reasoned about. Therefore, an evaluation of existing Solid applications will be conducted.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

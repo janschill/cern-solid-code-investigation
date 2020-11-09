@@ -8,6 +8,7 @@
 * [Shared slash semantics](https://solid.github.io/specification/#uri-slash-semantics)
 * [Resource type heuristics - Why do I want this feature?](https://solid.github.io/specification/#resource-type-heuristics)
 * HEAD and OPTIONS methods
+* Accept-Put Response Header
 
 ### Summary
 
