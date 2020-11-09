@@ -4,6 +4,7 @@ angelo
 api
 apps
 asc
+authn
 backend
 berners
 blog
@@ -112,6 +113,7 @@ png
 podbrowser
 privkey
 pyenv
+rdf
 rdflib
 roadmap
 rubensworks
@@ -134,6 +136,7 @@ tls
 TODO
 tulpen
 ubuntu
+ucr
 uninstall
 uqam
 uri
@@ -141,6 +144,7 @@ URL
 userguide
 username
 usr
+vcard
 vincenttunru
 visualstudio
 vue
