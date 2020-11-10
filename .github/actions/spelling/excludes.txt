@@ -3,3 +3,4 @@
 \.docx$
 ^\.github/
 \.gitignore
+code/
