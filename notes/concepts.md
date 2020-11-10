@@ -13,6 +13,7 @@
   - [Source](https://docs.inrupt.com/developer-tools/javascript/client-libraries/tutorial/authenticate/)
 - [Vocabularies](https://docs.inrupt.com/developer-tools/javascript/client-libraries/tutorial/use-vocabularies/)
   - [vCard-rdf])https://www.w3.org/TR/vcard-rdf/)
+
 ## HTTP request methods
 
 The `HEAD` method requests the resources the same way as GET, but without the response body.
