@@ -122,6 +122,8 @@ TODO: more minor comments
 - [x] Does not do a good job on explaining the reason for LDP.
 - [x] Does not go into great detail of implementation of Solid clients
 - [ ] Shapes?
+- [ ] Sometimes terms are used before they are defined and not linked.
+- [ ] Assumes a good deal of knowledge about web technologies that are not common to the basic: HTTP, URI, HTML technologies
 
 ## Recommendations
 
@@ -148,8 +150,17 @@ In other words the Slug header provides a means for a client to suggest the URI 
 
 ETag is an HTTP header field for Web cache validation, which allows a client to make conditional requests.
 
+### Auxiliary resource
 
+"An auxiliary resource may provide supplementary information about a given Solid resource, or affect how that resource and others associated with it are processed, served, or interpreted."
 
+#### Examples
+
+"A binary JPEG image linked to an auxiliary resource that includes information describing that binary JPEG."
+
+This describes an ACL resource:
+
+"A container linked to an auxiliary resource that includes access control statements for that container and the resources that belong to it."
 
 ### Solid sub-specifications
 
