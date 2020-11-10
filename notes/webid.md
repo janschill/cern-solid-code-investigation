@@ -18,7 +18,7 @@ WebID requires that the server support the Turtle data representation of profile
 
 WebID RDF graphs are described using vocabularies identified by URIs. [Source](https://dvcs.w3.org/hg/WebID/raw-file/tip/spec/identity-respec.html#webid-profile-vocabulary)
 
-Example turtle represenation of the WebID profile with the WebID `https://bob.example.org/profile#me`.
+Example turtle representation of the WebID profile with the WebID `https://bob.example.org/profile#me`.
 
 ```
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
