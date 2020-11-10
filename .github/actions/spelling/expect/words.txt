@@ -11,6 +11,7 @@ bbc
 berners
 blog
 Capadisli
+cdivilly
 cernbox
 certbot
 certonly
@@ -36,6 +37,7 @@ dokieli
 dvcs
 ECTS
 edu
+ETag
 evertramos
 foaf
 freecodecamp
@@ -61,6 +63,7 @@ http
 httpwg
 hyperlink
 hypertext
+ietf
 img
 independetly
 inox
@@ -82,6 +85,7 @@ ldp
 ldpc
 LDPR
 letsencrypt
+lifecycle
 linkeddata
 Linux
 localhost
