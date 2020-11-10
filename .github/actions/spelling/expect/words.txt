@@ -1,11 +1,13 @@
 Abdurrahman
 Aboulnaga
+acl
 angelo
 api
 apps
 asc
 authn
 backend
+bbc
 berners
 blog
 Capadisli
@@ -23,6 +25,7 @@ csail
 csarven
 dasya
 datastore
+delinked
 digitalocean
 Dimou
 disqus
@@ -30,9 +33,11 @@ dns
 Dockerfile
 dokie
 dokieli
+dvcs
 ECTS
 edu
 evertramos
+foaf
 freecodecamp
 frontend
 fullchain
@@ -53,8 +58,10 @@ howto
 hsts
 html
 http
+httpwg
 hyperlink
 hypertext
+img
 independetly
 inox
 inrupt
@@ -67,6 +74,7 @@ jan
 janschill
 javascript
 Jong
+jpg
 json
 Kanban
 LDFLAGS
@@ -88,6 +96,7 @@ michielbdejong
 MITM
 mkdir
 Moennich
+Msc
 netstat
 NGi
 nginx
@@ -115,6 +124,9 @@ privkey
 pyenv
 rdf
 rdflib
+reprioritized
+respec
+rfc
 roadmap
 rubensworks
 rubenverborgh
@@ -156,6 +168,7 @@ wiki
 wikipedia
 www
 Xcode
+xmlns
 yml
 yy
 zlib
