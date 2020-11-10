@@ -94,6 +94,7 @@ Contributions to the specifications are heavily discussed using the GitHub issue
 * …
  -->
 
+TODO: revisit this section, as the specifications got update quite a bit
 Due to the fact that the specifications are work in progress and even some crucial *sub-specifications*, like WebID-OIDC, are not even started, makes a review challenging, as the documents are subject to additions, removals or changes.
 Even though it can be assumed the general direction of its underlying principles does not change.
 An application developed to the rules of today's Solid rules could result in the same application not conforming to tomorrow's set of rules.
