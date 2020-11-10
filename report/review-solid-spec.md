@@ -105,10 +105,17 @@ But it also references some technologies that have not been around for as long a
 WebID in itself is also defined in an incomplete technical report. It being incomplete as well, creates a chain of uncertainty towards their definitions.\
 If a missing section in The Solid Ecosystem links to an external specification, one could use that document as a source of truth, but if it is also incomplete, the risk of building something that becomes inaccurate increases.
 
+### Limited information on Solid client
+
+Section [2.1.3](https://solid.github.io/specification/#http-client) going into the requirements for a Solid client implementation is limited in its details.
+It only says that it needs to be an HTTP/1.1 client, must implement the [HTTP Authentication framework](https://httpwg.org/specs/rfc7235.html) and the `Content-Type` HTTP header for `PUT`, `POST` and `PATCH` requests.
+From [this commit](https://github.com/solid/specification/commit/d387e332f3bbc9af8e7ad596fa742530262a76a9) in the Solid specification repository it can be assumed that a section for client implementation was planned, but reprioritized and delinked from the main document.
+
 TODO: more minor comments
 
 - [x] Uses concepts that are also WIP (WebID)
 - [ ] Does not do a good job on explaining the reason for LDP.
+- [ ] Does not go into great detail of implementation of Solid clients; Recommendation here
 
 ## Recommendations
 
