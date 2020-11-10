@@ -114,20 +114,42 @@ From [this commit](https://github.com/solid/specification/commit/d387e332f3bbc9a
 
 ### No justification for usage of Linked Data
 
-Even though it might not be the proper place for justifications of the usage of Linked Data as those discussions happen prior to defining the technologies in the documentation, but it seems some clarifications why Linked Data as a technology is being used for data representation.
-
+Even though it might not be the proper place to explain the reasons for choosing specific technologies like Linked Data – as those discussions happen prior to defining the technologies in the documentation – but it seems some clarifications why Linked Data as a technology is being used for data representation might be valuable beyond just stating that is used because of "resource discovery and lifecycle management." [Source](https://solid.github.io/specification/#resource-containment)
 
 TODO: more minor comments
 
 - [x] Uses concepts that are also WIP (WebID)
-- [ ] Does not do a good job on explaining the reason for LDP.
-- [ ] Does not go into great detail of implementation of Solid clients; Recommendation here
+- [x] Does not do a good job on explaining the reason for LDP.
+- [x] Does not go into great detail of implementation of Solid clients
+- [ ] Shapes?
 
 ## Recommendations
 
 TODO: Recommendations
 
 ## Notes
+
+### Slug header
+
+[Source](https://tools.ietf.org/html/rfc5023#section-9.7)
+
+>
+>9.7. The Slug Header
+>
+>Slug is an HTTP entity-header whose presence in a POST to a Collection constitutes a request by the client to use the header’s value as part of any URIs that would normally be used to retrieve the to-be-created Entry or Media Resources.
+>
+>Servers MAY use the value of the Slug header when creating the Member URI of the newly created Resource, for instance, by using some or all of the words in the value for the last URI segment.
+
+In other words the Slug header provides a means for a client to suggest the URI for a newly created resource [Source](https://blog.cdivilly.com/2016/03/01/slug-http-header).
+
+### ETag
+
+[https://en.wikipedia.org/wiki/HTTP_ETag](https://en.wikipedia.org/wiki/HTTP_ETag)
+
+ETag is an HTTP header field for Web cache validation, which allows a client to make conditional requests.
+
+
+
 
 ### Solid sub-specifications
 
