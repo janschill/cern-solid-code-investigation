@@ -123,6 +123,7 @@ TODO: more minor comments
 - [x] Does not go into great detail of implementation of Solid clients
 - [ ] Shapes?
 - [ ] Sometimes terms are used before they are defined and not linked.
+  - ACL resource, auxiliary resource
 - [ ] Assumes a good deal of knowledge about web technologies that are not common to the basic: HTTP, URI, HTML technologies
 
 ## Recommendations
@@ -153,6 +154,8 @@ ETag is an HTTP header field for Web cache validation, which allows a client to 
 ### Auxiliary resource
 
 "An auxiliary resource may provide supplementary information about a given Solid resource, or affect how that resource and others associated with it are processed, served, or interpreted."
+
+"An auxiliary resource linked with a given Solid resource through an HTTP Link header is considered to be directly associated with that resource"
 
 #### Examples
 
