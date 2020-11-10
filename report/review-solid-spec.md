@@ -111,6 +111,11 @@ Section [2.1.3](https://solid.github.io/specification/#http-client) going into t
 It only says that it needs to be an HTTP/1.1 client, must implement the [HTTP Authentication framework](https://httpwg.org/specs/rfc7235.html) and the `Content-Type` HTTP header for `PUT`, `POST` and `PATCH` requests.
 From [this commit](https://github.com/solid/specification/commit/d387e332f3bbc9af8e7ad596fa742530262a76a9) in the Solid specification repository it can be assumed that a section for client implementation was planned, but reprioritized and delinked from the main document.
 
+### No justification for usage of Linked Data
+
+Even though it might not be the proper place for justifications of the usage of Linked Data as those discussions happen prior to defining the technologies in the documentation, but it seems some clarifications why Linked Data as a technology is being used for data representation.
+
+
 TODO: more minor comments
 
 - [x] Uses concepts that are also WIP (WebID)
