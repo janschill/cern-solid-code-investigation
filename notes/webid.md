@@ -35,7 +35,6 @@ Example turtle representation of the WebID profile with the WebID `https://bob.e
 
 Privacy can be achieved by placing information into separate documents, that have limited access by access control policies.
 
-
 ```
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
