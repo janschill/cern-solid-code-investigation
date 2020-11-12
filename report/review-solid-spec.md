@@ -44,6 +44,8 @@ The intention of the document is to "explain the easiest way to understand how S
 The main specification starts off by describing how a data pod and a Solid app should be implemented using the HTTP protocol in section [2. Resource Access](https://solid.github.io/specification/#resource-access). A data pod is a web server that responds to HTTP requests and returns HTTP responses. Its purpose is the storage of data and who is allowed to access this data.\
 A Solid app is the client that is sending requests to a data pod. It should be able to read and write depending on the access control to a data pod.
 
+The section
+
 
 
 TODO: Give short introduction to these topics:
@@ -125,15 +127,15 @@ Even though the document does a great job on going into detail on specific areas
 This can be justified by the incomplete status of the document, but also its contrasting principles to conventional web implementations.
 One example of this is the concept of Linked Data and all its components. It cannot be assumed of the Solid ecosystem to explain all of its linked concepts – as it would render the document redundantly convoluted – but the fact remains that it is challenging to follow.
 
-<!-- TODO: more minor comments
+TODO: more minor comments
 
 - [x] Uses concepts that are also WIP (WebID)
 - [x] Does not do a good job on explaining the reason for LDP.
 - [x] Does not go into great detail of implementation of Solid clients
 - [ ] Shapes?
-- [ ] Sometimes terms are used before they are defined and not linked.
+- [x] Sometimes terms are used before they are defined and not linked.
   - ACL resource, auxiliary resource
-- [x] Assumes a good deal of knowledge about web technologies that are not common to the basic: HTTP, URI, HTML technologies -->
+- [x] Assumes a good deal of knowledge about web technologies that are not common to the basic: HTTP, URI, HTML technologies
 
 ## Recommendations
 
