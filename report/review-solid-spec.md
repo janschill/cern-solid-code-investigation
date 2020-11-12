@@ -57,7 +57,10 @@ For the client implementation it states:
 - HTTP/1.1 Authentication client part
 - Must send the `Content-Type` header with `PUT`, `POST` and `PATCH` requests
 
-Uniform Resource Identifier (URI) play an essential role in the Solid ecosystem.
+Uniform Resource Identifiers (URI) play an essential role in the Solid ecosystem. They give information about the hierarchy of information. Important to note is that the slash character in the end of an URI indicates a container resource. A container resource is an organizing concept in the Linked Data Platform [Source](https://www.w3.org/TR/ldp/#ldpc). <!-- TODO: could need a more thorough explanation here -->
+
+A data pod stores data, therefore, it needs a storage mechanism, which means a "space of URIs in which data can be accessed" [Source](https://solid.github.io/specification/#storage).
+
 
 TODO: Give short introduction to these topics:
 
