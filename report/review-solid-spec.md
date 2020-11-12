@@ -2,6 +2,7 @@
 
 ## Summary
 <!-- ---
+Notes:
 
 The specification defines a few terms in the beginning, which are crucial in understanding the document and Solid generally.
 The definitions shall not be introduce using other terminology as the original definitions are already short and concise:
@@ -16,37 +17,32 @@ The definitions shall not be introduce using other terminology as the original d
 
 "An append operation entails that information can be added but not removed." [[Source]](https://github.com/solid/specification/issues/118#issuecomment-569648485)
 
---- -->
-
 [The Solid Ecosystem](https://solid.github.io/specification/) is a publication that outlines "how Solid servers and clients can be interoperable by using communication protocols, global identifiers, authentication and authorization mechanisms, data formats and shapes, and query interfaces" [Source](https://solid.github.io/specification/#intro).
 It does so by combining a set of technical specifications that were either defined by the Solid team in the progress or are existing specifications
 
-
 all technical and non-technical parts of how Solid works. It does so in the form of specifications which define their correct means of implementation to ensure the proper usage of the Solid idea. It uses
-
-
 
 Currently, the document is still in an incomplete draft status and has therefore, a few sections that are not yet defined and written down. In an initial approach of writing down everything about Solid [this](https://github.com/solid/solid-spec/) informal specification was produced.
 It is used as a guide while formulating the real specifications.
 
-
-
-
 The main document, the "The Solid Ecosystem", brings together a set of specifications, either specifications that coin new terms and are being devised at the same time or it reuses existing technical reports by linking to it – mostly being Request for Comments (RFC).\
-
-
-
 
 The main document describes Solid as "applications with secure and permissioned access to externally stored data in an interoperable way".
 
-
 The main document consists of six sections: *(1) Introduction, (2) Authenticated Resource Access, (3) Clients and Apps, (4) Optional Integrations, (5) HTTP Definitions and (6) Security Considerations*.
-
 
 The Solid Ecosystem introduces two crucial terms a **data pod**, which is the decentralized location for the storage of data and a **Solid app** that reads and writes from and to a data pod.\
 
+Section 3 of The Solid Ecosystem is titled *Clients and Apps* and states that it will give an implementation guidance, but because it is missing, it cannot be reasoned about. Therefore, an evaluation of existing Solid applications will be conducted. -->
 
-Section 3 of The Solid Ecosystem is titled *Clients and Apps* and states that it will give an implementation guidance, but because it is missing, it cannot be reasoned about. Therefore, an evaluation of existing Solid applications will be conducted.
+*Note: Assume that prior to this part in the report Solid has been thoroughly described*
+
+[The Solid Ecosystem](https://solid.github.io/specification/) is a by the [Solid editorial team](https://github.com/solid/process/blob/master/panels.md) published technical report. It is the official rewrite of the informal Solid specification, which was intially used to define the architecture of Solid servers and clients. This rewrite is still incomplete and being worked on continuously.\
+The Solid ecosystem combines a set of carefully selected specifications that were adopted or newly defined, to bring together the architecture that aligns the principles and values of Solid. These components are loosely coupled can therefore evolve as independently as possible, to ensure flexibility and robustness [Intro p4](https://solid.github.io/specification/#intro).\
+The intention of the document is to "explain the easiest way to understand how Solid works, as opposed to easiest way for building servers and clients" [Intro p6](https://solid.github.io/specification/#intro).
+
+
+
 
 
 
@@ -98,6 +94,8 @@ TODO: revisit this section, as the specifications got update quite a bit
 Missing sections:
 
 - Web Access Control specification [draft defined here](https://www.w3.org/wiki/WebAccessControl)
+- Client & Apps removed
+-
 
 Due to the fact that the specifications are work in progress and even some crucial *sub-specifications*, like WebID-OIDC, are not even started, makes a review challenging, as the documents are subject to additions, removals or changes.
 Even though it can be assumed the general direction of its underlying principles does not change.
