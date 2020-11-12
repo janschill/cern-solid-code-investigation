@@ -11,13 +11,13 @@ The definitions shall not be introduce using other terminology as the original d
 
 "A Solid app is an application that reads or writes data from one or more [data pods](https://solid.github.io/specification/#data-pod)."
 
-"A read operation entails that information about a resource’s existence or its description can be known." [[Source]](https://github.com/solid/specification/issues/149#issue-568433265)
+"A read operation entails that information about a resource’s existence or its description can be known." [[[Source]]](https://github.com/solid/specification/issues/149#issue-568433265)
 
-"A write operation entails that information about resources can be created or removed." [[Source]](https://github.com/solid/specification/issues/126#issuecomment-569920473)
+"A write operation entails that information about resources can be created or removed." [[[Source]]](https://github.com/solid/specification/issues/126#issuecomment-569920473)
 
-"An append operation entails that information can be added but not removed." [[Source]](https://github.com/solid/specification/issues/118#issuecomment-569648485)
+"An append operation entails that information can be added but not removed." [[[Source]]](https://github.com/solid/specification/issues/118#issuecomment-569648485)
 
-[The Solid Ecosystem](https://solid.github.io/specification/) is a publication that outlines "how Solid servers and clients can be interoperable by using communication protocols, global identifiers, authentication and authorization mechanisms, data formats and shapes, and query interfaces" [Source](https://solid.github.io/specification/#intro).
+[The Solid Ecosystem](https://solid.github.io/specification/) is a publication that outlines "how Solid servers and clients can be interoperable by using communication protocols, global identifiers, authentication and authorization mechanisms, data formats and shapes, and query interfaces" [[Source]](https://solid.github.io/specification/#intro).
 It does so by combining a set of technical specifications that were either defined by the Solid team in the progress or are existing specifications
 
 all technical and non-technical parts of how Solid works. It does so in the form of specifications which define their correct means of implementation to ensure the proper usage of the Solid idea. It uses
@@ -57,9 +57,25 @@ For the client implementation it states:
 - HTTP/1.1 Authentication client part
 - Must send the `Content-Type` header with `PUT`, `POST` and `PATCH` requests
 
-Uniform Resource Identifiers (URI) play an essential role in the Solid ecosystem. They give information about the hierarchy of information. Important to note is that the slash character in the end of an URI indicates a container resource. A container resource is an organizing concept in the Linked Data Platform [Source](https://www.w3.org/TR/ldp/#ldpc). <!-- TODO: could need a more thorough explanation here -->
+Uniform Resource Identifiers (URI) play an essential role in the Solid ecosystem. They give information about the hierarchy of information. Important to note is that the slash character in the end of an URI indicates a container resource. A container resource is an organizing concept in the Linked Data Platform [[Source]](https://www.w3.org/TR/ldp/#ldpc). It stores linked documents or information resources, which handle requests from clients for their creation, modification, traversal of the linked documents [[Source]](https://www.w3.org/TR/ldp/#dfn-linked-data-platform-container).<!-- TODO: could need a more thorough explanation here -->
 
-A data pod stores data, therefore, it needs a storage mechanism, which means a "space of URIs in which data can be accessed" [Source](https://solid.github.io/specification/#storage).
+A data pod stores data, therefore, it needs a storage mechanism, which means a "space of URIs in which data can be accessed" [[Source]](https://solid.github.io/specification/#storage).\
+"There is a 1-1 correspondance between containment triples and relative reference with the path name hierarchy" [[Source]](https://solid.github.io/specification/#resource-containment).
+
+Example from this [comment](https://github.com/solid/specification/issues/98#issuecomment-547506617):
+
+```
+GET http://example.org/container/
+
+<> ldp:contains <resource> .
+```
+
+maps to:
+
+```
+http://example.org/container/resource
+```
+
 
 
 TODO: Give short introduction to these topics:
@@ -67,7 +83,7 @@ TODO: Give short introduction to these topics:
 - [ ] basic behavior
   - [x] server
   - [x] client
-  - [ ] URIs
+  - [x] URIs
   - [ ] storage
 - [ ] how to read and write data to Solid pod
   - [ ] how data is represented
@@ -111,7 +127,7 @@ From [this commit](https://github.com/solid/specification/commit/d387e332f3bbc9a
 
 #### No justification for usage of Linked Data
 
-Even though it might not be the proper place to explain the reasons for choosing specific technologies like Linked Data – as those discussions happen prior to defining the technologies in the documentation – but it seems some clarifications why Linked Data as a technology is being used for data representation might be valuable beyond just stating that is used because of "resource discovery and lifecycle management." [Source](https://solid.github.io/specification/#resource-containment)
+Even though it might not be the proper place to explain the reasons for choosing specific technologies like Linked Data – as those discussions happen prior to defining the technologies in the documentation – but it seems some clarifications why Linked Data as a technology is being used for data representation might be valuable beyond just stating that is used because of "resource discovery and lifecycle management." [[Source]](https://solid.github.io/specification/#resource-containment)
 
 #### Definition order and linkage
 <!-- ACL resource, container resource, auxiliary resource -->
@@ -156,7 +172,7 @@ Solid World:
 
 ### Slug header
 
-[Source](https://tools.ietf.org/html/rfc5023#section-9.7)
+[[Source]](https://tools.ietf.org/html/rfc5023#section-9.7)
 
 >
 >9.7. The Slug Header
@@ -165,7 +181,7 @@ Solid World:
 >
 >Servers MAY use the value of the Slug header when creating the Member URI of the newly created Resource, for instance, by using some or all of the words in the value for the last URI segment.
 
-In other words the Slug header provides a means for a client to suggest the URI for a newly created resource [Source](https://blog.cdivilly.com/2016/03/01/slug-http-header).
+In other words the Slug header provides a means for a client to suggest the URI for a newly created resource [[Source]](https://blog.cdivilly.com/2016/03/01/slug-http-header).
 
 ### ETag
 
@@ -204,7 +220,7 @@ A. Summary of the specification\
 B. Assessment of strengths and weaknesses\
 C. Recommendation
 
-[Source](https://www.cs.colostate.edu/~cs656/alan-meier.pdf):
+[[Source]](https://www.cs.colostate.edu/~cs656/alan-meier.pdf):
 
 (1) Title and author of paper
 (2) Summary of paper
