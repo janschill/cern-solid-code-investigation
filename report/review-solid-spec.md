@@ -61,64 +61,50 @@ The intention of the document is to "explain the easiest way to understand how S
 
 
 
+## Remarks
 
-## Good things
+The Solid ecosystem does a decent job in the claims it makes in the beginning. It does not go into best practices on how to build a Solid server or client, but solemly focusses on the clear definition on what Solid is when looked at technically.\
+Further, the review process seems sophisticated and lively in its discussion.
+Contributions to the specifications are heavily discussed using the GitHub issue and pull request features, but also chat platforms like Gitter. A review of such a contribution follows strict regulations. A contribution is encouraged to come with a sophisticated explanation on why this change is appropriate. Each topic within the specifications have editors to them assigned who are responsible.
 
-<!-- This is not always necessary, especially when the review is generally favorable. However, it is strongly recommended if the review is critical. Such introductions are good psychology if you want the author to drastically revise the paper. -->
+### Minor remarks
 
-TODO: Good things
+<!-- TODO: think about the order of these -->
 
-- [ ] Clear structure
-- [ ]
+#### Incomplete draft
 
-## Major comments
-
-TODO: Major comments
-
-- [ ] It seems messy, need to confirm
-
-## Minor comments
-
-### Incomplete draft
-<!--
-The specifications are currently published as an incomplete draft, a lot of sections are undefined and new work is being merged frequently into the documents.\
-Contributions to the specifications are heavily discussed using the GitHub issue and pull request features, but also chat platforms like Gitter. A review of such a contribution follows strict regulations. A contribution is encouraged to come with a sophisticated explanation on why this change is appropriate. Each topic within the specifications have editors to them assigned who are responsible . A few example topics are:
-
-* Resource Access
-* Authentication
-* Data Interoperability
-* …
- -->
-
-TODO: revisit this section, as the specifications got update quite a bit
-Missing sections:
-
-- Web Access Control specification [draft defined here](https://www.w3.org/wiki/WebAccessControl)
-- Client & Apps removed
--
-
-Due to the fact that the specifications are work in progress and even some crucial *sub-specifications*, like WebID-OIDC, are not even started, makes a review challenging, as the documents are subject to additions, removals or changes.
+Due to the fact that the specifications are work in progress and even some crucial *sub-specifications*, like Web Access Control ([existing draft](https://www.w3.org/wiki/WebAccessControl)), are not even started, makes a review challenging as the documents are subject to additions, removals, or changes.
 Even though it can be assumed the general direction of its underlying principles does not change.
-An application developed to the rules of today's Solid rules could result in the same application not conforming to tomorrow's set of rules.
+An application developed to the rules of today's Solid rules could result in the same application not conforming to tomorrow's set of rules and because the section on how a client should be implemented was temporarily removed from the specification it may likely happen (see Section: [Limited information on Solid client](#limited-information-on-solid-client)).
 
-### Usage of incomplete concepts
+#### Usage of incomplete concepts
 
 The Solid Ecosystem uses not only its own specifications, but also external specifications and capitalizes on sophisticated technologies like the hypertext transfer protocol (HTTP).
 But it also references some technologies that have not been around for as long as HTTP, like WebID.\
 WebID in itself is also defined in an incomplete technical report. It being incomplete as well, creates a chain of uncertainty towards their definitions.\
 If a missing section in The Solid Ecosystem links to an external specification, one could use that document as a source of truth, but if it is also incomplete, the risk of building something that becomes inaccurate increases.
 
-### Limited information on Solid client
+#### Limited information on Solid client
 
 Section [2.1.3](https://solid.github.io/specification/#http-client) going into the requirements for a Solid client implementation is limited in its details.
 It only says that it needs to be an HTTP/1.1 client, must implement the [HTTP Authentication framework](https://httpwg.org/specs/rfc7235.html) and the `Content-Type` HTTP header for `PUT`, `POST` and `PATCH` requests.
 From [this commit](https://github.com/solid/specification/commit/d387e332f3bbc9af8e7ad596fa742530262a76a9) in the Solid specification repository it can be assumed that a section for client implementation was planned, but reprioritized and delinked from the main document.
 
-### No justification for usage of Linked Data
+#### No justification for usage of Linked Data
 
 Even though it might not be the proper place to explain the reasons for choosing specific technologies like Linked Data – as those discussions happen prior to defining the technologies in the documentation – but it seems some clarifications why Linked Data as a technology is being used for data representation might be valuable beyond just stating that is used because of "resource discovery and lifecycle management." [Source](https://solid.github.io/specification/#resource-containment)
 
-TODO: more minor comments
+#### Definition order and linkage
+
+The document introduces many different terms, which are often defined in the document itself. On occassion it happens that something is used before it is defined and not properly linked to its definition. This aggravates the read flow of an unknown reader, as the reader needs to find the definition on its own.
+
+#### Prior knowledge needed
+
+Even though the document does a great job on going into detail on specific areas, it is still demanding to follow with only a limited knowledge in web technologies.\
+This can be justified by the incomplete status of the document, but also its contrasting principles to conventional web implementations.
+One example of this is the concept of Linked Data and all its components. It cannot be assumed of the Solid ecosystem to explain all of its linked concepts – as it would render the document redundantly convoluted – but the fact remains that it is challenging to follow.
+
+<!-- TODO: more minor comments
 
 - [x] Uses concepts that are also WIP (WebID)
 - [x] Does not do a good job on explaining the reason for LDP.
@@ -126,13 +112,13 @@ TODO: more minor comments
 - [ ] Shapes?
 - [ ] Sometimes terms are used before they are defined and not linked.
   - ACL resource, auxiliary resource
-- [ ] Assumes a good deal of knowledge about web technologies that are not common to the basic: HTTP, URI, HTML technologies
+- [x] Assumes a good deal of knowledge about web technologies that are not common to the basic: HTTP, URI, HTML technologies -->
 
 ## Recommendations
 
-TODO: Recommendations
+<!-- TODO: Recommendations -->
 
-## Notes
+<!-- ## Notes
 
 ### Slug header
 
@@ -196,4 +182,4 @@ C. Recommendation
 (5) Minor comments
   This section contains comments on style, figures, grammar, etc. If any of these are especially poor and detract from the overall presentation, then they might escalate to the 'major comments' section. It is acceptable to write these comments in list (or bullet) form.
 (6) Recommendations
-  Some referees will shower papers with invective even when they like it. An editor may not recognize this habit, and interpret the criticism as grounds not to publish the paper. For these reasons, it is worthwhile to tell the editor if the paper should be published. Three major categories of recommendations are: "publish as is", "publish after corrections have been made", and "reject". Sometimes the recommendations fit better in the cover letter.
+  Some referees will shower papers with invective even when they like it. An editor may not recognize this habit, and interpret the criticism as grounds not to publish the paper. For these reasons, it is worthwhile to tell the editor if the paper should be published. Three major categories of recommendations are: "publish as is", "publish after corrections have been made", and "reject". Sometimes the recommendations fit better in the cover letter. -->
