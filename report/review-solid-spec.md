@@ -41,6 +41,11 @@ Section 3 of The Solid Ecosystem is titled *Clients and Apps* and states that it
 The Solid ecosystem combines a set of carefully selected specifications that were adopted or newly defined, to bring together the architecture that aligns the principles and values of Solid. These components are loosely coupled can therefore evolve as independently as possible, to ensure flexibility and robustness [Intro p4](https://solid.github.io/specification/#intro).\
 The intention of the document is to "explain the easiest way to understand how Solid works, as opposed to easiest way for building servers and clients" [Intro p6](https://solid.github.io/specification/#intro).
 
+The main specification starts off by describing how a data pod and a Solid app should be implemented using the HTTP protocol in section [2. Resource Access](https://solid.github.io/specification/#resource-access). A data pod is a web server that responds to HTTP requests and returns HTTP responses. Its purpose is the storage of data and who is allowed to access this data.\
+A Solid app is the client that is sending requests to a data pod. It should be able to read and write depending on the access control to a data pod.
+
+
+
 TODO: Give short introduction to these topics:
 
 - [ ] basic behavior
