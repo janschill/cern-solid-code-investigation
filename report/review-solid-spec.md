@@ -80,15 +80,16 @@ maps to:
 http://example.org/container/resource
 ```
 
-Important to mention is that the root container needs an ACL auxiliary resource with `acl:Control` access privilige associated with it [[Source]](https://solid.github.io/specification/#storage).
-
-
+Important to mention is that the root container needs an Access Control List (ACL) auxiliary resource with `acl:Control` access privilige associated with it [[Source]](https://solid.github.io/specification/#storage).
+An auxiliary resource exists to give additional information, like configuration, processing, or interpretation about a Solid resource, for example: "A container linked to an auxiliary resource that includes access control statements for that container and the resources that belong to it."
+`acl:Control` means that the user has complete control, in other words: read, write and append access [[Source]](https://www.w3.org/wiki/WebAccessControl#WAC_relation_to_HTTP_Verbs). <!-- TODO: this might not be completely true -->
+*[Interesting comment](https://github.com/solid/specification/issues/197#issuecomment-699937520).*
 
 
 
 TODO: Give short introduction to these topics:
 
-- [ ] basic behavior
+- [x] basic behavior
   - [x] server
   - [x] client
   - [x] URIs
