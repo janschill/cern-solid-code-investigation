@@ -60,6 +60,10 @@ For the client implementation it states:
 Uniform Resource Identifiers (URI) play an essential role in the Solid ecosystem. They give information about the hierarchy of information. Important to note is that the slash character in the end of an URI indicates a container resource. A container resource is an organizing concept in the Linked Data Platform [[Source]](https://www.w3.org/TR/ldp/#ldpc). It stores linked documents or information resources, which handle requests from clients for their creation, modification, traversal of the linked documents [[Source]](https://www.w3.org/TR/ldp/#dfn-linked-data-platform-container).<!-- TODO: could need a more thorough explanation here -->
 
 A data pod stores data, therefore, it needs a storage mechanism, which means a "space of URIs in which data can be accessed" [[Source]](https://solid.github.io/specification/#storage).\
+Solid uses containment. Containment is the relationship binding between a container (LDPC) and its resources (LDPR). The lifecycles of the LDPRs is limited by the lifecycle of its LDPC, as a resource cannot be stored without a container [[Source]](https://www.w3.org/TR/ldp/#dfn-containment).
+"A storage is the root container for all its contained resources" [[Source]](https://solid.github.io/specification/#storage).\
+An LDPC maintains a list of containment triples, which have the form of (LDPC URI, ldp:contains, document-URI) and list all the by the LDPC created documents.
+
 "There is a 1-1 correspondance between containment triples and relative reference with the path name hierarchy" [[Source]](https://solid.github.io/specification/#resource-containment).
 
 Example from this [comment](https://github.com/solid/specification/issues/98#issuecomment-547506617):
@@ -76,6 +80,10 @@ maps to:
 http://example.org/container/resource
 ```
 
+Important to mention is that the root container needs an ACL auxiliary resource with `acl:Control` access privilige associated with it [[Source]](https://solid.github.io/specification/#storage).
+
+
+
 
 
 TODO: Give short introduction to these topics:
@@ -84,7 +92,8 @@ TODO: Give short introduction to these topics:
   - [x] server
   - [x] client
   - [x] URIs
-  - [ ] storage
+  - [x] storage
+  - [x] containment
 - [ ] how to read and write data to Solid pod
   - [ ] how data is represented
 - [ ] what are auxiliary resources
