@@ -79,7 +79,7 @@ TODO: Give short introduction to these topics:
 
 ## Remarks
 
-The Solid ecosystem does a decent job in the claims it makes in the beginning. It does not go into best practices on how to build a Solid server or client, but solemly focusses on the clear definition on what Solid is when looked at technically.\
+The Solid ecosystem does a decent job in the claims it makes in the beginning. It does not go into best practices on how to build a Solid server or client, but solely focusses on the clear definition on what Solid is when looked at technically.\
 Further, the review process seems sophisticated and lively in its discussion.
 Contributions to the specifications are heavily discussed using the GitHub issue and pull request features, but also chat platforms like Gitter. A review of such a contribution follows strict regulations. A contribution is encouraged to come with a sophisticated explanation on why this change is appropriate. Each topic within the specifications have editors to them assigned who are responsible.
 
@@ -112,7 +112,7 @@ Even though it might not be the proper place to explain the reasons for choosing
 
 #### Definition order and linkage
 
-The document introduces many different terms, which are often defined in the document itself. On occassion it happens that something is used before it is defined and not properly linked to its definition. This aggravates the read flow of an unknown reader, as the reader needs to find the definition on its own.
+The document introduces many different terms, which are often defined in the document itself. On occasion it happens that something is used before it is defined and not properly linked to its definition. This aggravates the read flow of an unknown reader, as the reader needs to find the definition on its own.
 
 #### Prior knowledge needed
 
