@@ -14,7 +14,7 @@ Linked Data Platform Resource (LDPR) is an HTTP resource …
 ### Questions
 
 - What is the state talked about in LDPR etc.
-- 
+-
 
 ## Containers
 
@@ -34,3 +34,8 @@ An organizing concept: blog posts are grouped into blogs.
   *
 * Municipality Operational Monitoring
   * To effectively and efficiently collect, produce and analyze loosely coupled standard data sources is needed.
+
+## Linked Data Shapes, Forms and Footprints
+
+[Linked Data Shapes, Forms and Footprints](https://www.w3.org/DesignIssues/Footprints.html)
+
