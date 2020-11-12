@@ -41,18 +41,29 @@ Section 3 of The Solid Ecosystem is titled *Clients and Apps* and states that it
 The Solid ecosystem combines a set of carefully selected specifications that were adopted or newly defined, to bring together the architecture that aligns the principles and values of Solid. These components are loosely coupled can therefore evolve as independently as possible, to ensure flexibility and robustness [Intro p4](https://solid.github.io/specification/#intro).\
 The intention of the document is to "explain the easiest way to understand how Solid works, as opposed to easiest way for building servers and clients" [Intro p6](https://solid.github.io/specification/#intro).
 
-The main specification starts off by describing how a data pod and a Solid app should be implemented using the HTTP protocol in section [2. Resource Access](https://solid.github.io/specification/#resource-access). A data pod is a web server that responds to HTTP requests and returns HTTP responses. Its purpose is the storage of data and who is allowed to access this data.\
-A Solid app is the client that is sending requests to a data pod. It should be able to read and write depending on the access control to a data pod.
+The main specification starts off by describing how a data pod and a Solid app should be implemented using the HTTP protocol in section [2. Resource Access](https://solid.github.io/specification/#resource-access). A data pod is a web server that responds to HTTP requests and returns HTTP responses. Its purpose is the storage of data and the management of who has access to this data.\
+A Solid app is a client that is sending requests to a data pod. It should be able to read and write depending on the access control to a data pod.\
+The current state of the specification does not go beyond saying that the server must implement the following:
+<!-- TODO: not sure if this is needed -->
+- HTTP/1.1
+- HTTP/1.1 Conditional Requests
+- HTTP/1.1 Authentication
+  - Without proper credential respond with a 401 HTTP response code
+- Reject `PUT`, `POST` and `PATCH` without a `Content-Type` header with HTTP response code 400
 
-The section
+For the client implementation it states:
 
+- HTTP/1.1
+- HTTP/1.1 Authentication client part
+- Must send the `Content-Type` header with `PUT`, `POST` and `PATCH` requests
 
+Uniform Resource Identifier (URI) play an essential role in the Solid ecosystem.
 
 TODO: Give short introduction to these topics:
 
 - [ ] basic behavior
-  - [ ] server
-  - [ ] client
+  - [x] server
+  - [x] client
   - [ ] URIs
   - [ ] storage
 - [ ] how to read and write data to Solid pod
@@ -65,24 +76,6 @@ TODO: Give short introduction to these topics:
 - [ ] WAC: how to make sure the correct access controls are given to users in a decentralized cross-domain system
 - [ ] New HTTP response header
 - [ ] Security considerations
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## Remarks
 
@@ -118,7 +111,7 @@ From [this commit](https://github.com/solid/specification/commit/d387e332f3bbc9a
 Even though it might not be the proper place to explain the reasons for choosing specific technologies like Linked Data – as those discussions happen prior to defining the technologies in the documentation – but it seems some clarifications why Linked Data as a technology is being used for data representation might be valuable beyond just stating that is used because of "resource discovery and lifecycle management." [Source](https://solid.github.io/specification/#resource-containment)
 
 #### Definition order and linkage
-
+<!-- ACL resource, container resource, auxiliary resource -->
 The document introduces many different terms, which are often defined in the document itself. On occasion it happens that something is used before it is defined and not properly linked to its definition. This aggravates the read flow of an unknown reader, as the reader needs to find the definition on its own.
 
 #### Prior knowledge needed
@@ -132,10 +125,25 @@ TODO: more minor comments
 - [x] Uses concepts that are also WIP (WebID)
 - [x] Does not do a good job on explaining the reason for LDP.
 - [x] Does not go into great detail of implementation of Solid clients
-- [ ] Shapes?
+- ~[ ] Shapes?~
 - [x] Sometimes terms are used before they are defined and not linked.
   - ACL resource, auxiliary resource
 - [x] Assumes a good deal of knowledge about web technologies that are not common to the basic: HTTP, URI, HTML technologies
+
+Issues:
+
+- Look into shapes; they are not concrete yet; it could be nice for a recommendation (from repos)
+- Give access to this markdown
+- Chat with Ruben, publish this file
+- Not before Christmas, "How to set up a pod with maintaince" (demystify)
+
+
+Solid World:
+
+- Understanding from spec
+- What I want for Indico
+- What I need for the extensions
+
 
 ## Recommendations
 
