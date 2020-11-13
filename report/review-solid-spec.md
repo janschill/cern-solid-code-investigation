@@ -83,7 +83,10 @@ http://example.org/container/resource
 Important to mention is that the root container needs an Access Control List (ACL) auxiliary resource with `acl:Control` access privilige associated with it [[Source]](https://solid.github.io/specification/#storage).
 An auxiliary resource exists to give additional information, like configuration, processing, or interpretation about a Solid resource, for example: "A container linked to an auxiliary resource that includes access control statements for that container and the resources that belong to it."
 `acl:Control` means that the user has complete control, in other words: read, write and append access [[Source]](https://www.w3.org/wiki/WebAccessControl#WAC_relation_to_HTTP_Verbs). <!-- TODO: this might not be completely true -->
-*[Interesting comment](https://github.com/solid/specification/issues/197#issuecomment-699937520).*
+Another example "A binary JPEG image linked to an auxiliary resource that includes information describing that binary JPEG." makes the need a bit more clear, as a binary JPEG image does not carry any machine readable information.
+
+To extend on the previous mentioned necessity of `acl:Control` on the root container, TODO: more here *[Interesting comment](https://github.com/solid/specification/issues/197#issuecomment-699937520).*\
+
 
 
 
@@ -98,7 +101,7 @@ TODO: Give short introduction to these topics:
 - [ ] how to read and write data to Solid pod
   - [ ] how data is represented
 - [ ] what are auxiliary resources
-  - [ ] why they are needed
+  - [x] why they are needed
   - [ ] how they are implemented/what is needed
 - [ ] WebID: how agents/users are identified
   - [ ] verification of identification
