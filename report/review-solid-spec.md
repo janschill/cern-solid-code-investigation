@@ -38,6 +38,7 @@ Section 3 of The Solid Ecosystem is titled *Clients and Apps* and states that it
 *Note: Assume that prior to this part in the report Solid has been thoroughly described*
 
 [The Solid Ecosystem](https://solid.github.io/specification/) is a by the [Solid editorial team](https://github.com/solid/process/blob/master/panels.md) published technical report. It is the official rewrite of the informal [Solid specification](https://github.com/solid/solid-spec/), which was intially used to define the architecture of Solid servers and clients. This rewrite is still incomplete and being worked on continuously.\
+
 The Solid ecosystem combines a set of carefully selected specifications that were adopted or newly defined, to bring together the architecture that aligns the principles and values of Solid. These components are loosely coupled can therefore evolve as independently as possible, to ensure flexibility and robustness [Intro p4](https://solid.github.io/specification/#intro).\
 The intention of the document is to "explain the easiest way to understand how Solid works, as opposed to easiest way for building servers and clients" [Intro p6](https://solid.github.io/specification/#intro).
 
