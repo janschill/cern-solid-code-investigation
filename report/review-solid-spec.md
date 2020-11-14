@@ -67,7 +67,7 @@ Solid uses containment. Containment is the relationship binding between a contai
 "A storage is the root container for all its contained resources" [[Source]](https://solid.github.io/specification/#storage).\
 An LDPC maintains a list of containment triples, which have the form of (LDPC URI, ldp:contains, document-URI) and list all the by the LDPC created documents.
 
-"There is a 1-1 correspondance between containment triples and relative reference with the path name hierarchy" [[Source]](https://solid.github.io/specification/#resource-containment).
+"There is a 1-1 correspondence between containment triples and relative reference with the path name hierarchy" [[Source]](https://solid.github.io/specification/#resource-containment).
 
 Example from this [comment](https://github.com/solid/specification/issues/98#issuecomment-547506617):
 
@@ -83,7 +83,7 @@ maps to:
 http://example.org/container/resource
 ```
 
-Important to mention is that the root container needs an Access Control List (ACL) auxiliary resource with `acl:Control` access privilige associated with it [[Source]](https://solid.github.io/specification/#storage).
+Important to mention is that the root container needs an Access Control List (ACL) auxiliary resource with `acl:Control` access privilege associated with it [[Source]](https://solid.github.io/specification/#storage).
 
 An auxiliary resource exists to give additional information, like configuration, processing, or interpretation about a Solid resource, for example: "A container linked to an auxiliary resource that includes access control statements for that container and the resources that belong to it."
 `acl:Control` means that the user has complete control, in other words: read, write and append access [[Source]](https://www.w3.org/wiki/WebAccessControl#WAC_relation_to_HTTP_Verbs). <!-- TODO: this might not be completely true -->
@@ -179,7 +179,7 @@ Issues:
 - Look into shapes; they are not concrete yet; it could be nice for a recommendation (from repos)
 - Give access to this markdown
 - Chat with Ruben, publish this file
-- Not before Christmas, "How to set up a pod with maintaince" (demystify)
+- Not before Christmas, "How to set up a pod without maintenance" (demystify)
 
 
 Solid World:
