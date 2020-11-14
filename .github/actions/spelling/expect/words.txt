@@ -25,6 +25,7 @@ CPPFLAGS
 csail
 csarven
 dasya
+databox
 datastore
 delinked
 dfn
@@ -66,6 +67,7 @@ hyperlink
 hypertext
 ietf
 img
+inbox
 independetly
 inox
 inrupt
@@ -123,6 +125,7 @@ pdos
 pem
 pferreir
 phd
+pim
 png
 podbrowser
 privkey
