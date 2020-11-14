@@ -35,12 +35,14 @@ The Solid Ecosystem introduces two crucial terms a **data pod**, which is the de
 
 Section 3 of The Solid Ecosystem is titled *Clients and Apps* and states that it will give an implementation guidance, but because it is missing, it cannot be reasoned about. Therefore, an evaluation of existing Solid applications will be conducted. -->
 
-*Note: Assume that prior to this part in the report Solid has been thoroughly described*
+*TODO: Assume that prior to this part in the report Solid('s values and principles) has(/have) been thoroughly described.*
+
+Reviewed document at: Editor’s Draft, 13 November 2020
 
 [The Solid Ecosystem](https://solid.github.io/specification/) is a by the [Solid editorial team](https://github.com/solid/process/blob/master/panels.md) published technical report. It is the official rewrite of the informal [Solid specification](https://github.com/solid/solid-spec/), which was intially used to define the architecture of Solid servers and clients. This rewrite is still incomplete and being worked on continuously.\
 
-The Solid ecosystem combines a set of carefully selected specifications that were adopted or newly defined, to bring together the architecture that aligns the principles and values of Solid. These components are loosely coupled can therefore evolve as independently as possible, to ensure flexibility and robustness [Intro p4](https://solid.github.io/specification/#intro).\
-The intention of the document is to "explain the easiest way to understand how Solid works, as opposed to easiest way for building servers and clients" [Intro p6](https://solid.github.io/specification/#intro).
+The Solid ecosystem combines a set of carefully selected specifications that were adopted or newly defined, to bring together an architecture that aligns the principles and values of Solid. These components are loosely coupled, can therefore evolve as independently as possible, to ensure flexibility and robustness [Source p4](https://solid.github.io/specification/#intro).\
+The intention of the document is to "explain the easiest way to understand how Solid works, as opposed to easiest way for building servers and clients" [Source p6](https://solid.github.io/specification/#intro).
 
 The main specification starts off by describing how a data pod and a Solid app should be implemented using the HTTP protocol in section [2. Resource Access](https://solid.github.io/specification/#resource-access). A data pod is a web server that responds to HTTP requests and returns HTTP responses. Its purpose is the storage of data and the management of who has access to this data.\
 A Solid app is a client that is sending requests to a data pod. It should be able to read and write depending on the access control to a data pod.\
@@ -82,9 +84,18 @@ http://example.org/container/resource
 ```
 
 Important to mention is that the root container needs an Access Control List (ACL) auxiliary resource with `acl:Control` access privilige associated with it [[Source]](https://solid.github.io/specification/#storage).
+
 An auxiliary resource exists to give additional information, like configuration, processing, or interpretation about a Solid resource, for example: "A container linked to an auxiliary resource that includes access control statements for that container and the resources that belong to it."
 `acl:Control` means that the user has complete control, in other words: read, write and append access [[Source]](https://www.w3.org/wiki/WebAccessControl#WAC_relation_to_HTTP_Verbs). <!-- TODO: this might not be completely true -->
 Another example "A binary JPEG image linked to an auxiliary resource that includes information describing that binary JPEG." makes the need a bit more clear, as a binary JPEG image does not carry any machine readable information.
+A Solid resource includes the location of its associated auxiliary resources in the `Link` header. These can be discovered by a `GET` or `HEAD` request to the Solid resource.
+
+```
+HEAD https://server.example/resource.ttl
+Link: <https://server.example/acls/24986>; rel="http://www.w3.org/ns/solid/terms#acl"
+Link: <https://server.example/shapes/85432>; rel="http://www.w3.org/ns/solid/terms#shape"
+```
+
 
 To extend on the previous mentioned necessity of `acl:Control` on the root container, TODO: more here *[Interesting comment](https://github.com/solid/specification/issues/197#issuecomment-699937520).*\
 
