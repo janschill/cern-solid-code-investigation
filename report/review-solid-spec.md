@@ -96,16 +96,27 @@ Link: <https://server.example/acls/24986>; rel="http://www.w3.org/ns/solid/terms
 Link: <https://server.example/shapes/85432>; rel="http://www.w3.org/ns/solid/terms#shape"
 ```
 
-The ACL in Solid is realized with Web Access Control (WAC). The section for WAC in not yet written in the Solid specification.
-WAC is similar to access control schemes used in file systems. Its key features are
+The ACL in Solid is realized with Web Access Control (WAC). The section for WAC in not yet written in the Solid specification, but shall be given a short introduction.\
+WAC is similar to access control schemes used in file systems. Files, users and groups are referenced by URLs. Users in particular are identified by WebIDs.
+Its functionality is cross-domain and can therefore have an ACL resource – holding the permissions for an agent – on domain A, while setting the permissions for a file on domain B. The supported modes of operation are read, write, append and control.
+Read and write are self-explanatory, whereas append and control introduce two interesting modes.
+Append allows the agent to add files to a container, without being able to read or write any of the container's files. The idea of an email inbox can be compared to this functionality.\
+Control means that the agent with this permission has access to the ACL resource and can modify it.\
+Permissions are inherited through the ACL inheritance algorithm. The ACL algorithm looks for an ACL resource for the requested file, if none is found, it will check on the file's container, if none is found, it will go recursively up the hierarchy of the containers. The root container must be definition have an ACL resource associated with it.
+The representation of ACL resources is by default in the RDF Turtle format and can be discovered in the `Link` header from the request to the Solid resource – if a specific ACL resource is attached, otherwise through the previously described ACL inheritance algorithm.
 
-resources are identified with URLs
-users and groups are defined by URLS (WebIDs)
-cross-domain, decentralized, the ACL could be on domain A, specifying the rules for files on domain B
-different operations: read, write, append, control
-permissions are inherited through its hierarchy: container with acl:default inherits it to its files, files can then of course have their own specific permissions
+```
+# Contents of https://alice.databox.me/docs/file1.acl
+@prefix  acl:  <http://www.w3.org/ns/auth/acl#>  .
 
-
+<#authorization1>
+    a             acl:Authorization;
+    acl:agent     <https://alice.databox.me/profile/card#me>;  # Alice's WebID
+    acl:accessTo  <https://alice.databox.me/docs/file1>;
+    acl:mode      acl:Read,
+                  acl:Write,
+                  acl:Control.
+```
 
 To extend on the previous mentioned necessity of `acl:Control` on the root container, TODO: more here *[Interesting comment](https://github.com/solid/specification/issues/197#issuecomment-699937520).*\
 
@@ -127,7 +138,7 @@ TODO: Give short introduction to these topics:
   - [x] how they are implemented/what is needed
 - [ ] WebID: how agents/users are identified
   - [ ] verification of identification
-- [ ] WAC: how to make sure the correct access controls are given to users in a decentralized cross-domain system
+- [x] WAC: how to make sure the correct access controls are given to users in a decentralized cross-domain system
 - [ ] New HTTP response header
 - [ ] Security considerations
 
