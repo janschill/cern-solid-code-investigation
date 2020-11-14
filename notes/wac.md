@@ -1,7 +1,10 @@
 # Web Access Control
 
+[Source](https://github.com/solid/web-access-control-spec)
+
 - access control mechanism like many file systems
 - uses operations: read, write, append, control
+  - append: inbox as example, can add files, but not read nor modify
   - control: access to the ACL resource itself
 - permissions are inherited from parten container, if not set specifically
 - resources defined by URL
@@ -21,6 +24,7 @@
   - `acl:agentGroup` for groups of agents
   - `acl:agentClass foaf:Agent` for public access
   - `acl:agentClass acl:AuthenticatedAgent` for everyone logged in
+  - `acl:accessTo` predicate specifies the resource that is given access
 
 ```
 # Contents of https://alice.databox.me/docs/file1.acl
