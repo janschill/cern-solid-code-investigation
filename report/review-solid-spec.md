@@ -96,7 +96,15 @@ Link: <https://server.example/acls/24986>; rel="http://www.w3.org/ns/solid/terms
 Link: <https://server.example/shapes/85432>; rel="http://www.w3.org/ns/solid/terms#shape"
 ```
 
-Go into WAC now
+The ACL in Solid is realized with Web Access Control (WAC). The section for WAC in not yet written in the Solid specification.
+WAC is similar to access control schemes used in file systems. Its key features are
+
+resources are identified with URLs
+users and groups are defined by URLS (WebIDs)
+cross-domain, decentralized, the ACL could be on domain A, specifying the rules for files on domain B
+different operations: read, write, append, control
+permissions are inherited through its hierarchy: container with acl:default inherits it to its files, files can then of course have their own specific permissions
+
 
 
 To extend on the previous mentioned necessity of `acl:Control` on the root container, TODO: more here *[Interesting comment](https://github.com/solid/specification/issues/197#issuecomment-699937520).*\
@@ -166,28 +174,16 @@ Even though the document does a great job on going into detail on specific areas
 This can be justified by the incomplete status of the document, but also its contrasting principles to conventional web implementations.
 One example of this is the concept of Linked Data and all its components. It cannot be assumed of the Solid ecosystem to explain all of its linked concepts – as it would render the document redundantly convoluted – but the fact remains that it is challenging to follow.
 
-TODO: more minor comments
-
-- [x] Uses concepts that are also WIP (WebID)
-- [x] Does not do a good job on explaining the reason for LDP.
-- [x] Does not go into great detail of implementation of Solid clients
-- ~[ ] Shapes?~
-- [x] Sometimes terms are used before they are defined and not linked.
-  - ACL resource, auxiliary resource
-- [x] Assumes a good deal of knowledge about web technologies that are not common to the basic: HTTP, URI, HTML technologies
-
 ## Recommendations
-
-### Reorder the sections
 
 In chapter Linked Data containment go a bit more into Linked Data.
 
 Right after the statement:
 >The root container (pim:Storage) MUST have an ACL auxiliary resource directly associated to it. The associated ACL document MUST include an authorization policy with acl:Control access privilege.
 
-talk about auxiliary resources and
+talk about auxiliary resources and WAC.
 
-I propose to reorder
+
 
 <!-- TODO: Recommendations -->
 
