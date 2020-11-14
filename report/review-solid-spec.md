@@ -96,6 +96,7 @@ Link: <https://server.example/acls/24986>; rel="http://www.w3.org/ns/solid/terms
 Link: <https://server.example/shapes/85432>; rel="http://www.w3.org/ns/solid/terms#shape"
 ```
 
+Go into WAC now
 
 
 To extend on the previous mentioned necessity of `acl:Control` on the root container, TODO: more here *[Interesting comment](https://github.com/solid/specification/issues/197#issuecomment-699937520).*\
@@ -157,7 +158,7 @@ Even though it might not be the proper place to explain the reasons for choosing
 
 #### Definition order and linkage
 <!-- ACL resource, container resource, auxiliary resource -->
-The document introduces many different terms, which are often defined in the document itself. On occasion it happens that something is used before it is defined and not properly linked to its definition. This aggravates the read flow of an unknown reader, as the reader needs to find the definition on its own.
+The document introduces many different terms, which are often defined in the document itself. On occasion it happens that something is used before it is defined and not properly linked to its definition. This aggravates the read flow of a reader unknown to these terms, as the reader needs to find the definition on its own.
 
 #### Prior knowledge needed
 
@@ -175,22 +176,18 @@ TODO: more minor comments
   - ACL resource, auxiliary resource
 - [x] Assumes a good deal of knowledge about web technologies that are not common to the basic: HTTP, URI, HTML technologies
 
-Issues:
-
-- Look into shapes; they are not concrete yet; it could be nice for a recommendation (from repos)
-- Give access to this markdown
-- Chat with Ruben, publish this file
-- Not before Christmas, "How to set up a pod without maintenance" (demystify)
-
-
-Solid World:
-
-- Understanding from spec
-- What I want for Indico
-- What I need for the extensions
-
-
 ## Recommendations
+
+### Reorder the sections
+
+In chapter Linked Data containment go a bit more into Linked Data.
+
+Right after the statement:
+>The root container (pim:Storage) MUST have an ACL auxiliary resource directly associated to it. The associated ACL document MUST include an authorization policy with acl:Control access privilege.
+
+talk about auxiliary resources and
+
+I propose to reorder
 
 <!-- TODO: Recommendations -->
 
