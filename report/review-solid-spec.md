@@ -120,11 +120,12 @@ The representation of ACL resources is by default in the RDF Turtle format and c
 
 To extend on the previous mentioned necessity of `acl:Control` on the root container, TODO: more here *[Interesting comment](https://github.com/solid/specification/issues/197#issuecomment-699937520).*\
 
-WebID distinguishes between WebID URL and WebID Profile URI
+A WebID is an HTTP URI that denotes an agent on the Web. WebID distinguishes between WebID URL and WebID Profile URI. The URI with a fragment identifier is the WebID and acts as the identifer for an agent. The Profile Document – describing the agent – can be reached by leaving out the fragment identifier.
 
+WebID URI: https://alice.janschill.de/profile/card#me
+WebID Profile URI: https://alice.janschill.de/profile/card
 
-A WebID is an HTTP URI that denotes an agent on the Web.
-For example: https://jan.janschill.de/profile/card#me
+A WebID can also be defined without the fragment identifier. In this case a request to the WebID URI needs to return a Location header in its response, giving an URI how the Profile Document can be requested.
 
 TODO: Give short introduction to these topics:
 
@@ -139,8 +140,8 @@ TODO: Give short introduction to these topics:
 - [x] what are auxiliary resources
   - [x] why they are needed
   - [x] how they are implemented/what is needed
-- [ ] WebID: how agents/users are identified
-  - [ ] verification of identification
+- [x] WebID: how agents/users are identified
+  - [x] verification of identification
 - [x] WAC: how to make sure the correct access controls are given to users in a decentralized cross-domain system
 - [ ] New HTTP response header
 - [ ] Security considerations
