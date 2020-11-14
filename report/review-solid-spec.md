@@ -120,8 +120,11 @@ The representation of ACL resources is by default in the RDF Turtle format and c
 
 To extend on the previous mentioned necessity of `acl:Control` on the root container, TODO: more here *[Interesting comment](https://github.com/solid/specification/issues/197#issuecomment-699937520).*\
 
+WebID distinguishes between WebID URL and WebID Profile URI
 
 
+A WebID is an HTTP URI that denotes an agent on the Web.
+For example: https://jan.janschill.de/profile/card#me
 
 TODO: Give short introduction to these topics:
 
