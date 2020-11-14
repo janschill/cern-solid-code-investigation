@@ -6,7 +6,7 @@
 - uses operations: read, write, append, control
   - append: inbox as example, can add files, but not read nor modify
   - control: access to the ACL resource itself
-- permissions are inherited from parten container, if not set specifically
+- permissions are inherited from parent container, if not set specifically
 - resources defined by URL
 - users, groups defined by URL
 - cross-domain, ACL resource could be on another domain
@@ -14,7 +14,7 @@
 - ACL inheritance algorithm:
   1. use file specific file is exists (stop if found)
   2. look for ACL from the file's parent container (stop if found)
-  3. check for container's partent container
+  3. check for container's parent container
   4. check recursively going up the hierarchy of containers
   5. by definition the root container must have an ACL resource
 - representation format is RDF turtle
