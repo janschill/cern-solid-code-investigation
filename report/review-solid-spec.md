@@ -97,6 +97,7 @@ Link: <https://server.example/shapes/85432>; rel="http://www.w3.org/ns/solid/ter
 ```
 
 
+
 To extend on the previous mentioned necessity of `acl:Control` on the root container, TODO: more here *[Interesting comment](https://github.com/solid/specification/issues/197#issuecomment-699937520).*\
 
 
@@ -112,9 +113,9 @@ TODO: Give short introduction to these topics:
   - [x] containment
 - [ ] how to read and write data to Solid pod
   - [ ] how data is represented
-- [ ] what are auxiliary resources
+- [x] what are auxiliary resources
   - [x] why they are needed
-  - [ ] how they are implemented/what is needed
+  - [x] how they are implemented/what is needed
 - [ ] WebID: how agents/users are identified
   - [ ] verification of identification
 - [ ] WAC: how to make sure the correct access controls are given to users in a decentralized cross-domain system
