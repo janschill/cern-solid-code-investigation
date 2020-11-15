@@ -129,8 +129,14 @@ A WebID can also be defined without the fragment identifier. In this case a requ
 
 When making requests to a Solid server to create a resource on the server, HTTP `POST`, `PUT` or `PATCH` can be used. If the client wants to associate a specific URI with a resource, `PUT` or `PATCH` needs to be used. The server can be implemented to allow URI suggestions through a `POST` request and the `Slug` header. Otherwise, `POST` is the only way of letting the server decide on a URI for the resource [[Source]](https://solid.github.io/specification/#resource-type-heuristics).
 
-A server must implement the HTTP response header: `Accept-Patch`, `Accept-Post`, `Accept-Put`. These headers specify which media-type the server understands in the corresponding request.
+A server must implement the HTTP response header: `Accept-Patch`, `Accept-Post`, `Accept-Put`. These headers specify which media-type the server understands in the corresponding request. The `Accept-Put` response header has not been introduced prior to the Solid specifications, but is exactly defined after the `Accept-Post` and `Accept-Patch` reponse headers.
 
+A server must create all intermediate containers and containment triples according to `PUT` and `PATCH` requests.
+
+On a `POST` request to `/`, the server needs to create a resource under `/{slug}`.
+On a `POST` request to `/{slug}/`, the server needs to create a container for `/`.
+
+`PUT` or `PATCH` requests to an auxiliary resource, create or update the resource. A `POST` request is not allowed. This is because of its indeterministic nature of not needing to target a resource directly. In theory it would be possible with the `Slug` header, but it could introduce confusion and is therefore not allowed [[Source]](https://github.com/solid/specification/issues/42#issuecomment-616688848).
 
 TODO: Give short introduction to these topics:
 
@@ -140,7 +146,7 @@ TODO: Give short introduction to these topics:
   - [x] URIs
   - [x] storage
   - [x] containment
-- [ ] how to read and write data to Solid pod
+- [x] how to read and write data to Solid pod
   - [ ] how data is represented
 - [x] what are auxiliary resources
   - [x] why they are needed
@@ -149,8 +155,8 @@ TODO: Give short introduction to these topics:
   - [x] verification of identification
   - [ ] authentication
 - [x] WAC: how to make sure the correct access controls are given to users in a decentralized cross-domain system
-- [ ] New HTTP response header
-- [ ] Security considerations
+- [x] New HTTP response header
+- [x] Security considerations
 
 ## Remarks
 
