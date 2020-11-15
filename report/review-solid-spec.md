@@ -39,7 +39,7 @@ Section 3 of The Solid Ecosystem is titled *Clients and Apps* and states that it
 
 Reviewed document at: Editor’s Draft, 13 November 2020
 
-[The Solid Ecosystem](https://solid.github.io/specification/) is a by the [Solid editorial team](https://github.com/solid/process/blob/master/panels.md) published technical report. It is the official rewrite of the informal [Solid specification](https://github.com/solid/solid-spec/), which was intially used to define the architecture of Solid servers and clients. This rewrite is still incomplete and being worked on continuously.\
+[The Solid Ecosystem](https://solid.github.io/specification/) is a by the [Solid editorial team](https://github.com/solid/process/blob/master/panels.md) published technical report. It is the official rewrite of the informal [Solid specification](https://github.com/solid/solid-spec/), which was initially used to define the architecture of Solid servers and clients. This rewrite is still incomplete and being worked on continuously.\
 
 The Solid ecosystem combines a set of carefully selected specifications that were adopted or newly defined, to bring together an architecture that aligns the principles and values of Solid. These components are loosely coupled, can therefore evolve as independently as possible, to ensure flexibility and robustness [Source p4](https://solid.github.io/specification/#intro).\
 The intention of the document is to "explain the easiest way to understand how Solid works, as opposed to easiest way for building servers and clients" [Source p6](https://solid.github.io/specification/#intro).
@@ -63,7 +63,7 @@ For the client implementation it states:
 Uniform Resource Identifiers (URI) play an essential role in the Solid ecosystem. They give information about the hierarchy of information. Important to note is that the slash character in the end of an URI indicates a container resource. A container resource is an organizing concept in the Linked Data Platform [[Source]](https://www.w3.org/TR/ldp/#ldpc). It stores linked documents or information resources, which handle requests from clients for their creation, modification, traversal of the linked documents [[Source]](https://www.w3.org/TR/ldp/#dfn-linked-data-platform-container).<!-- TODO: could need a more thorough explanation here -->
 
 A data pod stores data, therefore, it needs a storage mechanism, which means a "space of URIs in which data can be accessed" [[Source]](https://solid.github.io/specification/#storage).\
-Solid uses containment. Containment is the relationship binding between a container (LDPC) and its resources (LDPR). The lifecycles of the LDPRs is limited by the lifecycle of its LDPC, as a resource cannot be stored without a container [[Source]](https://www.w3.org/TR/ldp/#dfn-containment).
+Solid uses containment. Containment is the relationship binding between a container (LDPC) and its resources (LDPR). The lifecycles of the LDPRs are limited by the lifecycle of its LDPC, as a resource cannot be stored without a container [[Source]](https://www.w3.org/TR/ldp/#dfn-containment).
 "A storage is the root container for all its contained resources" [[Source]](https://solid.github.io/specification/#storage).\
 An LDPC maintains a list of containment triples, which have the form of (LDPC URI, ldp:contains, document-URI) and list all the by the LDPC created documents.
 
@@ -87,7 +87,7 @@ Important to mention is that the root container needs an Access Control List (AC
 
 An auxiliary resource exists to give additional information, like configuration, processing, or interpretation about a Solid resource, for example: "A container linked to an auxiliary resource that includes access control statements for that container and the resources that belong to it."
 `acl:Control` means that the user has complete control, in other words: read, write and append access [[Source]](https://www.w3.org/wiki/WebAccessControl#WAC_relation_to_HTTP_Verbs). <!-- TODO: this might not be completely true -->
-Another example "A binary JPEG image linked to an auxiliary resource that includes information describing that binary JPEG." makes the need a bit more clear, as a binary JPEG image does not carry any machine readable information.
+Another example "A binary JPEG image linked to an auxiliary resource that includes information describing that binary JPEG." makes the need a bit clearer, as a binary JPEG image does not carry any machine-readable information.
 A Solid resource includes the location of its associated auxiliary resources in the `Link` header. These can be discovered by a `GET` or `HEAD` request to the Solid resource.
 
 ```
@@ -96,7 +96,7 @@ Link: <https://server.example/acls/24986>; rel="http://www.w3.org/ns/solid/terms
 Link: <https://server.example/shapes/85432>; rel="http://www.w3.org/ns/solid/terms#shape"
 ```
 
-The ACL in Solid is realized with Web Access Control (WAC). The section for WAC in not yet written in the Solid specification, but shall be given a short introduction.\
+The ACL in Solid is realized with Web Access Control (WAC). The section for WAC in not yet written in the Solid specification but shall be given a short introduction.\
 WAC is similar to access control schemes used in file systems. Files, users and groups are referenced by URLs. Users in particular are identified by WebIDs.
 Its functionality is cross-domain and can therefore have an ACL resource – holding the permissions for an agent – on domain A, while setting the permissions for a file on domain B. The supported modes of operation are read, write, append and control.
 Read and write are self-explanatory, whereas append and control introduce two interesting modes.
@@ -120,7 +120,7 @@ The representation of ACL resources is by default in the RDF Turtle format and c
 
 To extend on the previous mentioned necessity of `acl:Control` on the root container, TODO: more here *[Interesting comment](https://github.com/solid/specification/issues/197#issuecomment-699937520).*\
 
-A WebID is an HTTP URI that denotes an agent on the Web. WebID distinguishes between WebID URL and WebID Profile URI. The URI with a fragment identifier is the WebID and acts as the identifer for an agent. The Profile Document – describing the agent – can be reached by leaving out the fragment identifier.
+A WebID is an HTTP URI that denotes an agent on the Web. WebID distinguishes between WebID URL and WebID Profile URI. The URI with a fragment identifier is the WebID and acts as the identifier for an agent. The Profile Document – describing the agent – can be reached by leaving out the fragment identifier.
 
 WebID URI: https://alice.janschill.de/profile/card#me
 WebID Profile URI: https://alice.janschill.de/profile/card
@@ -129,7 +129,7 @@ A WebID can also be defined without the fragment identifier. In this case a requ
 
 When making requests to a Solid server to create a resource on the server, HTTP `POST`, `PUT` or `PATCH` can be used. If the client wants to associate a specific URI with a resource, `PUT` or `PATCH` needs to be used. The server can be implemented to allow URI suggestions through a `POST` request and the `Slug` header. Otherwise, `POST` is the only way of letting the server decide on a URI for the resource [[Source]](https://solid.github.io/specification/#resource-type-heuristics).
 
-A server must implement the HTTP response header: `Accept-Patch`, `Accept-Post`, `Accept-Put`. These headers specify which media-type the server understands in the corresponding request. The `Accept-Put` response header has not been introduced prior to the Solid specifications, but is exactly defined after the `Accept-Post` and `Accept-Patch` reponse headers.
+A server must implement the HTTP response header: `Accept-Patch`, `Accept-Post`, `Accept-Put`. These headers specify which media-type the server understands in the corresponding request. The `Accept-Put` response header has not been introduced prior to the Solid specifications but is exactly defined after the `Accept-Post` and `Accept-Patch` response headers.
 
 A server must create all intermediate containers and containment triples according to `PUT` and `PATCH` requests.
 
