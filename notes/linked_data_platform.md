@@ -26,8 +26,17 @@ An organizing concept: blog posts are grouped into blogs.
 
 ### Resource (Section 4)
 
+#### `HTTP POST`
+
+Is optional. Can be used to create resources.
+
+>5.2.3.2 When a successful HTTP POST request to a LDPC results in the creation of a LDPR, a containment triple MUST be added to the state of the LDPC whose subject is the LDPC URI, whose predicate is ldp:contains and whose object is the URI for the newly created document (LDPR)
+
+LDP server should assign an URL to the create resource, but the client can also suggest one, by sending a string in the HTTP Slug header.
+
 #### `HTTP PUT`
 
+Is optional.
 >MUST replace the entire persistent state of the identified resource with the entity representation in the body of the request
 
 ## Use Cases and Requirements
