@@ -127,7 +127,9 @@ WebID Profile URI: https://alice.janschill.de/profile/card
 
 A WebID can also be defined without the fragment identifier. In this case a request to the WebID URI needs to return a Location header in its response, giving an URI where the Profile Document resides.
 
+When making requests to a Solid server to create a resource on the server, HTTP `POST`, `PUT` or `PATCH` can be used. If the client wants to associate a specific URI with a resource, `PUT` or `PATCH` needs to be used. The server can be implemented to allow URI suggestions through a `POST` request and the `Slug` header. Otherwise, `POST` is the only way of letting the server decide on a URI for the resource [[Source]](https://solid.github.io/specification/#resource-type-heuristics).
 
+A server must implement the HTTP response header: `Accept-Patch`, `Accept-Post`, `Accept-Put`. These headers specify which media-type the server understands in the corresponding request.
 
 
 TODO: Give short introduction to these topics:
@@ -145,6 +147,7 @@ TODO: Give short introduction to these topics:
   - [x] how they are implemented/what is needed
 - [x] WebID: how agents/users are identified
   - [x] verification of identification
+  - [ ] authentication
 - [x] WAC: how to make sure the correct access controls are given to users in a decentralized cross-domain system
 - [ ] New HTTP response header
 - [ ] Security considerations
