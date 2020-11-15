@@ -125,7 +125,10 @@ A WebID is an HTTP URI that denotes an agent on the Web. WebID distinguishes bet
 WebID URI: https://alice.janschill.de/profile/card#me
 WebID Profile URI: https://alice.janschill.de/profile/card
 
-A WebID can also be defined without the fragment identifier. In this case a request to the WebID URI needs to return a Location header in its response, giving an URI how the Profile Document can be requested.
+A WebID can also be defined without the fragment identifier. In this case a request to the WebID URI needs to return a Location header in its response, giving an URI where the Profile Document resides.
+
+
+
 
 TODO: Give short introduction to these topics:
 
@@ -151,6 +154,8 @@ TODO: Give short introduction to these topics:
 The Solid ecosystem does a decent job in the claims it makes in the beginning. It does not go into best practices on how to build a Solid server or client, but solely focusses on the clear definition on what Solid is when looked at technically.\
 Further, the review process seems sophisticated and lively in its discussion.
 Contributions to the specifications are heavily discussed using the GitHub issue and pull request features, but also chat platforms like Gitter. A review of such a contribution follows strict regulations. A contribution is encouraged to come with a sophisticated explanation on why this change is appropriate. Each topic within the specifications have editors to them assigned who are responsible.
+
+Clearly stating that the Solid ecosystem document has its purpose in defining the implementation requirements for a data pod and makes suggestions to other documents that do a thorough job on speaking out use-cases and best-practices is a good structural decision.
 
 ### Minor remarks
 
