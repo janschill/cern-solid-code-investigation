@@ -44,7 +44,7 @@ An IRI is a unicode string.
 
 ## RDF 1.1 Turtle
 
-[[Source]](https://www.w3.org/TR/2014/REC-turtle-20140225/)
+[Source](https://www.w3.org/TR/2014/REC-turtle-20140225/)
 
 * Terse RDF Triple Language
 * textual reprensentation of an RDF graph
@@ -103,6 +103,32 @@ _:alice foaf:knows _:bob .
 _:bob foaf:knows _:alice .
 ```
 
+### Parser example
+
+```
+@prefix ericFoaf: <http://www.w3.org/People/Eric/ericP-foaf.rdf#> .
+@prefix : <http://xmlns.com/foaf/0.1/> .
+ericFoaf:ericP :givenName "Eric" ;
+              :knows <http://norman.walsh.name/knows/who/dan-brickley> ,
+                      [ :mbox <mailto:timbl@w3.org> ] ,
+                      <http://getopenid.com/amyvdh> .
+```
+
+
+* Map the prefix ericFoaf to the IRI http://www.w3.org/People/Eric/ericP-foaf.rdf#.
+* Map the empty prefix to the IRI http://xmlns.com/foaf/0.1/.
+*    Assign curSubject the IRI http://www.w3.org/People/Eric/ericP-foaf.rdf#ericP.
+* Assign curPredicate the IRI http://xmlns.com/foaf/0.1/givenName.
+* Emit an RDF triple: <...rdf#ericP> <.../givenName> "Eric" .
+* Assign curPredicate the IRI http://xmlns.com/foaf/0.1/knows.
+* Emit an RDF triple: <...rdf#ericP> <.../knows> <...who/dan-brickley> .
+* Emit an RDF triple: <...rdf#ericP> <.../knows> _:1 .
+* Save curSubject and reassign to the blank node _:1.
+* Save curPredicate.
+* Assign curPredicate the IRI http://xmlns.com/foaf/0.1/mbox.
+* Emit an RDF triple: _:1 <.../mbox> <mailto:timbl@w3.org> .
+* Restore curSubject and curPredicate to their saved values (<...rdf#ericP>, <.../knows>).
+* Emit an RDF triple: <...rdf#ericP> <.../knows> <http://getopenid.com/amyvdh> .
 
 
 
