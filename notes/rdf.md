@@ -30,7 +30,7 @@ IRIs can be dereferenced and serve as a starting point with a remote server.
 ### Vocabularies and namespace of IRIs
 
 "An RDF vocabulary is a collection of IRIs intended for use in RDF graphs."
-The namespace IRI is a common substring in the beginning of a vocabulary, therefore, prefixes are being used to omit redudancies.
+The namespace IRI is a common substring in the beginning of a vocabulary, therefore, prefixes are being used to omit redundancies.
 
 | Namespace prefix | Namespace IRI | RDF vocabulary |
 |-|-|-|
@@ -47,10 +47,10 @@ An IRI is a unicode string.
 [Source](https://www.w3.org/TR/2014/REC-turtle-20140225/)
 
 * Terse RDF Triple Language
-* textual reprensentation of an RDF graph
-* Turtle grammar for triples is a subset of the [SPARQL Query Language](http://www.w3.org/TR/sparql11-query/) grammer for TriplesBlock
+* textual representation of an RDF graph
+* Turtle grammar for triples is a subset of the [SPARQL Query Language](http://www.w3.org/TR/sparql11-query/) grammar for TriplesBlock
 
-Example showing the relatioship between Spiderman and the Green Goblin.
+Example showing the relationship between Spiderman and the Green Goblin.
 
 ```turtle
 @base <http://example.org/> .
