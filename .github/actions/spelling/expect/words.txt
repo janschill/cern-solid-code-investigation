@@ -76,6 +76,7 @@ inox
 inrupt
 interoperability
 interoperable
+iri
 issuecomment
 itu
 itustudent
@@ -98,7 +99,9 @@ localhost
 LXh
 macos
 Maged
+mailto
 Mansour
+mbox
 meier
 metadata
 Michiel
@@ -107,6 +110,7 @@ MITM
 mkdir
 Moennich
 Msc
+namespace
 netstat
 NGi
 nginx
@@ -139,6 +143,7 @@ reprioritized
 respec
 rfc
 roadmap
+ru
 rubensworks
 rubenverborgh
 Sambra
