@@ -1,6 +1,6 @@
 # Linked Data Platform
 
-##
+## Linked Data Platform 1.0
 
 [Source](https://www.w3.org/TR/ldp/)
 
@@ -38,6 +38,13 @@ LDP server should assign an URL to the create resource, but the client can also 
 
 Is optional.
 >MUST replace the entire persistent state of the identified resource with the entity representation in the body of the request
+
+## Linked Data Platform 1.0 Primer
+
+* Linked Data Platform Resource (LDPR)
+  * LDP RDF Source (LDP-RS)
+  * LDP Non-RDF Source (LDP-NR): HTML files, images, binary files
+* "Writable aspects include creation of new resources (using POST or PUT), updates (using PUT or PATCH), and deletion of resources"
 
 ## Use Cases and Requirements
 
