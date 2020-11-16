@@ -20,6 +20,7 @@ TODO:
 
 * How to set up a pod
 * Lessons learned
+* Why bother
 
 Notes:
 
