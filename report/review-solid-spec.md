@@ -6,29 +6,31 @@
 
 Reviewed document at: Editor’s Draft, 13 November 2020
 
-[The Solid Ecosystem](https://solid.github.io/specification/) is a by the [Solid editorial team](https://github.com/solid/process/blob/master/panels.md) published technical report. It is the official rewrite of the informal [Solid specification](https://github.com/solid/solid-spec/), which was initially used to define the architecture of Solid servers and clients. This rewrite is still incomplete and being worked on continuously.\
+[The Solid Ecosystem](https://solid.github.io/specification/) is a by the [Solid editorial team](https://github.com/solid/process/blob/master/panels.md) published technical report. It is the official rewrite of the informal [Solid specification](https://github.com/solid/solid-spec/), which was initially used to define the architecture of Solid servers and clients. This rewrite is still incomplete and being worked on continuously.
 
-The Solid ecosystem combines a set of carefully selected specifications that were adopted or newly defined, to bring together an architecture that aligns the principles and values of Solid. These components are loosely coupled, can therefore evolve as independently as possible, to ensure flexibility and robustness [Source p4](https://solid.github.io/specification/#intro).\
-The intention of the document is to "explain the easiest way to understand how Solid works, as opposed to easiest way for building servers and clients" [Source p6](https://solid.github.io/specification/#intro).
+The Solid Ecosystem combines a set of carefully selected specifications that were adopted or newly defined, to bring together an architecture that aligns the principles and values of Solid. These components are loosely coupled, can therefore evolve as independently as possible, to ensure flexibility and robustness [Source p4](https://solid.github.io/specification/#intro).
+<!-- The intention of the document is to "explain the easiest way to understand how Solid works, as opposed to easiest way for building servers and clients" [Source p6](https://solid.github.io/specification/#intro). -->
 
-The main specification starts off by describing how a data pod and a Solid app should be implemented using the HTTP protocol in section [2. Resource Access](https://solid.github.io/specification/#resource-access). A data pod is a web server that responds to HTTP requests and returns HTTP responses. Its purpose is the storage of data and the management of who has access to this data.\
+The main specification starts off by describing how a data pod and a Solid app should be implemented using the HTTP protocol.\
+A data pod is a web server that responds to HTTP requests and returns HTTP responses. Its purpose is the storage of data and the management of who has access to this data.\
 A Solid app is a client that is sending requests to a data pod. It should be able to read and write depending on the access control to a data pod.\
-The current state of the specification does not go beyond saying that the server must implement the following:
+At the bare minimum a data pod needs to implement the following:
 <!-- TODO: not sure if this is needed -->
 - HTTP/1.1
 - HTTP/1.1 Conditional Requests
 - HTTP/1.1 Authentication
-  - Without proper credential respond with a 401 HTTP response code
+  - Without proper credentials, respond with a 401 HTTP response code
 - Reject `PUT`, `POST` and `PATCH` without a `Content-Type` header with HTTP response code 400
 
-For the client implementation it states:
+For the client implementation it states these necessities:
 
 - HTTP/1.1
 - HTTP/1.1 Authentication client part
 - Must send the `Content-Type` header with `PUT`, `POST` and `PATCH` requests
 
-Uniform Resource Identifiers (URI) play an essential role in the Solid ecosystem. They give information about the hierarchy of information. Important to note is that the slash character in the end of an URI indicates a container resource. A container resource is an organizing concept in the Linked Data Platform [[Source]](https://www.w3.org/TR/ldp/#ldpc). It stores linked documents or information resources, which handle requests from clients for their creation, modification, traversal of the linked documents [[Source]](https://www.w3.org/TR/ldp/#dfn-linked-data-platform-container).<!-- TODO: could need a more thorough explanation here -->
-
+The Uniform Resource Identifier (URI) plays an essential role in the Solid Ecosystem, for it is being used to identify users with [WebID](#webid), it is used with resources in the Linked Data Platform and more generally give information about the hierarchy of stored information on the data pod.\
+Continuing with URIs used to give location to resources on a data pod an important note is that the slash character in the end of an URI indicates a container resource.
+A container resource is an organizing concept in the Linked Data Platform [[Source]](https://www.w3.org/TR/ldp/#ldpc). It stores linked documents or information resources, which handle requests from clients for their creation, modification, traversal of the linked documents [[Source]](https://www.w3.org/TR/ldp/#dfn-linked-data-platform-container).<!-- TODO: could need a more thorough explanation here -->\
 A data pod stores data, therefore, it needs a storage mechanism, which means a "space of URIs in which data can be accessed" [[Source]](https://solid.github.io/specification/#storage).\
 Solid uses containment. Containment is the relationship binding between a container (LDPC) and its resources (LDPR). The lifecycles of the LDPRs are limited by the lifecycle of its LDPC, as a resource cannot be stored without a container [[Source]](https://www.w3.org/TR/ldp/#dfn-containment).
 "A storage is the root container for all its contained resources" [[Source]](https://solid.github.io/specification/#storage).\
@@ -127,11 +129,11 @@ TODO: Give short introduction to these topics:
 
 ## Remarks
 
-The Solid ecosystem does a decent job in the claims it makes in the beginning. It does not go into best practices on how to build a Solid server or client, but solely focusses on the clear definition on what Solid is when looked at technically.\
+The Solid Ecosystem does a decent job in the claims it makes in the beginning. It does not go into best practices on how to build a Solid server or client, but solely focusses on the clear definition on what Solid is when looked at technically.\
 Further, the review process seems sophisticated and lively in its discussion.
 Contributions to the specifications are heavily discussed using the GitHub issue and pull request features, but also chat platforms like Gitter. A review of such a contribution follows strict regulations. A contribution is encouraged to come with a sophisticated explanation on why this change is appropriate. Each topic within the specifications have editors to them assigned who are responsible.
 
-Clearly stating that the Solid ecosystem document has its purpose in defining the implementation requirements for a data pod and makes suggestions to other documents that do a thorough job on speaking out use-cases and best-practices is a good structural decision.
+Clearly stating that the Solid Ecosystem document has its purpose in defining the implementation requirements for a data pod and makes suggestions to other documents that do a thorough job on speaking out use-cases and best-practices is a good structural decision.
 
 ### Minor remarks
 
@@ -168,7 +170,7 @@ The document introduces many different terms, which are often defined in the doc
 
 Even though the document does a great job on going into detail on specific areas, it is still demanding to follow with only a limited knowledge in web technologies.\
 This can be justified by the incomplete status of the document, but also its contrasting principles to conventional web implementations.
-One example of this is the concept of Linked Data and all its components. It cannot be assumed of the Solid ecosystem to explain all of its linked concepts – as it would render the document redundantly convoluted – but the fact remains that it is challenging to follow.
+One example of this is the concept of Linked Data and all its components. It cannot be assumed of the Solid Ecosystem to explain all of its linked concepts – as it would render the document redundantly convoluted – but the fact remains that it is challenging to follow.
 
 ## Recommendations
 
