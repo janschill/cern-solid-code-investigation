@@ -71,21 +71,22 @@ Its functionality is cross-domain and can therefore have an ACL resource – hol
 Read and write are self-explanatory, whereas append and control introduce two interesting modes.
 Append allows the agent to add files to a container, without being able to read or write any of the container's files. The idea of an email inbox can be compared to this functionality.\
 Control means that the agent with this permission has access to the ACL resource and can modify it.\
-Permissions are inherited through the ACL inheritance algorithm. The ACL algorithm looks for an ACL resource for the requested file, if none is found, it will check on the file's container, if none is found, it will go recursively up the hierarchy of the containers. The root container must be definition have an ACL resource associated with it.
+Permissions are inherited through the ACL inheritance algorithm. The ACL algorithm looks for an ACL resource for the requested file, if none is found, it will check on the file's container, if none is found, it will go recursively up the hierarchy of the containers. The root container must by definition have an ACL resource associated with it.
 The representation of ACL resources is by default in the RDF Turtle format and can be discovered in the `Link` header from the request to the Solid resource – if a specific ACL resource is attached, otherwise through the previously described ACL inheritance algorithm.
 
 ```
-# Contents of https://alice.databox.me/docs/file1.acl
 @prefix  acl:  <http://www.w3.org/ns/auth/acl#>  .
 
 <#authorization1>
     a             acl:Authorization;
-    acl:agent     <https://alice.databox.me/profile/card#me>;  # Alice's WebID
+    acl:agent     <https://alice.databox.me/profile/card#me>;
     acl:accessTo  <https://alice.databox.me/docs/file1>;
     acl:mode      acl:Read,
                   acl:Write,
                   acl:Control.
 ```
+
+The Turtle data representation format is not explained in the Solid ecosystem specification.
 
 To extend on the previous mentioned necessity of `acl:Control` on the root container, TODO: more here *[Interesting comment](https://github.com/solid/specification/issues/197#issuecomment-699937520).*\
 
