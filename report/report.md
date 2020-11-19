@@ -49,6 +49,8 @@ Why is CSS financed by Inrupt? Inrupt's co-founder Sir Tim Berners-Lee leads the
 With the ESS being closed source, Inrupt does not offer any open source Solid server. They do offer the Developer Tools, a set of tools and libraries that ease the development of enterprise-ready Solid applications and a handy Solid application called PodBrowser, allowing the connection and retrieval of all data hosted on a data pod.
 Having an open source Solid server with the great benefits previously mentioned lets Solid to gain in popularity.
 
+Other implementation exist, for example the [PHP Solid server](https://github.com/pdsinterop/php-solid-server).
+
 TODO:
 
 * [x] Briefly mention the different servers
