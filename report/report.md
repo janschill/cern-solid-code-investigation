@@ -4,29 +4,29 @@
 
 TODO:
 
-* Overview
-* Explain Solid
-* Why bother
+* [ ] Overview
+* [ ] Explain Solid
+* [ ] Why bother
 
 ### Review of the Solid specifications
 
 TODO: review-solid-spec.md
 
-* Summary of specifications
-* Comments
-* Recommendations
+* [ ] Summary of specifications
+* [ ] Comments
+* [ ] Recommendations
 
 ### Solid data pod
 
 TODO:
 
-* What is a data pod
-  * Architecture
-  * Infrastructure
-  * Reference specifications
-* How to set up a pod
-* Lessons learned
-* Why bother
+* [ ] What is a data pod
+  * [ ] Architecture
+  * [ ] Infrastructure
+  * [ ] Reference specifications
+* [ ] How to set up a pod
+* [ ] Lessons learned
+* [ ] Why bother
 
 Notes:
 
