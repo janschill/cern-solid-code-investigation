@@ -28,6 +28,17 @@ One will give this application a key – instead of credentials – to access da
 
 This is called delegated authorization.
 
+Additional concepts related:
+
+* Proof Key for Code Exchange (PKCE)
+  * "[Mitigation concept] for public clients that face the threat of having the authorization code intercepted"
+  * "[…] client first creating a secret, and then using that secret again when exchanging the authorization code for an access token"
+  * "This way if the code is intercepted, it will not be useful since the token request relies on the initial secret"
+  * [Source](https://www.oauth.com/oauth2-servers/pkce/)
+* Demonstration Proof of Possession (DPoP)
+  * technique to cryptographically bind access token to client
+  * prevent token replay at another endpoint
+
 ### OAuth v2.0 Flow
 
 #### Terms
