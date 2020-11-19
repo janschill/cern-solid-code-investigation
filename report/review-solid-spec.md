@@ -86,14 +86,14 @@ The representation of ACL resources is by default in the RDF Turtle format and c
                   acl:Control.
 ```
 
-The Turtle data representation format is not explained in the Solid ecosystem specification.
+TODO: The Turtle data representation format is not explained in the Solid ecosystem specification.
 
-To extend on the previous mentioned necessity of `acl:Control` on the root container, TODO: more here *[Interesting comment](https://github.com/solid/specification/issues/197#issuecomment-699937520).*\
+<!-- To extend on the previous mentioned necessity of `acl:Control` on the root container, TODO: more here *[Interesting comment](https://github.com/solid/specification/issues/197#issuecomment-699937520).*\ -->
 
 A WebID is an HTTP URI that denotes an agent on the Web. WebID distinguishes between WebID URL and WebID Profile URI. The URI with a fragment identifier is the WebID and acts as the identifier for an agent. The Profile Document – describing the agent – can be reached by leaving out the fragment identifier.
 
-WebID URI: https://alice.janschill.de/profile/card#me
-WebID Profile URI: https://alice.janschill.de/profile/card
+* WebID URI: https://alice.janschill.de/profile/card#me
+* WebID Profile URI: https://alice.janschill.de/profile/card
 
 A WebID can also be defined without the fragment identifier. In this case a request to the WebID URI needs to return a Location header in its response, giving an URI where the Profile Document resides.
 
