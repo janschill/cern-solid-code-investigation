@@ -20,8 +20,6 @@ TODO: Summary; see [review](report/review-solid-spec.md)
 
 *Make sure to check out [concept](notes/concepts.md) for some additional explanations.*
 
-
-
 ### Basic Flow
 
 * "HTTP WWW-Authenticate response header defines the authentication method that should be used to gain access to a resource" [[Source]](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/WWW-Authenticate).
