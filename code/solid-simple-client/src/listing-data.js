@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+// This does not work, /Public is behind authentication
+
 import RDF from './rdf.js';
 const dataPodURI = 'https://janschill.inrupt.net/';
 const webIDProfileURI = `${dataPodURI}profile/card`;
