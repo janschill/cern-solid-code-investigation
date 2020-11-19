@@ -66,6 +66,7 @@ hsts
 html
 http
 httpwg
+Hwi
 hyperlink
 hypertext
 ietf
@@ -109,9 +110,11 @@ michielbdejong
 MITM
 mkdir
 Moennich
+mozilla
 Msc
 namespace
 netstat
+Nextcloud
 NGi
 nginx
 nmap
@@ -123,6 +126,7 @@ nslookup
 NSS
 NX
 OAuth
+OCM
 OIDC
 openid
 openssl
@@ -132,11 +136,14 @@ pdos
 pem
 pferreir
 phd
+PHP
 pim
+plugin
 png
 podbrowser
 privkey
 pyenv
+Qg
 rdf
 rdflib
 reprioritized
