@@ -1,3 +1,4 @@
+
 Abdurrahman
 Aboulnaga
 acl
@@ -70,6 +71,7 @@ httpwg
 Hwi
 hyperlink
 hypertext
+IDPs
 ietf
 img
 inbox
@@ -135,11 +137,13 @@ openssl
 ouvertes
 pdf
 pdos
+pdsinterop
 pem
 pferreir
 phd
 PHP
 pim
+pkce
 plugin
 png
 podbrowser
@@ -160,6 +164,7 @@ Sarven
 scenaristeur
 schill
 sestoft
+solidcommunity
 solidproject
 someprefixvalue
 SPARQL
