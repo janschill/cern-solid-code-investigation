@@ -1,3 +1,6 @@
 [submodule "code/empty-solid-app"]
 	path = code/empty-solid-app
 	url = https://github.com/janschill/empty-solid-app
+[submodule "code/solid-shell"]
+	path = code/solid-shell
+	url = git@github.com:janschill/solid-shell.git
