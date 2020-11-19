@@ -62,6 +62,12 @@ TODO:
 
 ### Client implementations
 
+* [ ] Build a simple frontend application that
+  * [ ] authenticates with a Solid data pod
+  * [ ] reads the user from the pod
+  * [ ] reads data from the pod
+  * [ ] writes data to the pod
+
 ## CERN
 
 * Overview
