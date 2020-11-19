@@ -40,7 +40,7 @@ This is called delegated authorization.
 * **Response Type**: type of information the client expects to receive; mostly authorization code
 * **Scope**: granular permission the client wants; access to data
 * **Consent**: the action that needs to be performed to give access to the scope
-* **Client ID**: used to indentify the client with the AS
+* **Client ID**: used to identify the client with the AS
 * **Client Secret**: shared secret between client and AS
 * **Authorization Code (AC)**: temporarily code, AS sends to client; client sends AC with client secret back to AS in exchange for an access token
 * **Access Token**: the key the client will use to communicate with the RS
@@ -50,7 +50,7 @@ This is called delegated authorization.
 1. RO wants a certain feature on the client
 2. Client sends request with: Client ID, Redirect URI, Response Type, Scope to the Authorization Server
 3. AS verifies who the RO is (active session?) prompts a login (with credentials)
-4. AS shows conset form, based on the request from the client
+4. AS shows consent form, based on the request from the client
 5. AS uses redirect URI to send RO back to client, sends an authorization code within the request
 6. Client then sends itself a request to the AS with: Client ID, Client Secret and Authorization Code
 7. AS verifies the data and responds with Access Token (and ID token in OIDC format a JSON Web Token (JWT))
@@ -65,9 +65,9 @@ OAuth v2.0 is designed only for authorization to grant access to data from one a
 
 Thin layer sits on top of OAuth v2.0, that adds functionality around login and profile information about the RO.
 
-Instead of key given to the client, it gives a badge. A badge does not only hold permissions, but also basic informatio who the RO is.
+Instead of key given to the client, it gives a badge. A badge does not only hold permissions, but also basic information who the RO is.
 
-Where OAuth enables authorization from one app to another, OIDC enables a client a login session (authentication) as well as gain information about the logged in user, the RO often referred to as identitiy.
+Where OAuth enables authorization from one app to another, OIDC enables a client a login session (authentication) as well as gain information about the logged in user, the RO often referred to as identity.
 
 Identity provider, since it provides identity information back to the client. Enables one login over multiple application. Also known as Single-Sign-On (SSO).
 
