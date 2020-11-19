@@ -38,6 +38,7 @@ dns
 Dockerfile
 dokie
 dokieli
+DPo
 dvcs
 ECTS
 edu
@@ -87,6 +88,7 @@ javascript
 Jong
 jpg
 json
+JWT
 Kanban
 LDFLAGS
 ldp
