@@ -11,15 +11,16 @@
 * Accept-Put Response Header
 * ETag
 * Slug header
-* Demonstration Proof-of-Possession (DPoP)
-  * technique to cryptographically bind access token to client
-  * prevent token replay at another endpoint
 
 ### Summary
 
-Definitions: data pod,
+TODO: Summary; see [review](report/review-solid-spec.md)
 
 ## Solid-OIDC
+
+*Make sure to check out [concept](notes/concepts.md) for some additional explanations.*
+
+
 
 ### Basic Flow
 
