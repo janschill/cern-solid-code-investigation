@@ -28,7 +28,7 @@ One will give this application a key – instead of credentials – to access da
 
 This is called delegated authorization.
 
-### OAuth Flow
+### OAuth v2.0 Flow
 
 #### Terms
 
