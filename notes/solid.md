@@ -11,6 +11,9 @@
 * Accept-Put Response Header
 * ETag
 * Slug header
+* Demonstration Proof-of-Possession (DPoP)
+  * technique to cryptographically bind access token to client
+  * prevent token replay at another endpoint
 
 ### Summary
 
@@ -23,7 +26,8 @@ Definitions: data pod,
 * "HTTP WWW-Authenticate response header defines the authentication method that should be used to gain access to a resource" [[Source]](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/WWW-Authenticate).
 
 1. Client requests a non-public resource from the resource server (RS).
-2. RS returns
+2. RS returns HTTP WWW-Authentication header with request for a DPoP-bound access token
+3.
 
 ## Paper: Solid Platform for Social Web Applications
 
