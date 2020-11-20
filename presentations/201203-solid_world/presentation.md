@@ -33,7 +33,7 @@ Open-source tool for event organisation, archival and collaboration
 
 * 20 years in production
 * It shows by the in-house usage that Indico has a tremendous amount of users and excellent operational quality
-* The UN uses Indico since 2016 to handle more than 160,000 participents, it is also widely used outside of CERN
+* The UN uses Indico since 2016 to handle more than 160,000 participants, it is also widely used outside of CERN
 * The application is written in Python and actively maintained by a developer team of six
 -->
 
@@ -49,7 +49,7 @@ Indico has no incentive for user data
 * For example when a user registers for a conference over Indico, the conference host decides what user data is needed to register
 * This user data should not be on CERN's server (for the running CERN instance) or on wherever Indico is hosted
 * Solid allows a good solution of every user hosting this data on their preferred data pod
-* It is not limitted to the conference registration, could also be applied to a comment module or functionalities but this is part of one of the milestones on the next slide.
+* It is not limited to the conference registration, could also be applied to a comment module or functionalities but this is part of one of the milestones on the next slide.
 
 TODO:
 - Speaking notes
