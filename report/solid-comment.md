@@ -18,3 +18,7 @@ Navigate to the data pod -> preferences -> manage trusted applications and add l
   * How to associate comments with an application?
 * How to sort comments from different users?
 * How to link from the application to the data pod?
+
+## Notes
+
+* [Schema comment](https://schema.org/Comment)
