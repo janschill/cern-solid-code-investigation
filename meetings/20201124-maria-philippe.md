@@ -20,6 +20,6 @@
 
 * Client vs. server frameworks in Solid (authentication)
 * Is this because nature backend is more complex?
-* Meeting with Michiel after presentaiton
+* Meeting with Michiel after presentation
 * Send draft report and presentation to Philippe (and Maria)
 * Keep the in contact with CERN-Indico developers
