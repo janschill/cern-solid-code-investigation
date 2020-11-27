@@ -130,13 +130,21 @@ ericFoaf:ericP :givenName "Eric" ;
 * Restore curSubject and curPredicate to their saved values (<...rdf#ericP>, <.../knows>).
 * Emit an RDF triple: <...rdf#ericP> <.../knows> <http://getopenid.com/amyvdh> .
 
+## RDF – Encyclopedia of Database Systems
+
+*Source Book Encyclopedia of Database Systems 2018 Edition | Editors: Ling Liu, M. Tamer Özsu*
+
+Chapters: RDF, RDF stores, RDFS are of interest.
+
+* RDF data model has its basis in the theory of semantic networks.
 
 
+## Further reading
 
-
-
-
-
-
+* Bugiotti F, Camacho-Rodríguez J, Goasdoué F, Kaoudi Z, Manolescu I, Zampetakis S. SPARQL query processing in the cloud. In: Harth A, Hose K, Schenkel R, editors. Linked data management. Boca Raton: CRC Press; 2014. p. 165–92
+* Harris S, Gibbins N. 3store: efﬁcient bulk RDF storage. In: Proceedings of 1st International Workshop on Practical and Scalable Semantic Systems; 2003.
+* Hose K, Schenkel R, Theobald M, Weikum G. Database foundations for scalable RDF processing. In: Proceedings of the 7th International Conference on Reasoning Web: Semantic Technologies for the Web of Data; 2011. p. 202–49.
+* Kaoudi Z, Manolescu I. RDF in the clouds: a survey. VLDB J. 2014;24(1):1–25
+* Sakr S, Al-Naymat G. Relational processing of RDF queries: a survey. SIGMOD Rec. 2009;38(4):23–28
 
 
