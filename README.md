@@ -115,3 +115,8 @@ The defined milestones give detailed descriptions on what should be when achieve
 #### Related work
 
 - [Storing and Querying Evolving Knowledge Graphs on the Web](https://phd.rubensworks.net/)
+
+#### Not relevant, but interesting
+
+- [Billion Triples Challenge](http://km.aifb.kit.edu/projects/btc-2014/)
+- [Billion Triples Challenge 2019](https://zenodo.org/record/2634588)
