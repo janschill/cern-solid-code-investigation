@@ -31,6 +31,10 @@ The central resource is the comment in itself.
 | (c, rdfs:comment, literal) |
 | (c, terms:created, XML:dateTime) |
 
+### Questions
+
+* How to generate random IDs for the comment identification, is this necessary?
+
 ## Learnings
 
 ### 403 Origin Unauthorized
