@@ -1,0 +1,5 @@
+<https://janschill.solidcommunity.net/my-workspace/5ede811c-0602-490d-bc13-580bc11d99fc> <http://www.w3.org/2000/01/rdf-schema#label> "This is my inbox" .
+<https://janschill.solidcommunity.net/my-workspace/5ede811c-0602-490d-bc13-580bc11d99fc> <http://purl.org/dc/terms/created> "2020-11-27T07:39:56Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://janschill.solidcommunity.net/my-workspace/5ede811c-0602-490d-bc13-580bc11d99fc> <http://purl.org/dc/terms/modified> "2020-11-27T07:39:56Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://janschill.solidcommunity.net/my-workspace/5ede811c-0602-490d-bc13-580bc11d99fc> a <http://purl.org/vocab/lifecycle/schema#Task> .
+<https://janschill.solidcommunity.net/my-workspace/5ede811c-0602-490d-bc13-580bc11d99fc> a <http://www.w3.org/ns/ldp#Resource> .
