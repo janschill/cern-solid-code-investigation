@@ -19,17 +19,21 @@ Namespaces
 
 The central resource is the comment in itself.
 
-| Comment |
-| :------:|
+| Comment             |
+| :------------------:|
 | description: string |
-| created: string |
+| created: string     |
 
-| Comment |
-| :------:|
-| (c, a, ldp:Resource) |
-| (c, a, schema:Comment) |
-| (c, rdfs:comment, literal) |
+| Comment                          |
+| :-------------------------------:|
+| (c, a, ldp:Resource)             |
+| (c, a, schema:Comment)           |
+| (c, rdfs:comment, literal)       |
 | (c, terms:created, XML:dateTime) |
+
+| CommentContainer |
+| :------------------:|
+
 
 ### Questions
 

@@ -146,5 +146,3 @@ Chapters: RDF, RDF stores, RDFS are of interest.
 * Hose K, Schenkel R, Theobald M, Weikum G. Database foundations for scalable RDF processing. In: Proceedings of the 7th International Conference on Reasoning Web: Semantic Technologies for the Web of Data; 2011. p. 202–49.
 * Kaoudi Z, Manolescu I. RDF in the clouds: a survey. VLDB J. 2014;24(1):1–25
 * Sakr S, Al-Naymat G. Relational processing of RDF queries: a survey. SIGMOD Rec. 2009;38(4):23–28
-
-
