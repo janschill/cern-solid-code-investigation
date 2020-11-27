@@ -35,6 +35,7 @@ The central resource is the comment in itself.
 
 * How to generate random IDs for the comment identification, is this necessary?
 * How to do all of this server-side, would this be against the Solid idea?
+* RDF - what is inference and why is it a challenge on large scale
 
 ## Learnings
 
