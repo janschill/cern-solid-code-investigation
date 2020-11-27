@@ -2,6 +2,35 @@
 
 Developing a JavaScript module that can be easily embedded on a website, which reads and writes comments from a data pod.
 
+## RDF
+
+### Data schema
+
+This module should be able to live on is own and not be specific to eg. a blog post, but can be used on every type of resource.
+
+[Ontology](https://www.w3.org/ns/ldp#)
+
+Namespaces
+
+| Name | Abbreviation | URL | Description |
+| - | - | - | - |
+| The W3C Linked Data Platform (LDP) Vocabulary | ldp | http://www.w3.org/ns/ldp# | "This document is an HTML representation of OWL ontology describing all vocabulary URIs defined in the Linked Data Platform (LDP) namespace. This ontology provides an informal representation of the concepts and terms as defined in the LDP or other relevant specifications. Consult the LDP specification for normative reference, unless a different specification is indicated inline. See also http://www.w3.org/2012/ldp, http://www.w3.org/TR/ldp-ucr/, http://www.w3.org/TR/ldp/, http://www.w3.org/2011/09/LinkedData/" |
+| Schema.org | schema | https://schema.org | "Schema.org is a collaborative, community activity with a mission to create, maintain, and promote schemas for structured data on the Internet, on web pages, in email messages, and beyond." |
+
+The central resource is the comment in itself.
+
+| Comment |
+| :------:|
+| description: string |
+| created: string |
+
+| Comment |
+| :------:|
+| (c, a, ldp:Resource) |
+| (c, a, schema:Comment) |
+| (c, rdfs:comment, literal) |
+| (c, terms:created, XML:dateTime) |
+
 ## Learnings
 
 ### 403 Origin Unauthorized
@@ -11,7 +40,39 @@ Developing a JavaScript module that can be easily embedded on a website, which r
 
 Navigate to the data pod -> preferences -> manage trusted applications and add localhost
 
-### rdflib.js
+### RDF (rdflib)
+
+* Best practice
+* How do I model my objects in RDF
+
+#### Basic usage
+
+```javascript
+import { fetch } from 'solid-auth-client';
+const testUrl = `https://janschill.solidcommunity.net/public/fetchQueue.ttl`;
+const $rdf = require('rdflib')
+
+const store     = $rdf.graph();
+const fetcher = new $rdf.Fetcher(store, {
+  fetch: async (url, options) => {
+    return await fetch(url, options)
+  }
+});
+const subject   = store.sym(testUrl+"#this");
+const predicate = store.sym('https://example.org/message');
+const object    = store.literal('hello world');
+const document  = subject.doc();
+
+async function main(){
+  // login using solid-auth-client
+  store.add(subject, predicate, object, document);
+  await fetcher.putBack(document);
+  store.remove(subject, predicate, object, document);
+  await fetcher.load(document);
+  await fetcher.webOperation('DELETE',document);
+}
+main();
+```
 
 #### "Why is not a graph type"
 
