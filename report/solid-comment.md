@@ -34,6 +34,7 @@ The central resource is the comment in itself.
 ### Questions
 
 * How to generate random IDs for the comment identification, is this necessary?
+* How to do all of this server-side, would this be against the Solid idea?
 
 ## Learnings
 
