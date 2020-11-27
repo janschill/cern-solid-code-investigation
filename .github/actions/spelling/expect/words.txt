@@ -1,6 +1,7 @@
 Abdurrahman
 Aboulnaga
 acl
+aifb
 amyvdh
 angelo
 api
@@ -13,6 +14,8 @@ bc
 berners
 blog
 brickley
+btc
+Bugiotti
 Capadisli
 cdivilly
 cernbox
@@ -20,6 +23,7 @@ certbot
 certonly
 chmod
 chown
+cient
 cloudflare
 codimd
 colostate
@@ -56,11 +60,15 @@ gdac
 getindico
 getopenid
 Ghanem
+Gibbins
 github
 gitlab
+Goasdou
 Google
+guez
 gzip
 handshakeswithtlsclientauth
+Harth
 Hawke
 Hetzner
 homepage
@@ -97,6 +105,7 @@ json
 JWT
 Jz
 Kanban
+Kaoudi
 LDFLAGS
 ldp
 ldpc
@@ -110,6 +119,7 @@ LXh
 macos
 Maged
 mailto
+Manolescu
 Mansour
 mbox
 meier
@@ -123,6 +133,7 @@ mov
 mozilla
 Msc
 namespace
+Naymat
 netstat
 Nextcloud
 NGi
@@ -162,15 +173,19 @@ reprioritized
 respec
 rfc
 roadmap
+Rodr
 ru
 rubensworks
 rubenverborgh
+Sakr
 Sambra
 Sarven
 scenaristeur
 schem
+Schenkel
 schill
 sestoft
+SIGMOD
 solidcommunity
 solidproject
 someprefixvalue
@@ -204,6 +219,7 @@ usr
 vcard
 vincenttunru
 visualstudio
+VLDB
 vue
 Vyr
 webapp
@@ -211,6 +227,7 @@ webarch
 webid
 webroot
 website
+Weikum
 wiki
 wikipedia
 www
@@ -220,4 +237,7 @@ XML
 xmlns
 yml
 yy
+Zampetakis
+zenodo
 zlib
+zsu
