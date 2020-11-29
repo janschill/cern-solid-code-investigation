@@ -1,0 +1,4 @@
+@prefix : <#>.
+@prefix ex: <https://example.org/>.
+
+:this ex:message "hello world".
