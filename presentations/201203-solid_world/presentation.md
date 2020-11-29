@@ -10,16 +10,21 @@ Maria Dimou (CERN) & Jan Schill (IT University Copenhagen)
 
 Presentation at [the December 2020 Solid World](https://solidproject.org/events)
 
+<!-- Speaking notes:
+
+Hello, my name is Jan. I am a Master's student at the IT University of Copenhagen and I am here today to talk about the CERN-Solid code investigation. This project was defined by Maria Dimou, the CERN-Solid collaboration manager. She contacted me, made the project fit as a thesis and is now my supervisor from the CERN side.
+
+-->
+
 ---
 
 ## Overview
 
-1. **Introduction**
-3. **Why** investigate into CERN-Solid?
-2. **What** is Indico?
-4. **How** is the investigation carried out?
-5. **Conclusion**
-6. **References**
+1. Introduction
+3. Getting Started with Solid at CERN
+4. Project Scope and Approach
+5. Conclusion
+6. References
 
 ---
 
@@ -29,7 +34,6 @@ Investigate the integration of Solid principles into software from CERN
 
 <!-- Speaking notes:
 
-I am Jan, student at the IT University of Copenhagen.
 
 Half a year ago I was looking for a thesis project
 When I learned about Solid at RightsCON, I liked the idea
@@ -44,7 +48,7 @@ Before going into the details of how this will be done, it should be established
 
 ---
 
-## Why investigate into CERN-Solid?
+## Getting Started with Solid at CERN
 
 * CERN the birthplace of the Web
 * Many sophisticated software projects at CERN
@@ -57,10 +61,6 @@ CERN being the birthplace of the World Wide Web thanks to none other than Tim Be
 Has always had an interest in the evolvement of the web.
 Further, CERN has many sophisticated software project, which are already open source and are of operational status with tens of thousands of users.
 
-
-====
-TODO: Maybe more
-====
 -->
 
 ---
@@ -87,7 +87,7 @@ It has been in production for 20 years and is being used heavily by CERN and oth
 
 ---
 
-### Why Indico can be a PoC for Solid
+### Why Indico Can Be a PoC for Solid
 
 * 20 years of excellent operational quality
 * No incentive for user data in modules of
@@ -103,18 +103,11 @@ When a conference host creates an event, they decide what information is needed 
 
 For the comments. The idea would be to enrich the meeting interface with a comment module, that allows users to create messages and associate them with a meeting. Those comments could also be easily stored in a data pod.
 
-=== backlog notes
-
-* For example when a user registers for a conference over Indico, the conference host decides what user data is needed to register
-* This user data should not be on CERN's server (for the running CERN instance) or on wherever Indico is hosted
-* Solid allows a good solution of every user hosting this data on their preferred data pod
-* It is not limited to the conference registration, could also be applied to a comment module or functionalities but this is part of one of the milestones on the next slide.
-
 -->
 
 ---
 
-## How is the investigation carried out?
+## Project Scope and Approach
 
 1. **Review Solid specification**
 2. **Evaluate Solid implementations**
@@ -141,7 +134,6 @@ I appreciate every exchange with all of you experienced engineers, it being ques
 
 This and many more challenges await me, but I am positive and delighted to take part in this amazing journey.
 
-
 -->
 
 ---
@@ -157,5 +149,7 @@ The success of the [CERN-Solid code investigation project](https://it-student-pr
 
 ## References
 
-* [Detailed project description](https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation)
-* [Project GitHub repository](https://github.com/janschill/uni-research_project)
+* [https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation](https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation)
+* [https://github.com/janschill/uni-research_project](https://github.com/janschill/uni-research_project)
+* [https://github.com/indico/](https://github.com/indico/)
+*
