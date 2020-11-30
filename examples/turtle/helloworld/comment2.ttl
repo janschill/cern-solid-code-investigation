@@ -1,4 +1,0 @@
-@prefix : <#>.
-@prefix ex: <https://example.org/>.
-
-:this ex:message "My comment 2".
