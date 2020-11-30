@@ -34,12 +34,13 @@ The central resource is the comment in itself.
 | CommentContainer |
 | :------------------:|
 
-
 ### Questions
 
 * How to generate random IDs for the comment identification, is this necessary?
 * How to do all of this server-side, would this be against the Solid idea?
 * RDF - what is inference and why is it a challenge on large scale
+* How to get all resources from a container?
+  * The response of a GET to a container returns the information of what it contains, but not their information. This is solved with [Gobbling](https://github.com/solid/solid-spec/issues/145) or SPARQL.
 
 ## Learnings
 
