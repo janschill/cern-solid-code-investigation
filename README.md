@@ -100,7 +100,7 @@ The defined milestones give detailed descriptions on what should be when achieve
 - [Linked Data Platform Use Cases and Requirements](https://www.w3.org/TR/ldp-ucr/)
 - [Linked Data Platform Best Practices and Guidelines](https://www.w3.org/TR/ldp-bp/)
 - [SPARQL 1.1 Query Language](https://www.w3.org/TR/sparql11-query/)
-
+- [Linked Data Open Vocabularies](https://lov.linkeddata.es/dataset/lov/)
 
 ##### Solid World
 
