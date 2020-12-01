@@ -34,6 +34,8 @@ The central resource is the comment in itself.
 | CommentContainer |
 | :------------------:|
 
+## Learnings
+
 ### Questions
 
 * How to generate random IDs for the comment identification, is this necessary?
@@ -41,8 +43,9 @@ The central resource is the comment in itself.
 * RDF - what is inference and why is it a challenge on large scale
 * How to get all resources from a container?
   * The response of a GET to a container returns the information of what it contains, but not their information. This is solved with [Gobbling](https://github.com/solid/solid-spec/issues/145) or SPARQL.
-
-## Learnings
+* Performance, all resources from the different pods, traditionally all just from one database
+* Finding the right RDF Schemas and ontologies for my resources
+* Learning curve
 
 ### 403 Origin Unauthorized
 
