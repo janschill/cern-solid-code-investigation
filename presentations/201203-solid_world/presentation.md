@@ -87,6 +87,10 @@ It has been in production for 20 years and is being used heavily by CERN and oth
 
 ---
 
+![](https://codimd.web.cern.ch/uploads/upload_925432015b8cf5e6a4cb4c83938d0b09.png)
+
+---
+
 ### Why Indico Can Be a PoC for Solid
 
 * 20 years of excellent operational quality
@@ -109,14 +113,69 @@ For the comments. The idea would be to enrich the meeting interface with a comme
 
 ## Project Scope and Approach
 
-1. **Review Solid specification**
+1. **Review Solid specifications**
 2. **Evaluate Solid implementations**
-3. Enrich Indico with Solid principles
+3. **Enrich Indico with Solid principles**
 4. Recommendations on Solid adoption in CERN applications
 5. Document challenges, advantages, gaps
 6. Presentation of proceedings
 
 *[GitHub: janschill/uni-research_project](https://github.com/janschill/uni-research_project)*
+
+---
+
+### Review Solid Specifications
+
+* Comprehensive and high quality
+* Work in progress
+* Complex
+
+<!--
+At times unsure what is final, what will change, how can I be sure to align my implementations (client or server) with the specifications
+
+Boilerplate for client implementation
+-->
+
+---
+
+### Evaluate Solid Implementations
+
+* Node Solid Server (NSS)
+* Enterprise Solid Server (ESS)
+* Community Solid Server (CSS)
+* solidcommunity.net, inrupt.net
+* Client applications
+
+<!--
+* Do I use one of the existing identity providers
+    * if, am I concerned with the hosting of such server
+* How do I pick the fitting server implementation?
+    * how, reliable
+
+-->
+
+---
+
+### Enrich Indico with Solid Principles
+
+![](https://codimd.web.cern.ch/uploads/upload_6be3a9cfc969ec1183f43318915c8e0b.png)
+
+---
+
+#### Experimental “Plugin” Implementation
+
+Getting familiar with NSS and RDF
+
+![](https://codimd.web.cern.ch/uploads/upload_a090c3f89c98fd443875ad089a6d9a94.png)
+
+---
+
+#### Desired Implementation
+
+1. Indico and Solid account linking
+    * Using server side/OAuth2 flow
+2. Read/write data (comments) to pods from Indico backend (?)
+    * Heavy lifting on the server-side
 
 <!-- Speaking notes:
 
@@ -152,4 +211,3 @@ The success of the [CERN-Solid code investigation project](https://it-student-pr
 * [https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation](https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation)
 * [https://github.com/janschill/uni-research_project](https://github.com/janschill/uni-research_project)
 * [https://github.com/indico/](https://github.com/indico/)
-*
