@@ -75,24 +75,6 @@ Integration of Solid principles into software from CERN.
 
 ---
 
-### Evaluate Solid Implementations
-
-* Node Solid Server (NSS)
-* Enterprise Solid Server (ESS)
-* Community Solid Server (CSS)
-* solidcommunity.net, inrupt.net
-* Client applications
-
-<!--
-* Do I use one of the existing identity providers
-    * if, am I concerned with the hosting of such server
-* How do I pick the fitting server implementation?
-    * how, reliable
-
--->
-
----
-
 ### Enrich Indico with Solid Principles
 
 ![](https://codimd.web.cern.ch/uploads/upload_6be3a9cfc969ec1183f43318915c8e0b.png)
@@ -110,8 +92,8 @@ Getting familiar with NSS and RDF
 #### Desired Implementation
 
 1. Indico and Solid account linking
-    * Using server side/OAuth2 flow
-2. Read/write data (comments) to pods from Indico backend
+    * Using server-side/OAuth2 flow
+2. Read/write data (comments) from/to pods in Indico backend
     * Heavy lifting on the server-side
 
 ---
