@@ -64,4 +64,25 @@
 * Also, comes with frustration, they come more from the complexity of it
 * Make more approachable beneficial
 
-## 9 implementations
+## 9 Enrichments
+
+* Looks like this
+
+## 10 Plugin
+
+* What I am doing now
+
+## 11 Desired
+
+* What I want
+
+## 12 Conclusion
+
+* CERN be inspired by PoC
+  * Use CSS/NSS on their infrastructure
+  * Build modules with Solid principles in mind
+  * Early adopter
+  * embrace Solid
+  * and actively participate in Solid development
+  * to help shape the next step of the Web.
+
