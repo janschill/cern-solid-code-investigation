@@ -115,6 +115,7 @@ lifecycle
 linkeddata
 Linux
 localhost
+lov
 LXh
 macos
 Maged
