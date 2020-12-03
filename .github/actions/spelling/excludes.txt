@@ -1,6 +1,7 @@
 \.png$
 \.pdf$
 \.xd$
+\.drawio$
 \.docx$
 ^\.github/
 \.gitignore
