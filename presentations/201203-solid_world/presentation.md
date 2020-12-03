@@ -10,12 +10,6 @@ Maria Dimou (CERN) & Jan Schill (IT University Copenhagen)
 
 Presentation at [the December 2020 Solid World](https://solidproject.org/events)
 
-<!-- Speaking notes:
-
-Hello, my name is Jan. I am a Master's student at the IT University of Copenhagen and I am here today to talk about the CERN-Solid code investigation. This project was defined by Maria Dimou, the CERN-Solid collaboration manager. She contacted me, made the project fit as a thesis and is now my supervisor from the CERN side.
-
--->
-
 ---
 
 ## Overview
@@ -30,21 +24,7 @@ Hello, my name is Jan. I am a Master's student at the IT University of Copenhage
 
 ## Introduction
 
-Investigate the integration of Solid principles into software from CERN
-
-<!-- Speaking notes:
-
-
-Half a year ago I was looking for a thesis project
-When I learned about Solid at RightsCON, I liked the idea
-Reached out to solidproject.org and had a talk with Mitzi
-She connected me with Maria, who then introduced me to the CERN-Solid code investigation project. Which I am now doing as part of my Master's thesis.
-
-What can be understood under CERN-Solid code investigation
-It is the attempt of investigating into the integration of the Solid principles in the open source software written by CERN.
-
-Before going into the details of how this will be done, it should be established why this should be done in the first place.
--->
+Integration of Solid principles into software from CERN.
 
 ---
 
@@ -55,59 +35,22 @@ Before going into the details of how this will be done, it should be established
     * Already open source
     * Operational status (tens of thousands of users)
 
-<!-- Speaking notes:
-
-CERN being the birthplace of the World Wide Web thanks to none other than Tim Berners-Lee.
-Has always had an interest in the evolvement of the web.
-Further, CERN has many sophisticated software project, which are already open source and are of operational status with tens of thousands of users.
-
--->
-
 ---
 
-## What is Indico?
+## What Is Indico and Why Can It Be a PoC for Solid?
 
 * Open-source tool for event organisation, archival and collaboration
-* “*Indico is used every day at CERN to manage more than 600,000 events of different complexities and 200 meeting and conference rooms.*”
-
-[https://github.com/indico/](https://github.com/indico/)
-
-<!-- Speaking notes:
-
-One of these applications is Indico.
-It is an open source tool for event organisation, archival and collaboration.
-It has been in production for 20 years and is being used heavily by CERN and other companies
-
-=== backlog notes
-* 20 years in production
-* It shows by the in-house usage that Indico has a tremendous amount of users and excellent operational quality
-* The UN uses Indico since 2016 to handle more than 160,000 participants, it is also widely used outside of CERN
-* The application is written in Python and actively maintained by a developer team of six
--->
-
----
-
-![](https://codimd.web.cern.ch/uploads/upload_925432015b8cf5e6a4cb4c83938d0b09.png)
-
----
-
-### Why Indico Can Be a PoC for Solid
-
-* 20 years of excellent operational quality
+* Resilient and reliable for over 20 years
 * No incentive for user data in modules of
     * Conference registration
     * Meeting comments
 
-<!-- Speaking notes:
 
-As mentioned before it is now being used for over 20 years with excellent operational quality.
-The software in itself does not have any incentives for user data in some of its modules like: registrating for a conference or commenting on meetings.
+“*Indico is used every day at CERN to manage more than 600,000 events of different complexities and 200 meeting and conference rooms.*”
 
-When a conference host creates an event, they decide what information is needed to register – sometimes personal identifiers like passport numbers. Those – much to the desire of a user – could be stored decentralized on a Solid data pod.
+---
 
-For the comments. The idea would be to enrich the meeting interface with a comment module, that allows users to create messages and associate them with a meeting. Those comments could also be easily stored in a data pod.
-
--->
+![](https://codimd.web.cern.ch/uploads/upload_925432015b8cf5e6a4cb4c83938d0b09.png)
 
 ---
 
@@ -129,12 +72,6 @@ For the comments. The idea would be to enrich the meeting interface with a comme
 * Comprehensive and high quality
 * Work in progress
 * Complex
-
-<!--
-At times unsure what is final, what will change, how can I be sure to align my implementations (client or server) with the specifications
-
-Boilerplate for client implementation
--->
 
 ---
 
@@ -174,26 +111,8 @@ Getting familiar with NSS and RDF
 
 1. Indico and Solid account linking
     * Using server side/OAuth2 flow
-2. Read/write data (comments) to pods from Indico backend (?)
+2. Read/write data (comments) to pods from Indico backend
     * Heavy lifting on the server-side
-
-<!-- Speaking notes:
-
-At the moment I am reviewing the Solid specifications and evaluating existing Solid implementations.
-
-I find the specifications invaluable to my studies, as it acts as a source of truth and helped and still is helping me, understand a lot of details from the Solid Ecosystem.
-Nevertheless, is the second point in my roadmap – the evaluation of existing Solid implementations – essential, because actually developing a Solid client is challenging – at least for me – without assistance from the specifications or other documents.
-I found the sheer amount of information and different implementations overwhelming. I've already received a lot of help from active members in the Solid community to point me to good resources, but it definitely has been a challenge.
-This is no means any critique, just an observation, which can in my opinion be observed in every area of web development.
-Also, not forgetting the facts that Solid is so young and in such active development and my limited experience with web development makes this justifiable. And every encounter with anyone from the Solid community has been more than a pleasure.
-
-One area where I have not spent too much time in yet, but will be very relevant in the near future is in the actual integration of Solid in complex software. One challenge I will be facing is the integration of Solid authentication within Indico. It already has an existing authentication module, what we desire now is, that an existing Indico user would be able to link his WebID with his Indico profile, to then use the previously mentioned enrichments (conference registration and comments), making the storage of this data on a Solid pod possible.
-
-I appreciate every exchange with all of you experienced engineers, it being questions, recommendations or challenges that you might forsee. Please reach out to me.
-
-This and many more challenges await me, but I am positive and delighted to take part in this amazing journey.
-
--->
 
 ---
 
@@ -208,6 +127,8 @@ The success of the [CERN-Solid code investigation project](https://it-student-pr
 
 ## References
 
-* [https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation](https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation)
-* [https://github.com/janschill/uni-research_project](https://github.com/janschill/uni-research_project)
-* [https://github.com/indico/](https://github.com/indico/)
+* *Thesis description:* [https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation](https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation)
+* *Thesis repo.:* [https://github.com/janschill/uni-research_project](https://github.com/janschill/uni-research_project)
+* *Indico repo.:* [https://github.com/indico/](https://github.com/indico/)
+* *CERN-Solid entry point:* [https://indico.cern.ch/category/11962/](https://indico.cern.ch/category/11962/)
+* *CERN-Solid chat:* [https://gitter.im/cern-solid/community](https://gitter.im/cern-solid/community)
