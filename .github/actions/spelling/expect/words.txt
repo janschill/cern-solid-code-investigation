@@ -21,6 +21,7 @@ cdivilly
 cernbox
 certbot
 certonly
+cfc
 chmod
 chown
 cient
@@ -52,6 +53,7 @@ edu
 ETag
 evertramos
 fbdf
+fd
 foaf
 freecodecamp
 frontend
