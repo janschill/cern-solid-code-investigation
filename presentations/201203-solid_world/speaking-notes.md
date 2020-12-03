@@ -17,7 +17,7 @@
 
 * Code investigation, what exactly am I going to do?
 * Try to integrate the Solid principles in open source software from CERN.
-* Meaning, where appropriate the user can decided where to store data.
+* Meaning, where appropriate the user can decide where to store data.
 
 ## 4 Getting Started
 
@@ -52,7 +52,7 @@
   * What is there?
   * How do they compare?
   * What is a good recipe for building client-side and server-side application for Solid?
-& Thirdly, enrichments
+* Thirdly, enrichments
   * How could the briefly mentioned features be implemented?
 
 ## 8 Review
