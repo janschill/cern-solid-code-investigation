@@ -28,6 +28,7 @@ cient
 cloudflare
 codimd
 colostate
+computingjoy
 config
 CPPFLAGS
 csail
