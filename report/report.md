@@ -57,6 +57,7 @@ The other crucial part of Solid is the decentralized authentication.
 <!-- TODO: include from review-solid_spec.md -->
 
 ### Conclusion
+<!-- TODO: include from review-solid_spec.md -->
 
 ## Evalutation of Solid Implementations
 

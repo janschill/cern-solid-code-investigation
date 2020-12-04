@@ -182,3 +182,5 @@ Right after the statement:
 >The root container (pim:Storage) MUST have an ACL auxiliary resource directly associated to it. The associated ACL document MUST include an authorization policy with acl:Control access privilege.
 
 talk about auxiliary resources and WAC.
+
+## Conclusion
