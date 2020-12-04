@@ -1,4 +1,4 @@
-# Review of the Solid specifications
+# Review of the Solid Specifications
 
 ## Summary
 
