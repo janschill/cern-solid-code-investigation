@@ -96,6 +96,7 @@ The defined milestones give detailed descriptions on what should be when achieve
 - [RDF 1.1 Semantics](https://www.w3.org/TR/2014/REC-rdf11-mt-20140225/#bib-RDF11-CONCEPTS)
 - [RDF 1.1 Turtle](https://www.w3.org/TR/2014/REC-turtle-20140225/)
 - [Linked Data](https://www.w3.org/DesignIssues/LinkedData.html)
+- [Understanding Linked Data](http://computingjoy.com/blog/2016/09/26/understanding-linked-data/)
 - [Linked Data Platform 1.0](https://www.w3.org/TR/ldp/)
 - [Linked Data Platform Use Cases and Requirements](https://www.w3.org/TR/ldp-ucr/)
 - [Linked Data Platform Best Practices and Guidelines](https://www.w3.org/TR/ldp-bp/)
