@@ -130,7 +130,8 @@ TODO: Give short introduction to these topics:
 
 ## Remarks
 
-The Solid Ecosystem does a decent job in the claims it makes in the beginning. It does not go into best practices on how to build a Solid server or client, but solely focusses on the clear definition on what Solid is when looked at technically.\
+The Solid Ecosystem does a decent job in the claims from the beginning. It does not go into best practices on how to build a Solid server or client, but solely focusses on the clear definition on what Solid is when looked at technically.\
+Other documents like TODO: Linked Data Primer and Best Practices are written to describe common patterns in the development with Linked Data.
 Further, the review process seems sophisticated and lively in its discussion.
 Contributions to the specifications are heavily discussed using the GitHub issue and pull request features, but also chat platforms like Gitter. A review of such a contribution follows strict regulations. A contribution is encouraged to come with a sophisticated explanation on why this change is appropriate. Each topic within the specifications have editors to them assigned who are responsible.
 
