@@ -17,13 +17,9 @@ The Web was created in 1989 by Tim Berner's Lee while working at CERN "to allow 
 This brilliant idea has ever since grown as an essential part of our all lives. While it has given a new platform for all types of innovation, it has also evolved away from the initial idea of sharing knowledge freely. What term has been coined describing the phenomena of isolating data from the public by creating the so called *data silos*. The data in these silos is then only available to the organization controlling the application.
 A multitude of problems reside with this, like the actual content creator not owning their own data, nor having full access to it.
 Another drawback is that the application owners decide what interfaces are publicly accessable, therefore, not allowing users easy migrations of their data.
-
-
-- What it is
-- What the motivavtion is
-- What is going to be talked about in this paper
-- CERN
-
+This results in one user having to provide the same information to different applications: username, name, age and others depending on the domain. The same problem applies to traditional web application when authenticating their users. Usually applications will do the authentication themselves, but there are initiatives that decentralize this authentication, which is called single Sign-On (SSO).
+Solid is aiming at solving these problems by standardizing an ecosystem where data is stored on data pods choosen and fully controlled by the users/agents, where they can decided who has access to what data; Linked Data is utilized to create interoparable data, for seamless migration between applications and pods; authenticate with one identity provider (IDP) to use multiple Solid applications with one username and password combination.
+<!-- TODO: More? -->
 ## Overview of Solid
 
 <!--
