@@ -1,22 +1,59 @@
 # Report
 
-## Solid
+<!--
+Rethought structure:
 
-TODO:
+* What is Solid?
+* What is a data pod?
+* Review specifications
+* How is a data pod implemented?
+* What implementations exist?
 
-* [ ] Overview
-* [ ] Explain Solid
-* [ ] Why bother
+-->
 
-### Review of the Solid specifications
+## Introduction
 
-TODO: review-solid-spec.md
+- What it is
+- What the motivavtion is
+- What is going to be talked about in this paper
+- CERN
 
-* [ ] Summary of specifications
-* [ ] Comments
-* [ ] Recommendations
+## Overview of Solid
 
-### Solid data pod
+- storage (data pod)
+- authentication (webid, oauth/oidc)
+- applications
+
+## Review of Solid Specifications
+
+### Summary
+
+### Comments/Remarks
+
+### Conclusion
+
+## Evalutation of Solid Implementations
+
+### Solid Servers
+
+<!-- Notes
+
+* Different flavors exist because Solid is a standard
+
+-->
+
+#### How to Set One Up
+
+### Solid Clients
+
+### Conclusion
+
+## Overview of CERN
+
+
+
+
+### Solid Data Pod
 
 TODO:
 
@@ -33,7 +70,30 @@ Notes:
 - [Subdomain vs. subdirectory](https://stackoverflow.com/questions/1965609/subdomain-vs-subdirectory-in-web-programming)
 - Wildcard certificates
 
-### Server implementations
+TODO:
+
+* [ ] Overview
+* [ ] Explain Solid
+* [ ] Why bother
+
+### Review of the Solid Specifications
+
+<!--
+Things to keep in mind:
+
+* What is it?
+* What is it not?
+* What parts are missing?
+* How can I be sure that something implemented today works tomorrow?
+-->
+
+TODO: review-solid-spec.md
+
+* [ ] Summary of specifications
+* [ ] Comments
+* [ ] Recommendations
+
+### Server Implementations
 
 The initial Solid server was developed at the Massachusetts Institute of Technology (MIT) by PhD students. This server is still to this day the only server that passes most test cases of the [Solid Test Suite](https://github.com/solid/test-suite), which is a set of checks developed to test an implementation against the Solid specifications. The Test Suite for Solid is also still in development and constantly extended by more tests for the different categories of a Solid server.\
 This server is completely open source, written in JavaScript with the help of the web framework Node.js and is commonly referred to as Node Solid Server (NSS).\
@@ -58,15 +118,17 @@ TODO:
   * [x] NSS
   * [x] CSS
 * [x] Solid specification test suite
+* [ ] Compare the servers
 * [ ] All points could be expanded on
 
-### Client implementations
+### Client Implementations
 
-* [ ] Build a simple frontend application that
-  * [ ] authenticates with a Solid data pod
-  * [ ] reads the user from the pod
-  * [ ] reads data from the pod
-  * [ ] writes data to the pod
+* [x] Build a simple frontend application that
+  * [x] authenticates with a Solid data pod
+  * [x] reads the user from the pod
+  * [x] reads data from the pod
+  * [x] writes data to the pod
+* [ ] Write about this implementation
 
 ## CERN
 
