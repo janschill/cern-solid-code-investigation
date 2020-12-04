@@ -33,7 +33,7 @@ The defined milestones give detailed descriptions on what should be when achieve
 
 #### CERN
 
-- [Meetings CERN-Solid](https://indico.cern.ch/category/11962/)
+- [CERN-Solid index](https://indico.cern.ch/category/11962/)
 
 ##### Indico
 
