@@ -44,8 +44,22 @@ Users or agents can freely choose from their favorite pod provider where they wo
 These providers are also used as IDPs to enable decentralized authentication, which shall be looked at more closely in a moment.
 The data pod storage architecture follows the Linked Data server specifications. It enables hierarchical resource discovery in a RESTful manner, where the path of the URI gives information about the relation of its underlying data. Up until a URI does not end with a `/` character, every path segment resembles a container. A container is the collection of multiple resources. Resources are the data items stored on a pod.
 Every container holds information of the access control in form of an access control list (ACL) and information of what resources it contains. Both of these resources are returned in an RDF compliant format, mostly Turtle.
+The data pod differentiates between two resource types: RDF and binary/text.
+RDF is a framework to represent data on the Web. The basic structure of it follows a graph representation, where two nodes, the subject and object, are connected by a predicate. This structure is called a *triple*.
+In RDF nodes and edges elevate the benefits of URIs, more specifically IRIs—which are a generalization of URIs, offering more Unicode characters, by either using them as globally unique identifiers or globally unique and resuable property names.
+
+```turtle
+@prefix ex: <http://example.com/> .
+
+ex:s ex:p ex:o .
+```
 
 
+also make use of globally unique IDs and property names
+
+
+
+Nodes and edges can either be IRIs, literals or blank nodes. IRIs are a generalization of URIs. IRIs allow a wider range of Unicode characters [[Source]](https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/#dfn-iri).
 
 
 The other crucial part of Solid is the decentralized authentication.
