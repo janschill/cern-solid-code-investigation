@@ -93,7 +93,7 @@ As mentioned, Solid follows the specifications of the Linked Data Platform to de
 
 <!-- To extend on the previous mentioned necessity of `acl:Control` on the root container, TODO: more here *[Interesting comment](https://github.com/solid/specification/issues/197#issuecomment-699937520).*\ -->
 
-A WebID is an HTTP URI that denotes an agent on the Web. It is used as the primary agent identifiction in the Solid Ecosystem.
+A WebID is an HTTP URI that denotes an agent on the Web. It is used as the primary agent identification in the Solid Ecosystem.
 
 <!-- WebID distinguishes between WebID URL and WebID Profile URI. The URI with a fragment identifier is the WebID and acts as the identifier for an agent. The Profile Document – describing the agent – can be reached by leaving out the fragment identifier.
 

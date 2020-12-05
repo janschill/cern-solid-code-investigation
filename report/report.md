@@ -60,12 +60,12 @@ The Community Solid Server (CSS) is a new project aiming at replacing the NSS to
 The Enterprise Solid Server (ESS) is Inrupt's commercial closed-source solution launched in November 2020.
 
 A lot of different libraries are built to enable development in the ecosystem. A subset as an example are client-side libraries for authentication with data pods; reading and writing RDF based resources; an SDK for React development.
-Additionally, a lot of efforts are put into the developemnt of a Solid operating system (SolidOS), which can be deployed onto the data pod and supports the browsing of ones pod, editing files, parsing and showing the data in a meaningful manner and other useful additions.
+Additionally, a lot of efforts are put into the development of a Solid operating system (SolidOS), which can be deployed onto the data pod and supports the browsing of ones pod, editing files, parsing and showing the data in a meaningful manner and other useful additions.
 Application enriching the ecosystem by improving the personal life like task managers or other initiatives are also being developed on by the community.
 
 ## Introduction CERN
 
-The key elements of loosly decoupling
+The key elements of loosely decoupling
 
 ## Overview of CERN
 
