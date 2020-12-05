@@ -187,9 +187,15 @@ mkdir /var/www/janschill.de/.db
 
 ## Useful commands
 
-```
+```bash
 netstat -tulpen # List of running servers
 nmap janschill.de # Scan all open ports
+```
+
+Request the ACL file for the root container, which is inherited down to every container, if not stated otherwise.
+
+```bash
+http GET https://janschill.solidcommunity.net/.acl 'authorization: Bearer …'
 ```
 
 ## Explanation
