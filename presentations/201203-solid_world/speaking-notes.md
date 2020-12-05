@@ -16,7 +16,7 @@
 ## 3 Intro
 
 * Code investigation, what exactly am I going to do?
-* Try to integrate the Solid principles in open source software from CERN.
+* Try to integrate the Solid principles in open-source software from CERN.
 * Meaning, where appropriate the user can decide where to store data.
 
 ## 4 Getting Started

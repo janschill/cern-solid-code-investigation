@@ -9,7 +9,7 @@ The Solid project, which is also led by Sir Tim has its purpose in handing the c
 
 This is realized with the [Solid specifications](https://solid.github.io/specification/), which defines a set of rules and protocols on how to implement server and client in the Solid ecosystem (W3C Solid Community Group, 2020).
 
-The team behind Solid and other open source contributors have built a [web server](https://github.com/solid/node-solid-server), which implements a pod to those specifications and a list of applications, like a [chat](https://solid-chat.5apps.com/).
+The team behind Solid and other open-source contributors have built a [web server](https://github.com/solid/node-solid-server), which implements a pod to those specifications and a list of applications, like a [chat](https://solid-chat.5apps.com/).
 
 In this project a Solid pod should be set up and put into a meaningful context. This can done by finding a proper use case at ITU‘s campus for example: storing all the data for a lab on a self hosted pod at ITU.
 
@@ -29,7 +29,7 @@ These applications could be analyzed and compared to applications that are not i
 This could be done with a selection of products developed by [CERN](https://home.cern/).\
 An example application is Indico, a sophisticated event management system that is being used by a large number of users.
 
-The motivation of doing it on CERN‘s products lies in the interest of CERN collaborating with the Solid project, as they share common values with the mission of Solid and are already developing applications open source. Not to forget was the Web invented at CERN by Sir Tim, creating ideological reasons to succeed in the collaboration of CERN and Solid (Dimou, 2020).
+The motivation of doing it on CERN‘s products lies in the interest of CERN collaborating with the Solid project, as they share common values with the mission of Solid and are already developing applications open-source. Not to forget was the Web invented at CERN by Sir Tim, creating ideological reasons to succeed in the collaboration of CERN and Solid (Dimou, 2020).
 
 ### Intended learning outcomes
 

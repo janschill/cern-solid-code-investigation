@@ -32,7 +32,7 @@ Integration of Solid principles into software from CERN.
 
 * CERN the birthplace of the Web
 * Many sophisticated software projects at CERN
-    * Already open source
+    * Already open-source
     * Operational status (tens of thousands of users)
 
 ---

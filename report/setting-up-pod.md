@@ -1,6 +1,6 @@
 # Setting up a Solid pod
 
-The goal by the end of this tutorial is a working multiuser Solid pod behind an Nginx reverse proxy. The current available implementation of a Solid pod is the open source [Node Solid Server (NSS)](https://github.com/solid/node-solid-server).
+The goal by the end of this tutorial is a working multiuser Solid pod behind an Nginx reverse proxy. The current available implementation of a Solid pod is the open-source [Node Solid Server (NSS)](https://github.com/solid/node-solid-server).
 
 This write-down mostly follows [this tutorial](https://solidproject.org/for-developers/pod-server) from the official Solid website, the documentation in the [repository](https://github.com/solid/node-solid-server) of the NSS and other sources from the web, which shall be referenced as used.
 
