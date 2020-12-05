@@ -123,10 +123,11 @@ Once authenticated with a username and password combination by an IDP, all Solid
 
 ## Remarks
 
-The Solid Ecosystem does a decent job in the claims from the beginning. It does not go into best practices on how to build a Solid server or client, but solely focusses on the clear definition on what Solid is when looked at technically.\
+The Solid Ecosystem does a good job in the claims from the beginning. It does not go into best practices on how to build a Solid server or client, but solely focusses on the clear definition on what Solid is when looked at technically.\
 Other documents like TODO: Linked Data Primer and Best Practices are written to describe common patterns in the development with Linked Data.
 Further, the review process seems sophisticated and lively in its discussion.
 Contributions to the specifications are heavily discussed using the GitHub issue and pull request features, but also chat platforms like Gitter. A review of such a contribution follows strict regulations. A contribution is encouraged to come with a sophisticated explanation on why this change is appropriate. Each topic within the specifications have editors to them assigned who are responsible.
+Because Solid is open-source and therefore benefits from an active contribution from all parties, it is highly recommended to participate in its development.
 
 Clearly stating that the Solid Ecosystem document has its purpose in defining the implementation requirements for a data pod and makes suggestions to other documents that do a thorough job on speaking out use-cases and best-practices is a good structural decision.
 
@@ -135,6 +136,8 @@ Clearly stating that the Solid Ecosystem document has its purpose in defining th
 <!-- TODO: think about the order of these -->
 
 #### Incomplete draft
+
+*Edit: as of lately 05.12.2020 this section has been added.*
 
 Due to the fact that the specifications are work in progress and even some crucial *sub-specifications*, like Web Access Control ([existing draft](https://www.w3.org/wiki/WebAccessControl)), are not even started, makes a review challenging as the documents are subject to additions, removals, or changes.
 Even though it can be assumed the general direction of its underlying principles does not change.
@@ -145,23 +148,26 @@ An application developed to the rules of today's Solid rules could result in the
 The Solid Ecosystem uses not only its own specifications, but also external specifications and capitalizes on sophisticated technologies like the hypertext transfer protocol (HTTP).
 But it also references some technologies that have not been around for as long as HTTP, like WebID.\
 WebID in itself is also defined in an incomplete technical report. It being incomplete as well, creates a chain of uncertainty towards their definitions.\
-If a missing section in The Solid Ecosystem links to an external specification, one could use that document as a source of truth, but if it is also incomplete, the risk of building something that becomes inaccurate increases.
+If a missing section in the Solid Ecosystem links to an external specification, one could use that document as a source of truth, but if it is also incomplete, the risk of building something that becomes inaccurate increases.
 
 #### Limited information on Solid client
 
-Section [2.1.3](https://solid.github.io/specification/#http-client) going into the requirements for a Solid client implementation is limited in its details.
-It only says that it needs to be an HTTP/1.1 client, must implement the [HTTP Authentication framework](https://httpwg.org/specs/rfc7235.html) and the `Content-Type` HTTP header for `PUT`, `POST` and `PATCH` requests.
+Section [2.1.2](https://solid.github.io/specification/#http-client) goes into the requirements for a Solid client implementation is limited in its details.
+It only states it needs to be an HTTP/1.1 client, must implement the [HTTP Authentication framework](https://httpwg.org/specs/rfc7235.html) and the `Content-Type` HTTP header for `PUT`, `POST` and `PATCH` requests.
 From [this commit](https://github.com/solid/specification/commit/d387e332f3bbc9af8e7ad596fa742530262a76a9) in the Solid specification repository it can be assumed that a section for client implementation was planned, but reprioritized and delinked from the main document.
+A lot of Solid clients exist and of course the Solid ecosystem—as stated in the beginning—is not a document for best-practices, it would be highly beneficial to have such documents explicitly giving good implementation details for developers, especially the ones who have not been around in the semantic web field.
+The section [Evaluation of Solid Implementations](#evaluation-of-solid-implementations) will look more closely at existing solution on the server and client side.
 
 #### No justification for usage of Linked Data
 
-Even though it might not be the proper place to explain the reasons for choosing specific technologies like Linked Data – as those discussions happen prior to defining the technologies in the documentation – but it seems some clarifications why Linked Data as a technology is being used for data representation might be valuable beyond just stating that is used because of "resource discovery and lifecycle management." [[Source]](https://solid.github.io/specification/#resource-containment)
+Even though it might not be the proper place to explain the reasons for choosing specific technologies like Linked Data—as those discussions happen prior to defining the technologies in the documentation—but it seems some clarifications why Linked Data as a technology is being used for data representation might be valuable beyond just stating that is used because of "resource discovery and lifecycle management." [[Source]](https://solid.github.io/specification/#resource-containment).
+TODO: Maybe the Solid principles (are these defined somewhere) are clear enough when they say that interoperability is a key aspect.
 
 #### Definition order and linkage
 <!-- ACL resource, container resource, auxiliary resource -->
 The document introduces many different terms, which are often defined in the document itself. On occasion it happens that something is used before it is defined and not properly linked to its definition. This aggravates the read flow of a reader unknown to these terms, as the reader needs to find the definition on its own.
 
-#### Prior knowledge needed
+#### Complexity
 
 Even though the document does a great job on going into detail on specific areas, it is still demanding to follow with only a limited knowledge in web technologies.\
 This can be justified by the incomplete status of the document, but also its contrasting principles to conventional web implementations.
