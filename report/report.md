@@ -73,6 +73,10 @@ Several implementations exist to this day, that all do parts of the described so
 The Community Solid Server (CSS) is a new project aiming at replacing the NSS to become the new official open-source implementation of the Solid specifications. It is currently in beta version and actively developed.
 The Enterprise Solid Server (ESS) is Inrupt's commercial closed-source solution launched in November 2020.
 
+A lot of different libraries are built to enable development in the ecosystem. A subset as an example are client-side libraries for authentication with data pods; reading and writing RDF based resources; an SDK for React development.
+Additionally, a lot of efforts are put into the developemnt of a Solid operating system (SolidOS), which can be deployed onto the data pod and supports the browsing of ones pod, editing files, parsing and showing the data in a meaningful manner and other useful additions.
+Application enriching the ecosystem by improving the personal life like task managers or other initiatives are also being developed on by the community.
+
 ## Review of Solid Specifications
 
 [The Solid Ecosystem](https://solid.github.io/specification/) is a by the [Solid editorial team](https://github.com/solid/process/blob/master/panels.md) published technical report. It is the official rewrite of the informal [Solid specification](https://github.com/solid/solid-spec/), which was initially used to define the architecture of Solid servers and clients. This rewrite is still incomplete and being worked on continuously.
