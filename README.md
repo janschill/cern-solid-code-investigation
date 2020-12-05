@@ -8,7 +8,7 @@ For a preliminary timeline with milestones, see the [GitHub milestones](https://
 
 ## [Report](https://github.com/janschill/uni-research_project/blob/main/report/report.md)
 
-This is the report that will be handed in on the 15th of December. It encapsulates point 1 and 2 from the roadmap defined in the [project description](https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation) and an overview of Solid an CERN.
+This is the report that will be handed in on the 15th of December. It encapsulates point 1 and 2 from the roadmap defined in the [project description](https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation) and an overview of Solid and CERN.
 
 ## [Kanban board](https://github.com/janschill/uni-research_project/projects/1)
 
