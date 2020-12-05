@@ -65,6 +65,7 @@ The defined milestones give detailed descriptions on what should be when achieve
 - [Let's Encrypt](https://letsencrypt.org/getting-started/)
 - [ESS documentation](https://docs.inrupt.com/ess/)
 - [ESS product page](https://inrupt.com/products/enterprise-solid-server/)
+- [Server architecture](https://github.com/solid/solid-architecture/blob/master/server/request-flow.md)
 
 ##### Solid development tools
 
