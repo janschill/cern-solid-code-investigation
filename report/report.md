@@ -46,7 +46,7 @@ The data pod storage architecture follows the Linked Data server specifications.
 Every container holds information of the access control in form of an access control list (ACL) and information of what resources it contains. Both of these resources are returned in an RDF compliant format, mostly Turtle.
 The data pod differentiates between two resource types: RDF and binary/text.
 RDF is a framework to represent data on the Web. The basic structure of it follows a graph representation, where two nodes, the subject and object, are connected by an edge, the predicate. This structure is called a *triple*.
-In RDF, nodes and edges elevate the benefits of URIs, more specifically IRIs—which are a generalization of URIs, offering more Unicode characters—by either using them as globally unique identifiers or globally unique and resuable property names. This allows interoperable data by reusing schemas with agreed upon vocabulary to describe data and can be used to obtain more information by derefering the IRIs.
+In RDF, nodes and edges elevate the benefits of URIs, more specifically IRIs—which are a generalization of URIs, offering more Unicode characters—by either using them as globally unique identifiers or globally unique and reusable property names. This allows interoperable data by reusing schemas with agreed upon vocabulary to describe data and can be used to obtain more information by dereferencing the IRIs.
 
 ```turtle
 @prefix jan: <https://janschill.solidcommunity.net/profile> .
