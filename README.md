@@ -119,6 +119,10 @@ The defined milestones give detailed descriptions on what should be when achieve
 
 - [Storing and Querying Evolving Knowledge Graphs on the Web](https://phd.rubensworks.net/)
 
+#### Misc
+
+- [RDF serializer](http://www.ldf.fi/service/rdf-serializer)
+
 #### Not relevant, but interesting
 
 - [Billion Triples Challenge](http://km.aifb.kit.edu/projects/btc-2014/)
