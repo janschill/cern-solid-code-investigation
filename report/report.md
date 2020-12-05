@@ -40,7 +40,11 @@ Solid is aiming at solving these problems by standardizing an ecosystem where da
 In Solid data is stored on personal and through the Web-accessible storages, these are called *data pods*.
 Data pods are personal in the sense of users configuring the access control to the data on their pods themselves. Web-accessible because the pods can be connected to as long as a connection to the Web exists and the correct access controls are given.
 <!-- A pod server is a web server storing the data pod and managing request-response flows. -->
-Users or agents can freely choose from their favorite pod provider where there would like to store data. As of writing this there are two major providers online, inrupt.net and solidcommunity.net.
+Users or agents can freely choose from their favorite pod provider where they would like to store their data. As of writing this there are two major providers online, inrupt.net and solidcommunity.net.
+These providers are also used as IDPs to enable decentralized authentication, which shall be looked at more closely in a moment.
+The data pod storage architecture follows the Linked Data server specifications. It enables hierarchical resource discovery in a RESTful manner, where the path of the URI gives information about the relation of its underlying data. Up until a URI does not end with a `/` character, every path segment resembles a container. A container is the collection of multiple resources. Resources are the data items stored on a pod.
+Every container holds information of the access control in form of an access control list (ACL) and information of what resources it contains. Both of these resources are returned in an RDF compliant format, mostly Turtle.
+
 
 
 
