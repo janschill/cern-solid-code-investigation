@@ -26,6 +26,7 @@ chmod
 chown
 cient
 cloudflare
+codebase
 codimd
 colostate
 computingjoy
@@ -109,6 +110,7 @@ JWT
 Jz
 Kanban
 Kaoudi
+ldf
 LDFLAGS
 ldp
 ldpc
@@ -156,6 +158,7 @@ OIDC
 openid
 openssl
 ouvertes
+panva's
 pdf
 pdos
 pdsinterop
@@ -163,6 +166,7 @@ pem
 pferreir
 phd
 PHP
+phpleague
 pim
 pkce
 plugin
@@ -188,6 +192,8 @@ scenaristeur
 schem
 Schenkel
 schill
+SDK
+serializer
 sestoft
 SIGMOD
 solidcommunity
@@ -222,6 +228,7 @@ userguide
 username
 usr
 vcard
+Verborgh
 vincenttunru
 visualstudio
 VLDB
