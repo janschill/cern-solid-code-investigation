@@ -13,9 +13,10 @@ The Solid Ecosystem combines a set of carefully selected specifications that wer
 
 The main specification starts off by describing how a data pod and a Solid app should be implemented using the HTTP protocol.\
 A data pod is a web server that responds to HTTP requests and returns HTTP responses. Its purpose is the storage of data and the management of who has access to this data.\
-A Solid app is a client that is sending requests to a data pod. It should be able to read and write depending on the access control to a data pod.\
-At the bare minimum a data pod needs to implement the following:
-<!-- TODO: not sure if this is needed -->
+A Solid app is a client that is sending requests to a data pod. It should be able to read and write depending on the access control to a data pod.
+
+<!-- At the bare minimum a data pod needs to implement the following:
+
 - HTTP/1.1
 - HTTP/1.1 Conditional Requests
 - HTTP/1.1 Authentication
@@ -27,11 +28,13 @@ For the client implementation it states these necessities:
 - HTTP/1.1
 - HTTP/1.1 Authentication client part
 - Must send the `Content-Type` header with `PUT`, `POST` and `PATCH` requests
+ -->
 
-The Uniform Resource Identifier (URI) plays an essential role in the Solid Ecosystem, for it is being used to identify users with [WebID](#webid), it is used with resources in the Linked Data Platform and more generally give information about the hierarchy of stored information on the data pod.\
-Continuing with URIs used to give location to resources on a data pod an important note is that the slash character in the end of an URI indicates a container resource.
-A container resource is an organizing concept in the Linked Data Platform [[Source]](https://www.w3.org/TR/ldp/#ldpc). It stores linked documents or information resources, which handle requests from clients for their creation, modification, traversal of the linked documents [[Source]](https://www.w3.org/TR/ldp/#dfn-linked-data-platform-container).<!-- TODO: could need a more thorough explanation here -->\
-A data pod stores data, therefore, it needs a storage mechanism, which means a "space of URIs in which data can be accessed" [[Source]](https://solid.github.io/specification/#storage).\
+The Uniform Resource Identifier (URI) plays an essential role in the Solid Ecosystem, for it is being used to identify users with [WebID](#webid), with resources in the Linked Data Platform and more generally give information about the hierarchy of stored information on the data pod.\
+<!-- Continuing with URIs used to give location to resources on a data pod an important note is that the slash character in the end of an URI indicates a container resource. -->
+A container resource is an organizing concept in the Linked Data Platform [[Source]](https://www.w3.org/TR/ldp/#ldpc). It stores linked documents or information resources, which handle requests from clients for their creation, modification, traversal of the linked documents [[Source]](https://www.w3.org/TR/ldp/#dfn-linked-data-platform-container).
+<!-- TODO: could need a more thorough explanation here -->\
+<!-- A data pod stores data, therefore, it needs a storage mechanism, which means a "space of URIs in which data can be accessed" [[Source]](https://solid.github.io/specification/#storage).\
 Solid uses containment. Containment is the relationship binding between a container (LDPC) and its resources (LDPR). The lifecycles of the LDPRs are limited by the lifecycle of its LDPC, as a resource cannot be stored without a container [[Source]](https://www.w3.org/TR/ldp/#dfn-containment).
 "A storage is the root container for all its contained resources" [[Source]](https://solid.github.io/specification/#storage).\
 An LDPC maintains a list of containment triples, which have the form of (LDPC URI, ldp:contains, document-URI) and list all the by the LDPC created documents.
@@ -52,18 +55,18 @@ maps to:
 http://example.org/container/resource
 ```
 
-Important to mention is that the root container needs an Access Control List (ACL) auxiliary resource with `acl:Control` access privilege associated with it [[Source]](https://solid.github.io/specification/#storage).
+Important to mention is that the root container needs an Access Control List (ACL) auxiliary resource with `acl:Control` access privilege associated with it [[Source]](https://solid.github.io/specification/#storage). -->
 
 An auxiliary resource exists to give additional information, like configuration, processing, or interpretation about a Solid resource, for example: "A container linked to an auxiliary resource that includes access control statements for that container and the resources that belong to it."
 `acl:Control` means that the user has complete control, in other words: read, write and append access [[Source]](https://www.w3.org/wiki/WebAccessControl#WAC_relation_to_HTTP_Verbs). <!-- TODO: this might not be completely true -->\
 Another example "A binary JPEG image linked to an auxiliary resource that includes information describing that binary JPEG." makes the need a bit clearer, as a binary JPEG image does not carry any machine-readable information.
-A Solid resource includes the location of its associated auxiliary resources in the `Link` header. These can be discovered by a `GET` or `HEAD` request to the Solid resource.
-
+<!-- A Solid resource includes the location of its associated auxiliary resources in the `Link` header. These can be discovered by a `GET` or `HEAD` request to the Solid resource. -->
+<!--
 ```
 HEAD https://server.example/resource.ttl
 Link: <https://server.example/acls/24986>; rel="http://www.w3.org/ns/solid/terms#acl"
 Link: <https://server.example/shapes/85432>; rel="http://www.w3.org/ns/solid/terms#shape"
-```
+``` -->
 
 The ACL in Solid is realized with Web Access Control (WAC). The section for WAC in not yet written in the Solid specification but shall be given a short introduction.\
 WAC is similar to access control schemes used in file systems. Files, users and groups are referenced by URLs. Users in particular are identified by WebIDs.
@@ -71,9 +74,9 @@ Its functionality is cross-domain and can therefore have an ACL resource – hol
 Read and write are self-explanatory, whereas append and control introduce two interesting modes.
 Append allows the agent to add files to a container, without being able to read or write any of the container's files. The idea of an email inbox can be compared to this functionality.\
 Control means that the agent with this permission has access to the ACL resource and can modify it.\
-Permissions are inherited through the ACL inheritance algorithm. The ACL algorithm looks for an ACL resource for the requested file, if none is found, it will check on the file's container, if none is found, it will go recursively up the hierarchy of the containers. The root container must by definition have an ACL resource associated with it.
-The representation of ACL resources is by default in the RDF Turtle format and can be discovered in the `Link` header from the request to the Solid resource – if a specific ACL resource is attached, otherwise through the previously described ACL inheritance algorithm.
-
+<!-- Permissions are inherited through the ACL inheritance algorithm. The ACL algorithm looks for an ACL resource for the requested file, if none is found, it will check on the file's container, if none is found, it will go recursively up the hierarchy of the containers. The root container must by definition have an ACL resource associated with it.
+The representation of ACL resources is by default in the RDF Turtle format and can be discovered in the `Link` header from the request to the Solid resource – if a specific ACL resource is attached, otherwise through the previously described ACL inheritance algorithm. -->
+<!--
 ```
 @prefix  acl:  <http://www.w3.org/ns/auth/acl#>  .
 
@@ -84,49 +87,39 @@ The representation of ACL resources is by default in the RDF Turtle format and c
     acl:mode      acl:Read,
                   acl:Write,
                   acl:Control.
-```
+``` -->
 
-TODO: The Turtle data representation format is not explained in the Solid ecosystem specification.
+As mentioned, Solid follows the specifications of the Linked Data Platform to define its storage mechanism. In LDP resource representation is realized with RDF. Therefore, all resources that are created are LDPR and in the Turtle format.
 
 <!-- To extend on the previous mentioned necessity of `acl:Control` on the root container, TODO: more here *[Interesting comment](https://github.com/solid/specification/issues/197#issuecomment-699937520).*\ -->
 
-A WebID is an HTTP URI that denotes an agent on the Web. WebID distinguishes between WebID URL and WebID Profile URI. The URI with a fragment identifier is the WebID and acts as the identifier for an agent. The Profile Document – describing the agent – can be reached by leaving out the fragment identifier.
+A WebID is an HTTP URI that denotes an agent on the Web. It is used as the primary agent identifiction in the Solid Ecosystem.
+
+<!-- WebID distinguishes between WebID URL and WebID Profile URI. The URI with a fragment identifier is the WebID and acts as the identifier for an agent. The Profile Document – describing the agent – can be reached by leaving out the fragment identifier.
 
 * WebID URI: https://alice.janschill.de/profile/card#me
 * WebID Profile URI: https://alice.janschill.de/profile/card
 
-A WebID can also be defined without the fragment identifier. In this case a request to the WebID URI needs to return a Location header in its response, giving an URI where the Profile Document resides.
+A WebID can also be defined without the fragment identifier. In this case a request to the WebID URI needs to return a Location header in its response, giving an URI where the Profile Document resides. -->
 
-When making requests to a Solid server to create a resource on the server, HTTP `POST`, `PUT` or `PATCH` can be used. If the client wants to associate a specific URI with a resource, `PUT` or `PATCH` needs to be used. The server can be implemented to allow URI suggestions through a `POST` request and the `Slug` header. Otherwise, `POST` is the only way of letting the server decide on a URI for the resource [[Source]](https://solid.github.io/specification/#resource-type-heuristics).
+When making requests to a Solid server to create a resource on the server, HTTP `POST`, `PUT` or `PATCH` can be used. If the client wants to associate a specific URI with a resource, `PUT` or `PATCH` needs to be used.
+<!-- The server can be implemented to allow URI suggestions through a `POST` request and the `Slug` header. Otherwise, `POST` is the only way of letting the server decide on a URI for the resource [[Source]](https://solid.github.io/specification/#resource-type-heuristics). -->
+With the HTTP method `GET`, `HEAD` `OPTIONS` information about a resource can be requested.
+To remove a resource from the server the `DELETE` method can be used.
 
-A server must implement the HTTP response header: `Accept-Patch`, `Accept-Post`, `Accept-Put`. These headers specify which media-type the server understands in the corresponding request. The `Accept-Put` response header has not been introduced prior to the Solid specifications but is exactly defined after the `Accept-Post` and `Accept-Patch` response headers.
+<!-- A server must implement the HTTP response header: `Accept-Patch`, `Accept-Post`, `Accept-Put`. These headers specify which media-type the server understands in the corresponding request. The `Accept-Put` response header has not been introduced prior to the Solid specifications but is exactly defined after the `Accept-Post` and `Accept-Patch` response headers. -->
 
 A server must create all intermediate containers and containment triples according to `PUT` and `PATCH` requests.
 
 On a `POST` request to `/`, the server needs to create a resource under `/{slug}`.
 On a `POST` request to `/{slug}/`, the server needs to create a container for `/`.
 
-`PUT` or `PATCH` requests to an auxiliary resource, create or update the resource. A `POST` request is not allowed. This is because of its indeterministic nature of not needing to target a resource directly. In theory it would be possible with the `Slug` header, but it could introduce confusion and is therefore not allowed [[Source]](https://github.com/solid/specification/issues/42#issuecomment-616688848).
+<!-- `PUT` or `PATCH` requests to an auxiliary resource, create or update the resource. A `POST` request is not allowed. This is because of its indeterministic nature of not needing to target a resource directly. In theory it would be possible with the `Slug` header, but it could introduce confusion and is therefore not allowed [[Source]](https://github.com/solid/specification/issues/42#issuecomment-616688848). -->
 
-TODO: Give short introduction to these topics:
-
-- [x] basic behavior
-  - [x] server
-  - [x] client
-  - [x] URIs
-  - [x] storage
-  - [x] containment
-- [x] how to read and write data to Solid pod
-  - [ ] how data is represented
-- [x] what are auxiliary resources
-  - [x] why they are needed
-  - [x] how they are implemented/what is needed
-- [x] WebID: how agents/users are identified
-  - [x] verification of identification
-  - [ ] authentication
-- [x] WAC: how to make sure the correct access controls are given to users in a decentralized cross-domain system
-- [x] New HTTP response header
-- [x] Security considerations
+Authentication in the Solid Ecosystem is supported through two ways. Solid OIDC is the Solid specific implementation of the widely used OpenID Connect. The alternative, but not from the specification preferred method is WebID-TLS.
+OpenID Connect enables the decentralized authentication and single sign-on mechanism needed for Solid.
+In Solid OIDC one key aspect is that the `Client ID` should be a WebID. The `Client ID` is needed in OAuth(/OIDC) for a `Client application` to identify itself with the IDP and resource server.
+Once authenticated with a username and password combination by an IDP, all Solid applications that need authentication will redirect to the chosen IDP. The browser uses the stored token from a set cookie to identify and is then able to use the application without a login.
 
 ## Remarks
 
