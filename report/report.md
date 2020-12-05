@@ -69,6 +69,12 @@ https://janschill.solidcommunity.net/profile/card
 
 Solid OpenID Connect (Solid OIDC) is the standard that is being used to authenticate within the Solid ecosystem. <!-- TODO: go deeper into this subject -->
 
+Several implementations exist to this day, that all do parts of the described solutions, but there no existing complete solution yet. The Node Solid Server (NSS) is the original implementation and is to this day the most complete open-source solution. It is being deployed onto both providers inrupt.net and solidcommunity.net, acting as a data pod and IDP.
+The Community Solid Server (CSS) is a new project aiming at replacing the NSS to become the new official open-source implementation of the Solid specifications. It is currently in beta version and actively developed.
+The Enterprise Solid Server (ESS) is Inrupt's commercial closed-source solution launched in November 2020.
+
+A lot of different libraries are built to enable development in the ecosystem. A subset as an example are client-side libraries for authentication with data pods; reading and writing RDF based resources, 
+
 ## Review of Solid Specifications
 
 [The Solid Ecosystem](https://solid.github.io/specification/) is a by the [Solid editorial team](https://github.com/solid/process/blob/master/panels.md) published technical report. It is the official rewrite of the informal [Solid specification](https://github.com/solid/solid-spec/), which was initially used to define the architecture of Solid servers and clients. This rewrite is still incomplete and being worked on continuously.
