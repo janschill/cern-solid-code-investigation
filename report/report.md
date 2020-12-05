@@ -22,21 +22,7 @@ Solid is aiming at solving these problems by standardizing an ecosystem where da
 <!-- TODO: More? -->
 ## Overview of Solid
 
-<!--
-* [ ] storage (data pod)
-  * [ ] LDP and REST
-    * [x] Hierarchy
-    * [ ] Methods
-    * [x] Containers/resources
-    * [ ] RDF
-      * [ ] RDF Schemas
-    * [ ] SPARQL?
-* [ ] authentication (webid, oauth/oidc)
-* [ ] applications
-  * [ ] Server
-  * [ ] Client
-
--->
+TODO: See [#36](https://github.com/janschill/uni-research_project/issues/36) to-dos.
 
 In Solid data is stored on personal and through the Web-accessible storages, these are called *data pods*.
 Data pods are personal in the sense of users configuring the access control to the data on their pods themselves. Web-accessible because the pods can be connected to as long as a connection to the Web exists and the correct access controls are given.
@@ -77,6 +63,18 @@ A lot of different libraries are built to enable development in the ecosystem. A
 Additionally, a lot of efforts are put into the developemnt of a Solid operating system (SolidOS), which can be deployed onto the data pod and supports the browsing of ones pod, editing files, parsing and showing the data in a meaningful manner and other useful additions.
 Application enriching the ecosystem by improving the personal life like task managers or other initiatives are also being developed on by the community.
 
+## Introduction CERN
+
+The key elements of loosly decoupling
+
+## Overview of CERN
+
+- [ ] Existing AuTH/AuthZ initiatives exist at CERN
+  - https://auth.docs.cern.ch/
+  - SSO what provider
+- [ ] Why is CERN interested
+- [ ] Existing software
+
 ## Review of Solid Specifications
 
 [The Solid Ecosystem](https://solid.github.io/specification/) is a by the [Solid editorial team](https://github.com/solid/process/blob/master/panels.md) published technical report. It is the official rewrite of the informal [Solid specification](https://github.com/solid/solid-spec/), which was initially used to define the architecture of Solid servers and clients. This rewrite is still incomplete and being worked on continuously.
@@ -105,11 +103,6 @@ Application enriching the ecosystem by improving the personal life like task man
 ### Solid Clients
 
 ### Conclusion
-
-## Introduction CERN
-
-## Overview of CERN
-
 
 
 
