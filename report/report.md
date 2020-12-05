@@ -23,17 +23,18 @@ Solid is aiming at solving these problems by standardizing an ecosystem where da
 ## Overview of Solid
 
 <!--
-* storage (data pod)
-  * LDP and REST
-    * hierarchy
-    * Methods
-    * Containers/resources
-    * RDF
-      * RDF Schemas
-    * SPARQL?
-  *
-* authentication (webid, oauth/oidc)
-* applications
+* [ ] storage (data pod)
+  * [ ] LDP and REST
+    * [ ] Hierarchy
+    * [ ] Methods
+    * [ ] Containers/resources
+    * [ ] RDF
+      * [ ] RDF Schemas
+    * [ ] SPARQL?
+* [ ] authentication (webid, oauth/oidc)
+* [ ] applications
+  * [ ] Server
+  * [ ] Client
 
 -->
 
@@ -49,16 +50,24 @@ RDF is a framework to represent data on the Web. The basic structure of it follo
 In RDF, nodes and edges elevate the benefits of URIs, more specifically IRIs—which are a generalization of URIs, offering more Unicode characters—by either using them as globally unique identifiers or globally unique and reusable property names. This allows interoperable data by reusing schemas with agreed upon vocabulary to describe data and can be used to obtain more information by dereferencing the IRIs.
 
 ```turtle
-@prefix jan: <https://janschill.solidcommunity.net/profile> .
+@prefix jan: <https://janschill.solidcommunity.net/profile/card> .
 @prefix schema: <http://schema.org/> .
 
 jan:me schema:familyName "Schill" .
 ```
 
+The other crucial part of Solid is decentralized authentication. This is realized with WebIDs. It works in a way that users need a globally unique identifier—a WebID URI—which can be used with every Solid application to identify an agent.
+These WebIDs are handed out by IDPs, which in most cases are also data pod providers. A WebID encompasses a profile document, describing the person in more detail who is the referent of the WebID URI.
 
-The other crucial part of Solid is the decentralized authentication.
+```
+WebID URI
+https://janschill.solidcommunity.net/profile/card#me
 
+Profile Document
+https://janschill.solidcommunity.net/profile/card
+```
 
+Solid OpenID Connect (Solid OIDC) is the standard that is being used to authenticate within the Solid ecosystem. <!-- TODO: go deeper into this subject -->
 
 ## Review of Solid Specifications
 
