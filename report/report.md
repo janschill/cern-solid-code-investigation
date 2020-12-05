@@ -82,7 +82,7 @@ The key elements of loosly decoupling
 ### Summary
 <!-- TODO: include from review-solid_spec.md -->
 
-### Comments/Remarks
+### Comments
 <!-- TODO: include from review-solid_spec.md -->
 
 ### Conclusion
@@ -104,7 +104,7 @@ The key elements of loosly decoupling
 
 ### Conclusion
 
-
+## Conclusion
 
 <!-- Backlog -->
 
