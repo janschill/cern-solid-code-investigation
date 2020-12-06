@@ -19,7 +19,9 @@ A multitude of problems reside with this, like the actual content creator not ow
 Another drawback is that the application owners decide what interfaces are publicly accessable, therefore, not allowing users easy migrations of their data.
 This results in one user having to provide the same information to different applications: username, name, age and others depending on the domain. The same problem applies to traditional web application when authenticating their users. Usually applications will do the authentication themselves, but there are initiatives that decentralize this authentication, which is called single Sign-On (SSO).
 Solid is aiming at solving these problems by standardizing an ecosystem where data is stored on data pods chosen and fully controlled by the users/agents, where they can decided who has access to what data; Linked Data is utilized to create interoperable data, for seamless migration between applications and pods; authenticate with one identity provider (IDP) to use multiple Solid applications with one username and password combination.
-<!-- TODO: More? -->
+
+TODO: Maybe needs more
+
 ## Overview of Solid
 
 TODO: See [#36](https://github.com/janschill/uni-research_project/issues/36) to-dos.
@@ -55,9 +57,9 @@ https://janschill.solidcommunity.net/profile/card
 
 Solid OpenID Connect (Solid OIDC) is the standard that is being used to authenticate within the Solid ecosystem. <!-- TODO: go deeper into this subject -->
 
-Several implementations exist to this day, that all do parts of the described solutions, but there no existing complete solution yet. The Node Solid Server (NSS) is the original implementation and is to this day the most complete open-source solution. It is being deployed onto both providers inrupt.net and solidcommunity.net, acting as a data pod and IDP.
+Several implementations exist to this day, that all do parts of the described solutions, but there no existing complete solution yet. The Node Solid Server (NSS) is the original implementation and is to this day the most complete open-source solution measure by passing Solid Test Suite cases. It is being deployed onto both providers `inrupt.net` and `solidcommunity.net`, acting as a data pod and IDP.
 The Community Solid Server (CSS) is a new project aiming at replacing the NSS to become the new official open-source implementation of the Solid specifications. It is currently in beta version and actively developed.
-The Enterprise Solid Server (ESS) is Inrupt's commercial closed-source solution launched in November 2020.
+The Enterprise Solid Server (ESS) is Inrupt's commercial closed-source solution launched late this year 2020.
 
 A lot of different libraries are built to enable development in the ecosystem. A subset as an example are client-side libraries for authentication with data pods; reading and writing RDF based resources; an SDK for React development.
 Additionally, a lot of efforts are put into the development of a Solid operating system (SolidOS), which can be deployed onto the data pod and supports the browsing of ones pod, editing files, parsing and showing the data in a meaningful manner and other useful additions.
@@ -131,6 +133,10 @@ Once authenticated with a username and password combination by an IDP, all Solid
 
 ## Evaluation of Solid Implementations
 
+TODO:
+
+
+
 ### Solid Servers
 
 <!-- Notes
@@ -139,9 +145,12 @@ Once authenticated with a username and password combination by an IDP, all Solid
 
 -->
 
+#### Community Solid Server
 
 
 #### How to Set Up NSS
+
+#### Identity Providers
 
 ### Solid Clients
 
