@@ -139,7 +139,9 @@ Once authenticated with a username and password combination by an IDP, all Solid
 
 -->
 
-#### How to Set One Up
+
+
+#### How to Set Up NSS
 
 ### Solid Clients
 
