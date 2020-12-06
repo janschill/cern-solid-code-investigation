@@ -61,15 +61,27 @@ The defined milestones give detailed descriptions on what should be when achieve
 
 ##### Solid Pod
 
-- [NSS homepage](https://github.com/solid/node-solid-server)
-- [NSS Docker homepage](https://github.com/angelo-v/docker-solid-server)
-- [NSS setting up a Pod server](https://solidproject.org/for-developers/pod-server)
 - [Docker Let's Encrypt & NGiNX-proxy](https://github.com/nginx-proxy/docker-letsencrypt-nginx-proxy-companion)
 - [DigitalOcean NGiNX reverse proxy](https://www.digitalocean.com/community/tutorials/how-to-configure-nginx-as-a-web-server-and-reverse-proxy-for-apache-on-one-ubuntu-20-04-server)
 - [Let's Encrypt](https://letsencrypt.org/getting-started/)
+- [Node.js Solid server: HTTP request handling flow](https://github.com/solid/solid-architecture/blob/master/server/request-flow.md)
+- [Solid server – Selected architectural diagrams v1.3.0](https://rubenverborgh.github.io/solid-server-architecture/solid-architecture-v1-3-0.pdf)
+
+##### Node Solid Server
+
+- [NSS homepage](https://github.com/solid/node-solid-server)
+- [NSS Docker homepage](https://github.com/angelo-v/docker-solid-server)
+- [NSS setting up a Pod server](https://solidproject.org/for-developers/pod-server)
+
+##### Community Solid Server
+
+- [CSS](https://github.com/solid/community-server/)
+- [CSS goals, plan, synergies](https://rubenverborgh.github.io/Solid-World-August-2020/#)
+
+##### Enterprise Solid Server
+
 - [ESS documentation](https://docs.inrupt.com/ess/)
 - [ESS product page](https://inrupt.com/products/enterprise-solid-server/)
-- [Server architecture](https://github.com/solid/solid-architecture/blob/master/server/request-flow.md)
 
 ##### Solid development tools
 
