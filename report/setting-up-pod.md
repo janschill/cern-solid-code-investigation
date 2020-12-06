@@ -11,7 +11,7 @@ The domain that will be used in this tutorial is `janschill.de` and is configure
 
 ## Digital wildcard certificate
 
-NSS uses instead of a subdirectory approach a subdomain one to create the space for an isolated user pod. This means a new user registers and gets his/her pod location at the address https://username.janschill.de and not https://janschill.de/username.
+NSS uses instead of a subdirectory approach a subdomain one to create the space for an isolated user pod. This means a new user registers and gets a pod location at the address https://username.janschill.de and not https://janschill.de/username.
 This is a design decision and there has been some [discussion](https://github.com/solid/node-solid-server/issues/1349) about moving or allowing the setting of the latter. There are benefits and drawbacks to these approaches that shall not be discussed in this context.
 One drawback of this needs to be addressed – as it is essential for this setup. It is the need for [wildcard certificates](https://en.wikipedia.org/wiki/Wildcard_certificate). This is only a drawback, if a developer has not heard about this concept or has never set up digital certificates in general, as the process is quite straightforward.
 In short a wildcard certificate allows a certificate to be used with multiple subdomains and is created with `certbot`, a program offered by Let's Encrypt, as follows:
@@ -184,7 +184,7 @@ N
 
 ```
 
-It is important that the configure directories exist and have correct user permissions.
+It is important that the configuration directories exist and have correct user permissions.
 
 ```bash
 # Create directories
