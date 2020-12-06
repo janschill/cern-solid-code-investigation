@@ -7,9 +7,11 @@ In the second part of this section, libraries for development in the ecosystem a
 
 ## Solid Servers
 
-A Solid server is a web server
+A Solid server is a web server enabling storage through data pods and may optionally also offer authentication as an IDP [[Source](https://solid.github.io/authentication-panel/solid-oidc/#concepts)]. In Solid a server only needs enable the authentication through Solid OIDC, which requires an IDP, if this IDP is controlled by the user through usage of an existing Solid server that is hosted on their on infrastructure or they are using an identity-as-a-service vendor is up to them.
 
 ### Node Solid Server
+
+#### Introduction
 
 ### Community Solid Server
 
@@ -246,8 +248,6 @@ solid start
 
 #### Difficulties
 
-
-
 ##### Setting up with Docker
 
 In the beginning the thought of using Docker seemed tempting. Installing all dependencies in isolated environments gives the benefit of having all configurations as code. A Dockerfile holds all commands that are needed to set up an Nginx reverse proxy for example.
@@ -256,6 +256,8 @@ To not reinvent the wheel and spend too much time on configuring for example an 
 Existing solutions exist and can be used to set up an NSS. Unfortunately, problems occured when the Docker images were tried, for example the wildcare certificates were not distributed correctly. Due to time constraints and the additional overhead of dealing with these extra issues, Docker was abandoned.
 
 ### Identity Providers
+
+
 
 ### Solid Clients
 
