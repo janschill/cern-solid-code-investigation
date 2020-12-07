@@ -1,6 +1,6 @@
 # Evaluation of Existing Solid Implementations
 
-The ecosystem of Solid is already diverse in existing implemenetations. Attempts of developing the Solid specifications into software have been carried out with different programming languages and to different completion levels.
+The ecosystem of Solid is already diverse in existing implementations. Attempts of developing the Solid specifications into software have been carried out with different programming languages and to different completion levels.
 These servers or data pods have different goals in mind and even though a server needs to adhere to the specifications it does not make the same.
 In the following, three different servers which are closely developed and maintained from the Solid community shall be looked at.
 In the second part of this section, libraries for development in the ecosystem and actual developed client applications will be evaluated.
@@ -253,7 +253,7 @@ solid start
 In the beginning the thought of using Docker seemed tempting. Installing all dependencies in isolated environments gives the benefit of having all configurations as code. A Dockerfile holds all commands that are needed to set up an Nginx reverse proxy for example.
 Because this setup needs multiple running services (Nginx reverse proxy, certification issuing, the Solid server) that all need to communicate to each other, the Docker configuration can get easily out of control and not offer a one-click solution anymore. Docker Compose tackles this problem by offering a configuration file to easily define how these different services/container should be connected.
 To not reinvent the wheel and spend too much time on configuring for example an Nginx reverse proxy, well-established Docker images can be used.
-Existing solutions exist and can be used to set up an NSS. Unfortunately, problems occured when the Docker images were tried, for example the wildcare certificates were not distributed correctly. Due to time constraints and the additional overhead of dealing with these extra issues, Docker was abandoned.
+Existing solutions exist and can be used to set up an NSS. Unfortunately, problems occurred when the Docker images were tried, for example the wildcard certificates were not distributed correctly. Due to time constraints and the additional overhead of dealing with these extra issues, Docker was abandoned.
 
 ### Identity Providers
 

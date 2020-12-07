@@ -76,6 +76,9 @@ The key elements of loosely decoupling
   - SSO what provider
 - [ ] Why is CERN interested
 - [ ] Existing software
+  - [ ] Indico
+  - [ ] Why Indico can be PoC
+  - [ ]
 
 ## Review of Solid Specifications
 
@@ -133,20 +136,9 @@ Once authenticated with a username and password combination by an IDP, all Solid
 
 ## Evaluation of Solid Implementations
 
-TODO:
-
-
-
 ### Solid Servers
 
-<!-- Notes
-
-* Different flavors exist because Solid is a standard
-
--->
-
 #### Community Solid Server
-
 
 #### How to Set Up NSS
 
@@ -158,7 +150,7 @@ TODO:
 
 ## Conclusion
 
-<!-- Backlog -->
+## Backlog
 
 ### Solid Data Pod
 
