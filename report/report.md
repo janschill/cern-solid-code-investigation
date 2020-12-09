@@ -3,6 +3,25 @@
 ## Table of Contents
 
 1. Introduction Solid
+1. Overview of Solid
+1. Introduction CERN
+1. Overview of CERN
+1. Review of Solid Specifications
+    1. Summary
+    1. Comments
+    1. Recommendations
+    1. Conclusion
+1. Evaluation of the Solid Implementations
+    1. Solid Servers
+        1. Node Solid Server
+        1. Community Solid Server
+        1. Enterprise Solid Server
+        1. Hosting a Solid Server Behind a Domain
+    1. Solid Clients
+    1. Conclusion
+1. Conclusion
+
+---
 
 ## Introduction Solid
 
@@ -181,7 +200,7 @@ TODO: Write Recommendations
 
 TODO: Write Conclusion
 
-## Evaluation of Solid Implementations
+## Evaluation of the Solid Implementations
 
 ### Solid Servers
 
