@@ -9,6 +9,10 @@ In the second part of this section, libraries for development in the ecosystem a
 
 A Solid server is a web server enabling storage through data pods and may optionally also offer authentication as an IDP [[Source](https://solid.github.io/authentication-panel/solid-oidc/#concepts)]. In Solid a server only needs to enable the authentication through Solid OIDC, which requires an IDP, if this IDP is controlled by the user through the usage of an existing Solid server that is hosted on their own infrastructure or they are using an identity-as-a-service vendor is up to them.
 
+### Data Pod
+
+### Identity Providers
+
 TODO: More here
 
 ### Node Solid Server
@@ -263,8 +267,6 @@ In the beginning, the thought of using Docker seemed tempting. Installing all de
 Because this setup needs multiple running services (Nginx reverse proxy, certification issuing, the Solid server) that all need to communicate to each other, the Docker configuration can get easily out of control and not offer a one-click solution anymore. Docker Compose tackles this problem by offering a configuration file to easily define how these different services/container should be connected.
 To not reinvent the wheel and spend too much time on configuring for example an Nginx reverse proxy, well-established Docker images can be used.
 Existing solutions exist and can be used to set up an NSS. Unfortunately, problems occurred when the Docker images were tried, for example the wildcard certificates were not distributed correctly. Due to time constraints and the additional overhead of dealing with these extra issues, Docker was abandoned.
-
-## Identity Providers
 
 ## Solid Clients
 

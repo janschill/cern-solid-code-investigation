@@ -82,7 +82,7 @@ A lot of different libraries are built to enable development in the ecosystem. A
 Additionally, efforts are put into the development of a Solid operating system (SolidOS), which can be deployed onto the data pod and supports the browsing of one's pod, editing files, parsing, and showing the data in a meaningful manner and other useful additions, such as Solid Panes, which is a set of Solid-compatible apps. These are useful for the richness of SolidOS.
 The core idea is to enable the operating system of Solid to bring an interface to the diverse group of linked data on a data pod. One core example is, that it aims at allowing a sensible representation of objects, which can extend to an address book showing all contacts of a user.
 
-TODO: Show case some existing Solid solutions and talk about the government efforts in Flemmish, Belgium,
+TODO: Show case some existing Solid solutions and talk about the government efforts in Flemish, Belgium,
 
 Applications enriching the ecosystem by improving the personal life like task managers or other initiatives are also being developed on by the community.
 
