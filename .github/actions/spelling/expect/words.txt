@@ -44,6 +44,7 @@ Dimou
 disqus
 dns
 Dockerfile
+dogfooding
 dokie
 dokieli
 DPo
@@ -89,6 +90,7 @@ hypertext
 IDPs
 ietf
 imdb
+imec
 img
 inbox
 independetly
@@ -204,6 +206,7 @@ src
 ssl
 SSO
 stackoverflow
+standardisation
 subdomain
 sudo
 systemctl
@@ -214,6 +217,7 @@ timeline
 tls
 tmdb
 TODO
+transpiles
 tt
 ttl
 tulpen
