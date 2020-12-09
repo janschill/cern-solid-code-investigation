@@ -16,8 +16,6 @@ A Solid server is a web server enabling storage through data pods and may option
 
 ### Community Solid Server
 
-#### Introduction
-
 The Community Solid Server (CSS) is the from the Solid community-driven development of new open-source software to provide a way for everyone to host a data pod.
 It aims at giving developers the opportunity to create new Solid apps and also test them against a working implementation of the Solid specifications, while making sure no legacy code from older experiments influence the testing, such as in NSS.
 
@@ -25,9 +23,13 @@ Another key feature of CSS is its modular architecture. Because Solid is just in
 This has been a problem with NSS, as it was the initial starting implementation of the Solid idea it evolved over years and was used to realize new ideas without a clear idea of how to plug the experiments in and out.
 This left a lot of legacy code that is hard to remove or patch for security updates.
 
-This is where the decision was made to rewrite an open-source Solid server. Inrupt is sponsoring this development with two imec researchers and one developer. On December 3rd, 2020 the first beta version of CSS was released. This marks a significant milestone in the journey for open-source Solid servers. Developers working in the Solid ecosystem are encouraged by the core developers of CSS to switch over to CSS when developing new applications. This prepares the new applications to work with in the future available open-source servers, but also gives opportunity to spot bugs or features that have not been accounted and therefore help with the progress of CSS.
+This is where the decision was made to rewrite an open-source Solid server. Inrupt is sponsoring this development with two imec researchers and one developer. On December 3rd, 2020 the first beta version of CSS was released. This marks a significant milestone in the journey for open-source Solid servers. Developers working in the Solid ecosystem are encouraged by the core developers of CSS to switch over to CSS when developing new applications. This prepares the new applications to work with in the future available open-source servers, but also gives the opportunity to spot bugs or features that have not been accounted and therefore help with the progress of CSS.
 
 One of the greatest benefits of the development of CSS now is the Solid specifications are in a much more mature state they were when the development of NSS started. In-fact no such specifications existed and the experimental nature of Solid back then harmed the quality of the software.
+
+Not only can it be developed against a mature specification, but also has a test-suite constantly checking if the development of CSS adheres to the specifications. This increases the quality of the code substantially because it does not depend on manual checks if it is still on track with the specifications. The Solid Test-Suite is a sophisticated collection of test cases to make sure an implementation complies with the specifications. The test-suite is not yet complete and still lacks in the category of access control policies. It is not crucially consequential, as it is the alternative to the Solid preferred web access control (WAC), which is on the other hand well covered.
+
+The CSS language of choice is TypeScript (TS). TS is a statically typed programming language bringing strict types to the dynamic language of JavaScript (JS). The TS compiler transpiles TS code into browser-runnable JS code.
 
 CSS
 
