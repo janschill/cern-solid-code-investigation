@@ -87,10 +87,25 @@ TODO: Show case some existing Solid solutions and talk about the government effo
 Applications enriching the ecosystem by improving the personal life like task managers or other initiatives are also being developed on by the community.
 
 ## Introduction CERN
+TODO: maybe more here
 
-TODO: Write Introduction CERN
+CERN or the European Organization for Nuclear Research is a European organization with its main site in Switzerland focussing on particle physics with the largest laboratory in the world. It maintains the world's highest energy accelerator, the Large Hadron Collider, and houses a broad scientific program.
+With employees from all 23 member states it accounts to a total of roughly 4400 staff and paid personnel, as well as welcoming around 12500 scientist from all around the globe.
+With the great challenge of managing this number of scientist and their experiments, reliable software and infrastructure has been deployed at CERN.
+CERN has closed this gap by creating and maintaining several software solutions.
+A number of relevant open-source applications shall be introduced in the next section.
 
 ## Overview of CERN
+
+The following software system have proven to be of excellent operational quality while serving tens of thousands of users with a wide array of functionality.
+
+
+
+Indico is one of CERN’s most sophisticated software projects. It is an open-source event management tool, giving users a tool to organize complex meetings or conferences with an easy-to-use interface. It was started in 2002 as a “European project” and has been in production at CERN ever since. It is used daily to facilitate more than 600,000 events at the organization itself and has helped others like the UN “to put in place an efficient registration and accreditation workflow that greatly reduced waiting times for everyone” at conferences with more than 180,000 participants in total [Source].
+
+Indico is actively worked on by a team of six developers from CERN. Its open-source approach allows external participation. It is written in Python and is currently on version 2.7 and plans to move onto Python 3.x soon coupled with the release of Indico 3.0 scheduled to be released at the end of this year. Indico version 2.3 was released earlier this year—during the summer of 2020—updating the software with multiple features with the help of the community, the team managing Indico at the United Nations Office at Geneva and funding from IEEE.
+
+Indico is the candidate for the after this research project followed Master's thesis. It is a suitable contender for applying the Solid principles by creating a proof of concept (POC) as it is one of CERN's most reliable applications with a long history of operation. Large numbers of personnel use the application, but also
 
 TODO: Write Overview of CERN
 
@@ -105,6 +120,7 @@ TODO: Write Overview of CERN
 TODO: What else?
 
 ## Review of Solid Specifications
+TODO: Incorporate Sarvens message
 
 [The Solid Ecosystem](https://solid.github.io/specification/) is a by the [Solid editorial team](https://github.com/solid/process/blob/master/panels.md) published technical report. It is the official rewrite of the informal [Solid specification](https://github.com/solid/solid-spec/), which was initially used to define the architecture of Solid servers and clients. This rewrite is still incomplete and being worked on continuously.
 
