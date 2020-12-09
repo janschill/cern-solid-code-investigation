@@ -1,16 +1,5 @@
 # CERN-Solid code investigation
 
-<!--
-Rethought structure:
-
-* What is Solid?
-* What is a data pod?
-* Review specifications
-* How is a data pod implemented?
-* What implementations exist?
-
--->
-
 ## Introduction Solid
 
 The Web was created in 1989 by Tim Berners-Lee while working at CERN "to allow people to work together by combining their knowledge in a web of hypertext documents." [Source](https://www.w3.org/People/Berners-Lee/Longer.html).
@@ -228,12 +217,3 @@ TODO:
   * [x] reads data from the pod
   * [x] writes data to the pod
 * [ ] Write about this implementation
-
-## CERN
-
-* Overview
-* Indico
-
-## Evaluation
-
-TODO: ?
