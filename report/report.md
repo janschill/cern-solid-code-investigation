@@ -74,13 +74,17 @@ Solid OpenID Connect (Solid OIDC) is the standard that is being used to authenti
 
 TODO: go deeper into Solid OIDC
 
-Several implementations exist to this day, that all do parts of the described solutions, but there no existing complete solution yet. The Node Solid Server (NSS) is the original implementation and is to this day the most complete open-source solution measure by passing Solid Test Suite cases. It is being deployed onto both providers `inrupt.net` and `solidcommunity.net`, acting as a data pod and IDP.
+Several implementations exist to this day, that all do parts of the described solutions, but there no existing complete solution yet. The Node Solid Server (NSS) is the original implementation and is to this day the most complete open-source solution measured by passing Solid Test Suite cases. It is being deployed onto both providers `inrupt.net` and `solidcommunity.net`, acting as a data pod and IDP.
 The Community Solid Server (CSS) is a new project aiming at replacing the NSS to become the new official open-source implementation of the Solid specifications. It is currently in beta version and actively developed.
 The Enterprise Solid Server (ESS) is Inrupt's commercial closed-source solution launched late this year 2020.
 
 A lot of different libraries are built to enable development in the ecosystem. A subset as an example are client-side libraries for authentication with data pods; reading and writing RDF based resources; an SDK for React development.
-Additionally, efforts are put into the development of a Solid operating system (SolidOS), which can be deployed onto the data pod and supports the browsing of one's pod, editing files, parsing, and showing the data in a meaningful manner and other useful additions.
-Application enriching the ecosystem by improving the personal life like task managers or other initiatives are also being developed on by the community.
+Additionally, efforts are put into the development of a Solid operating system (SolidOS), which can be deployed onto the data pod and supports the browsing of one's pod, editing files, parsing, and showing the data in a meaningful manner and other useful additions, such as Solid Panes, which is a set of Solid-compatible apps. These are useful for the richness of SolidOS.
+The core idea is to enable the operating system of Solid to bring an interface to the diverse group of linked data on a data pod. One core example is, that it aims at allowing a sensible representation of objects, which can extend to an address book showing all contacts of a user.
+
+TODO: Show case some existing Solid solutions and talk about the government efforts in Flemmish, Belgium,
+
+Applications enriching the ecosystem by improving the personal life like task managers or other initiatives are also being developed on by the community.
 
 ## Introduction CERN
 
