@@ -146,6 +146,7 @@ netstat
 Nextcloud
 NGi
 nginx
+nhs
 nmap
 nodejs
 noeldemartin
@@ -160,6 +161,7 @@ OIDC
 openid
 openssl
 ouvertes
+panva
 panva's
 pdf
 pdos
@@ -185,6 +187,7 @@ rfc
 roadmap
 Rodr
 ru
+Ruben's
 rubensworks
 rubenverborgh
 Sakr
@@ -223,6 +226,7 @@ ttl
 tulpen
 ubuntu
 ucr
+uk
 unicode
 uninstall
 uqam
@@ -246,6 +250,7 @@ website
 Weikum
 wiki
 wikipedia
+Workarounds
 www
 Xcode
 XDvrg
