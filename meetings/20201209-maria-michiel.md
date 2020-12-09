@@ -23,17 +23,17 @@
   * Maybe spec will adopt HTTP/2
   * Maybe ESS will support WebSockets sometime
 * [NHS](https://www.nhs.uk/) interested in Solid
-* More people outside of CERN will use Solid, more network effect with other instituations.
+* More people outside of CERN will use Solid, more network effect with other institutions.
   * eg. Swiss post office will adopt Solid: everyone gets a pod.
   * Connect CERN and post office
 
 ## Servers
 
 * **By May 2021 CSS is working**
-* PHP based server, nextcloud extension -> CERNBox
-* Because NSS and CSS are open-source it will be difficult to use them when realiability is important
+* PHP based server, Nextcloud extension -> CERNBox
+* Because NSS and CSS are open-source it will be difficult to use them when reliability is important
   * NSS nobody is going to help you in production, but will be merged if fixed.
-  * CSS will be better in this notion, but still not realiable enough
+  * CSS will be better in this notion, but still not reliable enough
 * Solution for CERN
   * ESS fixes this by offering SLAs
     * Buy support package from Inrupt (expensive)
