@@ -9,10 +9,11 @@ In the second part of this section, libraries for development in the ecosystem a
 
 A Solid server is a web server enabling storage through data pods and may optionally also offer authentication as an IDP [[Source](https://solid.github.io/authentication-panel/solid-oidc/#concepts)]. In Solid a server only needs to enable the authentication through Solid OIDC, which requires an IDP, if this IDP is controlled by the user through the usage of an existing Solid server that is hosted on their own infrastructure or they are using an identity-as-a-service vendor is up to them.
 
+TODO: More here
 
 ### Node Solid Server
 
-#### Introduction
+TODO: Write Node Solid Server
 
 ### Community Solid Server
 
@@ -33,19 +34,19 @@ The CSS language of choice is TypeScript (TS). TS is a statically typed programm
 
 CSS
 
-- [ ] Beta
-- [ ] Being developed against a almost complete specification
-- [ ] Has a test-suite it can be tested again
+- [x] Beta
+- [x] Being developed against a almost complete specification
+- [x] Has a test-suite it can be tested again
 - [ ] Technical
   - [ ] Architecture
-  - [ ] TypeScript
+  - [x] TypeScript
   - [ ] Dependency Injection
 
 
 
 ### Enterprise Solid Server
 
-
+TODO: Write Enterprise Solid Server
 
 ### Hosting a Solid Server Behind a Domain
 
@@ -54,12 +55,12 @@ NSS being the most complete server by means of passing the Solid Test Suite and 
 
 This write-down mostly follows [this tutorial](https://solidproject.org/for-developers/pod-server) from the official Solid website, the documentation in the [repository](https://github.com/solid/node-solid-server) of the NSS and other sources from the web, which shall be referenced as used.
 
-#### Web server
+#### Web Server
 
 Before installing the NSS, a physical web server, preferably running a Linux distribution is needed. A domain should be configured to point to this web server. This can be done at the DNS hosting and domain name registration service that holds the domain.
 The domain that will be used in this tutorial is `janschill.de` and is configured at Hetzner Online.
 
-#### Digital wildcard certificate
+#### Digital Wildcard Certificate
 
 NSS uses instead of a subdirectory approach a subdomain one to create the space for an isolated user pod. This means a new user registers and gets a pod location at the address https://username.janschill.de and not https://janschill.de/username.
 This is a design decision and there has been some [discussion](https://github.com/solid/node-solid-server/issues/1349) about moving or allowing the setting of the latter. There are benefits and drawbacks to these approaches that shall not be discussed in this context.
@@ -101,7 +102,7 @@ chmod -R 755 /etc/letsencrypt/live
 Why are digital certificates needed in the first place? The Solid specifications say that: “A data pod SHOULD use TLS connections through the https URI scheme in order to secure the communication between clients and servers.” (Section 2.1.2, W3C Solid Community Group, 2020).
 Therefore, the NSS makes it mandatory to provide the location of a valid certificate when started.
 
-#### Reverse proxy
+#### Reverse Proxy
 
 A reverse proxy allows a server to run multiple services on the same port. A reverse proxy receives the initial request on the host and port and then forwards it to the configured local service on the machine.
 Solid has WebID-TLS implemented as one of its authentication mechanisms. A reverse proxy – when not configured correctly – does not permit the usage of this, as the client when performing the handshake with the server also [sends its certificate](https://blog.cloudflare.com/introducing-tls-client-auth/#handshakeswithtlsclientauth), which means with the usage of a reverse proxy that performs the handshake, the certificate is not sent to the Solid server, denying the possibility of authenticating properly.
@@ -256,9 +257,9 @@ solid start
 
 #### Difficulties
 
-##### Setting up with Docker
+##### Setting Up With Docker
 
-In the beginning the thought of using Docker seemed tempting. Installing all dependencies in isolated environments gives the benefit of having all configurations as code. A Dockerfile holds all commands that are needed to set up an Nginx reverse proxy for example.
+In the beginning, the thought of using Docker seemed tempting. Installing all dependencies in isolated environments gives the benefit of having all configurations as code. A Dockerfile holds all commands that are needed to set up an Nginx reverse proxy for example.
 Because this setup needs multiple running services (Nginx reverse proxy, certification issuing, the Solid server) that all need to communicate to each other, the Docker configuration can get easily out of control and not offer a one-click solution anymore. Docker Compose tackles this problem by offering a configuration file to easily define how these different services/container should be connected.
 To not reinvent the wheel and spend too much time on configuring for example an Nginx reverse proxy, well-established Docker images can be used.
 Existing solutions exist and can be used to set up an NSS. Unfortunately, problems occurred when the Docker images were tried, for example the wildcard certificates were not distributed correctly. Due to time constraints and the additional overhead of dealing with these extra issues, Docker was abandoned.

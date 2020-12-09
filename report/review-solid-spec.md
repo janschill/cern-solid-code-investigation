@@ -156,9 +156,9 @@ Section [2.1.2](https://solid.github.io/specification/#http-client) goes into th
 It only states it needs to be an HTTP/1.1 client, must implement the [HTTP Authentication framework](https://httpwg.org/specs/rfc7235.html) and the `Content-Type` HTTP header for `PUT`, `POST` and `PATCH` requests.
 From [this commit](https://github.com/solid/specification/commit/d387e332f3bbc9af8e7ad596fa742530262a76a9) in the Solid specification repository it can be assumed that a section for client implementation was planned, but reprioritized and delinked from the main document.
 A lot of Solid clients exist and of course the Solid ecosystem—as stated in the beginning—is not a document for best-practices, it would be highly beneficial to have such documents explicitly giving good implementation details for developers, especially the ones who have not been around in the semantic web field.
-The section [Evaluation of Solid Implementations](#evaluation-of-solid-implementations) will look more closely at existing solution on the server and client side.
+The section [Evaluation of Solid Implementations](#evaluation-of-solid-implementations) will look more closely at existing solution on the server and client-side.
 
-#### No justification for usage of Linked Data
+#### No justification for the usage of Linked Data
 
 Even though it might not be the proper place to explain the reasons for choosing specific technologies like Linked Data—as those discussions happen prior to defining the technologies in the documentation—but it seems some clarifications why Linked Data as a technology is being used for data representation might be valuable beyond just stating that is used because of "resource discovery and lifecycle management." [[Source]](https://solid.github.io/specification/#resource-containment).
 TODO: Maybe the Solid principles (are these defined somewhere) are clear enough when they say that interoperability is a key aspect.
@@ -169,7 +169,7 @@ The document introduces many different terms, which are often defined in the doc
 
 #### Complexity
 
-Even though the document does a great job on going into detail on specific areas, it is still demanding to follow with only a limited knowledge in web technologies.\
+Even though the document does a great job on going into detail on specific areas, it is still demanding to follow with only limited knowledge in web technologies.\
 This can be justified by the incomplete status of the document, but also its contrasting principles to conventional web implementations.
 One example of this is the concept of Linked Data and all its components. It cannot be assumed of the Solid Ecosystem to explain all of its linked concepts – as it would render the document redundantly convoluted – but the fact remains that it is challenging to follow.
 

@@ -1,12 +1,16 @@
 # CERN-Solid code investigation
 
+## Table of Contents
+
+1. Introduction Solid
+
 ## Introduction Solid
 
 The Web was created in 1989 by Tim Berners-Lee while working at CERN "to allow people to work together by combining their knowledge in a web of hypertext documents." [Source](https://www.w3.org/People/Berners-Lee/Longer.html).
 This brilliant idea has ever since grown as an essential part of our all lives. While it has given a new platform for all types of innovation, it has also evolved away from the initial idea of sharing knowledge freely. A new term has been coined describing the phenomena of isolating data from the public by creating the so-called *data silos*. The data in these silos is then only available to the organization controlling the application.
 A multitude of problems reside with this, like the actual content creator not owning their own data, nor having full access to it.
 Another drawback is that the application owners decide what interfaces are publicly accessible, therefore, not allowing users easy migrations of their data.
-This results in one user having to provide the same information to different applications: username, name, age and others depending on the domain. The same problem applies to traditional web applications when authenticating their users. Usually, applications will do the authentication themselves, but there are initiatives that decentralize this authentication, which is called single Sign-On (SSO).
+This results in one user having to provide the same information to different applications: username, name, age and others depending on the domain. The same problem applies to traditional web applications when authenticating their users. Usually, applications will do the authentication themselves, but there are initiatives that decentralize this authentication, which is called single sign-On (SSO).
 Solid is aiming at solving these problems by standardizing an ecosystem where data is stored on data pods chosen and fully controlled by the users/agents, where they can decided who has access to what data; Linked Data is utilized to create interoperable data, for seamless migration between applications and pods; authenticate with one identity provider (IDP) to use multiple Solid applications with one username and password combination.
 
 TODO: Maybe needs more
@@ -51,14 +55,16 @@ The Community Solid Server (CSS) is a new project aiming at replacing the NSS to
 The Enterprise Solid Server (ESS) is Inrupt's commercial closed-source solution launched late this year 2020.
 
 A lot of different libraries are built to enable development in the ecosystem. A subset as an example are client-side libraries for authentication with data pods; reading and writing RDF based resources; an SDK for React development.
-Additionally, a lot of efforts are put into the development of a Solid operating system (SolidOS), which can be deployed onto the data pod and supports the browsing of one's pod, editing files, parsing, and showing the data in a meaningful manner and other useful additions.
+Additionally, efforts are put into the development of a Solid operating system (SolidOS), which can be deployed onto the data pod and supports the browsing of one's pod, editing files, parsing, and showing the data in a meaningful manner and other useful additions.
 Application enriching the ecosystem by improving the personal life like task managers or other initiatives are also being developed on by the community.
 
 ## Introduction CERN
 
-The key elements of loosely decoupling
+TODO: Write Introduction CERN
 
 ## Overview of CERN
+
+TODO: Write Overview of CERN
 
 - [ ] Existing AuTH/AuthZ initiatives exist at CERN
   - https://auth.docs.cern.ch/
@@ -89,11 +95,11 @@ The Uniform Resource Identifier (URI) plays an essential role in the Solid Ecosy
 A container resource is an organizing concept in the Linked Data Platform [[Source]](https://www.w3.org/TR/ldp/#ldpc). It stores linked documents or information resources, which handle requests from clients for their creation, modification, traversal of the linked documents [[Source]](https://www.w3.org/TR/ldp/#dfn-linked-data-platform-container).
 
 An auxiliary resource exists to give additional information, like configuration, processing, or interpretation about a Solid resource, for example: "A container linked to an auxiliary resource that includes access control statements for that container and the resources that belong to it."
-`acl:Control` means that the user has complete control, in other words: read, write and append access [[Source]](https://www.w3.org/wiki/WebAccessControl#WAC_relation_to_HTTP_Verbs). <!-- TODO: this might not be completely true -->\
+`acl:Control` means that the user has complete control, in other words: read, write, and append access [[Source]](https://www.w3.org/wiki/WebAccessControl#WAC_relation_to_HTTP_Verbs). <!-- TODO: this might not be completely true -->\
 Another example "A binary JPEG image linked to an auxiliary resource that includes information describing that binary JPEG." makes the need a bit clearer, as a binary JPEG image does not carry any machine-readable information.
 
-The ACL in Solid is realized with Web Access Control (WAC). The section for WAC in not yet written in the Solid specification but shall be given a short introduction.\
-WAC is similar to access control schemes used in file systems. Files, users and groups are referenced by URLs. Users in particular are identified by WebIDs.
+The ACL in Solid is realized with Web Access Control (WAC). The section for WAC is not yet written in the Solid specification but shall be given a short introduction.\
+WAC is similar to access control schemes used in file systems. Files, users, and groups are referenced by URLs. Users in particular are identified by WebIDs.
 Its functionality is cross-domain and can therefore have an ACL resource – holding the permissions for an agent – on domain A, while setting the permissions for a file on domain B. The supported modes of operation are read, write, append and control.
 Read and write are self-explanatory, whereas append and control introduce two interesting modes.
 Append allows the agent to add files to a container, without being able to read or write any of the container's files. The idea of an email inbox can be compared to this functionality.\
@@ -118,10 +124,62 @@ In Solid OIDC one key aspect is that the `Client ID` should be a WebID. The `Cli
 Once authenticated with a username and password combination by an IDP, all Solid applications that need authentication will redirect to the chosen IDP. The browser uses the stored token from a set cookie to identify and is then able to use the application without login.
 
 ### Comments
-<!-- TODO: include from review-solid_spec.md -->
+
+The Solid Ecosystem does a good job in the claims from the beginning. It does not go into best practices on how to build a Solid server or client, but solely focusses on the clear definition on what Solid is when looked at technically.\
+Other documents like TODO: Linked Data Primer and Best Practices are written to describe common patterns in the development with Linked Data.
+Further, the review process seems sophisticated and lively in its discussion.
+Contributions to the specifications are heavily discussed using the GitHub issue and pull request features, but also chat platforms like Gitter. A review of such a contribution follows strict regulations. A contribution is encouraged to come with a sophisticated explanation on why this change is appropriate. Each topic within the specifications have editors to them assigned who are responsible.
+Because Solid is open-source and therefore benefits from an active contribution from all parties, it is highly recommended to participate in its development.
+
+Clearly stating that the Solid Ecosystem document has its purpose in defining the implementation requirements for a data pod and makes suggestions to other documents that do a thorough job on speaking out use-cases and best-practices is a good structural decision.
+
+TODO: Reorder these, to bring the strongest first or last
+
+#### Incomplete Draft
+
+*Edit: as of lately 05.12.2020 this section has been added.*
+
+Due to the fact that the specifications are work in progress and even some crucial *sub-specifications*, like Web Access Control ([existing draft](https://www.w3.org/wiki/WebAccessControl)), are not even started, makes a review challenging as the documents are subject to additions, removals, or changes.
+Even though it can be assumed the general direction of its underlying principles does not change.
+An application developed to the rules of today's Solid rules could result in the same application not conforming to tomorrow's set of rules and because the section on how a client should be implemented was temporarily removed from the specification it may likely happen (see Section: [Limited information on Solid client](#limited-information-on-solid-client)).
+
+#### Usage of Incomplete Concepts
+
+The Solid Ecosystem uses not only its own specifications, but also external specifications and capitalizes on sophisticated technologies like the hypertext transfer protocol (HTTP).
+But it also references some technologies that have not been around for as long as HTTP, like WebID.\
+WebID in itself is also defined in an incomplete technical report. It being incomplete as well, creates a chain of uncertainty towards their definitions.\
+If a missing section in the Solid Ecosystem links to an external specification, one could use that document as a source of truth, but if it is also incomplete, the risk of building something that becomes inaccurate increases.
+
+#### Limited Information on Solid Client
+
+Section [2.1.2](https://solid.github.io/specification/#http-client) goes into the requirements for a Solid client implementation is limited in its details.
+It only states it needs to be an HTTP/1.1 client, must implement the [HTTP Authentication framework](https://httpwg.org/specs/rfc7235.html) and the `Content-Type` HTTP header for `PUT`, `POST` and `PATCH` requests.
+From [this commit](https://github.com/solid/specification/commit/d387e332f3bbc9af8e7ad596fa742530262a76a9) in the Solid specification repository it can be assumed that a section for client implementation was planned, but reprioritized and delinked from the main document.
+A lot of Solid clients exist and of course the Solid ecosystem—as stated in the beginning—is not a document for best-practices, it would be highly beneficial to have such documents explicitly giving good implementation details for developers, especially the ones who have not been around in the semantic web field.
+The section [Evaluation of Solid Implementations](#evaluation-of-solid-implementations) will look more closely at existing solution on the server and client-side.
+
+#### No Justification For the Usage Of Linked Data
+
+Even though it might not be the proper place to explain the reasons for choosing specific technologies like Linked Data—as those discussions happen prior to defining the technologies in the documentation—but it seems some clarifications why Linked Data as a technology is being used for data representation might be valuable beyond just stating that is used because of "resource discovery and lifecycle management." [[Source]](https://solid.github.io/specification/#resource-containment).
+TODO: Maybe the Solid principles (are these defined somewhere) are clear enough when they say that interoperability is a key aspect.
+
+#### Definition Order and Linkage
+<!-- ACL resource, container resource, auxiliary resource -->
+The document introduces many different terms, which are often defined in the document itself. On occasion, it happens that something is used before it is defined and not properly linked to its definition. This aggravates the reading flow of a reader unknown to these terms, as the reader needs to find the definition on its own.
+
+#### Complexity
+
+Even though the document does a great job on going into detail on specific areas, it is still demanding to follow with only limited knowledge in web technologies.\
+This can be justified by the incomplete status of the document, but also its contrasting principles to conventional web implementations.
+One example of this is the concept of Linked Data and all its components. It cannot be assumed of the Solid Ecosystem to explain all of its linked concepts – as it would render the document redundantly convoluted – but the fact remains that it is challenging to follow.
+
+### Recommendations
+
+TODO: Write Recommendations
 
 ### Conclusion
-<!-- TODO: include from review-solid_spec.md -->
+
+TODO: Write Conclusion
 
 ## Evaluation of Solid Implementations
 
@@ -138,6 +196,8 @@ Once authenticated with a username and password combination by an IDP, all Solid
 ### Conclusion
 
 ## Conclusion
+
+---
 
 ## Backlog
 
