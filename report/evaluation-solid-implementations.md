@@ -45,8 +45,15 @@ CSS
   - [ ] Architecture
   - [x] TypeScript
   - [ ] Dependency Injection
+- [ ] Will be ready by May 2021
 
+General
 
+- [ ] Open-source without active maintainers means not reliable enough for CERN
+- [ ] Solid a standard, interoperability allows movement between different implementations
+- [ ] ESS has SLAs
+- [ ] Host CSS on CERNBox
+- [ ]
 
 ### Enterprise Solid Server
 
