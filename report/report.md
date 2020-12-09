@@ -111,18 +111,8 @@ CERN has met in the past difficulties to fulfill some core workflows in the auth
 
 Indico is actively worked on by a team of six developers from CERN. Its open-source approach allows external participation. It is written in Python and is currently on version 2.7 and plans to move onto Python 3.x soon coupled with the release of Indico 3.0 scheduled to be released at the end of this year. Indico version 2.3 was released earlier this year—during the summer of 2020—updating the software with multiple features with the help of the community, the team managing Indico at the United Nations Office at Geneva and funding from IEEE.
 
-Indico is the candidate for the after this research project followed Master's thesis. It is a suitable contender for applying the Solid principles by creating a proof of concept (POC) as it is one of CERN's most reliable applications with a long history of operation.
-TODO: why this Solid is attractive for CERN.
-
-- [x] Existing software
-  - [x] AuTH/AuthZ initiatives exist at CERN
-  - [x] Indico
-  - [x] Invenio
-  - [x] Zenodo
-- [ ] Why is CERN interested
-- [x] Existing software
-  - [x] Indico
-  - [x] Why Indico can be PoC
+Indico is the proof of concept (POC) candidate for the after this research project followed Master's thesis. It is a suitable contender for applying the Solid principles as it is one of CERN's most reliable applications with a long history of operation.
+It does carry any incentives in for example its conference registration module. This part is responsible for administering the storage (and other necessary parts) of the given data from the attendee of a conference. The host of a conference decides what information is necessary to register. The information can go as far as being digital copies of physical identifcations. This would be an ideal use-case to apply the Solid principle of decentralized storage on a data pod owned by the attendee.
 
 ## Review of Solid Specifications
 TODO: Incorporate Sarven's message
@@ -131,7 +121,8 @@ TODO: Incorporate Sarven's message
 
 ### Summary
 
-Reviewed document at: Editor’s Draft, 13 November 2020
+*Initially reviewed the document: Editor’s Draft, 13 November 2020\
+Revisited and partially updated: Editor’s Draft, 4 December 2020*
 
 [The Solid Ecosystem](https://solid.github.io/specification/) is a by the [Solid editorial team](https://github.com/solid/process/blob/master/panels.md) published technical report. It is the official rewrite of the informal [Solid specification](https://github.com/solid/solid-spec/), which was initially used to define the architecture of Solid servers and clients. This rewrite is still incomplete and being worked on continuously.
 
@@ -188,13 +179,19 @@ Clearly stating that the Solid Ecosystem document has its purpose in defining th
 
 TODO: Reorder these, to bring the strongest first or last
 
-#### Incomplete Draft
+#### Users Have Too Much Control
 
-*Edit: as of lately 05.12.2020 this section has been added.*
+Web access control (WAC) allows the owner of a pod to configure his access controls. With Solid gaining more popularity the user base grows with it and also the diversity in technical proficiency. Having full control over the access control lists (ACLs) a minor mistake in giving a malicious person root access could yield catastrophic results. Therefore, to make a data pod more user friendly this should be addressed.
+Proposols such as access control policies (ACP) are being discussed and wanted in the specifications, but are not written and merged in yet [[Source]](https://github.com/solid/authorization-panel/blob/2d80b870dd0f71ae1d89a2dda908554687cde553/proposals/acp/index.md).
+
+#### Incomplete Draft
 
 Due to the fact that the specifications are work in progress and even some crucial *sub-specifications*, like Web Access Control ([existing draft](https://www.w3.org/wiki/WebAccessControl)), are not even started, makes a review challenging as the documents are subject to additions, removals, or changes.
 Even though it can be assumed the general direction of its underlying principles does not change.
 An application developed to the rules of today's Solid rules could result in the same application not conforming to tomorrow's set of rules and because the section on how a client should be implemented was temporarily removed from the specification it may likely happen (see Section: [Limited information on Solid client](#limited-information-on-solid-client)).
+
+*Edit: as of lately 05.12.2020 the WAC section has been added.*
+
 
 #### Usage of Incomplete Concepts
 
@@ -232,7 +229,11 @@ TODO: Write Recommendations
 
 ### Conclusion
 
-TODO: Write Conclusion
+As of now the specifications are to be seen as *most complete*, the missing sections were added or removed. There are still some areas of improvements, but so far nothing major. But what is completely left out so far is, that the specifications is not only the published document in itself, but also the work around it. Actual implementations of the specification that are tested against the specification, applications that consume Solid servers and practice the Solid principles with the help of Solid servers.
+
+To call the specification ready would therefore not help anyone. It is now up to the development to seek shortages in the definitions in the specs.
+
+A rough estimate from a Solid developer and spec writer is quarter 2 of 2021 to be the time were a *call for implementations* will be officially made. Enough confidence in the specs will be gathered up until then for it to have enough stability to not introduce breaking-changes and be technically and ethically mature.
 
 ## Evaluation of the Solid Implementations
 
