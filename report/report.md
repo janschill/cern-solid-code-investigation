@@ -3,10 +3,10 @@
 ## Introduction Solid
 
 The Web was created in 1989 by Tim Berners-Lee while working at CERN "to allow people to work together by combining their knowledge in a web of hypertext documents." [Source](https://www.w3.org/People/Berners-Lee/Longer.html).
-This brilliant idea has ever since grown as an essential part of our all lives. While it has given a new platform for all types of innovation, it has also evolved away from the initial idea of sharing knowledge freely. What term has been coined describing the phenomena of isolating data from the public by creating the so called *data silos*. The data in these silos is then only available to the organization controlling the application.
+This brilliant idea has ever since grown as an essential part of our all lives. While it has given a new platform for all types of innovation, it has also evolved away from the initial idea of sharing knowledge freely. A new term has been coined describing the phenomena of isolating data from the public by creating the so-called *data silos*. The data in these silos is then only available to the organization controlling the application.
 A multitude of problems reside with this, like the actual content creator not owning their own data, nor having full access to it.
-Another drawback is that the application owners decide what interfaces are publicly accessable, therefore, not allowing users easy migrations of their data.
-This results in one user having to provide the same information to different applications: username, name, age and others depending on the domain. The same problem applies to traditional web application when authenticating their users. Usually applications will do the authentication themselves, but there are initiatives that decentralize this authentication, which is called single Sign-On (SSO).
+Another drawback is that the application owners decide what interfaces are publicly accessible, therefore, not allowing users easy migrations of their data.
+This results in one user having to provide the same information to different applications: username, name, age and others depending on the domain. The same problem applies to traditional web applications when authenticating their users. Usually, applications will do the authentication themselves, but there are initiatives that decentralize this authentication, which is called single Sign-On (SSO).
 Solid is aiming at solving these problems by standardizing an ecosystem where data is stored on data pods chosen and fully controlled by the users/agents, where they can decided who has access to what data; Linked Data is utilized to create interoperable data, for seamless migration between applications and pods; authenticate with one identity provider (IDP) to use multiple Solid applications with one username and password combination.
 
 TODO: Maybe needs more
@@ -24,7 +24,7 @@ The data pod storage architecture follows the Linked Data server specifications.
 Every container holds information of the access control in form of an access control list (ACL) and information of what resources it contains. Both of these resources are returned in an RDF compliant format, mostly Turtle.
 The data pod differentiates between two resource types: RDF and binary/text.
 RDF is a framework to represent data on the Web. The basic structure of it follows a graph representation, where two nodes, the subject and object, are connected by an edge, the predicate. This structure is called a *triple*.
-In RDF, nodes and edges elevate the benefits of URIs, more specifically IRIs—which are a generalization of URIs, offering more Unicode characters—by either using them as globally unique identifiers or globally unique and reusable property names. This allows interoperable data by reusing schemas with agreed upon vocabulary to describe data and can be used to obtain more information by dereferencing the IRIs.
+In RDF, nodes and edges elevate the benefits of URIs, more specifically IRIs—which are a generalization of URIs, offering more Unicode characters—by either using them as globally unique identifiers or globally unique and reusable property names. This allows interoperable data by reusing schemas with agreed-upon vocabulary to describe data and can be used to obtain more information by dereferencing the IRIs.
 
 ```turtle
 @prefix jan: <https://janschill.solidcommunity.net/profile/card> .
@@ -51,7 +51,7 @@ The Community Solid Server (CSS) is a new project aiming at replacing the NSS to
 The Enterprise Solid Server (ESS) is Inrupt's commercial closed-source solution launched late this year 2020.
 
 A lot of different libraries are built to enable development in the ecosystem. A subset as an example are client-side libraries for authentication with data pods; reading and writing RDF based resources; an SDK for React development.
-Additionally, a lot of efforts are put into the development of a Solid operating system (SolidOS), which can be deployed onto the data pod and supports the browsing of ones pod, editing files, parsing and showing the data in a meaningful manner and other useful additions.
+Additionally, a lot of efforts are put into the development of a Solid operating system (SolidOS), which can be deployed onto the data pod and supports the browsing of one's pod, editing files, parsing, and showing the data in a meaningful manner and other useful additions.
 Application enriching the ecosystem by improving the personal life like task managers or other initiatives are also being developed on by the community.
 
 ## Introduction CERN
@@ -115,7 +115,7 @@ On a `POST` request to `/{slug}/`, the server needs to create a container for `/
 Authentication in the Solid Ecosystem is supported through two ways. Solid OIDC is the Solid specific implementation of the widely used OpenID Connect. The alternative, but not from the specification preferred method is WebID-TLS.
 OpenID Connect enables the decentralized authentication and single sign-on mechanism needed for Solid.
 In Solid OIDC one key aspect is that the `Client ID` should be a WebID. The `Client ID` is needed in OAuth(/OIDC) for a `Client application` to identify itself with the IDP and resource server.
-Once authenticated with a username and password combination by an IDP, all Solid applications that need authentication will redirect to the chosen IDP. The browser uses the stored token from a set cookie to identify and is then able to use the application without a login.
+Once authenticated with a username and password combination by an IDP, all Solid applications that need authentication will redirect to the chosen IDP. The browser uses the stored token from a set cookie to identify and is then able to use the application without login.
 
 ### Comments
 <!-- TODO: include from review-solid_spec.md -->
@@ -197,7 +197,7 @@ Why is CSS financed by Inrupt? Inrupt's co-founder Sir Tim Berners-Lee leads the
 With the ESS being closed source, Inrupt does not offer any open-source Solid server. They do offer the Developer Tools, a set of tools and libraries that ease the development of enterprise-ready Solid applications and a handy Solid application called PodBrowser, allowing the connection and retrieval of all data hosted on a data pod.
 Having an open-source Solid server with the great benefits previously mentioned lets Solid to gain in popularity.
 
-Other implementation exist, for example the [PHP Solid server](https://github.com/pdsinterop/php-solid-server).
+Other implementations exist, for example the [PHP Solid server](https://github.com/pdsinterop/php-solid-server).
 
 TODO:
 
