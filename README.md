@@ -58,6 +58,7 @@ The defined milestones give detailed descriptions on what should be when achieve
 - [Linked Research on the Decentralised Web](https://csarven.ca/linked-research-decentralised-web)
 - [User guide](https://github.com/solid/userguide)
 - [OpenID Connect](https://openid.net/connect/)
+- [Personal Data Stores Interoperability](https://pdsinterop.org)
 
 ##### Solid Pod
 
