@@ -2,7 +2,7 @@
 
 A lot of valuable information is being shared on Gitter, an internet relay chat (IRC). Gitter does not offer a great search interface, making the search for specific information difficult.
 
-This document is a collection of message that I found useful. Please always take into account that the information could be outdated or not entirely correct. Refer to accepted technical documentation or to the people directly to gather reliable information.
+This document is a collection of messages that I found useful. Please always take into account that the information could be outdated or not entirely correct. Refer to accepted technical documentation or to the people directly to gather reliable information.
 
 ## Messages
 
