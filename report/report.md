@@ -2,6 +2,7 @@
 
 ## Table of Contents
 
+1. Introduction?
 1. Introduction Solid
 1. Overview of Solid
 1. Introduction CERN
@@ -22,6 +23,8 @@
 1. Conclusion
 
 ---
+
+## Introduction?
 
 ## Introduction Solid
 
@@ -67,7 +70,9 @@ Profile Document
 https://janschill.solidcommunity.net/profile/card
 ```
 
-Solid OpenID Connect (Solid OIDC) is the standard that is being used to authenticate within the Solid ecosystem. <!-- TODO: go deeper into this subject -->
+Solid OpenID Connect (Solid OIDC) is the standard that is being used to authenticate within the Solid ecosystem.
+
+TODO: go deeper into Solid OIDC
 
 Several implementations exist to this day, that all do parts of the described solutions, but there no existing complete solution yet. The Node Solid Server (NSS) is the original implementation and is to this day the most complete open-source solution measure by passing Solid Test Suite cases. It is being deployed onto both providers `inrupt.net` and `solidcommunity.net`, acting as a data pod and IDP.
 The Community Solid Server (CSS) is a new project aiming at replacing the NSS to become the new official open-source implementation of the Solid specifications. It is currently in beta version and actively developed.
@@ -92,7 +97,8 @@ TODO: Write Overview of CERN
 - [ ] Existing software
   - [ ] Indico
   - [ ] Why Indico can be PoC
-  - [ ]
+
+TODO: What else?
 
 ## Review of Solid Specifications
 
@@ -114,7 +120,10 @@ The Uniform Resource Identifier (URI) plays an essential role in the Solid Ecosy
 A container resource is an organizing concept in the Linked Data Platform [[Source]](https://www.w3.org/TR/ldp/#ldpc). It stores linked documents or information resources, which handle requests from clients for their creation, modification, traversal of the linked documents [[Source]](https://www.w3.org/TR/ldp/#dfn-linked-data-platform-container).
 
 An auxiliary resource exists to give additional information, like configuration, processing, or interpretation about a Solid resource, for example: "A container linked to an auxiliary resource that includes access control statements for that container and the resources that belong to it."
-`acl:Control` means that the user has complete control, in other words: read, write, and append access [[Source]](https://www.w3.org/wiki/WebAccessControl#WAC_relation_to_HTTP_Verbs). <!-- TODO: this might not be completely true -->\
+`acl:Control` means that the user has complete control, in other words: read, write, and append access [[Source]](https://www.w3.org/wiki/WebAccessControl#WAC_relation_to_HTTP_Verbs).
+
+TODO: this might not be completely true
+
 Another example "A binary JPEG image linked to an auxiliary resource that includes information describing that binary JPEG." makes the need a bit clearer, as a binary JPEG image does not carry any machine-readable information.
 
 The ACL in Solid is realized with Web Access Control (WAC). The section for WAC is not yet written in the Solid specification but shall be given a short introduction.\
@@ -202,19 +211,11 @@ TODO: Write Conclusion
 
 ## Evaluation of the Solid Implementations
 
-### Solid Servers
-
-#### Community Solid Server
-
-#### How to Set Up NSS
-
-#### Identity Providers
-
-### Solid Clients
-
-### Conclusion
+TODO: Merge in from `evaluation-solid-implementations.md`
 
 ## Conclusion
+
+TODO: Write Conclusion
 
 ---
 
