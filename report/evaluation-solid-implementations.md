@@ -7,7 +7,7 @@ In the second part of this section, libraries for development in the ecosystem a
 
 ## Solid Servers
 
-A Solid server is a web server enabling storage through data pods and may optionally also offer authentication as an IDP [[Source](https://solid.github.io/authentication-panel/solid-oidc/#concepts)]. In Solid a server only needs to enable the authentication through Solid OIDC, which requires an IDP, if this IDP is controlled by the user through usage of an existing Solid server that is hosted on their on infrastructure or they are using an identity-as-a-service vendor is up to them.
+A Solid server is a web server enabling storage through data pods and may optionally also offer authentication as an IDP [[Source](https://solid.github.io/authentication-panel/solid-oidc/#concepts)]. In Solid a server only needs to enable the authentication through Solid OIDC, which requires an IDP, if this IDP is controlled by the user through the usage of an existing Solid server that is hosted on their own infrastructure or they are using an identity-as-a-service vendor is up to them.
 
 
 ### Node Solid Server
@@ -18,16 +18,16 @@ A Solid server is a web server enabling storage through data pods and may option
 
 #### Introduction
 
-The Community Solid Server (CSS) is the from the Solid community driven development of a new open-source software to provide a way for everyone to host a data pod.
+The Community Solid Server (CSS) is the from the Solid community-driven development of new open-source software to provide a way for everyone to host a data pod.
 It aims at giving developers the opportunity to create new Solid apps and also test them against a working implementation of the Solid specifications, while making sure no legacy code from older experiments influence the testing, such as in NSS.
 
 Another key feature of CSS is its modular architecture. Because Solid is just in the beginning and there is still a lot of different ideas and a roadmap full of features for the future, CSS tries to enable by high cohesion and loose coupling in its modules a highly flexible platform for easy integration of experiments and new ideas. That can be implemented without altering existing code by plugging the experiment in as a self-contained module, which can just as easily removed again.
 This has been a problem with NSS, as it was the initial starting implementation of the Solid idea it evolved over years and was used to realize new ideas without a clear idea of how to plug the experiments in and out.
 This left a lot of legacy code that is hard to remove or patch for security updates.
 
-This is were the decision was made to rewrite an open-source Solid server. Inrupt is sponsoring this development with two imec researchers and one developer. On December 3rd 2020 the first beta version of CSS was released. This marks a significant milestones in the journey for open-source Solid servers. Developers working in the Solid ecosystem are encouraged by the core developers of CSS to switch over to CSS when developing new applications. This prepares the new applications to work with the in the future available open-source server, but also gives the opportunity to spot bugs or features that have not been accounted and therfore help with the progress of CSS.
+This is where the decision was made to rewrite an open-source Solid server. Inrupt is sponsoring this development with two imec researchers and one developer. On December 3rd, 2020 the first beta version of CSS was released. This marks a significant milestone in the journey for open-source Solid servers. Developers working in the Solid ecosystem are encouraged by the core developers of CSS to switch over to CSS when developing new applications. This prepares the new applications to work with in the future available open-source servers, but also gives opportunity to spot bugs or features that have not been accounted and therefore help with the progress of CSS.
 
-One of the greatest benefits the developement of CSS has, is that the Solid specifications
+One of the greatest benefits of the development of CSS now is the Solid specifications are in a much more mature state they were when the development of NSS started. In-fact no such specifications existed and the experimental nature of Solid back then harmed the quality of the software.
 
 CSS
 
