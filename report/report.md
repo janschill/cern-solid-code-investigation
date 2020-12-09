@@ -102,28 +102,27 @@ The following open-source software systems have proven to be of excellent operat
 
 CERN has met in the past difficulties to fulfill some core workflows in the authentication and authorization in their infrastructure expected by users of their platform. The new **CERN Authorization Service** is a centralized authentication and authorization service with components such as single sign-on, group management API, account management and computing resource lifecycles [[Source]](https://auth.docs.cern.ch).
 
-**Invenio** is split into three sub-systems RDM, a research data management repository
+**Invenio** has three different parts the **Framework** for large scale digital repositories. Its main goals are scalability, security and long-term preservation of data. The other two parts RDM and ILS are not yet released but actively development with planned releases in the year of 2021.
+**ILS** is an integrated library system allowing cataloguing with structure bibliographic records, a circulation workflow and much more in a modern user interface.
+**RDM** stands for research data management and aims at opening a platform for researchers to share and preserve their research results.
+**Zenodo** is a small layer on top of the Invenio Framework. The goal with Invenio RDM is to build a common RDM-platform from everyone can profit. Invenio RDM will be basedon Zenodo and once done, Zenodo will be migrated over [[Source]](https://inveniosoftware.org/blog/2019-04-29-rdm/).
 
-**Zenodo** is a repository for
-
-
-**Indico** is one of CERN’s most sophisticated software projects. It is an event management tool, giving users a tool to organize complex meetings or conferences with an easy-to-use interface. It was started in 2002 as a “European project” and has been in production at CERN ever since. It is used daily to facilitate more than 600,000 events at the organization itself and has helped others like the UN “to put in place an efficient registration and accreditation workflow that greatly reduced waiting times for everyone” at conferences with more than 180,000 participants in total [Source].
+**Indico** is one of CERN’s most sophisticated software projects. It is an event management tool, giving users a tool to organize complex meetings or conferences with an easy-to-use interface. It was started in 2002 as a “European project” and has been in production at CERN ever since. It is used daily to facilitate more than 600,000 events at the organization itself and has helped others like the UN “to put in place an efficient registration and accreditation workflow that greatly reduced waiting times for everyone” at conferences with more than 180,000 participants in total [[Source]](https://getindico.org).
 
 Indico is actively worked on by a team of six developers from CERN. Its open-source approach allows external participation. It is written in Python and is currently on version 2.7 and plans to move onto Python 3.x soon coupled with the release of Indico 3.0 scheduled to be released at the end of this year. Indico version 2.3 was released earlier this year—during the summer of 2020—updating the software with multiple features with the help of the community, the team managing Indico at the United Nations Office at Geneva and funding from IEEE.
 
-Indico is the candidate for the after this research project followed Master's thesis. It is a suitable contender for applying the Solid principles by creating a proof of concept (POC) as it is one of CERN's most reliable applications with a long history of operation. Large numbers of personnel use the application, but also
+Indico is the candidate for the after this research project followed Master's thesis. It is a suitable contender for applying the Solid principles by creating a proof of concept (POC) as it is one of CERN's most reliable applications with a long history of operation.
+TODO: why this Solid is attractive for CERN.
 
-TODO: Write Overview of CERN
-
-- [ ] Existing AuTH/AuthZ initiatives exist at CERN
-  - https://auth.docs.cern.ch/
-  - SSO what provider
+- [x] Existing software
+  - [x] AuTH/AuthZ initiatives exist at CERN
+  - [x] Indico
+  - [x] Invenio
+  - [x] Zenodo
 - [ ] Why is CERN interested
-- [ ] Existing software
-  - [ ] Indico
-  - [ ] Why Indico can be PoC
-
-TODO: What else?
+- [x] Existing software
+  - [x] Indico
+  - [x] Why Indico can be PoC
 
 ## Review of Solid Specifications
 TODO: Incorporate Sarven's message
