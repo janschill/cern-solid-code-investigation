@@ -264,10 +264,8 @@ Because this setup needs multiple running services (Nginx reverse proxy, certifi
 To not reinvent the wheel and spend too much time on configuring for example an Nginx reverse proxy, well-established Docker images can be used.
 Existing solutions exist and can be used to set up an NSS. Unfortunately, problems occurred when the Docker images were tried, for example the wildcard certificates were not distributed correctly. Due to time constraints and the additional overhead of dealing with these extra issues, Docker was abandoned.
 
-### Identity Providers
+## Identity Providers
 
+## Solid Clients
 
-
-### Solid Clients
-
-### Conclusion
+## Conclusion
