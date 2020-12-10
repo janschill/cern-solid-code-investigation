@@ -11,7 +11,7 @@ A Solid server is a web server enabling storage through data pods and may option
 
 ### Data Pod
 
-A data pod is
+TODO: More here
 
 ### Identity Providers
 
@@ -21,8 +21,6 @@ TODO: More here
 
 ### Node Solid Server
 
-TODO: Write Node Solid Server
-
 The original Solid server was developed at the Massachusetts Institute of Technology (MIT) by PhD students. This server is still to this day the only server that passes most test cases of the [Solid Test Suite](https://github.com/solid/test-suite), which is a set of checks developed to test an implementation against the Solid specifications. The Test Suite for Solid is also still in development and constantly extended by more tests for the different categories of a Solid server.\
 This server is completely open-source, written in JavaScript with the help of the web framework Node.js and is commonly referred to as Node Solid Server (NSS).\
 NSS implements a pod server and and identity provider (IDP), meaning users can register a WebID, create a data pod and authenticate with it.
@@ -30,6 +28,8 @@ https://inrupt.net/ and https://solidcommunity.net/ [[Source]](https://solidproj
 
 Because NSS was started as a research project, the code base was subject to a lot of experiments. These experiments were sometimes successful and improved the server experience by implementing useful functionality, but sometimes it would also introduce vulnerabilities or not yield the expected outcomes.
 Often these implementations were not completely well-designed or made self-contained resulting in code that was hard to remove and therefore just left in. This increased its complexity to a level, where it is difficult to find enthusiastic developer to maintain the implementation.
+
+TODO: More here
 
 ### Community Solid Server
 
@@ -47,25 +47,6 @@ Not only can it be developed against a mature specification, but also has a test
 The CSS language of choice is TypeScript (TS). TS is a statically typed programming language bringing strict types to the dynamic language of JavaScript (JS). The TS compiler transpiles TS source code into JS source code.
 
 An estimate by a developer was given, that by the second quarter in 2021 CSS could be production-ready.
-
-CSS
-
-- [x] Beta
-- [x] Being developed against a almost complete specification
-- [x] Has a test-suite it can be tested again
-- [ ] Technical
-  - [ ] Architecture
-  - [x] TypeScript
-  - [ ] Dependency Injection
-- [ ] Will be ready by May 2021
-
-General
-
-- [ ] Open-source without active maintainers means not reliable enough for CERN
-- [ ] Solid a standard, interoperability allows movement between different implementations
-- [ ] ESS has SLAs
-- [ ] Host CSS on CERNBox
-- [ ]
 
 ### Enterprise Solid Server
 
@@ -307,4 +288,9 @@ The CSS has not been used for any personal experiments so far. It promises a lot
 The ESS is an interesting product, as it is the first professionally and closed-source server currently available for production usage.
 Inrupt offers their customers
 
-TODO: Write a Conclusion
+The Solid ecosystem is vibrant and in full motion. Server implementations are being worked on, Solid applications are starting to appear here and there and everything seems to move into a direction where everything will come together.
+Even though it might seem no perfect solution exists, there is still potential as the idea of Solid allows interoperability as one of the key concepts. This means if a Solid application in the form of a proof of concept is developed while using the CSS as a data pod, everything from the data pod on CSS could be easily migrated to another server and the applications would still work.
+
+This is why the specifications are so important and only the future will tell how well-defined and robust they are in the current stage, but a foundation can definitely be laid.
+
+TODO: More here
