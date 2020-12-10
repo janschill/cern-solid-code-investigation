@@ -7,3 +7,6 @@
 [submodule "code/solid-comment"]
 	path = code/solid-comment
 	url = git@github.com:janschill/solid-comment.git
+[submodule "report/latex/cern-solid-code_investigation"]
+	path = report/latex/cern-solid-code_investigation
+	url = https://git.overleaf.com/5fca96cabee73ab97e7ea51c
