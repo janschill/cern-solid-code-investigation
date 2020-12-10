@@ -115,7 +115,6 @@ Indico is the proof of concept (POC) candidate for the after this research proje
 It does carry any incentives in for example its conference registration module. This part is responsible for administering the storage (and other necessary parts) of the given data from the attendee of a conference. The host of a conference decides what information is necessary to register. The information can go as far as being digital copies of physical identifcations. This would be an ideal use-case to apply the Solid principle of decentralized storage on a data pod owned by the attendee.
 
 ## Review of Solid Specifications
-TODO: Incorporate Sarven's message
 
 [The Solid Ecosystem](https://solid.github.io/specification/) is a by the [Solid editorial team](https://github.com/solid/process/blob/master/panels.md) published technical report. It is the official rewrite of the informal [Solid specification](https://github.com/solid/solid-spec/), which was initially used to define the architecture of Solid servers and clients. This rewrite is still incomplete and being worked on continuously.
 
@@ -283,7 +282,7 @@ This server is completely open-source, written in JavaScript with the help of th
 The NSS is currently used by the two publicly communicated Solid data pod and identity providers (IDPs) from https://inrupt.net/ and https://solidcommunity.net/ [[Source]](https://solidproject.org//users/get-a-pod).
 It is also the server used to self-host a data pod under https://janschill.de/.\
 At some point the decision to rewrite the NSS was made and is called Community Solid Server (CSS). This project is backed by the American company Inrupt, which has multiple reasons of doing so, which will be addressed shortly.\
-CSS is an open-source implementation written in TypeScript and just like the NSS with Node.js. At this moment CSS is in the alpha phase of the release life cycle and passes only a few cases from the Solid Test Suite – therefore, not eligible to use with Solid applications.\
+CSS is an open-source implementation written in TypeScript and just like the NSS with Node.js. At this moment CSS is in the beta phase of the release life cycle and passes only a few cases from the Solid Test Suite.\
 Its focus is to build an implementation that adheres to the Solid specifications as tightly as possible, while being open-source, to give the community a possibility to host their own data pod and developers a platform to create and test Solid applications; also, it being developed in a modular fashion allows an easy way of testing new ideas [[Source]](https://github.com/solid/community-server).
 
 The main motivation to rewrite the NSS with TypeScript as the CSS is, because the NSS started as an idea into a prototype, which was constantly used to experiment with new ideas, that were not completely implemented and left in the code base. Over the years the code base has become unstructured and difficult to maintain. A new attempt seemed most feasible.
