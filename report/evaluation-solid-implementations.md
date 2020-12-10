@@ -69,9 +69,11 @@ General
 
 ### Enterprise Solid Server
 
-Inrupt the
+Inrupt the American-base company Tim Berners-Lee cofounded develops the Enterprise Solid Server (ESS). It is a commercial and closed-source alternative based on Trellis. Trellis is a platform to build scalable Linked Data applications in Java.
+In November 2020 Inrupt released the first major version 1.0. Besides developing a Solid server behind closed doors, they are also active in the open-source community, having developed applications like a PodBrowser, allowing the browsing of one's data in a pod or a set of libraries helping developers get started with the development of Solid applications.
 
-TODO: Write Enterprise Solid Server
+Not much more of the implementation of the ESS can be evaluated.
+Inrupt does offer a practical journey for new customers, where access is given to the server with introductions to the open-source developer tools or a well-defined and in great detail outlined roadmap containing the design of a proof of concept, proof of value, pilot stage and ready for production with a service level agreement (SLA). Considering the untrustworthiness of the NSS and that any open-source solution of a Solid server will not come with any guarantees of bug fixes within a timely manner.
 
 ### Hosting a Solid Server Behind a Domain
 
