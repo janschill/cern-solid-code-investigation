@@ -2,24 +2,24 @@
 
 ## Table of Contents
 
-1. Introduction?
-1. Introduction Solid
-1. Overview of Solid
-1. Introduction CERN
-1. Overview of CERN
-1. Review of Solid Specifications
-    1. Summary
-    1. Comments
-    1. Conclusion
-1. Evaluation of the Solid Implementations
-    1. Solid Servers
-        1. Node Solid Server
-        1. Community Solid Server
-        1. Enterprise Solid Server
-        1. Hosting a Solid Server Behind a Domain
-    1. Solid Clients
-    1. Conclusion
-1. Conclusion
+1. [Introduction?](#introduction)
+1. [Introduction Solid](#introduction-solid)
+1. [Overview of Solid](#overview-of-solid)
+1. [Introduction CERN](#introduction-cern)
+1. [Overview of CERN](#overview-of-cern)
+1. [Review of Solid Specifications](#review-of-solid-specifications)
+    1. [Summary](#summary)
+    1. [Comments](#comments)
+    1. [Conclusion](#conclusion)
+1. [Evaluation of the Solid Implementations](#evaluation-of-the-solid-implementations)
+    1. [Solid Servers](#solid-servers)
+        1. [Node Solid Server](#node-solid-server)
+        1. [Community Solid Server](#community-solid-server)
+        1. [Enterprise Solid Server](#enterprise-solid-server)
+        1. [Hosting a Solid Server Behind a Domain](#hosting-a-solid-server-behind-a-domain)
+    1. [Solid Clients](#solid-clients)
+    1. [Conclusion](#conclusion)
+1. [Conclusion](#conclusion)
 
 ---
 
@@ -32,7 +32,7 @@ This brilliant idea has ever since grown as an essential part of our all lives. 
 A multitude of problems reside with this, like the actual content creator not owning their own data, nor having full access to it.
 Another drawback is that the application owners decide what interfaces are publicly accessible, therefore, not allowing users easy migrations of their data.
 This results in one user having to provide the same information to different applications: username, name, age and others depending on the domain. The same problem applies to traditional web applications when authenticating their users. Usually, applications will do the authentication themselves, but there are initiatives that decentralize this authentication, which is called single sign-On (SSO).
-Solid is aiming at solving these problems by standardizing an ecosystem where data is stored on data pods chosen and fully controlled by the users/agents, where they can decided who has access to what data; Linked Data is utilized to create interoperable data, for seamless migration between applications and pods; authenticate with one identity provider (IDP) to use multiple Solid applications with one username and password combination.
+Solid is aiming at solving these problems by standardizing an ecosystem where data is stored on data pods chosen and fully controlled by the users/agents, where they can decide who has access to what data; Linked Data is utilized to create interoperable data, for seamless migration between applications and pods; authenticate with one identity provider (IDP) to use multiple Solid applications with one username and password combination.
 
 TODO: Maybe needs more
 
