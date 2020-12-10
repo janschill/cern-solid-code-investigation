@@ -43,7 +43,7 @@ TODO: See [#36](https://github.com/janschill/uni-research_project/issues/36) to-
 In Solid data is stored on personal and through the Web-accessible storages, these are called *data pods*.
 Data pods are personal in the sense of users configuring the access control to the data on their pods themselves. Web-accessible because the pods can be connected to as long as a connection to the Web exists and the correct access controls are given.
 <!-- A pod server is a web server storing the data pod and managing request-response flows. -->
-Users or agents can freely choose from their favorite pod provider where they would like to store their data. As of writing this there are two major providers online, inrupt.net and solidcommunity.net.
+Users or agents can freely choose from their favorite pod provider where they would like to store their data. As of writing this there are two major providers online, [inrupt.net](https://inrupt.net) and [solidcommunity.net](https://solidcommunity.net).
 These providers are also used as IDPs to enable decentralized authentication, which shall be looked at more closely in a moment.
 The data pod storage architecture follows the Linked Data server specifications. It enables hierarchical resource discovery in a RESTful manner, where the path of the URI gives information about the relation of its underlying data. Up until a URI does not end with a `/` character, every path segment resembles a container. A container is the collection of multiple resources. Resources are the data items stored on a pod.
 Every container holds information of the access control in form of an access control list (ACL) and information of what resources it contains. Both of these resources are returned in an RDF compliant format, mostly Turtle.
@@ -81,16 +81,14 @@ A lot of different libraries are built to enable development in the ecosystem. A
 Additionally, efforts are put into the development of a Solid operating system (SolidOS), which can be deployed onto the data pod and supports the browsing of one's pod, editing files, parsing, and showing the data in a meaningful manner and other useful additions, such as Solid Panes, which is a set of Solid-compatible apps. These are useful for the richness of SolidOS.
 The core idea is to enable the operating system of Solid to bring an interface to the diverse group of linked data on a data pod. One core example is, that it aims at allowing a sensible representation of objects, which can extend to an address book showing all contacts of a user.
 
-TODO: Show case some existing Solid solutions and talk about the government efforts in Flanders, Belgium,
-
-Applications enriching the ecosystem by improving the personal life like task managers or other initiatives are also being developed on by the community.
+TODO: Show case some existing Solid solutions and talk about the government efforts in Flanders, Belgium and UK
 
 ## Introduction CERN
 TODO: maybe more here
 
-CERN or the European Organization for Nuclear Research is a European organization with its main site in Switzerland focussing on particle physics with the largest laboratory in the world. It maintains the world's highest energy accelerator, the Large Hadron Collider, and houses a broad scientific program.
-With employees from all 23 member states it accounts to a total of roughly 4400 staff members and paid personnel, as well as welcoming around 12500 scientist from all around the globe.
-Great challenges arise when managing this number of scientist and their experiments.
+CERN or the European Organization for Nuclear Research is the largest particle physics laboratory in the world, with its main site in Switzerland. It maintains the world's highest energy accelerator, the Large Hadron Collider, and houses a broad scientific program.
+With staff members, users, collaborating scientist and students from all around the globe it accounts to a total of 12,500.
+Great challenges arise when managing this number of scientists and their experiments.
 CERN has closed this gap by creating and maintaining several reliable software projects and a robust infrastructure.
 
 A number of relevant open-source applications shall be introduced in the next section.
@@ -101,7 +99,7 @@ The following open-source software systems have proven to be of excellent operat
 
 CERN has met in the past difficulties to fulfill some core workflows in the authentication and authorization in their infrastructure expected by users of their platform. The new **CERN Authorization Service** is a centralized authentication and authorization service with components such as single sign-on, group management API, account management and computing resource lifecycles [[Source]](https://auth.docs.cern.ch).
 
-**Invenio** has three different parts the **Framework** for large scale digital repositories. Its main goals are scalability, security and long-term preservation of data. The other two parts RDM and ILS are not yet released but actively development with planned releases in the year of 2021.
+**Invenio** has three different parts the **Framework** for large scale digital repositories. Its main goals are scalability, security and long-term preservation of data. The other two parts RDM and ILS are not yet released but actively developed with planned releases in the year of 2021.
 **ILS** is an integrated library system allowing cataloguing with structure bibliographic records, a circulation workflow and much more in a modern user interface.
 **RDM** stands for research data management and aims at opening a platform for researchers to share and preserve their research results.
 **Zenodo** is a small layer on top of the Invenio Framework. The goal with Invenio RDM is to build a common RDM-platform from everyone can profit. Invenio RDM will be basedon Zenodo and once done, Zenodo will be migrated over [[Source]](https://inveniosoftware.org/blog/2019-04-29-rdm/).
@@ -113,7 +111,7 @@ Indico is actively worked on by a team of six developers from CERN. Its open-sou
 Indico is the proof of concept (POC) candidate for the after this research project followed Master's thesis. It is a suitable contender for applying the Solid principles as it is one of CERN's most reliable applications with a long history of operation.
 It does carry any incentives in for example its conference registration module. This part is responsible for administering the storage (and other necessary parts) of the given data from the attendee of a conference. The host of a conference decides what information is necessary to register. The information can go as far as being digital copies of physical identifcations. This would be an ideal use-case to apply the Solid principle of decentralized storage on a data pod owned by the attendee.
 
-TODO: Why is CERN interested in Solid?
+CERN, being the birthplace of the Web, remains a High Energy Physics laboratory, hence, its main mission is to run an accelerator, its detectors and the relevant experiments. Computing is of paramount importance for filtering, storing, distributing, accessing, analysing the experimental data. Nevertheless, due to its large and distributed user base, CERN has to offer sophisticated solutions on all software application fronts. Proprietary packages having been disappointing, in terms of price and transparency, CERN, following the rising world-wide awareness of personal data ownership and sovereignty, is interested in being part of Solid.
 
 ## Review of Solid Specifications
 
