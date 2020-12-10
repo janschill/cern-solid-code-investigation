@@ -504,6 +504,14 @@ Existing solutions exist and can be used to set up an NSS. Unfortunately, proble
 
 TODO: Write Solid Clients
 
+* [ ] Introduce existing Solid applicaiton, possibly PodBrowser or such
+* [x] Build a simple frontend application that
+  * [x] authenticates with a Solid data pod
+  * [x] reads the user from the pod
+  * [x] reads data from the pod
+  * [x] writes data to the pod
+* [ ] Write about this implementation
+
 ## Conclusion
 
 The NSS is a decent foundation to get started in the realm of Solid. Setting up the server and using it is straightforward. It has been running with occasional usage on the domain for two months without problems.
