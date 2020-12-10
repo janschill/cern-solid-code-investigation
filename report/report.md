@@ -115,14 +115,12 @@ CERN, being the birthplace of the Web, remains a High Energy Physics laboratory,
 
 ## Review of Solid Specifications
 
-[The Solid Ecosystem](https://solid.github.io/specification/) is a by the [Solid editorial team](https://github.com/solid/process/blob/master/panels.md) published technical report. It is the official rewrite of the informal [Solid specification](https://github.com/solid/solid-spec/), which was initially used to define the architecture of Solid servers and clients. This rewrite is still incomplete and being worked on continuously.
-
-### Summary
-
 *Initially reviewed the document: Editor’s Draft, 13 November 2020\
 Revisited and partially updated: Editor’s Draft, 4 December 2020*
 
 [The Solid Ecosystem](https://solid.github.io/specification/) is a by the [Solid editorial team](https://github.com/solid/process/blob/master/panels.md) published technical report. It is the official rewrite of the informal [Solid specification](https://github.com/solid/solid-spec/), which was initially used to define the architecture of Solid servers and clients. This rewrite is still incomplete and being worked on continuously.
+
+### Summary
 
 The Solid Ecosystem combines a set of carefully selected specifications that were adopted or newly defined, to bring together an architecture that aligns the principles and values of Solid. These components are loosely coupled, can therefore evolve as independently as possible, to ensure flexibility and robustness [Source p4](https://solid.github.io/specification/#intro).
 
@@ -130,15 +128,12 @@ The main specification starts off by describing how a data pod and a Solid app s
 A data pod is a web server that responds to HTTP requests and returns HTTP responses. Its purpose is the storage of data and the management of who has access to this data.\
 A Solid app is a client that is sending requests to a data pod. It should be able to read and write depending on the access control to a data pod.
 
-The Uniform Resource Identifier (URI) plays an essential role in the Solid Ecosystem, for it is being used to identify users with [WebID](#webid), with resources in the Linked Data Platform and more generally give information about the hierarchy of stored information on the data pod.\
+The URI plays an essential role in the Solid Ecosystem, for it is being used to identify users with [WebID](#webid), with resources in the Linked Data Platform and more generally give information about the hierarchy of stored information on the data pod.\
 A container resource is an organizing concept in the Linked Data Platform [[Source]](https://www.w3.org/TR/ldp/#ldpc). It stores linked documents or information resources, which handle requests from clients for their creation, modification, traversal of the linked documents [[Source]](https://www.w3.org/TR/ldp/#dfn-linked-data-platform-container).
 
 An auxiliary resource exists to give additional information, like configuration, processing, or interpretation about a Solid resource, for example: "A container linked to an auxiliary resource that includes access control statements for that container and the resources that belong to it."
-`acl:Control` means that the user has complete control, in other words: read, write, and append access [[Source]](https://www.w3.org/wiki/WebAccessControl#WAC_relation_to_HTTP_Verbs).
 
-TODO: this might not be completely true
-
-Another example "A binary JPEG image linked to an auxiliary resource that includes information describing that binary JPEG." makes the need a bit clearer, as a binary JPEG image does not carry any machine-readable information.
+An example "A binary JPEG image linked to an auxiliary resource that includes information describing that binary JPEG." clarifies the necessity clearer, as a binary JPEG image does not carry any machine-readable information.
 
 The ACL in Solid is realized with Web Access Control (WAC). The section for WAC is not yet written in the Solid specification but shall be given a short introduction.\
 WAC is similar to access control schemes used in file systems. Files, users, and groups are referenced by URLs. Users in particular are identified by WebIDs.
@@ -216,7 +211,7 @@ An application developed to the rules of today's Solid rules could result in the
 
 ### Conclusion
 
-As of now the specifications are to be seen as *most complete*, the missing sections were added or removed. There are still some areas of improvements, but so far nothing major. But what is completely left out so far is, that the specifications is not only the published document in itself, but also the work around it. Actual implementations of the specification that are tested against the specification, applications that consume Solid servers and practice the Solid principles with the help of Solid servers.
+As of now the specifications are to be seen as *almost complete*, the incomplete sections were either finished or removed. There are still some areas of improvements, but so far nothing major. But what is completely left out so far is, that the specifications is not only the published document in itself, but also the work around it. Actual implementations of the specification that are tested against the specification, applications that consume Solid servers and practice the Solid principles with the help of Solid servers.
 
 To call the specification ready would therefore not help anyone. It is now up to the development to seek shortages in the definitions in the specs.
 
