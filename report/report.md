@@ -10,7 +10,6 @@
 1. Review of Solid Specifications
     1. Summary
     1. Comments
-    1. Recommendations
     1. Conclusion
 1. Evaluation of the Solid Implementations
     1. Solid Servers
@@ -82,7 +81,7 @@ A lot of different libraries are built to enable development in the ecosystem. A
 Additionally, efforts are put into the development of a Solid operating system (SolidOS), which can be deployed onto the data pod and supports the browsing of one's pod, editing files, parsing, and showing the data in a meaningful manner and other useful additions, such as Solid Panes, which is a set of Solid-compatible apps. These are useful for the richness of SolidOS.
 The core idea is to enable the operating system of Solid to bring an interface to the diverse group of linked data on a data pod. One core example is, that it aims at allowing a sensible representation of objects, which can extend to an address book showing all contacts of a user.
 
-TODO: Show case some existing Solid solutions and talk about the government efforts in Flemish, Belgium,
+TODO: Show case some existing Solid solutions and talk about the government efforts in Flanders, Belgium,
 
 Applications enriching the ecosystem by improving the personal life like task managers or other initiatives are also being developed on by the community.
 
@@ -113,6 +112,8 @@ Indico is actively worked on by a team of six developers from CERN. Its open-sou
 
 Indico is the proof of concept (POC) candidate for the after this research project followed Master's thesis. It is a suitable contender for applying the Solid principles as it is one of CERN's most reliable applications with a long history of operation.
 It does carry any incentives in for example its conference registration module. This part is responsible for administering the storage (and other necessary parts) of the given data from the attendee of a conference. The host of a conference decides what information is necessary to register. The information can go as far as being digital copies of physical identifcations. This would be an ideal use-case to apply the Solid principle of decentralized storage on a data pod owned by the attendee.
+
+TODO: Why is CERN interested in Solid?
 
 ## Review of Solid Specifications
 
