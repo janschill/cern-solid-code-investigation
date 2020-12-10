@@ -283,7 +283,7 @@ TODO: Write Solid Clients
 The NSS is a decent foundation to get started in the realm of Solid. Setting up the server and using it is straightforward. It has been running with occasional usage on the domain for two months without problems.
 No major bugs were discovered in the process so far, but it must be said the server never got pressured into a heavy load.
 
-The CSS has not been used for any personal experiments so far. It promises a lot for the future of Solid in open-source. The architecture and quality of code seem to be well-thought-out. Defining a clear goal in the beginning and making considerations in the architecture of the implementations, having access to people that developed on the NSS to aquire learned lessons, working with a *most complete* specification and test suite to allow constant testing against the specification make this an opportune candidate for future work.
+The CSS has not been used for any personal experiments so far. It promises a lot for the future of Solid in open-source. The architecture and quality of code seem to be well-thought-out. Defining a clear goal in the beginning and making considerations in the architecture of the implementations, having access to people that developed on the NSS to acquire learned lessons, working with a *most complete* specification and test suite to allow constant testing against the specification make this an opportune candidate for future work.
 
 The ESS is an interesting product, as it is the first professionally and closed-source server currently available for production usage.
 Inrupt offers their customers

@@ -102,14 +102,14 @@ CERN has met in the past difficulties to fulfill some core workflows in the auth
 **Invenio** has three different parts the **Framework** for large scale digital repositories. Its main goals are scalability, security and long-term preservation of data. The other two parts RDM and ILS are not yet released but actively developed with planned releases in the year of 2021.
 **ILS** is an integrated library system allowing cataloguing with structure bibliographic records, a circulation workflow and much more in a modern user interface.
 **RDM** stands for research data management and aims at opening a platform for researchers to share and preserve their research results.
-**Zenodo** is a small layer on top of the Invenio Framework. The goal with Invenio RDM is to build a common RDM-platform from everyone can profit. Invenio RDM will be basedon Zenodo and once done, Zenodo will be migrated over [[Source]](https://inveniosoftware.org/blog/2019-04-29-rdm/).
+**Zenodo** is a small layer on top of the Invenio Framework. The goal with Invenio RDM is to build a common RDM-platform from everyone can profit. Invenio RDM will be based on Zenodo and once done, Zenodo will be migrated over [[Source]](https://inveniosoftware.org/blog/2019-04-29-rdm/).
 
 **Indico** is one of CERN’s most sophisticated software projects. It is an event management tool, giving users a tool to organize complex meetings or conferences with an easy-to-use interface. It was started in 2002 as a “European project” and has been in production at CERN ever since. It is used daily to facilitate more than 600,000 events at the organization itself and has helped others like the UN “to put in place an efficient registration and accreditation workflow that greatly reduced waiting times for everyone” at conferences with more than 180,000 participants in total [[Source]](https://getindico.org).
 
 Indico is actively worked on by a team of six developers from CERN. Its open-source approach allows external participation. It is written in Python and is currently on version 2.7 and plans to move onto Python 3.x soon coupled with the release of Indico 3.0 scheduled to be released at the end of this year. Indico version 2.3 was released earlier this year—during the summer of 2020—updating the software with multiple features with the help of the community, the team managing Indico at the United Nations Office at Geneva and funding from IEEE.
 
 Indico is the proof of concept (POC) candidate for the after this research project followed Master's thesis. It is a suitable contender for applying the Solid principles as it is one of CERN's most reliable applications with a long history of operation.
-It does carry any incentives in for example its conference registration module. This part is responsible for administering the storage (and other necessary parts) of the given data from the attendee of a conference. The host of a conference decides what information is necessary to register. The information can go as far as being digital copies of physical identifcations. This would be an ideal use-case to apply the Solid principle of decentralized storage on a data pod owned by the attendee.
+It does carry any incentives in for example its conference registration module. This part is responsible for administering the storage (and other necessary parts) of the given data from the attendee of a conference. The host of a conference decides what information is necessary to register. The information can go as far as being digital copies of physical identifications. This would be an ideal use-case to apply the Solid principle of decentralized storage on a data pod owned by the attendee.
 
 CERN, being the birthplace of the Web, remains a High Energy Physics laboratory, hence, its main mission is to run an accelerator, its detectors and the relevant experiments. Computing is of paramount importance for filtering, storing, distributing, accessing, analysing the experimental data. Nevertheless, due to its large and distributed user base, CERN has to offer sophisticated solutions on all software application fronts. Proprietary packages having been disappointing, in terms of price and transparency, CERN, following the rising world-wide awareness of personal data ownership and sovereignty, is interested in being part of Solid.
 
@@ -193,7 +193,7 @@ If a missing section in the Solid Ecosystem links to an external specification, 
 #### Users Have Too Much Control
 
 Web access control (WAC) allows the owner of a pod to configure his access controls. With Solid gaining more popularity the user base grows with it and also the diversity in technical proficiency. Having full control over the access control lists (ACLs) a minor mistake in giving a malicious person root access could yield catastrophic results. Therefore, to make a data pod more user friendly this should be addressed.
-Proposols such as access control policies (ACP) are being discussed and wanted in the specifications, but are not written and merged in yet [[Source]](https://github.com/solid/authorization-panel/blob/2d80b870dd0f71ae1d89a2dda908554687cde553/proposals/acp/index.md).
+Proposals such as access control policies (ACP) are being discussed and wanted in the specifications, but are not written and merged in yet [[Source]](https://github.com/solid/authorization-panel/blob/2d80b870dd0f71ae1d89a2dda908554687cde553/proposals/acp/index.md).
 
 #### Complexity
 
@@ -497,7 +497,7 @@ Existing solutions exist and can be used to set up an NSS. Unfortunately, proble
 
 TODO: Write Solid Clients
 
-* [ ] Introduce existing Solid applicaiton, possibly PodBrowser or such
+* [ ] Introduce existing Solid application, possibly PodBrowser or such
 * [x] Build a simple frontend application that
   * [x] authenticates with a Solid data pod
   * [x] reads the user from the pod
@@ -510,7 +510,7 @@ TODO: Write Solid Clients
 The NSS is a decent foundation to get started in the realm of Solid. Setting up the server and using it is straightforward. It has been running with occasional usage on the domain for two months without problems.
 No major bugs were discovered in the process so far, but it must be said the server never got pressured into a heavy load.
 
-The CSS has not been used for any personal experiments so far. It promises a lot for the future of Solid in open-source. The architecture and quality of code seem to be well-thought-out. Defining a clear goal in the beginning and making considerations in the architecture of the implementations, having access to people that developed on the NSS to aquire learned lessons, working with a *most complete* specification and test suite to allow constant testing against the specification make this an opportune candidate for future work.
+The CSS has not been used for any personal experiments so far. It promises a lot for the future of Solid in open-source. The architecture and quality of code seem to be well-thought-out. Defining a clear goal in the beginning and making considerations in the architecture of the implementations, having access to people that developed on the NSS to acquire learned lessons, working with a *most complete* specification and test suite to allow constant testing against the specification make this an opportune candidate for future work.
 
 The ESS is an interesting product, as it is the first professionally and closed-source server currently available for production usage.
 Inrupt offers their customers

@@ -1,6 +1,7 @@
 Abdurrahman
 Aboulnaga
 acl
+acp
 aifb
 amyvdh
 angelo
@@ -16,7 +17,9 @@ blog
 brickley
 btc
 Bugiotti
+cabee
 Capadisli
+cde
 cdivilly
 cernbox
 certbot
@@ -28,6 +31,7 @@ cient
 cloudflare
 codebase
 codimd
+Collider
 colostate
 computingjoy
 config
@@ -37,6 +41,7 @@ csarven
 dasya
 databox
 datastore
+dda
 delinked
 dfn
 digitalocean
@@ -56,6 +61,7 @@ edu
 ETag
 evertramos
 fbdf
+fca
 fd
 foaf
 freecodecamp
@@ -98,6 +104,8 @@ inox
 inrupt
 interoperability
 interoperable
+Invenio
+inveniosoftware
 iri
 issuecomment
 itu
@@ -134,6 +142,7 @@ meier
 metadata
 Michiel
 michielbdejong
+microservice
 MITM
 mkdir
 Moennich
@@ -181,6 +190,7 @@ pyenv
 Qg
 rdf
 rdflib
+rdm
 reprioritized
 respec
 rfc
@@ -193,6 +203,7 @@ rubenverborgh
 Sakr
 Sambra
 Sarven
+scalability
 scenaristeur
 schem
 Schenkel
@@ -201,6 +212,7 @@ SDK
 serializer
 sestoft
 SIGMOD
+SLAs
 solidcommunity
 solidproject
 someprefixvalue
@@ -251,6 +263,7 @@ Weikum
 wiki
 wikipedia
 Workarounds
+workflow
 www
 Xcode
 XDvrg
