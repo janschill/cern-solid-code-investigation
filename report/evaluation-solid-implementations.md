@@ -1,17 +1,21 @@
 # Evaluation of Existing Solid Implementations
 
-The ecosystem of Solid is already diverse in existing implementations. Attempts of developing the Solid specifications into software have been carried out with different programming languages and to different completion levels.
-These servers or data pods have different goals in mind and even though a server needs to adhere to the specifications it does not make the same.
+The ecosystem of Solid is already diverse in existing implementations. Attempts to transfer the Solid specifications into software have been carried out with different programming languages and to different completion levels.
+These servers or data pods have different goals in mind and even though a server needs to adhere to the specifications it does not make them the same.
 In the following, three different servers which are closely developed and maintained from the Solid community shall be looked at.
-In the second part of this section, libraries for development in the ecosystem and actual developed client applications will be evaluated.
+In the second part of this section, libraries for development in the ecosystem and actual developed Solid applications will be evaluated.
 
 ## Solid Servers
 
-A Solid server is a web server enabling storage through data pods and may optionally also offer authentication as an IDP [[Source](https://solid.github.io/authentication-panel/solid-oidc/#concepts)]. In Solid a server only needs to enable the authentication through Solid OIDC, which requires an IDP, if this IDP is controlled by the user through the usage of an existing Solid server that is hosted on their own infrastructure or they are using an identity-as-a-service vendor is up to them.
+A Solid server is a web server enabling storage through data pods and may optionally offer IDP implementation as well [[Source](https://solid.github.io/authentication-panel/solid-oidc/#concepts)]. In Solid a server only needs to enable the authentication through Solid OIDC, which requires an IDP, if this IDP is controlled by the user through the usage of an existing Solid server that is hosted on their own infrastructure or they are using an identity-as-a-service vendor is up to them.
 
 ### Data Pod
 
+A data pod is
+
 ### Identity Providers
+
+To decentralize authentication an
 
 TODO: More here
 
@@ -19,14 +23,20 @@ TODO: More here
 
 TODO: Write Node Solid Server
 
+The original Solid server was developed at the Massachusetts Institute of Technology (MIT) by PhD students. This server is still to this day the only server that passes most test cases of the [Solid Test Suite](https://github.com/solid/test-suite), which is a set of checks developed to test an implementation against the Solid specifications. The Test Suite for Solid is also still in development and constantly extended by more tests for the different categories of a Solid server.\
+This server is completely open-source, written in JavaScript with the help of the web framework Node.js and is commonly referred to as Node Solid Server (NSS).\
+NSS implements a pod server and and identity provider (IDP), meaning users can register a WebID, create a data pod and authenticate with it.
+https://inrupt.net/ and https://solidcommunity.net/ [[Source]](https://solidproject.org//users/get-a-pod) are currently the two domains hosting the NSS and allowing users to register and use these services.
+
+Because NSS was started as a research project, the code base was subject to a lot of experiments. These experiments were sometimes successful and improved the server experience by implementing useful functionality, but sometimes it would also introduce vulnerabilities or not yield the expected outcomes.
+Often these implementations were not completely well-designed or made self-contained resulting in code that was hard to remove and therefore just left in. This increased its complexity to a level, where it is difficult to find enthusiastic developer to maintain the implementation.
+
 ### Community Solid Server
 
 The Community Solid Server (CSS) is the from the Solid community-driven development of new open-source software to provide a way for everyone to host a data pod.
 It aims at giving developers the opportunity to create new Solid apps and also test them against a working implementation of the Solid specifications, while making sure no legacy code from older experiments influence the testing, such as in NSS.
 
-Another key feature of CSS is its modular architecture. Because Solid is just in the beginning and there is still a lot of different ideas and a roadmap full of features for the future, CSS tries to enable by high cohesion and loose coupling in its modules a highly flexible platform for easy integration of experiments and new ideas. That can be implemented without altering existing code by plugging the experiment in as a self-contained module, which can just as easily removed again.
-This has been a problem with NSS, as it was the initial starting implementation of the Solid idea it evolved over years and was used to realize new ideas without a clear idea of how to plug the experiments in and out.
-This left a lot of legacy code that is hard to remove or patch for security updates.
+Another key feature of CSS is its modular architecture. Because Solid is just in the beginning and there is still a lot of different ideas and a roadmap full of features for the future, CSS tries to enable by high cohesion and loose coupling in its modules a highly flexible platform for easy integration of experiments and new ideas. That can be implemented without altering existing code by plugging the experiment in as a self-contained module, which can just as easily removed again. This is to prevent the same mistakes NSS went through.
 
 This is where the decision was made to rewrite an open-source Solid server. Inrupt is sponsoring this development with two imec researchers and one developer. On December 3rd, 2020 the first beta version of CSS was released. This marks a significant milestone in the journey for open-source Solid servers. Developers working in the Solid ecosystem are encouraged by the core developers of CSS to switch over to CSS when developing new applications. This prepares the new applications to work with in the future available open-source servers, but also gives the opportunity to spot bugs or features that have not been accounted and therefore help with the progress of CSS.
 
@@ -34,7 +44,9 @@ One of the greatest benefits of the development of CSS now is the Solid specific
 
 Not only can it be developed against a mature specification, but also has a test-suite constantly checking if the development of CSS adheres to the specifications. This increases the quality of the code substantially because it does not depend on manual checks if it is still on track with the specifications. The Solid Test-Suite is a sophisticated collection of test cases to make sure an implementation complies with the specifications. The test-suite is not yet complete and still lacks in the category of access control policies. It is not crucially consequential, as it is the alternative to the Solid preferred web access control (WAC), which is on the other hand well covered.
 
-The CSS language of choice is TypeScript (TS). TS is a statically typed programming language bringing strict types to the dynamic language of JavaScript (JS). The TS compiler transpiles TS code into browser-runnable JS code.
+The CSS language of choice is TypeScript (TS). TS is a statically typed programming language bringing strict types to the dynamic language of JavaScript (JS). The TS compiler transpiles TS source code into JS source code.
+
+An estimate by a developer was given, that by the second quarter in 2021 CSS could be production-ready.
 
 CSS
 
@@ -57,23 +69,25 @@ General
 
 ### Enterprise Solid Server
 
+Inrupt the
+
 TODO: Write Enterprise Solid Server
 
 ### Hosting a Solid Server Behind a Domain
 
-NSS being the most complete server by means of passing the Solid Test Suite and being used in production by Inrupt and the Solid Community on their domains it was looked at and used to set up an own instance.
+NSS is the most complete server in terms of passing the Solid Test Suite. It currently used by Inrupt and the Solid Community to offer free data pods for development, experiments and to get familiar with Solid.
+NSS was also used to set up an own instance on the janschill.de domain.
 
-
-This write-down mostly follows [this tutorial](https://solidproject.org/for-developers/pod-server) from the official Solid website, the documentation in the [repository](https://github.com/solid/node-solid-server) of the NSS and other sources from the web, which shall be referenced as used.
+This write-down mostly follows [this guide](https://solidproject.org/for-developers/pod-server) from the official Solid website, the documentation in the [repository](https://github.com/solid/node-solid-server) of the NSS.
 
 #### Web Server
 
 Before installing the NSS, a physical web server, preferably running a Linux distribution is needed. A domain should be configured to point to this web server. This can be done at the DNS hosting and domain name registration service that holds the domain.
-The domain that will be used in this tutorial is `janschill.de` and is configured at Hetzner Online.
+The domain that will be used in this example is `janschill.de`.
 
 #### Digital Wildcard Certificate
 
-NSS uses instead of a subdirectory approach a subdomain one to create the space for an isolated user pod. This means a new user registers and gets a pod location at the address https://username.janschill.de and not https://janschill.de/username.
+NSS uses instead of a subdirectory approach a subdomain one to create the space for an isolated user pod. This means a new user registers and gets a pod location at the address https://username.janschill.de/ and not https://janschill.de/username/.
 This is a design decision and there has been some [discussion](https://github.com/solid/node-solid-server/issues/1349) about moving or allowing the setting of the latter. There are benefits and drawbacks to these approaches that shall not be discussed in this context.
 One drawback of this needs to be addressed – as it is essential for this setup. It is the need for [wildcard certificates](https://en.wikipedia.org/wiki/Wildcard_certificate). This is only a drawback, if a developer has not heard about this concept or has never set up digital certificates in general, as the process is quite straightforward.
 In short a wildcard certificate allows a certificate to be used with multiple subdomains and is created with `certbot`, a program offered by Let's Encrypt, as follows:
@@ -268,6 +282,8 @@ solid start
 
 #### Difficulties
 
+TODO: Go through notes and find more lessons learned
+
 ##### Setting Up With Docker
 
 In the beginning, the thought of using Docker seemed tempting. Installing all dependencies in isolated environments gives the benefit of having all configurations as code. A Dockerfile holds all commands that are needed to set up an Nginx reverse proxy for example.
@@ -277,4 +293,16 @@ Existing solutions exist and can be used to set up an NSS. Unfortunately, proble
 
 ## Solid Clients
 
+TODO: Write Solid Clients
+
 ## Conclusion
+
+The NSS is a decent foundation to get started in the realm of Solid. Setting up the server and using it is straightforward. It has been running with occasional usage on the domain for two months without problems.
+No major bugs were discovered in the process so far, but it must be said the server never got pressured into a heavy load.
+
+The CSS has not been used for any personal experiments so far. It promises a lot for the future of Solid in open-source. The architecture and quality of code seem to be well-thought-out. Defining a clear goal in the beginning and making considerations in the architecture of the implementations, having access to people that developed on the NSS to aquire learned lessons, working with a *most complete* specification and test suite to allow constant testing against the specification make this an opportune candidate for future work.
+
+The ESS is an interesting product, as it is the first professionally and closed-source server currently available for production usage.
+Inrupt offers their customers
+
+TODO: Write a Conclusion
