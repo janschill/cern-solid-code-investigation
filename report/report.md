@@ -170,19 +170,43 @@ Once authenticated with a username and password combination by an IDP, all Solid
 ### Comments
 
 The Solid Ecosystem does a good job in the claims from the beginning. It does not go into best practices on how to build a Solid server or client, but solely focusses on the clear definition on what Solid is when looked at technically.\
-Other documents like TODO: Linked Data Primer and Best Practices are written to describe common patterns in the development with Linked Data.
+Other documents like Linked Data Primer and Best Practices are written to describe common patterns in the development with Linked Data. This would also be also of value for the Solid Ecosystem.\
 Further, the review process seems sophisticated and lively in its discussion.
 Contributions to the specifications are heavily discussed using the GitHub issue and pull request features, but also chat platforms like Gitter. A review of such a contribution follows strict regulations. A contribution is encouraged to come with a sophisticated explanation on why this change is appropriate. Each topic within the specifications have editors to them assigned who are responsible.
 Because Solid is open-source and therefore benefits from an active contribution from all parties, it is highly recommended to participate in its development.
 
 Clearly stating that the Solid Ecosystem document has its purpose in defining the implementation requirements for a data pod and makes suggestions to other documents that do a thorough job on speaking out use-cases and best-practices is a good structural decision.
 
-TODO: Reorder these, to bring the strongest first or last
+#### No Justification For the Usage Of Linked Data
+
+Even though it might not be the proper place to explain the reasons for choosing specific technologies like Linked Data—as those discussions happen prior to defining the technologies in the documentation—but it seems some clarifications why Linked Data as a technology is being used for data representation might be valuable beyond just stating that is used because of "resource discovery and lifecycle management." [[Source]](https://solid.github.io/specification/#resource-containment).
+
+#### Limited Information on Solid Client
+
+Section [2.1.2](https://solid.github.io/specification/#http-client) goes into the requirements for a Solid client implementation is limited in its details.
+It only states it needs to be an HTTP/1.1 client, must implement the [HTTP Authentication framework](https://httpwg.org/specs/rfc7235.html) and the `Content-Type` HTTP header for `PUT`, `POST` and `PATCH` requests.
+From [this commit](https://github.com/solid/specification/commit/d387e332f3bbc9af8e7ad596fa742530262a76a9) in the Solid specification repository it can be assumed that a section for client implementation was planned, but reprioritized and delinked from the main document.
+A lot of Solid clients exist and of course the Solid ecosystem—as stated in the beginning—is not a document for best-practices, it would be highly beneficial to have such documents explicitly giving good implementation details for developers.
+This is a remark to the missing supporting documents for the Solid Ecosystem, such as the existing ones for the Linked Data Platform.\
+The section [Evaluation of Solid Implementations](#evaluation-of-solid-implementations) will look more closely at existing solutions on the server and client-side.
+
+#### Incomplete Supporting Documents
+
+The Solid Ecosystem uses not only its own specifications, but also external supporting specifications and capitalizes on sophisticated technologies like the hypertext transfer protocol (HTTP).
+But it also references some technologies that have not been around for as long as HTTP, like WebID.\
+WebID in itself is also defined in an incomplete technical report. It being incomplete as well, creates a chain of uncertainty towards their definitions. In the case of WebID it might not be crucial, as it is a straight-forward specification, but the supporting document of Solid OIDC is also fairly new specification, where only time and implementations tell its readiness.\
+If a missing section in the Solid Ecosystem links to an external specification, one could use that document as a source of truth, but if it is also incomplete, the risk of building something that becomes inaccurate increases.
 
 #### Users Have Too Much Control
 
 Web access control (WAC) allows the owner of a pod to configure his access controls. With Solid gaining more popularity the user base grows with it and also the diversity in technical proficiency. Having full control over the access control lists (ACLs) a minor mistake in giving a malicious person root access could yield catastrophic results. Therefore, to make a data pod more user friendly this should be addressed.
 Proposols such as access control policies (ACP) are being discussed and wanted in the specifications, but are not written and merged in yet [[Source]](https://github.com/solid/authorization-panel/blob/2d80b870dd0f71ae1d89a2dda908554687cde553/proposals/acp/index.md).
+
+#### Complexity
+
+Even though the document does a great job in going into detail on specific areas, it is still demanding to follow with only limited knowledge in web technologies.\
+This can be justified by the incomplete status of the document, but also by its complex nature with many areas that need to be studied.
+One example of this is the concept of Linked Data and all its components. It cannot be assumed of the Solid Ecosystem to explain all of its linked concepts—as it would render the document redundantly convoluted—but the fact remains that it is challenging to follow.
 
 #### Incomplete Draft
 
@@ -191,32 +215,6 @@ Even though it can be assumed the general direction of its underlying principles
 An application developed to the rules of today's Solid rules could result in the same application not conforming to tomorrow's set of rules and because the section on how a client should be implemented was temporarily removed from the specification it may likely happen (see Section: [Limited information on Solid client](#limited-information-on-solid-client)).
 
 *Edit: as of lately 05.12.2020 the WAC section has been added.*
-
-
-#### Usage of Incomplete Concepts
-
-The Solid Ecosystem uses not only its own specifications, but also external supporting specifications and capitalizes on sophisticated technologies like the hypertext transfer protocol (HTTP).
-But it also references some technologies that have not been around for as long as HTTP, like WebID.\
-WebID in itself is also defined in an incomplete technical report. It being incomplete as well, creates a chain of uncertainty towards their definitions. In the case of WebID it might not be crucial, as it is a straight-forward specification, but the supporting document of Solid OIDC is also fairly new specification, where only time and implementations tell its readiness.\
-If a missing section in the Solid Ecosystem links to an external specification, one could use that document as a source of truth, but if it is also incomplete, the risk of building something that becomes inaccurate increases.
-
-#### Limited Information on Solid Client
-
-Section [2.1.2](https://solid.github.io/specification/#http-client) goes into the requirements for a Solid client implementation is limited in its details.
-It only states it needs to be an HTTP/1.1 client, must implement the [HTTP Authentication framework](https://httpwg.org/specs/rfc7235.html) and the `Content-Type` HTTP header for `PUT`, `POST` and `PATCH` requests.
-From [this commit](https://github.com/solid/specification/commit/d387e332f3bbc9af8e7ad596fa742530262a76a9) in the Solid specification repository it can be assumed that a section for client implementation was planned, but reprioritized and delinked from the main document.
-A lot of Solid clients exist and of course the Solid ecosystem—as stated in the beginning—is not a document for best-practices, it would be highly beneficial to have such documents explicitly giving good implementation details for developers.
-The section [Evaluation of Solid Implementations](#evaluation-of-solid-implementations) will look more closely at existing solutions on the server and client-side.
-
-#### No Justification For the Usage Of Linked Data
-
-Even though it might not be the proper place to explain the reasons for choosing specific technologies like Linked Data—as those discussions happen prior to defining the technologies in the documentation—but it seems some clarifications why Linked Data as a technology is being used for data representation might be valuable beyond just stating that is used because of "resource discovery and lifecycle management." [[Source]](https://solid.github.io/specification/#resource-containment).
-
-#### Complexity
-
-Even though the document does a great job in going into detail on specific areas, it is still demanding to follow with only limited knowledge in web technologies.\
-This can be justified by the incomplete status of the document, but also by its complex nature with many areas that need to be studied.
-One example of this is the concept of Linked Data and all its components. It cannot be assumed of the Solid Ecosystem to explain all of its linked concepts—as it would render the document redundantly convoluted—but the fact remains that it is challenging to follow.
 
 ### Conclusion
 
