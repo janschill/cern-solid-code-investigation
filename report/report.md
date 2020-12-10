@@ -195,9 +195,9 @@ An application developed to the rules of today's Solid rules could result in the
 
 #### Usage of Incomplete Concepts
 
-The Solid Ecosystem uses not only its own specifications, but also external specifications and capitalizes on sophisticated technologies like the hypertext transfer protocol (HTTP).
+The Solid Ecosystem uses not only its own specifications, but also external supporting specifications and capitalizes on sophisticated technologies like the hypertext transfer protocol (HTTP).
 But it also references some technologies that have not been around for as long as HTTP, like WebID.\
-WebID in itself is also defined in an incomplete technical report. It being incomplete as well, creates a chain of uncertainty towards their definitions.\
+WebID in itself is also defined in an incomplete technical report. It being incomplete as well, creates a chain of uncertainty towards their definitions. In the case of WebID it might not be crucial, as it is a straight-forward specification, but the supporting document of Solid OIDC is also fairly new specification, where only time and implementations tell its readiness.\
 If a missing section in the Solid Ecosystem links to an external specification, one could use that document as a source of truth, but if it is also incomplete, the risk of building something that becomes inaccurate increases.
 
 #### Limited Information on Solid Client
@@ -205,27 +205,18 @@ If a missing section in the Solid Ecosystem links to an external specification, 
 Section [2.1.2](https://solid.github.io/specification/#http-client) goes into the requirements for a Solid client implementation is limited in its details.
 It only states it needs to be an HTTP/1.1 client, must implement the [HTTP Authentication framework](https://httpwg.org/specs/rfc7235.html) and the `Content-Type` HTTP header for `PUT`, `POST` and `PATCH` requests.
 From [this commit](https://github.com/solid/specification/commit/d387e332f3bbc9af8e7ad596fa742530262a76a9) in the Solid specification repository it can be assumed that a section for client implementation was planned, but reprioritized and delinked from the main document.
-A lot of Solid clients exist and of course the Solid ecosystem—as stated in the beginning—is not a document for best-practices, it would be highly beneficial to have such documents explicitly giving good implementation details for developers, especially the ones who have not been around in the semantic web field.
-The section [Evaluation of Solid Implementations](#evaluation-of-solid-implementations) will look more closely at existing solution on the server and client-side.
+A lot of Solid clients exist and of course the Solid ecosystem—as stated in the beginning—is not a document for best-practices, it would be highly beneficial to have such documents explicitly giving good implementation details for developers.
+The section [Evaluation of Solid Implementations](#evaluation-of-solid-implementations) will look more closely at existing solutions on the server and client-side.
 
 #### No Justification For the Usage Of Linked Data
 
 Even though it might not be the proper place to explain the reasons for choosing specific technologies like Linked Data—as those discussions happen prior to defining the technologies in the documentation—but it seems some clarifications why Linked Data as a technology is being used for data representation might be valuable beyond just stating that is used because of "resource discovery and lifecycle management." [[Source]](https://solid.github.io/specification/#resource-containment).
-TODO: Maybe the Solid principles (are these defined somewhere) are clear enough when they say that interoperability is a key aspect.
-
-#### Definition Order and Linkage
-<!-- ACL resource, container resource, auxiliary resource -->
-The document introduces many different terms, which are often defined in the document itself. On occasion, it happens that something is used before it is defined and not properly linked to its definition. This aggravates the reading flow of a reader unknown to these terms, as the reader needs to find the definition on its own.
 
 #### Complexity
 
-Even though the document does a great job on going into detail on specific areas, it is still demanding to follow with only limited knowledge in web technologies.\
-This can be justified by the incomplete status of the document, but also its contrasting principles to conventional web implementations.
-One example of this is the concept of Linked Data and all its components. It cannot be assumed of the Solid Ecosystem to explain all of its linked concepts – as it would render the document redundantly convoluted – but the fact remains that it is challenging to follow.
-
-### Recommendations
-
-TODO: Write Recommendations
+Even though the document does a great job in going into detail on specific areas, it is still demanding to follow with only limited knowledge in web technologies.\
+This can be justified by the incomplete status of the document, but also by its complex nature with many areas that need to be studied.
+One example of this is the concept of Linked Data and all its components. It cannot be assumed of the Solid Ecosystem to explain all of its linked concepts—as it would render the document redundantly convoluted—but the fact remains that it is challenging to follow.
 
 ### Conclusion
 
