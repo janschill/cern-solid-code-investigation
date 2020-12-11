@@ -102,6 +102,7 @@ inbox
 independetly
 inox
 inrupt
+Interop
 interoperability
 interoperable
 Invenio
@@ -156,6 +157,7 @@ Nextcloud
 NGi
 nginx
 nhs
+NLnet
 nmap
 nodejs
 noeldemartin
@@ -221,6 +223,7 @@ src
 ssl
 SSO
 stackoverflow
+standalone
 standardisation
 subdomain
 sudo
