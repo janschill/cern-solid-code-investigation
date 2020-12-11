@@ -12,7 +12,6 @@ This is the report that will be handed in on the 15th of December. It encapsulat
 
 * [Markdown](https://github.com/janschill/uni-research_project/blob/main/report/report.md)
 * [PDF](https://github.com/janschill/uni-research_project/blob/main/report/report.pdf)
-* [Tex](https://github.com/janschill/uni-research_project/blob/main/report/latex/cern-solid-code_investigation/report.tex)
 
 ## [Kanban board](https://github.com/janschill/uni-research_project/projects/1)
 
