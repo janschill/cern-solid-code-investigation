@@ -7,16 +7,6 @@ on:
     branches: [ main ]
 
 jobs:
-  latex-job:
-    runs-on: ubuntu-latest
-    name: A job to compile Latex file
-    steps:
-    - uses: actions/checkout@v1
-    - name: Compilation
-      uses: vinay0410/tectonic-action@master
-      with:
-        tex_path: 'report/latex/cern-solid-code_investigation/report.tex'
-        push: 'yes'
   build:
     runs-on: ubuntu-latest
     steps:
