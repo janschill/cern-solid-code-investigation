@@ -6,9 +6,13 @@ In a the second part a proof of concept where parts of Indico will be switched o
 For more details around the project, see the [CERN project description](https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation).\
 For a preliminary timeline with milestones, see the [GitHub milestones](https://github.com/janschill/uni-research_project/milestones?direction=asc&sort=due_date&state=open).
 
-## [Report](https://github.com/janschill/uni-research_project/blob/main/report/report.md)
+## [Report](https://github.com/janschill/uni-research_project/blob/main/report/)
 
 This is the report that will be handed in on the 15th of December. It encapsulates point 1 and 2 from the roadmap defined in the [project description](https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation) and an overview of Solid and CERN.
+
+* [Markdown](https://github.com/janschill/uni-research_project/blob/main/report/report.md)
+* [PDF](https://github.com/janschill/uni-research_project/blob/main/report/report.pdf)
+* [Tex](https://github.com/janschill/uni-research_project/blob/main/report/latex/cern-solid-code_investigation/report.tex)
 
 ## [Kanban board](https://github.com/janschill/uni-research_project/projects/1)
 
