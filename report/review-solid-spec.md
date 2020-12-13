@@ -34,7 +34,7 @@ The Uniform Resource Identifier (URI) plays an essential role in the Solid Ecosy
 <!-- Continuing with URIs used to give location to resources on a data pod an important note is that the slash character in the end of an URI indicates a container resource. -->
 A container resource is an organizing concept in the Linked Data Platform [[Source]](https://www.w3.org/TR/ldp/#ldpc). It stores linked documents or information resources, which handle requests from clients for their creation, modification, traversal of the linked documents [[Source]](https://www.w3.org/TR/ldp/#dfn-linked-data-platform-container).
 <!-- TODO: could need a more thorough explanation here -->\
-<!-- A data pod stores data, therefore, it needs a storage mechanism, which means a "space of URIs in which data can be accessed" [[Source]](https://solid.github.io/specification/#storage).\
+A data pod stores data, therefore, it needs a storage mechanism, which means a "space of URIs in which data can be accessed" [[Source]](https://solid.github.io/specification/#storage).\
 Solid uses containment. Containment is the relationship binding between a container (LDPC) and its resources (LDPR). The lifecycles of the LDPRs are limited by the lifecycle of its LDPC, as a resource cannot be stored without a container [[Source]](https://www.w3.org/TR/ldp/#dfn-containment).
 "A storage is the root container for all its contained resources" [[Source]](https://solid.github.io/specification/#storage).\
 An LDPC maintains a list of containment triples, which have the form of (LDPC URI, ldp:contains, document-URI) and list all the by the LDPC created documents.
@@ -55,7 +55,7 @@ maps to:
 http://example.org/container/resource
 ```
 
-Important to mention is that the root container needs an Access Control List (ACL) auxiliary resource with `acl:Control` access privilege associated with it [[Source]](https://solid.github.io/specification/#storage). -->
+<!-- Important to mention is that the root container needs an Access Control List (ACL) auxiliary resource with `acl:Control` access privilege associated with it [[Source]](https://solid.github.io/specification/#storage). -->
 
 An auxiliary resource exists to give additional information, like configuration, processing, or interpretation about a Solid resource, for example: "A container linked to an auxiliary resource that includes access control statements for that container and the resources that belong to it."
 `acl:Control` means that the user has complete control, in other words: read, write and append access [[Source]](https://www.w3.org/wiki/WebAccessControl#WAC_relation_to_HTTP_Verbs). <!-- TODO: this might not be completely true -->\
@@ -74,8 +74,8 @@ Its functionality is cross-domain and can therefore have an ACL resource – hol
 Read and write are self-explanatory, whereas append and control introduce two interesting modes.
 Append allows the agent to add files to a container, without being able to read or write any of the container's files. The idea of an email inbox can be compared to this functionality.\
 Control means that the agent with this permission has access to the ACL resource and can modify it.\
-<!-- Permissions are inherited through the ACL inheritance algorithm. The ACL algorithm looks for an ACL resource for the requested file, if none is found, it will check on the file's container, if none is found, it will go recursively up the hierarchy of the containers. The root container must by definition have an ACL resource associated with it.
-The representation of ACL resources is by default in the RDF Turtle format and can be discovered in the `Link` header from the request to the Solid resource – if a specific ACL resource is attached, otherwise through the previously described ACL inheritance algorithm. -->
+Permissions are inherited through the ACL inheritance algorithm. The ACL algorithm looks for an ACL resource for the requested file, if none is found, it will check on the file's container, if none is found, it will go recursively up the hierarchy of the containers. The root container must by definition have an ACL resource associated with it.
+The representation of ACL resources is by default in the RDF Turtle format and can be discovered in the `Link` header from the request to the Solid resource – if a specific ACL resource is attached, otherwise through the previously described ACL inheritance algorithm.
 <!--
 ```
 @prefix  acl:  <http://www.w3.org/ns/auth/acl#>  .
