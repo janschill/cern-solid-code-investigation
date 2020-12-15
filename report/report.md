@@ -5,7 +5,7 @@
 
 | Type | Location |
 |-|-|
-| PDF | [report.pdf]() |
+| PDF | [report.pdf](https://github.com/janschill/uni-research_project/blob/main/report/report.pdf) |
 | Repository | [report/latex/cern-solid-code_investigation]() |
 | Overleaf | [View-only](https://www.overleaf.com/3321668171ktbkxttfwfsm) |
 ---
