@@ -121,6 +121,7 @@ JWT
 Jz
 Kanban
 Kaoudi
+ktbkxttfwfsm
 ldf
 LDFLAGS
 ldp
@@ -252,6 +253,7 @@ username
 usr
 vcard
 Verborgh
+vimeo
 vincenttunru
 visualstudio
 VLDB
