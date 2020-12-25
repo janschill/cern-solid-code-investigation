@@ -122,9 +122,13 @@ The defined milestones give detailed descriptions on what should be when achieve
 - [Linked Data Platform Use Cases and Requirements](https://www.w3.org/TR/ldp-ucr/)
 - [Linked Data Platform Best Practices and Guidelines](https://www.w3.org/TR/ldp-bp/)
 - [SPARQL 1.1 Query Language](https://www.w3.org/TR/sparql11-query/)
-- [Linked Data Open Vocabularies](https://lov.linkeddata.es/dataset/lov/)
-- [Schema.org Organization of Schemas](https://schema.org/docs/schemas.html)
 - [Linked Data Shapes, Forms and Footprints](https://www.w3.org/DesignIssues/Footprints.html)
+
+##### Ontology
+
+- [Schema.org Organization of Schemas](https://schema.org/docs/schemas.html)
+- [Linked Open Vocabularies (LOV)](https://lov.linkeddata.es/dataset/lov)
+- [The Linked Open Data Cloud](https://lod-cloud.net/)
 
 ##### Solid World
 
