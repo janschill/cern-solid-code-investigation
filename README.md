@@ -12,6 +12,7 @@ This directory holds all formally written reports. Reports include the “Resear
 
 |-| Research project | Master‘s thesis |
 | - | - | - |
+| Start | 09/28/20 | 02/01/21 |
 | Submission | 12/15/20 | 06/02/21 |
 | Oral defense | 01/19/20 | est. 07/02/21 |
 | Description | Review of Solid specifications, evaluating existing Solid implementations | Proof of concept |
