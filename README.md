@@ -23,11 +23,6 @@ This directory holds all formally written reports. Reports include the “Resear
 | Final report (PDF) | [modified 12/25/20](https://github.com/janschill/uni-research_project/blob/main/report/report.pdf) | *N/A* |
 | Final report submitted to university (PDF) | [modified 12/15/20](https://github.com/janschill/uni-research_project/blob/main/report/report-submitted-to-university.pdf) | *N/A* |
 
-This is the report that will be handed in on the 15th of December. It encapsulates point 1 and 2 from the roadmap defined in the [project description](https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation) and an overview of Solid and CERN.
-
-* [Markdown](https://github.com/janschill/uni-research_project/blob/main/report/report.md)
-* [PDF](https://github.com/janschill/uni-research_project/blob/main/report/report.pdf)
-
 ## [Kanban board](https://github.com/janschill/uni-research_project/projects/1)
 
 This GitHub Kanban board links the [issues]() and organizes them into different columns as they are worked on.
