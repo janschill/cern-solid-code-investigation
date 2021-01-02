@@ -17,6 +17,8 @@ This directory holds all formally written reports. Reports include the “Resear
 | Description | Review of Solid specifications, evaluating existing Solid implementations | Proof of concept |
 | Scope in ECTS | 7.5 | 30 |
 | Scope in milestones | [1](https://github.com/janschill/uni-research_project/milestones/2/), [2](https://github.com/janschill/uni-research_project/milestone/3) | [3](https://github.com/janschill/uni-research_project/milestone/14), [4](https://github.com/janschill/uni-research_project/milestone/15), [5](https://github.com/janschill/uni-research_project/milestone/16), [6](https://github.com/janschill/uni-research_project/milestone/17) |
+| Issues | [Kanban](https://github.com/janschill/uni-research_project/projects/1) | [Kanban](https://github.com/janschill/uni-research_project/projects/2) |
+| Report notes |  ||
 
 This is the report that will be handed in on the 15th of December. It encapsulates point 1 and 2 from the roadmap defined in the [project description](https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation) and an overview of Solid and CERN.
 
