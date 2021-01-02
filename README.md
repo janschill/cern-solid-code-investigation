@@ -42,7 +42,7 @@ The defined milestones give detailed descriptions on what should be when achieve
 
 - [https://www.itu.dk/people/sestoft/itu/thesis-checklist.html](https://www.itu.dk/people/sestoft/itu/thesis-checklist.html)
 - [Milestones](https://github.com/janschill/uni-research_project/milestones?direction=asc&sort=due_date&state=open)
-- [Kanban board](https://github.com/janschill/uni-research_project/projects/1)
+- [Kanban board for thesis](https://github.com/janschill/uni-research_project/projects/2)
 
 #### CERN
 
