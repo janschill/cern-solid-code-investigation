@@ -12,16 +12,16 @@ This directory holds all formally written reports. Reports include the “Resear
 
 |-| Research project | Master‘s thesis |
 | - | - | - |
-| Start | 09/28/2020 | 02/01/2021 |
-| Submission | 12/15/2020 | 06/02/2021 |
-| Oral defense | 01/19/2021 | est. 07/02/2021 |
+| Start | 2020-09-28 | 2021-02-01 |
+| Submission | 2020-12-15 | 2021-06-02 |
+| Oral defense | 2021-01-19 | est. 2021-07-02 |
 | Description | Review of Solid specifications, evaluating existing Solid implementations | Proof of concept |
 | Scope in ECTS | 7.5 | 30 |
 | Scope in milestones | [1](https://github.com/janschill/uni-research_project/milestones/2/), [2](https://github.com/janschill/uni-research_project/milestone/3) | [3](https://github.com/janschill/uni-research_project/milestone/14), [4](https://github.com/janschill/uni-research_project/milestone/15), [5](https://github.com/janschill/uni-research_project/milestone/16), [6](https://github.com/janschill/uni-research_project/milestone/17) |
 | Issues | [Kanban](https://github.com/janschill/uni-research_project/projects/1) | [Kanban](https://github.com/janschill/uni-research_project/projects/2) |
 | Report notes | [report/report/](https://github.com/janschill/uni-research_project/tree/main/report/report) | [report/master/](https://github.com/janschill/uni-research_project/tree/main/report/master) |
-| Final report (PDF) | [modified 12/25/2020](https://github.com/janschill/uni-research_project/blob/main/report/report.pdf) | *N/A* |
-| Final report submitted to university (PDF) | [modified 12/15/2020](https://github.com/janschill/uni-research_project/blob/main/report/report-submitted-to-university.pdf) | *N/A* |
+| Final report (PDF) | [modified 2020-12-25](https://github.com/janschill/uni-research_project/blob/main/report/report.pdf) | *N/A* |
+| Final report submitted to university (PDF) | [modified 2020-12-15](https://github.com/janschill/uni-research_project/blob/main/report/report-submitted-to-university.pdf) | *N/A* |
 
 ## [Milestones](https://github.com/janschill/uni-research_project/milestones?direction=asc&sort=due_date&state=open)
 
