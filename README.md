@@ -129,6 +129,8 @@ The defined milestones give detailed descriptions on what should be when achieve
 - [Linked Data Platform Best Practices and Guidelines](https://www.w3.org/TR/ldp-bp/)
 - [SPARQL 1.1 Query Language](https://www.w3.org/TR/sparql11-query/)
 - [Linked Data Shapes, Forms and Footprints](https://www.w3.org/DesignIssues/Footprints.html)
+- [Solid OIDC](https://solid.github.io/authentication-panel/solid-oidc/)
+- [Solid OIDC Primer](https://solid.github.io/authentication-panel/solid-oidc-primer/)
 
 ##### Ontology
 
