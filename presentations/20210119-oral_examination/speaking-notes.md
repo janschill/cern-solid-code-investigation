@@ -34,9 +34,20 @@
 * Solid Application Interoperability
   * How agents and applications interoperate over data in a Solid pod
 * Shape Trees
-  * Mechanism
+  * Mechanism explaining machines how data should look like
+* Some primers
+* Expected to be done by end of June
+* Call for implementation
 * More mature than when I started looking into it
-*
 
 ## Implementations
 
+* Servers
+  * NSS
+  * CSS
+  * ESS
+  * PSS
+* Applications
+  * NHS
+  * Flanders government
+* SolidOS
