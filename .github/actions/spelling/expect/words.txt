@@ -82,6 +82,7 @@ handshakeswithtlsclientauth
 Harth
 Hawke
 Hetzner
+Himmel
 homepage
 hostname
 hotos
@@ -242,6 +243,7 @@ ttl
 tulpen
 ubuntu
 ucr
+Ueber
 uk
 unicode
 uninstall
@@ -265,6 +267,7 @@ webid
 webroot
 website
 Weikum
+Wenders
 wiki
 wikipedia
 Workarounds
