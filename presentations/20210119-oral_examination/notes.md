@@ -28,7 +28,8 @@
     * Why is CERN interested?
     * What can Solid take away from this?
 * Quickly iterate what Solid is?
-* Challenges in Solid?
+* and the report's findings
+* *Challenges in Solid?*
 * What I am hoping to achieve with this project
 * What is planned for the next steps
 
