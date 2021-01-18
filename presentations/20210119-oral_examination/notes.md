@@ -22,6 +22,16 @@
 * Talk about upcomings
   * POC
 
+* What is this project?
+  * Investigation into CERN and Solid
+  * Its goal
+    * Why is CERN interested?
+    * What can Solid take away from this?
+* Quickly iterate what Solid is?
+* Challenges in Solid?
+* What I am hoping to achieve with this project
+* What is planned for the next steps
+
 ### Paper
 
 * Introduction Solid
