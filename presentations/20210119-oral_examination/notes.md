@@ -19,7 +19,7 @@
 ## Presentation
 
 * Quickly present paper
-* Talk about upcomings
+* Talk about perspectives
   * POC
 
 * What is this project?
@@ -38,6 +38,6 @@
 *
 * CERN
 
-### Upcomings
+### Perspectives
 
 #### POC

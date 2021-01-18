@@ -9,6 +9,7 @@ api
 apps
 asc
 authn
+AWS
 backend
 bbc
 bc
@@ -106,6 +107,7 @@ inrupt
 Interop
 interoperability
 interoperable
+interoperate
 Invenio
 inveniosoftware
 iri
