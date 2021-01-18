@@ -58,32 +58,39 @@
 
 * Introduce yourself
 
-I want to use this presentation time to introduce the whole project again, show briefly what I've achieved so far and what comes next.
+I want to use this presentation time to introduce the whole project again, show briefly what I've achieved so far and what is to come.
 
 This project called CERN-Solid code investigation aims at finding suitable areas at CERN to justify an implementation of the Solid principles.
 
 With Solid embracing the values of true ownership of ones data, the freedom of movement with this data, and the full control of deciding who gets to have access to the data.
 
-It does so by elevating the original specifications of HTTP, URI, and HTML and adding a rich ecosystem of new specifications to it. These specifications are in the making and are to expected done by end of June this year.
+It does so by elevating the original specifications of HTTP, URI, and HTML and adds a rich ecosystem of new specifications to it. These specifications are in the making and are to be expected done by end of June this year.
 
-At Solid's heart is the notion of a Solid pod, which is essentially a web server handling request/response cycles with some additional features, like Linked Data, which gives the user his data semantically structured and allows the interoperability of freely moving it around different pods.
+At Solid's heart is the notion of a Solid pod, which is essentially a web server handling request/response cycles with some additional features, like Linked Data, which gives the user his data semantically structured and allows the interoperability of freely moving it around in different pods.
 Pods can be understood as personal data stores, just like the local file system of ones computer.
 The decentralized authentication, called Solid-OIDC, builds on top of OpenID Connect and is for a single sign-on between many Solid apps.
 
 Why is CERN interested in this?
 
-As CERN has given Tim Berners-Lee an environment to solve the problem of free knowledge distribution within the organization with the invention of the Web, CERN has great interest in investing time and efforts into supporting Solid. With the large user base around CERN and having sophisticated software system in place to serve the needs these, it is highly interested in adapting their solutions by introducing Solid principles into them.
+As CERN has given Tim Berners-Lee an environment to solve the problem of free knowledge distribution within the organization with the invention of the Web, CERN has great interest in investing time and efforts into supporting Solid. With the large user base around CERN and having sophisticated software systems in place to serve the needs these, it is highly interested in adapting their solutions by introducing Solid into them.
 
 This is how the project came to live and is now with my efforts in progress.
 In this part of the project I have reported on the status of the previously mentioned specifications and current implementations.
 
 The specifications are starting to be in good shape. The structure as of today, this happened after my submission, is clearer and brings in all the different specifications.
 It is still lacking a crucial part of Primer and Best-Practice documents, to enable newcomers and easier time when developing in the Solid ecosystem.
+TODO: acp
+
 
 Implementations are in progress. The Community Solid Server which is the one, that is meant for developers to be used when working on new applications is very actively developed.
+TODO: Open source, help
 Unfortunately the Solid application front is not too active, at least not the open source community. Many things are happening in for example SolidOS, which is an operating system for a data pod, but real world applications are slim in numbers.
+TODO: attribute lack of working servers, NSS
 
-Remainder of the CERN-Solid project is the development of a working prototype for the Indico software where modules in the software will be enriched with for example registrating to a conference with a WebID.
+This is again the roadmap to visualize the progress. The first two points have been marked as complete.
+The remainder of the CERN-Solid project is the development of a working prototype for the Indico software where modules in the software will be enriched with for example registrating to a conference with a WebID or posting comments that live in a pod.
+I will show some ideas in a second.
+TODO:
 
 Here I've started looking into how it could be done, either in browser or server-side.
 So far, everything that is developed open-source is either JavaScript browser or Node.js compatible.
