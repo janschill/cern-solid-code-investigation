@@ -80,5 +80,8 @@ In this part of the project I have reported on the status of the previously ment
 The specifications are starting to be in good shape. The structure as of today, this happened after my submission, is clearer and brings in all the different specifications.
 It is still lacking a crucial part of Primer and Best-Practice documents, to enable newcomers and easier time when developing in the Solid ecosystem.
 
-Implementations are in progress. The Community Solid Server which is the one, that is meant for developers to be used when weorking on new applications is very actively developed.
+Implementations are in progress. The Community Solid Server which is the one, that is meant for developers to be used when working on new applications is very actively developed.
 Unfortunately the Solid application front is not too active, at least not the open source community. Many things are happening in for example SolidOS, which is an operating system for a data pod, but real world applications are slim in numbers.
+
+Remainder of the CERN-Solid project is the development of a working prototype for the Indico software where modules in the software will be enriched with for example registrating to a conference with a WebID.
+Or
