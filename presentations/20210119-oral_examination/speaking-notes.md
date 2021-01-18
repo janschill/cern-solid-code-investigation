@@ -84,4 +84,7 @@ Implementations are in progress. The Community Solid Server which is the one, th
 Unfortunately the Solid application front is not too active, at least not the open source community. Many things are happening in for example SolidOS, which is an operating system for a data pod, but real world applications are slim in numbers.
 
 Remainder of the CERN-Solid project is the development of a working prototype for the Indico software where modules in the software will be enriched with for example registrating to a conference with a WebID.
-Or
+
+Here I've started looking into how it could be done, either in browser or server-side.
+So far, everything that is developed open-source is either JavaScript browser or Node.js compatible.
+One developer guessed the development of a Python Solid client could take as much as three months.
