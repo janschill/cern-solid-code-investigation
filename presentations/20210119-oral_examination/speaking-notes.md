@@ -56,8 +56,6 @@
 
 ## Take 2
 
-* Introduce yourself
-
 I want to use this presentation time to introduce the whole project again, show briefly what I've achieved so far and what is to come.
 
 This project called CERN-Solid code investigation aims at finding suitable areas at CERN to justify an implementation of the Solid principles.
@@ -72,19 +70,20 @@ The decentralized authentication, called Solid-OIDC, builds on top of OpenID Con
 
 Why is CERN interested in this?
 
-As CERN has given Tim Berners-Lee an environment to solve the problem of free knowledge distribution within the organization with the invention of the Web, CERN has great interest in investing time and efforts into supporting Solid. With the large user base around CERN and having sophisticated software systems in place to serve the needs these, it is highly interested in adapting their solutions by introducing Solid into them.
+Tim Berners-Lee invented the web to find a way of distributing knowledge freely, when doing so he was working at CERN.
+CERN has therefore great interest in investing time and efforts into supporting Solid. With the large user base around CERN and having sophisticated software systems in place to serve the needs these, it is highly interested in adapting their solutions by introducing Solid into them.
 
 This is how the project came to live and is now with my efforts in progress.
 In this part of the project I have reported on the status of the previously mentioned specifications and current implementations.
 
 The specifications are starting to be in good shape. The structure as of today is clearer than it was when I started and brings in all the different specifications.
-It is still lacking a crucial part of Primer and Best-Practice documents, to enable newcomers and easier time when developing in the Solid ecosystem.
+It is still lacking a crucial part of Primer and Best-Practice documents, to enable newcomers an easier time when developing in the Solid ecosystem.
 <!-- TODO: acp -->
 
 Implementations are in progress. The Community Solid Server which is the one, that is meant for developers to be used when working on new applications is very actively developed.
-It is the open source server, where everybody is encouraged to help
+It is the open source server, where everybody is encouraged to help.
 
-Unfortunately the Solid application front is not too active, at least not the open source community.
+Unfortunately the Solid application diversity is limited, at least in open source.
 I attribute this to the lack of good working Solid server, the original Node Solid Server is okay, but also very buggy.
 
 In closed source though many things are happening for example in Flanders, Belgium, the government has decided to give every citizen a data pod.
