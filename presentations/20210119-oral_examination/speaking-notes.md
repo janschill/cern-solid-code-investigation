@@ -77,19 +77,23 @@ As CERN has given Tim Berners-Lee an environment to solve the problem of free kn
 This is how the project came to live and is now with my efforts in progress.
 In this part of the project I have reported on the status of the previously mentioned specifications and current implementations.
 
-The specifications are starting to be in good shape. The structure as of today, this happened after my submission, is clearer and brings in all the different specifications.
+The specifications are starting to be in good shape. The structure as of today is clearer than it was when I started and brings in all the different specifications.
 It is still lacking a crucial part of Primer and Best-Practice documents, to enable newcomers and easier time when developing in the Solid ecosystem.
-TODO: acp
-
+<!-- TODO: acp -->
 
 Implementations are in progress. The Community Solid Server which is the one, that is meant for developers to be used when working on new applications is very actively developed.
-TODO: Open source, help
-Unfortunately the Solid application front is not too active, at least not the open source community. Many things are happening in for example SolidOS, which is an operating system for a data pod, but real world applications are slim in numbers.
-TODO: attribute lack of working servers, NSS
+It is the open source server, where everybody is encouraged to help
 
-This is again the roadmap to visualize the progress. The first two points have been marked as complete.
+Unfortunately the Solid application front is not too active, at least not the open source community.
+I attribute this to the lack of good working Solid server, the original Node Solid Server is okay, but also very buggy.
+
+In closed source though many things are happening for example in Flanders, Belgium, the government has decided to give every citizen a data pod.
+Another example the british health care system (NHS) wants to use Solid to connect the personal health data of its citizens.
+
+This is my roadmap. To visualize the progress I've highlighted the first two items that are now marked as complete.
 The remainder of the CERN-Solid project is the development of a working prototype for the Indico software where modules in the software will be enriched with for example registrating to a conference with a WebID or posting comments that live in a pod.
 I will show some ideas in a second.
+
 TODO:
 
 Here I've started looking into how it could be done, either in browser or server-side.
