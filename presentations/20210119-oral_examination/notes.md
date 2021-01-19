@@ -33,12 +33,18 @@
 * What I am hoping to achieve with this project
 * What is planned for the next steps
 
-### Paper
+## Feedback from Oral Exam
 
-* Introduction Solid
-*
-* CERN
 
-### Perspectives
-
-#### POC
+* highly ideas of Solid
+  * data integration
+  * authorization
+  * access control
+  * why not match
+  * desgin goals
+  * mapping exercise
+    * nature of requirements
+  * evaluation CSS before using it
+* HTTP Cache?
+* Multiple pods
+* Pod on Indico
