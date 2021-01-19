@@ -44,6 +44,8 @@
   * desgin goals
   * mapping exercise
     * nature of requirements
+    * why are the requirements how they are
+    * how can they be bend
   * evaluation CSS before using it
 * HTTP Cache?
 * Multiple pods
