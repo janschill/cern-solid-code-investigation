@@ -36,7 +36,7 @@
 ## Feedback from Oral Exam
 
 
-* highly ideas of Solid
+* high level ideas of Solid
   * data integration
   * authorization
   * access control
