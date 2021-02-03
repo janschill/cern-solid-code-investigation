@@ -26,27 +26,10 @@ The required technical expertise varies:
 - LDP frameworks, such as resource description framework (RDF)
 - Authentication flows (OpenID Connect)
 - Advanced Python and JavaScript programming
--
-
-
-
-The insights and lessons learned of setting up such a service should be documented.\
-Possible areas of interest could be:
-- Knowledge derived in the process:
-  - Solid specifications
-  - Architectures of Solid products
-  - Architecture and functionality in particular of the Solid server implementation
-- The process of setting up a server
-- What is implemented, what is missing in the server?
-- A good context at ITU for a pod
-- How can ITU justify running a pod and use it with appropriate purpose?
-
-In a second part of the project the current Solid implementations could be studied, reviewed and evaluated. There is a diverse list of [applications](https://solidproject.org/use-solid/apps) that are implemented and conform to the Solid specifications.\
-These applications could be analyzed and compared to applications that are not implemented to the Solid standard.\
-This could be done with a selection of products developed by [CERN](https://home.cern/).\
-An example application is Indico, a sophisticated event management system that is being used by a large number of users.
-
-The motivation of doing it on CERN‘s products lies in the interest of CERN collaborating with the Solid project, as they share common values with the mission of Solid and are already developing applications open-source. Not to forget was the Web invented at CERN by Sir Tim, creating ideological reasons to succeed in the collaboration of CERN and Solid (Dimou, 2020).
+- Web Access Control (WAC) protocol
+- RESTful web services
+- WebID
+- Web Ontology Language (OWL)
 
 ### Intended Learning Outcomes
 
