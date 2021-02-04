@@ -37,6 +37,7 @@ The required technical expertise varies:
 ### Intended Learning Outcomes
 
 - Extensive knowledge about the Solid ecosystem with special focus on:
+  - Justification of the technologies within the ecosystem
   - Authentication and authorization
   - Reading and writing to Solid web servers (Solid pod)
   - Data interoperability
