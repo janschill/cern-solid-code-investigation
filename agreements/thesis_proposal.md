@@ -48,7 +48,8 @@ The required technical expertise varies:
 - Interconnection of Solid and Indico
   - Authentication with a Solid identity provider in Indico
   - Transforming conventional data models to a Linked Data data model
-- Organizational interests
+- Working with popular and complex software
+- Organizational aspects
   - What does it mean for a large organization to adopt to the Solid ecosystem
 
 ## Method
