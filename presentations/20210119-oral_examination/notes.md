@@ -41,7 +41,7 @@
   * authorization
   * access control
   * why not match
-  * desgin goals
+  * design goals
   * mapping exercise
     * nature of requirements
     * why are the requirements how they are
