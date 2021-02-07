@@ -27,6 +27,14 @@ This directory holds all formally written reports. Reports include the “Resear
 
 The defined milestones give detailed descriptions on what should be when achieved. This list is subject to change as the project evolves, but should remain scoped to its set [goal](https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation).
 
+## Presentations
+
+| Event | Date | Indico event page | Recording | Slides |
+| - | - | - | - | - |
+| [HEPiX](https://www.hepix.org/) | 2021-03-15–2021-03-19 | *N/A* | *N/A* | *N/A* |
+| [White Area](https://twiki.cern.ch/LCG/WhiteAreas) | 2021-01-25 | [indico.cern.ch](https://indico.cern.ch/event/979381/) | [videos.cern.ch](https://videos.cern.ch/record/2750253) | [pdf](https://indico.cern.ch/event/979381/attachments/2167014/3677214/WhiteArea-CERN-Solid-20210125-presentation.pdf) |
+| [Solid World](https://solidproject.org/events) | 2020-12-03 | [indico.cern.ch](https://indico.cern.ch/event/977577/) | [vimeo.com](https://vimeo.com/487088029) | [pdf](https://indico.cern.ch/event/977577/attachments/2150316/3635690/SolidWorld2020-12-03presentation.pdf) |
+
 ## Useful links
 
 ### Project proposal
