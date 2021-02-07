@@ -80,6 +80,7 @@ Google
 guez
 gzip
 handshakeswithtlsclientauth
+Hapix
 Harth
 Hawke
 Hetzner
@@ -142,6 +143,7 @@ Maged
 mailto
 Manolescu
 Mansour
+Mattermost
 mbox
 meier
 metadata
@@ -256,6 +258,7 @@ userguide
 username
 usr
 vcard
+veltens
 Verborgh
 vimeo
 vincenttunru
