@@ -20,6 +20,7 @@ btc
 Bugiotti
 cabee
 Capadisli
+cbc
 cde
 cdivilly
 cernbox
@@ -43,8 +44,10 @@ dasya
 databox
 datastore
 dda
+ddcb
 delinked
 dfn
+digita
 digitalocean
 Dimou
 disqus
@@ -56,11 +59,13 @@ dokieli
 DPo
 dvcs
 DYYUQ
+eca
 ECTS
 ede
 edu
 ETag
 evertramos
+fbddc
 fbdf
 fca
 fd
@@ -83,6 +88,8 @@ handshakeswithtlsclientauth
 Hapix
 Harth
 Hawke
+HEPi
+hepix
 Hetzner
 Himmel
 homepage
@@ -101,6 +108,7 @@ ietf
 imdb
 imec
 img
+implemenations
 inbox
 independetly
 inox
@@ -119,6 +127,7 @@ jan
 janschill
 javascript
 Jong
+jpeg
 jpg
 json
 JWT
@@ -126,6 +135,7 @@ Jz
 Kanban
 Kaoudi
 ktbkxttfwfsm
+LCG
 ldf
 LDFLAGS
 ldp
@@ -217,9 +227,11 @@ schem
 Schenkel
 schill
 SDK
+sdtimes
 serializer
 sestoft
 SIGMOD
+signup
 SLAs
 solidcommunity
 solidproject
@@ -242,9 +254,12 @@ tls
 tmdb
 TODO
 transpiles
+trellisldp
 tt
 ttl
 tulpen
+twiki
+typescriptlang
 ubuntu
 ucr
 Ueber
@@ -269,6 +284,8 @@ Vyr
 webapp
 webarch
 webid
+Webinar
+weboffice
 webroot
 website
 Weikum
