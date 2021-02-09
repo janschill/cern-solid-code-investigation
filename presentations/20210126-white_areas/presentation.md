@@ -65,7 +65,7 @@ Presentation at [the January 25th 2021 White Area at CERN](https://indico.cern.c
 
 ## The Solid servers
 
-1. **Node Solid Server (NSS):** _Open Source_ server by the MIT Solid team since 2016. Hosted at inrupt  premises, USA, data in Amazom Web Services.
+1. **Node Solid Server (NSS):** _Open Source_ server by the MIT Solid team since 2016. Hosted at inrupt  premises, USA, data in Amazon Web Services.
 2. **Enterprise Solid Server (ESS):** inrupt's commercial _Closed Source_ alternative, based on [Trellis](https://www.trellisldp.org/). Launched in November 2020. [Article](https://sdtimes.com/data/inrupt-launches-enterprise-solid-server-to-restore-trust-in-data/).
 3. **Community Solid Server (CSS):** _Open Source_  project by Ghent University, paid for by inrupt, to rewrite NSS from scratch in [TypeScript](https://www.typescriptlang.org/).
 5. **php-solid-server (PSS):** _Open Source_, good test results, under dev. The basis for the Nextcloud app that makes Nextcloud compatible with Solid.
@@ -78,7 +78,7 @@ Presentation at [the January 25th 2021 White Area at CERN](https://indico.cern.c
 
 * Two public demo/test sites for making your own pod. They both run NSS:
     * [inrupt.net](https://inrupt.net/) run by inrupt,
-    * [solidcommunity.net](https://solidocmmunity.net) run by the Solid organisation.
+    * [solidcommunity.net](https://solidcommunity.net) run by the Solid organisation.
     * a few others people show at the [monthly Solid World Webinar](https://solidproject.org/events).
 
 _Slide with input from TimBL_
