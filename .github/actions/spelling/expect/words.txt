@@ -237,6 +237,7 @@ solidcommunity
 solidproject
 someprefixvalue
 SPARQL
+spotify
 src
 ssl
 SSO
