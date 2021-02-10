@@ -10,3 +10,6 @@
 [submodule "report/latex/cern-solid-code_investigation"]
 	path = report/latex/cern-solid-code_investigation
 	url = https://git.overleaf.com/5fca96cabee73ab97e7ea51c
+[submodule "solid-spotify"]
+	path = code/solid-spotify
+	url = git@github.com:janschill/solid-spotify.git
