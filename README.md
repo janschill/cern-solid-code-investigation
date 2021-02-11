@@ -145,6 +145,10 @@ The defined milestones give detailed descriptions on what should be when achieve
 - [Schema.org Organization of Schemas](https://schema.org/docs/schemas.html)
 - [Linked Open Vocabularies (LOV)](https://lov.linkeddata.es/dataset/lov)
 - [The Linked Open Data Cloud](https://lod-cloud.net/)
+- [https://prefix.zazuko.com/](https://prefix.zazuko.com/)
+- [https://shaperepo.com/](https://shaperepo.com/)
+- [https://medium.com/@JacksonMorgan/making-your-solid-apps-interoperable-with-shaperepo-com-8da512936073](https://medium.com/@JacksonMorgan/making-your-solid-apps-interoperable-with-shaperepo-com-8da512936073)
+- [https://www.w3.org/2014/data-shapes/wiki/Shacl-language](https://www.w3.org/2014/data-shapes/wiki/Shacl-language)
 
 ##### Solid World
 
