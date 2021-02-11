@@ -1,0 +1,75 @@
+Some transcribed questions and answers
+
+Subsecent access
+ACL side
+
+Question 1
+
+Solid pod concept
+1. Privacy is data encrypted?
+No
+Good tool to make sure some people can access the data, and others can't
+Trouble with the keys, regular users cannot lose their keys
+Solid on the web principles: Distributed linked system
+URL determines who controls the data and who can see it and host it
+HTTPS encryption
+use of domain names
+
+=> CERN as a provider for pods
+=> Trust at some point, and take it home
+
+2. Robustness, a pod self-contained unit. Possible to replicate pods?
+
+Not on the level of the Solid protocols
+Multiple copies of the data on top of Solid and under
+Solid server with backups
+RDF Linked Data gives tools with notations saying this is a copy of this
+Server stays up at the URL, you can do that by hosting it redundantly
+
+Question 2
+
+subsequent access, acl part
+conference side
+next years conference
+want to mail out to same people
+all the people from the previous conference
+if they allow to mail out
+Solid, can only be known by this conference
+
+Solid is control (forever)
+How do people query and ask for access at a later stage
+
+Proactive from the provider, you as a data owner know nothing about, unless you had a chance of saying yes/no on the conference
+
+General:
+Supermarket has lots of data about you
+Don't share with the gas compnay
+Supermarket stores it in the pod
+Gas company wants to know whats in your fridge
+Biliteral relationship with your supermarket
+and then new biliteral relationship with gas company
+and you then as subject and owner give access to the gas company and giving consent
+better than supermarket and gas company being the ones sharing personal data
+
+putting the data to the user, who is the central part makes these exchanges easier, for that the user controls the data and can directly decide on consent, besides than triangular relationships
+
+Flow:
+  doctor: did he eat this last night, is that because he is ill?
+  how does he know what supermarket I go to?
+  how does he know what I ate?
+
+  no good flow, where it is initiated by the receiver of the data
+  send notification, prompts you to log in, where you then see that your doctor wants to see what you ate last night
+
+  user has to initiate sharing the data, they just come up in your inbox, which you can ignore or handle
+
+  requests can be sent speculatively
+
+  the flow that makes things happend, but does not give access.
+
+
+
+
+
+
+
