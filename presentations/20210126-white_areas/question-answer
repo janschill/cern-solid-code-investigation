@@ -1,6 +1,6 @@
 Some transcribed questions and answers
 
-Subsecent access
+Subsequent access
 ACL side
 
 Question 1
@@ -43,7 +43,7 @@ Proactive from the provider, you as a data owner know nothing about, unless you 
 
 General:
 Supermarket has lots of data about you
-Don't share with the gas compnay
+Don't share with the gas company
 Supermarket stores it in the pod
 Gas company wants to know whats in your fridge
 Biliteral relationship with your supermarket
@@ -65,7 +65,7 @@ Flow:
 
   requests can be sent speculatively
 
-  the flow that makes things happend, but does not give access.
+  the flow that makes things happened, but does not give access.
 
 
 
