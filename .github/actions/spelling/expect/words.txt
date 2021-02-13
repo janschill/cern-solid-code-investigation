@@ -230,6 +230,8 @@ SDK
 sdtimes
 serializer
 sestoft
+Shacl
+shaperepo
 SIGMOD
 signup
 SLAs
@@ -303,6 +305,7 @@ xmlns
 yml
 yy
 Zampetakis
+zazuko
 zenodo
 zlib
 zsu
