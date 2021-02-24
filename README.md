@@ -31,7 +31,7 @@ The defined milestones give detailed descriptions on what should be when achieve
 
 | Event | Date | Indico event page | Recording | Slides |
 | - | - | - | - | - |
-| [HEPiX](https://www.hepix.org/) | 2021-03-17 | [HEPiX Spring 2021 online Workshop](https://indico.cern.ch/event/995485/overview) | *N/A* | *N/A* |
+| [HEPiX](https://www.hepix.org/) | 2021-03-17 | [indico.cern.ch](https://indico.cern.ch/event/995485/overview) | *N/A* | *N/A* |
 | [White Area](https://twiki.cern.ch/LCG/WhiteAreas) | 2021-01-25 | [indico.cern.ch](https://indico.cern.ch/event/979381/) | [videos.cern.ch](https://videos.cern.ch/record/2750253) | [pdf](https://indico.cern.ch/event/979381/attachments/2167014/3677214/WhiteArea-CERN-Solid-20210125-presentation.pdf) |
 | [Solid World](https://solidproject.org/events) | 2020-12-03 | [indico.cern.ch](https://indico.cern.ch/event/977577/) | [vimeo.com](https://vimeo.com/487088029) | [pdf](https://indico.cern.ch/event/977577/attachments/2150316/3635690/SolidWorld2020-12-03presentation.pdf) |
 
