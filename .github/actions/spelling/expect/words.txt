@@ -11,6 +11,7 @@ asc
 authn
 AWS
 backend
+bashrc
 bbc
 bc
 berners
@@ -64,6 +65,7 @@ ECTS
 ede
 edu
 ETag
+evalex
 evertramos
 fbddc
 fbdf
@@ -119,6 +121,7 @@ interoperable
 interoperate
 Invenio
 inveniosoftware
+ipfs
 iri
 issuecomment
 itu
@@ -167,6 +170,7 @@ mov
 mozilla
 Msc
 namespace
+namespaced
 Naymat
 netstat
 Nextcloud
@@ -204,6 +208,7 @@ plugin
 png
 podbrowser
 privkey
+py
 pyenv
 Qg
 rdf
@@ -241,6 +246,7 @@ someprefixvalue
 SPARQL
 spotify
 src
+ssh
 ssl
 SSO
 stackoverflow
@@ -280,6 +286,7 @@ veltens
 Verborgh
 vimeo
 vincenttunru
+virtualenv
 visualstudio
 VLDB
 vue
