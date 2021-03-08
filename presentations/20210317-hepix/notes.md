@@ -20,3 +20,5 @@ Demo (7 minutes)
 * Show the Solid Comment module
   * Explain what parts where needed for the application (libraries)
   * Show how it creates the file on the pod, but also on the JSON server (Indico)
+  * Show private/public container concept
+  * Show two different users creating comments
