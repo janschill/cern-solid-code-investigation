@@ -15,7 +15,7 @@ Presentation (13 minutes)
 Demo (7 minutes)
 
 * Show my website
-* Compare the server representation with all its files and the SolidOS (explain this being a Solid App)
+* Connect to server by ssh and show file hierarchy in Terminal and in SolidOS (explain that SolidOS is a Solid app)
   * Show some RDF resources on server and in SolidOS
 * Show the Solid Comment module
   * Explain what parts where needed for the application (libraries)
