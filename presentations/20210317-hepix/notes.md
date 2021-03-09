@@ -10,7 +10,7 @@ Presentation (13 minutes)
   * WebID for a global unique identification system
   * Web Access Control for decentralized authorization
   * Solid OpenID Connect which uses the existing OpenID Connect authentication and identity protocol with some Solid specifics
-* Explain the architecture of an Solid application by showing the existing graphs for Solid Comment
+* Explain the architecture of a Solid application by showing the existing graphs for Solid Comment
 
 Demo (7 minutes)
 
