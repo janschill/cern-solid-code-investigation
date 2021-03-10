@@ -75,8 +75,8 @@ Presentation on [March 17th 2021 Storage track](https://indico.cern.ch/event/995
 * All Solid servers have the same common interface, so they don’t need to know anything about what apps are being run on them. See [more here](https://solidproject.org/users/get-a-pod#get-a-pod-from-a-pod-provider)
 
 * Two public demo/test sites for making your own pod. They both run NSS:
-    * [inrupt.net](https://inrupt.net/) run by inrupt, hosted at inrupt  premises, USA, data in Amazom Web Services.
-    * [solidcommunity.net](https://solidocmmunity.net) run by the Solid organisation, hosted in the UK, data in Digital Ocean.
+    * [inrupt.net](https://inrupt.net/) run by inrupt, hosted at inrupt  premises, USA, data in Amazon Web Services.
+    * [solidcommunity.net](https://solidcommunity.net) run by the Solid organisation, hosted in the UK, data in Digital Ocean.
     * a few others people show at the [monthly Solid World Webinar](https://solidproject.org/events).
 
 _Slide with input from TimBL_
