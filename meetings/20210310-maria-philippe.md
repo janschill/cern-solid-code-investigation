@@ -10,6 +10,6 @@
   * non-functional
     * performance, reliability, availability
     * Pod unavailable
-    * Security (quantitive): attack surface, defense (qualitive)
+    * Security (quantitive): attack surface, defense (qualitative)
   * CERN code review (security)
 
