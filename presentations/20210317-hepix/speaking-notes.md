@@ -1,0 +1,40 @@
+# Speaking notes
+
+## What Is the Current Problem of the Web?
+
+The web is universal, everybody can use it, as it is free and not bound to any specific platform it being hard- or software.
+
+It is decentralized by design, storing resources decentralized on many different computers all connected by the Internet, I can use the HTTP protocol and URIs to browse to these documents and look at them in HTML.
+
+Ever since the Web was invented through its openess it has given opportunities for everyone to innovate and is the enabler of incredible software and innovations.
+
+Over its relatively short lifespan the Web has met some challenges, like: Browser wars, where Netscape Classic was kicked away by the Internet Explorer, which dominated the browsing experience for some years. This will probably remain an issue as long as the web exists, with Chrome holding nowadays around 63% of the market share.
+This leads to one company deciding/steering the direction Web features get implemented.
+
+The attention was then shifted over to Web Search Engine wars.
+One crawler decides what websites are visible and easily reachable.
+Again, one company in charge of the fate on the Web.
+
+Coming to another challenge: Social Networks. One company dominating the complete market of social connections. If you are not on Facebook one has a hard time socializing in today’s time.
+All of the magical pieces of information in form of blogs are now often hidden away in the deep web, behind Facebook’s authentication middleware.
+
+All of these applications are great innovations, but come with a collected problem: the people have lost control, control of the data they should be in charge of.
+
+## What Is Solid?
+
+This is where Solid (Socially Linked Data) comes in. TimBL announced this project for the first time in 2016.
+
+Solid combines existing W3C standards to improve the existing Web by adding functionality on top of it. It is therefore not a new Web.
+The aim is to give back control:
+  *  _ownership_ of their _data_, private, shared, and public.
+  *  _choice_ on the _storage_ where these data reside and
+  *  _control_ over who has _access_ to them
+
+The idea is to separate data from applications.
+
+## The Solid Pod
+
+The key technology to this is the Solid Pod.
+A Solid Pod is a regular Web Server, with support for **access control** and **Linked Data**. These are key in enabling the vision.
+
+All application logic live in the clients and the data is compatible with all Solid apps.

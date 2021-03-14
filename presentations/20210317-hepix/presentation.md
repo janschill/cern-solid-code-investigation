@@ -8,15 +8,17 @@ HEPiX spring 2021 - CERN-Solid collaboration
 ===
 Maria Dimou (CERN) & Jan Schill (IT University Copenhagen)
 
-Presentation on [March 17th 2021 Storage track](https://indico.cern.ch/event/995485/)
+Presentation on [March 18th 2021 Storage track](https://indico.cern.ch/event/995485/)
 
 ---
 
 ## Overview
 
-1. Presentation
+1. The Solid Ecosystem
+  1. What Is the Current Problem of the Web?
   1. What Is Solid?
   2. The Solid Pod
+  1. Solid Apps
   3. Solid Implementations
   4. CERN-Solid Code Investigation
 2. Demo
@@ -25,7 +27,13 @@ Presentation on [March 17th 2021 Storage track](https://indico.cern.ch/event/995
 
 ---
 
-## What Is Solid
+## What Is the Current Problem of the Web?
+
+*
+
+---
+
+## What Is Solid?
 
 * Sir Tim Berners-Lee (TimBL) announced his Solid project (Social Linked Data) in 2016.
 * This Open Source platform aims to re-decentralize the Web and empower users' control over their own data.
