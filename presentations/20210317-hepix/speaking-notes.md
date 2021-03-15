@@ -6,7 +6,7 @@ The web is universal, everybody can use it, as it is free and not bound to any s
 
 It is decentralized by design, storing resources decentralized on many different computers all connected by the Internet, I can use the HTTP protocol and URIs to browse to these documents and look at them in HTML.
 
-Ever since the Web was invented through its openess it has given opportunities for everyone to innovate and is the enabler of incredible software and innovations.
+Ever since the Web was invented through its openness it has given opportunities for everyone to innovate and is the enabler of incredible software and innovations.
 
 Over its relatively short lifespan the Web has met some challenges, like: Browser wars, where Netscape Classic was kicked away by the Internet Explorer, which dominated the browsing experience for some years. This will probably remain an issue as long as the web exists, with Chrome holding nowadays around 63% of the market share.
 This leads to one company deciding/steering the direction Web features get implemented.
