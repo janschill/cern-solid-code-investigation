@@ -51,3 +51,18 @@ People can store any type of data in their personal data pod. A data pod can be 
 Different Solid servers exist …
 
 
+## Demo
+
+I would like to give a demo of a Solid Web Server and a Solid App I have been building for CERN now.
+
+* *Show janschill.net*
+* *Show server over ssh*
+* *Show SolidOS*
+* *Show Solid Comment*
+* *Show login*
+* *Create comment*
+* *Show comment in frontend*
+* *Show comment on server over ssh*
+* *Show comment in SolidOS*
+* *Create comment with another account*
+* *Show ACL*
