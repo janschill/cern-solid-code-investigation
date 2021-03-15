@@ -67,6 +67,7 @@ edu
 ETag
 evalex
 evertramos
+facebook
 fbddc
 fbdf
 fca
@@ -163,6 +164,7 @@ metadata
 Michiel
 michielbdejong
 microservice
+middleware
 MITM
 mkdir
 Moennich
@@ -172,6 +174,7 @@ Msc
 namespace
 namespaced
 Naymat
+Netscape
 netstat
 Nextcloud
 NGi
