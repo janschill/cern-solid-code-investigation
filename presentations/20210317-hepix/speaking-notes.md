@@ -1,6 +1,6 @@
 # Speaking notes
 
-## What Is the Current Problem of the Web?
+## Challenges of the Web
 
 The web is universal, everybody can use it, as it is free and not bound to any specific platform it being hard- or software.
 
@@ -35,6 +35,10 @@ The idea is to separate data from applications.
 ## The Solid Pod
 
 The key technology to this is the Solid Pod.
-A Solid Pod is a regular Web Server, with support for **access control** and **Linked Data**. These are key in enabling the vision.
+A Solid Pod is a regular HTTP Web Server, answering to HTTP requests with HTTP responses, should use TLS, can use WebSockets if desired.
+But two crucial standards need to be supported which are **access control** and **Linked Data**.
 
-All application logic live in the clients and the data is compatible with all Solid apps.
+All application logic lives in the clients and the data is compatible with all Solid apps.
+
+People can store any type of data in their personal data pod. A data pod can be obtained with a pod provider or self-hosted with one of the many Solid implementations existing already.
+
