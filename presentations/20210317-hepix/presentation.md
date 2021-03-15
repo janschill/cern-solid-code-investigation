@@ -15,19 +15,19 @@ Presentation on [March 18th 2021 Storage track](https://indico.cern.ch/event/995
 ## Overview
 
 1. The Solid Ecosystem
-  1. What Is the Current Problem of the Web?
-  1. What Is Solid?
-  2. The Solid Pod
-  1. Solid Apps
-  3. Solid Implementations
-  4. CERN-Solid Code Investigation
+  1. Challenges of the Web
+  2. What Is Solid?
+  3. The Solid Pod
+  4. Solid Apps
+  5. Solid Implementations
+  6. CERN-Solid Code Investigation
 2. Demo
   1. Solid Web Server/Pod
   2. Indico Solid Comment Module
 
 ---
 
-## What Is the Current Problem of the Web?
+## Challenges of the Web
 
 *
 
@@ -47,31 +47,27 @@ Presentation on [March 18th 2021 Storage track](https://indico.cern.ch/event/995
 
 ## The Solid Pod
 
-* People store their data securely in decentralized data stores called _Pods_. (*)
-* Pods are like secure personal Web servers for data.
-* Solid connects resources in different pods by representing all data as _Linked Data_, i.e. every piece of data gets its own HTTP URL on the Web, and we use those URLs to refer to this data.
+* HTTP server
+* URI
+* Storage
+  * RESTful hierarchy
+* Linked Data
+* Access control
+---
+
+### The Solid Pod continued
+
+* A decentralized secure data vault to store **any type of data**.
+* Data is store as _Linked Data_, i.e. resource gets its own HTTP URL on the Web
 * When data is stored in someone's pod, they control who and what can access it.
-* I will demonstrate this later
 
 (*) Pod: a usually protective container or housing (from the Webster dictionary).
 
 ---
 
-### The Solid Pod continued
-
-* HTTP server
-  * Request/Response with HTTP methods and codes
-  * Should use Transport Layer Security (TLS)
-* URI
-* Storage
-  * RESTful hierarchy
-  * Representation and behaviour follows Linked Data Platform Basic Container (LDP-BC)
-
----
-
 ## The Solid Servers
 
-1. **Node Solid Server (NSS):** _Open Source_ server by the MIT Solid team since 2016. NSS instances in the next slide.
+1. **Node Solid Server (NSS):** _Open Source_ server by the MIT Solid team since 2016.
 2. **Enterprise Solid Server (ESS):** inrupt's commercial _Closed Source_ alternative, based on [Trellis](https://www.trellisldp.org/). Launched in November 2020. [Article](https://sdtimes.com/data/inrupt-launches-enterprise-solid-server-to-restore-trust-in-data/).
 3. **Community Solid Server (CSS):** _Open Source_  project by Ghent University, paid for by inrupt, to rewrite NSS from scratch in [TypeScript](https://www.typescriptlang.org/).
 5. **php-solid-server (PSS):** _Open Source_, good test results, under dev. The basis for the Nextcloud app that makes Nextcloud compatible with Solid.
@@ -88,34 +84,6 @@ Presentation on [March 18th 2021 Storage track](https://indico.cern.ch/event/995
     * a few others people show at the [monthly Solid World Webinar](https://solidproject.org/events).
 
 _Slide with input from TimBL_
-
----
-
-## How to Login/Register with a Solid Pod
-
-1. Pick a provider: solidcommunity.net* or inrupt.net**
-2. Register with **username\*\*\*, password, name, email address**
-3. Log in using the newly created WebID with username and password
-4. Go to https://podbrowser.inrupt.com/ and log in
-
-*Hosted: \*DigitalOcean (UK) , \*\*AWS (USA)*
-*WebID: \*\*\*username will be part of your WebID*
-
----
-
-## Solid specifications
-
-Recently matured, they cover areas of:
-    * Authentication
-    * Authorisation
-    * Data inter-operability
-    * Testing suites
-
-As the **Web Access Control (WAC)** gives all privileges to the user,
-**Access Control Policies (ACP)** are now being defined to assist newcomers.
-*Specs' current location:* https://solid.github.io/specification/
-*Specs' future location:* https://solidproject.org/TR/
-*Test suite:* https://github.com/solid/test-suite
 
 ---
 
@@ -151,20 +119,6 @@ Activities summarised in the [Solid newsletter](https://solidproject.org/newslet
 
 ![](https://codimd.web.cern.ch/uploads/upload_b81d956728212e88535f5e10e028e371.png)
 
-
----
-
-## Conference Registration
-
-![](https://codimd.web.cern.ch/uploads/upload_96b34ef0eca3ad7fe6b4f7c89929c961.jpeg =650x)
-
-
----
-
-## Conference Registration Client-Side
-
-![](https://codimd.web.cern.ch/uploads/upload_41cc7458fbddc4d9c3c43485c763ff4a.jpeg)
-
 ---
 
 ## Conclusion
@@ -178,19 +132,9 @@ The success of the [CERN-Solid code investigation project](https://it-student-pr
 
 ---
 
-## Thanks!
+## References Current
 
-* To TimBL for always giving advice, despite the millions who contact him.
-* To Michiel de Jong & Sarven Capadisli, for their answers to our frequent questions.
-* To Jan Schill (from Maria) for choosing this project for his MSc thesis.
-* To the CERN/IT-CDA management for approving this work.
-
-
----
-
-## References current
-
-* *The Solid project web site:* https://solidproject.org
+* *The Solid project website:* https://solidproject.org
 * *Jan's MSc Thesis description:* [https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation](https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation)
 * *Thesis repo.:* [https://github.com/janschill/uni-research_project](https://github.com/janschill/uni-research_project)
 * *CERN-Solid entry point:* [https://indico.cern.ch/category/11962/](https://indico.cern.ch/category/11962/)
