@@ -64,12 +64,22 @@ Presentation on [March 18th 2021 Storage track](https://indico.cern.ch/event/995
 
 ---
 
+![](https://codimd.web.cern.ch/uploads/upload_50196f49ba7d0c4698c6fa16fde91d4d.png)
+
+---
+
 ## What Is Solid?
 
 **Separating data from applications**
 
-* Sir Tim Berners-Lee (TimBL) announced his Solid project (Social Linked Data) in 2016.
-* This Open Source platform aims to re-decentralize the Web and empower users’ control over their own data.
+---
+
+## What Is Solid?
+
+**Separating data from applications**
+
+* Announced in 2016 as **So**cial **Li**nked **D**ata.
+* Re-decentralize the Web and empower users’ control over their own data.
 * Solid includes standards, missing from the original Web specifications, giving back to the users:
     *  _ownership_ of their _data_, private, shared, and public.
     *  _choice_ on the _storage_ where these data reside and
@@ -80,10 +90,11 @@ Presentation on [March 18th 2021 Storage track](https://indico.cern.ch/event/995
 
 ## The Solid Pod
 
-* HTTP server
+* Regular HTTP server
 * URI
 * Storage
-  * RESTful hierarchy
+    * Any type of data
+    * RESTful hierarchy
 * Linked Data
 * Access control
 
