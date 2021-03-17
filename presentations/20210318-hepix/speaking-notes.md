@@ -23,10 +23,9 @@ All of these applications are great innovations, but come with a common problem:
 Why is this?
 It is because applications are directly intertwined with data. The one’s that have the data are in charge.
 
-
 ## What Is Solid?
 
-This is where Solid (Socially Linked Data) comes in. Solid breaks the connection by separating data from applications.
+This is where Solid (Social Linked Data) comes in. Solid breaks the connection by separating data from applications.
 
 TimBL announced this project for the first time in 2016.
 
