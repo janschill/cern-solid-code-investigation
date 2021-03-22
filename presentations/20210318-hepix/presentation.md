@@ -64,12 +64,22 @@ Presentation on [March 18th 2021 Storage track](https://indico.cern.ch/event/995
 
 ---
 
+![](https://codimd.web.cern.ch/uploads/upload_50196f49ba7d0c4698c6fa16fde91d4d.png)
+
+_Taken from: [https://www.w3.org/DesignIssues/CloudStorage.html](https://www.w3.org/DesignIssues/CloudStorage.html)_
+
+---
+
 ## What Is Solid?
 
 **Separating data from applications**
 
-* Sir Tim Berners-Lee (TimBL) announced his Solid project (Social Linked Data) in 2016.
-* This Open Source platform aims to re-decentralize the Web and empower users’ control over their own data.
+---
+
+## What Is Solid?
+
+* Announced in 2016 by Sir Tim Berners-Lee (TimBL) as **So**cial **Li**nked **D**ata.
+* Re-decentralize the Web and empower users’ control over their own data.
 * Solid includes standards, missing from the original Web specifications, giving back to the users:
     *  _ownership_ of their _data_, private, shared, and public.
     *  _choice_ on the _storage_ where these data reside and
@@ -80,20 +90,27 @@ Presentation on [March 18th 2021 Storage track](https://indico.cern.ch/event/995
 
 ## The Solid Pod
 
-* HTTP server
-* URI
-* Storage
-  * RESTful hierarchy
-* Linked Data
-* Access control
+* Regular HTTP server
+* Everything is a URI
+    * Location for resources, containers, identity for agents, resource descriptions
+* Storage support for
+    * Any type of data
+* Uses RESTful hierarchy
+* New to the original Web idea:
+    * Linked Data
+    * Access control
 
 ---
 
-### The Solid Pod continued
+### The Solid Pod Continued
 
 * A decentralized secure data vault to store **any type of data**.
-* Data is store as _Linked Data_, i.e. resource gets its own HTTP URL on the Web
+* Data is stored as _Linked Data_, i.e. the resource gets its own HTTP URL on the Web
 * When data is stored in someone’s pod, they control who and what can access it.
+* WebID examples:
+    * https://timbl.inrupt.net/profile/card#me
+    * https://dimou.solidcommunity.net/profile/card#me
+    * https://janschill.net/profile/card#me
 
 (*) Pod: a usually protective container or housing (from the Webster dictionary).
 
@@ -101,20 +118,21 @@ Presentation on [March 18th 2021 Storage track](https://indico.cern.ch/event/995
 
 ## The Solid Servers
 
+A Solid server is a Web server that stores users’ pods, with support for access control.
+
 1. **Node Solid Server (NSS):** _Open Source_ server by the MIT Solid team since 2016.
 2. **Enterprise Solid Server (ESS):** inrupt’s commercial _Closed Source_ alternative, based on [Trellis](https://www.trellisldp.org/). Launched in November 2020. [Article](https://sdtimes.com/data/inrupt-launches-enterprise-solid-server-to-restore-trust-in-data/).
 3. **Community Solid Server (CSS):** _Open Source_  project by Ghent University, paid for by inrupt, to rewrite NSS from scratch in [TypeScript](https://www.typescriptlang.org/).
-4. **php-solid-server (PSS):** _Open Source_, good test results, under dev. The basis for the Nextcloud app that makes Nextcloud compatible with Solid.
+4. More servers like PHP or Ruby are in the making
 
 ---
 
 ## Solid implementations
 
-By start-up companies and government agencies. Most engaged countries, so far, are Belgium, the Netherlands, Germany and the UK.
-* **Content on the german activities needed here**
+By start-up companies and government agencies. Most engaged countries, so far, are Belgium, the Netherlands and the UK.
 * UK NHS (National Health System)
 * Flanders’ government applications
-* inrupt developments - [sign-up and play](https://signup.pod.inrupt.com/)
+* Inrupt developments - [sign-up and play](https://signup.pod.inrupt.com/)
 
 Activities summarised in the [Solid newsletter](https://solidproject.org/newsletter) and reported at the [monthly Solid World Webinar](https://solidproject.org/events).
 
@@ -135,18 +153,12 @@ Activities summarised in the [Solid newsletter](https://solidproject.org/newslet
 
 ---
 
-### Proof of Concept via Indico Extensions
-
-![](https://codimd.web.cern.ch/uploads/upload_b81d956728212e88535f5e10e028e371.png)
-
----
-
 ## References Current
 
 * *The Solid project website:* https://solidproject.org
 * *Jan’s MSc Thesis description:* [https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation](https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation)
 * *Thesis repo.:* [https://github.com/janschill/cern-solid-code-investigation](https://github.com/janschill/cern-solid-code-investigation)
-* *CERN-Solid entry point:* [https://indico.cern.ch/category/11962/](https://indico.cern.ch/category/11962/)
+* *CERN-Solid entry point:* [http://solid.cern.ch](https://indico.cern.ch/category/11962/)
 * *CERN-Solid chat:* [https://gitter.im/cern-solid/community](https://gitter.im/cern-solid/community)
 
 ---
