@@ -1,15 +1,17 @@
-# 2021/03/10 Maria Philippe
+# 2021/03/24 Maria Philippe
 
-*Present: Maria, Philippe, Jan*
+*Present: Maria, Michiel, Jan*
 
-* Design, implement, evaluate
-  * functional, non-functional requirements
-  * testing
+## Pre-meeting questions
+
+* Evaluation of the module
   * convince CERN that it works
   * convince censor that it works
   * non-functional
     * performance, reliability, availability
     * Pod unavailable
     * Security (quantitive): attack surface, defense (qualitative)
-  * CERN code review (security)
 
+## Notes
+
+*
