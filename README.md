@@ -1,4 +1,4 @@
-# CERN-Solid code investigation
+# CERN-Solid Code Investigation
 
 This repository will hold all information for a [CERN-Solid code investigation](https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation). This investigation is carried out in the form of a research project (7.5 ECTS) and a following Master‘s thesis (30 ECTS).
 The first part of this project will be to familiarize with the Solid principles and the CERN web application [Indico](https://github.com/indico/indico/).
@@ -35,9 +35,9 @@ The defined milestones give detailed descriptions on what should be when achieve
 | [White Area](https://twiki.cern.ch/LCG/WhiteAreas) | 2021-01-25 | [indico.cern.ch](https://indico.cern.ch/event/979381/) | [videos.cern.ch](https://videos.cern.ch/record/2750253) | [pdf](https://indico.cern.ch/event/979381/attachments/2167014/3677214/WhiteArea-CERN-Solid-20210125-presentation.pdf) |
 | [Solid World](https://solidproject.org/events) | 2020-12-03 | [indico.cern.ch](https://indico.cern.ch/event/977577/) | [vimeo.com](https://vimeo.com/487088029) | [pdf](https://indico.cern.ch/event/977577/attachments/2150316/3635690/SolidWorld2020-12-03presentation.pdf) |
 
-## Useful links
+## Useful Links
 
-### Project proposal
+### Project Proposal
 
 - Submission: [mit.itu.dk](mit.itu.dk)
 - Information: [itustudent.itu.dk](https://itustudent.itu.dk/study-administration/project-work/register-for-the-project)
@@ -101,13 +101,13 @@ The defined milestones give detailed descriptions on what should be when achieve
 - [ESS documentation](https://docs.inrupt.com/ess/)
 - [ESS product page](https://inrupt.com/products/enterprise-solid-server/)
 
-##### Solid development tools
+##### Solid Development Tools
 
 - [OpenID Connect Resource Server](https://github.com/solid/oidc-rs)
 
-##### Solid specifications
+##### Solid Specifications
 
-- [Official specifications](https://solid.github.io/specification/)
+- [Official specifications](https://solidproject.org/TR/)
 - [Repository of specifications](https://github.com/solid/specification/)
 - [Unpublished specifications](https://github.com/solid/solid-spec/)
 
@@ -149,6 +149,7 @@ The defined milestones give detailed descriptions on what should be when achieve
 - [https://shaperepo.com/](https://shaperepo.com/)
 - [https://medium.com/@JacksonMorgan/making-your-solid-apps-interoperable-with-shaperepo-com-8da512936073](https://medium.com/@JacksonMorgan/making-your-solid-apps-interoperable-with-shaperepo-com-8da512936073)
 - [https://www.w3.org/2014/data-shapes/wiki/Shacl-language](https://www.w3.org/2014/data-shapes/wiki/Shacl-language)
+- [Videos on Solid Application Interoperability](https://github.com/solid/data-interoperability-panel#solid-application-interoperability)
 
 ##### Solid World
 
@@ -160,7 +161,7 @@ The defined milestones give detailed descriptions on what should be when achieve
 
 - [Presentation: The CERN-Solid collaboration project](https://indico.cern.ch/event/883268/contributions/3995749/)
 
-#### Related work
+#### Related Work
 
 - [Storing and Querying Evolving Knowledge Graphs on the Web](https://phd.rubensworks.net/)
 
@@ -168,7 +169,7 @@ The defined milestones give detailed descriptions on what should be when achieve
 
 - [RDF serializer](http://www.ldf.fi/service/rdf-serializer)
 
-#### Not relevant, but interesting
+#### Not Relevant, But Interesting
 
 - [Billion Triples Challenge](http://km.aifb.kit.edu/projects/btc-2014/)
 - [Billion Triples Challenge 2019](https://zenodo.org/record/2634588)
