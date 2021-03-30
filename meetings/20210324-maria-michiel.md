@@ -14,4 +14,10 @@
 
 ## Notes
 
-*
+* SPARQL Semaphore update
+  * ESS/CSS are different from this
+  * -> etags
+
+* NSS locally
+* `NODE_TLS_REJECT_UNAUTHORIZED=0`
+* PDS Migrator
