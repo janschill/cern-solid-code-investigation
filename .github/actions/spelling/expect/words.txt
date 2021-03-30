@@ -2,12 +2,14 @@ Abdurrahman
 Aboulnaga
 acl
 acp
+agentydragon
 aifb
 amyvdh
 angelo
 api
 apps
 asc
+ata
 authn
 AWS
 backend
@@ -30,6 +32,7 @@ certonly
 cfc
 chmod
 chown
+cial
 cient
 cloudflare
 codebase
@@ -72,6 +75,7 @@ fbddc
 fbdf
 fca
 fd
+fde
 foaf
 freecodecamp
 frontend
@@ -111,9 +115,11 @@ ietf
 imdb
 imec
 img
+IMO
 implemenations
 inbox
 independetly
+Indido
 inox
 inrupt
 Interop
@@ -157,12 +163,14 @@ Maged
 mailto
 Manolescu
 Mansour
+mariadimou
 Mattermost
 mbox
 meier
 metadata
 Michiel
 michielbdejong
+michieldejong
 microservice
 middleware
 MITM
@@ -180,6 +188,7 @@ Nextcloud
 NGi
 nginx
 nhs
+nked
 NLnet
 nmap
 nodejs
@@ -236,6 +245,7 @@ Schenkel
 schill
 SDK
 sdtimes
+searchability
 serializer
 sestoft
 Shacl
@@ -246,6 +256,7 @@ SLAs
 solidcommunity
 solidproject
 someprefixvalue
+sorta
 SPARQL
 spotify
 src
@@ -255,6 +266,7 @@ SSO
 stackoverflow
 standalone
 standardisation
+Strats
 subdomain
 sudo
 systemctl
@@ -319,4 +331,3 @@ zazuko
 zenodo
 zlib
 zsu
-searchability
