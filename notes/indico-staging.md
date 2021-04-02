@@ -53,6 +53,18 @@ openstack server list
 /usr/bin/ssh jschill@188.185.91.184
 ```
 
+2. Install redis and postgres-12
+
+```bash
+sudo yum install -y epel-release
+sudo yum install -y yum install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+sudo yum install -y postgresql12 postgresql12-server postgresql12-libs postgresql12-devel postgresql12-contrib
+sudo yum install -y gcc redis nginx
+sudo yum install -y libjpeg-turbo-devel libxslt-devel libxml2-devel libffi-devel pcre-devel libyaml-devel
+/usr/pgsql-12/bin/postgresql12-setup initdb
+systemctl start postgresql-12.service redis.service
+```
+
 1. python und uwsgi zeugs beim installieren der debian (oder yum) packages weglassen
 2. nachdem du den indico-user angelegt hast, und zu dem user gewechselt hast, pyenv installieren und mit pyenv install 3.9.2 python 3.9 installieren, dann pyenv global 3.9.2 um es zu aktivieren
 3. die virtualenv legst du mit python -m venv ~/.venv an (statt virtualenv ... wie im guide)
