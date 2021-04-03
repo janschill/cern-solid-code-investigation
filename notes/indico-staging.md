@@ -4,6 +4,7 @@
 
 - [CERN OpenStack Private Cloud Guide](https://clouddocs.web.cern.ch/tutorial/openstack_command_line.html)
 - [openstack at CERN](https://openstack.cern.ch/project/images)
+- [Application Portal](https://application-portal.web.cern.ch)
 
 ## Using a VPN
 
