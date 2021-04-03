@@ -1,5 +1,10 @@
 # Indico Staging
 
+## Useful Links
+
+- [CERN OpenStack Private Cloud Guide](https://clouddocs.web.cern.ch/tutorial/openstack_command_line.html)
+- [openstack at CERN](https://openstack.cern.ch/project/images)
+
 ## Using a VPN
 
 ```bash
@@ -373,3 +378,5 @@ firewall-cmd --reload
 * `openstack server set --property 'landb-responsible=amonnich' indico-solid-test`
 * **Generate key and CSR:** `openssl req -new -out indico-solid-test.csr -nodes -sha512 -newkey rsa:2048 -keyout indico-solid-test.key -subj '/CN=indico-solid-test.cern.ch' -reqexts SAN -config <(cat /etc/ssl/openssl.cnf <(printf "[SAN]\nsubjectAltName=DNS:indico-solid-test.cern.ch"))` **Remember to copy key into `/etc/ssl/indico/indico.key`**
 * `cat host.crt host-chain.pem > /etc/ssl/indico/indico.crt`
+* Activate SSO for application: [Indico Team - Internal Documentation](https://indico-ops.docs.cern.ch/welcome/#just-sso-no-ldapgroups)
+* Create application for SSO/OpenID Connect [Application Portal](https://application-portal.web.cern.ch/)
