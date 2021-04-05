@@ -408,7 +408,7 @@ pip install indico*.whl
 exit
 ```
 
-6. Restart uswgi and celery
+6. Restart uwsgi and celery
 
 ```bash
 sudo systemctl restart indico-celery.service indico-uwsgi.service
