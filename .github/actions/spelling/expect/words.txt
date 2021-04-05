@@ -102,6 +102,7 @@ foaf
 freecodecamp
 frontend
 fullchain
+GAf
 gcc
 gdac
 getindico
@@ -424,8 +425,10 @@ xsf
 yml
 yy
 yyuu
+YZ
 Zampetakis
 zazuko
 zenodo
+zl
 zlib
 zsu
