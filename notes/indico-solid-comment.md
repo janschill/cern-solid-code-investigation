@@ -7,7 +7,7 @@
 1. Register a WebID and Solid pod
   * Pick a provider to your liking.
   * For a list of pod providers, click [here](https://solidproject.org/users/get-a-pod)
-  * For an opiniated recommendation, read the [Policy for a CERN Solid server](https://codimd.web.cern.ch/s/zl3yGAfYZ#Summary).
+  * For a recommendation, read the [Policy for a CERN Solid server](https://codimd.web.cern.ch/s/zl3yGAfYZ#Summary).
 2. Enable CERN SSH tunnel
 3. Visit [https://indico-solid-test.cern.ch](https://indico-solid-test.cern.ch)
   * The TLS certificate is a [CERN-signed certificate](https://ca.cern.ch/ca/) and your browser could warn you about malicious activity.
