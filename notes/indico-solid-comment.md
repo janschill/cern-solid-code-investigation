@@ -1,6 +1,6 @@
 # Indico Solid Comment
 
-*See [indico-staging](notes/indico-staging.md) for more information about the deployment of [solid-comment](https://github.com/janschill/solid-comment).*
+*See [indico-staging](indico-staging.md) for more information about the deployment of [solid-comment](https://github.com/janschill/solid-comment).*
 
 ## Usage
 
