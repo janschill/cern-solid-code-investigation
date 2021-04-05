@@ -371,6 +371,49 @@ firewall-cmd --permanent --add-port 443/tcp --add-port 80/tcp
 firewall-cmd --reload
 ```
 
+## Install New Version of Solid Comment
+
+1. Publish new version of solid-comment
+
+```bash
+npm run build
+npm publish
+```
+
+2. Install new version in Indico
+
+```bash
+npm update solid-comment # or install newly
+```
+
+3. Compile new Indico wheel
+
+```bash
+./bin/maintenance/build-wheel.py indico --add-version-suffix
+```
+
+4. Copy to openstack VM
+
+```bash
+scp dist/indico*.whl username@vm-ip-address:/afs/cern.ch/user/j/username
+```
+
+5. Install new version on openstack VM
+
+```bash
+cp indico*.whl /opt/indico/
+sudo su - indico
+source ~/.venv/bin/activate
+pip install indico*.whl
+exit
+```
+
+6. Restart uswgi and celery
+
+```bash
+sudo systemctl restart indico-celery.service indico-uwsgi.service
+```
+
 ## Additional Information
 
 * Let's Encrypt certificates don't work because of missing firewall openings.
