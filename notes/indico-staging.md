@@ -383,7 +383,7 @@ npm publish
 2. Install new version in Indico
 
 ```bash
-npm update solid-comment # or install newly
+npm update solid-comment # or install exact version npm install solid-comment@1.0.0
 ```
 
 3. Compile new Indico wheel
