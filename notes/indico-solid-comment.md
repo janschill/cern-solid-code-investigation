@@ -25,3 +25,7 @@
 10. You will be redirected to https://indico-solid-test.cern.ch
 11. When successfully authenticated and logged in, the "Log in" button should now say "Log out"
 12. Enter your desired text to comment and press submit.
+
+## Problems
+
+1. Host own pod, log all IPs that request my comment, use for DDOS
