@@ -26,3 +26,7 @@
 
 ## QAs
 
+1. The module introduces a way of inject cross-site scripting
+2. The module **increases**
+    * “first meaningful paint” render time
+    * “
