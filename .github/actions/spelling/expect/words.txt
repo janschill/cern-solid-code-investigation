@@ -65,6 +65,7 @@ datastore
 dbus
 dda
 ddcb
+DDOS
 delinked
 dfn
 DHE
