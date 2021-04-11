@@ -282,6 +282,7 @@ procname
 psql
 py
 pyenv
+QAs
 Qg
 rdf
 rdflib
@@ -343,6 +344,7 @@ sshuttle
 ssl
 SSO
 stackoverflow
+Stakeholders
 standalone
 standardisation
 Strats
