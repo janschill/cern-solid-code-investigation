@@ -414,6 +414,17 @@ exit
 sudo systemctl restart indico-celery.service indico-uwsgi.service
 ```
 
+## Check References in Indico
+
+```bash
+$ sudo su - indico
+$ source ~/.venv/bin/activate
+$ indico shell
+>from indico.modules.events.settings import EventSettingsProxy
+>solid_comments = EventSettingsProxy('solid_comments', { 'comment_ids': [] })
+>solid_comments.get(e, 'comment_ids')
+```
+
 ## Additional Information
 
 * Let's Encrypt certificates don't work because of missing firewall openings.
