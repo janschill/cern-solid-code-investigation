@@ -29,3 +29,7 @@
 ## Problems
 
 1. Host own pod, log all IPs that request my comment, use for DDOS
+
+## Learning
+
+* first iteration of solid-comment had the ACLs on the resources, but then changed to container ACL with a default ont the children resources
