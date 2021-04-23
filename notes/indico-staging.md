@@ -425,6 +425,17 @@ $ indico shell
 >solid_comments.get(e, 'comment_ids')
 ```
 
+### Update References
+
+```python
+[1]: from indico.modules.events.settings import EventSettingsProxy
+[2]: solid_comments = EventSettingsProxy('solid_comments', {'comment_ids': [],})
+[3]: ce = solid_comments.get(E(1), 'comment_ids')
+[4]: ce.append("url-to-comment.ttl")
+[5]: solid_comments.set(E(1), 'comment_ids', ce)
+[6]: db.session.commit()
+```
+
 ## Additional Information
 
 * Let's Encrypt certificates don't work because of missing firewall openings.
