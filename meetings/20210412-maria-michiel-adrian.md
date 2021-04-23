@@ -15,5 +15,5 @@
 * app launcher:
   * Root control, storage space
   * per folder which origin has access
-  * lower priviliges
+  * lower privileges
 * NextCloud server you can launch it from the App Launcher
