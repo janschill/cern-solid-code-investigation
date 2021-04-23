@@ -13,7 +13,7 @@ This directory holds all formally written reports. Reports include the “Resear
 |-| Research project | Master‘s thesis |
 | - | - | - |
 | Start | 2020-09-28 | 2021-02-01 |
-| Submission | 2020-12-15 | 2021-06-02 |
+| Submission | 2020-12-15 | 2021-06-01 |
 | Oral defense | 2021-01-19 | est. 2021-07-02 |
 | Description | Review of Solid specifications, evaluating existing Solid implementations | Proof of concept |
 | Scope in ECTS | 7.5 | 30 |
