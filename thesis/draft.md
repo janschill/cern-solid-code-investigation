@@ -38,6 +38,8 @@
   * Testing
 *
 
+### POCs Complications
+
 *Conference Registration* (solid-autocomplete)
   * Complications
     * Design
@@ -70,11 +72,11 @@
       * Indico: prevent spam -> requires additional Indico session
         * comments not shown -> order of persisting data
       * Control access to pod
-        * application has full root access to the pod
-        * app launcher
+        * application has full root access to the pod -> app launcher
     * Development/Testing
       * permissions
         * handling case when permissions are not enough
+          * how to detect agent has given control access
         * creating proper ACL, from on every resource to container based
       * discoverability of the comments (UUID in filename)
       * comment persistence
@@ -82,6 +84,8 @@
       * security
         * prevent cross-site scripting
         * only allow logged in Indico user post comment (pass in axiosclient from Indico)
+        * pod authentication
+          * @inrupt/solid-client -> refresh new login
 
 *Indico deployment*
   * Solid-OIDC requires TLS certificates
