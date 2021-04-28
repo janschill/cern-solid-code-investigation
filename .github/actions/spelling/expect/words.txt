@@ -355,6 +355,7 @@ Syslog
 systemctl
 systemd
 tcp
+techno
 Tful
 themoviedb
 timbl
@@ -394,6 +395,7 @@ vcard
 veltens
 venv
 Verborgh
+versioning
 vimeo
 vincenttunru
 virtualenv
