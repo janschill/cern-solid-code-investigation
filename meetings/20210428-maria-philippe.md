@@ -42,7 +42,7 @@
       * concepts
     * who is attacking the same problem
   * what i have done
-    * pocs
+    * POCs
     * design
     * evaluation
     * analysis
