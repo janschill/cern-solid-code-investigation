@@ -272,6 +272,8 @@ pim
 pkce
 plugin
 png
+POC
+POCs
 podbrowser
 policykit
 postgres
