@@ -12,7 +12,7 @@
 ## Meeting Notes
 
 * For thesis get away from product mindset when talking about the implementation:
-  * Issues I've faceed
+  * Issues I've faced
   * Options of issues
   * Chain of decisions
   * Product mindset -> get away from it and go design space
@@ -27,7 +27,7 @@
 * implementation
   * indico limits this
 * if indico in this way or more generally
-* solid does not work in a vaccuum, techno-social
+* solid does not work in a vacuum, techno-social
 * other access control in Indico?
 
 * Structure:
