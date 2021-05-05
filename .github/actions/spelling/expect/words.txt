@@ -16,6 +16,7 @@ ata
 authn
 Autocomplete
 AWS
+axiosclient
 backend
 bashrc
 bbc
@@ -31,6 +32,7 @@ Capadisli
 cbc
 cde
 cdivilly
+CER
 cernbox
 certbot
 certonly
@@ -226,6 +228,7 @@ Msc
 namespace
 namespaced
 Naymat
+Nbox
 Netscape
 netstat
 newkey
@@ -247,6 +250,7 @@ NX
 OAuth
 OCM
 OIDC
+oninput
 openid
 openrc
 openssl
@@ -311,6 +315,7 @@ rw
 rwx
 Sakr
 Sambra
+sandboxed
 Sarven
 scalability
 scenaristeur
@@ -336,6 +341,7 @@ solidproject
 someprefixvalue
 sorta
 sourced
+spam
 SPARQL
 spotify
 sqlite
@@ -392,6 +398,7 @@ useradd
 userguide
 username
 usr
+UUID
 uwsgi
 vcard
 veltens
