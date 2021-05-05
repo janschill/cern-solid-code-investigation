@@ -1,4 +1,4 @@
-# 2021/03/24 Maria Philippe
+# 2021/03/24 Maria Michiel
 
 *Present: Maria, Michiel, Jan*
 
