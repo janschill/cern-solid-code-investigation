@@ -1,0 +1,94 @@
+\documentclass[runningheads]{llncs}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage[inline]{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{csquotes}
+\usepackage[acronym]{glossaries}
+\makeglossaries
+\include{glossary}
+
+\usepackage[sorting=none]{biblatex}
+\addbibresource{bibliography.bib}
+
+\usepackage{float}
+\usepackage{upquote}
+\usepackage{fancyvrb}
+\usepackage{color}
+\usepackage[legalpaper, margin=1in]{geometry}
+
+\definecolor{commentscolor}{rgb}{0.5,0.5,0.5}
+\definecolor{greenstrings}{rgb}{0,0.5,0}
+\definecolor{backgroundgray}{rgb}{0.95,0.95,0.95}
+
+\lstset{escapeinside={(*@}{@*)}}
+\lstdefinelanguage{Other}%
+{ sensitive=true,
+  numbers=left,
+  backgroundcolor = \color{backgroundgray},
+  stepnumber=1,
+  basicstyle=\ttfamily,
+  breaklines=true,
+  xleftmargin=\parindent,
+  aboveskip=\bigskipamount,
+  tabsize=2,
+  morecomment=[l][\color{commentscolor}]{///},
+  morecomment=[l][\color{commentscolor}]{//},
+  morecomment=[s][\color{commentscolor}]{{(*}{*)}},
+  morestring=[b]",
+  showstringspaces=false,
+  literate={`}{\`}1,
+  stringstyle=\color{greenstrings},
+  basicstyle=\small,
+}
+
+\setcounter{tocdepth}{2}
+\begin{document}
+
+\begin{titlepage}
+   \begin{center}
+       \vspace*{1cm}
+       \Huge
+       \textbf{CERN-Solid code investigation}\\
+       \LARGE
+       \vspace{0.5cm}
+        Proof of concept and prospects\\
+       \vspace{1cm}
+       \large
+       Master’s thesis
+       \vspace{1cm}
+        \LARGE
+       
+
+       \textbf{Jan Schill}\\
+       schi@itu.dk
+
+       \vfill
+            
+      A thesis presented for the degree of\\
+      Master of Science
+            
+       \vspace{0.8cm}
+     
+       \includegraphics[width=0.4\textwidth]{assets/university.jpg}
+    
+       \Large
+       Computer Science\\
+       IT University of Copenhagen\\
+       Denmark\\
+       01.06.2021
+            
+   \end{center}
+\end{titlepage}
+
+
+\tableofcontents
+\newpage
+
+\input{sections/01-introduction}
+\printglossary[type=\acronymtype]
+
+\newpage
+\printbibliography
+\end{document}
