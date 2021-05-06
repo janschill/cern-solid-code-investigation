@@ -1,5 +1,6 @@
 \.png$
 \.jpeg$
+\.jpg$
 \.pdf$
 \.xd$
 \.drawio$
