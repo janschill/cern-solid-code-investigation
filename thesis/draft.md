@@ -38,27 +38,6 @@
 
 ### POCs Complications
 
-*Conference Registration* (solid-autocomplete)
-  * Complications
-    * Design
-      * what happens if user changes data on the pod
-      * payment tied to input fields
-      * archival of registration data
-      * performance of retrieving data from large number of registrations
-      * availability of crucial data when user decides to delete data
-      * -> change to autocomplete functionality
-        * how to match structure data to unstructured, highly variable input identifiers
-    * Developing/Testing
-      * mapping inputs to data (Solid data is semantically structure, HTML forms mostly not)
-      * nested triplets(/quads) (address, email address)
-      * input already has value
-      * Indico form rendered dynamically and not tied to `DOMContentLoaded`
-      * Indico form has input validation (oninput)
-  * Future
-    * fetch (private) other resources than WebId
-    * upstream data back to pod (changes for example)
-    * add more data to WebId document using Indico registration form
-
 *Event Commenting* (solid-comment)
   * Complications
     * Design
@@ -86,31 +65,28 @@
         * pod authentication
           * @inrupt/solid-client -> refresh new login
 
+*Conference Registration* (solid-autocomplete)
+  * Complications
+    * Design
+      * what happens if user changes data on the pod
+      * payment tied to input fields
+      * archival of registration data
+      * performance of retrieving data from large number of registrations
+      * availability of crucial data when user decides to delete data
+      * -> change to autocomplete functionality
+        * how to match structure data to unstructured, highly variable input identifiers
+    * Developing/Testing
+      * mapping inputs to data (Solid data is semantically structure, HTML forms mostly not)
+      * nested triplets(/quads) (address, email address)
+      * input already has value
+      * Indico form rendered dynamically and not tied to `DOMContentLoaded`
+      * Indico form has input validation (oninput)
+  * Future
+    * fetch (private) other resources than WebId
+    * upstream data back to pod (changes for example)
+    * add more data to WebId document using Indico registration form
+
 *Indico deployment*
   * Solid-OIDC requires TLS certificates
     * CERN certificates
     * Let's Encrypt certificates don't work because of missing firewall openings.
-  *
-
-## Introduction
-
-### Context
-
-### ?
-
-## Related Work
-
-### Background
-
-### Indico
-
-### Solid
-
-## Code Investigation
-
-### Proof Of Concepts
-
-
-### Registration Form Autocomplete
-
-### Comments
