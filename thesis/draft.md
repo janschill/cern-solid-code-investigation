@@ -35,8 +35,6 @@
       * *see above*
   * Integration with Indico
   * Deployment
-  * Testing
-*
 
 ### POCs Complications
 
@@ -49,6 +47,7 @@
       * performance of retrieving data from large number of registrations
       * availability of crucial data when user decides to delete data
       * -> change to autocomplete functionality
+        * how to match structure data to unstructured, highly variable input identifiers
     * Developing/Testing
       * mapping inputs to data (Solid data is semantically structure, HTML forms mostly not)
       * nested triplets(/quads) (address, email address)
