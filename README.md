@@ -19,7 +19,7 @@ This directory holds all formally written reports. Reports include the “Resear
 | Scope in ECTS | 7.5 | 30 |
 | Scope in milestones | [1](https://github.com/janschill/uni-research_project/milestones/2/), [2](https://github.com/janschill/uni-research_project/milestone/3) | [3](https://github.com/janschill/uni-research_project/milestone/14), [4](https://github.com/janschill/uni-research_project/milestone/15), [5](https://github.com/janschill/uni-research_project/milestone/16), [6](https://github.com/janschill/uni-research_project/milestone/17) |
 | Issues | [Kanban](https://github.com/janschill/uni-research_project/projects/1) | [Kanban](https://github.com/janschill/uni-research_project/projects/2) |
-| Report notes | [report/report/](https://github.com/janschill/uni-research_project/tree/main/report/report) | [report/master/](https://github.com/janschill/uni-research_project/tree/main/report/master) |
+| Report notes | [report/report/](https://github.com/janschill/uni-research_project/tree/main/report/report) | [thesis/draft.md](https://github.com/janschill/uni-research_project/tree/main/thesis/draft.md) |
 | Final report (PDF) | [modified 2021-01-17](https://github.com/janschill/uni-research_project/blob/main/report/report.pdf) | *N/A* |
 | Final report submitted to university (PDF) | [modified 2020-12-15](https://github.com/janschill/uni-research_project/blob/main/report/report-submitted-to-university.pdf) | *N/A* |
 
