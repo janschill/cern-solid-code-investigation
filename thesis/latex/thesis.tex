@@ -19,6 +19,14 @@
 \usepackage[legalpaper, margin=1in]{geometry}
 \usepackage{titlesec}
 
+% make paragraph bold
+\titleformat*{\paragraph}{\itshape\mdseries\bfseries}
+
+% Introduce sectioning below paragraph 
+\titleclass{\subsubparagraph}{straight}[\paragraph]
+\titleformat{\subsubparagraph}[]{\normalfont\normalsize\itshape}{\thesubsubpalragraph}{1em}{}
+\titlespacing*{\subsubparagraph} {}{3.25ex plus 1ex minus .2ex}{1em}
+
 \definecolor{commentscolor}{rgb}{0.5,0.5,0.5}
 \definecolor{greenstrings}{rgb}{0,0.5,0}
 \definecolor{backgroundgray}{rgb}{0.95,0.95,0.95}
