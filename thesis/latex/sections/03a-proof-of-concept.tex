@@ -59,7 +59,7 @@ The module runs in the browser and is therefore written in JavaScript. A program
 
 The communication flow with the data pod and the module would happen primarily from the browser.
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{prototype/graphs/poc-infrastructure-frontend.jpeg}
     \caption{Communication flow for a module developed on the client.}
@@ -72,7 +72,8 @@ The microservice approach would allow developing the needed Solid logic on a sep
 
 \begin{table}[h!]
     \centering
-    \begin{tabular}{c | c} 
+    \begin{tabular}{| l | l |} 
+    \hline
      Problem & Solution \\
      \hline
       Language & JavaScript or TypeScript  \\
@@ -80,6 +81,7 @@ The microservice approach would allow developing the needed Solid logic on a sep
       Client & solid-client-js \cite{solid-client-js}  \\
       Authentication & solid-client-authn-node \cite{solid-client-authn-node} \\
       RDF & solid-common-vocab-js \cite{solid-common-vocab-js}, rdflib.js \cite{rdflib.js}  \\
+    \hline
     \end{tabular}
     \vspace{0.75cm}
     \caption{Existing solutions to problems for a microservice approach.}
@@ -88,7 +90,7 @@ The microservice approach would allow developing the needed Solid logic on a sep
 
 The microservice module would handle take all requests aimed at the data pod and make it compliant with the Solid server. It would provide the client with the proper \gls{solidoidc} flow to attach the access token to all authenticated requests.
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{prototype/graphs/poc-infrastructure-microservice.jpeg}
     \caption{Communication flow for a module developed as a microservice.}
@@ -101,7 +103,8 @@ Goal of the server approach would be just like with the microservice approach to
 
 \begin{table}[h!]
     \centering
-    \begin{tabular}{c | c} 
+    \begin{tabular}{| l | l |} 
+    \hline
      Problem & Solution \\
      \hline
       Language & Python  \\
@@ -109,6 +112,7 @@ Goal of the server approach would be just like with the microservice approach to
       Client & -  \\
       Authentication & pyoidc \cite{pyoidc} missing DPoP\\
       RDF & solid-common-vocab-js \cite{solid-common-vocab-js}, rdflib.js \cite{rdflib.js}  \\
+    \hline
     \end{tabular}
     \vspace{0.75cm}
     \caption{Existing solutions to problems for a server approach.}
@@ -124,8 +128,39 @@ For example the authentication library pyoidc allows authenticating with \gls{oi
     \label{fig:poc-infrastructure-backend}
 \end{figure}
 
+\paragraph{Comparison of the Different Approaches}
+
+Benefits from developing the module for the client:
+
+\begin{itemize}
+    \item Necessary libraries exist (Major release for all basic Solid flows exist)
+    \item Community support
+    \item Programming effort for an \gls{mvp} lowest
+    \item Documentation on developing Solid apps in JavaScript exist
+\end{itemize}
+
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{| l | l |} 
+    \hline
+     Problem & Solution \\
+     \hline
+      Language & Python  \\
+      Framework & Flask  \\
+      Client & -  \\
+      Authentication & pyoidc \cite{pyoidc} missing DPoP\\
+      RDF & solid-common-vocab-js \cite{solid-common-vocab-js}, rdflib.js \cite{rdflib.js}  \\
+      \hline
+    \end{tabular}
+    \vspace{0.75cm}
+    \caption{Existing solutions to problems for a server approach.}
+    \label{table:2}
+\end{table}
 
 \paragraph{Protection on Resource}\mbox{}\\
+
+
 
 \paragraph{Modification of Resource from Data Pod}\mbox{}\\
 
