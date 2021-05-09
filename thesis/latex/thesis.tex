@@ -7,7 +7,8 @@
 \usepackage{csquotes}
 \usepackage[acronym]{glossaries}
 \makeglossaries
-\include{glossary}
+\include{thesis/latex/glossary}
+\include{thesis/latex/terms}
 
 \usepackage[sorting=none]{biblatex}
 \addbibresource{bibliography.bib}
@@ -19,9 +20,9 @@
 \usepackage[legalpaper, margin=1in]{geometry}
 
 % set left,right padding for table
-\setlength{\tabcolsep}{18pt}
+\setlength{\tabcolsep}{10pt}
 % set top,bottom padding for table
-\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arraystretch}{1.25}
 
 \usepackage{titlesec}
 % hide chapter numbering on new chapter page
@@ -127,8 +128,10 @@
 \input{thesis/latex/sections/02-background}
 \input{thesis/latex/sections/03-investigation}
 \input{thesis/latex/sections/04-conclusion}
-\printglossary[type=\acronymtype]
 
+\printglossary[type=\acronymtype]
+\newpage
+\printglossary
 \newpage
 \printbibliography
 \end{document}

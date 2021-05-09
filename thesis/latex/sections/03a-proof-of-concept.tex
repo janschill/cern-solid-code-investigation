@@ -6,7 +6,7 @@ The goal of these modules is the symbiosis of decentralized stored data in a hig
 
 \subsection{POC 1: Commenting Module for Events in Indico}
 
-The first \gls{poc} is supposed to enrich the Indico system with some sort of Solid-based content. With the product owner and chief developer of Indico, the CERN-Solid project manager and a Solid developer it was decided a commenting module for Indico events is an adequate solution to include data from an external storage entity namely a Solid pod. The ability to allow users of Indico to leave a comment on an event, which then lives in a Solid pod completely controlled by the author of the comment was concluded to be an attractive feature for Indico.
+The first \gls{poc} is supposed to enrich the Indico system with some sort of Solid-based content. With the product owner and chief developer of Indico, the CERN-Solid project manager and a Solid developer it was decided a commenting module for Indico events is an adequate solution to include data from an external storage entity namely a data pod. The ability to allow users of Indico to leave a comment on an event, which then lives in a data pod completely controlled by the author of the comment was concluded to be an attractive feature for Indico.
 
 \begin{figure}
     \centering
@@ -18,7 +18,7 @@ The first \gls{poc} is supposed to enrich the Indico system with some sort of So
 \subsubsection{Design}\mbox{}\\
 
 For the implementation of this module several design decisions had to be made. From the fundamental choice of the module running on the client device or be computed on the server and then propagated to the client afterwards or even with a microservice proxying all traffic through it to enable Solid without changing Indico.
-Other design challenges were around how to protect the resources holding the comment information. These resources reside on the external Solid pod and need to be fetched from the application and read by other agents. Can \glspl{acl} be configured to allow the specific use-case?
+Other design challenges were around how to protect the resources holding the comment information. These resources reside on the external data pod and need to be fetched from the application and read by other agents. Can \glspl{acl} be configured to allow the specific use-case?
 
 \paragraph{Client- versus Server-Side versus Microservice}\mbox{}\\
 
@@ -27,11 +27,11 @@ Indico does send JavaScript, which is used for client-side features, but it focu
 
 To make the right decision if the module should be primarily developed for the client- or server-side or even as a microservice, a list of requirements to the module had to be defined. With the defined requirements in place it had to be figured out how much functionality can be extracted from existing libraries and how much needed to be implemented with the new module. Implementing existing functionality for a new programming language would defeat the \gls{poc}’s purpose of showing how an existing software could work with the Solid principles.
 
-The rudimentary set of features to enable commenting for users in Indico while saving the data in a Solid pod includes: 
+The rudimentary set of features to enable commenting for users in Indico while saving the data in a data pod includes: 
 
 \begin{enumerate}
     \item Authentication with a Solid \gls{idp}
-    \item (Authenticated) Requests to a Solid pod
+    \item (Authenticated) Requests to a data pod
     \item Parsing of structured data (Linked Data)
 \end{enumerate}
 
@@ -41,7 +41,8 @@ The module runs in the browser and is therefore written in JavaScript. A program
 
 \begin{table}[h!]
     \centering
-    \begin{tabular}{c | c} 
+    \begin{tabular}{| l | l |} 
+     \hline
      Problem & Solution \\
      \hline
       Language & JavaScript or TypeScript  \\
@@ -49,13 +50,14 @@ The module runs in the browser and is therefore written in JavaScript. A program
       Client & solid-client-js \cite{solid-client-js}  \\
       Authentication & solid-client-authn-browser \cite{solid-client-authn-browser} \\
       RDF & solid-common-vocab-js \cite{solid-common-vocab-js}, rdflib.js \cite{rdflib.js}  \\
+     \hline
     \end{tabular}
     \vspace{0.75cm}
-    \caption{Table to test captions and labels}
+    \caption{Existing solutions to problems for a client approach.}
     \label{table:1}
 \end{table}
 
-The communication flow with the Solid Pod of the module would TODO:
+The communication flow with the data pod and the module would happen primarily from the browser.
 
 \begin{figure}
     \centering
@@ -64,29 +66,72 @@ The communication flow with the Solid Pod of the module would TODO:
     \label{fig:poc-infrastructure-frontend}
 \end{figure}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\textwidth]{prototype/graphs/poc-infrastructure-backend.jpeg}
-    \caption{poc-infrastructure-backend}
-    \label{fig:poc-infrastructure-backend}
-\end{figure}
+\paragraph{Microservice Approach}
 
+The microservice approach would allow developing the needed Solid logic on a separate service, which proxies all Solid related traffic through it an enable the Solid functionality. Most of the libraries from the client implementation can be used as well, as both developments would be written in JavaScript. Only the authentication flow would work a bit different.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{c | c} 
+     Problem & Solution \\
+     \hline
+      Language & JavaScript or TypeScript  \\
+      Framework & Node.js  \\
+      Client & solid-client-js \cite{solid-client-js}  \\
+      Authentication & solid-client-authn-node \cite{solid-client-authn-node} \\
+      RDF & solid-common-vocab-js \cite{solid-common-vocab-js}, rdflib.js \cite{rdflib.js}  \\
+    \end{tabular}
+    \vspace{0.75cm}
+    \caption{Existing solutions to problems for a microservice approach.}
+    \label{table:1}
+\end{table}
+
+The microservice module would handle take all requests aimed at the data pod and make it compliant with the Solid server. It would provide the client with the proper \gls{solidoidc} flow to attach the access token to all authenticated requests.
 
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{prototype/graphs/poc-infrastructure-microservice.jpeg}
-    \caption{poc-infrastructure-microservice}
+    \caption{Communication flow for a module developed as a microservice.}
     \label{fig:poc-infrastructure-microservice}
+\end{figure}
+
+\paragraph{Server Approach}
+
+Goal of the server approach would be just like with the microservice approach to decouple the logic needed to work with Solid from the client and have it run on a server instance. The attractiveness for the server approach would be it could be fully integrated within Indico and be part of its Python code base. The major drawbacks are no direct Solid libraries written in Python exist to allow a seamless integration into the ecosystem.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{c | c} 
+     Problem & Solution \\
+     \hline
+      Language & Python  \\
+      Framework & Flask  \\
+      Client & -  \\
+      Authentication & pyoidc \cite{pyoidc} missing DPoP\\
+      RDF & solid-common-vocab-js \cite{solid-common-vocab-js}, rdflib.js \cite{rdflib.js}  \\
+    \end{tabular}
+    \vspace{0.75cm}
+    \caption{Existing solutions to problems for a server approach.}
+    \label{table:2}
+\end{table}
+
+For example the authentication library pyoidc allows authenticating with \gls{oidc} systems, but is missing a mandatory feature called \gls{dpop}, which is needed to make requests to protected resources on a data pod.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{prototype/graphs/poc-infrastructure-backend.jpeg}
+    \caption{Communication flow for a module developed on the server.}
+    \label{fig:poc-infrastructure-backend}
 \end{figure}
 
 
 \paragraph{Protection on Resource}\mbox{}\\
 
-\paragraph{Modification of Resource from Pod}\mbox{}\\
+\paragraph{Modification of Resource from Data Pod}\mbox{}\\
 
 \paragraph{Mitigation of Spam}\mbox{}\\
 
-\paragraph{Giving Application Full Control of Pod}\mbox{}\\
+\paragraph{Giving Application Full Control of Data Pod}\mbox{}\\
 
 \subsubsection{Integration with Indico}
 
@@ -115,7 +160,7 @@ TODO:
 1st iteration, save data in pod
 2nd iteration, only pull data from pod
 
-\paragraph{Modification of Resource from Pod}
+\paragraph{Modification of Resource from Data Pod}
 
 \paragraph{Payment on Input Fields}
 
