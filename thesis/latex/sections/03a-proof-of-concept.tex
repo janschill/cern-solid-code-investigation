@@ -66,7 +66,7 @@ The communication flow with the data pod and the module would happen primarily f
     \label{fig:poc-infrastructure-frontend}
 \end{figure}
 
-\paragraph{Microservice Approach}
+\paragraph{Microservice Approach}\mbox{}\\
 
 The microservice approach would allow developing the needed Solid logic on a separate service, which proxies all Solid related traffic through it an enable the Solid functionality. Most of the libraries from the client implementation can be used as well, as both developments would be written in JavaScript. Only the authentication flow would work a bit different.
 
@@ -97,7 +97,7 @@ The microservice module would handle take all requests aimed at the data pod and
     \label{fig:poc-infrastructure-microservice}
 \end{figure}
 
-\paragraph{Server Approach}
+\paragraph{Server Approach}\mbox{}\\
 
 Goal of the server approach would be just like with the microservice approach to decouple the logic needed to work with Solid from the client and have it run on a server instance. The attractiveness for the server approach would be it could be fully integrated within Indico and be part of its Python code base. The major drawbacks are no direct Solid libraries written in Python exist to allow a seamless integration into the ecosystem.
 
@@ -119,7 +119,7 @@ Goal of the server approach would be just like with the microservice approach to
     \label{table:2}
 \end{table}
 
-For example the authentication library pyoidc allows authenticating with \gls{oidc} systems, but is missing a mandatory feature called \gls{dpop}, which is needed to make requests to protected resources on a data pod.
+The authentication library pyoidc allows authenticating with \gls{oidc} systems, but is missing a mandatory feature called \gls{dpop}, which is needed to make requests to protected resources on a data pod.
 
 \begin{figure}
     \centering
@@ -128,7 +128,7 @@ For example the authentication library pyoidc allows authenticating with \gls{oi
     \label{fig:poc-infrastructure-backend}
 \end{figure}
 
-\paragraph{Comparison of the Different Approaches}
+\paragraph{Comparison of the Different Approaches}\mbox{}\\
 
 Benefits from developing the module for the client:
 
@@ -142,15 +142,19 @@ Benefits from developing the module for the client:
 
 \begin{table}[h!]
     \centering
-    \begin{tabular}{| l | l |} 
+    \begin{tabular}{| l | p{11cm} |} 
     \hline
-     Problem & Solution \\
+     Library & Description \\
      \hline
-      Language & Python  \\
-      Framework & Flask  \\
-      Client & -  \\
-      Authentication & pyoidc \cite{pyoidc} missing DPoP\\
-      RDF & solid-common-vocab-js \cite{solid-common-vocab-js}, rdflib.js \cite{rdflib.js}  \\
+      solid-client & A client library for accessing data stored in Solid Pods.  \\
+      \hline
+      solid-client-authn & A set of libraries for authenticating to Solid identity servers:solid-client-authn-browser for use in a browser.solid-client-authn-node for use in Node.js.  \\
+      \hline
+      vocab-common-rdf & A library providing convenience objects for many RDF-related identifiers, such as the Person and familyName identifiers from the Schema.org vocabulary from Google, Microsoft and Yahoo!  \\
+      \hline
+      vocab-solid-common & A library providing convenience objects for many Solid-related identifiers.  \\
+      \hline
+      vocab-inrupt-common & A library providing convenience objects for Inrupt-related identifiers.  \\
       \hline
     \end{tabular}
     \vspace{0.75cm}
@@ -160,7 +164,7 @@ Benefits from developing the module for the client:
 
 \paragraph{Protection on Resource}\mbox{}\\
 
-
+Every container and resource in Solid is protected with \glspl{acl}, which determine if specific agents, groups, or the world can have read, write, append, or control access. 
 
 \paragraph{Modification of Resource from Data Pod}\mbox{}\\
 
