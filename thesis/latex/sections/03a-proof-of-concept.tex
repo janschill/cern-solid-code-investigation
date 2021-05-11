@@ -85,7 +85,7 @@ The microservice approach would allow developing the needed Solid logic on a sep
     \end{tabular}
     \vspace{0.75cm}
     \caption{Existing solutions to problems for a microservice approach.}
-    \label{table:1}
+    \label{table:2}
 \end{table}
 
 The microservice module would handle take all requests aimed at the data pod and make it compliant with the Solid server. It would provide the client with the proper \gls{solidoidc} flow to attach the access token to all authenticated requests.
@@ -101,7 +101,7 @@ The microservice module would handle take all requests aimed at the data pod and
 
 Goal of the server approach would be just like with the microservice approach to decouple the logic needed to work with Solid from the client and have it run on a server instance. The attractiveness for the server approach would be it could be fully integrated within Indico and be part of its Python code base. The major drawbacks are no direct Solid libraries written in Python exist to allow a seamless integration into the ecosystem.
 
-\begin{table}[h!]
+\begin{table}[!ht]
     \centering
     \begin{tabular}{| l | l |} 
     \hline
@@ -116,7 +116,7 @@ Goal of the server approach would be just like with the microservice approach to
     \end{tabular}
     \vspace{0.75cm}
     \caption{Existing solutions to problems for a server approach.}
-    \label{table:2}
+    \label{table:3}
 \end{table}
 
 The authentication library pyoidc allows authenticating with \gls{oidc} systems, but is missing a mandatory feature called \gls{dpop}, which is needed to make requests to protected resources on a data pod.
@@ -164,7 +164,15 @@ Benefits from developing the module for the client:
 
 \paragraph{Protection on Resource}\mbox{}\\
 
-Every container and resource in Solid is protected with \glspl{acl}, which determine if specific agents, groups, or the world can have read, write, append, or control access. 
+Every container and resource in Solid is protected with \glspl{acl}, which determine if specific agents, groups, or the world can have read, write, append, or control access. These control access modes are defined in \gls{acl} files. The Solid \gls{acl} inheritance algorithm looks for an \gls{acl} file attached to a specific resource, if it cannot find one it goes recursively up the file hierarchy and looks for \glspl{acl} on the containers.
+Indico allows two general types of protection \textit{private} and \textit{public} on its events. Public means open to everyone, no Indico account or any type of authorization is needed. Whereas private can be as fine-grained as only to specific agents or groups, such as agents from an educational roaming services network.
+
+In order for visitors of a private or public event in Indico to be able to see the comment, its \gls{acl} needs to allow the public to read the resource. This can be achieved by using the \textit{public} container, which comes with public-read by default on the \gls{nss} or by creating a new container and setting the \gls{acl} with 
+
+\usemintedstyle{borland}
+\begin{minted}{python}
+
+\end{minted}
 
 \paragraph{Modification of Resource from Data Pod}\mbox{}\\
 
