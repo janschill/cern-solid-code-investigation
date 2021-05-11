@@ -10,3 +10,4 @@
 code/
 \.cls$
 thesis/latex/thesis.tex
+\.sty$
