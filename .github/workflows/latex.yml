@@ -17,3 +17,9 @@ jobs:
         with:
           name: PDF
           path: thesis.pdf
+      - name: Commit report
+        run: |
+          git config --global user.name 'Jan Schill'
+          git config --global user.email 'janschill@users.noreply.github.com'
+          git commit -am "Automated report"
+          git push origin gh-pages
