@@ -12,7 +12,7 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: thesis/latex/thesis.tex
-      - name: Upload artifcat
+      - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
           name: PDF
