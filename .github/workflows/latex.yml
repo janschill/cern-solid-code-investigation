@@ -17,6 +17,8 @@ jobs:
         with:
           name: PDF
           path: thesis.pdf      
+      - run: ls -al
+      - run: ls -al thesis/latex
       - name: Deploy report
         uses: peaceiris/actions-gh-pages@v3
         with:
