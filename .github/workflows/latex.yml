@@ -21,5 +21,6 @@ jobs:
         run: |
           git config --global user.name 'Jan Schill'
           git config --global user.email 'janschill@users.noreply.github.com'
+          git add thesis.pdf
           git commit -am "Automated report"
           git push origin gh-pages
