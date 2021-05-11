@@ -214,6 +214,22 @@ A child resource would allow public read with:
     acl:mode n0:Read.
 \end{lstlisting}
 
+Another approach and the one implemented after iterating through the previous ones is to have the container’s \gls{acl} resource define a default access mode for its child resources. This way one \gls{acl} only needs to be created on the container and all resources have proper access modes for public read and are not listed publicly in the container’s description.
+
+\begin{lstlisting}[language=Other,columns=fullflexible, caption={TODO: Label caption}, label={lst:4}]
+@prefix acl: <http://www.w3.org/ns/auth/acl#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix target: <./>.
+
+:ReadDefault
+    a acl:Authorization;
+    acl:default target:;
+    acl:agentClass foaf:Agent;
+    acl:mode acl:Read.
+\end{lstlisting}
+
+\paragraph{Preventing Resources to be Discovered}\mbox{}\\
+
 
 
 \paragraph{Modification of Resource from Data Pod}\mbox{}\\
