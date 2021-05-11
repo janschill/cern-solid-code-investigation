@@ -96,6 +96,7 @@ ETag
 evalex
 evertramos
 ewacronym
+ewglossaryentry
 extwidth
 facebook
 fbddc
@@ -131,6 +132,7 @@ HEPi
 hepix
 Hetzner
 Himmel
+hline
 homepage
 hostname
 hotos
@@ -225,6 +227,7 @@ Michiel
 michielbdejong
 michieldejong
 microservice
+Microsoft
 middleware
 MITM
 mkdir
@@ -295,6 +298,7 @@ procname
 psql
 py
 pyenv
+pyoidc
 QAs
 Qg
 rdf
@@ -422,6 +426,7 @@ virtualenv
 visualstudio
 VLDB
 vm
+vspace
 vue
 Vyr
 webapp
