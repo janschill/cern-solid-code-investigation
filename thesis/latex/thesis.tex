@@ -6,9 +6,9 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{csquotes}
 \usepackage[acronym]{glossaries}
-\makeglossaries
 \include{thesis/latex/glossary}
 \include{thesis/latex/terms}
+\makeglossaries
 
 \usepackage[sorting=none]{biblatex}
 \addbibresource{bibliography.bib}
@@ -38,33 +38,34 @@
 \titleformat{\subsubparagraph}[runin]{\normalfont\normalsize\itshape}{\thesubsubparagraph}{1em}{}
 \titlespacing*{\subsubparagraph} {}{3.25ex plus 1ex minus .2ex}{1em}
 
-\usepackage{thesis/latex/minted}
+% Minted code highlighting
+% \usepackage{thesis/latex/minted}
 
 % colors for code snippets
-% ss\definecolor{commentscolor}{rgb}{0.5,0.5,0.5}
-% \definecolor{greenstrings}{rgb}{0,0.5,0}
-% \definecolor{backgroundgray}{rgb}{0.95,0.95,0.95}
+\definecolor{commentscolor}{rgb}{0.5,0.5,0.5}
+\definecolor{greenstrings}{rgb}{0,0.5,0}
+\definecolor{backgroundgray}{rgb}{0.95,0.95,0.95}
 
-% \lstset{escapeinside={(*@}{@*)}}
-% \lstdefinelanguage{Other}%
-% { sensitive=true,
-%   numbers=left,
-%   backgroundcolor = \color{backgroundgray},
-%   stepnumber=1,
-%   basicstyle=\ttfamily,
-%   breaklines=true,
-%   xleftmargin=\parindent,
-%   aboveskip=\bigskipamount,
-%   tabsize=2,
-%   morecomment=[l][\color{commentscolor}]{///},
-%   morecomment=[l][\color{commentscolor}]{//},
-%   morecomment=[s][\color{commentscolor}]{{(*}{*)}},
-%   morestring=[b]",
-%   showstringspaces=false,
-%   literate={`}{\`}1,
-%   stringstyle=\color{greenstrings},
-%   basicstyle=\small,
-% }
+\lstset{escapeinside={(*@}{@*)}}
+\lstdefinelanguage{Other}%
+{ sensitive=true,
+  numbers=left,
+  backgroundcolor = \color{backgroundgray},
+  stepnumber=1,
+  basicstyle=\ttfamily,
+  breaklines=true,
+  xleftmargin=\parindent,
+  aboveskip=\bigskipamount,
+  tabsize=2,
+  morecomment=[l][\color{commentscolor}]{///},
+  morecomment=[l][\color{commentscolor}]{//},
+  morecomment=[s][\color{commentscolor}]{{(*}{*)}},
+  morestring=[b]",
+  showstringspaces=false,
+  literate={`}{\`}1,
+  stringstyle=\color{greenstrings},
+  basicstyle=\small,
+}
 
 \setcounter{tocdepth}{3}
 \begin{document}
@@ -130,7 +131,7 @@
 \input{thesis/latex/sections/02-background}
 \input{thesis/latex/sections/03-investigation}
 \input{thesis/latex/sections/04-conclusion}
-
+\newpage
 \printglossary[type=\acronymtype]
 \newpage
 \printglossary

@@ -164,15 +164,57 @@ Benefits from developing the module for the client:
 
 \paragraph{Protection on Resource}\mbox{}\\
 
-Every container and resource in Solid is protected with \glspl{acl}, which determine if specific agents, groups, or the world can have read, write, append, or control access. These control access modes are defined in \gls{acl} files. The Solid \gls{acl} inheritance algorithm looks for an \gls{acl} file attached to a specific resource, if it cannot find one it goes recursively up the file hierarchy and looks for \glspl{acl} on the containers.
-Indico allows two general types of protection \textit{private} and \textit{public} on its events. Public means open to everyone, no Indico account or any type of authorization is needed. Whereas private can be as fine-grained as only to specific agents or groups, such as agents from an educational roaming services network.
+Every container and resource in Solid is protected with \gls{wac}, which determines if specific agents, groups, or the world can have read, write, append, or control access. These control access modes are defined in \gls{acl} files. The Solid \gls{acl} inheritance algorithm looks for an \gls{acl} file attached to a specific resource, if it cannot find one it goes recursively up the file hierarchy and looks for \glspl{acl} on the containers.
+Indico allows two general types of protection \textit{private} and \textit{public} on its events. Public means open to everyone, no Indico account or any type of authorization is needed to see the event. Whereas private can be as fine-grained as only to specific agents or groups. A comment module is only valuable if the comments can be read by anyone and be written by authorized users.
 
-In order for visitors of a private or public event in Indico to be able to see the comment, its \gls{acl} needs to allow the public to read the resource. This can be achieved by using the \textit{public} container, which comes with public-read by default on the \gls{nss} or by creating a new container and setting the \gls{acl} with 
+In order for visitors of a private or public event in Indico to be able to see the comment, the comment’s \gls{acl} needs to allow the public to read the resource. This can be achieved by using the \textit{public} container, which comes with public-read by default on the \gls{nss} or by creating a new container and setting the \gls{acl} with:
 
-\usemintedstyle{borland}
-\begin{minted}{python}
+\begin{lstlisting}[language=Other,columns=fullflexible, caption={TODO: Label caption}, label={lst:1}]
+@prefix acl: <http://www.w3.org/ns/auth/acl#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
 
-\end{minted}
+# ... Definition for owner
+
+<#example-container-name>
+    a acl:Authorization;
+    acl:agentClass foaf:Agent;
+    acl:accessTo <./>;
+    acl:mode acl:Read.
+\end{lstlisting}
+
+Every resource in this container is by definition readable by the public -- if not otherwise stated in a more detailed resource \gls{acl}. The above definition even allows the reading of the container’s content, meaning a request to the container would yield a list of resources in the container. This becomes unpleasant if the Indico event is private and the comments for this Indico event should not be read by the world, which is entirely possible, when browsing to the location of a specific data pod and then looking into the public container.
+
+To prevent a random agent to see the contents of a container, the container can be set to private, with the container’s resources to still be public. This would allow everyone provided they have the \gls{url} to browse to the public resource and read it, but not look into the resource’s parent container. To achieve this behavior with \gls{acl}, the container needs to just define its owner and no specific rules for the public, as \gls{wac} comes with a default private access control. Each child resource needs to define an \gls{acl} now, allowing public read.
+The container’s \gls{acl} would look like the following with just a owner defined:
+
+\begin{lstlisting}[language=Other,columns=fullflexible, caption={TODO: Label caption}, label={lst:2}]
+@prefix acl: <http://www.w3.org/ns/auth/acl#>.
+
+<#owner>
+    a acl:Authorization;
+    acl:agent <https://janschill.net/profile/card#me>;
+    acl:accessTo <./>;
+    acl:default <./>;
+    acl:mode acl:Read, acl:Write, acl:Control.
+\end{lstlisting}
+
+A child resource would allow public read with:
+
+\begin{lstlisting}[language=Other,columns=fullflexible, caption={TODO: Label caption}, label={lst:3}]
+@prefix : <#>.
+@prefix acl: <http://www.w3.org/ns/auth/acl#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+
+# ... Definition for owner
+
+:Read
+    a acl:Authorization;
+    acl:accessTo <test.txt>;
+    acl:agentClass foaf:Agent;
+    acl:mode n0:Read.
+\end{lstlisting}
+
+
 
 \paragraph{Modification of Resource from Data Pod}\mbox{}\\
 
