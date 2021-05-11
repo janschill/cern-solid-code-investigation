@@ -97,6 +97,7 @@ evalex
 evertramos
 ewacronym
 ewglossaryentry
+extit
 extwidth
 facebook
 fbddc
@@ -109,6 +110,7 @@ foaf
 freecodecamp
 frontend
 fullchain
+fullflexible
 GAf
 gcc
 gdac
@@ -210,6 +212,7 @@ localhost
 logfile
 logrotate
 lov
+lstlisting
 LXh
 lxtunnel
 macos
@@ -235,6 +238,7 @@ Moennich
 mov
 mozilla
 Msc
+mvp
 namespace
 namespaced
 Naymat
