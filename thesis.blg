@@ -1,9 +1,0 @@
-[0] Config.pm:311> INFO - This is Biber 2.16
-[0] Config.pm:314> INFO - Logfile is 'thesis.blg'
-[142] biber:340> INFO - === Wed May 12, 2021, 07:19:02
-[162] Biber.pm:415> INFO - Reading 'thesis.bcf'
-[268] Biber.pm:952> INFO - Found 6 citekeys in bib section 0
-[287] Biber.pm:4340> INFO - Processing section 0
-[303] Biber.pm:4531> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[411] Utils.pm:411> ERROR - Cannot find 'bibliography.bib'!
-[411] Biber.pm:132> INFO - ERRORS: 1
