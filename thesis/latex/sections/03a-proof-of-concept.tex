@@ -162,7 +162,7 @@ Benefits from developing the module for the client:
     \label{table:2}
 \end{table}
 
-\paragraph{Single versus Multiple Resource(s) for Comments}
+\paragraph{Single versus Multiple Resource(s) for Comments}\mbox{}\\
 
 Storing the comments in \gls{rdf} can be done in two ways: storing it in one file as a graph with a list of comments, or creating a file for every comment.
 
@@ -184,7 +184,7 @@ Storing the comments in \gls{rdf} can be done in two ways: storing it in one fil
     \label{fig:test}
 \end{figure}
 
-When fetching the container with all the comment resources the request returns a Turtle file describing the container, but not the actual content of the contained resources. The misconception of receiving the content as well thought to be a problem, as it was thought an initial request to the container reading its child resources had to be made and then for each resource a request had to be built to retrieve the resource. This overhead was later disproved as the application where this module is embedded maintains the list of resources to be fetched. Therefore, no manual building of requests to those resources had to be done. The next paragraph also lays out how this design would not work with the protection of the resources.
+When fetching the container with all the comment resources the request returns a Turtle file describing the container, but not the actual content of the contained resources. The misconception of receiving the content as well, was thought to be a problem, as it was assumed an initial request to the container reading its child resources had to be made and then for each resource a request needed to be built to retrieve the resource. This overhead was later disproved as the application where this module is embedded maintains the list of resources to be fetched. Therefore, no manual building of requests to those resources had to be done. The next paragraph also lays out how this design would not work with the protection of the resources.
 
 \paragraph{Protection on Resource}\label{protection-on-resource}\mbox{}\\
 
@@ -254,9 +254,9 @@ Another approach and the one implemented after iterating through the previous on
 
 \paragraph{Preventing Resources From Unwanted Discovery}\mbox{}\\
 
+With the resources having proper access modes but being publicly readable a simple naming convention of taking the \gls{iso} 8601 string and using it as a filename for the resources created on the data pod does not suffice -- even though it is a good strategy when looking for a reliable naming convention to prevent duplication. Considering performance improvements such as pagination for future iterations of the module, which would require some sort of iterative indication, a combination of randomness, but also a order indicator it was settled for using \gls{uuid} plus the \gls{iso} 8601 string to form a filename.
 
-
-With the resources having proper access modes the 
+Other ideas included hashing a random string with the timestamp to generate non-guessable filenames. The filename would need to use the same hash function to decipher the filename to figure out when the comment was generated. \gls{uuid} is a reliable and easy to use system to generate \textit{truly} globally unique strings. 
 
 \paragraph{Modification of Resource from Data Pod}\mbox{}\\
 

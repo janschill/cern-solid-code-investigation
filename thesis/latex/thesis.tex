@@ -21,6 +21,14 @@
 \usepackage{color}
 \usepackage[legalpaper, margin=1in]{geometry}
 
+% use for newline after paragraph
+\newcommand{\emptybox}[2][\textwidth]{%
+  \begingroup
+  \setlength{\fboxsep}{-\fboxrule}%
+  \noindent\framebox[#1]{\rule{0pt}{#2}}%
+  \endgroup
+}
+
 % set left,right padding for table
 \setlength{\tabcolsep}{10pt}
 % set top,bottom padding for table
