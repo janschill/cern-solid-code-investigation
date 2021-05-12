@@ -1,4 +1,0 @@
-@prefix : <#>.
-@prefix VCARD: <http://www.w3.org/2006/vcard/ns#>.
-
-:this VCARD:fn "My comment 3".
