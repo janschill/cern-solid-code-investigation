@@ -23,5 +23,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          exclude_assets: '.github,agreements,examples,meetings,notes,presentations,prototype,report,thesis/,.gitignore,.gitmodules,README.md'
+          exclude_assets: '.github,agreements,examples,meetings,notes,presentations,prototype,report,thesis/,.gitignore,.gitmodules,README.md,thesis.acn,thesis.aux,thesis.bbl,thesis.bcf,thesis.blg,thesis.fdb_latexmk,thesis.fls,thesis.glo,thesis.ist,thesis.log,thesis.out,thesis.run.xml,thesis.toc'
           publish_dir: ./
