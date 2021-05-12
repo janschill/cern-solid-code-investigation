@@ -1,0 +1,13 @@
+@prefix : <#>.
+@prefix comment: <./>.
+@prefix schem: <http://purl.org/vocab/lifecycle/schema#>.
+@prefix ldp: <http://www.w3.org/ns/ldp#>.
+@prefix rd: <http://www.w3.org/2000/01/rdf-schema#>.
+
+comment:comment1
+    a schem:Comment, ldp:Resource;
+    rd:comment "The description of this task.".
+
+comment:comment2
+    a schem:Comment, ldp:Resource;
+    rd:comment "The description of this task.".
