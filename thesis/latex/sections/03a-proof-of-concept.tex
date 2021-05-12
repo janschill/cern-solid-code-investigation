@@ -166,6 +166,20 @@ Benefits from developing the module for the client:
 
 Storing the comments in \gls{rdf} can be done in two ways: storing it in one file as a graph with a list of comments, or creating a file for every comment.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{prototype/graphs/poc}
+    \caption{TODO: caption.}
+    \label{fig:poc-infrastructure-microservice}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{prototype/graphs/poc-infrastructure-microservice.jpeg}
+    \caption{Communication flow for a module developed as a microservice.}
+    \label{fig:poc-infrastructure-microservice}
+\end{figure}
+
 \paragraph{Protection on Resource}\mbox{}\\
 
 Every container and resource in Solid is protected with \gls{wac}, which determines if specific agents, groups, or the world can have read, write, append, or control access. These control access modes are defined in \gls{acl} files. The Solid \gls{acl} inheritance algorithm looks for an \gls{acl} file attached to a specific resource, if it cannot find one it goes recursively up the file hierarchy and looks for \glspl{acl} on the containers.
