@@ -266,6 +266,8 @@ Enabling user input in form of comment module without application authentication
 
 \paragraph{Giving Application Full Control of Data Pod}\mbox{}\\
 
+To create or change programmatically \glspl{acl} requires \textit{control} access to the container. By default \gls{nss} asks for the permissions when authenticating for the first time in the \gls{solidoidc} flow between the \textit{solid-comment} module and Solid \gls{idp}. The permissions granted to the application are on the root container of the data pod. Meaning, giving an application control access allows the application to read, write, change \glspl{acl} on the entire data pod. This is obviously troubling, as a simple application as a commenting module need to have control access to set the needed \glspl{acl} for the containers and resources it creates.
+
 \subsubsection{Integration with Indico}
 
 \paragraph{Storing Reference to Comments in Indico}
