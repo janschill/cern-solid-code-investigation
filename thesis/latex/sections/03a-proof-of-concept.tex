@@ -262,6 +262,8 @@ Other ideas included hashing a random string with the timestamp to generate non-
 
 \paragraph{Mitigation of Spam}\mbox{}\\
 
+Enabling user input in form of comment module without application authentication is a gateway to spam. Even though authentication with a Solid \gls{idp} is necessary, it does not hinder a malicious actor to create a multitude of Solid accounts and spam into the application. In the first iteration of the module only Solid authentication was integrated into the module and would therefore allow anyone with a Solid account to post comments and thus also spam the Indico event theoretically. In a second iteration of the module another authentication layer was added to mitigate spam from outside of Indico. For \gls{cern}’s use-case an authenticated Indico session was enough. This adds an extra step to the comment process and it is ensured only registered Indico users can comment.
+
 \paragraph{Giving Application Full Control of Data Pod}\mbox{}\\
 
 \subsubsection{Integration with Indico}
