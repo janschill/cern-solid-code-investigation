@@ -299,7 +299,12 @@ There are two types of users in the system. The one interested in the applicatio
 
 \paragraph{Context Diagram}
 
-
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{prototype/graphs/poc-comment-context_diagram.png}
+    \caption{Context diagram showing users and external services of system.}
+    \label{fig:poc-comment-context_diagram}
+\end{figure}
 
 \paragraph{Stakeholders}
 
@@ -308,7 +313,7 @@ A few stakeholders are involved which
 \paragraph{Metrics}
 
 \begin{enumerate}
-    \item Security (Availability)
+    \item Security
     \item Performance
     \item Usability
 \end{enumerate}
@@ -319,6 +324,14 @@ A few stakeholders are involved which
 
 \paragraph{Components}
 
+\paragraph{Scenarios}
+
+\begin{enumerate}
+    \item A user who has commented deletes their comment in their data pod
+    \item A user who has commented deletes their data pod
+    \item A user uses a script to generate a large number of comments
+    \item A user creates a comment with a \gls{xss} attack
+\end{enumerate}
 
 
 
