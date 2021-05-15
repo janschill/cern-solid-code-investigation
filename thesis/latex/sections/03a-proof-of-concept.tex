@@ -20,7 +20,7 @@ The first \gls{poc} is supposed to enrich the Indico system with some sort of So
 For the implementation of this module several design decisions had to be made. From the fundamental choice of the module running on the client device or be computed on the server and then propagated to the client afterwards or even with a microservice proxying all traffic through it to enable Solid without changing Indico.
 Other design challenges were around how to protect the resources holding the comment information. These resources reside on the external data pod and need to be fetched from the application and read by other agents. Can \glspl{acl} be configured to allow the specific use-case?
 
-\paragraph{Client- versus Server-Side versus Microservice}\mbox{}\\
+\paragraph{Client- Versus Server-Side Versus Microservice}\mbox{}\\
 
 When an agent browses to a running instance of Indico most of the functionality is being prepared on the server hosting Indico. It retrieves the specific request, builds the \gls{html}, and sends it to the user. For Indico most of the functionality is built with Python and the web framework Flask. Sometimes functionality needs to be closer to the user, an example is dynamic rendering of \gls{dom} elements. This is useful when new data needs to be shown right away without getting the blank white screen on a page reload.
 Indico does send JavaScript, which is used for client-side features, but it focuses on keeping most its features on the server.
@@ -139,7 +139,6 @@ Benefits from developing the module for the client:
     \item Documentation on developing Solid apps in JavaScript exist
 \end{itemize}
 
-
 \begin{table}[h!]
     \centering
     \begin{tabular}{| l | p{11cm} |} 
@@ -162,7 +161,7 @@ Benefits from developing the module for the client:
     \label{table:2}
 \end{table}
 
-\paragraph{Single versus Multiple Resource(s) for Comments}\mbox{}\\
+\paragraph{Single Versus Multiple Resource(s) for Comments}\mbox{}\\
 
 Storing the comments in \gls{rdf} can be done in two ways: storing it in one file as a graph with a list of comments, or creating a file for every comment.
 
@@ -258,7 +257,7 @@ With the resources having proper access modes but being publicly readable a simp
 
 Other ideas included hashing a random string with the timestamp to generate non-guessable filenames. The filename would need to use the same hash function to decipher the filename to figure out when the comment was generated. \gls{uuid} is a reliable and easy to use system to generate \textit{truly} globally unique strings. 
 
-\paragraph{Modification of Resource from Data Pod}\mbox{}\\
+\paragraph{Modification of Resource From Data Pod}\mbox{}\\
 
 \paragraph{Mitigation of Spam}\mbox{}\\
 
@@ -276,7 +275,7 @@ The need for integration with Indico is twofold: serving the module to the clien
 
 \paragraph{Storing Reference to Comments in Indico}
 
-\paragraph{Enforce Authenticated Session for Posting Comments}
+\paragraph{Enforce Authenticated Session For Posting Comments}
 
 \subsubsection{Evaluation}
 
