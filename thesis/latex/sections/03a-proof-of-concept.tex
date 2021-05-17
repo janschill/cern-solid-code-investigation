@@ -310,7 +310,7 @@ There are two types of users in the system. The one interested in the applicatio
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{prototype/graphs/poc-comment-sequence_diagram.png}
+    \includegraphics[width=\textwidth]{prototype/graphs/poc-comment-sequence_diagram.png}
     \caption{Sequence diagram showing the sequential process through posting a comment.}
     \label{fig:poc-comment-sequence_diagram}
 \end{figure}
@@ -345,7 +345,10 @@ A few stakeholders are involved which
 
 \subsubsection{Analysis}
 
+* EventProxy is not scalable, when comments are sent at the same time could be overwritten
+* log IP and blog on spam
 * extra layer api to cache comments, performance and security against IP logging
+* one pod sends different content to users depending on their location
 
 \subsection{POC 2: Auto-Complete for Conference Registration in Indico}
 
