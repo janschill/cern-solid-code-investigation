@@ -54,13 +54,19 @@ A sequence diagram brings a suitable overview for any software architecture, but
 
 This section covers the various stakeholders in relation to the system. This both includes active users, but also various external and internal stakeholders who are impacted by the system or have an important say in the development process.
 
-The \textbf{product owner} is responsible for the product, in this case Indico. Usually, they are the ones planning repeated fixed time-boxes in which new features are developed or the existing software is maintained. They are constantly evaluating the state of the software and try to satisfy other stakeholders such as investors or the system users themselves.
+The \textbf{product owner} is responsible for the product, in this case Indico. Usually, they are the ones planning repeated fixed time-boxes in which new features are developed or the existing software is maintained. They are constantly evaluating the state of the software and try to satisfy other stakeholders such as investors or the system users themselves. The main concerns of the product owner are to stay innovative while no compromising the quality of the existing software.
 
-
-
-The \textbf{internal developer} is responsible for the application (Indico) and all its quality attributes. They develop new features
+The \textbf{internal developer} is responsible for executing on the decision made by, or together with, the product owner. The developer is also maintaining the software and is the one working with it on a daily basis and can therefore, make assumptions about the evolution of the software. Their concerns lie in maintainability of the software through its evolutionary cycle, as well as onboarding new developers.
 
 \paragraph{Drivers}\mbox{}\\
+
+Introducing a module 
+
+\begin{enumerate}
+    \item Security
+    \item Performance
+    \item Usability
+\end{enumerate}
 
 \subsubsection{Screen Design}\mbox{}\\
 
@@ -340,12 +346,27 @@ This section focuses on evaluating the module. This shall be done by iterating t
 
 \paragraph{Metrics}
 
+Scenario-based metrics were chosen to measure the quality attributes. The different scenarios are predicted to be the most common actions on the system and thus will stress the system and its architecture the most based on the quality attributes.
+
+The iterate over the previously picked quality attributes:
+\vspace{-12mm}
 \begin{enumerate}
     \item Security
     \item Performance
     \item Usability
 \end{enumerate}
+\vspace{-12mm}
 
+Possible scenarios are centered around data not being available or altered or even malicious behaviour by injecting code to misuse the system:
+\vspace{-12mm}
+\begin{enumerate}
+    \item A user who has commented deletes their comment in their data pod
+    \item A user who has commented deletes their data pod
+    \item An adversary uses a script to generate a large number of comments
+    \item An adversary creates a comment with a \gls{xss} attack
+    \item An adversary serves different resources based on client \gls{ip} address
+\end{enumerate}
+\vspace{-12mm}
 \paragraph{Levels}\mbox{}\\
 
 
@@ -354,12 +375,6 @@ This section focuses on evaluating the module. This shall be done by iterating t
 
 \paragraph{Scenarios}\mbox{}\\
 
-\begin{enumerate}
-    \item A user who has commented deletes their comment in their data pod
-    \item A user who has commented deletes their data pod
-    \item A user uses a script to generate a large number of comments
-    \item A user creates a comment with a \gls{xss} attack
-\end{enumerate}
 
 
 \subsubsection{Analysis}
