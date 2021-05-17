@@ -3,7 +3,15 @@
 \usepackage{listings}
 \usepackage{graphicx}
 \usepackage[inline]{enumitem}
+% hide link border
 \usepackage[hidelinks]{hyperref}
+% reset section numbering in chapters
+\usepackage{bookmark}
+\bookmarksetup{
+  numbered,
+  open
+}
+
 \usepackage{csquotes}
 % Allow sub-figures
 \usepackage{subcaption}
@@ -79,61 +87,11 @@
 }
 
 \setcounter{tocdepth}{3}
+% numbering on subsubsection
+\setcounter{secnumdepth}{3}
 \begin{document}
 
-\begin{titlepage}
-   \begin{center}
-       \vspace*{1cm}
-       \Huge
-       \textbf{CERN-Solid Code Investigation}\\
-       \LARGE
-       \vspace{0.5cm}
-        Proof of Concept and Prospects\\
-        
-       \vspace{1cm}
-       
-       \normalsize
-        by\\
-        
-       \vspace{1cm}
-       
-       \Large
-       \textbf{Jan Schill}\\
-        schi@itu.dk
-        
-       \vfill
-       
-       \normalsize
-        Supervisors:\\
-        
-       \vspace{0.3cm}
-       
-       \textbf{Philippe Bonnet} (ITU)\\
-        phbo@itu.dk
-        
-       \vspace{0.3cm}
-       
-       \textbf{Maria Dimou} (CERN)\\
-        maria.dimou@cern.ch
-        
-       
-       \vspace{1cm}
-       
-        A thesis presented for the degree of\\
-        Master of Science
-        
-       \vspace{1.5cm}
-       
-       \includegraphics[width=0.4\textwidth]{thesis/latex/assets/university.jpg}
-       
-       Computer Science\\
-       IT University of Copenhagen\\
-       Denmark\\
-       01.06.2021
-            
-   \end{center}
-\end{titlepage}
-
+\input{thesis/latex/title-page}
 
 \tableofcontents
 \newpage
