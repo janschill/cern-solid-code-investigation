@@ -15,10 +15,14 @@
 \usepackage{csquotes}
 % Allow sub-figures
 \usepackage{subcaption}
+
 \usepackage[acronym]{glossaries}
-\include{thesis/latex/glossary}
-\include{thesis/latex/terms}
 \makeglossaries
+\include{glossary}
+% \usepackage[acronym]{glossaries}
+% \include{thesis/latex/glossary}
+% \include{thesis/latex/terms}
+% \makeglossaries
 
 \usepackage[sorting=none]{biblatex}
 \addbibresource{thesis/latex/bibliography.bib}
@@ -90,12 +94,9 @@
 % numbering on subsubsection
 \setcounter{secnumdepth}{3}
 \begin{document}
-
 \input{thesis/latex/title-page}
-
 \tableofcontents
 \newpage
-
 \input{thesis/latex/sections/01-introduction}
 \input{thesis/latex/sections/02-background}
 \input{thesis/latex/sections/03-investigation}

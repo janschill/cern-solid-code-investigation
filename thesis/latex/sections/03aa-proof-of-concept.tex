@@ -12,21 +12,25 @@ The system aims at enabling commenting in web application with decentralized sto
 
 \paragraph{Features}\mbox{}\\
 
-The key features -- but not limited to -- for the module to succeed are the following:
+The core functionality of the module consists of the following three features: 
 
+\vspace{-12mm}
 \begin{enumerate}
     \item A user with a Solid account can authenticate with their Solid \gls{idp}
     \item A user can compose a text which is stored on their data pod
     \item A user can see other users’ comments
 \end{enumerate}
+\vspace{-10mm}
 
-\paragraph{User of the System}\mbox{}\\
+These features allow the development of a module giving users the ability to authenticate themselves using their WebID, storing the created data in form of comments in their own data pod, and also see decentralized stored data from other users.
 
-There are two types of users in the system. The first group of users are the active authors of comments or observers of such. These will interact with the module by logging into their data pod and comment. The other subset of users are the administrator of the application (Indico). This type of user is interested in keeping the tone of comments to their desire and not allow any misuse.
+\paragraph{Type of Users}\mbox{}\\
+
+There are two types of users in the system. The first group of users are the active authors of comments or observers of such. These will interact with the module by logging in to their data pod and compose comments. The other subset of users are the administrators of the application (Indico). This type of user is interested in keeping the tone of comments to the community guidelines and not allow any misuse.
 
 \paragraph{Context Diagram}\mbox{}\\
 
-Other users of the system are highlighted in \ref{fig:poc-comment-context_diagram}, which includes developers of either the system/module itself or the internal developer maintaining the application.
+Other types of involved parties are the ones maintaining or developing the system and application. These are shown in the context diagram \ref{fig:poc-comment-context_diagram}.
 
 \begin{figure}[H]
     \centering
@@ -37,7 +41,7 @@ Other users of the system are highlighted in \ref{fig:poc-comment-context_diagra
 
 \paragraph{Sequence Diagram}\mbox{}\\
 
-A sequence diagram is suitable overview for any software architecture, but especially useful for decentralized or systems containing several separate services. It gives a clear understanding of each service’s tasks and their relationship when passing messages around in the overall system.
+A sequence diagram brings a suitable overview for any software architecture, but especially useful for decentralized systems or those containing several separate services. It gives a clear understanding of each service’s tasks and their relationship when passing messages around in the overall system.
 
 \begin{figure}[H]
     \centering
@@ -49,6 +53,15 @@ A sequence diagram is suitable overview for any software architecture, but espec
 \paragraph{Stakeholders}\mbox{}\\
 
 This section covers the various stakeholders in relation to the system. This both includes active users, but also various external and internal stakeholders who are impacted by the system or have an important say in the development process.
+
+The \textbf{product owner} is responsible for the product, in this case Indico. Usually, they are the ones planning repeated fixed time-boxes in which new features are developed or the existing software is maintained. They are constantly evaluating the state of the software and try to satisfy other stakeholders such as investors or the system users themselves.
+
+
+product cycles where the balance between new feature development and maintainability 
+
+new features are named and decided on
+
+The \textbf{internal developer} is responsible for the application (Indico) and all its quality attributes. They develop new features
 
 \paragraph{Drivers}\mbox{}\\
 
