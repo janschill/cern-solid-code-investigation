@@ -18,7 +18,8 @@
 - User decides who can see it?
 
 - Does not compromise the existing level of
-  - what is the existing level of x?
+- Does not introduce new vulnerabilities
+  - *what is the existing level of x?*
   - security
   - performance
   - usability

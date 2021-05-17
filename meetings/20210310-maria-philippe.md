@@ -12,4 +12,3 @@
     * Pod unavailable
     * Security (quantitive): attack surface, defense (qualitative)
   * CERN code review (security)
-
