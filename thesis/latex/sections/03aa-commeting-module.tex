@@ -79,7 +79,7 @@ For various meetings and presentations, a visual representation of the to-be-dev
     \label{fig:indico-comments-screen_design}
 \end{figure}
 
-\subsubsection{Design}\mbox{}\\
+\subsubsection{Design}\label{subsubsection:design}\mbox{}\\
 
 For the implementation of this module, several design decisions had to be made. From the fundamental choice of the module running on the client device or be computed on the server and then propagated to the client afterward or even with a microservice proxying all traffic to enable Solid without changing Indico.
 Other design challenges were around how to protect the resources holding the comment information. These resources reside on the external data pod and need to be fetched from the application and read by other agents. Can \glspl{acl} be configured to allow the specific use-case and other questions to come up and had to be considered?
@@ -222,7 +222,7 @@ Benefits from developing the module for the client:
     \end{tabular}
     \vspace{0.75cm}
     \caption{Existing solutions to problems for a server approach.}
-    \label{table:2}
+    \label{table:4}
 \end{table}
 \vspace{0.5cm}
 \paragraph{Single Versus Multiple Resource(s) for Comments}\mbox{}\\

@@ -27,9 +27,42 @@ A prior introduction to Solid was given as part of a previous \textit{research p
 
 \subsection{Authentication With Solid}
 
-In the Solid ecosystem agents identify themselves with their WebID and proof their ownership through the \gls{solidoidc}, which is a flavor of the \gls{oidc}. For further explanation and flow diagrams throught the authentication process see either the work done in the previous report \cite{cern-solid-investigation-spec} or the \gls{solidoidc} specification itself \cite{solid-ecosystem-oidc}
+In the Solid ecosystem agents identify themselves with their WebID and proof their ownership through the \gls{solidoidc} protocol, which is a flavor of \gls{oidc}. For further explanation and flow diagrams through the authentication process see either the work done in the previous report \cite{cern-solid-investigation-spec} or the \gls{solidoidc} specification itself \cite{solid-ecosystem-oidc}.
+
+To help with the complex authentication flow of \gls{solidoidc} a few libraries have been developed by different actors. Two libraries relevant for this project exist, their relevancy is discussed in chapter \ref{chapter:investigation} under the section \ref{subsubsection:design}.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{| l | l | l |} 
+     \hline
+     Name & Solid Auth Fetcher & solid-client-authn \\
+     \hline
+     Repository URL & \url{github.com/solid/solid-auth-fetcher} & \url{github.com/inrupt/solid-client-authn-js} \\
+     \hline
+     Language & \gls{ts} & \gls{ts} \\
+     \hline
+     Maintainer & Solid Community & Inrupt \\
+     \hline
+     Last updated & 2021/03/05 & 2021/05/12 \\
+     \hline
+    \end{tabular}
+    \vspace{0.75cm}
+    \caption{Two Solid authentication libraries.}
+    \label{table:0}
+\end{table}
+
+Solid Auth Fetcher is a fork of the \texttt{solid-client-authn} developed by Inrupt, but has not seen much development in recent time. With the quickly evolving Solid ecosystem it is important to have working and up-to-date libraries to be able to build applications in this ecosystem. Both libraries do not differ in their core functionality and both support authenticating with the latest Solid servers and thus the choice is not as important. Still, the frequency of commits in Inrupt's repository seem to indicate a more active development and thus a more reliable source when problems arise. This way one does not rely on the support from open-source developers, which is per se not a bad thing.
+
+For this simple reason all programming where Solid authentication was needed was enabled through Inrupt's \texttt{solid-client-authn}.
 
 \subsection{Reading and Writing Linked Data}
+
+Data in Solid is stored as Linked Data \cite{Malhotra:15:LDP}. \gls{rdf} is a framework for representing information in form of Linked Data in the Web \cite{Cyganiak:14:RCA}. The default file format so far implemented by the existing Solid servers is \textit{Turtle} \cite{Prud'hommeaux:14:RT}.
+
+The graph-based data model from using \gls{rdf} also requires additional computing as it is not natively supported with helper functions in \gls{js}, such as \gls{json}. The benefit of using \gls{json} in \gls{js} is that a \gls{json} object is automatically parsed as an object and can be operated on by using the dot notation to access attributes of the \gls{json} data structure. This is not the case for a into the program loaded Turtle resource.
+Fortunately, existing libraries come to rescue allowing such operations on the \gls{rdf}-based data type.
+
+
 
 \subsection{Authorization Through WAC}
 
