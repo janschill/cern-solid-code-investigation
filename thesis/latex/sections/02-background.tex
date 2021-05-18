@@ -57,12 +57,39 @@ For this simple reason all programming where Solid authentication was needed was
 
 \subsection{Reading and Writing Linked Data}
 
-Data in Solid is stored as Linked Data \cite{Malhotra:15:LDP}. \gls{rdf} is a framework for representing information in form of Linked Data in the Web \cite{Cyganiak:14:RCA}. The default file format so far implemented by the existing Solid servers is \textit{Turtle} \cite{Prud'hommeaux:14:RT}.
+Data in Solid is stored as Linked Data \cite{Malhotra:15:LDP}. \gls{rdf} is a framework for representing information in form of Linked Data in the Web \cite{Cyganiak:14:RCA}. The default file format so far implemented by the existing Solid servers is \textit{Turtle} \cite{Prud:hommeaux:14:RT}.
 
 The graph-based data model from using \gls{rdf} also requires additional computing as it is not natively supported with helper functions in \gls{js}, such as \gls{json}. The benefit of using \gls{json} in \gls{js} is that a \gls{json} object is automatically parsed as an object and can be operated on by using the dot notation to access attributes of the \gls{json} data structure. This is not the case for a into the program loaded Turtle resource.
-Fortunately, existing libraries come to rescue allowing such operations on the \gls{rdf}-based data type.
+
+Fortunately, existing libraries come to rescue allowing such operations on the \gls{rdf}-based data type. Again Inrupt and the Solid Community offer solutions. Again, Inrupt's solution was chosen for this development as it acts as convenient wrapper to the bare bone Linked Data \gls{api} implemented in \texttt{rdflib.js} \cite{rdflib-js}. Even though working with \gls{rdf} can be easily done with just using \texttt{rdflib.js}, Inrupt's libraries tie nicely together and allow for instance an seamless passing of an authenticated session to its client library to enable authenticated requests to protected resources.
+
+As mentioned before and looked at in detail in \cite{cern-solid-investigation-spec} the Turtle format is a graph data structure build up with triplets. A triplet statement in its simplest form a sequence of (subject, predicate, object) terms \cite{Prud:hommeaux:14:RT}. 
+
+Inrupt decided to call this construct a \texttt{Thing}, which is a data entity associated with a set of data or properties of this \texttt{Thing} \cite{thing}. A \texttt{SolidDataset} is a set of things \cite{inrupt-dataset}.
+
+The following code listing shows how the helper methods can be used to extract data from a Turtle file loaded by a request to the WebID profile document \gls{uri}.
+
+\begin{lstlisting}[language=Other,columns=fullflexible, caption={TODO: Label caption}, label={lst:2}]
+// 1
+const myDataset = await getSolidDataset(
+  "https://janschill.net/profile/card"
+);
+// 2
+const myProfile = getThing(
+  myDataset,
+  "https://janschill.net/profile/card#me"
+);
+// 3
+const fn = getStringNoLocale(myProfile, VCARD.fn);
 
 
+\end{lstlisting}
+
+\begin{enumerate}
+    \item Notice here the WebID profile document \gls{uri} is being loaded, which refers to the document describing the agent behind the WebID \gls{uri}
+    \item Now the actual triplet statement containing information behind this specific agent is mapped to the \texttt{myProfile} variable
+    \item Every subject and predicate is a \gls{uri} as
+\end{enumerate}
 
 \subsection{Authorization Through WAC}
 
