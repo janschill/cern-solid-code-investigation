@@ -82,7 +82,7 @@ For various meetings and presentations a visual representation of the to be deve
 \subsubsection{Design}\mbox{}\\
 
 For the implementation of this module several design decisions had to be made. From the fundamental choice of the module running on the client device or be computed on the server and then propagated to the client afterwards or even with a microservice proxying all traffic to enable Solid without changing Indico.
-Other design challenges were around how to protect the resources holding the comment information. These resources reside on the external data pod and need to be fetched from the application and read by other agents. Can \glspl{acl} be configured to allow the specific use-case and other questions came up and had to be considered
+Other design challenges were around how to protect the resources holding the comment information. These resources reside on the external data pod and need to be fetched from the application and read by other agents. Can \glspl{acl} be configured to allow the specific use-case and other questions came up and had to be considered.
 
 \paragraph{Client- Versus Server-Side Versus Microservice}\mbox{}\\
 
@@ -399,3 +399,5 @@ Possible scenarios are centered around data not being available or altered or sc
 * log IP and blog on spam
 * extra layer api to cache comments, performance and security against IP logging
 * one pod sends different content to users depending on their location
+* the flow of Solid (ref Tim from White Area)
+* Performance of petabytes?
