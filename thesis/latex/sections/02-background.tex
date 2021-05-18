@@ -23,11 +23,11 @@
 
 \section{Solid}
 
-A prior introduction to Solid was given as part of a previous \textit{research project} \cite{cern-solid-investigation-spec} in preparation to this thesis. In the \textit{research project} the Solid specification was among other things summarized and analyzed. This section will reiterate and study the to the subsequent experiment relevant parts further.
+A prior introduction to Solid was given as part of a previous \textit{research project} \cite{cern-solid-investigation-spec} in preparation for this thesis. In the \textit{research project}, the Solid specification was among other things summarized and analyzed. This section will reiterate and study the subsequent experiment-relevant parts further.
 
 \subsection{Authentication With Solid}
 
-In the Solid ecosystem agents identify themselves with their WebID and proof their ownership through the \gls{solidoidc} protocol, which is a flavor of \gls{oidc}. For further explanation and flow diagrams through the authentication process see either the work done in the previous report \cite{cern-solid-investigation-spec} or the \gls{solidoidc} specification itself \cite{solid-ecosystem-oidc}.
+In the Solid ecosystem, agents identify themselves with their WebID and proof their ownership through the \gls{solidoidc} protocol, which is a flavor of \gls{oidc}. For further explanation and flow diagrams through the authentication process see either the work done in the previous report \cite{cern-solid-investigation-spec} or the \gls{solidoidc} specification itself \cite{solid-ecosystem-oidc}.
 
 To help with the complex authentication flow of \gls{solidoidc} a few libraries have been developed by different actors. Two libraries relevant for this project exist, their relevancy is discussed in chapter \ref{chapter:investigation} under the section \ref{subsubsection:design}.
 
@@ -51,9 +51,9 @@ To help with the complex authentication flow of \gls{solidoidc} a few libraries 
     \label{table:0}
 \end{table}
 
-Solid Auth Fetcher is a fork of the \texttt{solid-client-authn} developed by Inrupt, but has not seen much development in recent time. With the quickly evolving Solid ecosystem it is important to have working and up-to-date libraries to be able to build applications in this ecosystem. Both libraries do not differ in their core functionality and both support authenticating with the latest Solid servers and thus the choice is not as important. Still, the frequency of commits in Inrupt's repository seem to indicate a more active development and thus a more reliable source when problems arise. This way one does not rely on the support from open-source developers, which is per se not a bad thing.
+Solid Auth Fetcher is a fork of the \texttt{solid-client-authn} developed by Inrupt but has not seen much development in recent time. With the quickly evolving Solid ecosystem, it is important to have working and up-to-date libraries to be able to build applications in this ecosystem. Both libraries do not differ in their core functionality and both support authenticating with the latest Solid servers and thus the choice is not as important. Still, the frequency of commits in Inrupt's repository seems to indicate a more active development and thus a more reliable source when problems arise. This way one does not rely on support from open-source developers, which is per se not a bad thing.
 
-For this simple reason all programming where Solid authentication was needed was enabled through Inrupt's \texttt{solid-client-authn}.
+For this simple reason, all programming where Solid authentication was needed was enabled through Inrupt's \texttt{solid-client-authn}.
 
 \subsection{Reading and Writing Linked Data}
 
@@ -99,10 +99,10 @@ TODO: more here
 
 \subsection{Application Launcher}
 
-A later presented discovery of a flaw in the assigning of unnecessary powerful access controls can be mitigated by a so called \textit{application launcher}. The inconvenience lies in the fact when an application asks the client for what the allowed scope to its data pod is, most often full access control on the root container is needed -- this is against the a security principle or tactic called \textit{least privilege}. Least privilege means to give actors of a system only exactly as much access they need and never more. The reason why this finds its way into the \glspl{poc} will be presented in chapter \ref{chapter:investigation}.
+A later presented discovery of a flaw in the assigning of unnecessary powerful access controls can be mitigated by a so-called \textit{application launcher}. The inconvenience lies in the fact when an application asks the client for what the allowed scope to its data pod is, most often full access control on the root container is needed -- this is against the security principle or tactic called \textit{least privilege}. Least privilege means to give actors of a system only exactly as much access they need and never more. The reason why this finds its way into the \glspl{poc} will be presented in chapter \ref{chapter:investigation}.
 
-For now an implementation shall be introduced showing how this problem can be avoided. When an application wants to create \glspl{acl} on a data pod it needs the before mentioned \textit{control} access. This is the highest access mode in \gls{wac} with it files can read, written, and \glspl{acl} can be modified -- meaning the owner of files can be changed as an example.
-In the initial \gls{solidoidc} flow when asked for scope these controls will be decided for the root container of the data pod -- a more fine-grained control to limit access on a specific child container does not exist. An application launcher is a Solid app, which has full control on the pod and thus must be trusted. When a new application wants to make use of a data pod and needs control access, but could in theory be limited to a specific container, the application launcher will create the appropriate \gls{acl} files to only allow exactly this.
+For now, an implementation shall be introduced showing how this problem can be avoided. When an application wants to create \glspl{acl} on a data pod it needs the before mentioned \textit{control} access. This is the highest access mode in \gls{wac} with it files can read, written, and \glspl{acl} can be modified -- meaning the owner of files can be changed as an example.
+In the initial \gls{solidoidc} flow when asked for scope these controls will be decided for the root container of the data pod -- a more fine-grained control to limit access on a specific child container does not exist. An application launcher is a Solid app, which has full control on the pod and thus must be trusted. When a new application wants to make use of a data pod and needs control access, but could, in theory, be limited to a specific container, the application launcher will create the appropriate \gls{acl} files to only allow exactly this.
 This works because all access modes are defined in \gls{acl} files, which can be dynamically created. The application will with this launcher now have full control of the container it operates and stores data in, but cannot reach outside of its container.
 
 The source code for a standalone application launcher in \gls{js} exists here \cite{app-launcher}.
