@@ -1,14 +1,14 @@
 \subsection{POC 1: Commenting Module for Events in Indico}
 
-The first \gls{poc} is supposed to enrich the Indico system with some sort of Solid-based content. With the product owner and chief developer of Indico, the CERN-Solid project manager and a Solid developer it was decided a commenting module for Indico events is an adequate solution to include data from an external storage entity namely a data pod. The ability to allow users of Indico to leave a comment on an event, which then lives in a data pod completely controlled by the author of the comment was concluded to be an attractive feature for Indico.
+The first \gls{poc} is supposed to enrich the Indico system with some sort of Solid-based content. With the product owner and chief developer of Indico, the CERN-Solid project manager, and a Solid developer it was decided a commenting module for Indico events is an adequate solution to include data from an external storage entity namely a data pod. The ability to allow users of Indico to leave a comment on an event, which then lives in a data pod completely controlled by the author of the comment was concluded to be an attractive feature for Indico.
 
 \subsubsection{Architectural Analysis and Synthesis}\mbox{}\\
 
-In this section the architectural analysis will be looked into. The scope of the system and its attributes will defined based on the system description and the quality attributes from the analysis of stakeholder needs.
+In this section, the architectural analysis will be looked into. The scope of the system and its attributes will be defined based on the system description and the quality attributes from the analysis of stakeholder needs.
 
 \paragraph{System Description}\mbox{}\\
 
-The system aims at enabling commenting in web application with decentralized storage on data pods. The system in the context of Indico intends to allow Indico users with a data pod to comment on specific Indico events.
+The system aims at enabling commenting in web applications with decentralized storage on data pods. The system in the context of Indico intends to allow Indico users with a data pod to comment on specific Indico events.
 
 \paragraph{Features}\mbox{}\\
 
@@ -26,7 +26,7 @@ These features allow the development of a module giving users the ability to aut
 
 \paragraph{Type of Users}\mbox{}\\
 
-There are two types of users in the system. The first group of users are the active authors of comments or observers of such. These will interact with the module by logging in to their data pod and compose comments. The other subset of users are the administrators of the application (Indico). This type of user is interested in keeping the tone of comments to the community guidelines and not allow any misuse.
+There are two types of users in the system. The first group of users is the active authors of comments or observers of such. These will interact with the module by logging in to their data pod and compose comments. The other subset of users is the administrators of the application (Indico). This type of user is interested in keeping the tone of comments to the community guidelines and not allow any misuse.
 
 \paragraph{Context Diagram}\mbox{}\\
 
@@ -54,9 +54,9 @@ A sequence diagram brings a suitable overview for any software architecture, but
 
 This section covers the various stakeholders in relation to the system. This both includes active users, but also various external and internal stakeholders who are impacted by the system or have an important say in the development process.
 
-The \textbf{product owner} is responsible for the product, in this case Indico. Usually, they are the ones planning repeated fixed time-boxes in which new features are developed or the existing software is maintained. They are constantly evaluating the state of the software and try to satisfy other stakeholders such as investors or the system users themselves. The main concerns of the product owner are to stay innovative while no compromising the quality of the existing software.
+The \textbf{product owner} is responsible for the product, in this case, Indico. Usually, they are the ones planning repeated fixed time-boxes in which new features are developed or the existing software is maintained. They are constantly evaluating the state of the software and try to satisfy other stakeholders such as investors or the system users themselves. The main concerns of the product owner are to stay innovative while no compromising the quality of the existing software.
 
-The \textbf{internal developer} is responsible for executing on the decision made by, or together with, the product owner. The developer is also maintaining the software and is the one working with it on a daily basis and can therefore, make assumptions about the evolution of the software. Their concerns lie in maintainability of the software through its evolutionary cycle, as well as onboarding new developers.
+The \textbf{internal developer} is responsible for executing the decision made by, or together with, the product owner. The developer is also maintaining the software and is the one working with it on a daily basis and can, therefore, make assumptions about the evolution of the software. Their concerns lie in the maintainability of the software through its evolutionary cycle, as well as onboarding new developers.
 
 \paragraph{Drivers}\mbox{}\\
 
@@ -70,7 +70,7 @@ The architectural driver or quality attributes can be specified using “-illiti
 
 \subsubsection{Screen Design}\mbox{}\\
 
-For various meetings and presentations a visual representation of the to be developed module helps to guide the audience through the process. For the comment module a user interface was designed in a graphical software to ease the explanation of the goals for this module. The existing Indico design was adopted to blend into the system.
+For various meetings and presentations, a visual representation of the to-be-developed module helps to guide the audience through the process. For the comment module, a user interface was designed in graphical software to ease the explanation of the goals for this module. The existing Indico design was adopted to blend into the system.
 
 \begin{figure}
     \centering
@@ -81,15 +81,15 @@ For various meetings and presentations a visual representation of the to be deve
 
 \subsubsection{Design}\mbox{}\\
 
-For the implementation of this module several design decisions had to be made. From the fundamental choice of the module running on the client device or be computed on the server and then propagated to the client afterwards or even with a microservice proxying all traffic to enable Solid without changing Indico.
-Other design challenges were around how to protect the resources holding the comment information. These resources reside on the external data pod and need to be fetched from the application and read by other agents. Can \glspl{acl} be configured to allow the specific use-case and other questions came up and had to be considered.
+For the implementation of this module, several design decisions had to be made. From the fundamental choice of the module running on the client device or be computed on the server and then propagated to the client afterward or even with a microservice proxying all traffic to enable Solid without changing Indico.
+Other design challenges were around how to protect the resources holding the comment information. These resources reside on the external data pod and need to be fetched from the application and read by other agents. Can \glspl{acl} be configured to allow the specific use-case and other questions to come up and had to be considered?
 
 \paragraph{Client- Versus Server-Side Versus Microservice}\mbox{}\\
 
-When an agent browses to a running instance of Indico most of the functionality is being prepared on the server hosting Indico. It retrieves the specific request, builds the \gls{html}, and sends it to the user. For Indico most of the functionality is built with Python and the web framework Flask. Sometimes functionality needs to be closer to the user, an example is dynamic rendering of \gls{dom} elements. This is useful when new data needs to be shown right away without getting the blank white screen on a page reload.
-Indico does send \gls{js}, which is used for client-side features, but it focuses on keeping most its features on the server.
+When an agent browses to a running instance of Indico most of the functionality is being prepared on the server hosting Indico. It retrieves the specific request, builds the \gls{html}, and sends it to the user. For Indico most of the functionality is built with Python and the web framework Flask. Sometimes functionality needs to be closer to the user, an example is a dynamic rendering of \gls{dom} elements. This is useful when new data needs to be shown right away without getting the blank white screen on a page reload.
+Indico does send \gls{js}, which is used for client-side features, but it focuses on keeping most of its features on the server.
 
-To make the right decision if the module should be primarily developed for the client- or server-side or even as a microservice, a list of requirements to the module had to be defined. With the defined requirements in place it had to be figured out how much functionality can be extracted from existing libraries and how much needed to be implemented with the new module. Implementing existing functionality for a new programming language would defeat the \gls{poc}’s purpose of showing how an existing software could work with the Solid principles.
+To make the right decision if the module should be primarily developed for the client- or server-side or even as a microservice, a list of requirements to the module had to be defined. With the defined requirements in place, it had to be figured out how much functionality can be extracted from existing libraries and how much needed to be implemented with the new module. Implementing existing functionality for a new programming language would defeat the \gls{poc}’s purpose of showing how an existing software could work with the Solid principles.
 
 The rudimentary set of features to enable commenting for users in Indico while saving the data in a data pod includes: 
 
@@ -101,7 +101,7 @@ The rudimentary set of features to enable commenting for users in Indico while s
 
 \paragraph{Client Approach}\mbox{}\\
 
-The module runs in the browser and is therefore written in \gls{js}. A programming language which compiles to \gls{js}, such as \gls{ts}, is also possible. This means Indico remains mostly untouched, but would have to serve the needed \gls{js} to the client on traffic to an event endpoint where the comment module is integrated.
+The module runs in the browser and is therefore written in \gls{js}. A programming language which compiles to \gls{js}, such as \gls{ts}, is also possible. This means Indico remains mostly untouched but would have to serve the needed \gls{js} to the client on traffic to an event endpoint where the comment module is integrated.
 
 \begin{table}[h!]
     \centering
@@ -132,7 +132,7 @@ The communication flow with the data pod and the module would happen primarily f
 
 \paragraph{Microservice Approach}\mbox{}\\
 
-The microservice approach would allow developing the needed Solid logic on a separate service, which proxies all Solid related traffic through it an enable the Solid functionality. Most of the libraries from the client implementation can be used as well, as both developments would be written in \gls{js}. Only the authentication flow would work a bit different.
+The microservice approach would allow developing the needed Solid logic on a separate service, which proxies all Solid related traffic through it and enables the Solid functionality. Most of the libraries from the client implementation can be used as well, as both developments would be written in \gls{js}. Only the authentication flow would work a bit differently.
 
 \begin{table}[h!]
     \centering
@@ -163,7 +163,7 @@ The microservice module would handle take all requests aimed at the data pod and
 
 \paragraph{Server Approach}\mbox{}\\
 
-Goal of the server approach would be just like with the microservice approach to decouple the logic needed to work with Solid from the client and have it run on a server instance. The attractiveness for the server approach would be it could be fully integrated within Indico and be part of its Python code base. The major drawbacks are no direct Solid libraries written in Python exist to allow a seamless integration into the ecosystem.
+The goal of the server approach would be just like with the microservice approach to decouple the logic needed to work with Solid from the client and have it run on a server instance. The attractiveness for the server approach would be it could be fully integrated within Indico and be part of its Python codebase. The major drawbacks are no direct Solid libraries written in Python exist to allow a seamless integration into the ecosystem.
 
 \begin{table}[!ht]
     \centering
@@ -183,7 +183,7 @@ Goal of the server approach would be just like with the microservice approach to
     \label{table:3}
 \end{table}
 
-The authentication library pyoidc allows authenticating with \gls{oidc} systems, but is missing a mandatory feature called \gls{dpop}, which is needed to make requests to protected resources on a data pod.
+The authentication library pyoidc allows authenticating with \gls{oidc} systems but is missing a mandatory feature called \gls{dpop}, which is needed to make requests to protected resources on a data pod.
 
 \begin{figure}
     \centering
@@ -247,7 +247,7 @@ Storing the comments in \gls{rdf} can be done in two ways: storing it in one fil
     \label{fig:test}
 \end{figure}
 
-When fetching the container with all the comment resources the request returns a Turtle file describing the container, but not the actual content of the contained resources. The misconception of receiving the content as well, was thought to be a problem, as it was assumed an initial request to the container reading its child resources had to be made and then for each resource a request needed to be built to retrieve the resource. This overhead was later disproved as the application where this module is embedded maintains the list of resources to be fetched. Therefore, no manual building of requests to those resources had to be done. The next paragraph also lays out how this design would not work with the protection of the resources.
+When fetching the container with all the comment resources the request returns a Turtle file describing the container, but not the actual content of the contained resources. The misconception of receiving the content as well was thought to be a problem, as it was assumed an initial request to the container reading its child resources had to be made, and then for each resource a request needed to be built to retrieve the resource. This overhead was later disproved as the application where this module is embedded maintains the list of resources to be fetched. Therefore, no manual building of requests to those resources had to be done. The next paragraph also lays out how this design would not work with the protection of the resources.
 
 \paragraph{Protection on Resource}\label{protection-on-resource}\mbox{}\\
 
@@ -269,10 +269,10 @@ In order for visitors of a private or public event in Indico to be able to see t
     acl:mode acl:Read.
 \end{lstlisting}
 
-Every resource in this container is by definition readable by the public -- if not otherwise stated in a more detailed resource \gls{acl}. The above definition even allows the reading of the container’s content, meaning a request to the container would yield a list of resources in the container. This becomes unpleasant if the Indico event is private and the comments for this Indico event should not be read by the world, which is entirely possible, when browsing to the location of a specific data pod and then looking into the public container.
+Every resource in this container is by definition readable by the public -- if not otherwise stated in a more detailed resource \gls{acl}. The above definition even allows the reading of the container’s content, meaning a request to the container would yield a list of resources in the container. This becomes unpleasant if the Indico event is private and the comments for this Indico event should not be read by the world, which is entirely possible when browsing to the location of a specific data pod and then looking into the public container.
 
-To prevent a random agent to see the contents of a container, the container can be set to private, with the container’s resources to still be public. This would allow everyone provided they have the \gls{url} to browse to the public resource and read it, but not look into the resource’s parent container. To achieve this behavior with \gls{acl}, the container needs to just define its owner and no specific rules for the public, as \gls{wac} comes with a default private access control. Each child resource needs to define an \gls{acl} now, allowing public read.
-The container’s \gls{acl} would look like the following with just a owner defined:
+To prevent a random agent to see the contents of a container, the container can be set to private, with the container’s resources still be public. This would allow everyone provided they have the \gls{url} to browse to the public resource and read it, but not look into the resource’s parent container. To achieve this behavior with \gls{acl}, the container needs to just define its owner and no specific rules for the public, as \gls{wac} comes with a default private access control. Each child resource needs to define an \gls{acl} now, allowing public read.
+The container’s \gls{acl} would look like the following with just an owner defined:
 
 \begin{lstlisting}[language=Other,columns=fullflexible, caption={TODO: Label caption}, label={lst:2}]
 @prefix acl: <http://www.w3.org/ns/auth/acl#>.
@@ -317,21 +317,21 @@ Another approach and the one implemented after iterating through the previous on
 
 \paragraph{Preventing Resources From Unwanted Discovery}\mbox{}\\
 
-With the resources having proper access modes but being publicly readable a simple naming convention of taking the \gls{iso} 8601 string and using it as a filename for the resources created on the data pod does not suffice -- even though it is a good strategy when looking for a reliable naming convention to prevent duplication. Considering performance improvements such as pagination for future iterations of the module, which would require some sort of iterative indication, a combination of randomness, but also a order indicator it was settled for using \gls{uuid} plus the \gls{iso} 8601 string to form a filename.
+With the resources having proper access modes but being publicly readable a simple naming convention of taking the \gls{iso} 8601 string and using it as a filename for the resources created on the data pod does not suffice -- even though it is a good strategy when looking for a reliable naming convention to prevent duplication. Considering performance improvements such as pagination for future iterations of the module, which would require some sort of iterative indication, a combination of randomness, but also an order indicator it was settled for using \gls{uuid} plus the \gls{iso} 8601 string to form a filename.
 
-Other ideas included hashing a random string with the timestamp to generate non-guessable filenames. The filename would need to use the same hash function to decipher the filename to figure out when the comment was generated. \gls{uuid} is a reliable and easy to use system to generate \textit{truly} globally unique strings. 
+Other ideas included hashing a random string with the timestamp to generate non-guessable filenames. The filename would need to use the same hash function to decipher the filename to figure out when the comment was generated. \gls{uuid} is a reliable and easy-to-use system to generate \textit{truly} globally unique strings. 
 
 \paragraph{Modification of Resource From Data Pod}\mbox{}\\
 
 \paragraph{Mitigation of Spam}\mbox{}\\
 
-Enabling user input in form of comment module without application authentication is a gateway to spam. Even though authentication with a Solid \gls{idp} is necessary, it does not hinder a malicious actor to create a multitude of Solid accounts and spam into the application. In the first iteration of the module only Solid authentication was integrated into the module and would therefore allow anyone with a Solid account to post comments and thus also spam the Indico event theoretically. In a second iteration of the module another authentication layer was added to mitigate spam from outside of Indico. For \gls{cern}’s use-case an authenticated Indico session was enough. This adds an extra step to the comment process and it is ensured only registered Indico users can comment.
+Enabling user input in form of a comment module without application authentication is a gateway to spam. Even though authentication with a Solid \gls{idp} is necessary, it does not hinder a malicious actor to create a multitude of Solid accounts and spam into the application. In the first iteration of the module, only Solid authentication was integrated into the module and would therefore allow anyone with a Solid account to post comments and thus also spam the Indico event theoretically. In a second iteration of the module, another authentication layer was added to mitigate spam from outside Indico. For \gls{cern}’s use-case, an authenticated Indico session was enough. This adds an extra step to the comment process and it is ensured only registered Indico users can comment.
 
 \paragraph{Giving Application Full Control of Data Pod}\mbox{}\\
 
-To create or change programmatically \glspl{acl} requires \textit{control} access to the container. By default \gls{nss} asks for the permissions when authenticating for the first time in the \gls{solidoidc} flow between the \textit{solid-comment} module and Solid \gls{idp}. The permissions granted to the application are on the root container of the data pod. Meaning, giving an application control access allows the application to read, write, change \glspl{acl} on the entire data pod. This is obviously troubling, as a simple application as a commenting module need to have control access to set the needed \glspl{acl} for the containers and resources it creates.
+To create or change programmatically \glspl{acl} requires \textit{control} access to the container. By default \gls{nss} asks for the permissions when authenticating for the first time in the \gls{solidoidc} flow between the \textit{solid-comment} module and Solid \gls{idp}. The permissions granted to the application are on the root container of the data pod. Meaning, giving an application control access allows the application to read, write, change \glspl{acl} on the entire data pod. This is obviously troubling, as a simple application as a commenting module needs to have control access to set the needed \glspl{acl} for the containers and resources it creates.
 
-The current implementation has not a built-in solution, but one way of solving it, is the use of an application launcher, which is an application itself with full control access and then limits the access controls of the \textit{solid-comment} module by creating a dedicated container for it and setting the needed \gls{acl} for this specific container only.
+The current implementation has not a built-in solution, but one way of solving it is the use of an application launcher, which is an application itself with full control access and then limits the access controls of the \textit{solid-comment} module by creating a dedicated container for it and setting the needed \gls{acl} for this specific container only.
 
 \subsubsection{Integration with Indico}
 
@@ -343,7 +343,7 @@ The need for integration with Indico is twofold: serving the module to the clien
 
 \subsubsection{Evaluation}\mbox{}\\
 
-This section focuses on evaluating the module. This shall be done by iterating through the modules requirements from the stakeholders and how the architecture lives up to those expectations. The evaluation is done with the help of the \gls{asqa} framework to ensure continuous quality assessment and prioritizing with a light-weight technique \cite{asqa-paper}.
+This section focuses on evaluating the module. This shall be done by iterating through the module's requirements from the stakeholders and how the architecture lives up to those expectations. The evaluation is done with the help of the \gls{asqa} framework to ensure continuous quality assessment and prioritizing with a lightweight technique \cite{asqa-paper}.
 \gls{asqa} contains seven process steps as shown in figure \ref{fig:asqa-process-steps}.
 
 \begin{figure}
