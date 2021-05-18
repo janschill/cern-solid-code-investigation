@@ -60,7 +60,7 @@ The \textbf{internal developer} is responsible for executing on the decision mad
 
 \paragraph{Drivers}\mbox{}\\
 
-Introducing a module 
+The architectural driver or quality attributes can be specified using “-illities”
 
 \begin{enumerate}
     \item Security
@@ -69,6 +69,8 @@ Introducing a module
 \end{enumerate}
 
 \subsubsection{Screen Design}\mbox{}\\
+
+For various meetings and presentations a visual representation of the to be developed module helps to guide the audience through the process. For the comment module a user interface was designed in a graphical software to ease the explanation of the goals for this module. The existing Indico design was adopted to blend into the system.
 
 \begin{figure}
     \centering
@@ -79,8 +81,8 @@ Introducing a module
 
 \subsubsection{Design}\mbox{}\\
 
-For the implementation of this module several design decisions had to be made. From the fundamental choice of the module running on the client device or be computed on the server and then propagated to the client afterwards or even with a microservice proxying all traffic through it to enable Solid without changing Indico.
-Other design challenges were around how to protect the resources holding the comment information. These resources reside on the external data pod and need to be fetched from the application and read by other agents. Can \glspl{acl} be configured to allow the specific use-case?
+For the implementation of this module several design decisions had to be made. From the fundamental choice of the module running on the client device or be computed on the server and then propagated to the client afterwards or even with a microservice proxying all traffic to enable Solid without changing Indico.
+Other design challenges were around how to protect the resources holding the comment information. These resources reside on the external data pod and need to be fetched from the application and read by other agents. Can \glspl{acl} be configured to allow the specific use-case and other questions came up and had to be considered
 
 \paragraph{Client- Versus Server-Side Versus Microservice}\mbox{}\\
 
