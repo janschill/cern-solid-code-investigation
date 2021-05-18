@@ -10,6 +10,7 @@ amyvdh
 angelo
 api
 apps
+Arwe
 asc
 aspx
 asqa
@@ -23,6 +24,8 @@ bashrc
 bbc
 bc
 berners
+biblio
+bibsource
 blog
 brickley
 btc
@@ -51,6 +54,7 @@ codebase
 codimd
 Collider
 colostate
+commeting
 computingforgeeks
 computingjoy
 config
@@ -62,6 +66,7 @@ csail
 csarven
 csr
 css
+Cyganiak
 dasya
 databox
 datastore
@@ -100,6 +105,7 @@ ewacronym
 ewglossaryentry
 extbf
 extit
+exttt
 extwidth
 facebook
 fbddc
@@ -107,6 +113,7 @@ fbdf
 fca
 fd
 fde
+feb
 filecon
 foaf
 freecodecamp
@@ -138,6 +145,7 @@ Hetzner
 Himmel
 hline
 homepage
+hommeaux
 hostname
 hotos
 howto
@@ -182,6 +190,7 @@ itustudent
 jan
 janschill
 javascript
+jmr
 Jong
 jpeg
 jpg
@@ -195,6 +204,7 @@ keyout
 keypairs
 ktbkxttfwfsm
 landb
+Lanthaler
 LCG
 ldapgroups
 ldf
@@ -223,6 +233,7 @@ macos
 Maged
 mailto
 MAINPID
+Malhotra
 Manolescu
 Mansour
 mariadimou
@@ -279,6 +290,7 @@ ormalsize
 ouvertes
 panva
 panva's
+Pavlik
 pcre
 pdf
 pdos
@@ -308,6 +320,7 @@ ppc
 printf
 privkey
 procname
+Prud'hommeaux
 psql
 py
 pyenv
@@ -389,6 +402,7 @@ sts
 subdomain
 subsubsection
 sudo
+syronex
 sys
 Syslog
 systemctl
@@ -472,10 +486,12 @@ XML
 xmlns
 xsf
 xss
+ylebre
 yml
 yy
 yyuu
 YZ
+Zagidulin
 Zampetakis
 zazuko
 zenodo
