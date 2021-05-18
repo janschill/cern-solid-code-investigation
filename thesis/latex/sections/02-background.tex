@@ -103,4 +103,6 @@ A later presented discovery of a flaw in the assigning of unnecessary powerful a
 
 For now an implementation shall be introduced showing how this problem can be avoided. When an application wants to create \glspl{acl} on a data pod it needs the before mentioned \textit{control} access. This is the highest access mode in \gls{wac} with it files can read, written, and \glspl{acl} can be modified -- meaning the owner of files can be changed as an example.
 In the initial \gls{solidoidc} flow when asked for scope these controls will be decided for the root container of the data pod -- a more fine-grained control to limit access on a specific child container does not exist. An application launcher is a Solid app, which has full control on the pod and thus must be trusted. When a new application wants to make use of a data pod and needs control access, but could in theory be limited to a specific container, the application launcher will create the appropriate \gls{acl} files to only allow exactly this.
-This works because all access modes are defined in \gls{acl} files, which can be dynamically created
+This works because all access modes are defined in \gls{acl} files, which can be dynamically created. The application will with this launcher now have full control of the container it operates and stores data in, but cannot reach outside of its container.
+
+The source code for a standalone application launcher in \gls{js} exists here \cite{app-launcher}.
