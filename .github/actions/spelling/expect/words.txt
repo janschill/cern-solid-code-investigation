@@ -12,6 +12,7 @@ api
 apps
 asc
 aspx
+asqa
 ata
 authn
 Autocomplete
@@ -97,6 +98,7 @@ evalex
 evertramos
 ewacronym
 ewglossaryentry
+extbf
 extit
 extwidth
 facebook
@@ -150,6 +152,7 @@ hypertext
 idp
 IDPs
 ietf
+illities
 imdb
 imec
 img
@@ -206,6 +209,7 @@ libxml
 libxslt
 libyaml
 lifecycle
+Lindstr
 linkeddata
 Linux
 localhost
@@ -264,12 +268,14 @@ NX
 OAuth
 OCM
 OIDC
+onboarding
 oninput
 openid
 openrc
 openssl
 openstack
 openstackclient
+ormalsize
 ouvertes
 panva
 panva's
@@ -278,9 +284,11 @@ pdf
 pdos
 pdsinterop
 pem
+petabytes
 pferreir
 pgdg
 pgsql
+phbo
 phd
 PHP
 phpleague
@@ -296,6 +304,7 @@ podbrowser
 policykit
 postgres
 postgresql
+ppc
 printf
 privkey
 procname
@@ -305,6 +314,7 @@ pyenv
 pyoidc
 QAs
 Qg
+rbak
 rdf
 rdflib
 rdm
@@ -320,7 +330,6 @@ rfc
 roadmap
 Rodr
 roletype
-ppc
 rsa
 rss
 ru
@@ -337,6 +346,7 @@ scalability
 scenaristeur
 schem
 Schenkel
+schi
 schill
 scp
 SDK
@@ -346,6 +356,7 @@ semodule
 Sendfile
 serializer
 sestoft
+setcounter
 setuptools
 Shacl
 shaperepo
@@ -384,10 +395,12 @@ systemctl
 systemd
 tcp
 techno
+techreport
 Tful
 themoviedb
 timbl
 timeline
+titlepage
 tls
 TLSv
 tmdb
@@ -425,6 +438,7 @@ veltens
 venv
 Verborgh
 versioning
+vfill
 vimeo
 vincenttunru
 virtualenv
