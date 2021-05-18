@@ -191,7 +191,7 @@ The authentication library pyoidc allows authenticating with \gls{oidc} systems 
     \caption{Communication flow for a module developed on the server.}
     \label{fig:poc-infrastructure-backend}
 \end{figure}
-
+\vspace{0.5cm}
 \paragraph{Comparison of the Different Approaches}\mbox{}\\
 
 Benefits from developing the module for the client:
@@ -224,7 +224,7 @@ Benefits from developing the module for the client:
     \caption{Existing solutions to problems for a server approach.}
     \label{table:2}
 \end{table}
-
+\vspace{0.5cm}
 \paragraph{Single Versus Multiple Resource(s) for Comments}\mbox{}\\
 
 Storing the comments in \gls{rdf} can be done in two ways: storing it in one file as a graph with a list of comments, or creating a file for every comment.
@@ -249,6 +249,7 @@ Storing the comments in \gls{rdf} can be done in two ways: storing it in one fil
 
 When fetching the container with all the comment resources the request returns a Turtle file describing the container, but not the actual content of the contained resources. The misconception of receiving the content as well was thought to be a problem, as it was assumed an initial request to the container reading its child resources had to be made, and then for each resource a request needed to be built to retrieve the resource. This overhead was later disproved as the application where this module is embedded maintains the list of resources to be fetched. Therefore, no manual building of requests to those resources had to be done. The next paragraph also lays out how this design would not work with the protection of the resources.
 
+\vspace{0.5cm}
 \paragraph{Protection on Resource}\label{protection-on-resource}\mbox{}\\
 
 Every container and resource in Solid is protected with \gls{wac}, which determines if specific agents, groups, or the world can have read, write, append, or control access. These control access modes are defined in \gls{acl} files. The Solid \gls{acl} inheritance algorithm looks for an \gls{acl} file attached to a specific resource, if it cannot find one it goes recursively up the file hierarchy and looks for \glspl{acl} on the containers.
@@ -314,19 +315,19 @@ Another approach and the one implemented after iterating through the previous on
     acl:agentClass foaf:Agent;
     acl:mode acl:Read.
 \end{lstlisting}
-
+\vspace{0.5cm}
 \paragraph{Preventing Resources From Unwanted Discovery}\mbox{}\\
 
 With the resources having proper access modes but being publicly readable a simple naming convention of taking the \gls{iso} 8601 string and using it as a filename for the resources created on the data pod does not suffice -- even though it is a good strategy when looking for a reliable naming convention to prevent duplication. Considering performance improvements such as pagination for future iterations of the module, which would require some sort of iterative indication, a combination of randomness, but also an order indicator it was settled for using \gls{uuid} plus the \gls{iso} 8601 string to form a filename.
 
 Other ideas included hashing a random string with the timestamp to generate non-guessable filenames. The filename would need to use the same hash function to decipher the filename to figure out when the comment was generated. \gls{uuid} is a reliable and easy-to-use system to generate \textit{truly} globally unique strings. 
-
+\vspace{0.5cm}
 \paragraph{Modification of Resource From Data Pod}\mbox{}\\
-
+\vspace{0.5cm}
 \paragraph{Mitigation of Spam}\mbox{}\\
 
 Enabling user input in form of a comment module without application authentication is a gateway to spam. Even though authentication with a Solid \gls{idp} is necessary, it does not hinder a malicious actor to create a multitude of Solid accounts and spam into the application. In the first iteration of the module, only Solid authentication was integrated into the module and would therefore allow anyone with a Solid account to post comments and thus also spam the Indico event theoretically. In a second iteration of the module, another authentication layer was added to mitigate spam from outside Indico. For \gls{cern}’s use-case, an authenticated Indico session was enough. This adds an extra step to the comment process and it is ensured only registered Indico users can comment.
-
+\vspace{0.5cm}
 \paragraph{Giving Application Full Control of Data Pod}\mbox{}\\
 
 To create or change programmatically \glspl{acl} requires \textit{control} access to the container. By default \gls{nss} asks for the permissions when authenticating for the first time in the \gls{solidoidc} flow between the \textit{solid-comment} module and Solid \gls{idp}. The permissions granted to the application are on the root container of the data pod. Meaning, giving an application control access allows the application to read, write, change \glspl{acl} on the entire data pod. This is obviously troubling, as a simple application as a commenting module needs to have control access to set the needed \glspl{acl} for the containers and resources it creates.
@@ -336,9 +337,9 @@ The current implementation has not a built-in solution, but one way of solving i
 \subsubsection{Integration with Indico}
 
 The need for integration with Indico is twofold: serving the module to the client and being the provider to the list of references to the comments that have been posted on a specific event.
-
+\vspace{0.5cm}
 \paragraph{Storing Reference to Comments in Indico}\mbox{}\\
-
+\vspace{0.5cm}
 \paragraph{Enforce Authenticated Session For Posting Comments}\mbox{}\\
 
 \subsubsection{Evaluation}\mbox{}\\
@@ -352,7 +353,7 @@ This section focuses on evaluating the module. This shall be done by iterating t
     \caption{aSQA Process Steps from \cite{asqa-paper}}
     \label{fig:asqa-process-steps}
 \end{figure}
-
+\vspace{0.5cm}
 \paragraph{Metrics}\mbox{}\\
 
 Scenario-based metrics were chosen to measure the quality attributes. The different scenarios are predicted to be the most common actions on the system and thus will stress the system and its architecture the most based on the quality attributes.
@@ -382,13 +383,13 @@ Possible scenarios are centered around data not being available or altered or sc
 \end{enumerate}
 
 % \vspace{-12mm}
-
+\vspace{0.5cm}
 \paragraph{Levels}\mbox{}\\
 
 
-
+\vspace{0.5cm}
 \paragraph{Components}\mbox{}\\
-
+\vspace{0.5cm}
 \paragraph{Scenarios}\mbox{}\\
 
 
