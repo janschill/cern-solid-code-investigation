@@ -316,7 +316,7 @@ Another approach and the one implemented after iterating through the previous on
     acl:mode acl:Read.
 \end{lstlisting}
 \vspace{0.5cm}
-\paragraph{Preventing Resources From Unwanted Discovery}\mbox{}\\
+\paragraph{Preventing Unwanted Discovery for Resources}\mbox{}\\
 
 With the resources having proper access modes but being publicly readable a simple naming convention of taking the \gls{iso} 8601 string and using it as a filename for the resources created on the data pod does not suffice -- even though it is a good strategy when looking for a reliable naming convention to prevent duplication. Considering performance improvements such as pagination for future iterations of the module, which would require some sort of iterative indication, a combination of randomness, but also an order indicator it was settled for using \gls{uuid} plus the \gls{iso} 8601 string to form a filename.
 
