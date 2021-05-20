@@ -399,16 +399,28 @@ Possible scenarios are centered around data not being available or altered or sc
 % \vspace{-12mm}
 \vspace{0.5cm}
 \paragraph{Levels}\mbox{}\\
+
 TODO:
 \vspace{0.5cm}
 \paragraph{Components}\mbox{}\\
+
 TODO:
 \vspace{0.5cm}
 \paragraph{Scenarios}\mbox{}\\
+
 TODO:
 \subsubsection{Analysis}\mbox{}\\
 
-\paragraph{Performance}
+TODO:
+\vspace{0.5cm}
+\paragraph{Performance}\mbox{}\\
+
+The chosen technique of storing the comments is not as efficient as it could be. Every comment is stored as a self-contained Turtle file on the author's comment with Indico holding the \gls{uri} to be able to fetch it on demand. As soon as the client is loading the module with the comments the client will have to make $n$ requests, $n$ being the number of comments.
+
+The first improvement to this approach could be pagination. Pagination limits the number of initially loaded comments to a defined amount. This can be achieved by utilizing the date and time from the file name of the comment. Only the most recent $n$ comments by time will have to be fetched.
+
+Second improvement could be a grouping of comments by author. This way the number of request would now be bound to the number of authors. In the worst case, where all comments are from different authors, it would not bring any improvement over the initial architecture. The design for this would be to change the storage from the multi-file approach to a single-file approach. On the data pod one file would exist holding all comments from one author for one event. This file can be fetched with one request containing multiple comments.
+% Another way of achieving this is to use a more efficient asset providing web protocol, such as \gls{http}/2. \gls{http}/2 uses a clever technique to 
 
 
 
