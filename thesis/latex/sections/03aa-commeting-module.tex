@@ -225,8 +225,12 @@ Benefits from developing the module for the client:
     \label{table:4}
 \end{table}
 \vspace{0.5cm}
-\paragraph{Single Versus Multiple Resource(s) for Comments}\mbox{}\\
+\paragraph{Storage Location of the Comments}\mbox{}\\
 
+TODO: 
+
+\vspace{0.5cm}
+\paragraph{Single Versus Multiple Resource(s) for Comments}\mbox{}\\
 Storing the comments in \gls{rdf} can be done in two ways: storing it in one file as a graph with a list of comments, or creating a file for every comment.
 
 \begin{figure}
@@ -323,6 +327,13 @@ With the resources having proper access modes but being publicly readable a simp
 Other ideas included hashing a random string with the timestamp to generate non-guessable filenames. The filename would need to use the same hash function to decipher the filename to figure out when the comment was generated. \gls{uuid} is a reliable and easy-to-use system to generate \textit{truly} globally unique strings. 
 \vspace{0.5cm}
 \paragraph{Modification of Resource From Data Pod}\mbox{}\\
+
+When the users are in control of their data it means they can revoke access any time, or even change their data to their liking. This means when the comment is initially created through Indico and this system's user interface it does not mean this comment needs to remain as is. Even if the interface of this system does not allow modification, a modification can still happen at the source of the storage of the comment.
+
+Regular comment modules usually allow modifications of a submitted text throughout their existence. Twitter is an example where modifications are not allowed after posting \cite{twitter-edit}. 
+
+When this aspect was discovered it was decided to allow this sort of behavior, as it seems to be a natural in this context to be able to edit one's own comments.
+
 \vspace{0.5cm}
 \paragraph{Mitigation of Spam}\mbox{}\\
 
@@ -339,6 +350,9 @@ The current implementation has not a built-in solution, but one way of solving i
 The need for integration with Indico is twofold: serving the module to the client and being the provider to the list of references to the comments that have been posted on a specific event.
 \vspace{0.5cm}
 \paragraph{Storing Reference to Comments in Indico}\mbox{}\\
+Indico operates using the relational database PostgreSQL \cite{postgresql}. When a comment gets posted and stored on an external data pod a reference to the location of the comment needs to be kept in order for Indico to pull the comment and render it in its frontend. Several possibilities are imaginable. 
+
+
 \vspace{0.5cm}
 \paragraph{Enforce Authenticated Session For Posting Comments}\mbox{}\\
 
@@ -385,16 +399,19 @@ Possible scenarios are centered around data not being available or altered or sc
 % \vspace{-12mm}
 \vspace{0.5cm}
 \paragraph{Levels}\mbox{}\\
-
-
+TODO:
 \vspace{0.5cm}
 \paragraph{Components}\mbox{}\\
+TODO:
 \vspace{0.5cm}
 \paragraph{Scenarios}\mbox{}\\
+TODO:
+\subsubsection{Analysis}\mbox{}\\
 
+Updating the comment from data pod
+    Different actions could be put in place to either improve this feature from the ecosystem architecture, or even to mitigate it.
+    An improvement for this is to allow the modification but to hash the comment value and compare it to the fetched one and then render an 'updated' hint on the comment, so people to realize
 
-
-\subsubsection{Analysis}
 
 * EventProxy is not scalable, when comments are sent at the same time could be overwritten
 * log IP and blog on spam
