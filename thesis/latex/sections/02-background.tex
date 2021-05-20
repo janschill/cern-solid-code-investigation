@@ -26,13 +26,19 @@ Being an event management tool at Indico's core lies the \texttt{Event} class. T
 
 \subsection{Storage Mechanisms}
 
-All events, all information in these events, file uploads, everything put into Indico is stored in a relational database on centralized servers. \gls{cern}'s Indico instance is hosted on-premise in their own data centers. Another crucial feature of Indico is the permanent archival of event material and metadata \cite{cern-indico}. It allows the lifetime access to all events hosted on the platform
+All events, all information in these events, file uploads, everything put into Indico is stored in a relational database on centralized servers. \gls{cern}'s Indico instance is hosted on-premise in their own data centers. Another crucial feature of Indico is the permanent archival of event material and metadata \cite{cern-indico}. It allows the lifetime access to all events hosted on the platform. As an example one can easily browse to the event "Big Data and Social Media" held by Vint Cerf in 2018 \cite{vint-cerf} and have access to description, recording, and slides, or even a presentation given in 2004 about "Practical Use of XML" \cite{titov}.
 
+\subsubsection{EventSettingsProxy}\mbox{}\\
 
+A \textit{proxy class} enabling storage for event-specific settings. Commonly stored data types are contact email addresses for an event. In Indico these \texttt{EventSettingsProxy} are stored in a database table called \texttt{settings}. When adding a new setting for the \gls{poc} it will receive a field in the row specific to the event.
 
-\subsubsection{EventSettingsProxy}
+\subsection{Conferences}
 
-\subsection{Conference Registration}
+In Indico an event can be a simple meetings, lectures, or all kinds of presentations. Additionally, Indico allows creation and management of conferences. Conferences are more complex events with several more features, including registration, call-for-abstracts, program definition, payments and more \cite{cern-indico-docs}. The conference registration is especially interesting for this project as it is part of the \gls{poc}.
+
+\subsubsection{Conference Registration}\mbox{}\\
+
+Once a conference is created the conference manager needs to create a registration form to allow signups to the event. This form is created in Indico's backend and has default personal information fields, but can be expanded as much as needed with free text fields. Payment for participation also needs to be enabled in this step. Meaning, as soon as a user fills in all the mandatory information and submits it, a successfully finished payment prompt will only complete the registration.
 
 \section{Solid}
 
