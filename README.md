@@ -4,9 +4,8 @@ This repository will hold all information for a [CERN-Solid code investigation](
 The first part of this project will be to familiarize with the Solid principles and the CERN web application [Indico](https://github.com/indico/indico/).
 In a the second part a proof of concept where parts of Indico will be switched out by modules that apply to Solid principles.\
 For more details around the project, see the [CERN project description](https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation).\
-For a preliminary timeline with milestones, see the [GitHub milestones](https://github.com/janschill/uni-research_project/milestones?direction=asc&sort=due_date&state=open).
 
-## [Report](https://github.com/janschill/uni-research_project/blob/main/report/)
+## Reports
 
 This directory holds all formally written reports. Reports include the “Research Project”, which contains the first two [milestones](https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation), and the Master‘s thesis, which will include all remaining milestones. The combination of the documents will conclude the work for the [CERN-Solid Code Investigation](https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation).
 
