@@ -1,12 +1,21 @@
 \chapter{Related Work}
 \setcounter{section}{0}
 
+This chapter will give place to the parts of the project coming from the outside, all the relevant efforts happening in the Solid Community, or \gls{cern}'s involvement in the collaboration.
+
 \section{Background}
+
+The \textit{\gls{cern}-Solid Code Investigation} project aims at linking \gls{cern} with Solid. Some of this linkage has been done in form of a status quo check of the Solid ecosystem \cite{cern-solid-investigation-spec}. This previous work and special thanks to Sir Tim Berners-Lee for also making a recommendation on the scope of the two \glspl{poc} to test symbiosis of the two entities, \gls{cern} and Solid.
+
+The following sections in this chapter will introduce the two systems and their significant subsystems, modules, libraries or techniques. 
 
 \section{Indico}
 
+Indico is one of CERN’s most sophisticated software projects. It is an event management tool, giving users a tool to organize complex meetings or conferences with an easy-to-use interface. It was started in 2002 as a \textit{European project} and has been in production at CERN ever since. It is used daily to facilitate more than 600,000 events at CERN. It has helped others like the UN “to put in place an efficient registration and accreditation workflow that greatly reduced waiting times for everyone” at conferences with more than 180,000 participants in total \cite{cern-solid-investigation-spec}.
 
 \subsection{Events}
+
+Being an event management tool at Indico's core lies the \texttt{Event} class. The Event's user interface is presented in \ref{fig:indico-event-interface}, showing all sorts of attachable information. 
 
 \begin{figure}[H]
     \centering
@@ -16,6 +25,10 @@
 \end{figure} 
 
 \subsection{Storage Mechanisms}
+
+All events, all information in these events, file uploads, everything put into Indico is stored in a relational database on centralized servers. \gls{cern}'s Indico instance is hosted on-premise in their own data centers. Another crucial feature of Indico is the permanent archival of event material and metadata \cite{cern-indico}. It allows the lifetime access to all events hosted on the platform
+
+
 
 \subsubsection{EventSettingsProxy}
 
