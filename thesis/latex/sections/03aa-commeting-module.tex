@@ -422,7 +422,17 @@ The first improvement to this approach could be pagination. Pagination limits th
 Second improvement could be a grouping of comments by author. This way the number of request would now be bound to the number of authors. In the worst case, where all comments are from different authors, it would not bring any improvement over the initial architecture. The design for this would be to change the storage from the multi-file approach to a single-file approach. On the data pod one file would exist holding all comments from one author for one event. This file can be fetched with one request containing multiple comments.
 % Another way of achieving this is to use a more efficient asset providing web protocol, such as \gls{http}/2. \gls{http}/2 uses a clever technique to 
 
+Another enhancement can be attained by caching. In its current design the comments are freshly fetched on each page load. Server-side \gls{http} caching is out of control for the clients, and complete relies on the Server implementations to do so. By Solid specification \gls{http} caching is prescribed, but not necessary \cite{solid-protocol}
 
+
+The Solid server should 
+
+https://httpwg.org/specs/rfc7234.html
+https://httpwg.org/specs/rfc7233.html
+https://httpwg.org/specs/rfc7232.html
+
+\vspace{0.5cm}
+\paragraph{Modification}\mbox{}\\
 
 Updating the comment from data pod
     Different actions could be put in place to either improve this feature from the ecosystem architecture, or even to mitigate it.
