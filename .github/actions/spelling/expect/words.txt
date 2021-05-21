@@ -124,6 +124,7 @@ fullflexible
 GAf
 gcc
 gdac
+GDPR
 getindico
 getopenid
 Ghanem
@@ -203,6 +204,8 @@ Kanban
 Kaoudi
 keyout
 keypairs
+Kjernsmo
+Kjetil
 ktbkxttfwfsm
 landb
 Lanthaler
@@ -315,6 +318,7 @@ POC
 POCs
 podbrowser
 policykit
+postgre
 postgres
 postgresql
 ppc
@@ -338,6 +342,7 @@ redis
 reporpms
 reprioritized
 reqexts
+Reschke
 respec
 restorecon
 rfc
