@@ -435,11 +435,8 @@ Storing the comments on the author's data pod could be given up and instead be d
 
 One more option to control the modification on resources while not giving up on decentralized storage in the author's pods is to use versioning on the comments. Indico would when a user creates and submits a comment store a hashed value of the comment's content. When then serving the comments from the external data pods to visiting clients the received comments would be hashed and compared to the in Indico stored hash value. It is important to associate the comment's \gls{url} with the hash to be able to make a proper comparison on the correct resources.
 
-An important aspect of allowing the update of existing resources is to have an indication in the user interface notifying readers about a changed text. 
+An important aspect of allowing the update of existing resources is to have an indication in the user interface notifying readers about a changed text. A simple \textit{edited}-hint would suffice. When a user is browsing the comments and follows a conversation, which is met with an abrupt disruption of flow in the conversation an updated comments could be the result and indication would help to identify such situation.  To detect a change in the comment's content the same hashing functionality can be used as described before.
 
-Updating the comment from data pod
-    Different actions could be put in place to either improve this feature from the ecosystem architecture, or even to mitigate it.
-    An improvement for this is to allow the modification but to hash the comment value and compare it to the fetched one and then render an 'updated' hint on the comment, so people to realize
 
 
 * EventProxy is not scalable, when comments are sent at the same time could be overwritten
