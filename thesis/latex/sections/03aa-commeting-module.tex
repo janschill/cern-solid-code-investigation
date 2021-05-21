@@ -437,11 +437,14 @@ One more option to control the modification on resources while not giving up on 
 
 An important aspect of allowing the update of existing resources is to have an indication in the user interface notifying readers about a changed text. A simple \textit{edited}-hint would suffice. When a user is browsing the comments and follows a conversation, which is met with an abrupt disruption of flow in the conversation an updated comments could be the result and indication would help to identify such situation.  To detect a change in the comment's content the same hashing functionality can be used as described before.
 
+\vspace{0.5cm}
+\paragraph{EventSettingsProxy Scalability Issues}\mbox{}\\
 
+TODO: EventProxy is not scalable, when comments are sent at the same time could be overwritten
+\vspace{0.5cm}
+\paragraph{Indico Solid Proxying}\mbox{}\\
 
-* EventProxy is not scalable, when comments are sent at the same time could be overwritten
-* log IP and blog on spam
-* extra layer api to cache comments, performance and security against IP logging
-* one pod sends different content to users depending on their location
+TODO: log IP and blog on spam; extra layer api to cache comments, performance and security against IP logging; one pod sends different content to users depending on their location
+
 * Performance of petabytes?
 * trustworthiness of the data
