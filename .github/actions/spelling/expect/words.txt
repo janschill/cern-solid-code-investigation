@@ -8,6 +8,7 @@ aifb
 amonnich
 amyvdh
 angelo
+angularjs
 api
 apps
 Arwe
@@ -23,6 +24,7 @@ backend
 bashrc
 bbc
 bc
+beed
 berners
 biblio
 bibsource
@@ -43,6 +45,7 @@ certbot
 certonly
 cfc
 CHACHA
+Chaning
 chmod
 chown
 cial
@@ -399,6 +402,7 @@ SSHKEY
 sshuttle
 ssl
 SSO
+ssot
 stackoverflow
 Stakeholders
 standalone
@@ -479,6 +483,7 @@ webserver
 website
 Weikum
 Wenders
+whatwg
 whl
 wiki
 wikipedia
