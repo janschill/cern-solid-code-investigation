@@ -3,7 +3,7 @@
 This repository will hold all information for a [CERN-Solid code investigation](https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation). This investigation is carried out in the form of a research project (7.5 ECTS) and a following Master‘s thesis (30 ECTS).
 The first part of this project will be to familiarize with the Solid principles and the CERN web application [Indico](https://github.com/indico/indico/).
 In a the second part a proof of concept where parts of Indico will be switched out by modules that apply to Solid principles.\
-For more details around the project, see the [CERN project description](https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation).\
+For more details around the project, see the [CERN project description](https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation).
 
 ## Reports
 
