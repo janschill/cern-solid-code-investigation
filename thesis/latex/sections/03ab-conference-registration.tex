@@ -2,14 +2,48 @@
 
 The second prototype aims at connecting Solid with the conference registration module in Indico. When registering for a conference an \gls{html} form is presented with fields previously defined by the conference manager, who deemed those fields necessary. A form always contains personal information of name and email address, but is not limited to it and can even range to more sensible information such as copies of personal identification documents. Information of this type has perfect motivation to remain in the hand of the owner and not be stored in a remote data store, uncontrollable and unknown to the registrants.
 
-Therefore, the aim is to extend the registration module to allow storage in a data pod, where the user has full control and can handle the data to their own liking.
+Therefore, the initial aim was to extend the registration module to allow storage of sensible information in a data pod, where the user has full control and can handle the data to their own liking. This was decided to not be viable and the prototype was changed to allow the extraction of data from a data pod to be used in the registration process within Indico -- the functionality to then only store the data from the registration in the user's data pod was dropped. The reasons and comprehensive analysis will be shared after the design and evaluation of the second \gls{poc} in this chapter.
 
 \subsubsection{Architectural Analysis and Synthesis}\mbox{}\\
 
+TODO:
+\vspace{0.5cm}
 \paragraph{System Description}\mbox{}\\
+
+The system pulls in a resource from a data pod in Turtle format, maps the received information to input fields in an \gls{html} form and fills in missing inputs or asks the user if the values should be replaced.
+
+\vspace{0.5cm}
 \paragraph{Features}\mbox{}\\
+
+The core functionality of the module consists of the following features: 
+
+\vspace{-3mm}
+\begin{enumerate}
+    \item A user can provide a the \gls{uri} to a public Turtle file
+    \item A user can choose to accept or reject values pulled in when values already exist
+\end{enumerate}
+\vspace{-3mm}
+
+These features allow the development of a module giving users the ability to pull in their WebID profile document and use the information provided in it to populate a conference registration.
+\vspace{0.5cm}
+\paragraph{Type of Users}\mbox{}\\
+
+There is one type of user for this system, who is the user with a WebID profile and interested in using the existing information to fill in a form.
+\vspace{0.5cm}
 \paragraph{Context Diagram}\mbox{}\\
+
+Other types of involved parties are the ones maintaining or developing the system and application. These are shown in the context diagram \ref{fig:poc-comment-context_diagram}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{prototype/graphs/poc-comment-context_diagram.png}
+    \caption{Context diagram showing users and external services of system.}
+    \label{fig:poc-comment-context_diagram}
+\end{figure}
+\vspace{0.5cm}
 \paragraph{Sequence Diagram}\mbox{}\\
+
+TODO:
 
 \begin{figure}[H]
     \centering
@@ -18,8 +52,14 @@ Therefore, the aim is to extend the registration module to allow storage in a da
     \label{fig:poc-conference_registration-autocomplete-sequence_diagram}
 \end{figure}
 
+\vspace{0.5cm}
 \paragraph{Stakeholders}\mbox{}\\
+
+TODO:
+\vspace{0.5cm}
 \paragraph{Drivers}\mbox{}\\
+
+TODO:
 
 \subsubsection{Design}\mbox{}\\
 
@@ -60,14 +100,23 @@ TODO: Include these somehow:
   * indico limits this
 * if indico in this way or more generally
 
+\vspace{0.5cm}
 \paragraph{Modification of Resource From Data Pod}\mbox{}\\
 
+TODO:
+\vspace{0.5cm}
 \paragraph{Payment on Input Fields}\mbox{}\\
 
+TODO:
+\vspace{0.5cm}
 \paragraph{Performance of Large Conference}\mbox{}\\
 
+TODO:
+\vspace{0.5cm}
 \paragraph{Availability of Crucial User Data}\mbox{}\\
 
+TODO:
+\vspace{0.5cm}
 \subsubsection{Integration With Indico}\mbox{}\\
 
 A few challenges arose when integrating the module with Indico. A critical issue was when it was found out that the form is not rendered on the server and send as \gls{html} in the response body as expected. Another challenge was when programmatically filling in the input fields of the inputs the frontend form validation would not detect a change in the input values and thus would think no input value is given.
@@ -127,7 +176,7 @@ function observeFormCreation() {
 
 Indico deploys a frontend validation to make sure it receives proper values for the form's inputs. A basic validation is the check for a presence of values in required inputs. This way Indico can render a hint on the input fields with invalid values, such as if no input was given in a required email address field. It turns out Indico has \texttt{\gls{dom} Event Listeners} which detect if an input field is clicked in and if it is receiving inputs through a user typing in it. This validation implementation does not detect when changing the value of the \texttt{value} attribute of an input node, thus complaining when setting the values through \gls{js}.
 
-\begin{lstlisting}[language=Other,columns=fullflexible, caption={Chaning the value of an input node.}, label={lst:input-change}]
+\begin{lstlisting}[language=Other,columns=fullflexible, caption={Changing the value of an input node.}, label={lst:input-change}]
 const formInputField = document.querySelector('.exampleFormInput')
 formInputField.value = 'New value'
 \end{lstlisting}
@@ -141,20 +190,49 @@ Two ways of fixing the problem are conceivable.
     \item Dispatch event when setting values in the autocomplete module
 \end{enumerate}
 
-Changing the Indico frontend validation might turn out to be more time consuming than anticipated and is therefore not viable, also it is unknown if a change is wanted in the first place. The idea for a working implementation is to validate on submission of the form instead of validation when change on the input is detected. 
+Changing the Indico frontend validation might turn out to be more time consuming than anticipated and is therefore not viable, also it is unknown if a change is wanted by the Indico development team in the first place. The idea for a working implementation is to validate on submission of the form instead of validation when change on the input is detected. As mentioned before the problem with the used \texttt{oninput} event is it does not detect when the value is set programmatically. If the validation is only happening when the values are tried to be sent to the server by submission the input values can be parsed and the correct value is detected -- no matter how it was set. 
+
+The other and also picked solution is to trigger the \texttt{oninput} event that is being listened on by the Indico validation. The event dispatch needs to happen as soon the values are set within the module and because this happens in the module and the module is a self-contained module without any knowledge of Indico, the module should not be directly changed, but rather allow a callback function to be passed to it and then execute when appropriate.
+
+\begin{lstlisting}[language=Other,columns=fullflexible, caption={Dispatching the \texttt{oninput} event within a callback.}, label={lst:oninput-callback}]
+function triggerInputEvent(inputs) {
+  for (let i = 0; i < inputs.length; i++) {
+    const element = inputs[i];
+    [element, element.parentNode].forEach(node => {
+      if ('createEvent' in document) {
+        const evt = document.createEvent('HTMLEvents');
+        evt.initEvent('input', false, true);
+        node.dispatchEvent(evt);
+      } else {
+        node.fireEvent('oninput');
+      }
+    });
+  }
+}
+\end{lstlisting}
 
 \subsubsection{Evaluation}\mbox{}\\
 
+TODO:
+\vspace{0.5cm}
 \paragraph{Metrics}\mbox{}\\
+
+TODO:
+\vspace{0.5cm}
 \paragraph{Levels}\mbox{}\\
+
+TODO:
+\vspace{0.5cm}
 \paragraph{Components}\mbox{}\\
 
+TODO:
+\vspace{0.5cm}
 \subsubsection{Analysis}\mbox{}\\
 
 * performance?
 * Management part of Indico
   * Forward data between people
   * **Also serve data to people (admin of registration)**
-* Comments are more clear tied to comment
+* Comments are more clear tied to comment?
 
 * the flow of Solid (ref Tim from White Area) notifying for future conference
