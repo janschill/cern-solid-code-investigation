@@ -83,27 +83,60 @@ The following section will shed light into the design decision made in the proce
 \vspace{0.5cm}
 \paragraph{Mapping Structured Data To \gls{html} Inputs}\mbox{}\\
 
-A great benefit of using Linked Data is its semantic structure and the interoperability it brings when using in systems supporting it. Indico does not make use of any common \gls{rdf} features and can therefore not extract any of those benefits. Because of this no simple way of mapping the incoming data from the data pod to the inputs exist, but a few options are feasable.
+A great benefit of using Linked Data is its semantic structure and the interoperability it brings when using in systems supporting it. Which means the data are using public vocabularies to be described and thus can be reasoned about by machines and can be move from one system into another one and seemlessly integrated. Indico does not make use of any common \gls{rdf} features and can therefore not extract any of those benefits. Because of this, no simple way of mapping the incoming data from the data pod to the inputs exist, but a few options are feasable.
 
 \begin{enumerate}
-    \item Enrich form with some kind of descriptive indicator
-    \item Parse and process existing attributes and labels
+    \item Enrich the form with some kind of descriptive indicator
+    \item Parse and process existing values of attributes and labels
 \end{enumerate}
 
 In the \gls{html} specification an \texttt{autocomplete} attribute exist, which is used by browsers to prefill data from previously used values \cite{html-spec}. The value of the \texttt{autocomplete} key-value pair describes the input and what data is to be expected.
 
 \begin{lstlisting}[language=Other,columns=fullflexible, caption={Autocomplete attribute on input field}, label={lst:autocomplete-input}]
 <form method=post action="/">
- <p><label>Full name: <input type=text autocomplete=name></label>
- <p><label>Credit card number: <input type=text inputmode=numeric autocomplete=cc-number></label>
- <p><label>Expiry Date: <input type=month autocomplete=cc-exp></label>
- <p><input type=submit value="Submit">
+  <p><label>Full name: <input type=text autocomplete=name></label>
+  <p><label>Credit card number: <input type=text inputmode=numeric autocomplete=cc-number></label>
+  <p><label>Expiry Date: <input type=month autocomplete=cc-exp></label>
+  <p><input type=submit value="Submit">
 </form>
 \end{lstlisting}
 
 In listing \ref{lst:autocomplete-input} the browser would suggest cached values when the user agent clicks into an input. This is the perfect indicator to \textit{autofill} form inputs. Unfortunately, this attribute is not being utilized in Indico. Another and even better approach would be to annotate the input fields straight up with the vocabulary of for example Schema.org \cite{schema-org}. The mapping of the input fields and the fetched Turtle resource could then happen directly using the \textit{predicates} of both structured format. To change the AngularJS form and implement new features into Indico were already established not to be viable. Nevertheless, the \texttt{autocomplete} feature shall be kept in mind.
 
+Without being able to extract from the \texttt{autocomplete} attribute within Indico it shall still be implemented and used, as other systems might use the attribute. Other means of extracting some kind of information from the form are the ID and name attributes or even the \texttt{TextNode} of the input label. The ID and name are often equipped with information about the input they are defined on. These values and additionally the value of the label node can be extracted and mapped against a dictionary of key value pairs to find out what the input is supposed to be filled in with.
 
+A possible mapping of address information could look like as in listing \ref{lst:autocomplete-mapping}. The implementation shows a \gls{js} implementation where the key in the \texttt{address} object are the possibly extracted values from the different techniques described above and the value is in this example the vCARD \cite{vcard-spec} equivalent. vCARD is being used by the \gls{nss} to describe the information in the WebID profile document.
+
+\begin{lstlisting}[language=Other,columns=fullflexible, caption={Dictionary to map extracted values with predicates from Turtle resource}, label={lst:autocomplete-mapping}]
+const address = {
+  address: 'full_address',
+  country: VCARD.country_name.value,
+  countryName: VCARD.country_name.value,
+  region: VCARD.region.value,
+  locality: VCARD.locality.value,
+  city: VCARD.locality.value,
+  streetAddress: VCARD.street_address.value,
+  street: VCARD.street_address.value,
+  postalCode: VCARD.postal_code.value
+}
+\end{lstlisting}
+
+Listing \ref{lst:webid-address} shows part of the WebID profile document where the address of an agent is described.
+
+\begin{lstlisting}[language=Other,columns=fullflexible, caption={Extraction from WebID profile document showing address.}, label={lst:webid-address}]
+@prefix : <#>.
+@prefix n: <http://www.w3.org/2006/vcard/ns#>.
+# …
+:id1614172452178
+  n:country-name "Denmark";
+  n:locality "Copenhagen";
+  n:postal-code "2300";
+  n:region "Zealand";
+  n:street-address "Rued Langgaards Vej 18". 
+# …
+:me n:hasAddress :id1614172452178;
+# …
+\end{lstlisting}
 
 TODO:
 1st iteration, save data in pod
