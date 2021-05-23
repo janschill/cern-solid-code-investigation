@@ -255,17 +255,17 @@ Storing the comments in \gls{rdf} can be done in two ways: storing it in one fil
     \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=0.7\textwidth]{prototype/graphs/poc-comment-single-resource-comments.png}
-      \caption{TODO: caption}
+      \caption{Comments being written in a single file resource on the data pod.}
       \label{fig:ppc-comment-single-resource-comments}
     \end{subfigure}%
     \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=0.7\textwidth]{prototype/graphs/poc-comment-multiple-resources-comments.png}
-      \caption{TODO: caption}
+      \caption{Comments being written in multiple file resources on the data pod.}
       \label{fig:poc-comment-multiple-resources-comments}
     \end{subfigure}
-    \caption{TODO: two approaches}
-    \label{fig:TODO}
+    \caption{Two different ways of saving the comment on the data pod.}
+    \label{fig:save-resource}
 \end{figure}
 
 When fetching the container with all the comment resources the request returns a Turtle file describing the container, but not the actual content of the contained resources. The misconception of receiving the content as well was thought to be a problem, as it was assumed an initial request to the container reading its child resources had to be made, and then for each resource a request needed to be built to retrieve the resource. This overhead was later disproved as the application where this module is embedded maintains the list of resources to be fetched. Therefore, no manual building of requests to those resources had to be done. The next paragraph also lays out how this design would not work with the protection of the resources.
@@ -278,7 +278,7 @@ Indico allows two general types of protection \textit{private} and \textit{publi
 
 In order for visitors of a private or public event in Indico to be able to see the comment, the comment’s \gls{acl} needs to allow the public to read the resource. This can be achieved by using the \textit{public} container, which comes with public-read by default on the \gls{nss} or by creating a new container and setting the \gls{acl} with:
 
-\begin{lstlisting}[language=Other,columns=fullflexible, caption={TODO: Label caption}, label={lst:1}]
+\begin{lstlisting}[language=Other,columns=fullflexible, caption={Setting default read for resources in container}, label={lst:container-acl}]
 @prefix acl: <http://www.w3.org/ns/auth/acl#>.
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
 
@@ -296,7 +296,7 @@ Every resource in this container is by definition readable by the public -- if n
 To prevent a random agent to see the contents of a container, the container can be set to private, with the container’s resources still be public. This would allow everyone provided they have the \gls{url} to browse to the public resource and read it, but not look into the resource’s parent container. To achieve this behavior with \gls{acl}, the container needs to just define its owner and no specific rules for the public, as \gls{wac} comes with a default private access control. Each child resource needs to define an \gls{acl} now, allowing public read.
 The container’s \gls{acl} would look like the following with just an owner defined:
 
-\begin{lstlisting}[language=Other,columns=fullflexible, caption={TODO: Label caption}, label={lst:2}]
+\begin{lstlisting}[language=Other,columns=fullflexible, caption={Container \gls{acl} with owner defined.}, label={lst:container-acl-owner}]
 @prefix acl: <http://www.w3.org/ns/auth/acl#>.
 
 <#owner>
@@ -309,7 +309,7 @@ The container’s \gls{acl} would look like the following with just an owner def
 
 A child resource would allow public read with:
 
-\begin{lstlisting}[language=Other,columns=fullflexible, caption={TODO: Label caption}, label={lst:3}]
+\begin{lstlisting}[language=Other,columns=fullflexible, caption={Giving read mode to child resources}, label={lst:container-acl-read}]
 @prefix : <#>.
 @prefix acl: <http://www.w3.org/ns/auth/acl#>.
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
@@ -325,7 +325,7 @@ A child resource would allow public read with:
 
 Another approach and the one implemented after iterating through the previous ones is to have the container’s \gls{acl} resource define a default access mode for its child resources. This way one \gls{acl} only needs to be created on the container and all resources have proper access modes for public read and are not listed publicly in the container’s description.
 
-\begin{lstlisting}[language=Other,columns=fullflexible, caption={TODO: Label caption}, label={lst:4}]
+\begin{lstlisting}[language=Other,columns=fullflexible, caption={Giving default read mode to all child resources of container.}, label={lst:container-acl-read-default}]
 @prefix acl: <http://www.w3.org/ns/auth/acl#>.
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
 @prefix target: <./>.
@@ -456,7 +456,9 @@ An important aspect of allowing the update of existing resources is to have an i
 \vspace{0.5cm}
 \paragraph{EventSettingsProxy Scalability Issues}\mbox{}\\
 
-TODO: EventProxy is not scalable, when comments are sent at the same time could be overwritten
+The implementation with EventSettingsProxy is not scalable and a production-ready technique. Even though transactions are being used in the database and a dedicated table is being used to persist all related settings for the events, it can still happen that race conditions occur. As for example two requests read the event settings table and retrieve an entry with $[1,2]$ for the column holding the list of comment \glspl{url}. When request A now writes $3$ and request B write $4$ it generate two \gls{sql} \texttt{UPDATE} statements, one with $[1,2,3]$ and one with $[1,2,4]$ where the second overwrites the first and only $[1,2,4]$ is persisted.
+
+Justification for implementing it in this way is a faster \textit{time-to-market} allowing a quicker development and thus testing of the prototype. It was never expected to test the prototype where these race conditions would occur. If a production-ready module should be developed, a separated database table would need to be created and every new comment \gls{uri} would be added to the database by using \gls{sql} \texttt{INSERT} statement, which are safe against race conditions. A further benefit would be the ability to store more comment specific meta information such as signatures or hash values to be able to detect changes in pulled in comments.
 \vspace{0.5cm}
 \paragraph{Indico Solid Proxying}\mbox{}\\
 
