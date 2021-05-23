@@ -6,7 +6,7 @@
 * Management part of Indico
   * Forward data between people
   * **Also serve data to people (admin of registration)**
-* Comments are more clear tied to comments
+* Comments are more clearly tied
 * Same problem with uploading slides
 * Danger: Root access
 * Getting Indico profile from WebID
