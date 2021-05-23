@@ -74,21 +74,25 @@ For various held meetings and presentations, a visual representation of the to-b
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\textwidth]{prototype/poc-solid-comment-description.png}
-    \caption{User interface showing the comment module: Description.}
-    \label{fig:poc-solid-comment-description}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=1\textwidth]{prototype/poc-solid-comment-agenda.png}
+    \begin{subfigure}{.5\textwidth}
+      \centering
+        \includegraphics[width=0.9\textwidth]{prototype/poc-solid-comment-description.png}
+        \caption{User interface showing the comment module: Description.}
+        \label{fig:poc-solid-comment-description}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+      \centering
+    \includegraphics[width=0.9\textwidth]{prototype/poc-solid-comment-agenda.png}
     \caption{User interface showing the comment module: FAQ.}
     \label{fig:poc-solid-comment-agenda}
+    \end{subfigure}
+    \caption{User interface of Indico}
+    \label{fig:test}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[ht!]
     \centering
-    \includegraphics[width=1\textwidth]{prototype/poc-solid-comment-comments.png}
+    \includegraphics[width=0.5\textwidth]{prototype/poc-solid-comment-comments.png}
     \caption{User interface showing the comment module: Comments.}
     \label{fig:poc-solid-comment-comments}
 \end{figure}
@@ -197,7 +201,7 @@ The goal of the server approach would be just like with the microservice approac
     \label{table:3}
 \end{table}
 
-The authentication library pyoidc allows authenticating with \gls{oidc} systems but is missing a mandatory feature called \gls{dpop}, which is needed to make requests to protected resources on a data pod.
+The authentication library pyoidc allows authenticating with \gls{oidc} systems but is missing a mandatory feature called \gls{dpop}, which is needed to make requests to protected resources on a data pod. TODO: say more about DPOP.
 
 \begin{figure}
     \centering
@@ -262,7 +266,7 @@ Storing the comments in \gls{rdf} can be done in two ways: storing it in one fil
       \label{fig:poc-comment-multiple-resources-comments}
     \end{subfigure}
     \caption{TODO: two approaches}
-    \label{fig:test}
+    \label{fig:TODO}
 \end{figure}
 
 When fetching the container with all the comment resources the request returns a Turtle file describing the container, but not the actual content of the contained resources. The misconception of receiving the content as well was thought to be a problem, as it was assumed an initial request to the container reading its child resources had to be made, and then for each resource a request needed to be built to retrieve the resource. This overhead was later disproved as the application where this module is embedded maintains the list of resources to be fetched. Therefore, no manual building of requests to those resources had to be done. The next paragraph also lays out how this design would not work with the protection of the resources.
