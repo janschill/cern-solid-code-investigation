@@ -36,9 +36,11 @@ Bugiotti
 bzip
 cabee
 Capadisli
+cas
 cbc
 cde
 cdivilly
+cds
 CER
 cerf
 cernbox
@@ -195,6 +197,7 @@ ipfs
 ipv
 iri
 issuecomment
+ists
 itu
 itustudent
 jan
@@ -302,12 +305,14 @@ openstack
 openstackclient
 ormalsize
 ouvertes
+owncloud
 panva
 panva's
 Pavlik
 pcre
 pdf
 pdos
+pds
 pdsinterop
 pem
 petabytes
