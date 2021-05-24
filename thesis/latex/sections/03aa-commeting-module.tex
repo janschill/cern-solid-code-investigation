@@ -384,7 +384,7 @@ The awkwardness in validating for an existing Indico session and then be able to
 \vspace{0.5cm}
 \subsubsection{Evaluation}\mbox{}\\
 
-This section focuses on evaluating the module. This shall be done by iterating through the module's requirements from the stakeholders and how the architecture lives up to those expectations. The evaluation is done with the help of the \gls{asqa} framework to ensure continuous quality assessment and prioritizing with a lightweight technique \cite{asqa-paper}.
+This section focuses on evaluating the system. This shall be done by iterating through the system's requirements from the stakeholders and how the architecture lives up to those expectations. The evaluation is done with the help of the \gls{asqa} framework to ensure continuous quality assessment and prioritizing with a lightweight technique \cite{asqa-paper}.
 \gls{asqa} contains seven process steps as shown in figure \ref{fig:asqa-process-steps}.
 
 \begin{figure}[!ht]
@@ -393,10 +393,15 @@ This section focuses on evaluating the module. This shall be done by iterating t
     \caption{aSQA Process Steps from \cite{asqa-paper}}
     \label{fig:asqa-process-steps}
 \end{figure}
+
+\begin{enumerate}
+    \item \textbf{Define metrics} to the components of the system. This can be done with quality attribute scenarios, that may define the desired quality.
+\end{enumerate}
+
 \vspace{0.5cm}
 \paragraph{Metrics}\mbox{}\\
 
-Scenario-based metrics were chosen to measure the quality attributes. The different scenarios are predicted to be the most common actions on the system and thus will stress the system and its architecture the most based on the quality attributes.
+The quality attribute scenarios are scenarios that measure the quality attributes. Base on the scenarios the evaluation will be carried out. The scenarios will always have the quality attributes in mind and are defined with the focus on those. The different scenarios are predicted to be the most common actions on the system and thus will stress the system and its architecture the most based on the quality attributes.
 
 The previously picked quality attributes are as follows:
 
@@ -408,17 +413,17 @@ The previously picked quality attributes are as follows:
 
 Possible scenarios are centered around data not being available or altered or scenarios of malicious behavior from an adversary by injecting code to misuse the system in unintended ways:
 
-% \vspace{-3mm}
 \begin{enumerate}
-    \item A user who has commented deletes their comment in their data pod
-    \item A user who has commented deletes their data pod
-    \item An adversary uses a script to generate a large number of comments
-    \item An adversary creates a comment with a \gls{xss} attack
-    \item An adversary serves different resources based on client \gls{ip} address
+    \item As a user I expect after commenting to see my comment in Indico, but also in my data pod
+    \item As a user I expect after deleting my comment in my data pod that the comment is not shown in Indico
+    \item As a user I expect after I edit my comment in my data pod that the comment will be updated in Indico
+    \item As a user I expect to be able to revoke access to my data pod for the application
+    \item As a user I expect to see others' comments
 \end{enumerate}
 
 \paragraph{Levels}\mbox{}\\
 
+The levels are used to measure the state of the architecture of system. These can be freely chosen, but follow an ordinal scale ranging from 1 to 5 in the original paper and will therefore be adapted.
 TODO:
 \vspace{0.5cm}
 \paragraph{Components}\mbox{}\\
