@@ -243,6 +243,7 @@ Benefits from developing the module for the client:
 \end{table}
 \vspace{0.5cm}
 \paragraph{Single Versus Multiple Resource(s) for Comments}\mbox{}\\
+
 Storing the comments in \gls{rdf} can be done in two ways: storing it in one file as a graph with a list of comments, or creating a file for every comment.
 
 \begin{figure}
@@ -362,18 +363,31 @@ The current implementation has not a built-in solution, but one way of solving i
 The need for integration with Indico is twofold: serving the module to the client and being the provider to the list of references to the comments that have been posted on a specific event.
 \vspace{0.5cm}
 \paragraph{Storing Reference to Comments in Indico}\mbox{}\\
+
 Indico operates using the relational database PostgreSQL \cite{postgresql}. When a comment gets posted and stored on an external data pod a reference to the location of the comment needs to be kept in order for Indico to pull the comment and render it in its frontend. Several possibilities are imaginable. 
 
+\begin{enumerate}
+    \item Create new EventComments table
+    \item Store in an Indico data pod 
+    \item Use existing EventSettings table
+\end{enumerate}
 
+One solution would be to create a new database table that associates with event using a foreign key and the event id and then stores every comment in its own row with all necessary meta information. The database schema would have to be updated in order to register the new table properly and then executed. A quicker alternative to this is the usage of an existing database table called \texttt{EventSettings}. \texttt{EventSettings} is for additional information for an event and is meant to be a lightweight key-value store for these extra data (often used with Indico plugins).
+
+Another option would be to leave the database alone and embrace the Solid way of storing the comment references by deploying an own Indico Solid data pod. The data pod could hold a resource for every event and link to the data pods where the comments can be found. This solution is definitely the most aligned with the Solid principles and could have been an interesting challenge to develop, but it was identified to late to actually push through.
 \vspace{0.5cm}
 \paragraph{Enforce Authenticated Session For Posting Comments}\mbox{}\\
 
+It was established through the iterations of the design with the stakeholders that an authenticated Indico session is deemed necessary in addition to the already authenticated Solid \gls{idp} session with the data pod. The main motivation was to keep it as laborious as possible for spam to reach the system.
+
+The awkwardness in validating for an existing Indico session and then be able to send requests to a protected endpoint comes with the great decoupling of the comment module and Indico, which is admirable, but also make this feature more challenging to implement. Indico uses a framework called Axios \cite{axios} for its \gls{http} client request handling. In Indico Axios is configured with all necessary \gls{http} headers and when a session exists also equipped with the auth-token. The comment module can simply be extended to allow the usage of a custom \gls{http} client for sending requests to Indico. When the module is initialized the Axios client is already readily configured and needs to be passed over to the module. Both system are still decoupled and the comment module works with or without a custom \gls{http} client.
+\vspace{0.5cm}
 \subsubsection{Evaluation}\mbox{}\\
 
 This section focuses on evaluating the module. This shall be done by iterating through the module's requirements from the stakeholders and how the architecture lives up to those expectations. The evaluation is done with the help of the \gls{asqa} framework to ensure continuous quality assessment and prioritizing with a lightweight technique \cite{asqa-paper}.
 \gls{asqa} contains seven process steps as shown in figure \ref{fig:asqa-process-steps}.
 
-\begin{figure}
+\begin{figure}[!ht]
     \centering
     \includegraphics[width=0.7\textwidth]{thesis/latex/assets/asqa-process-steps.png}
     \caption{aSQA Process Steps from \cite{asqa-paper}}
@@ -384,9 +398,7 @@ This section focuses on evaluating the module. This shall be done by iterating t
 
 Scenario-based metrics were chosen to measure the quality attributes. The different scenarios are predicted to be the most common actions on the system and thus will stress the system and its architecture the most based on the quality attributes.
 
-The iterate over the previously picked quality attributes:
-
-% \vspace{-12mm}
+The previously picked quality attributes are as follows:
 
 \begin{enumerate}
     \item Security
@@ -394,11 +406,9 @@ The iterate over the previously picked quality attributes:
     \item Usability
 \end{enumerate}
 
-% \vspace{-12mm}
-
 Possible scenarios are centered around data not being available or altered or scenarios of malicious behavior from an adversary by injecting code to misuse the system in unintended ways:
 
-\vspace{-3mm}
+% \vspace{-3mm}
 \begin{enumerate}
     \item A user who has commented deletes their comment in their data pod
     \item A user who has commented deletes their data pod
