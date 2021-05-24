@@ -200,7 +200,7 @@ The goal of the server approach would be just like with the microservice approac
     \label{table:3}
 \end{table}
 
-The authentication library pyoidc allows authenticating with \gls{oidc} systems but is missing a mandatory feature called \gls{dpop}, which is needed to make requests to protected resources on a data pod. TODO: say more about DPOP.
+The authentication library pyoidc allows authenticating with \gls{oidc} systems but is missing a mandatory feature called \gls{dpop}, which is needed to make requests to protected resources on a data pod. \gls{dpop} is a technique to disallow replay attacks by attaching a \gls{dpop} token to the request indicating for what data pod the token can be used. This means when a request with a valid authentication token is made to a malicious pod and the adversary steals this authentication token, the authentication token is signed with a target to this malicious pod, which means the adversary cannot take this intercepted token and use it for another address, as it is only valid for requests to this malicious pod. The \gls{dpop} token therefore needs to newly generated on everything request \cite{dpop-spec}.
 
 \begin{figure}
     \centering
@@ -241,11 +241,6 @@ Benefits from developing the module for the client:
     \caption{Existing solutions to problems for a server approach.}
     \label{table:4}
 \end{table}
-\vspace{0.5cm}
-\paragraph{Storage Location of the Comments}\mbox{}\\
-
-TODO: 
-
 \vspace{0.5cm}
 \paragraph{Single Versus Multiple Resource(s) for Comments}\mbox{}\\
 Storing the comments in \gls{rdf} can be done in two ways: storing it in one file as a graph with a list of comments, or creating a file for every comment.
