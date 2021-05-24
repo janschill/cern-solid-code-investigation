@@ -454,7 +454,4 @@ Justification for implementing it in this way is a faster \textit{time-to-market
 \vspace{0.5cm}
 \paragraph{Indico Solid Proxying}\mbox{}\\
 
-TODO: log IP and blog on spam; extra layer api to cache comments, performance and security against IP logging; one pod sends different content to users depending on their location
-
-* Performance of petabytes?
-* trustworthiness of the data
+Indico could develop an \gls{api} which sits between Indico and the Solid data pods to then for example make all the requests on behalf of the clients. A proxy as such would hide all the clients' \gls{ip} addresses and would therefore disallow the logging of client \gls{ip} addresses by a malicious data pod. A performance improvement is also foreseeable as the Indico proxy could make the requests to the different data pods and put them into cache where they would then be served from. By caching the request in this layer, the request do not have to be made by every client every time on page load. Loading resources before they are requested by clients and then serving clients from a cache is called cache warming \cite{cache-warming}. Another benefit of doing the requests using an Indico proxy is also that a malicious data pod or just one that wants to do some kind of targeted advertisement, cannot identify the clients by their \gls{ip} addresses and therefore not send different responses upon requests from different \gls{ip} addresses based on geolocation.
