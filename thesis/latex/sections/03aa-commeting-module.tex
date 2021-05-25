@@ -479,7 +479,8 @@ TODO:
 \end{align*}
 
 \begin{enumerate}
-    \item An adversary posts a comment with a string containing an attack for \gls{xss}
+    \item A user logs in with their WebID and posts a comment
+    \item An adversary posts a comment with a string containing a \gls{xss} attack
     \item High load of traffic is occurring with comments being posted within seconds
     \item An adversary deploys software on their pod to serve varying resources based on the geolocation of the connecting \gls{ip} address
 \end{enumerate}
@@ -490,13 +491,15 @@ TODO:
      \hline
      \texttt{auth} & T & C & H & I & F \\
      \hline
-     Security & 0 & 0 & 0 & 0 & 0\\
+     Security & 5 & 0 & 0 & 0 & 0\\
      \hline
-     Performance & 0 & 0 & 0 & 0 & 0\\
+     Performance & 5 & 1 & 1 & 5 & \cellcolor{red!50}5\\
      \hline
-     Availability & 0 & 0 & 0 & 0 & 0\\
+     Availability & 4 & 0 & 0 & 0 & 0\\
      \hline
-     Interoperability & 0 & 0 & 0 & 0 & 0\\
+     Interoperability & 2 & 0 & 0 & 0 & 0\\
+     \hline
+     Usability & 4 & 0 & 0 & 0 & 0\\
      \hline
     \end{tabular}
     \quad
@@ -504,23 +507,31 @@ TODO:
      \hline
      \texttt{components} & T & C & H & I & F \\
      \hline
-     Security & 0 & 0 & 0 & 0 & 0\\
+     Security & 5 & 0 & 0 & 0 & 0\\
      \hline
-     Performance & 0 & 0 & 0 & 0 & 0\\
+     Performance & 5 & 1 & 1 & 5 & \cellcolor{red!50}5\\
      \hline
-     Availability & 0 & 0 & 0 & 0 & 0\\
+     Availability & 4 & 0 & 0 & 0 & 0\\
      \hline
-     Interoperability & 0 & 0 & 0 & 0 & 0\\
+     Interoperability & 2 & 0 & 0 & 0 & 0\\
+     \hline
+     Usability & 4 & 0 & 0 & 0 & 0\\
      \hline
     \end{tabular}
     \vspace{0.75cm}
     \caption{Evaluation of the two packages based on the quality attribute scenarios}
-    \label{table:poc1-evaluation-auth}
+    \label{table:poc1-evaluation}
 \end{table}
 
 \subsubsection{Analysis}\mbox{}\\
 
+The following analysis section will explain how the values of the two tables from \ref{table:poc1-evaluation} came together and will give some more insights into how the modules are working and behaving in certain situations. After the explanation and analysis of this particular evaluation a broader analysis of the \gls{poc} will be given, where critical areas in the architecture will be highlighted and some possibilities for future iterations of it.
+\vspace{0.5cm}
+\paragraph{\texttt{auth}}\mbox{}\\
 
+TODO:
+\vspace{0.5cm}
+\paragraph{\texttt{components}}\mbox{}\\
 
 TODO:
 \vspace{0.5cm}
