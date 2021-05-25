@@ -107,9 +107,9 @@ Without being able to extract from the \texttt{autocomplete} attribute within In
 
 \begin{figure}[ht!]
     \centering
-    \includegraphics[width=0.75\textwidth]{prototype/graphs/poc-aut}
-    \caption{User interface showing the comment module: Comments.}
-    \label{fig:poc-autocomplete-conference-registration-submitted}
+    \includegraphics[width=0.5\textwidth]{prototype/graphs/poc-autocomplete-mapping-flow.png}
+    \caption{The flow to find a source for dictionary mapping.}
+    \label{fig:poc-autocomplete-mapping-flow}
 \end{figure}
 
 A possible mapping of address information could look like as in listing \ref{lst:autocomplete-mapping}. The implementation shows a \gls{js} implementation where the key in the \texttt{address} object are the possibly extracted values from the different techniques described above and the value is in this example the vCARD \cite{vcard-spec} equivalent. vCARD is being used by the \gls{nss} to describe the information in the WebID profile document.
