@@ -64,7 +64,7 @@ The architectural driver or quality attributes can be specified using “-illiti
 \begin{enumerate}
     \item Security
     \item Performance
-    \item Usability
+    \item Interoperability
 \end{enumerate}
 
 \subsubsection{Screen Design}\mbox{}\\
@@ -412,7 +412,7 @@ The previously picked quality attributes are as follows:
 \begin{enumerate}
     \item Security
     \item Performance
-    \item Usability
+    \item Interoperabilty
 \end{enumerate}
 
 Possible scenarios are centered around data not being available or altered or scenarios of malicious behavior from an adversary by injecting code to misuse the system in unintended ways:
@@ -432,9 +432,29 @@ TODO:
 \vspace{0.5cm}
 \paragraph{Components}\mbox{}\\
 
+To evaluate the security of the chosen architecture of the system it make sense to look a the \texttt{auth} package and those modules interfacing user input into the system. The user input modules can be found in the \texttt{component} package.
+
+
+
 TODO:
 \vspace{0.5cm}
-\paragraph{Scenarios}\mbox{}\\
+\paragraph{Evaluate}\mbox{}\\
+
+Target Level: What is the desired quality level?
+Current Level: What is the current level?
+Health: Where are the largest quality problems?
+Importance: How important is it to move from current to target level?
+Focus: What are the largest and most important quality problems?
+Valid levels: 1, 2, 3, 5, 8
+
+\begin{align*}
+    \text{\textit{health}}&=5 - \text{\textit{max}}(0, (\text{\textit{target}} - \text{\textit{current}}))
+\end{align*}
+
+\begin{align*}
+    \text{\textit{focus}}&= \text{\textit{ceil}}((6 - \text{\textit{health}}) * \text{\textit{importance}}/5)
+\end{align*}
+
 
 TODO:
 \subsubsection{Analysis}\mbox{}\\
@@ -455,7 +475,7 @@ Another enhancement can be attained by caching. In its current design, the comme
 
 More performance solutions shall be looked at with the other upcoming areas in this analysis section.
 \vspace{0.5cm}
-\paragraph{Modification of Resources}\mbox{}\\
+\paragraph{Security: Modification of Resources}\mbox{}\\
 
 In the case of comments being the resources that are being shared between data pod and application, it has been established a modification from outside the application is acceptable behavior. For a resource where a modification should be monitored or even forbidden. A few paths are conceivable.
 
