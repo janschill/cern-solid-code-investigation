@@ -495,7 +495,7 @@ The second package, \texttt{components}, holds all elements in the user interfac
      \hline
      Performance & 5 & 1 & 1 & 5 & \cellcolor{red!50}5\\
      \hline
-     Availability & 4 & 0 & 0 & 0 & 0\\
+     Availability & 4 & 3 & 5 & 0 & 0\\
      \hline
      Interoperability & 2 & 0 & 0 & 0 & 0\\
      \hline
@@ -511,7 +511,7 @@ The second package, \texttt{components}, holds all elements in the user interfac
      \hline
      Performance & 5 & 1 & 1 & 5 & \cellcolor{red!50}5\\
      \hline
-     Availability & 4 & 0 & 0 & 0 & 0\\
+     Availability & 4 & 3 & 5 & 0 & 0\\
      \hline
      Interoperability & 2 & 0 & 0 & 0 & 0\\
      \hline
@@ -546,6 +546,10 @@ The \texttt{SolidClient} class is part of the \texttt{auth} component package, w
 \end{figure}
 
 The application boot with successive comment fetching happens every time the system is loaded, which is in minimum four requests, when no comments are loaded and $n*2+4$ requests with $n$ comments.
+
+In regards to \textit{availability} for both looked at modules if a data pod is unavailable the \texttt{auth} module will simply not be able to do its checks on whether a session is present. The \gls{http} requests checking the session will respond with $40x$ \gls{http} status codes and simply disallow any comment posting. For the \texttt{components} module a dedicated message has been implemented which will render a hint on why a comment may not have loaded when a data pod is unreachable. The hint renders one long message guessing what has happened, but is not clever about inferring the reason.
+
+
 
 \vspace{0.5cm}
 \paragraph{Performance}\label{paragraph:evaluation-performance}\mbox{}\\
