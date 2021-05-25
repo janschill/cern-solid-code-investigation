@@ -527,23 +527,28 @@ The second package, \texttt{components}, holds all elements in the user interfac
 
 The following analysis section will explain how the values of the two tables from \ref{table:poc1-evaluation} came together and will give some more insights into how the modules are working and behaving in certain situations. After the explanation and analysis of this particular evaluation a broader analysis of the \gls{poc} will be given, where critical areas in the architecture will be highlighted and some possibilities for future iterations of it.
 \vspace{0.5cm}
-\paragraph{\texttt{auth}}\mbox{}\\
+\paragraph{\texttt{auth} and \texttt{components} packages}\mbox{}\\
+
+The \texttt{SolidClient} class is part of the \texttt{auth} component package, which handles the session management. When the comment module is loaded upon page load it is \textit{booted} with the flow shown in \ref{fig:poc-comment-flow-app_boot}. It can be observed that every time the module is loaded it has to do four round trips to the \gls{idp} and data pod. Once the application is booted, the list of comment \glspl{uri} are passed to the application and it fetches all comments from their remote data pods. This behavior is linked to the \texttt{components} module, as it is responsible for rendering all these comments in the \gls{dom}. Further performance analyses in regards to the fetching of the comments is being done below in the paragraph \ref{paragraph:evaluation-performance}. But when the comments are being fetched a second request happens that loads the WebID profile of the author of the comment. Resulting in $n*2$ requests, where $n$ is the number of comments. The exact flow of getting the comments is shown in figure \ref{fig:poc-comment-flow-set_comments}.
 
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{prototype/graphs/poc-comment-.png}
-    \caption{The \texttt{auth} package with its classes.}
-    \label{fig:poc-comment-package-auth}
+    \includegraphics[width=0.7\textwidth]{prototype/graphs/poc-comment-flow-app_boot.png}
+    \caption{Application boot flow. External \gls{http} requests are indicated by a filled grey box.}
+    \label{fig:poc-comment-flow-app_boot}
 \end{figure}
 
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{prototype/graphs/poc-comment-flow-set_comments.png}
+    \caption{Requesting comments from data pod. External \gls{http} requests are indicated by a filled grey box.}
+    \label{fig:poc-comment-flow-set_comments}
+\end{figure}
 
-TODO:
-\vspace{0.5cm}
-\paragraph{\texttt{components}}\mbox{}\\
+The application boot with successive comment fetching happens every time the system is loaded, which is in minimum four requests, when no comments are loaded and $n*2+4$ requests with $n$ comments.
 
-TODO:
 \vspace{0.5cm}
-\paragraph{Performance}\mbox{}\\
+\paragraph{Performance}\label{paragraph:evaluation-performance}\mbox{}\\
 
 The chosen technique of storing the comments is not as efficient as it could be. Every comment is stored as a self-contained Turtle file on the author's comment with Indico holding the \gls{uri} to be able to fetch it on demand. As soon as the client is loading the module with the comments the client will have to make $n$ requests, $n$ being the number of comments.
 
