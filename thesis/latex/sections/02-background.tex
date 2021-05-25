@@ -115,6 +115,8 @@ const fn = getStringNoLocale(myProfile, VCARD.fn);
 The as per Solid specification decided authorization mechanism is through \gls{wac} \cite{wac}. The majority of Solid servers use \glspl{acl} to manage the access modes on containers and resources.
 
 TODO: more here
+TODO: explain ACL
+“In practice, an access matrix is usually sparse and is implemented by decomposition in one of two ways. The matrix may be decomposed by columns, yielding access control lists (ACLs) (see Figure 4.2b). For each object, an ACL lists users and their permitted access rights. The ACL may contain a default, or public, entry. This allows users that are not explicitly listed as having special rights to have a default set of rights. The default set of rights should always follow the rule of least privilege or read-only access, whichever is applicable. Elements of the list may include individual users as well as groups of users. When it is desired to determine which subjects have which access rights to a particular resource, ACLs are convenient, because each ACL provides the information for a given resource. However, this data structure is not convenient for determining the access rights available to a specific user.”
 
 \subsection{Application Launcher}
 

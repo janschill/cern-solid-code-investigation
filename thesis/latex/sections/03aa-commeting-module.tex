@@ -423,6 +423,7 @@ Possible scenarios are centered around data not being available or altered or sc
     \item As a user I expect after I edit my comment in my data pod that the comment will be updated in Indico
     \item As a user I expect to be able to revoke access to my data pod for the application
     \item As a user I expect to see others' comments
+    \item As a user I expect to only give access to the necessary data
 \end{enumerate}
 
 \paragraph{Levels}\mbox{}\\
@@ -432,9 +433,25 @@ TODO:
 \vspace{0.5cm}
 \paragraph{Components}\mbox{}\\
 
-To evaluate the security of the chosen architecture of the system it make sense to look a the \texttt{auth} package and those modules interfacing user input into the system. The user input modules can be found in the \texttt{component} package.
+To evaluate the security of the chosen architecture of the system it make sense to look at the \texttt{auth} package and the modules that interface the user input and the system. The user input modules can be found in the \texttt{component} package.
 
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{prototype/graphs/poc-comment-package-auth.png}
+    \caption{The \texttt{auth} package with its classes.}
+    \label{fig:poc-comment-package-auth}
+\end{figure}
 
+The \texttt{auth} package holds classes handling the \gls{acl} logic necessary. The logic ranges from checking for existing specific authorization modes or even creating new \gls{acl} files for resources and updating existing resources. A careless architecture could result in either giving too much access control or allowing privilege escalation, where a flaw in the software can be used to elevate the access modes for an adversary.
+
+The \texttt{auth} package further holds the \texttt{SolidClient} class. The \texttt{SolidClass} is a wrapper class for the external authentication functions, which bring the authentication and session management for the Solid ecosystem.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{prototype/graphs/poc-comment-package-components.png}
+    \caption{The \texttt{components} package with its classes.}
+    \label{fig:poc-comment-package-components}
+\end{figure}
 
 TODO:
 \vspace{0.5cm}
