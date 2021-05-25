@@ -1,8 +1,8 @@
-\subsection{POC 2: Auto-Complete for Conference Registration in Indico}
+\subsection{POC 2: Auto-Complete Form Inputs for Conference Registration in Indico}
 
 The second prototype aims at connecting Solid with the conference registration module in Indico. When registering for a conference an \gls{html} form is presented with fields previously defined by the conference manager, who deemed those fields necessary. A form always contains personal information of the name and email address, but is not limited to it and can even range to more sensitive information such as copies of personal identification documents. Information of this type has perfect motivation to remain in the hand of the owner and not be stored in a remote data store, uncontrollable and unknown to the registrants.
 
-Therefore, the initial aim was to extend the registration module to allow storage of sensible information in a data pod, where the user has full control and can handle the data to their own liking. This was decided to not be viable and the prototype was changed to allow the extraction of data from a data pod to be used in the registration process within Indico -- the functionality to then only store the data from the registration in the user's data pod was dropped. The reasons and comprehensive analysis will be shared after the design and evaluation of the second \gls{poc} in this chapter.
+Therefore, the initial aim was to extend the registration module to allow storage of sensible information in a data pod, where the user has full control and can handle the data to their own liking. This was decided to not be viable and the prototype changed to allow the extraction of data from a data pod and then use this data to map it to input fields of an Indico conference registration form -- the functionality to then also store the data from the registration in the user's data pod and not in Indico was dropped. The reasons and comprehensive analysis will be shared after the architectural analysis, synthesis, and evaluation of the developed alternating \gls{poc} in the \textit{design} \ref{poc2:design} and \textit{analysis} \ref{poc2:analysis} sections of this chapter.
 
 \subsubsection{Architectural Analysis and Synthesis}\mbox{}\\
 
@@ -43,7 +43,7 @@ Other types of involved parties are the ones maintaining or developing the syste
 \vspace{0.5cm}
 \paragraph{Sequence Diagram}\mbox{}\\
 
-TODO:
+The following succeeding diagram shows the sequential flow through the system upon initialization and button press. The focus was laid in the diagram to show the request/response cycles in the infrastructure. 
 
 \begin{figure}[H]
     \centering
@@ -72,12 +72,12 @@ TODO:
 
 \begin{figure}[ht!]
     \centering
-    \includegraphics[width=0.75\textwidth]{prototype/graphs/poc-autocomplete-conference-registration-submitted.png}
+    \includegraphics[width=0.75\textwidth]{prototype/poc-solid-autocomplete-conference-registration-attendees.png}
     \caption{User interface showing the comment module: Comments.}
     \label{fig:poc-autocomplete-conference-registration-submitted}
 \end{figure}
 
-\subsubsection{Design}\mbox{}\\
+\subsubsection{Design}\label{poc2:design}\mbox{}\\
 
 The following section will shed light on the design decision made in the process of sketching out the architecture of the module and developing the system. It will introduce the different challenges and how they were overcome. Especially, it will give an explanation of what led to the change of core functionality of the module. In the succeeding section, the choices will be analyzed more explicitly.
 \vspace{0.5cm}
@@ -104,6 +104,13 @@ In the \gls{html} specification an \texttt{autocomplete} attribute exist, which 
 In listing \ref{lst:autocomplete-input} the browser would suggest cached values when the user agent clicks into an input. This is the perfect indicator to \textit{autofill} form inputs. Unfortunately, this attribute is not being utilized in Indico. Another and even better approach would be to annotate the input fields straight up with the vocabulary of for example Schema.org \cite{schema-org}. The mapping of the input fields and the fetched Turtle resource could then happen directly using the \textit{predicates} of both structured formats. To change the AngularJS form and implement new features into Indico were already established not to be viable. Nevertheless, the \texttt{autocomplete} feature shall be kept in mind.
 
 Without being able to extract from the \texttt{autocomplete} attribute within Indico it shall still be implemented and used, as other systems might use the attribute. Other means of extracting some kind of information from the form are the ID and name attributes or even the \texttt{TextNode} of the input label. The ID and name are often equipped with information about the input they are defined on. These values and additionally the value of the label node can be extracted and mapped against a dictionary of key-value pairs to find out what the input is supposed to be filled in with.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{prototype/graphs/poc-aut}
+    \caption{User interface showing the comment module: Comments.}
+    \label{fig:poc-autocomplete-conference-registration-submitted}
+\end{figure}
 
 A possible mapping of address information could look like as in listing \ref{lst:autocomplete-mapping}. The implementation shows a \gls{js} implementation where the key in the \texttt{address} object are the possibly extracted values from the different techniques described above and the value is in this example the vCARD \cite{vcard-spec} equivalent. vCARD is being used by the \gls{nss} to describe the information in the WebID profile document.
 
@@ -138,59 +145,6 @@ Listing \ref{lst:webid-address} shows part of the WebID profile document where t
 # ...
 \end{lstlisting}
 
-TODO:
-1st iteration, save data in pod
-2nd iteration, only pull data from pod
-
-TODO: Include these somehow:
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.6\textwidth]{prototype/graphs/poc-conference_registration_flow-client_side-sideways.jpeg}
-    \caption{TODO:}
-    \label{fig:poc-conference_registration_flow-client_side-sideways}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.6\textwidth]{prototype/graphs/poc-conference_registration_flow-server_side-sideways.jpeg}
-    \caption{TODO:}
-    \label{fig:poc-conference_registration_flow-server_side-sideways}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.6\textwidth]{prototype/graphs/poc-conference_registration_flow-sideways.jpeg}
-    \caption{TODO:}
-    \label{fig:poc-conference_registration_flow-sideways}
-\end{figure}
-
-* Gave up usage control
-  * Why it didn't work, and **what is necessary to make it work**
-    * usage control
-    * question the choice of Indico usage control
-    * versioning of tag of personal data
-* high-level constraints
-* implementation
-  * indico limits this
-* if indico in this way or more generally
-
-\vspace{0.5cm}
-\paragraph{Modification of Resource From Data Pod}\mbox{}\\
-
-TODO:
-\vspace{0.5cm}
-\paragraph{Payment on Input Fields}\mbox{}\\
-
-TODO:
-\vspace{0.5cm}
-\paragraph{Performance of Large Conference}\mbox{}\\
-
-TODO:
-\vspace{0.5cm}
-\paragraph{Availability of Crucial User Data}\mbox{}\\
-
-TODO:
 \vspace{0.5cm}
 \subsubsection{Integration With Indico}\mbox{}\\
 
@@ -302,7 +256,67 @@ TODO:
 
 TODO:
 \vspace{0.5cm}
-\subsubsection{Analysis}\mbox{}\\
+\subsubsection{Analysis}\label{poc2:analysis}\mbox{}\\
+
+The analysis of the second \gls{poc} will focus on original design idea and what led to a change of mind. It will do so by looking at the relevant modules in Indico that caused the direction for the \gls{poc}, but it will also be analyzed what role Solid's design played in abandoning the storage of registration data in data pods and effectively giving up usage control.
+
+
+
+* Gave up usage control
+  * Why it didn't work, and **what is necessary to make it work**
+    * usage control
+    * question the choice of Indico usage control
+    * versioning of tag of personal data
+* high-level constraints
+* implementation
+  * indico limits this
+* if indico in this way or more generally
+
+\vspace{0.5cm}
+\paragraph{Iterations}\mbox{}\\
+TODO:
+1st iteration, save data in pod
+2nd iteration, only pull data from pod
+
+TODO: Include these somehow:
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{prototype/graphs/poc-conference_registration_flow-client_side-sideways.jpeg}
+    \caption{TODO:}
+    \label{fig:poc-conference_registration_flow-client_side-sideways}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{prototype/graphs/poc-conference_registration_flow-server_side-sideways.jpeg}
+    \caption{TODO:}
+    \label{fig:poc-conference_registration_flow-server_side-sideways}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{prototype/graphs/poc-conference_registration_flow-sideways.jpeg}
+    \caption{TODO:}
+    \label{fig:poc-conference_registration_flow-sideways}
+\end{figure}
+\vspace{0.5cm}
+\paragraph{Modification of Resource From Data Pod}\mbox{}\\
+
+TODO:
+\vspace{0.5cm}
+\paragraph{Payment on Input Fields}\mbox{}\\
+
+TODO:
+\vspace{0.5cm}
+\paragraph{Performance of Large Conference}\mbox{}\\
+
+TODO:
+\vspace{0.5cm}
+\paragraph{Availability of Crucial User Data}\mbox{}\\
+
+TODO:
+
 
 * performance?
 * Management part of Indico
