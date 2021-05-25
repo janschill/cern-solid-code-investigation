@@ -11,6 +11,7 @@ angelo
 angularjs
 api
 apps
+arget
 Arwe
 asc
 aspx
@@ -20,6 +21,7 @@ authn
 Autocomplete
 autofill
 AWS
+axios
 axiosclient
 backend
 bashrc
@@ -41,6 +43,7 @@ cbc
 cde
 cdivilly
 cds
+cellcolor
 CER
 cerf
 cernbox
@@ -112,6 +115,7 @@ evertramos
 evt
 ewacronym
 ewglossaryentry
+ewpage
 extbf
 extit
 exttt
@@ -134,6 +138,7 @@ GAf
 gcc
 gdac
 GDPR
+geolocation
 getindico
 getopenid
 Ghanem
@@ -238,6 +243,7 @@ lifecycle
 Lindstr
 linkeddata
 Linux
+Liqid
 localhost
 Lodderstedt
 logfile
@@ -269,6 +275,7 @@ mkdir
 Moennich
 mov
 mozilla
+mportance
 Msc
 mvp
 namespace
@@ -295,6 +302,7 @@ NSS
 NX
 OAuth
 OCM
+ocus
 OIDC
 onboarding
 oninput
@@ -465,6 +473,7 @@ uninstall
 uqam
 uri
 URL
+urrent
 useradd
 userguide
 username
