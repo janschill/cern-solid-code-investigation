@@ -102,12 +102,9 @@
 % numbering on subsubsection
 \setcounter{secnumdepth}{3}
 
-\usepackage{titletoc}%
-
-\titlecontents{chapter}[0em]{\lsstyle\smallskip\bfseries\large}%\vspace{1cm}%
-{}%
-{\itshape\bfseries}%numberless%
-{\hfill\contentspage}[\medskip]
+% remove chapter numbers in TOC
+\usepackage{titletoc}
+\titlecontents{chapter}[0em]{\lsstyle\smallskip\bfseries\large}{}{\itshape\bfseries}{\hfill\contentspage}[\medskip]
 
 \begin{document}
 \input{thesis/latex/title-page}
