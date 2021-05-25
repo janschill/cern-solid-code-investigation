@@ -412,7 +412,7 @@ The previously picked quality attributes are as follows:
 \begin{enumerate}
     \item Security
     \item Performance
-    \item Interoperabilty
+    \item Usability
 \end{enumerate}
 
 Possible scenarios are centered around data not being available or altered or scenarios of malicious behavior from an adversary by injecting code to misuse the system in unintended ways:
@@ -446,7 +446,7 @@ The \texttt{auth} package holds classes handling the \gls{acl} logic necessary. 
 
 The \texttt{auth} package further holds the \texttt{SolidClient} class. The \texttt{SolidClass} is a wrapper class for the external authentication functions, which bring the authentication and session management for the Solid ecosystem. Naturally, all authentication modules need to be inspected and made sure no vulnerabilities are let in.
 
-\begin{figure}[!ht]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{prototype/graphs/poc-comment-package-components.png}
     \caption{The \texttt{components} package with its classes.}
@@ -473,7 +473,7 @@ The second package, \texttt{components}, holds all elements in the user interfac
 \begin{align*}
     \text{\textit{health}}&=5 - \text{\textit{max}}(0, (\text{\textit{target}} - \text{\textit{current}}))
 \end{align*}
-
+\vspace{-10mm}
 \begin{align*}
     \text{\textit{focus}}&= \text{\textit{ceil}}((6 - \text{\textit{health}}) * \text{\textit{importance}}/5)
 \end{align*}
@@ -491,15 +491,13 @@ The second package, \texttt{components}, holds all elements in the user interfac
      \hline
      \texttt{auth} & T & C & H & I & F \\
      \hline
-     Security & 5 & 0 & 0 & 0 & 0\\
+     Security & 5 & 2 & 0 & 0 & 0\\
      \hline
      Performance & 5 & 1 & 1 & 5 & \cellcolor{red!50}5\\
      \hline
-     Availability & 4 & 3 & 5 & 0 & 0\\
+     Availability & 4 & 3 & 4 & 2 & 1\\
      \hline
-     Interoperability & 2 & 0 & 0 & 0 & 0\\
-     \hline
-     Usability & 4 & 0 & 0 & 0 & 0\\
+     Usability & 5 & 2 & 2 & 4 & 4\\
      \hline
     \end{tabular}
     \quad
@@ -507,15 +505,13 @@ The second package, \texttt{components}, holds all elements in the user interfac
      \hline
      \texttt{components} & T & C & H & I & F \\
      \hline
-     Security & 5 & 0 & 0 & 0 & 0\\
+     Security & 5 & 3 & 0 & 0 & 0\\
      \hline
      Performance & 5 & 1 & 1 & 5 & \cellcolor{red!50}5\\
      \hline
-     Availability & 4 & 3 & 5 & 0 & 0\\
+     Availability & 4 & 3 & 4 & 2 & 1\\
      \hline
-     Interoperability & 2 & 0 & 0 & 0 & 0\\
-     \hline
-     Usability & 4 & 0 & 0 & 0 & 0\\
+     Usability & 5 & 3 & 3 & 3 & 2\\
      \hline
     \end{tabular}
     \vspace{0.75cm}
@@ -531,14 +527,14 @@ The following analysis section will explain how the values of the two tables fro
 
 The \texttt{SolidClient} class is part of the \texttt{auth} component package, which handles the session management. When the comment module is loaded upon page load it is \textit{booted} with the flow shown in \ref{fig:poc-comment-flow-app_boot}. It can be observed that every time the module is loaded it has to do four round trips to the \gls{idp} and data pod. Once the application is booted, the list of comment \glspl{uri} are passed to the application and it fetches all comments from their remote data pods. This behavior is linked to the \texttt{components} module, as it is responsible for rendering all these comments in the \gls{dom}. Further performance analyses in regards to the fetching of the comments is being done below in the paragraph \ref{paragraph:evaluation-performance}. But when the comments are being fetched a second request happens that loads the WebID profile of the author of the comment. Resulting in $n*2$ requests, where $n$ is the number of comments. The exact flow of getting the comments is shown in figure \ref{fig:poc-comment-flow-set_comments}.
 
-\begin{figure}[!ht]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{prototype/graphs/poc-comment-flow-app_boot.png}
     \caption{Application boot flow. External \gls{http} requests are indicated by a filled grey box.}
     \label{fig:poc-comment-flow-app_boot}
 \end{figure}
 
-\begin{figure}[!ht]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{prototype/graphs/poc-comment-flow-set_comments.png}
     \caption{Requesting comments from data pod. External \gls{http} requests are indicated by a filled grey box.}
@@ -549,7 +545,14 @@ The application boot with successive comment fetching happens every time the sys
 
 In regards to \textit{availability} for both looked at modules if a data pod is unavailable the \texttt{auth} module will simply not be able to do its checks on whether a session is present. The \gls{http} requests checking the session will respond with $40x$ \gls{http} status codes and simply disallow any comment posting. For the \texttt{components} module a dedicated message has been implemented which will render a hint on why a comment may not have loaded when a data pod is unreachable. The hint renders one long message guessing what has happened, but is not clever about inferring the reason.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{prototype/poc-comment-unavailable_comment.png}
+    \caption{Hint when a comment could not be loaded}
+    \label{fig:poc-comment-unavailable_comment}
+\end{figure}
 
+Another striking value is the high focus for the usability in the \texttt{auth} component. This can be explained with the fact that it is not made clear to the user that \textit{control} access to the root container of the data pod is needed in order for the application to function properly. Only when an authenticated session from the Solid \gls{idp} is present and the \textit{control} access is lacking it will show in the interface. Firstly, this results in a bad user experience, but more over the fact that the user needs to gives full control over the data pod to the application is unfortunate. The end-user who is not a Solid professional will have a hard time understanding the reason and may step back from application that need this much control. The evaluation for the \textit{security} resulted therefore also with a worse level than it could have scored. The security within the module is relatively stable with sanitization of inputs not allowing any malicious code to be executed when fetching resource from data pods.
 
 \vspace{0.5cm}
 \paragraph{Performance}\label{paragraph:evaluation-performance}\mbox{}\\
