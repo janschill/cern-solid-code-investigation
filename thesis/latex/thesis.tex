@@ -105,9 +105,19 @@
 % numbering on subsubsection
 \setcounter{secnumdepth}{3}
 
+% WARNING: does not compile on GitHub Actions
 % remove chapter numbers in TOC
-\usepackage{titletoc}
-\titlecontents{chapter}[0em]{\lsstyle\smallskip\bfseries\large}{}{\itshape\bfseries}{\hfill\contentspage}[\medskip]
+% \usepackage{titletoc}
+% \titlecontents{chapter}
+%             [0em]
+%             {\lsstyle\smallskip\bfseries\large}
+%             {}
+%             {\itshape\bfseries}
+%             {\hfill\contentspage}
+%             [\medskip]
+% titlecontents{hsectioni}[hlefti]{habove-codei}
+% {hnumbered-entry-formati}{hnumberless-entry-formati}
+% {hfiller-page-formati}[hbelow-codei]
 
 \begin{document}
 \input{thesis/latex/title-page}
