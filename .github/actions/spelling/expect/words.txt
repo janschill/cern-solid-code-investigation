@@ -57,6 +57,7 @@ chown
 cial
 cient
 cil
+CISSP
 clouddocs
 cloudflare
 cnf
@@ -117,6 +118,7 @@ ewacronym
 ewglossaryentry
 ewpage
 extbf
+extelp
 extit
 exttt
 extwidth
@@ -201,6 +203,7 @@ ip
 ipfs
 ipv
 iri
+isbn
 issuecomment
 ists
 itu
