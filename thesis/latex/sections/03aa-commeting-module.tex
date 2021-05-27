@@ -1,4 +1,4 @@
-\subsection{POC 1: Commenting Module for Events in Indico}
+\subsection{POC 1: Commenting Module for Events in Indico}\label{poc1}
 
 The first \gls{poc} is supposed to enrich the Indico system with some sort of Solid-based content. With the product owner and chief developer of Indico, the CERN-Solid project manager, and a Solid developer it was decided a commenting module for Indico events is an adequate solution to include data from an external storage entity namely a data pod. The ability to allow users of Indico to leave a comment on an event, which then lives in a data pod completely controlled by the author of the comment was concluded to be an attractive feature for Indico.
 
@@ -52,7 +52,7 @@ A sequence diagram brings a suitable overview for any software architecture, but
     \label{fig:poc-comment-sequence_diagram}
 \end{figure}
 \vspace{0.5cm}
-\paragraph{Stakeholders}\mbox{}\\
+\paragraph{Stakeholders}\label{poc1-stakeholders}\mbox{}\\
 
 This section covers the various stakeholders in relation to the system. This both includes active users, but also various external and internal stakeholders who are impacted by the system or have an important say in the development process.
 
@@ -62,15 +62,15 @@ The \textbf{internal developer} is responsible for executing the decision made b
 \vspace{0.5cm}
 \paragraph{Drivers}\mbox{}\\
 
-The architectural driver or \glspl{qa} can be specified using “-illities”
+The architectural drivers or \glspl{qa} can be specified using “-illities”. These \glspl{qa} were defined with the stakeholders together in several meetings in which the existing \glspl{qa} of the system, where the \textit{comment} module would be embedded into, were drawn up. \textit{Security} and \textit{Performance} are the of utmost priority of the chief developer and product owner. For the collaboration manager having used Solid for a while it was of clear importance to her that the module is usable and requires as little effort as possible and causes the lowest amount of friction.
 
 \begin{enumerate}
     \item Security
     \item Performance
-    \item Interoperability
+    \item Usability
 \end{enumerate}
 
-\subsubsection{Screen Design}\mbox{}\\
+\subsubsection{User Interface}\mbox{}\\
 
 For various held meetings and presentations, a visual representation of the to-be-developed module helps to guide the audience through the process. For the comment module, a user interface was designed in graphical software to ease the explanation of the goals for the module. The existing Indico color scheme was adopted to blend into the system.
 
@@ -112,7 +112,6 @@ Indico does send \gls{js}, which is used for client-side features, but it focuse
 To make the right decision if the module should be primarily developed for the client- or server-side or even as a microservice, a list of requirements to the module had to be defined. With the defined requirements in place, it had to be figured out how much functionality can be extracted from existing libraries and how much needed to be implemented with the new module. Implementing existing functionality for a new programming language would defeat the \gls{poc}’s purpose of showing how an existing software could work with the Solid principles.
 
 The rudimentary set of features to enable commenting for users in Indico while saving the data in a data pod includes: 
-
 \begin{enumerate}
     \item Authentication with a Solid \gls{idp}
     \item (Authenticated) Requests to a data pod
