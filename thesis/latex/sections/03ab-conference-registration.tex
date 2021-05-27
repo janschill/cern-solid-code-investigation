@@ -157,7 +157,7 @@ Listing \ref{lst:webid-address} shows part of the WebID profile document where t
 A few challenges arose when integrating the module with Indico. A critical issue was when it was found out that the form is not rendered on the server and send as \gls{html} in the response body as expected. Another challenge was when programmatically filling in the input fields of the inputs the frontend form validation would not detect a change in the input values and thus would think no input value is given.
 
 \vspace{0.5cm}
-\paragraph{Bind to Dynamically Created Form}\mbox{}\\
+\paragraph{Bind to Dynamically Created Form}\label{poc2-bind}\mbox{}\\
 
 Indico builds the registration form dynamically using a frontend library called AngularJS \cite{angularjs}. This introduces a challenge of interacting with the form using \gls{js}. Frontend libraries that either create new or modify existing \gls{dom} nodes need to wait until the complete \gls{dom} tree is loaded, as they bind to one \gls{dom} node from the initially served \gls{html} document and then do their operations on this node. Meaning, AngularJS waits until the whole \gls{html} document is parsed and rendered in the browser and then starts creating its form from scratch, which is then being rendered by the browser. The problem with this is in order to operate on the form, which is necessary for the module to be able to read the form inputs and labels and also to set their values, the \gls{js} code from this prototype needs to know when the form was successfully rendered. Three options are possible to achieve this.
 
@@ -207,7 +207,7 @@ function observeFormCreation() {
 \end{lstlisting}
 
 \vspace{0.5cm}
-\paragraph{Detect Input Change for Frontend Validation}\mbox{}\\
+\paragraph{Detect Input Change for Frontend Validation}\label{poc2-detect-input}\mbox{}\\
 
 Indico deploys a frontend validation to make sure it receives proper values for the form's inputs. A basic validation is the check for a presence of values in required inputs. This way Indico can render a hint on the input fields with invalid values, such as if no input was given in a required email address field. It turns out Indico has \texttt{\gls{dom} Event Listeners} which detect if an input field is clicked in and if it is receiving inputs through a user typing in it. This validation implementation does not detect when changing the value of the \texttt{value} attribute of an input node, thus complaining when setting the values through \gls{js}.
 
@@ -275,11 +275,13 @@ The same levels 1 to 5 as in the first evaluation \ref{section:poc1-evaluation} 
 \vspace{0.5cm}
 \paragraph{Components}\mbox{}\\
 
-\begin{figure}[!ht]
+This module is compared to the other module relatively small and does not contain multiple packages. It forms through the three key classes \texttt{Picker}, \texttt{Mapper}, and \texttt{Filler}. These three classes as they hint at find all relevant input fields from the application that will be used; secondly maps the input fields with the available data fetched using the \texttt{DataFetcher} class; thirdly it fills the available data through the mapping into the input fields.
+
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{prototype/graphs/poc-auto.png}
-    \caption{The \texttt{auth} package with its classes.}
-    \label{fig:poc-comment-package-auth}
+    \includegraphics[width=0.7\textwidth]{prototype/graphs/poc-autocomplete-package.png}
+    \caption{The classes in the autocomplete module.}
+    \label{fig:poc-autocomplete-package}
 \end{figure}
 \vspace{0.5cm}
 \paragraph{Evaluate}\mbox{}\\
@@ -314,39 +316,32 @@ The same levels 1 to 5 as in the first evaluation \ref{section:poc1-evaluation} 
     \centering
     \begin{tabular}{| l | c | c | c | c | c |} 
      \hline
-     \texttt{auth} & T & C & H & I & F \\
+     \texttt{autocomplete} & T & C & H & I & F \\
      \hline
-     Security & 5 & 2 & 2 & 5 & \cellcolor{red!25}4\\
+     Security & 5 & 5 & 5 & 5 & \cellcolor{green!25}1\\
      \hline
-     Performance & 5 & 1 & 1 & 5 & \cellcolor{red!50}5\\
+     Performance & 3 & 3 & 5 & 3 & \cellcolor{green!25}2\\
      \hline
-     Availability & 4 & 3 & 4 & 2 & \cellcolor{green!25}1\\
+     Availability & 2 & 3 & 5 & 1 & \cellcolor{green!25}1\\
      \hline
-     Usability & 5 & 2 & 2 & 4 & \cellcolor{red!25}4\\
-     \hline
-    \end{tabular}
-    \quad
-    \begin{tabular}{| l | c | c | c | c | c |} 
-     \hline
-     \texttt{components} & T & C & H & I & F \\
-     \hline
-     Security & 5 & 3 & 3 & 5 & \cellcolor{orange!50}3\\
-     \hline
-     Performance & 5 & 1 & 1 & 5 & \cellcolor{red!50}5\\
-     \hline
-     Availability & 4 & 3 & 4 & 2 & \cellcolor{green!25}1\\
-     \hline
-     Usability & 5 & 3 & 3 & 3 & \cellcolor{green!25}2\\
+     Usability & 5 & 2 & 2 & 5 & \cellcolor{red!25}4\\
      \hline
     \end{tabular}
     \vspace{0.75cm}
-    \caption{Evaluation of the two packages based on the \glspl{qas}}
-    \label{table:poc1-evaluation}
+    \caption{Evaluation of the autocomplete module based on the \glspl{qas}}
+    \label{table:poc2-evaluation}
 \end{table}
 \vspace{0.5cm}
 \subsubsection{Analysis}\label{poc2:analysis}\mbox{}\\
 
-The analysis of the second \gls{poc} will focus on the original design idea and what led to a change of mind. It will do so by looking at the relevant modules in Indico that caused the direction for the \gls{poc} to alter. It will also be analyzed, what role Solid's design played in the abandonment of the idea on storing the registration data in data pods and effectively giving up usage control.
+The analysis of the second \gls{poc} will explain the evaluation matrix \ref{poc2:evaluation} and then focus on the original design idea and what led to a change of mind. It will do so by looking at the relevant modules in Indico that caused the direction for the \gls{poc} to alter. It will also be analyzed, what role Solid's design played in the abandonment of the idea on storing the registration data in data pods and effectively giving up usage control.
+
+\vspace{0.5cm}
+
+Because the module does not use any authentication libraries to give users the opportunity to log in or store any data in a data pod. It simply fetches public documents, where the user interacting with the module decides what to fetch, no risk is involved. In regards to pulling in malicious documents from a thought trustworthy source the module is embedded into Indico which has validations and makes sure no malicious code is injected into their system.
+The performance of the module is also in good shape. Only one request happens when the system is doings its tasks. The dictionary for the mapping of values uses the \gls{js} \texttt{Object} data type. It allows constant \bigO(1) look ups of values. See listing \ref{lst:autocomplete-mapping} to see an example data store of values. One area of improvement for the performance is the \texttt{MutationObserver} that was explained in paragraph \ref{poc2-bind}. Indico throws an event when all dynamically created \gls{dom} elements have been rendered, which is perfect for the binding of the module to the Indico form. It was only later noticed this event exists.
+
+\vspace{0.5cm}
 
 
 
