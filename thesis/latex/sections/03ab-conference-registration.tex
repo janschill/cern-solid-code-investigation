@@ -67,20 +67,20 @@ The drivers for this architecture endure the same as well. A system which operat
 
 \subsubsection{User Interface}\mbox{}\\
 
-The user interface for this module is 
+The user interface for this module is rather limited as it only requires an input field for the user to provide the \gls{uri} of where to find an \gls{rdf} document that can be used to fill in the registration form, an action button and then a design for when two values on an input are probable.
 
-\begin{figure}[ht!]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth]{prototype/graphs/poc-autocomplete-conference-registration.png}
-    \caption{User interface showing the comment module: Comments.}
-    \label{fig:poc-autocomplete-conference-registration}
+    \includegraphics[width=0.75\textwidth]{prototype/poc-solid-autocomplete-conference-registration.png}
+    \caption{User interface showing the autocomplete module.}
+    \label{fig:poc-solid-autocomplete-conference-registration}
 \end{figure}
 
-\begin{figure}[ht!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{prototype/poc-solid-autocomplete-conference-registration-attendees.png}
-    \caption{User interface showing the comment module: Comments.}
-    \label{fig:poc-autocomplete-conference-registration-submitted}
+    \caption{The Indico control panel showing registered users.}
+    \label{fig:poc-solid-autocomplete-conference-registration-attendees}
 \end{figure}
 
 \subsubsection{Design}\label{poc2:design}\mbox{}\\
@@ -107,11 +107,11 @@ In the \gls{html} specification an \texttt{autocomplete} attribute exist, which 
 </form>
 \end{lstlisting}
 
-In listing \ref{lst:autocomplete-input} the browser would suggest cached values when the user agent clicks into an input. This is the perfect indicator to \textit{autofill} form inputs. Unfortunately, this attribute is not being utilized in Indico. Another and even better approach would be to annotate the input fields straight up with the vocabulary of for example Schema.org \cite{schema-org}. The mapping of the input fields and the fetched Turtle resource could then happen directly using the \textit{predicates} of both structured formats. To change the AngularJS form and implement new features into Indico were already established not to be viable. Nevertheless, the \texttt{autocomplete} feature shall be kept in mind.
+In listing \ref{lst:autocomplete-input} the browser would suggest cached values when the user agent clicks into an input. This is the perfect indicator to \textit{autofill} form inputs. Unfortunately, this attribute is not being utilized in Indico. Another and even better approach would be to annotate the input fields straight up with the vocabulary of Schema.org \cite{schema-org}. The mapping of the input fields and the fetched Turtle resource could then happen directly using the \textit{predicates} of both structured formats. To change the AngularJS form and implement new features into Indico were already established not to be viable. Nevertheless, the \texttt{autocomplete} feature shall be kept in mind.
 
 Without being able to extract from the \texttt{autocomplete} attribute within Indico it shall still be implemented and used, as other systems might use the attribute. Other means of extracting some kind of information from the form are the ID and name attributes or even the \texttt{TextNode} of the input label. The ID and name are often equipped with information about the input they are defined on. These values and additionally the value of the label node can be extracted and mapped against a dictionary of key-value pairs to find out what the input is supposed to be filled in with.
 
-\begin{figure}[ht!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{prototype/graphs/poc-autocomplete-mapping-flow.png}
     \caption{The flow to find a source for dictionary mapping.}
@@ -253,7 +253,21 @@ TODO:
 \vspace{0.5cm}
 \paragraph{Metrics}\mbox{}\\
 
-TODO:
+The previously picked \glspl{qa} are as follows:
+
+\begin{enumerate}
+    \item Security
+    \item Performance
+    \item Usability
+\end{enumerate}
+
+The \glspl{qas} to make the \glspl{qa} measurable allowing the analysis of health in the system's architecture:
+
+\begin{enumerate}
+    \item As a user I expect to see the information from my WebID profile document when using the module
+    \item As a user I expect to have the choice on two available values
+    \item As a user I expect to be incapable of pulling in protected resources without authenticating myself
+\end{enumerate}
 \vspace{0.5cm}
 \paragraph{Levels}\mbox{}\\
 
@@ -262,6 +276,68 @@ The same levels 1 to 5 as in the first evaluation \ref{section:poc1-evaluation} 
 \paragraph{Components}\mbox{}\\
 
 TODO:
+\vspace{0.5cm}
+\paragraph{Evaluate}\mbox{}\\
+
+\begin{itemize}
+    \item \textbf{Target}: What is the desired quality level?
+    \item \textbf{Current}: What is the current level?
+    \item \textbf{Health}: Where are the largest quality problems?
+    \item \textbf{Importance}: How important is it to move from current to target level?
+    \item \textbf{Focus}: What are the largest and most important quality problems?
+    \item \textbf{Valid level values}: 1, 2, 3, 4, 5 (higher equals better)
+\end{itemize}
+
+\textbf{Health} and \textbf{focus} are not set by the evaluator but rather calculated from other levels.
+
+\begin{align*}
+    \text{\textit{health}}&=5 - \text{\textit{max}}(0, (\text{\textit{target}} - \text{\textit{current}}))
+\end{align*}
+\vspace{-5mm}
+\begin{align*}
+    \text{\textit{focus}}&= \text{\textit{ceil}}((6 - \text{\textit{health}}) * \text{\textit{importance}}/5)
+\end{align*}
+
+\begin{enumerate}
+    \item A user enters their WebID \gls{uri} and presses \textit{autocomplete}
+    \item A user enters someone else's WebID \gls{uri} and presses \textit{autocomplete}
+    \item A user enters a \gls{uri} with a protected resource and presses \textit{autocomplete}
+    \item An adversary enters a \gls{uri} to a malicious document
+\end{enumerate}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{| l | c | c | c | c | c |} 
+     \hline
+     \texttt{auth} & T & C & H & I & F \\
+     \hline
+     Security & 5 & 2 & 2 & 5 & \cellcolor{red!25}4\\
+     \hline
+     Performance & 5 & 1 & 1 & 5 & \cellcolor{red!50}5\\
+     \hline
+     Availability & 4 & 3 & 4 & 2 & \cellcolor{green!25}1\\
+     \hline
+     Usability & 5 & 2 & 2 & 4 & \cellcolor{red!25}4\\
+     \hline
+    \end{tabular}
+    \quad
+    \begin{tabular}{| l | c | c | c | c | c |} 
+     \hline
+     \texttt{components} & T & C & H & I & F \\
+     \hline
+     Security & 5 & 3 & 3 & 5 & \cellcolor{orange!50}3\\
+     \hline
+     Performance & 5 & 1 & 1 & 5 & \cellcolor{red!50}5\\
+     \hline
+     Availability & 4 & 3 & 4 & 2 & \cellcolor{green!25}1\\
+     \hline
+     Usability & 5 & 3 & 3 & 3 & \cellcolor{green!25}2\\
+     \hline
+    \end{tabular}
+    \vspace{0.75cm}
+    \caption{Evaluation of the two packages based on the \glspl{qas}}
+    \label{table:poc1-evaluation}
+\end{table}
 \vspace{0.5cm}
 \subsubsection{Analysis}\label{poc2:analysis}\mbox{}\\
 
