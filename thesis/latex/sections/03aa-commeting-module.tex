@@ -4,7 +4,10 @@ The first \gls{poc} is supposed to enrich the Indico system with some sort of So
 
 \subsubsection{Architectural Analysis and Synthesis}\mbox{}\\
 
-In this section, the architectural analysis will be looked into. The scope of the system and its attributes will be defined based on the system description and the quality attributes from the analysis of stakeholder needs.
+In this section, the architectural analysis will be looked into. The scope of the system and its attributes will be defined based on the system description and the \glspl{qa} from the analysis of stakeholder needs.
+
+
+
 \vspace{0.5cm}
 \paragraph{System Description}\mbox{}\\
 
@@ -59,7 +62,7 @@ The \textbf{internal developer} is responsible for executing the decision made b
 \vspace{0.5cm}
 \paragraph{Drivers}\mbox{}\\
 
-The architectural driver or quality attributes can be specified using “-illities”
+The architectural driver or \glspl{qa} can be specified using “-illities”
 
 \begin{enumerate}
     \item Security
@@ -382,7 +385,7 @@ It was established through the iterations of the design with the stakeholders th
 
 The awkwardness in validating for an existing Indico session and then be able to send requests to a protected endpoint comes with the great decoupling of the comment module and Indico, which is admirable, but also make this feature more challenging to implement. Indico uses a framework called Axios \cite{axios} for its \gls{http} client request handling. In Indico Axios is configured with all necessary \gls{http} headers and when a session exists also equipped with the auth-token. The comment module can simply be extended to allow the usage of a custom \gls{http} client for sending requests to Indico. When the module is initialized the Axios client is already readily configured and needs to be passed over to the module. Both system are still decoupled and the comment module works with or without a custom \gls{http} client.
 \vspace{0.5cm}
-\subsubsection{Evaluation}\mbox{}\\
+\subsubsection{Evaluation}\label{section:poc1-evaluation}\mbox{}\\
 
 This section focuses on evaluating the system. This shall be done by iterating through the system's requirements from the stakeholders and how the architecture lives up to those expectations. The evaluation is done with the help of the \gls{asqa} framework to ensure continuous quality assessment and prioritizing with a lightweight technique \cite{asqa-paper}.
 \gls{asqa} contains seven process steps as shown in figure \ref{fig:asqa-process-steps}.
@@ -395,7 +398,7 @@ This section focuses on evaluating the system. This shall be done by iterating t
 \end{figure}
 
 \begin{enumerate}
-    \item \textbf{Define Metrics} to the components of the system. This can be done with quality attribute scenarios, that may define the desired quality.
+    \item \textbf{Define Metrics} to the components of the system. This can be done with \glspl{qas}, that may define the desired quality.
     \item \textbf{Define Levels} to measure the state of the system
     \item \textbf{Define Components} to scope the parts of the system that will be evaluated
     \item \textbf{Evaluate} by taking the scenarios and looking at the architecture of the system. An evaluation matrix is used to define the following levels: (t)arget, (c)urrent, (health), (i)mportance, (f)ocus
@@ -405,9 +408,9 @@ This section focuses on evaluating the system. This shall be done by iterating t
 \vspace{0.5cm}
 \paragraph{Metrics}\mbox{}\\
 
-The quality attribute scenarios are scenarios that measure the quality attributes. Base on the scenarios the evaluation will be carried out. The scenarios will always have the quality attributes in mind and are defined with the focus on those. The different scenarios are predicted to be the most common actions on the system and thus will stress the system and its architecture the most based on the quality attributes.
+The defined \glspl{qa} are useful to know, but cannot be tested or often qualities of a system are hard to categorize with an adequate \gls{qa}. A solution to the problem of untestability and overlapping concerns are \glspl{qas}. \glspl{qas} can be used to characterize \glspl{qa} \cite{BassSoftwareArchitecture2003}. Based on the scenarios the evaluation will be carried out. The scenarios will always have the \glspl{qa} in mind and are defined with the focus on those. The different scenarios are predicted to be the most common actions on the system and thus will stress the system and its architecture the most based on the \glspl{qa}.
 
-The previously picked quality attributes are as follows:
+The previously picked \glspl{qa} are as follows:
 
 \begin{enumerate}
     \item Security
@@ -426,14 +429,13 @@ Possible scenarios are centered around data not being available or altered or sc
     \item As a user I expect to only give access to the necessary data
 \end{enumerate}
 
-\paragraph{Levels}\mbox{}\\
+\paragraph{Levels}\label{poc1-levels}\mbox{}\\
 
-The levels are used to measure the state of the architecture of system. These can be freely chosen, but follow an ordinal scale ranging from 1 to 5 in the original paper and will therefore be adapted \cite{asqa-paper}.
-TODO:
+The levels are used to measure the state of the architecture of system. These can be freely chosen, but follow an ordinal scale ranging from 1 to 5 in the original paper and will therefore be adapted \cite{asqa-paper}. The levels will help to rate the quality of the system's architecture, where 1 is the lowest quality and 5 the highest rating.
 \vspace{0.5cm}
 \paragraph{Components}\mbox{}\\
 
-To evaluate the security of the chosen architecture of the system it make sense to look at certain components of the system. For this commenting system it would be sensible to analyze the \texttt{auth} package and the modules that interface the user input and the system. The user input modules can be found in the \texttt{component} package.
+To evaluate the security of the chosen architecture of the system it makes sense to look at certain components of the system. For this commenting system it would be sensible to analyze the \texttt{auth} package and the modules that interface the user input and the system. The user input modules can be found in the \texttt{component} package.
 
 \begin{figure}[!ht]
     \centering
@@ -515,7 +517,7 @@ The second package, \texttt{components}, holds all elements in the user interfac
      \hline
     \end{tabular}
     \vspace{0.75cm}
-    \caption{Evaluation of the two packages based on the quality attribute scenarios}
+    \caption{Evaluation of the two packages based on the \glspl{qas}}
     \label{table:poc1-evaluation}
 \end{table}
 
