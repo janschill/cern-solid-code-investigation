@@ -3,7 +3,7 @@ name: Build LaTeX document
 on: [push]
 
 jobs:
-  build_latex:
+  build_pdf:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
@@ -16,9 +16,11 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: PDF
-          path: thesis.pdf      
-      - run: ls -al
-      - run: ls -al thesis/latex
+          path: thesis.pdf
+      - name: Build plain text
+        uses: docker://pandoc/core:2.9
+        with:
+          args: "--to=plain --wrap=none thesis/latex/thesis.tex"
       - name: Deploy report
         uses: peaceiris/actions-gh-pages@v3
         with:
