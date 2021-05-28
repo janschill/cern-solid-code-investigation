@@ -363,6 +363,23 @@ As also realized in the first \gls{poc} when the application is decoupled from t
     \item What happens to generated registration tickets or receipts when a user changes the name on their data pod?
 \end{enumerate}
 
+Indico allows the editing of the registration up until a set modification deadline, after it the registration is frozen and fields cannot be updated. It is necessary to have time to process the registrations, such as the booking of an accommodation. The classic setup where every user has their own data pod to store all this registration data would not work without additional functionality. A few things are imaginable.
+
+\begin{itemize}
+    \item Store a copy of the registration data in Indico and freeze the copy on modification deadline.
+    \item Only allow decentralized storage on data where a modification would not matter
+\end{itemize}
+
+Storing a copy of the data is an interesting idea. The freezing of the data would of course require Indico to also save the data in their data stores. If data is modified directly on the data pod, Indico is not necessarily notified by the change. If the latest data should be used in Indico for freezing its own copy, Indico would have to be either notified so it can fetch the new resource from the data pod; the change needs to happen through Indico's web interface, so Indico can send the request to update it in the data pod, but also in their storage; Indico sends a request to all data pods on modification deadline day and updates the stored version. The latter solution of course needs validation, so that existing is not replaced with corrupt or invalid data, and it is also questionable what happens when the data pod is unavailable, but the data shows a resignation from the conference or anything similar. How is ensured that Indico and the user's intentions are aligned? The two systems need to be interconnected and it needs to be clear when updates happen. Availability and flow of communication or key aspects for this success.
+\vspace{0.5cm}
+\paragraph{Communication Flow}\mbox{}\\
+
+Not to cut off the previous issue, but to continue and nurture the aspect of flow in Solid. One crucial feature of conferences and the registration is the ability to reach out to people to let them know about next year's conference for instance. Consent would ideally only be given to the conference where one had actively sign up for and hence next year's conference would not be able to read the participant's list and connect with them and even if the list would be visible, how does the new conference know how to ask for consent to reach out them or do akin actions. Solid offers an \textit{inbox} and \textit{notifications} \cite{solid-inbox}. Solid-Inbox allows anyone in the Solid ecosystem with the public \textit{append} access control to connect with a WebID. The reached out agent gets a notification as soon as a new item is appended into their inbox. 
+
+
+Solid has an append inbox
+TODO:
+
 
 TODO:
 
@@ -410,7 +427,7 @@ TODO:
 
 TODO:
 \vspace{0.5cm}
-\paragraph{Communication Flow}\mbox{}\\
+\paragraph{Indico Serving Data to People}\mbox{}\\
 
 TODO:
 
