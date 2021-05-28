@@ -85,18 +85,18 @@ The \gls{ui} for this module is moderately limited as it only requires an input 
 
 \subsubsection{Design}\label{poc2:design}\mbox{}\\
 
-The following section will shed light on the design decision made in the process of sketching out the architecture of the module and developing the system. It will introduce the different challenges and how they were overcome. Especially, it will give an explanation of what led to the change of core functionality of the module. In the succeeding section, the choices will be analyzed more explicitly.
+The following section will shed light on the design decision made in sketching out the module's architecture and developing the system. It will introduce the different challenges and how they were overcome. Primarily, it will explain what led to the change of core functionality of the module. In the next section, the choices will be analyzed more explicitly.
 \vspace{0.5cm}
 \paragraph{Mapping Structured Data To \gls{html} Inputs}\mbox{}\\
 
-A great benefit of using Linked Data is its semantic structure and the interoperability it brings when using in systems supporting it. This means the data are using public vocabularies to be described and thus can be reasoned about by machines and can be move from one system into another one and seamlessly integrated. Indico does not make use of any common \gls{rdf} features and can therefore not extract any of those benefits. Because of this, no simple way of mapping the incoming data from the data pod to the inputs exist, but a few options are feasible.
+A great benefit of using Linked Data is its semantic structure and the interoperability it brings when using in systems supporting it. Linked Data means the data uses shared vocabularies to be described and reasoned about by machines and can be moved from one system into another and seamlessly integrated. Indico does not use any standard \gls{rdf} features and can therefore not extract any of those benefits. Because of this, no straightforward way of mapping the incoming data from the data pod to the inputs exist, but a few options are feasible.
 
 \begin{enumerate}
-    \item Enrich the form with some kind of descriptive indicator
+    \item Enrich the form with some descriptive indicator
     \item Parse and process existing values of attributes and labels
 \end{enumerate}
 
-In the \gls{html} specification an \texttt{autocomplete} attribute exist, which is used by browsers to prefill data from previously used values \cite{html-spec}. The value of the \texttt{autocomplete} key-value pair describes the input and what data is to be expected.
+In the \gls{html} specification, an \texttt{autocomplete} attribute exists, which browsers use to prefill data from previously used values \cite{html-spec}. The value of the \texttt{autocomplete} key-value pair describes the input and what data is to be expected.
 
 \begin{lstlisting}[language=Other,columns=fullflexible, caption={Autocomplete attribute on input field}, label={lst:autocomplete-input}]
 <form method=post action="/">
@@ -107,9 +107,9 @@ In the \gls{html} specification an \texttt{autocomplete} attribute exist, which 
 </form>
 \end{lstlisting}
 
-In listing \ref{lst:autocomplete-input} the browser would suggest cached values when the user agent clicks into an input. This is the perfect indicator to \textit{autofill} form inputs. Unfortunately, this attribute is not being utilized in Indico. Another and even better approach would be to annotate the input fields straight up with the vocabulary of Schema.org \cite{schema-org}. The mapping of the input fields and the fetched Turtle resource could then happen directly using the \textit{predicates} of both structured formats. To change the AngularJS form and implement new features into Indico were already established not to be viable. Nevertheless, the \texttt{autocomplete} feature shall be kept in mind.
+In listing \ref{lst:autocomplete-input}, the browser suggests cached values when the user clicks into an input. This functionality is the perfect indicator to \textit{autofill} form inputs. Unfortunately, this attribute is not being utilized in Indico. Another and even better approach would be to annotate the input fields straight up with the vocabulary of Schema.org \cite{schema-org}. The mapping of the input fields and the fetched Turtle resource could then happen directly using the \textit{predicates} of both structured formats. To change the AngularJS form and implement new features into Indico were already established not to be viable. Nevertheless, the \texttt{autocomplete} feature shall be kept in mind.
 
-Without being able to extract from the \texttt{autocomplete} attribute within Indico it shall still be implemented and used, as other systems might use the attribute. Other means of extracting some kind of information from the form are the ID and name attributes or even the \texttt{TextNode} of the input label. The ID and name are often equipped with information about the input they are defined on. These values and additionally the value of the label node can be extracted and mapped against a dictionary of key-value pairs to find out what the input is supposed to be filled in with.
+Without being able to extract from the \texttt{autocomplete} attribute within Indico it shall still be implemented and used, as other systems might use the attribute. Other means of extracting some information from the form are the ID and name attributes or even the \texttt{TextNode} of the input label. The ID and name are often equipped with information about the input they are defined on. These values and the label node's value can be extracted and mapped against a dictionary of key-value pairs to determine what the input is supposed to be filled.
 
 \begin{figure}[H]
     \centering
@@ -118,7 +118,7 @@ Without being able to extract from the \texttt{autocomplete} attribute within In
     \label{fig:poc-autocomplete-mapping-flow}
 \end{figure}
 
-A possible mapping of address information could look like as in listing \ref{lst:autocomplete-mapping}. The implementation shows a \gls{js} implementation where the key in the \texttt{address} object are the possibly extracted values from the different techniques described above and the value is in this example the vCARD \cite{vcard-spec} equivalent. vCARD is being used by the \gls{nss} to describe the information in the WebID profile document.
+A possible mapping of address information could look like as in listing \ref{lst:autocomplete-mapping}. The implementation shows a \gls{js} implementation where the key in the \texttt{address} object are the possibly extracted values from the different techniques described above and the value is in this example the vCARD \cite{vcard-spec} equivalent. \gls{nss} uses vCARD to convey the information in the WebID profile document.
 
 \begin{lstlisting}[language=Other,columns=fullflexible, caption={Dictionary to map extracted values with predicates from Turtle resource}, label={lst:autocomplete-mapping}]
 const address = {
