@@ -67,12 +67,12 @@ The drivers for this architecture endure the same as well. A system which operat
 
 \subsubsection{User Interface}\mbox{}\\
 
-The user interface for this module is rather limited as it only requires an input field for the user to provide the \gls{uri} of where to find an \gls{rdf} document that can be used to fill in the registration form, an action button and then a design for when two values on an input are probable.
+The \gls{ui} for this module is rather limited as it only requires an input field for the user to provide the \gls{uri} of where to find an \gls{rdf} document that can be used to fill in the registration form, an action button and then a design for when two values on an input are probable.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{prototype/poc-solid-autocomplete-conference-registration.png}
-    \caption{User interface showing the autocomplete module.}
+    \caption{\gls{ui} showing the autocomplete module.}
     \label{fig:poc-solid-autocomplete-conference-registration}
 \end{figure}
 
@@ -355,7 +355,7 @@ A few challenges were unidentified at this point, but will be named and explaine
 \vspace{0.5cm}
 \paragraph{Modification of Resource From Data Pod}\mbox{}\\
 
-As also realized in the first \gls{poc} when the application is decoupled from the data and receives it upon request the application hands over the control. This shift of control is core concept in Solid, but problematic for Indico. The use-case of registration data differs with the handling of comments. Comments are often desired to be changed and mostly comments are just presented in the user interface an no other interaction or processing happens. Registration data is much more complex and requires a lot of processing, such as the submission of abstracts. \textit{Call for abstracts} is a workflow in Indico, where conference speakers need to upload an abstract about the conference talk. Another are requirement for processing is the field of payments in the registration. A registration form can offer users an option to book an accommodation for example. These fields are called \textit{billable} fields and are hooked into a checkout process. In Indico's management section of a conference these actions can be checked for status.
+As also realized in the first \gls{poc} when the application is decoupled from the data and receives it upon request the application hands over the control. This shift of control is core concept in Solid, but problematic for Indico. The use-case of registration data differs with the handling of comments. Comments are often desired to be changed and mostly comments are just presented in the \gls{ui} an no other interaction or processing happens. Registration data is much more complex and requires a lot of processing, such as the submission of abstracts. \textit{Call for abstracts} is a workflow in Indico, where conference speakers need to upload an abstract about the conference talk. Another are requirement for processing is the field of payments in the registration. A registration form can offer users an option to book an accommodation for example. These fields are called \textit{billable} fields and are hooked into a checkout process. In Indico's management section of a conference these actions can be checked for status.
 
 \begin{enumerate}
     \item What happens now if this data is not kept in Indico anymore?

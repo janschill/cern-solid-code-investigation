@@ -72,30 +72,30 @@ The architectural drivers or \glspl{qa} can be specified using “-illities”. 
 
 \subsubsection{User Interface}\mbox{}\\
 
-For various held meetings and presentations, a visual representation of the to-be-developed module helps to guide the audience through the process. For the comment module, a user interface was designed in graphical software to ease the explanation of the goals for the module. The existing Indico color scheme was adopted to blend into the system.
+For various held meetings and presentations, a visual representation of the to-be-developed module helps to guide the audience through the process. For the comment module, a \gls{ui} was designed in graphical software to ease the explanation of the goals for the module. The existing Indico color scheme was adopted to blend into the system.
 
 \begin{figure}
     \centering
     \begin{subfigure}{.5\textwidth}
       \centering
         \includegraphics[width=0.9\textwidth]{prototype/poc-solid-comment-description.png}
-        \caption{User interface showing the comment module: Description.}
+        \caption{\gls{ui} showing the comment module: Description.}
         \label{fig:poc-solid-comment-description}
     \end{subfigure}%
     \begin{subfigure}{.5\textwidth}
       \centering
     \includegraphics[width=0.9\textwidth]{prototype/poc-solid-comment-agenda.png}
-    \caption{User interface showing the comment module: FAQ.}
+    \caption{\gls{ui} showing the comment module: FAQ.}
     \label{fig:poc-solid-comment-agenda}
     \end{subfigure}
-    \caption{User interface of Indico}
+    \caption{\gls{ui} of Indico}
     \label{fig:test}
 \end{figure}
 
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=0.5\textwidth]{prototype/poc-solid-comment-comments.png}
-    \caption{User interface showing the comment module: Comments.}
+    \caption{\gls{ui} showing the comment module: Comments.}
     \label{fig:poc-solid-comment-comments}
 \end{figure}
 
@@ -343,7 +343,7 @@ Other ideas included hashing a random string with the timestamp to generate non-
 \vspace{0.5cm}
 \paragraph{Modification of Resource From Data Pod}\mbox{}\\
 
-When the users are in control of their data it means they can revoke access any time, or even change their data to their liking. This means when the comment is initially created through Indico and the commenting system's user interface it does not mean this comment needs to remain as is. Even if the interface of the system does not allow modification, a modification can still happen at the source of the storage of the comment.
+When the users are in control of their data it means they can revoke access any time, or even change their data to their liking. This means when the comment is initially created through Indico and the commenting system's \gls{ui} it does not mean this comment needs to remain as is. Even if the interface of the system does not allow modification, a modification can still happen at the source of the storage of the comment.
 
 Regular comment modules usually allow modifications of a submitted text throughout its existence. Twitter is an example where modifications are not allowed after posting \cite{twitter-edit}. 
 
@@ -454,7 +454,7 @@ The \texttt{auth} package further holds the \texttt{SolidClient} class. The \tex
     \label{fig:poc-comment-package-components}
 \end{figure}
 
-The second package, \texttt{components}, holds all elements in the user interface that have to interact with the state management module. These classes range from the input field for the WebID \gls{uri} to retrieve the address of the user's \gls{idp} to the rendered comments.
+The second package, \texttt{components}, holds all elements in the \gls{ui} that have to interact with the state management module. These classes range from the input field for the WebID \gls{uri} to retrieve the address of the user's \gls{idp} to the rendered comments.
 % During a first iteration through the evaluation of the architecture it was established that splitting up and looking at the modules separately does not make sense in this case. Most of the time -- no matter -- which scenario is looked at all modules are being stressed. Often, the values would be the same even though another component was tried to be analyzed. Therefore, for the sake of simplicity and  
 \vspace{0.5cm}
 \paragraph{Evaluate}\mbox{}\\
@@ -577,7 +577,7 @@ Storing the comments on the author's data pod could be given up and instead be d
 
 One more option to control the modification on resources while not giving up on decentralized storage in the author's pods is to use versioning on the comments. Indico would when a user creates and submits a comment store a hashed value of the comment's content. When then serving the comments from the external data pods to visiting clients the received comments would be hashed and compared to the Indico stored hash value. It is important to associate the comment's \gls{url} with the hash to be able to make a proper comparison on the correct resources.
 
-An important aspect of allowing the update of existing resources is to have an indication in the user interface notifying readers about a changed text. A simple \textit{edited}-hint would suffice. When a user is browsing the comments and follows a conversation, which is met with an abrupt disruption of flow in the conversation, an updated comment could be the result and an indication would help to identify such a situation.  To detect a change in the comment's content the same hashing function can be used as described before.
+An important aspect of allowing the update of existing resources is to have an indication in the \gls{ui} notifying readers about a changed text. A simple \textit{edited}-hint would suffice. When a user is browsing the comments and follows a conversation, which is met with an abrupt disruption of flow in the conversation, an updated comment could be the result and an indication would help to identify such a situation.  To detect a change in the comment's content the same hashing function can be used as described before.
 \vspace{0.5cm}
 \paragraph{EventSettingsProxy Scalability Issues}\mbox{}\\
 

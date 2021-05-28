@@ -4,14 +4,22 @@
 
 \subsection{Encryption at Rest}
 
+Just like \gls{http} is specified without an encryption layer, so is Solid. The boards of the multiple Solid panels \cite{solid-panels} have made the decision that encryption in Solid is not a problem to be solved for now. \gls{http} brings encryption with \gls{https} and therefore ensures that all communications over \gls{http} are encrypted in the Solid ecosystem. For encryption at rest, meaning at the place where the data is stored and can be retrieved from, no encryption is intended. The standards around Solid describe how the access to data is contracted, but if this data is encrypted is up to the storage mechanism, which is up to the provider of the data pod \cite{solidproject-faqs}.
+
+\gls{cern} has a high interest in data sovereignty and requires all their external services to store the collected data on \gls{eu} soil, where the \gls{gdpr} support the data authors. For the cases where it is impossible, \gls{cern} has their own data centers to store data. In a scenario where \gls{cern} seeks a pod provider to enable Solid for their personnel and the provider cannot guarantee \gls{gdpr} compliance nor offers encryption of data in the data center, it is unlikely for \gls{cern} to adopt such a solution.
+
 \subsection{User Interface}
+
+A Solid server is a file system based web server. Modern computers ship with graphical \glspl{os} to offer a good user experience when interacting with the file system on such computers. A Solid server being a place for users to manage their data requires for good user experience also a graphical \gls{os}. The great benefit of using Linked Data to enable interoperability for Solid applications has led to many solutions for the problem of connecting and using a data pod. One system is called SolidOS \cite{solidos} and acts as the \gls{os} for Solid servers. SolidOS has many great features that allow the direct use of Linked Data on one's pod, but it comes with a challenging \gls{ui}. The \gls{ui} is powerful, but filled with bugs and counter-intuitive interactions. For example often a user is prompted to drag and drop a WebID \gls{uri} to add the agent as a friend, instead of allowing a regular text input to either copy and paste or just typing of the WebID \gls{uri}.
+
+SolidOS is currently the best and most sophisticated solution by features, hence comes shipped with \gls{nss} deployments on most pod providers. These \gls{ui} complications make it extremely strenuous even for professionals to use one's pod, and even more ambitious to on-board newcomers.
 
 \subsection{Commercial and Open-Source Solutions}
 
 
 
 * 
-* Encryiption -> hosting on premise
+* Encryption -> hosting on premise
 * Hosting on premise -> high involvement with the servers
 * Solid UI challenges
 * Commercial and open-source not perfectly hand in hand
