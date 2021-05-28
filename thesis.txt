@@ -46,7 +46,7 @@ This chapter will hold the parts of the project coming from the outside, all the
 
 Background
 
-The cern-Solid Code Investigation project aims at linking cern with Solid. Some of this linkage has been done forming a status quo check of the Solid ecosystem in (Schill 2020). This previous work and the efforts around the two pocs shall give insights into a symbiosis of cern and Solid.
+The cern-Solid Code Investigation project (“CERN-Solid Code Investigation,” n.d.) aims at linking cern with Solid. Some of this linkage has been done forming a status quo check of the Solid ecosystem in (Schill 2020). This previous work and the efforts around the two pocs shall give insights into a symbiosis of cern and Solid.
 
 The following sections in this chapter will introduce the two systems and their significant subsystems, modules, libraries, or techniques.
 
