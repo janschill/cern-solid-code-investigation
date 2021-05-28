@@ -1,14 +1,14 @@
 \subsection{POC 2: Auto-Complete Form Inputs for Conference Registration in Indico}
 
-The second prototype aims at connecting Solid with the conference registration module in Indico. When registering for a conference an \gls{html} form is presented with fields previously defined by the conference manager, who deemed those fields necessary. A form always contains personal information of name and email address, but is not limited to it and can even range to more sensitive information such as copies of personal identification documents. Information of this type has perfect motivation to remain in the hand of the owner and not be stored in a remote data store, uncontrollable and unknown to the registrants.
+The second prototype aims at connecting Solid with the conference, registration module in Indico. When registering for a conference an \gls{html} form is presented with fields previously defined by the conference manager, who deemed those fields necessary. A form always contains personal information of the name and email address, but is not limited to it and can even range to more sensitive information such as copies of personal identification documents. Information of this type has perfect motivation to remain in the owner's hand and not be stored in a remote data store, uncontrollable and unknown to the registrants.
 
-Therefore, the initial aim was to extend the registration module to allow storage of sensible information in a data pod, where the user has full control and can handle the data to their own liking. This was decided to not be viable and the prototype changed to allow the extraction of data from a data pod and then use this data to map it to input fields of an Indico conference registration form -- the functionality to then also store the data from the registration in the user's data pod and not in Indico was dropped. The reasons and comprehensive analysis will be shared after the architectural analysis, synthesis, and evaluation of the developed \gls{poc} in the \textit{design} \ref{poc2:design} and \textit{analysis} \ref{poc2:analysis} sections of this chapter.
+Therefore, the initial aim was to extend the registration module to allow the storage of practical information in a data pod. The user has full control and can handle the data to their liking. The stakeholders and developer decided that storage in a data pod was not viable for the prototype. Consequently, the prototype changed to allow the extraction of data from a data pod and then use it to map it to input fields of an Indico conference registration form -- the functionality to then store the data from the registration in the user's data pod, not in Indico was dropped. The reasons and comprehensive analysis will be shared after the architectural analysis, synthesis, and evaluation of the developed \gls{poc} in \textit{design} \ref{poc2:design} and \textit{analysis} \ref{poc2:analysis} sections of this chapter.
 
 \subsubsection{Architectural Analysis and Synthesis}\mbox{}\\
 
 \paragraph{System Description}\mbox{}\\
 
-The system pulls in a resource from a data pod in the \gls{rdf} format Turtle, maps the received information to input fields in an \gls{html} form and fills in missing inputs or asks the user if the values should be replaced.
+The system pulls in a resource from a data pod in the \gls{rdf} format Turtle, maps the received information to input fields in an \gls{html} form, fills in missing inputs, or asks the user if it should replace the existing values.
 
 \vspace{0.5cm}
 \paragraph{Features}\mbox{}\\
@@ -17,16 +17,16 @@ The core functionality of the module consists of the following features:
 
 \vspace{-3mm}
 \begin{enumerate}
-    \item A user can provide a the \gls{uri} to a public Turtle file
+    \item A user can provide the \gls{uri} to a public Turtle file
     \item A user can choose to accept or reject values pulled in when values already exist
 \end{enumerate}
 \vspace{-3mm}
 
-These features allow the development of a module giving users the ability to pull in their WebID profile document and use the information provided in it to populate a conference registration.
+These features allow the development of a module giving users the ability to pull in their WebID profile document and use the information provided to populate a conference registration.
 \vspace{0.5cm}
 \paragraph{Type of Users}\mbox{}\\
 
-There is one type of user for this system, who is the user with a WebID profile and interested in using the existing information to fill in a form.
+There is one type of user for this system: the user with a WebID profile and interested in using the existing information to fill in a form.
 \vspace{0.5cm}
 \paragraph{Context Diagram}\mbox{}\\
 
@@ -53,11 +53,11 @@ The following succeeding diagram shows the sequential flow through the system up
 \vspace{0.5cm}
 \paragraph{Stakeholders}\mbox{}\\
 
-Both modules were established with the same group of people and therefore carry the same set of stakeholders. The stakeholders defined in the section of the first \gls{poc} can be found here \ref{poc1-stakeholders}.
+Both modules were established with the same group of people and therefore carried the same set of stakeholders. The stakeholders defined in the section of the first \gls{poc} can be found here \ref{poc1-stakeholders}.
 \vspace{0.5cm}
 \paragraph{Drivers}\mbox{}\\
 
-The drivers for this architecture endure the same as well. A system which operates on a form where sensitive data is exposed needs a high-level of security -- under no circumstance should traffic be intercepted and leak any of such information. The performance for this module is also important, as conference tend to open their registration at a certain time, with high traffic spikes at those times of registration opening or announcements. The same reasoning as before applies to the \textit{Usability} of the module. When a new software design is used, it should be made as simple as possible for the user to interact with it and ideally not even notice a difference to traditional practices.
+The drivers for this architecture endure the same as well. A system that operates on a form where sensitive data is exposed needs a high level of security -- under no circumstance should traffic be intercepted and leak any of such information. The performance for this module is also essential, as conferences tend to open their registration at a particular time, with high traffic spikes at those times of registration opening or announcements. The same reasoning as before applies to the \textit{Usability} of the module. Software design should be as simple as possible for the user to interact with, and ideally, a user should not even notice a difference from traditional practices.
 
 \begin{enumerate}
     \item Security
@@ -67,7 +67,7 @@ The drivers for this architecture endure the same as well. A system which operat
 
 \subsubsection{User Interface}\mbox{}\\
 
-The \gls{ui} for this module is rather limited as it only requires an input field for the user to provide the \gls{uri} of where to find an \gls{rdf} document that can be used to fill in the registration form, an action button and then a design for when two values on an input are probable.
+The \gls{ui} for this module is moderately limited as it only requires an input field for the user to provide the \gls{uri} of where to find an \gls{rdf} document. The \gls{rdf} document fills in the registration form, an action button, and then a design for when two values on input are probable.
 
 \begin{figure}[H]
     \centering
