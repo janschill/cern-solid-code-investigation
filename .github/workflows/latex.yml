@@ -20,7 +20,7 @@ jobs:
       - name: Build plain text
         uses: docker://pandoc/core:2.9
         with:
-          args: "--to=plain --wrap=none thesis/latex/thesis.tex"
+          args: "--to=plain --wrap=none thesis/latex/thesis.tex >> thesis.txt"
       - name: Deploy report
         uses: peaceiris/actions-gh-pages@v3
         with:
