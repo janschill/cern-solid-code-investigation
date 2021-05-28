@@ -154,12 +154,12 @@ Listing \ref{lst:webid-address} shows part of the WebID profile document where t
 \vspace{0.5cm}
 \subsubsection{Integration With Indico}\mbox{}\\
 
-A few challenges arose when integrating the module with Indico. A critical issue was when it was found out that the form is not rendered on the server and send as \gls{html} in the response body as expected. Another challenge was when programmatically filling in the input fields of the inputs the frontend form validation would not detect a change in the input values and thus would think no input value is given.
+A few challenges arose when integrating the module with Indico. A critical issue is that the form is not being rendered on the server and then served as \gls{html} in the response body as expected. Another challenge was when programmatically filling in the input fields of the inputs; the frontend form validation would not detect a change in the input values and thus would think no input value is given.
 
 \vspace{0.5cm}
 \paragraph{Bind to Dynamically Created Form}\label{poc2-bind}\mbox{}\\
 
-Indico builds the registration form dynamically using a frontend library called AngularJS \cite{angularjs}. This introduces a challenge of interacting with the form using \gls{js}. Frontend libraries that either create new or modify existing \gls{dom} nodes need to wait until the complete \gls{dom} tree is loaded, as they bind to one \gls{dom} node from the initially served \gls{html} document and then do their operations on this node. Meaning, AngularJS waits until the whole \gls{html} document is parsed and rendered in the browser and then starts creating its form from scratch, which is then being rendered by the browser. The problem with this is in order to operate on the form, which is necessary for the module to be able to read the form inputs and labels and also to set their values, the \gls{js} code from this prototype needs to know when the form was successfully rendered. Three options are possible to achieve this.
+Indico builds the registration form dynamically using a frontend library called AngularJS \cite{angularjs}. A dynamically rendered form introduces the challenge of interacting with it using \gls{js}. Frontend libraries that either create new or modify existing \gls{dom} nodes need to wait until the complete \gls{dom} tree is loaded. They bind to one \gls{dom} node from the initially served \gls{html} document and then do their operations on this node. Meaning, AngularJS waits until the whole \gls{html} document is parsed and rendered in the browser and then starts creating its form from scratch, which is then being rendered by the browser. The problem with this is to operate on the form, which is necessary for the module to read the form inputs and labels and set their values. The \gls{js} code from this prototype needs to know when the browser rendered the form successfully. Three options are possible to achieve this.
 
 \begin{enumerate}
     \item Implement the autocomplete functionality in the existing AngularJS form code
@@ -167,10 +167,10 @@ Indico builds the registration form dynamically using a frontend library called 
     \item Use the \texttt{MutationObserver} to detect the form creation
 \end{enumerate}
 
-Solutions 1 and 2 both involve the need to work with the AngularJS form, which is written in a legacy version and was recommended by an Indico developer to -- if possible -- be avoided. Indico developers also plan on removing AngularJS altogether and replace it with a more popular frontend framework. Therefore, option 3 was chosen even though the usage of a \texttt{MutationObserver} instance might add performance degradation to the page load \cite{dom-spec}. The performance shall not be analyzed more carefully as it is not of relevance to prove the realization of the prototype.
+Solutions 1 and 2 both involve the need to work with the AngularJS form, which is written in a legacy version and was recommended by an Indico developer to -- if possible -- be avoided. Indico developers also plan on removing AngularJS altogether and replace it with a more popular frontend framework. Therefore, option 3 was chosen even though a \texttt{MutationObserver} instance might add performance degradation to the page load \cite{dom-spec}. The performance shall not be analyzed more carefully as it is not relevant to prove the prototype's realization.
 
-The \texttt{MutationObserver} is initialized as soon as the \gls{dom} is rendered, it then takes a node as a target to observe and will register all modifications on this node: the creation of children nodes in it, updates to the node itself or any other modifications. To reduce computation the Indico code can be analyzed to find a suitable \gls{dom} element to have as a target node. This node needs to exist when the \gls{dom} is loaded and needs to contain the final form node. When looking at the final rendered document containing the AngularJS form one notices that the form has an ID, which can be used to observe its creation.
- 
+The \texttt{MutationObserver} is initialized as soon as the \gls{dom} is rendered; it then takes a node as a target to observe and registers all modifications on this node: the creation of children nodes in it, updates to the node itself, or any other modifications. In order to reduce computation on nodes that do not need to be observed, a suitable \gls{dom} element is needed. This node needs to exist when the \gls{dom} is loaded and needs to contain the final form node. The finally rendered \gls{html} form has an ID. The \texttt{MutationObserver} can use this ID to grab the target node and scope the observations.
+
 \begin{lstlisting}[language=Other,columns=fullflexible, caption={Observe function in Indico}, label={lst:indico-observe}]
 function observeFormCreation() {
   // ID of the AngularJS form, its creation needs to be observed
@@ -209,14 +209,14 @@ function observeFormCreation() {
 \vspace{0.5cm}
 \paragraph{Detect Input Change for Frontend Validation}\label{poc2-detect-input}\mbox{}\\
 
-Indico deploys a frontend validation to make sure it receives proper values for the form's inputs. A basic validation is the check for a presence of values in required inputs. This way Indico can render a hint on the input fields with invalid values, such as if no input was given in a required email address field. It turns out Indico has \texttt{\gls{dom} Event Listeners} which detect if an input field is clicked in and if it is receiving inputs through a user typing in it. This validation implementation does not detect when changing the value of the \texttt{value} attribute of an input node, thus complaining when setting the values through \gls{js}.
+Indico deploys a frontend validation to make sure it receives proper values for the form's inputs. Basic validation checks for the presence of values in required inputs. This way, Indico can render a hint on the input fields with invalid values, for example when no input was given. It turns out Indico has \texttt{\gls{dom} Event Listeners}, which detect if an input field is clicked in and if it is receiving inputs through a user typing in it. This validation implementation does not notice when changing the value of the \texttt{value} attribute of an input node, thus complaining when setting the values through \gls{js}.
 
 \begin{lstlisting}[language=Other,columns=fullflexible, caption={Changing the value of an input node.}, label={lst:input-change}]
 const formInputField = document.querySelector('.exampleFormInput')
 formInputField.value = 'New value'
 \end{lstlisting}
 
-The example code in listing \ref{lst:input-change} would not be detected by Indico and would upon submission render a missing value hint.
+The example code in listing \ref{lst:input-change} would not be detected by Indico and would render a missing value hint upon submission.
 
 Two ways of fixing the problem are conceivable.
 
@@ -225,9 +225,9 @@ Two ways of fixing the problem are conceivable.
     \item Dispatch event when setting values in the autocomplete module
 \end{enumerate}
 
-Changing the Indico frontend validation might turn out to be more time-consuming than anticipated and is therefore not viable, also it is unknown if a change is wanted by the Indico development team in the first place. The idea for a working implementation is to validate on submission of the form instead of validation when a change on the input is detected. As mentioned before the problem with the used \texttt{oninput} event is it does not detect when the value is set programmatically. If the validation is only happening when the values are tried to be sent to the server by submission the input values can be parsed and the correct value is detected -- no matter how it was set. 
+Changing the Indico frontend validation might be more time-consuming than anticipated and is therefore not viable; it is also unknown if the Indico development team wants a change in the first place. The idea for a working implementation is to validate on submission of the form instead of validation when a change on the input is detected. The problem with the used \texttt{oninput} event is that it does not see when the value is set programmatically. If the validation is only happening when the values are tried to be sent to the server by submission, the input values can be parsed, and the correct value is detected -- no matter how it was set. 
 
-The other and also picked solution is to trigger the \texttt{oninput} event that is being listened on by the Indico validation. The event dispatch needs to happen as soon the values are set within the module and because this happens in the module and the module is a self-contained module without any knowledge of Indico, the module should not be directly changed, but rather allow a callback function to be passed to it and then execute when appropriate.
+The other and also picked solution is to trigger the \texttt{oninput} event listened to by the Indico validation. The event dispatch needs to happen as soon the values are set within the module, and because this occurs in the module and the module is a self-contained module without any knowledge of Indico, the module should not be directly changed but instead allow a callback function to be passed to it and then execute when appropriate.
 
 \begin{lstlisting}[language=Other,columns=fullflexible, caption={Dispatching the \texttt{oninput} event within a callback.}, label={lst:oninput-callback}]
 function triggerInputEvent(inputs) {
