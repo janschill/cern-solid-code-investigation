@@ -374,12 +374,17 @@ Storing a copy of the data is an interesting idea. The freezing of the data woul
 \vspace{0.5cm}
 \paragraph{Communication Flow}\mbox{}\\
 
-Not to cut off the previous issue, but to continue and nurture the aspect of flow in Solid. One crucial feature of conferences and the registration is the ability to reach out to people to let them know about next year's conference for instance. Consent would ideally only be given to the conference where one had actively sign up for and hence next year's conference would not be able to read the participant's list and connect with them and even if the list would be visible, how does the new conference know how to ask for consent to reach out them or do akin actions. Solid offers an \textit{inbox} and \textit{notifications} \cite{solid-inbox}. Solid-Inbox allows anyone in the Solid ecosystem with the public \textit{append} access control to connect with a WebID. The reached out agent gets a notification as soon as a new item is appended into their inbox. 
+Not to cut off the previous issue, but to continue and nurture the aspect of flow in Solid. One crucial feature of conferences and the registration is the ability to reach out to people to let them know about next year's conference for instance. Consent would ideally only be given to the conference where one had actively sign up for and hence next year's conference would not be able to read the participant's list and connect with them and even if the list would be visible, how does the new conference know how to ask for consent to reach out them or do akin actions. Solid offers an \textit{inbox} and \textit{notifications} \cite{solid-inbox}. Solid-Inbox allows anyone in the Solid ecosystem with the public \textit{append} access control to connect with a WebID. The reached out agent gets a notification as soon as a new item is appended into their inbox. This pro-active initiation is not ideal, as the initiator does not know what data can be asked for. Only when owner actively says: “You are allowed to read this resource A and modify my resource B.”, does the application know about the existence of the data.
 
+Solid-Inbox seems to be a decent solution for the use-case of Indico reaching out to previous participants. Another suggestion would be to escalate the access scope for Indico and conferences and the agent. Meaning, when a user signs up for a conference the registration asks for consent to allow future contacting.
+TODO: more here
+\vspace{0.5cm}
+\paragraph{Performance of Large Conference}\mbox{}\\
 
-Solid has an append inbox
-TODO:
-
+The identical performance issue from the first \gls{poc} \ref{poc1} would arise in the management part of the conference. Storing the source of truth for hundreds of registrations without a local copy in a remote data pod would mean they would have to fetched. Even with the improvements of caching this would still be problematic and would just not be feasible -- pods can be down or stored on slow web servers. To make this usable in Indico a proxy is definitely compulsory. The proxy would store the information temporarily and could make it available in a single request for multiple conference managers on separate machines. Warming up the cache by requesting resources from hundreds of data pods would still take a long time. 
+The key takeaway here is that Indico is also \textit{serving} data to users. Indico is not only taking in the registration data and then processes it and enables some feature for a single user who is only interacting with his own data. On the contrary Indico also serves to a subset of users, the conference managers, data. The progress of serving the data from others is the critical facet.
+\vspace{0.5cm}
+\paragraph{Payment on Input Fields}\mbox{}\\
 
 TODO:
 
@@ -415,21 +420,9 @@ TODO: Include these somehow:
 \end{figure}
 
 \vspace{0.5cm}
-\paragraph{Payment on Input Fields}\mbox{}\\
-
-TODO:
-\vspace{0.5cm}
-\paragraph{Performance of Large Conference}\mbox{}\\
-
-TODO:
-\vspace{0.5cm}
 \paragraph{Availability of Crucial User Data}\mbox{}\\
 
-TODO:
-\vspace{0.5cm}
-\paragraph{Indico Serving Data to People}\mbox{}\\
-
-TODO:
+TODO
 
 
 * performance?
@@ -438,5 +431,4 @@ TODO:
   * **Also serve data to people (admin of registration)**
 * Comments are more clear tied to comment?
 
-* the flow of Solid (ref Tim from White Area) notifying for future conference
 * Indico does not have any RDF semantically structured data
