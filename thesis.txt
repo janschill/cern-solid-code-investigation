@@ -28,17 +28,17 @@ Introduction
 
 Context
 
-The Web was created in 1989 by Sir Tim Berners-Lee while working at the institution of cern “ to allow people to work together by combining their knowledge in a web of hypertext documents” . This brilliant idea has ever since grown as an essential part of our all lives . While bringing a new platform for innovation into existence, a new level of oppression and surveillance that has never been seen before has facilitated without most even realizing. Data are harvested and analyzed to generate models describing and predicting human behavior far beyond what is morally tolerable. These actions permit the generation of large amounts of wealth as capitalistic and governmental bodies enjoy a great interest in these models to either generate more profit or more control. The escalation of attraction towards data has led to the construction of so called data silos, where data gatherers built attractive applications for users while locking them into their walled gardens to have the all data for themselves and then selling it.
+The Web was created in 1989 by Sir Tim Berners-Lee while working at the institution of cern “ to allow people to work together by combining their knowledge in a web of hypertext documents” (Berners-Lee 2020). This brilliant idea has ever since grown as an essential part of our all lives (Schill 2020). While bringing a new platform for innovation into existence, a new level of oppression and surveillance that has never been seen before has facilitated without most even realizing. Data are harvested and analyzed to generate models describing and predicting human behavior far beyond what is morally tolerable. These actions permit the generation of large amounts of wealth as capitalistic and governmental bodies enjoy a great interest in these models to either generate more profit or more control. The escalation of attraction towards data has led to the construction of so called data silos, where data gatherers built attractive applications for users while locking them into their walled gardens to have the all data for themselves and then selling it.
 
 Through whistle blowing, active journalism, and technical education a new wave of hope is arising in the ocean of data hunting. Not giving up on the Web, which has in its little over 30 years of lifetime proven its paramount act in state, society, and the economy, Sir Tim has an adjustment for the Web specified. With the help of several Web enthusiasts, companies, and even governments the idea of Solid was found.
 
 Solid aims at giving the users back the control over their data to regain full data sovereignty. It does so by specifying through a number of technical reports a new way of building application in the Web that let the users control their data and in this way can decide who can see what. Just like the Web, which was also defined by technical reports and prototypes, it is for everyone and not limited by anything.
 
-“Being the Web’s birthplace, cern remains a High Energy Physics laboratory; hence, its primary mission is to run an accelerator, its detectors, and the relevant experiments. Computing is of paramount importance for filtering, storing, distributing, accessing, analyzing the experimental data. Nevertheless, due to its large and distributed user base, cern offers sophisticated solutions on all software application fronts. In terms of price and transparency, proprietary packages have been disappointing. Following the raising worldwide awareness of personal data ownership and sovereignty, cern is interested in Solid.”
+“Being the Web’s birthplace, cern remains a High Energy Physics laboratory; hence, its primary mission is to run an accelerator, its detectors, and the relevant experiments. Computing is of paramount importance for filtering, storing, distributing, accessing, analyzing the experimental data. Nevertheless, due to its large and distributed user base, cern offers sophisticated solutions on all software application fronts. In terms of price and transparency, proprietary packages have been disappointing. Following the raising worldwide awareness of personal data ownership and sovereignty, cern is interested in Solid.” (Schill 2020)
 
 Goal
 
-The work presented in this paper will conclude the cern-Solid Code Investigation project . Where the previous work done in focused on analyzing the Solid ecosystem, this body of work will focus on the remaining points defined in the project description . The remaining points include the development of two modules integrating Solid principles programmatically into existing software from cern, these will be presented with their design choices and the challenges met. Further, these developments will be evaluated and analyzed based on the quality attributes security, performance, and usability. Followed by a section identifying the challenges with Solid in its current state and how traditional software, namely one from cern called Indico, has issues adopting a Solid-way of building software. The last section will introduce possible proceedings for cern as the goal of this project is to determine how cern can be involved in the Solid ecosystem and the fate of the Web.
+The work presented in this paper will conclude the cern-Solid Code Investigation project (“CERN-Solid Code Investigation,” n.d.). Where the previous work done in (Schill 2020) focused on analyzing the Solid ecosystem, this body of work will focus on the remaining points defined in the project description (“CERN-Solid Code Investigation,” n.d.). The remaining points include the development of two modules integrating Solid principles programmatically into existing software from cern, these will be presented with their design choices and the challenges met. Further, these developments will be evaluated and analyzed based on the quality attributes security, performance, and usability. Followed by a section identifying the challenges with Solid in its current state and how traditional software, namely one from cern called Indico, has issues adopting a Solid-way of building software. The last section will introduce possible proceedings for cern as the goal of this project is to determine how cern can be involved in the Solid ecosystem and the fate of the Web.
 
 Related Work
 
@@ -46,13 +46,13 @@ This chapter will hold the parts of the project coming from the outside, all the
 
 Background
 
-The cern-Solid Code Investigation project aims at linking cern with Solid. Some of this linkage has been done in the form of a status quo check of the Solid ecosystem in . This previous work and the efforts around the two pocs shall give insights into a symbiosis of cern and Solid.
+The cern-Solid Code Investigation project aims at linking cern with Solid. Some of this linkage has been done in the form of a status quo check of the Solid ecosystem in (Schill 2020). This previous work and the efforts around the two pocs shall give insights into a symbiosis of cern and Solid.
 
 The following sections in this chapter will introduce the two systems and their significant subsystems, modules, libraries, or techniques.
 
 Indico
 
-Indico is one of CERN’s most sophisticated software projects. It is an event management tool, giving users a means to organize complex meetings or conferences with an easy-to-use interface. It was started in 2002 as a European project and has been in production at CERN ever since. It is used daily to facilitate more than 600,000 events at CERN. It has helped others like the UN “to put in place an efficient registration and accreditation workflow that greatly reduced waiting times for everyone” at conferences with more than 180,000 participants in total .
+Indico is one of CERN’s most sophisticated software projects. It is an event management tool, giving users a means to organize complex meetings or conferences with an easy-to-use interface. It was started in 2002 as a European project and has been in production at CERN ever since. It is used daily to facilitate more than 600,000 events at CERN. It has helped others like the UN “to put in place an efficient registration and accreditation workflow that greatly reduced waiting times for everyone” at conferences with more than 180,000 participants in total (Schill 2020).
 
 Events
 
@@ -62,7 +62,7 @@ Being an event management tool at Indico’s core lies the Event class. The Even
 
 Storage Mechanisms
 
-All events, all information in these events, file uploads, everything put into Indico are stored in a relational database on centralized servers. cern’s Indico instance is hosted on-premise in their own data centers. Another crucial feature of Indico is the permanent archival of event material and metadata . It allows the lifetime access to all events hosted on the platform. As an example one can easily browse to the event "Big Data and Social Media" held by Vint Cerf in 2018 and have access to description, recording, and slides, or even a presentation given in 2004 about "Practical Use of XML" .
+All events, all information in these events, file uploads, everything put into Indico are stored in a relational database on centralized servers. cern’s Indico instance is hosted on-premise in their own data centers. Another crucial feature of Indico is the permanent archival of event material and metadata (CERN 2020). It allows the lifetime access to all events hosted on the platform. As an example one can easily browse to the event "Big Data and Social Media" held by Vint Cerf in 2018 (“Big Data and Social Media,” n.d.) and have access to description, recording, and slides, or even a presentation given in 2004 about "Practical Use of XML" (“Practical Use of Xml,” n.d.).
 
 EventSettingsProxy
 
@@ -70,7 +70,7 @@ A proxy class enables storage for event-specific settings. Commonly stored data 
 
 Conferences
 
-In Indico, an event can be simple meetings, lectures, or all kinds of presentations. Additionally, Indico allows the creation and management of conferences. Conferences are more complex events with several more features, including registration, call-for-abstracts, program definition, payments, and more . The conference registration is especially interesting for this project as it is part of the poc.
+In Indico, an event can be simple meetings, lectures, or all kinds of presentations. Additionally, Indico allows the creation and management of conferences. Conferences are more complex events with several more features, including registration, call-for-abstracts, program definition, payments, and more (CERN, n.d.). The conference registration is especially interesting for this project as it is part of the poc.
 
 Conference Registration
 
@@ -78,11 +78,11 @@ Once a conference is created, the conference manager needs to make a registratio
 
 Solid
 
-A initial introduction to Solid was given as part of a previous research project in preparation for this thesis. In the research project, the Solid specification was, among other things, summarized and analyzed. This section will reiterate and study the subsequent experiment-relevant parts further.
+A initial introduction to Solid was given as part of a previous research project (Schill 2020) in preparation for this thesis. In the research project, the Solid specification was, among other things, summarized and analyzed. This section will reiterate and study the subsequent experiment-relevant parts further.
 
 Authentication With Solid
 
-In the Solid ecosystem, agents identify themselves with their WebID and prove their ownership through the solidoidc protocol, which is a flavor of oidc. For further explanation and flow diagrams through the authentication process, see either the work done in the previous report or the solidoidc specification itself .
+In the Solid ecosystem, agents identify themselves with their WebID and prove their ownership through the solidoidc protocol, which is a flavor of oidc. For further explanation and flow diagrams through the authentication process, see either the work done in the previous report (Schill 2020) or the solidoidc specification itself ((Inrupt), Pavlik, and Zagidulin 2021).
 
 To help with the complex authentication flow of solidoidc a few libraries have been developed by different actors. Two libraries relevant for this project exist; their relevancy is discussed in the chapter 3 under the section 3.1.1.3.
 
@@ -101,15 +101,15 @@ For this simple reason, the programming of the poc where Solid authentication wa
 
 Reading and Writing Linked Data
 
-Data in Solid is stored as Linked Data . rdf is a framework for representing information of Linked Data in the Web . The default file format so far implemented by the existing Solid servers is Turtle .
+Data in Solid is stored as Linked Data (Malhotra, Speicher, and Arwe 2015). rdf is a framework for representing information of Linked Data in the Web (Cyganiak, Wood, and Lanthaler 2014). The default file format so far implemented by the existing Solid servers is Turtle (Prud’hommeaux and Carothers 2014).
 
 The graph-based data model from using rdf also requires additional computation as it is not natively supported with helper functions in js, such as json. The benefit of using json in js is that a json object is automatically parsed as an object and can be operated on by using the dot notation to access attributes of the json data structure. For rdf, this is not the case for an into the program loaded Turtle resource.
 
-Fortunately, existing libraries come to the rescue allowing such operations on the rdf-based data type. Again Inrupt and the Solid Community offer solutions. Again, Inrupt’s solution was chosen for this development as it acts as a convenient wrapper to the bare bone Linked Data api implemented in rdflib.js . Even though working with rdf can be quickly done with just using rdflib.js, Inrupt’s libraries tie nicely together and allow for instance a seamless passing of an authenticated session to its client library to enable authenticated requests to protected resources.
+Fortunately, existing libraries come to the rescue allowing such operations on the rdf-based data type. Again Inrupt and the Solid Community offer solutions. Again, Inrupt’s solution was chosen for this development as it acts as a convenient wrapper to the bare bone Linked Data api implemented in rdflib.js (???). Even though working with rdf can be quickly done with just using rdflib.js, Inrupt’s libraries tie nicely together and allow for instance a seamless passing of an authenticated session to its client library to enable authenticated requests to protected resources.
 
-As mentioned before and looked at in detail in , the Turtle format is a graph data structure built-up with triplets—a triplet statement in its simplest form a sequence of (subject, predicate, object) terms .
+As mentioned before and looked at in detail in (Schill 2020), the Turtle format is a graph data structure built-up with triplets—a triplet statement in its simplest form a sequence of (subject, predicate, object) terms (Prud’hommeaux and Carothers 2014).
 
-Inrupt decided to call this construct a Thing, which is a data entity associated with a set of data or properties of this Thing . A SolidDataset is a set of things .
+Inrupt decided to call this construct a Thing, which is a data entity associated with a set of data or properties of this Thing (“Thing,” n.d.). A SolidDataset is a set of things (“SolidDataset,” n.d.).
 
 The following code listing shows how the helper methods can be used to extract data from a Turtle file loaded by a request to the WebID profile document uri.
 
@@ -135,7 +135,7 @@ The following code listing shows how the helper methods can be used to extract d
 
 Authorization Through WAC
 
-The as per Solid specification decided authorization mechanism is through wac . The majority of Solid servers use acls to manage the access modes on containers and resources. An acl contains all the users and their permitted access rights to the resources on the pod. It may contain a default, or public, entry but must contain a reference to who the owner is to what the acl is describing. acls are convenient as they allow easy and fast access to who has access to a specific resource. In contrast capability tickets are the preferred technique when wanting to find out what a specific user has access to .
+The as per Solid specification decided authorization mechanism is through wac (“Web Access Control (Wac),” n.d.). The majority of Solid servers use acls to manage the access modes on containers and resources. An acl contains all the users and their permitted access rights to the resources on the pod. It may contain a default, or public, entry but must contain a reference to who the owner is to what the acl is describing. acls are convenient as they allow easy and fast access to who has access to a specific resource. In contrast capability tickets are the preferred technique when wanting to find out what a specific user has access to (Stallings and Brown 2014).
 
 Application Launcher
 
@@ -143,7 +143,7 @@ A so-called application launcher can mitigate a later presented discovery of a f
 
 For now, an implementation shall be introduced showing how the application launcher can avoid this problem. When an application wants to create acls on a data pod, it needs the before-mentioned control access. This is the highest access mode in wac with it files can be read, written, and acls can be modified – meaning the owner of files can be changed as an example. In the initial solidoidc flow, in one step the access scope for the application will be asked for. The asked for scope is for the root container of the data pod – a more fine-grained control to limit access on a specific child container does not exist. An application launcher is a Solid app that has full control of the pod and must be trusted. When a new application wants to make use of a data pod and needs control access but could, in theory, be limited to a specific container, the application launcher will create the appropriate acl files to only allow precisely this. This works because all access modes are defined in acl files, which can be dynamically created. The application will, with this launcher, now have complete control of the container it operates and stores data in but cannot reach outside of its container.
 
-The source code for a standalone application launcher in js exists here .
+The source code for a standalone application launcher in js exists here (“Solid-App-Launcher,” n.d.).
 
 Investigation
 
@@ -248,12 +248,12 @@ Client Approach
 The module runs in the browser and is therefore written in js. A programming language which compiles to js, such as ts, is also possible. This means Indico remains mostly untouched but would have to serve the needed js to the client on traffic to an event endpoint where the comment module is integrated.
 
   Problem          Solution
-  ---------------- -----------------------------------
+  ---------------- --------------------------------------------------------------------------------------------------------------
   Language         js or ts
   Framework        Native js
-  Client           solid-client-js
-  Authentication   solid-client-authn-browser
-  RDF              solid-common-vocab-js , rdflib.js
+  Client           solid-client-js (“Solid Javascript Client: Solid-Client,” n.d.)
+  Authentication   solid-client-authn-browser (“Solid Javascript Authentication - Solid-Client-Authn,” n.d.a)
+  RDF              solid-common-vocab-js (“The Solid Common Vocab Library for Javascript,” n.d.), rdflib.js (“Rdflib.js,” n.d.)
 
   : Existing solutions to problems for a client approach.
 
@@ -266,12 +266,12 @@ Microservice Approach
 The microservice approach would allow developing the needed Solid logic on a separate service, which proxies all Solid related traffic through it and enables the Solid functionality. Most of the libraries from the client implementation can be used as well, as both developments would be written in js. Only the authentication flow would work a bit differently.
 
   Problem          Solution
-  ---------------- -----------------------------------
+  ---------------- --------------------------------------------------------------------------------------------------------------
   Language         js or ts
   Framework        Node.js
-  Client           solid-client-js
-  Authentication   solid-client-authn-node
-  RDF              solid-common-vocab-js , rdflib.js
+  Client           solid-client-js (“Solid Javascript Client: Solid-Client,” n.d.)
+  Authentication   solid-client-authn-node (“Solid Javascript Authentication - Solid-Client-Authn,” n.d.b)
+  RDF              solid-common-vocab-js (“The Solid Common Vocab Library for Javascript,” n.d.), rdflib.js (“Rdflib.js,” n.d.)
 
   : Existing solutions to problems for a microservice approach.
 
@@ -284,16 +284,16 @@ Server Approach
 The goal of the server approach would be just like with the microservice approach to decouple the logic needed to work with Solid from the client and have it run on a server instance. The attractiveness for the server approach would be it could be fully integrated within Indico and be part of its Python codebase. The major drawbacks are no direct Solid libraries written in Python exist to allow a seamless integration into the ecosystem.
 
   Problem          Solution
-  ---------------- -----------------------------------
+  ---------------- --------------------------------------------------------------------------------------------------------------
   Language         Python
   Framework        Flask
   Client           -
-  Authentication   pyoidc missing DPoP
-  RDF              solid-common-vocab-js , rdflib.js
+  Authentication   pyoidc (“A Python Openid Connect Implementation,” n.d.) missing DPoP
+  RDF              solid-common-vocab-js (“The Solid Common Vocab Library for Javascript,” n.d.), rdflib.js (“Rdflib.js,” n.d.)
 
   : Existing solutions to problems for a server approach.
 
-The authentication library pyoidc allows authenticating with oidc systems but is missing a mandatory feature called dpop, which is needed to make requests to protected resources on a data pod. dpop is a technique to disallow replay attacks by attaching a dpop token to the request indicating for what data pod the token can be used. This means when a request with a valid authentication token is made to a malicious pod and the adversary steals this authentication token, the authentication token is signed with a target to this malicious pod, which means the adversary cannot take this intercepted token and use it for another address, as it is only valid for requests to this malicious pod. The dpop token therefore needs to newly generated on everything request .
+The authentication library pyoidc allows authenticating with oidc systems but is missing a mandatory feature called dpop, which is needed to make requests to protected resources on a data pod. dpop is a technique to disallow replay attacks by attaching a dpop token to the request indicating for what data pod the token can be used. This means when a request with a valid authentication token is made to a malicious pod and the adversary steals this authentication token, the authentication token is signed with a target to this malicious pod, which means the adversary cannot take this intercepted token and use it for another address, as it is only valid for requests to this malicious pod. The dpop token therefore needs to newly generated on everything request (Fett et al. 2021).
 
 [Communication flow for a module developed on the server.]
 
@@ -395,7 +395,7 @@ Modification of Resource From Data Pod
 
 When the users are in control of their data it means they can revoke access any time, or even change their data to their liking. This means when the comment is initially created through Indico and the commenting system’s ui it does not mean this comment needs to remain as is. Even if the interface of the system does not allow modification, a modification can still happen at the source of the storage of the comment.
 
-Regular comment modules usually allow modifications of a submitted text throughout its existence. Twitter is an example where modifications are not allowed after posting .
+Regular comment modules usually allow modifications of a submitted text throughout its existence. Twitter is an example where modifications are not allowed after posting (“New User Faq: Tweeting,” n.d.).
 
 When this aspect was discovered it was decided to allow this sort of behavior, as it seems to be natural in this context to be able to edit one’s own comments.
 
@@ -415,7 +415,7 @@ The need for integration with Indico is twofold: serving the module to the clien
 
 Storing Reference to Comments in Indico
 
-Indico operates using the relational database PostgreSQL . When a comment gets posted and stored on an external data pod a reference to the location of the comment needs to be kept in order for Indico to pull the comment and render it in its frontend. Several possibilities are imaginable.
+Indico operates using the relational database PostgreSQL (“PostgreSQL: The World’s Most Advanced Open Source Relational Database,” n.d.). When a comment gets posted and stored on an external data pod a reference to the location of the comment needs to be kept in order for Indico to pull the comment and render it in its frontend. Several possibilities are imaginable.
 
 1.  Create new EventComments table
 
@@ -431,13 +431,13 @@ Enforce Authenticated Session For Posting Comments
 
 It was established through the iterations of the design with the stakeholders that an authenticated Indico session is deemed necessary in addition to the already authenticated Solid idp session with the data pod. The main motivation was to keep it as laborious as possible for spam to reach the system.
 
-The awkwardness in validating for an existing Indico session and then be able to send requests to a protected endpoint comes with the great decoupling of the comment module and Indico, which is admirable, but also make this feature more challenging to implement. Indico uses a framework called Axios for its http client request handling. In Indico Axios is configured with all necessary http headers and when a session exists also equipped with the auth-token. The comment module can simply be extended to allow the usage of a custom http client for sending requests to Indico. When the module is initialized the Axios client is already readily configured and needs to be passed over to the module. Both system are still decoupled and the comment module works with or without a custom http client.
+The awkwardness in validating for an existing Indico session and then be able to send requests to a protected endpoint comes with the great decoupling of the comment module and Indico, which is admirable, but also make this feature more challenging to implement. Indico uses a framework called Axios (“Promise Based Http Client for the Browser and Node.js,” n.d.) for its http client request handling. In Indico Axios is configured with all necessary http headers and when a session exists also equipped with the auth-token. The comment module can simply be extended to allow the usage of a custom http client for sending requests to Indico. When the module is initialized the Axios client is already readily configured and needs to be passed over to the module. Both system are still decoupled and the comment module works with or without a custom http client.
 
 Evaluation
 
-This section focuses on evaluating the system. This shall be done by iterating through the system’s requirements from the stakeholders and how the architecture lives up to those expectations. The evaluation is done with the help of the asqa framework to ensure continuous quality assessment and prioritizing with a lightweight technique . asqa contains seven process steps as shown in figure 3.9.
+This section focuses on evaluating the system. This shall be done by iterating through the system’s requirements from the stakeholders and how the architecture lives up to those expectations. The evaluation is done with the help of the asqa framework to ensure continuous quality assessment and prioritizing with a lightweight technique (Christensen, Hansen, and Lindstrøm 2010). asqa contains seven process steps as shown in figure 3.9.
 
-[aSQA Process Steps from ]
+[aSQA Process Steps from (Christensen, Hansen, and Lindstrøm 2010)]
 
 1.  Define Metrics to the components of the system. This can be done with qass, that may define the desired quality.
 
@@ -451,7 +451,7 @@ This section focuses on evaluating the system. This shall be done by iterating t
 
 Metrics
 
-The defined qas are useful to know, but cannot be tested or often qualities of a system are hard to categorize with an adequate qa. A solution to the problem of untestability and overlapping concerns are qass. qass can be used to characterize qas . Based on the scenarios the evaluation will be carried out. The scenarios will always have the qas in mind and are defined with the focus on those. The different scenarios are predicted to be the most common actions on the system and thus will stress the system and its architecture the most based on the qas.
+The defined qas are useful to know, but cannot be tested or often qualities of a system are hard to categorize with an adequate qa. A solution to the problem of untestability and overlapping concerns are qass. qass can be used to characterize qas (Bass, Clements, and Kazman 2012). Based on the scenarios the evaluation will be carried out. The scenarios will always have the qas in mind and are defined with the focus on those. The different scenarios are predicted to be the most common actions on the system and thus will stress the system and its architecture the most based on the qas.
 
 The previously picked qas are as follows:
 
@@ -477,7 +477,7 @@ Possible scenarios are centered around data not being available or altered or sc
 
 Levels
 
-The levels are used to measure the state of the architecture of system. These can be freely chosen, but follow an ordinal scale ranging from 1 to 5 in the original paper and will therefore be adapted . The levels will help to rate the quality of the system’s architecture, where 1 is the lowest quality and 5 the highest rating.
+The levels are used to measure the state of the architecture of system. These can be freely chosen, but follow an ordinal scale ranging from 1 to 5 in the original paper and will therefore be adapted (Christensen, Hansen, and Lindstrøm 2010). The levels will help to rate the quality of the system’s architecture, where 1 is the lowest quality and 5 the highest rating.
 
 Components
 
@@ -574,7 +574,7 @@ The first improvement to this approach could be pagination. Pagination limits th
 
 The second improvement could be a grouping of comments by the author. This way the number of requests would now be bound to the number of authors. In the worst case, where all comments are from different authors, it would not bring any improvement over the initial architecture. The design for this would be to change the storage from the multi-file approach to a single-file approach. On the data pod, one file would exist holding all comments from one author for one event. This file can be fetched with one request containing multiple comments.
 
-Another enhancement can be attained by caching. In its current design, the comments are freshly fetched on each page load. Server-side http caching is out of control for the clients, and completely relies on the Server implementations to do so. By Solid specification, http caching is prescribed, but not vital , which means it should implement it, but does not have to. Regardless, the improvement would not be in the number of round trips the client has to complete, but rather in the time for the server to calculate the response it sends out . A real improvement on consecutive page visits are won by client-side http caching. Upon successive visits to a cached website, a previously fetched and in the browser’s local storage stored copy of the response would be served . The result would be immediately loaded, but might not serve the latest and up-to-date asset from the server. The freshness of the response is controlled using the Cache-Control header in either the request or response of the http exchange between client and server .
+Another enhancement can be attained by caching. In its current design, the comments are freshly fetched on each page load. Server-side http caching is out of control for the clients, and completely relies on the Server implementations to do so. By Solid specification, http caching is prescribed, but not vital (Capadisli et al. 2020), which means it should implement it, but does not have to. Regardless, the improvement would not be in the number of round trips the client has to complete, but rather in the time for the server to calculate the response it sends out (Fielding, Nottingham, and Reschke 2014). A real improvement on consecutive page visits are won by client-side http caching. Upon successive visits to a cached website, a previously fetched and in the browser’s local storage stored copy of the response would be served (Fielding, Nottingham, and Reschke 2014). The result would be immediately loaded, but might not serve the latest and up-to-date asset from the server. The freshness of the response is controlled using the Cache-Control header in either the request or response of the http exchange between client and server (Fielding, Nottingham, and Reschke 2014).
 
 More performance solutions shall be looked at with the other upcoming areas in this analysis section.
 
@@ -582,7 +582,7 @@ Security: Modification of Resources
 
 In the case of comments being the resources that are being shared between data pod and application, it has been established a modification from outside the application is acceptable behavior. For a resource where a modification should be monitored or even forbidden. A few paths are conceivable.
 
-Storing the comments on the author’s data pod could be given up and instead be done by a trusted entity, e.g. the application embedding the comment module. It would result in cern hosting one data pod for their Indico instance. Each event would create a container in this data pod with append access mode for the public. append allows an agent to add new resources to a container, but not modify or delete any . Through this access mode a user can post comments freely, but cannot modify them at a later stage, as the data is now in Indico’s data pod and the user is lacking the access control to edit existing resources. Having one data pod responsible for all comments also improves the performance by reducing the number of http requests needed. Whereas before the requests were either bound to the number of authors or even by the number of comments, it is now only a single request to the event’s container on the Indico data pod, to fetch a single file with all comments written in. A drawback to this approach is the comments are again stored centralized in one storage, though because it is using a Solid server instead of a web server with unstructured data storage, the data is now structured and thus interoperable through Linked Data. Besides storing it in Indico’s data pod, a copy of the comment could be stored in the author’s data pod. The author acquires a version of the comment and Indico holds the ssot.
+Storing the comments on the author’s data pod could be given up and instead be done by a trusted entity, e.g. the application embedding the comment module. It would result in cern hosting one data pod for their Indico instance. Each event would create a container in this data pod with append access mode for the public. append allows an agent to add new resources to a container, but not modify or delete any (Capadisli et al. 2020). Through this access mode a user can post comments freely, but cannot modify them at a later stage, as the data is now in Indico’s data pod and the user is lacking the access control to edit existing resources. Having one data pod responsible for all comments also improves the performance by reducing the number of http requests needed. Whereas before the requests were either bound to the number of authors or even by the number of comments, it is now only a single request to the event’s container on the Indico data pod, to fetch a single file with all comments written in. A drawback to this approach is the comments are again stored centralized in one storage, though because it is using a Solid server instead of a web server with unstructured data storage, the data is now structured and thus interoperable through Linked Data. Besides storing it in Indico’s data pod, a copy of the comment could be stored in the author’s data pod. The author acquires a version of the comment and Indico holds the ssot.
 
 One more option to control the modification on resources while not giving up on decentralized storage in the author’s pods is to use versioning on the comments. Indico would when a user creates and submits a comment store a hashed value of the comment’s content. When then serving the comments from the external data pods to visiting clients the received comments would be hashed and compared to the Indico stored hash value. It is important to associate the comment’s url with the hash to be able to make a proper comparison on the correct resources.
 
@@ -596,7 +596,7 @@ Justification for implementing it in this way is a faster time-to-market allowin
 
 Indico Solid Proxying
 
-Indico could develop an api which sits between Indico and the Solid data pods to then for example make all the requests on behalf of the clients. A proxy as such would hide all the clients’ ip addresses and would therefore disallow the logging of client ip addresses by a malicious data pod. A performance improvement is also foreseeable as the Indico proxy could make the requests to the different data pods and put them into cache where they would then be served from. By caching the request in this layer, the request do not have to be made by every client every time on page load. Loading resources before they are requested by clients and then serving clients from a cache is called cache warming . Another benefit of doing the requests using an Indico proxy is also that a malicious data pod or just one that wants to do some kind of targeted advertisement, cannot identify the clients by their ip addresses and therefore not send different responses upon requests from different ip addresses based on geolocation.
+Indico could develop an api which sits between Indico and the Solid data pods to then for example make all the requests on behalf of the clients. A proxy as such would hide all the clients’ ip addresses and would therefore disallow the logging of client ip addresses by a malicious data pod. A performance improvement is also foreseeable as the Indico proxy could make the requests to the different data pods and put them into cache where they would then be served from. By caching the request in this layer, the request do not have to be made by every client every time on page load. Loading resources before they are requested by clients and then serving clients from a cache is called cache warming (“What Is Cache Warming?” n.d.). Another benefit of doing the requests using an Indico proxy is also that a malicious data pod or just one that wants to do some kind of targeted advertisement, cannot identify the clients by their ip addresses and therefore not send different responses upon requests from different ip addresses based on geolocation.
 
 POC 2: Auto-Complete Form Inputs for Conference Registration in Indico
 
@@ -674,7 +674,7 @@ A great benefit of using Linked Data is its semantic structure and the interoper
 
 2.  Parse and process existing values of attributes and labels
 
-In the html specification an autocomplete attribute exist, which is used by browsers to prefill data from previously used values . The value of the autocomplete key-value pair describes the input and what data is to be expected.
+In the html specification an autocomplete attribute exist, which is used by browsers to prefill data from previously used values (community 2021b). The value of the autocomplete key-value pair describes the input and what data is to be expected.
 
     <form method=post action="/">
       <p><label>Full name: <input type=text autocomplete=name></label>
@@ -683,13 +683,13 @@ In the html specification an autocomplete attribute exist, which is used by brow
       <p><input type=submit value="Submit">
     </form>
 
-In listing [lst:autocomplete-input] the browser would suggest cached values when the user agent clicks into an input. This is the perfect indicator to autofill form inputs. Unfortunately, this attribute is not being utilized in Indico. Another and even better approach would be to annotate the input fields straight up with the vocabulary of Schema.org . The mapping of the input fields and the fetched Turtle resource could then happen directly using the predicates of both structured formats. To change the AngularJS form and implement new features into Indico were already established not to be viable. Nevertheless, the autocomplete feature shall be kept in mind.
+In listing [lst:autocomplete-input] the browser would suggest cached values when the user agent clicks into an input. This is the perfect indicator to autofill form inputs. Unfortunately, this attribute is not being utilized in Indico. Another and even better approach would be to annotate the input fields straight up with the vocabulary of Schema.org (“Schema.org,” n.d.). The mapping of the input fields and the fetched Turtle resource could then happen directly using the predicates of both structured formats. To change the AngularJS form and implement new features into Indico were already established not to be viable. Nevertheless, the autocomplete feature shall be kept in mind.
 
 Without being able to extract from the autocomplete attribute within Indico it shall still be implemented and used, as other systems might use the attribute. Other means of extracting some kind of information from the form are the ID and name attributes or even the TextNode of the input label. The ID and name are often equipped with information about the input they are defined on. These values and additionally the value of the label node can be extracted and mapped against a dictionary of key-value pairs to find out what the input is supposed to be filled in with.
 
 [The flow to find a source for dictionary mapping.]
 
-A possible mapping of address information could look like as in listing [lst:autocomplete-mapping]. The implementation shows a js implementation where the key in the address object are the possibly extracted values from the different techniques described above and the value is in this example the vCARD equivalent. vCARD is being used by the nss to describe the information in the WebID profile document.
+A possible mapping of address information could look like as in listing [lst:autocomplete-mapping]. The implementation shows a js implementation where the key in the address object are the possibly extracted values from the different techniques described above and the value is in this example the vCARD (Viagenie 2011) equivalent. vCARD is being used by the nss to describe the information in the WebID profile document.
 
     const address = {
       address: 'full_address',
@@ -724,7 +724,7 @@ A few challenges arose when integrating the module with Indico. A critical issue
 
 Bind to Dynamically Created Form
 
-Indico builds the registration form dynamically using a frontend library called AngularJS . This introduces a challenge of interacting with the form using js. Frontend libraries that either create new or modify existing dom nodes need to wait until the complete dom tree is loaded, as they bind to one dom node from the initially served html document and then do their operations on this node. Meaning, AngularJS waits until the whole html document is parsed and rendered in the browser and then starts creating its form from scratch, which is then being rendered by the browser. The problem with this is in order to operate on the form, which is necessary for the module to be able to read the form inputs and labels and also to set their values, the js code from this prototype needs to know when the form was successfully rendered. Three options are possible to achieve this.
+Indico builds the registration form dynamically using a frontend library called AngularJS (“AngularJS,” n.d.). This introduces a challenge of interacting with the form using js. Frontend libraries that either create new or modify existing dom nodes need to wait until the complete dom tree is loaded, as they bind to one dom node from the initially served html document and then do their operations on this node. Meaning, AngularJS waits until the whole html document is parsed and rendered in the browser and then starts creating its form from scratch, which is then being rendered by the browser. The problem with this is in order to operate on the form, which is necessary for the module to be able to read the form inputs and labels and also to set their values, the js code from this prototype needs to know when the form was successfully rendered. Three options are possible to achieve this.
 
 1.  Implement the autocomplete functionality in the existing AngularJS form code
 
@@ -732,7 +732,7 @@ Indico builds the registration form dynamically using a frontend library called 
 
 3.  Use the MutationObserver to detect the form creation
 
-Solutions 1 and 2 both involve the need to work with the AngularJS form, which is written in a legacy version and was recommended by an Indico developer to – if possible – be avoided. Indico developers also plan on removing AngularJS altogether and replace it with a more popular frontend framework. Therefore, option 3 was chosen even though the usage of a MutationObserver instance might add performance degradation to the page load . The performance shall not be analyzed more carefully as it is not of relevance to prove the realization of the prototype.
+Solutions 1 and 2 both involve the need to work with the AngularJS form, which is written in a legacy version and was recommended by an Indico developer to – if possible – be avoided. Indico developers also plan on removing AngularJS altogether and replace it with a more popular frontend framework. Therefore, option 3 was chosen even though the usage of a MutationObserver instance might add performance degradation to the page load (community 2021a). The performance shall not be analyzed more carefully as it is not of relevance to prove the realization of the prototype.
 
 The MutationObserver is initialized as soon as the dom is rendered, it then takes a node as a target to observe and will register all modifications on this node: the creation of children nodes in it, updates to the node itself or any other modifications. To reduce computation the Indico code can be analyzed to find a suitable dom element to have as a target node. This node needs to exist when the dom is loaded and needs to contain the final form node. When looking at the final rendered document containing the AngularJS form one notices that the form has an ID, which can be used to observe its creation.
 
@@ -909,7 +909,7 @@ Storing a copy of the data is an interesting idea. The freezing of the data woul
 
 Communication Flow
 
-Not to cut off the previous issue, but to continue and nurture the aspect of flow in Solid. One crucial feature of conferences and the registration is the ability to reach out to people to let them know about next year’s conference for instance. Consent would ideally only be given to the conference where one had actively sign up for and hence next year’s conference would not be able to read the participant’s list and connect with them and even if the list would be visible, how does the new conference know how to ask for consent to reach out them or do akin actions. Solid offers an inbox and notifications . Solid-Inbox allows anyone in the Solid ecosystem with the public append access control to connect with a WebID. The reached out agent gets a notification as soon as a new item is appended into their inbox. This pro-active initiation is not ideal, as the initiator does not know what data can be asked for. Only when owner actively says: “You are allowed to read this resource A and modify my resource B.”, does the application know about the existence of the data.
+Not to cut off the previous issue, but to continue and nurture the aspect of flow in Solid. One crucial feature of conferences and the registration is the ability to reach out to people to let them know about next year’s conference for instance. Consent would ideally only be given to the conference where one had actively sign up for and hence next year’s conference would not be able to read the participant’s list and connect with them and even if the list would be visible, how does the new conference know how to ask for consent to reach out them or do akin actions. Solid offers an inbox and notifications (“Solid-Inbox,” n.d.). Solid-Inbox allows anyone in the Solid ecosystem with the public append access control to connect with a WebID. The reached out agent gets a notification as soon as a new item is appended into their inbox. This pro-active initiation is not ideal, as the initiator does not know what data can be asked for. Only when owner actively says: “You are allowed to read this resource A and modify my resource B.”, does the application know about the existence of the data.
 
 Solid-Inbox seems to be a decent solution for the use-case of Indico reaching out to previous participants. Another suggestion would be to escalate the access scope for Indico and conferences and the agent. Meaning, when a user signs up for a conference the registration asks for consent to allow future contacting. TODO: more here
 
@@ -931,13 +931,13 @@ Deployment of Indico Instance
 
 As the development of the pocs should be tested in a running Indico instance by cern personnel a deployment outside of the local development machine is necessary. A few prerequisites are needed to set up a staging environment. First is a proper cern account and a running ssh tunnel to cern’s network. It is important to note the environment is also running behind cern’s firewall and can only access with the two mentioned prerequisites.
 
-To deploy Indico with the two pocs an own hosting solution could have been chosen, but cern has great documentation to an OpenStack vm workflow, which allows a straightforward deployment of Indico. OpenStack is set of open source cloud software components providing production-level infrastructure. cern has a list of OpenStack images ready to be used for staging or production environments. A CentOS distribution was chosen and the official Indico guideline to install Indico on Linux. A few caveats were met as the latest not yet release Indico version with Python 3 was used. This was decided with the Indico chief developer to test Indico and to use and have access to the latest developments. The differences to the Indico documentation which only supports previous Indico versions were not complex enough to be mentioned here, as they mostly meant installing different os packages.
+To deploy Indico with the two pocs an own hosting solution could have been chosen, but cern has great documentation to an OpenStack vm (“OpenStack,” n.d.) workflow, which allows a straightforward deployment of Indico. OpenStack is set of open source cloud software components providing production-level infrastructure. cern has a list of OpenStack images ready to be used for staging or production environments. A CentOS (“The Centos Project,” n.d.) distribution was chosen and the official Indico guideline to install Indico on Linux. A few caveats were met as the latest not yet release Indico version with Python 3 was used. This was decided with the Indico chief developer to test Indico and to use and have access to the latest developments. The differences to the Indico documentation which only supports previous Indico versions were not complex enough to be mentioned here, as they mostly meant installing different os packages.
 
 Indico can be easily installed by building a Python wheel locally, which bundles all dependencies into a single file, and sending it to the OpenStack vm where it is then installed with a single pip install command. A few system calls were created from following the Indico documentation, which have to be restarted every time a new Indico version is installed.
 
-Two additional parts are necessary to make Indico and the poc modules work properly together. A tls certificate is necessary for the authentication flow with real data pods and also always a good practice to have enabled. Let’s Encrypt is a nonprofit Certificate Authority providing free tls certificates and therefore a decent choice when in need for a certificate. Let’s Encrypt certificates cannot be used in cern’s network as their ports are blocked by cern’s firewall. But again cern has a setup solution for this providing their own self-signed certificates. These are pre-installed on cern’s work computers and thus trusted automatically when used in the staging instance.
+Two additional parts are necessary to make Indico and the poc modules work properly together. A tls certificate is necessary for the authentication flow with real data pods and also always a good practice to have enabled. Let’s Encrypt (“Let’s Encrypt,” n.d.) is a nonprofit Certificate Authority providing free tls certificates and therefore a decent choice when in need for a certificate. Let’s Encrypt certificates cannot be used in cern’s network as their ports are blocked by cern’s firewall. But again cern has a setup solution for this providing their own self-signed certificates. These are pre-installed on cern’s work computers and thus trusted automatically when used in the staging instance.
 
-The second improvement to the installation was to enable sso allowing authentication through cern’s authentication service. This means all users with a valid cern account can authenticate with the freshly installed Indico instance and therefore provide an authenticated Indico session when needed. This was as easy as adding the domain of the Indico staging instance, installing cern’s Python Flask authentication library called flask-multipass and appending some additional configuration to the Indico configuration file.
+The second improvement to the installation was to enable sso allowing authentication through cern’s authentication service. This means all users with a valid cern account can authenticate with the freshly installed Indico instance and therefore provide an authenticated Indico session when needed. This was as easy as adding the domain of the Indico staging instance, installing cern’s Python Flask authentication library called flask-multipass (“Flask-Multipass,” n.d.) and appending some additional configuration to the Indico configuration file.
 
 TODO: deployment diagram?
 
@@ -949,7 +949,7 @@ The relatively young lifetime of Solid, the only recent matured specifications, 
 
 Encryption at Rest
 
-Just like http is specified without an encryption layer, so is Solid. The boards of the multiple Solid panels have made the decision that encryption in Solid is not a problem to be solved for now. http brings encryption with https and therefore ensures that all communications over http are encrypted in the Solid ecosystem. For encryption at rest, meaning at the place where the data is stored and can be retrieved from, no encryption is intended. The standards around Solid describe how the access to data is contracted, but if this data is encrypted is up to the storage mechanism, which is up to the provider of the data pod .
+Just like http is specified without an encryption layer, so is Solid. The boards of the multiple Solid panels (“Solid Panels,” n.d.) have made the decision that encryption in Solid is not a problem to be solved for now. http brings encryption with https and therefore ensures that all communications over http are encrypted in the Solid ecosystem. For encryption at rest, meaning at the place where the data is stored and can be retrieved from, no encryption is intended. The standards around Solid describe how the access to data is contracted, but if this data is encrypted is up to the storage mechanism, which is up to the provider of the data pod (“Frequently Asked Questions,” n.d.).
 
 cern has a high interest in data sovereignty and requires all their external services to store the collected data on eu soil, where the gdpr support the data authors. For the cases where it is impossible, cern has their own data centers to store data. In a scenario where cern seeks a pod provider to enable Solid for their personnel and the provider cannot guarantee gdpr compliance nor offers encryption of data in the data center, it is unlikely for cern to adopt such a solution.
 
@@ -957,13 +957,13 @@ A hosting on-premise solution also comes with challenges. The involvement with S
 
 User Interface
 
-A Solid server is a file system based web server. Modern computers ship with graphical oss to offer a good user experience when interacting with the file system on such computers. A Solid server being a place for users to manage their data requires for good user experience also a graphical os. The great benefit of using Linked Data to enable interoperability for Solid applications has led to many solutions for the problem of connecting and using a data pod. One system is called SolidOS and acts as the os for Solid servers. SolidOS has many great features that allow the direct use of Linked Data on one’s pod, but it comes with a challenging ui. The ui is powerful, but filled with bugs and counter-intuitive interactions. For example often a user is prompted to drag and drop a WebID uri to add the agent as a friend, instead of allowing a regular text input to either copy and paste or just typing of the WebID uri.
+A Solid server is a file system based web server. Modern computers ship with graphical oss to offer a good user experience when interacting with the file system on such computers. A Solid server being a place for users to manage their data requires for good user experience also a graphical os. The great benefit of using Linked Data to enable interoperability for Solid applications has led to many solutions for the problem of connecting and using a data pod. One system is called SolidOS (“An Operating System for Solid,” n.d.) and acts as the os for Solid servers. SolidOS has many great features that allow the direct use of Linked Data on one’s pod, but it comes with a challenging ui. The ui is powerful, but filled with bugs and counter-intuitive interactions. For example often a user is prompted to drag and drop a WebID uri to add the agent as a friend, instead of allowing a regular text input to either copy and paste or just typing of the WebID uri.
 
 SolidOS is currently the best and most sophisticated solution by features, hence comes shipped with nss deployments on most pod providers. These ui complications make it extremely strenuous even for professionals to use one’s pod, and even more ambitious to on-board newcomers.
 
 Commercial and Open-Source Solutions
 
-What started with Sir Tim Berners-Lee as an idea and initial documentation of the idea has now evolved greatly. Today, Solid is an open standard driven by the Solid community. Everybody who wants to participate, help, steer the direction of the movement is welcome and can join at any time. The majority of work in done by Web enthusiasts in their spare time. Sometimes funding can be mobilized to reward developer’s work, like the eu, which has funded several Solid-related projects. A great number of startups have also spotted the potential for Solid and now hold large teams. The most notable is Sir Tim’s co-founded company Inrupt , which focuses entirely on Solid. These companies are invaluable and necessary for the success of Solid, but also bring some complications. In recent progressions discrepancies were faced, which can be good and healthy to debate openly about solutions and find the best one, but discrepancies can likewise cause discomfort. Especially, when decisions are made without involving the community or using the market dominance to steer the movement against planned and defined goals. Solid being so lively with a community full of opinions can lead to a multitude contrasting Server implementation even though it is defined by technical reports and backed by a test-suite offering automatic auditing of implementations. Incidentally, harming the open-source idea for the same reason as mentioned in section 3.2.1, where open-source developers fear to drain their time by developing an idea, which gets then replaced or made redundant by a more resourceful entity.
+What started with Sir Tim Berners-Lee as an idea and initial documentation of the idea has now evolved greatly. Today, Solid is an open standard driven by the Solid community. Everybody who wants to participate, help, steer the direction of the movement is welcome and can join at any time. The majority of work in done by Web enthusiasts in their spare time. Sometimes funding can be mobilized to reward developer’s work, like the eu, which has funded several Solid-related projects. A great number of startups have also spotted the potential for Solid and now hold large teams. The most notable is Sir Tim’s co-founded company Inrupt (“Inrupt,” n.d.), which focuses entirely on Solid. These companies are invaluable and necessary for the success of Solid, but also bring some complications. In recent progressions discrepancies were faced, which can be good and healthy to debate openly about solutions and find the best one, but discrepancies can likewise cause discomfort. Especially, when decisions are made without involving the community or using the market dominance to steer the movement against planned and defined goals. Solid being so lively with a community full of opinions can lead to a multitude contrasting Server implementation even though it is defined by technical reports and backed by a test-suite offering automatic auditing of implementations. Incidentally, harming the open-source idea for the same reason as mentioned in section 3.2.1, where open-source developers fear to drain their time by developing an idea, which gets then replaced or made redundant by a more resourceful entity.
 
 Proceedings in the CERN-Solid Collaboration
 
@@ -971,9 +971,9 @@ With the two prototypes developed, integrated into Indico, and deployed to a run
 
 Solid Servers
 
-The in identified Solid implementations remain where they were when composing the research paper . A lot of development has happened for the css, but it is still in a minor release version and therefore not yet deployed and switch out with nss on the public solidcommunity.net domain. This is expected to happen as soon the developers trust the state of css to facilitate at least the functionality of nss and the tooling is in place to transfer all existing data pods currently hosted on the web server. No publicly communicated date has been set in stone for this to occur but it can be assumed to happen this year or next. The Solid specification, on the other hand, has a clearly defined completion date of 30.06.21 . Once the technical reports are completed – but of course remain in the state of a living standard – it can be expected to ease the development process in the Solid ecosystem, as no significant changes in the specification mean no critical new features need to be developed or supported by the server developments.
+The in (Schill 2020) identified Solid implementations remain where they were when composing the research paper (Schill 2020). A lot of development has happened for the css, but it is still in a minor release version and therefore not yet deployed and switch out with nss on the public solidcommunity.net domain. This is expected to happen as soon the developers trust the state of css to facilitate at least the functionality of nss and the tooling is in place to transfer all existing data pods currently hosted on the web server. No publicly communicated date has been set in stone for this to occur but it can be assumed to happen this year or next. The Solid specification, on the other hand, has a clearly defined completion date of 30.06.21 (“Solid Technical Reports,” n.d.). Once the technical reports are completed – but of course remain in the state of a living standard – it can be expected to ease the development process in the Solid ecosystem, as no significant changes in the specification mean no critical new features need to be developed or supported by the server developments.
 
-The nss is maintained by a small team of unfunded open-source developers and can only fix critical bugs and keep the dependencies up-to-date. It is still the most used Solid implementation and recommended data pod solution in conjunction with one of the providers, namely solidcommunity.net .
+The nss is maintained by a small team of unfunded open-source developers and can only fix critical bugs and keep the dependencies up-to-date. It is still the most used Solid implementation and recommended data pod solution in conjunction with one of the providers, namely solidcommunity.net (“Solid Community,” n.d.).
 
 cern has a number of options in its proceedings with Solid servers in their current status.
 
@@ -987,11 +987,11 @@ cern has a number of options in its proceedings with Solid servers in their curr
 
 Outstanding Solution
 
-The usage and testing of the pocs required a WebID and a data pod. Through extensive research and careful considerations, it was concluded and recommended to all poc participants to obtain the necessities through solidcommunity.net. The Solid Community is currently the most attractive data pod provider through its physical hosting in the uk and openness regarding data usage and usage of nss the go-to open-source Solid server solution. With the exit of the uk from the eu it seems uncertain what happens to those data residing in storage facilities in the country, which is by policy regulation for cern not good enough, as all data need to reside in the eu, abide by principles from oc11 and gdpr , and that all data are merely used to provide its services . This is also a reason why a hosted instance through Inrupt not acceptable. Not to mention the expected cost of such a service. An outstanding solution also gives away control over the running version of the Server implementation. As of now most data pod providers run the nss, but might switch over to css – which is desirable but could bring new challenges. Even though a server implementation can only be called a Solid server when it adheres to the Solid specification, which can be tested by an ists , which also means when the specification is followed, features should be equally supported and implementations should allow interoperability. This has been proven to be difficult when looking at the several browsers, which are all implementing the http, html, and uri standards (and many more specifications) but are all behaving slightly differently. This might be due to missing resources to stay up to date with feature development, or contrasting interpretations of the specifications. These risks will always endure and hence bring challenges.
+The usage and testing of the pocs required a WebID and a data pod. Through extensive research and careful considerations, it was concluded and recommended to all poc participants to obtain the necessities through solidcommunity.net. The Solid Community is currently the most attractive data pod provider through its physical hosting in the uk and openness regarding data usage and usage of nss the go-to open-source Solid server solution. With the exit of the uk from the eu it seems uncertain what happens to those data residing in storage facilities in the country, which is by policy regulation for cern not good enough, as all data need to reside in the eu, abide by principles from oc11 (Department 2019) and gdpr (“General Data Protection Regulation,” n.d.), and that all data are merely used to provide its services (Dimou, n.d.). This is also a reason why a hosted instance through Inrupt (“Inrupt,” n.d.) not acceptable. Not to mention the expected cost of such a service. An outstanding solution also gives away control over the running version of the Server implementation. As of now most data pod providers run the nss, but might switch over to css – which is desirable but could bring new challenges. Even though a server implementation can only be called a Solid server when it adheres to the Solid specification, which can be tested by an ists (“Independent Test Suite for Solid,” n.d.), which also means when the specification is followed, features should be equally supported and implementations should allow interoperability. This has been proven to be difficult when looking at the several browsers, which are all implementing the http, html, and uri standards (and many more specifications) but are all behaving slightly differently. This might be due to missing resources to stay up to date with feature development, or contrasting interpretations of the specifications. These risks will always endure and hence bring challenges.
 
 Integration With CERNBox
 
-cern uses CERNBox to provide personal cloud storage to all cern users to host and share files. The service is based of ownCloud and hosted on cern premise. In 2016 Nextcloud was formed from a fork of the open-source core software of ownCloud. PDS Interop , a collective of open-source developers, has developed a Nextcloud plugin to make the file hosting service Solid compatible. A Nextcloud server with the Solid plugin enabled passes currently the complete ists. The integration with a running Nextcloud instance is as easy as installing the plugin through the web interface of Nextcloud.
+cern uses CERNBox (“CERNBox Service,” n.d.) to provide personal cloud storage to all cern users to host and share files. The service is based of ownCloud (“OwnCloud,” n.d.) and hosted on cern premise. In 2016 Nextcloud (“Nextcloud,” n.d.) was formed from a fork of the open-source core software of ownCloud. PDS Interop (“PDS Interop,” n.d.), a collective of open-source developers, has developed a Nextcloud (“Nextcloud,” n.d.) plugin to make the file hosting service Solid compatible. A Nextcloud server with the Solid plugin enabled passes currently the complete ists. The integration with a running Nextcloud instance is as easy as installing the plugin through the web interface of Nextcloud.
 
 An integration with CERNBox seems to be a suitable candidate, but also brings high risk. Adding the Solid implementation into its own cloud storage infrastructure means the CERNBox administrators now also have to administer the Solid Nextcloud plugin and all the added complexity it enables. It would also be enabled for thousands of users adding even more area for possible deterioration. A possibility could be to only enable it for a subset of users to test the integration on trained personnel. These are all resources that have to be accounted for. Most importantly though it would have to be analyzed how the attack surface is increased by enabling a plugin that includes an extra sharing functionality.
 
@@ -1007,7 +1007,7 @@ Because Solid is an open standard and allows free development of own solutions i
 
 Solid Applications
 
-Uncertainties in the adoption of a CERN Solid server do not help to advocate the usage of Solid applications or even the development of new Solid services. The pocs have shown realistic use-cases for decentralized data storage. The architectural evaluation has shown the maturity, but also the flaws that would need to be tackled in order for them to be adopted into the production instance of Indico at cern and then it also needs to be analyzed if those pocs would even find users or it would be just a dead feature. Indico has also been established to not be the perfect candidate for a complete Solid overtake in its architecture. Therefore, less complex software at cern might be a better target for further Solid-based developments. One prospect is the cern Slides’ App , which is a web application recently developed as part of a student project and is in production-ready quality and planned to be used as a main slides maker for cern users. A possibility for cern to remain present in the Solid ecosystem is to further the development of the Slides’ App and even make it Solid compatible. The final resource combining all slides into a single presentation could be stored in a data pod, and even further thought all the information on the slides could be connected to resources from data pods and thus leveraging a decentralized approach to data management. Everything would be connected, could be reused, and would be completely interoperable. Information could still come from non-rdf resources but could be transformed to rdf upon entry. Resulting in an attractive hybrid application, that could be used without the need of a data pod or WebID, but would still find users as it is a wanted software at cern and would bring the decentralized resource management to the ones who want to use it.
+Uncertainties in the adoption of a CERN Solid server do not help to advocate the usage of Solid applications or even the development of new Solid services. The pocs have shown realistic use-cases for decentralized data storage. The architectural evaluation has shown the maturity, but also the flaws that would need to be tackled in order for them to be adopted into the production instance of Indico at cern and then it also needs to be analyzed if those pocs would even find users or it would be just a dead feature. Indico has also been established to not be the perfect candidate for a complete Solid overtake in its architecture. Therefore, less complex software at cern might be a better target for further Solid-based developments. One prospect is the cern Slides’ App (“CERN Slides’ App,” n.d.), which is a web application recently developed as part of a student project and is in production-ready quality and planned to be used as a main slides maker for cern users. A possibility for cern to remain present in the Solid ecosystem is to further the development of the Slides’ App and even make it Solid compatible. The final resource combining all slides into a single presentation could be stored in a data pod, and even further thought all the information on the slides could be connected to resources from data pods and thus leveraging a decentralized approach to data management. Everything would be connected, could be reused, and would be completely interoperable. Information could still come from non-rdf resources but could be transformed to rdf upon entry. Resulting in an attractive hybrid application, that could be used without the need of a data pod or WebID, but would still find users as it is a wanted software at cern and would bring the decentralized resource management to the ones who want to use it.
 
 Another minor idea in the field of application development is based from the second poc the autocomplete module, that the existing cern application could be enriched by using more structured data concepts in their code. As an example attache the html autocomplete attribute to known input fields. Add more common input fields to allow the pre-definition of semantic structure on them. This way the forms can be reasoned about easier by machines, but this effort should not be limited to html forms and can be extended to all sorts of fields where Schema.org has a description for.
 
@@ -1015,10 +1015,124 @@ Recommendation
 
 A recommendation based on the previous two talked about fields of server implementation and application development for cern is as follows.
 
-The current efforts from cern are rather limited in resources, general interest is present, but many factors hinder further active involvement with Solid. A public communication channel used to share milestones in the investigation is left unread. Announcements and call for testings of the pocs in cern internal email groups reaching hundreds of cern users are met with participation, compliments, and comments, but still small in number. A presentation given at the HEPiX was well received by international Information Technology staff, from High Energy Physics and Nuclear Physics laboratories and institutes. So, a general curiosity exists, and a few enthusiasts are awaiting a Solid-like project to be supported by cern, but it seems more generally that cern is interested in an observing position as of now. This was concluded from the support given through this project’s lifetime and the most recent decision of not funding through hiring for a fellowship position to work on a continuation of the cern-Solid collaboration project.
+The current efforts from cern are rather limited in resources, general interest is present, but many factors hinder further active involvement with Solid. A public communication channel used to share milestones in the investigation is left unread. Announcements and call for testings of the pocs in cern internal email groups reaching hundreds of cern users are met with participation, compliments, and comments, but still small in number. A presentation given at the HEPiX (“HEPiX Online,” n.d.) was well received by international Information Technology staff, from High Energy Physics and Nuclear Physics laboratories and institutes. So, a general curiosity exists, and a few enthusiasts are awaiting a Solid-like project to be supported by cern, but it seems more generally that cern is interested in an observing position as of now. This was concluded from the support given through this project’s lifetime and the most recent decision of not funding through hiring for a fellowship position to work on a continuation of the cern-Solid collaboration project.
 
 The most likely future scenario is to work in collaboration with students from universities to work on further Solid related projects. By doing this cern can stay closely connected to the Solid ecosystem and receive the latest developments in server implementations, specification evolution, and new exciting Solid apps. Once the Solid ecosystem has matured enough and has shown through other Solid app developments the possibilities and innovations with Solid, cern can reevaluate its position and consider participating more actively by either Solid app development or hosting Solid pods for its personnel.
 
 Conclusion
 
 * Solid lives through the community, when only one company does the implementation it will not thrive * vicious cycle
+
+“AngularJS.” n.d. https://angularjs.org/.
+
+“An Operating System for Solid.” n.d. https://github.com/solid/solidos.
+
+“A Python Openid Connect Implementation.” n.d. https://github.com/OpenIDC/pyoidc/.
+
+Bass, Len, Paul Clements, and Rick Kazman. 2012. Software Architecture in Practice (3nd Edition). Addison-Wesley Professional.
+
+Berners-Lee, Tim. 2020. “Longer Biography.” 2020. https://www.w3.org/People/Berners-Lee/Longer.html.
+
+“Big Data and Social Media.” n.d. https://indico.cern.ch/event/702278/.
+
+Capadisli, Sarven, Tim Berners-Lee, Ruben Verborgh, Kjetil Kjernsmo, Justin Bingham, and Dmitri Zagidulin. 2020. “The Solid Ecosystem.” W3C Solid Community Group.
+
+CERN. 2020. “Indico.” 2020. https://getindico.org.
+
+———. n.d. “Learning Indico - Conference.” https://learn.getindico.io/conferences/about/.
+
+“CERNBox Service.” n.d. https://information-technology.web.cern.ch/services/cernbox-service.
+
+“CERN Slides’ App.” n.d. https://slides.docs.cern.ch.
+
+“CERN-Solid Code Investigation.” n.d. https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation.
+
+Christensen, Henrik Bærbak, Klaus Marius Hansen, and Bo Lindstrøm. 2010. “ASQA: Architectural Software Quality Assurance: Software Architecture at Work - Technical Report 5:” WorkingPaper. Department of Computer Science, Aarhus University; Department of Computer Science, Aarhus University.
+
+community, WHATWG. 2021a. “DOM Standard.” WHATWG community.
+
+———. 2021b. “HTML Standard.” WHATWG community.
+
+Cyganiak, Richard, David Wood, and Markus Lanthaler. 2014. “RDF 1.1 Concepts and Abstract Syntax.” W3C Recommendation. W3C.
+
+Department, CERN Human Resource. 2019. “THE Processing of Personal Data at Cern.” OPERATIONAL CIRCULAR NO.11. https://cds.cern.ch/record/2651311/files/Circ_Op_Angl_No11_Rev0.pdf.
+
+Dimou, Maria. n.d. “Policy for a Cern Solid Server.” https://codimd.web.cern.ch/s/zl3yGAfYZ#.
+
+Fett, D., B. Campbell, J. Bradley, T. Lodderstedt, M. Jones, and D. Waite. 2021. “OAuth 2.0 Demonstrating Proof-of-Possession at the Application Layer (Dpop).” Internet Engineering Task Force (IETF).
+
+Fielding, R., M. Nottingham, and J. Reschke. 2014. “Hypertext Transfer Protocol (Http/1.1): Caching.” Internet Engineering Task Force (IETF).
+
+“Flask-Multipass.” n.d. https://github.com/indico/flask-multipass.
+
+“Frequently Asked Questions.” n.d. https://solidproject.org/faqs.
+
+“General Data Protection Regulation.” n.d. https://gdpr-info.eu.
+
+“HEPiX Online.” n.d. https://www.hepix.org/.
+
+“Independent Test Suite for Solid.” n.d. https://github.com/solid/test-suite/.
+
+“Inrupt.” n.d. https://inrupt.com/.
+
+(Inrupt), Aaron Coburn, elf Pavlik, and Dmitri Zagidulin. 2021. “SOLID-Oidc.” W3C.
+
+“Let’s Encrypt.” n.d. https://letsencrypt.org/.
+
+Malhotra, A., S. Speicher, and J. Arwe. 2015. “Linked Data Platform 1.0.” W3C Recommendation. W3C.
+
+“New User Faq: Tweeting.” n.d. https://help.twitter.com/en/new-user-faq.
+
+“Nextcloud.” n.d. https://nextcloud.com/.
+
+“OpenStack.” n.d. https://www.openstack.org/.
+
+“OwnCloud.” n.d. https://owncloud.com/.
+
+“PDS Interop.” n.d. https://pdsinterop.org/.
+
+“PostgreSQL: The World’s Most Advanced Open Source Relational Database.” n.d. https://www.postgresql.org.
+
+“Practical Use of Xml.” n.d. https://indico.cern.ch/event/420426/.
+
+“Promise Based Http Client for the Browser and Node.js.” n.d. https://axios-http.com/.
+
+Prud’hommeaux, Eric, and Gavin Carothers. 2014. “RDF 1.1 Turtle.” W3C Recommendation. W3C.
+
+“Rdflib.js.” n.d. https://github.com/linkeddata/rdflib.js/.
+
+“Schema.org.” n.d. https://schema.org/.
+
+Schill, Jan. 2020. “CERN-Solid Code Investigation: Specifications and Comparable Implementations.” WorkingPaper. IT University of Copenhagen.
+
+“Solid-App-Launcher.” n.d. https://github.com/ylebre/solid-app-launcher.
+
+“Solid Community.” n.d. https://solidcommunity.net.
+
+“SolidDataset.” n.d. https://docs.inrupt.com/developer-tools/javascript/client-libraries/reference/glossary/#term-SolidDataset.
+
+“Solid-Inbox.” n.d. https://github.com/solid/solid-inbox.
+
+“Solid Javascript Authentication - Solid-Client-Authn.” n.d.a. https://github.com/inrupt/solid-client-authn-js/.
+
+“Solid Javascript Authentication - Solid-Client-Authn.” n.d.b. https://github.com/inrupt/solid-client-authn-js/.
+
+“Solid Javascript Client: Solid-Client.” n.d. https://github.com/inrupt/solid-client-js/.
+
+“Solid Panels.” n.d. https://github.com/solid/process/blob/35396c6e5a1afce674361259f63ef1b485cf6d96/panels.md.
+
+“Solid Technical Reports.” n.d. https://solidproject.org/TR.
+
+Stallings, William, and Lawrie Brown. 2014. Computer Security: Principles and Practice. 3rd ed. USA: Prentice Hall Press.
+
+“The Centos Project.” n.d. https://www.centos.org/.
+
+“The Solid Common Vocab Library for Javascript.” n.d. https://github.com/inrupt/solid-common-vocab-js.
+
+“Thing.” n.d. https://docs.inrupt.com/developer-tools/javascript/client-libraries/reference/glossary/#term-Thing.
+
+Viagenie, S. Perreault. 2011. “VCard Format Specification.” Internet Engineering Task Force (IETF).
+
+“Web Access Control (Wac).” n.d. https://solid.github.io/web-access-control-spec/.
+
+“What Is Cache Warming?” n.d. https://www.section.io/blog/what-is-cache-warming/.
