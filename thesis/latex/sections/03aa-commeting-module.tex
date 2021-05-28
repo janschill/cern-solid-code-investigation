@@ -150,7 +150,7 @@ The communication flow with the data pod and the module would happen primarily f
 \vspace{0.5cm}
 \paragraph{Microservice Approach}\mbox{}\\
 
-The microservice approach would allow developing the needed Solid logic on a separate service, which proxies all Solid related traffic through it and enables the Solid functionality. Most of the libraries from the client implementation can be used as well, as both developments would be written in \gls{js}. Only the authentication flow would work a bit differently.
+The microservice approach would allow developing the needed Solid logic on a separate service, which proxies all Solid related traffic and enables the Solid functionality. Most of the libraries from the client implementation can be used as well, as both developments would be written in \gls{js}. Only the authentication flow would work a bit differently.
 
 \begin{table}[h!]
     \centering
@@ -170,7 +170,7 @@ The microservice approach would allow developing the needed Solid logic on a sep
     \label{table:2}
 \end{table}
 
-The microservice module would handle take all requests aimed at the data pod and make it compliant with the Solid server. It would provide the client with the proper \gls{solidoidc} flow to attach the access token to all authenticated requests.
+The microservice module would handle all requests aimed at the data pod and make it compliant with the Solid server. It would provide the client with the proper \gls{solidoidc} flow to attach the access token to all authenticated requests.
 
 \begin{figure}[H]
     \centering
@@ -181,7 +181,7 @@ The microservice module would handle take all requests aimed at the data pod and
 \vspace{0.5cm}
 \paragraph{Server Approach}\mbox{}\\
 
-The goal of the server approach would be just like with the microservice approach to decouple the logic needed to work with Solid from the client and have it run on a server instance. The attractiveness for the server approach would be it could be fully integrated within Indico and be part of its Python codebase. The major drawbacks are no direct Solid libraries written in Python exist to allow a seamless integration into the ecosystem.
+The goal of the server approach would be just like with the microservice system to decouple the logic needed to work with Solid from the client and have it run on a server instance. The attractiveness for the server approach would be it could be fully integrated within Indico and be part of its Python codebase. Significant drawbacks are no Solid libraries written in Python exist to allow a seamless integration into the ecosystem.
 
 \begin{table}[!ht]
     \centering
@@ -201,7 +201,7 @@ The goal of the server approach would be just like with the microservice approac
     \label{table:3}
 \end{table}
 
-The authentication library pyoidc allows authenticating with \gls{oidc} systems but is missing a mandatory feature called \gls{dpop}, which is needed to make requests to protected resources on a data pod. \gls{dpop} is a technique to disallow replay attacks by attaching a \gls{dpop} token to the request indicating for what data pod the token can be used. This means when a request with a valid authentication token is made to a malicious pod and the adversary steals this authentication token, the authentication token is signed with a target to this malicious pod, which means the adversary cannot take this intercepted token and use it for another address, as it is only valid for requests to this malicious pod. The \gls{dpop} token therefore needs to newly generated on everything request \cite{dpop-spec}.
+The authentication library pyoidc allows authenticating with \gls{oidc} systems but is missing a mandatory feature called \gls{dpop}, which is needed to request protected resources on a data pod. \gls{dpop} is a technique to disallow replay attacks by attaching a \gls{dpop} token to the request indicating what data pod the token can use. In a replay attack, an adversary intercepts the authentication token of an agent and uses the token to make authenticated requests to protected resources. With the usage of \gls{dpop} tokens, the authentication token is signed with a target address. The target address defines the only valid address for which the token can be used. Meaning, when a request is made to a malicious pod, the interceptable token in the \gls{http} header, can only be used to make requests to this data pod and not to any other pods. The \gls{dpop} token therefore needs to be newly generated on everything request \cite{dpop-spec}.
 
 \begin{figure}
     \centering
@@ -245,7 +245,7 @@ Benefits from developing the module for the client:
 \vspace{0.5cm}
 \paragraph{Single Versus Multiple Resource(s) for Comments}\mbox{}\\
 
-Storing the comments in \gls{rdf} can be done in two ways: storing it in one file as a graph with a list of comments, or creating a file for every comment.
+Storing the comments in \gls{rdf} can be done in two ways: holding it in one file as a graph with a list of comments or creating a file for every comment.
 
 \begin{figure}
     \centering
@@ -265,15 +265,15 @@ Storing the comments in \gls{rdf} can be done in two ways: storing it in one fil
     \label{fig:save-resource}
 \end{figure}
 
-When fetching the container with all the comment resources the request returns a Turtle file describing the container, but not the actual content of the contained resources. The misconception of receiving the content as well was thought to be a problem, as it was assumed an initial request to the container reading its child resources had to be made, and then for each resource a request needed to be built to retrieve the resource. This overhead was later disproved as the application where this module is embedded maintains the list of resources to be fetched. Therefore, no manual building of requests to those resources had to be done. The next paragraph also lays out how this design would not work with the protection of the resources.
+When fetching the container with all the comment resources, the request returns a Turtle file describing the container but not the actual content of the contained resources. The misconception of receiving the content was thought to be a problem, as it was assumed an initial request to the container reading its child resources had to be made, and then for each resource, a request needed to be built to retrieve the resource. This overhead was later disproved as the application, where this module is embedded, maintains the list of resources to be fetched. Therefore, no manual building of requests to those resources had to be done. The following paragraph also lays out how this design would not work with the protection of the resources.
 
 \vspace{0.5cm}
 \paragraph{Protection on Resource}\label{protection-on-resource}\mbox{}\\
 
-Every container and resource in Solid is protected with \gls{wac}, which determines if specific agents, groups, or the world can have read, write, append, or control access. These control access modes are defined in \gls{acl} files. The Solid \gls{acl} inheritance algorithm looks for an \gls{acl} file attached to a specific resource, if it cannot find one it goes recursively up the file hierarchy and looks for \glspl{acl} on the containers.
-Indico allows two general types of protection \textit{private} and \textit{public} on its events. Public means open to everyone, no Indico account or any type of authorization is needed to see the event. Whereas private can be as fine-grained as only to specific agents or groups. A comment module is only valuable if the comments can be read by anyone and be written by authorized users.
+Every container and resource in Solid is protected with \gls{wac}, determining if specific agents, groups, or the world can have read, write, append, or control access. These control access modes are defined in \gls{acl} files. The Solid \gls{acl} inheritance algorithm looks for an \gls{acl} file attached to a specific resource, if it cannot find one, it goes recursively up the file hierarchy and looks for \glspl{acl} on the containers.
+Indico allows two general types of protection, \textit{private} and \textit{public}, on its events. Public means open to everyone; no Indico account or authorization is needed to see the event. At the same time, private can be as fine-grained as only to specific agents or groups. A comment module is only valuable if anyone can read and be written by authorized users.
 
-In order for visitors of a private or public event in Indico to be able to see the comment, the comment’s \gls{acl} needs to allow the public to read the resource. This can be achieved by using the \textit{public} container, which comes with public-read by default on the \gls{nss} or by creating a new container and setting the \gls{acl} with:
+For visitors of a private or public event in Indico to see the comment, the comment’s \gls{acl} needs to allow the public to read the resource.  Public read can be achieved by using the \textit{public} container, which comes with public-read by default on the \gls{nss}, or by creating a new container and setting the \gls{acl} with:
 
 \begin{lstlisting}[language=Other,columns=fullflexible, caption={Setting default read for resources in container}, label={lst:container-acl}]
 @prefix acl: <http://www.w3.org/ns/auth/acl#>.
@@ -288,10 +288,10 @@ In order for visitors of a private or public event in Indico to be able to see t
     acl:mode acl:Read.
 \end{lstlisting}
 
-Every resource in this container is by definition readable by the public -- if not otherwise stated in a more detailed resource \gls{acl}. The above definition even allows the reading of the container’s content, meaning a request to the container would yield a list of resources in the container. This becomes unpleasant if the Indico event is private and the comments for this Indico event should not be read by the world, which is entirely possible when browsing to the location of a specific data pod and then looking into the public container.
+Every resource in this container is by definition readable by the public -- if not otherwise stated in a more detailed resource \gls{acl}. The above description even allows reading the container’s content, meaning a request to the container would yield a list of resources in the container. A publicly readable list becomes unpleasant if the Indico event is private and the comments for this Indico event should not be read by the world, which is entirely possible when browsing to the location of a specific data pod and then looking into the public container.
 
-To prevent a random agent to see the contents of a container, the container can be set to private, with the container’s resources still be public. This would allow everyone provided they have the \gls{url} to browse to the public resource and read it, but not look into the resource’s parent container. To achieve this behavior with \gls{acl}, the container needs to just define its owner and no specific rules for the public, as \gls{wac} comes with a default private access control. Each child resource needs to define an \gls{acl} now, allowing public read.
-The container’s \gls{acl} would look like the following with just an owner defined:
+An \gls{acl} defining private access to a container can prevent the problem of a random agent seeing a container's content, with the container's resources still public. The private access mode would allow everyone, provided they have the \gls{url}, to read a resource in a private container but not look into the resource’s parent container. To achieve this behavior with \gls{acl}, the container needs to define its owner and no specific rules for the public, as \gls{wac} comes with a default private access control. Each child resource needs to define an \gls{acl} now, allowing public read.
+The container’s \gls{acl} would look like the following with just an owner specified:
 
 \begin{lstlisting}[language=Other,columns=fullflexible, caption={Container \gls{acl} with owner defined.}, label={lst:container-acl-owner}]
 @prefix acl: <http://www.w3.org/ns/auth/acl#>.
@@ -320,7 +320,7 @@ A child resource would allow public read with:
     acl:mode n0:Read.
 \end{lstlisting}
 
-Another approach and the one implemented after iterating through the previous ones is to have the container’s \gls{acl} resource define a default access mode for its child resources. This way one \gls{acl} only needs to be created on the container and all resources have proper access modes for public read and are not listed publicly in the container’s description.
+Another approach and implemented after iterating through the previous ones is to have the container’s \gls{acl} resource define a default access mode for its child resources. This way, one \gls{acl} only needs to be created on the container, and all resources have proper access modes for public read and are not listed publicly in the container’s description.
 
 \begin{lstlisting}[language=Other,columns=fullflexible, caption={Giving default read mode to all child resources of container.}, label={lst:container-acl-read-default}]
 @prefix acl: <http://www.w3.org/ns/auth/acl#>.
@@ -336,28 +336,29 @@ Another approach and the one implemented after iterating through the previous on
 \vspace{0.5cm}
 \paragraph{Preventing Unwanted Discovery for Resources}\mbox{}\\
 
-With the resources having proper access modes but being publicly readable a simple naming convention of taking the \gls{iso} 8601 string and using it as a filename for the resources created on the data pod does not suffice -- even though it is a good strategy when looking for a reliable naming convention to prevent duplication. Considering performance improvements such as pagination for future iterations of the module, which would require some sort of iterative indication, a combination of randomness, but also an order indicator it was settled for using \gls{uuid} plus the \gls{iso} 8601 string to form a filename.
+With the resources having proper access modes but being publicly readable, a simple naming convention of taking the \gls{iso} 8601 string and using it as a filename for the resources created on the data pod does not suffice -- even though it is a good strategy when looking for a reliable naming convention to prevent duplication. 
+Considering performance improvements such as pagination for future iterations of the module, which would require some iterative indication, a combination of randomness, and an order indicator, it was settled for using \gls{uuid} plus the \gls{iso} 8601 string to form a filename.
 
 Other ideas included hashing a random string with the timestamp to generate non-guessable filenames. The filename would need to use the same hash function to decipher the filename to figure out when the comment was generated. \gls{uuid} is a reliable and easy-to-use system to generate \textit{truly} globally unique strings. 
 \vspace{0.5cm}
 \paragraph{Modification of Resource From Data Pod}\mbox{}\\
 
-When the users are in control of their data it means they can revoke access any time, or even change their data to their liking. This means when the comment is initially created through Indico and the commenting system's \gls{ui} it does not mean this comment needs to remain as is. Even if the interface of the system does not allow modification, a modification can still happen at the source of the storage of the comment.
+When the users control their data, they can revoke access or even change their data to their liking. The ability to modify data from within the data pod means the application cannot be guaranteed the same comment that was initially created and needs to be aware that data can be changed at any time. Even if the system's interface does not allow modification, a modification can still happen at the source of the storage of the comment.
 
-Regular comment modules usually allow modifications of a submitted text throughout its existence. Twitter is an example where modifications are not allowed after posting \cite{twitter-edit}. 
+Regular comment modules usually allow updates of a submitted text throughout its existence. Twitter is an example where an update is not allowed after posting \cite{twitter-edit}. 
 
-When this aspect was discovered it was decided to allow this sort of behavior, as it seems to be natural in this context to be able to edit one's own comments.
+When the development discovered this aspect, the relevant stakeholders and developer decided to allow this behavior, as it seems natural to edit one's comments.
 
 \vspace{0.5cm}
 \paragraph{Mitigation of Spam}\mbox{}\\
 
-Enabling user input in form of a comment module without application authentication is a gateway to spam. Even though authentication with a Solid \gls{idp} is necessary, it does not hinder a malicious actor to create a multitude of Solid accounts and spam into the application. In the first iteration of the module, only Solid authentication was integrated into the module and would therefore allow anyone with a Solid account to post comments and thus also spam the Indico event theoretically. In a second iteration of the module, another authentication layer was added to mitigate spam from outside Indico. For \gls{cern}’s use-case, an authenticated Indico session was enough. This adds an extra step to the comment process and it is ensured only registered Indico users can comment.
+Enabling user input in the form of a comment module without application authentication is a spam gateway. Even though authentication with a Solid \gls{idp} is necessary, it does not hinder a malicious actor from creating many Solid accounts and spam into the application. In the first iteration of the module, only Solid authentication was integrated into the module. Therefore, it would allow anyone with a Solid account to post comments and spam the Indico event theoretically. Another authentication layer was added in a second iteration of the module to mitigate spam from outside Indico. For \gls{cern}’s use case, an authenticated Indico session was enough. An Indico session adds an extra step to the comment process, ensuring only registered Indico users can comment.
 \vspace{0.5cm}
 \paragraph{Giving Application Full Control of Data Pod}\mbox{}\\
 
-To create or change programmatically \glspl{acl} requires \textit{control} access to the container. By default \gls{nss} asks for the permissions when authenticating for the first time in the \gls{solidoidc} flow between the \textit{solid-comment} module and Solid \gls{idp}. The permissions granted to the application are on the root container of the data pod. Meaning, giving an application control access allows the application to read, write, change \glspl{acl} on the entire data pod. This is obviously troubling, as a simple application as a commenting module needs to have control access to set the needed \glspl{acl} for the containers and resources it creates.
+An agent or application requires \textit{control} access to the container to create or change \glspl{acl} programmatically in this container. By default, \gls{nss} asks for the permissions when authenticating for the first time in the \gls{solidoidc} flow between the \textit{solid-comment} module and Solid \gls{idp}. The permissions granted to the application are on the root container of the data pod. Giving an application control access allows the application to read, write, change \glspl{acl} on the entire data pod. As a simple application, this is troubling as a commenting module needs to have control access to set the necessary \glspl{acls} for the containers and resources it creates.
 
-The current implementation has not a built-in solution, but one way of solving it is the use of an application launcher, which is an application itself with full control access and then limits the access controls of the \textit{solid-comment} module by creating a dedicated container for it and setting the needed \gls{acl} for this specific container only.
+The current implementation has not a built-in solution. Still, one way of solving it is using an application launcher, an application itself with complete control access, and then limiting the access controls of the solid-comment module by creating a dedicated container for it and setting the needed \gls{acl} for it this specific container only. 
 
 \subsubsection{Integration with Indico}\mbox{}\\
 
