@@ -10,6 +10,8 @@ Just like \gls{http} is specified without an encryption layer, so is Solid. The 
 
 \gls{cern} has a high interest in data sovereignty and requires all their external services to store the collected data on \gls{eu} soil, where the \gls{gdpr} support the data authors. For the cases where it is impossible, \gls{cern} has their own data centers to store data. In a scenario where \gls{cern} seeks a pod provider to enable Solid for their personnel and the provider cannot guarantee \gls{gdpr} compliance nor offers encryption of data in the data center, it is unlikely for \gls{cern} to adopt such a solution.
 
+A hosting on-premise solution also comes with challenges. The involvement with Solid changes from user to maintainer, as a self-hosted solution means it needs to be ensured services are operating as expected at all times. These tasks always demand a lot of resources, especially with outside solutions, where bugs cannot be fixed by an in-house developer team, rather rely on other developers to fix them. Open-source solutions are especially of high risk, since they do not come with any \glspl{sla}.
+
 \subsection{User Interface}
 
 A Solid server is a file system based web server. Modern computers ship with graphical \glspl{os} to offer a good user experience when interacting with the file system on such computers. A Solid server being a place for users to manage their data requires for good user experience also a graphical \gls{os}. The great benefit of using Linked Data to enable interoperability for Solid applications has led to many solutions for the problem of connecting and using a data pod. One system is called SolidOS \cite{solidos} and acts as the \gls{os} for Solid servers. SolidOS has many great features that allow the direct use of Linked Data on one's pod, but it comes with a challenging \gls{ui}. The \gls{ui} is powerful, but filled with bugs and counter-intuitive interactions. For example often a user is prompted to drag and drop a WebID \gls{uri} to add the agent as a friend, instead of allowing a regular text input to either copy and paste or just typing of the WebID \gls{uri}.
@@ -21,10 +23,4 @@ SolidOS is currently the best and most sophisticated solution by features, hence
 
 
 * 
-* Encryption -> hosting on premise
-* Hosting on premise -> high involvement with the servers
-* Solid UI challenges
 * Commercial and open-source not perfectly hand in hand
-* Not many applications in Solid ecosystem
-    * no sophisticated to say the least
-    * the closest LiqidChat makes heavy use of an API
