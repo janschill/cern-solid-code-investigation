@@ -479,7 +479,7 @@ The second package, \texttt{components}, holds all elements in the \gls{ui} that
 
 \begin{enumerate}
     \item A user logs in with their WebID and posts a comment
-    \item An adversary posts a comment with a string containing a \gls{xss} attack
+    \item An adversary posts a comment with a string containing an \gls{xss} attack
     \item High load of traffic is occurring with comments being posted within seconds
     \item An adversary deploys software on their pod to serve varying resources based on the geolocation of the connecting \gls{ip} address
 \end{enumerate}
@@ -520,29 +520,29 @@ The second package, \texttt{components}, holds all elements in the \gls{ui} that
 
 \subsubsection{Analysis}\mbox{}\\
 
-The following analysis section will explain how the values of the two tables from \ref{table:poc1-evaluation} came together and will give some more insights into how the modules are working and behaving in certain situations. After the explanation and analysis of this particular evaluation a broader analysis of the \gls{poc} will be given, where critical areas in the architecture will be highlighted and some possibilities for future iterations of it.
+The following analysis section will explain how the values of the two tables from \ref{table:poc1-evaluation} came together and will give some more insights into how the modules are working and behaving in certain situations; after the explanation, and analysis of this particular evaluation a broader analysis of the \gls{poc} will be given, that highlight critical areas in the architecture and some possibilities for future iterations of it.
 \vspace{0.5cm}
 \paragraph{\texttt{auth} and \texttt{components} packages}\mbox{}\\
 
-The \texttt{SolidClient} class is part of the \texttt{auth} component package, which handles the session management. When the comment module is loaded upon page load it is \textit{booted} with the flow shown in \ref{fig:poc-comment-flow-app_boot}. It can be observed that every time the module is loaded it has to do four round trips to the \gls{idp} and data pod. Once the application is booted, the list of comment \glspl{uri} are passed to the application and it fetches all comments from their remote data pods. This behavior is linked to the \texttt{components} module, as it is responsible for rendering all these comments in the \gls{dom}. Further performance analyses in regards to the fetching of the comments is being done below in the paragraph \ref{paragraph:evaluation-performance}. But when the comments are being fetched a second request happens that loads the WebID profile of the author of the comment. Resulting in $n*2$ requests, where $n$ is the number of comments. The exact flow of getting the comments is shown in figure \ref{fig:poc-comment-flow-set_comments}.
+The \texttt{SolidClient} class is part of the \texttt{auth} component package, which handles the session management. When the comment module is loaded upon page load, it boots with the flow shown in \ref{fig:poc-comment-flow-app_boot}. Every time the module is loaded, it has to make four round trips to the \gls{idp} and data pod. Once the application is booted, the list of comment \glspl{uri} is passed to the application, and it fetches all comments from their remote data pods. This behavior is linked to the \texttt{components} module, as it is responsible for rendering all these comments in the \gls{dom}. Further performance analyses regarding the fetching of the comments are being done below in paragraph \ref{paragraph:evaluation-performance}. But when the comments are being fetched, a second request happens that loads the author's WebID profile. Resulting in $n*2$ requests, where $n$ is the number of comments. The exact flow of getting the comments is shown in figure \ref{fig:poc-comment-flow-set_comments}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{prototype/graphs/poc-comment-flow-app_boot.png}
-    \caption{Application boot flow. External \gls{http} requests are indicated by a filled grey box.}
+    \caption{Application boot flow. A filled grey box indicates external \gls{http} requests.}
     \label{fig:poc-comment-flow-app_boot}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{prototype/graphs/poc-comment-flow-set_comments.png}
-    \caption{Requesting comments from data pod. External \gls{http} requests are indicated by a filled grey box.}
+    \caption{Requesting comments from data pod. A filled grey box indicates external \gls{http} requests.}
     \label{fig:poc-comment-flow-set_comments}
 \end{figure}
 
-The application boot with successive comment fetching happens every time the system is loaded, which is in minimum four requests, when no comments are loaded and $n*2+4$ requests with $n$ comments.
+The application boot with successive comment fetching happens every time the system is loaded, which is in a minimum of four requests when no comments are loaded and $n*2+4$ requests with $n$ comments.
 
-In regards to \textit{availability} for both looked at modules if a data pod is unavailable the \texttt{auth} module will simply not be able to do its checks on whether a session is present. The \gls{http} requests checking the session will respond with $40x$ \gls{http} status codes and simply disallow any comment posting. For the \texttt{components} module a dedicated message has been implemented which will render a hint on why a comment may not have loaded when a data pod is unreachable. The hint renders one long message guessing what has happened, but is not clever about inferring the reason.
+Regarding \textit{availability} for both looked at modules, if a data pod is unavailable, the \texttt{auth} module will not be able to do check whether a session is present. The \gls{http} requests containing the session will respond with $40x$ \gls{http} status codes and disallow any comment posting. For the \texttt{components} module, a dedicated message has been implemented, which will hint at why a comment may not have loaded when a data pod is unreachable. The hint renders one long message guessing what has happened but is not clever about inferring the reason.
 
 \begin{figure}[H]
     \centering
@@ -551,20 +551,19 @@ In regards to \textit{availability} for both looked at modules if a data pod is 
     \label{fig:poc-comment-unavailable_comment}
 \end{figure}
 
-Another striking value is the high focus for the usability in the \texttt{auth} component. This can be explained with the fact that it is not made clear to the user that \textit{control} access to the root container of the data pod is needed in order for the application to function properly. Only when an authenticated session from the Solid \gls{idp} is present and the \textit{control} access is lacking it will show in the interface. Firstly, this results in a bad user experience, but more over the fact that the user needs to gives full control over the data pod to the application is unfortunate. The end-user who is not a Solid professional will have a hard time understanding the reason and may step back from application that need this much control. The evaluation for the \textit{security} resulted therefore also with a worse level than it could have scored. The security within the module is relatively stable with sanitization of inputs not allowing any malicious code to be executed when fetching resource from data pods.
-
+Another striking value is the high focus on usability in the \texttt{auth} component. This can be explained by the fact that it is not apparent to the user that \textit{control} access to the root container of the data pod is needed for the application to function correctly. Only when an authenticated session from the Solid \gls{idp} is present, and the \textit{control} access lacks will it show in the interface. Firstly, this results in a lousy user experience, but moreover, the fact that the user needs to gives full control over the data pod to the application is unfortunate. The end-user who is not a Solid professional will have a hard time understanding the reason and may step back from an application that needs this much control. Therefore, the evaluation for the security resulted, also with a worse level than it could have scored. The security within the module is relatively stable, with sanitization of inputs not allowing any malicious code to be executed when fetching a resource from data pods.
 \vspace{0.5cm}
 \paragraph{Performance}\label{paragraph:evaluation-performance}\mbox{}\\
 
-The chosen technique of storing the comments is not as efficient as it could be. Every comment is stored as a self-contained Turtle file on the author's comment with Indico holding the \gls{uri} to be able to fetch it on demand. As soon as the client is loading the module with the comments the client will have to make $n$ requests, $n$ being the number of comments.
+The chosen technique of storing the comments is not as efficient as it could be. Every comment is stored as a self-contained Turtle file on the author's comment, with Indico holding the \gls{uri} to fetch it on-demand; as soon as the client is loading the module with the comments the client will have to make $n$ requests, $n$ being the number of comments.
 
 The first improvement to this approach could be pagination. Pagination limits the number of initially loaded comments to a defined amount. This can be achieved by utilizing the date and time from the file name of the comment. Only the most recent $n$ comments by time will have to be fetched. When the user clicks on a load more comments button, $n$ more comments will be loaded.
-In the same area of improvement, the ways the comments are rendered can also be improved. The comments as of now will all be fetched and only when all requests are done it will be rendered in the \gls{dom}. If the comments are \textit{separated} from each other and a comment is rendered as soon as it successfully fetched, it would speed up the time until a user could start seeing comments.
+In the same area of improvement, the ways the comments are rendered can also be improved. The comments will all be fetched, and only when all requests are made, will the application render the comments in the \gls{dom}. If the comments are \textit{separated} from each other, and a comment is rendered as soon as it is successfully fetched, it would speed up the time until a user could start seeing comments.
 
-The second improvement could be a grouping of comments by the author. This way the number of requests would now be bound to the number of authors. In the worst case, where all comments are from different authors, it would not bring any improvement over the initial architecture. The design for this would be to change the storage from the multi-file approach to a single-file approach. On the data pod, one file would exist holding all comments from one author for one event. This file can be fetched with one request containing multiple comments.
+The second improvement could be a grouping of comments by the author. This way, the number of requests would now be bound to the number of authors. In the worst case, where all comments are from different authors, it would improve the initial architecture. The design for this would be to change the storage from the multi-file approach to a single-file approach. On the data pod, one file would exist holding all comments from one author for one event. This file can be fetched with one request containing multiple comments.
 % Another way of achieving this is to use a more efficient asset providing web protocol, such as \gls{http}/2. \gls{http}/2 uses a clever technique to 
 
-Another enhancement can be attained by caching. In its current design, the comments are freshly fetched on each page load. Server-side \gls{http} caching is out of control for the clients, and completely relies on the Server implementations to do so. By Solid specification, \gls{http} caching is prescribed, but not vital \cite{solid-protocol}, which means it \textit{should} implement it, but does not have to. Regardless, the improvement would not be in the number of round trips the client has to complete, but rather in the time for the server to calculate the response it sends out \cite{http-caching}. A real improvement on consecutive page visits are won by client-side \gls{http} caching. Upon successive visits to a cached website, a previously fetched and in the browser's local storage stored copy of the response would be served \cite{http-caching}. The result would be immediately loaded, but might not serve the latest and up-to-date asset from the server. The \textit{freshness} of the response is controlled using the \texttt{Cache-Control} header in either the request or response of the \gls{http} exchange between client and server \cite{http-caching}. 
+Another enhancement can be attained by caching. In its current design, the comments are freshly fetched on each page load. Server-side \gls{http} caching is out of control for the clients and relies on the Server implementations to do so. By Solid specification, \gls{http} caching is prescribed but not vital \cite{solid-protocol}, which means it \textit{should} implement it but does not have to. Regardless, the improvement would not be in the number of round trips the client has to complete, but rather in the time for the server to calculate the response it sends out \cite{http-caching}. A real improvement on consecutive page visits is won by client-side \gls{http} caching. Upon successive visits to a cached website, a previously fetched and browser's local storage stored copy of the response would be served \cite{http-caching}. The result would be immediately loaded but might not serve the latest and up-to-date asset from the server. The response's \textit{freshness} is controlled using the \texttt{Cache-Control} header in either the request or response of the \gls{http} exchange between client and server \cite{http-caching}. 
 
 More performance solutions shall be looked at with the other upcoming areas in this analysis section.
 \vspace{0.5cm}
