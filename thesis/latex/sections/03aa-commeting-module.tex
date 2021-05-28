@@ -362,32 +362,31 @@ The current implementation has not a built-in solution. Still, one way of solvin
 
 \subsubsection{Integration with Indico}\mbox{}\\
 
-The need for integration with Indico is twofold: serving the module to the client and being the provider to the list of references to the comments that have been posted on a specific event.
+The need for integration with Indico is twofold: serving the module to the client and being the provider to the list of references to the comments posted on a specific event.
 \vspace{0.5cm}
 \paragraph{Storing Reference to Comments in Indico}\mbox{}\\
 
-Indico operates using the relational database PostgreSQL \cite{postgresql}. When a comment gets posted and stored on an external data pod a reference to the location of the comment needs to be kept in order for Indico to pull the comment and render it in its frontend. Several possibilities are imaginable. 
+Indico operates using the relational database PostgreSQL \cite{postgresql}. When a comment gets posted and stored on an external data pod, a reference to the location of the comment needs to be kept for Indico to pull the comment and render it in its frontend. Several possibilities are imaginable. 
 
 \begin{enumerate}
-    \item Create new EventComments table
+    \item Create a new EventComments table
     \item Store in an Indico data pod 
-    \item Use existing EventSettings table
+    \item Use the existing EventSettings table
 \end{enumerate}
 
-One solution would be to create a new database table that associates with event using a foreign key and the event id and then stores every comment in its own row with all necessary meta information. The database schema would have to be updated in order to register the new table properly and then executed. A quicker alternative to this is the usage of an existing database table called \texttt{EventSettings}. \texttt{EventSettings} is for additional information for an event and is meant to be a lightweight key-value store for these extra data (often used with Indico plugins).
+One solution would be to create a new database table that associates with the event using a foreign key and the event id and then stores every comment in its row with all necessary meta information. The database schema would have to be updated to register the new table properly and then executed. A quicker alternative to this is the usage of an existing database table called \texttt{EventSettings}. \texttt{EventSettings} is for additional information for an event and is meant to be a lightweight key-value store for these extra data (often used with Indico plugins).
 
-Another option would be to leave the database alone and embrace the Solid way of storing the comment references by deploying an own Indico Solid data pod. The data pod could hold a resource for every event and link to the data pods where the comments can be found. This solution is definitely the most aligned with the Solid principles and could have been an interesting challenge to develop, but it was identified to late to actually push through.
+Another option would be to leave the database alone and embrace the Solid way of storing the comment references by deploying an Indico Solid data pod. The data pod could hold a resource for every event and link to the data pods where the comments reside. This solution is the most aligned with the Solid principles and could have been an interesting challenge to develop, but it was identified too late to push through.
 \vspace{0.5cm}
 \paragraph{Enforce Authenticated Session For Posting Comments}\mbox{}\\
 
-It was established through the iterations of the design with the stakeholders that an authenticated Indico session is deemed necessary in addition to the already authenticated Solid \gls{idp} session with the data pod. The main motivation was to keep it as laborious as possible for spam to reach the system.
+It was established through the iterations of the design with the stakeholders that an authenticated Indico session is deemed necessary in addition to the already authenticated Solid \gls{idp} session with the data pod. The primary motivation was to keep it as laborious as possible for spam to reach the system.
 
-The awkwardness in validating for an existing Indico session and then be able to send requests to a protected endpoint comes with the great decoupling of the comment module and Indico, which is admirable, but also make this feature more challenging to implement. Indico uses a framework called Axios \cite{axios} for its \gls{http} client request handling. In Indico Axios is configured with all necessary \gls{http} headers and when a session exists also equipped with the auth-token. The comment module can simply be extended to allow the usage of a custom \gls{http} client for sending requests to Indico. When the module is initialized the Axios client is already readily configured and needs to be passed over to the module. Both system are still decoupled and the comment module works with or without a custom \gls{http} client.
+The awkwardness of validating a current Indico session and then sending requests to a protected endpoint comes with the great decoupling of the comment module and Indico, which is admirable and makes this feature more challenging to implement. Indico uses a framework called Axios \cite{axios} for its \gls{http} client request handling. In Indico Axios, is configured with all necessary \gls{http} headers and, when a session exists, also equipped with the auth-token. The comment module can be extended to allow a custom \gls{http} client to send requests to Indico. When the module is initialized, the Axios client is already readily configured and needs to be passed over to the module. Both systems are still decoupled, and the comment module works with or without a custom \gls{http} client.
 \vspace{0.5cm}
 \subsubsection{Evaluation}\label{section:poc1-evaluation}\mbox{}\\
 
-This section focuses on evaluating the system. This shall be done by iterating through the system's requirements from the stakeholders and how the architecture lives up to those expectations. The evaluation is done with the help of the \gls{asqa} framework to ensure continuous quality assessment and prioritizing with a lightweight technique \cite{asqa-paper}.
-\gls{asqa} contains seven process steps as shown in figure \ref{fig:asqa-process-steps}.
+This section focuses on evaluating the system. The evaluation shall be done by iterating through the stakeholders' requirements and how the architecture lives up to those expectations. The assessment is done with the help of the \gls{asqa} framework to ensure continuous quality assessment and prioritizing with a lightweight technique \cite{asqa-paper}. \gls{asqa} contains seven process steps, as shown in figure \ref{fig:asqa-process-steps}.
 
 \begin{figure}[!ht]
     \centering
@@ -397,7 +396,7 @@ This section focuses on evaluating the system. This shall be done by iterating t
 \end{figure}
 
 \begin{enumerate}
-    \item \textbf{Define Metrics} to the components of the system. This can be done with \glspl{qas}, that may define the desired quality.
+    \item \textbf{Define Metrics} to the components of the system. This can be done with \glspl{qas}, which may define the desired quality.
     \item \textbf{Define Levels} to measure the state of the system
     \item \textbf{Define Components} to scope the parts of the system that will be evaluated
     \item \textbf{Evaluate} by taking the scenarios and looking at the architecture of the system. An evaluation matrix is used to define the following levels: (t)arget, (c)urrent, (health), (i)mportance, (f)ocus
@@ -407,7 +406,7 @@ This section focuses on evaluating the system. This shall be done by iterating t
 \vspace{0.5cm}
 \paragraph{Metrics}\mbox{}\\
 
-The defined \glspl{qa} are useful to know, but cannot be tested or often qualities of a system are hard to categorize with an adequate \gls{qa}. A solution to the problem of untestability and overlapping concerns are \glspl{qas}. \glspl{qas} can be used to characterize \glspl{qa} \cite{BassSoftwareArchitecture2003}. Based on the scenarios the evaluation will be carried out. The scenarios will always have the \glspl{qa} in mind and are defined with the focus on those. The different scenarios are predicted to be the most common actions on the system and thus will stress the system and its architecture the most based on the \glspl{qa}.
+The defined \glspl{qa} are helpful to know but cannot be tested, or often qualities of a system are hard to categorize with an adequate \gls{qa}. A solution to the problem of untestability and overlapping concerns is \glspl{qas}. \glspl{qas} can be used to characterize \glspl{qa} \cite{BassSoftwareArchitecture2003}. Based on the scenarios, the evaluation will be carried out. The scenarios will always have the \glspl{qa} in mind and are defined with the focus on those. The different scenarios are predicted to be the most common actions on the system and will stress the design and its architecture the most based on the \glspl{qa}.
 
 The previously picked \glspl{qa} are as follows:
 
@@ -420,21 +419,21 @@ The previously picked \glspl{qa} are as follows:
 Possible scenarios are centered around data not being available or altered or scenarios of malicious behavior from an adversary by injecting code to misuse the system in unintended ways:
 
 \begin{enumerate}
-    \item As a user I expect after commenting to see my comment in Indico, but also in my data pod
-    \item As a user I expect after deleting my comment in my data pod that the comment is not shown in Indico
-    \item As a user I expect after I edit my comment in my data pod that the comment will be updated in Indico
-    \item As a user I expect to be able to revoke access to my data pod for the application
-    \item As a user I expect to see others' comments
-    \item As a user I expect to only give access to the necessary data
+    \item As a user, I expect after commenting to see my comment in Indico, but also in my data pod
+    \item As a user, I expect after deleting my comment in my data pod that the comment is not shown in Indico
+    \item As a user, I expect after I edit my comment in my data pod that the comment will be updated in Indico
+    \item As a user, I expect to be able to revoke access to my data pod for the application
+    \item As a user, I expect to see others' comments
+    \item As a user, I expect only to give access to the necessary data
 \end{enumerate}
 
 \paragraph{Levels}\label{poc1-levels}\mbox{}\\
 
-The levels are used to measure the state of the architecture of system. These can be freely chosen, but follow an ordinal scale ranging from 1 to 5 in the original paper and will therefore be adapted \cite{asqa-paper}. The levels will help to rate the quality of the system's architecture, where 1 is the lowest quality and 5 the highest rating.
+The levels are used to measure the state of the architecture of the system. These can be freely chosen but follow an ordinal scale ranging from 1 to 5 in the original paper and adapted \cite{asqa-paper}. The levels will help rate the quality of the system's architecture, where one is the lowest quality and five the highest rating.
 \vspace{0.5cm}
 \paragraph{Components}\mbox{}\\
 
-To evaluate the security of the chosen architecture of the system it makes sense to look at certain components of the system. For this commenting system it would be sensible to analyze the \texttt{auth} package and the modules that interface the user input and the system. The user input modules can be found in the \texttt{component} package.
+To evaluate the security of the system's chosen architecture, it makes sense to look at specific components of the system. It would be sensible to analyze the \texttt{auth} package and the modules that interface the user input and the design for this commenting system. The user input modules can be found in the \texttt{component} package.
 
 \begin{figure}[!ht]
     \centering
@@ -443,7 +442,7 @@ To evaluate the security of the chosen architecture of the system it makes sense
     \label{fig:poc-comment-package-auth}
 \end{figure}
 
-The \texttt{auth} package holds classes handling the \gls{acl} logic necessary. The logic ranges from checking for existing specific authorization modes or even creating new \gls{acl} files for resources and updating existing resources. A careless architecture could result in either giving too much access control or allowing privilege escalation, where a flaw in the software can be used to elevate the access modes for an adversary.
+The \texttt{auth} package holds classes handling the \gls{acl} logic necessary. The logic ranges from checking for existing specific authorization modes or creating new \gls{acl} files for resources and updating existing resources. A careless architecture could either give too much access control or allow privilege escalation, where a flaw in the software can be used to elevate the access modes for an adversary.
 
 The \texttt{auth} package further holds the \texttt{SolidClient} class. The \texttt{SolidClass} is a wrapper class for the external authentication functions, which bring the authentication and session management for the Solid ecosystem. Naturally, all authentication modules need to be inspected and made sure no vulnerabilities are let in.
 
@@ -462,13 +461,13 @@ The second package, \texttt{components}, holds all elements in the \gls{ui} that
 \begin{itemize}
     \item \textbf{Target}: What is the desired quality level?
     \item \textbf{Current}: What is the current level?
-    \item \textbf{Health}: Where are the largest quality problems?
+    \item \textbf{Health}: Where are the most considerable quality problems?
     \item \textbf{Importance}: How important is it to move from current to target level?
-    \item \textbf{Focus}: What are the largest and most important quality problems?
+    \item \textbf{Focus}: What are the most significant and most essential quality problems?
     \item \textbf{Valid level values}: 1, 2, 3, 4, 5 (higher equals better)
 \end{itemize}
 
-\textbf{Health} and \textbf{focus} are not set by the evaluator but rather calculated from other levels.
+\textbf{Health} and \textbf{focus} are not set by the evaluator but instead calculated from other levels.
 
 \begin{align*}
     \text{\textit{health}}&=5 - \text{\textit{max}}(0, (\text{\textit{target}} - \text{\textit{current}}))
