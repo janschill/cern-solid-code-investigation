@@ -2,6 +2,7 @@ Abdurrahman
 Aboulnaga
 acl
 acp
+afce
 afs
 agentydragon
 aifb
@@ -123,6 +124,7 @@ extit
 exttt
 extwidth
 facebook
+faqs
 fbddc
 fbdf
 fca
@@ -131,6 +133,7 @@ fde
 feb
 Fett
 filecon
+firstplural
 foaf
 freecodecamp
 frontend
@@ -221,6 +224,7 @@ JWT
 Jz
 Kanban
 Kaoudi
+Kazman
 keyout
 keypairs
 Kjernsmo
@@ -356,6 +360,7 @@ psql
 py
 pyenv
 pyoidc
+qa
 QAs
 Qg
 rbak
@@ -473,6 +478,7 @@ uk
 umask
 unicode
 uninstall
+untestability
 uqam
 uri
 URL
