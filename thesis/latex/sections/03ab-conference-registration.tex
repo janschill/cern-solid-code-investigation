@@ -248,7 +248,7 @@ function triggerInputEvent(inputs) {
 
 \subsubsection{Evaluation}\mbox{}\\
 
-Just like with the first \gls{poc} from a section before \ref{poc1}, this \gls{poc} shall be evaluated using the same motivation and framework. The stakeholders and \glspl{qa} continue to be as is. An 
+Like with the first \gls{poc} from a section before \ref{poc1}, this \gls{poc} shall be evaluated using the same motivation and framework. The stakeholders and \glspl{qa} continue to be as is. An 
 TODO:
 \vspace{0.5cm}
 \paragraph{Metrics}\mbox{}\\
@@ -264,18 +264,18 @@ The previously picked \glspl{qa} are as follows:
 The \glspl{qas} to make the \glspl{qa} measurable allowing the analysis of health in the system's architecture:
 
 \begin{enumerate}
-    \item As a user I expect to see the information from my WebID profile document when using the module
-    \item As a user I expect to have the choice on two available values
-    \item As a user I expect to be incapable of pulling in protected resources without authenticating myself
+    \item As a user, I expect to see the information from my WebID profile document when using the module
+    \item As a user, I expect to have the choice of two available values
+    \item As a user, I expect to be incapable of pulling in protected resources without authenticating myself
 \end{enumerate}
 \vspace{0.5cm}
 \paragraph{Levels}\mbox{}\\
 
-The same levels 1 to 5 as in the first evaluation \ref{section:poc1-evaluation} will be used to rate the architecture of this system.
+The evaluation uses the same levels 1 to 5 as in the first evaluation \ref{section:poc1-evaluation} to rate the architecture of this system.
 \vspace{0.5cm}
 \paragraph{Components}\mbox{}\\
 
-This module is compared to the other module relatively small and does not contain multiple packages. It forms through the three key classes \texttt{Picker}, \texttt{Mapper}, and \texttt{Filler}. These three classes as they hint at find all relevant input fields from the application that will be used; secondly maps the input fields with the available data fetched using the \texttt{DataFetcher} class; thirdly it fills the available data through the mapping into the input fields.
+This module is compared to the other module, relatively small, and does not contain multiple packages. It forms through the three major classes \texttt{Picker}, \texttt{Mapper}, and \texttt{Filler}. These three classes find all relevant input fields from the application; secondly, maps the input fields with the available data fetched using the \texttt{DataFetcher} class; thirdly, it fills the available information through the mapping into the input fields.
 
 \begin{figure}[H]
     \centering
@@ -289,13 +289,13 @@ This module is compared to the other module relatively small and does not contai
 \begin{itemize}
     \item \textbf{Target}: What is the desired quality level?
     \item \textbf{Current}: What is the current level?
-    \item \textbf{Health}: Where are the largest quality problems?
+    \item \textbf{Health}: Where are the most considerable quality problems?
     \item \textbf{Importance}: How important is it to move from current to target level?
-    \item \textbf{Focus}: What are the largest and most important quality problems?
+    \item \textbf{Focus}: What are the most significant and most essential quality problems?
     \item \textbf{Valid level values}: 1, 2, 3, 4, 5 (higher equals better)
 \end{itemize}
 
-\textbf{Health} and \textbf{focus} are not set by the evaluator but rather calculated from other levels.
+\textbf{Health} and \textbf{focus} are not set by the evaluator but instead calculated from other levels.
 
 \begin{align*}
     \text{\textit{health}}&=5 - \text{\textit{max}}(0, (\text{\textit{target}} - \text{\textit{current}}))
@@ -333,16 +333,16 @@ This module is compared to the other module relatively small and does not contai
 \end{table}
 \subsubsection{Analysis}\label{poc2:analysis}\mbox{}\\
 
-The analysis of the second \gls{poc} will explain the evaluation matrix \ref{table:poc2-evaluation} and then focus on the original design idea and what led to a change of mind. It will do so by looking at the relevant modules in Indico that caused the direction for the \gls{poc} to alter. It will also be analyzed, what role Solid's design played in the abandonment of the idea on storing the registration data in data pods and effectively giving up usage control.
+The analysis of the second \gls{poc} will explain the evaluation matrix \ref{table:poc2-evaluation} and then focus on the original design idea and what led to a change of mind. It will do so by looking at the relevant modules in Indico that caused the direction for the \gls{poc} to alter.  The analysis will also look at what role Solid's design played in the abandonment of storing the registration data in data pods and effectively giving up usage control.
 
 \vspace{0.5cm}
 
-Because the module does not use any authentication libraries to give users the opportunity to log in or store any data in a data pod. It simply fetches public documents, where the user interacting with the module decides what to fetch, no risk is involved. In regards to pulling in malicious documents from a thought trustworthy source the module is embedded into Indico which has validations and makes sure no malicious code is injected into their system.
-The performance of the module is also in good shape. Only one request happens when the system is doings its tasks. The dictionary for the mapping of values uses the \gls{js} \texttt{Object} data type. It allows constant $\bigO(1)$ look ups of values. See listing \ref{lst:autocomplete-mapping} to see an example data store of values. One area of improvement for the performance is the \texttt{MutationObserver} that was explained in paragraph \ref{poc2-bind}. Indico throws an event when all dynamically created \gls{dom} elements have been rendered, which is perfect for the binding of the module to the Indico form. It was only later noticed this event exists.
+Because the module does not use any authentication libraries to allow users to log in or store any data in a data pod, it simply fetches public documents. The user interacting with the module decides what to fetch; no risk is involved. Regarding pulling in malicious documents from a trustworthy thought source, the module is embedded into Indico, which has validations and makes sure no malicious code is injected into their system.
+The performance of the module is also in good shape. Only one request happens when the system is doing its tasks. The dictionary for the mapping of values uses the \gls{js} \texttt{Object} data type. It allows constant $\bigO(1)$ look-ups of values. See listing \ref{lst:autocomplete-mapping} to see an example data store of values. One area of improvement for the performance is the \texttt{MutationObserver} that was explained in paragraph \ref{poc2-bind}. Indico throws an event when all dynamically created \gls{dom} elements have been rendered, which is perfect for the module's binding to the Indico form. It was only later noticed this event exists.
 \vspace{0.5cm}
 \paragraph{Iterations}\mbox{}\\
 
-As mentioned before this module went through two iterations of design. Up until the point of creating the architecture of the actual module it was undiscovered that the development of a module that sits on the registration form and allows the decentralized storage is not viable. In figure \ref{fig:poc-conference_registration_flow-sideways} the exact flow through the conference registration with Solid is shown. It checks if the user wants to register regularly and let Indico have and handle the registration data or if the user wants to use their WebID and thus store the data in their own data pod for maximum usage control.
+As mentioned before, this module went through two iterations of the design. Until creating the architecture of the actual module, it was undiscovered that the development of a module that sits on the registration form and allows decentralized storage is not viable. Figure \ref{fig:poc-conference_registration_flow-sideways} shows the same flow through the conference registration with Solid. It checks if the user wants to register regularly and let Indico have and handle the registration data or if the user wants to use their WebID and thus store the data in their data pod for maximum usage control.
 
 \begin{figure}[H]
     \centering
@@ -351,32 +351,32 @@ As mentioned before this module went through two iterations of design. Up until 
     \label{fig:poc-conference_registration_flow-sideways}
 \end{figure}
 
-A few challenges were unidentified at this point, but will be named and explained now.
+A few challenges were unidentified at this point but will be named and explained now.
 \vspace{0.5cm}
 \paragraph{Modification of Resource From Data Pod}\mbox{}\\
 
-As also realized in the first \gls{poc} when the application is decoupled from the data and receives it upon request the application hands over the control. This shift of control is core concept in Solid, but problematic for Indico. The use-case of registration data differs with the handling of comments. Comments are often desired to be changed and mostly comments are just presented in the \gls{ui} an no other interaction or processing happens. Registration data is much more complex and requires a lot of processing, such as the submission of abstracts. \textit{Call for abstracts} is a workflow in Indico, where conference speakers need to upload an abstract about the conference talk. Another are requirement for processing is the field of payments in the registration. A registration form can offer users an option to book an accommodation for example. These fields are called \textit{billable} fields and are hooked into a checkout process. In Indico's management section of a conference these actions can be checked for status.
+As also realized in the first \gls{poc}, when the application is decoupled from the data and receives it upon request, the application hands over the control. This shift of power is a core concept in Solid but problematic for Indico. The use-case of registration data differs with the handling of comments. Comments are often desired to be changed, and primarily comments are just presented in the \gls{ui}, and no other interaction or processing happens. Registration data is much more complex and requires a lot of processing, such as submitting abstracts. \textit{Call for abstracts} is a workflow in Indico, where conference speakers need to upload an abstract about the conference talk. Another is the requirement for processing in the field of payments in the registration. A registration form can offer users an option to book accommodation, for example. These fields are called \textit{billable} fields and are hooked into a checkout process. In Indico's management view of a conference, an administrator can check the status of these actions.
 
 \begin{enumerate}
     \item What happens now if this data is not kept in Indico anymore?
-    \item How is Indico validating a registrant has actually payed their bookings, if all registration information is kept outside of Indico?
+    \item How is Indico validating a registrant has paid their bookings if all registration information is kept outside of Indico?
     \item What happens to generated registration tickets or receipts when a user changes the name on their data pod?
 \end{enumerate}
 
-Indico allows the editing of the registration up until a set modification deadline, after it the registration is frozen and fields cannot be updated. It is necessary to have time to process the registrations, such as the booking of an accommodation. The classic setup where every user has their own data pod to store all this registration data would not work without additional functionality. A few things are imaginable.
+Indico allows the editing of the registration up until a set modification deadline; after it, the registration is frozen, and registrants cannot update input fields. It is necessary to have time to process the registrations, such as the booking of accommodation. The classic setup where every user has their data pod to store all this registration data would not work without additional functionality. A few things are imaginable.
 
 \begin{itemize}
-    \item Store a copy of the registration data in Indico and freeze the copy on modification deadline.
+    \item Store a copy of the registration data in Indico and freeze the copy on the modification deadline.
     \item Only allow decentralized storage on data where a modification would not matter
 \end{itemize}
 
-Storing a copy of the data is an interesting idea. The freezing of the data would of course require Indico to also save the data in their data stores. If data is modified directly on the data pod, Indico is not necessarily notified by the change. If the latest data should be used in Indico for freezing its own copy, Indico would have to be either notified so it can fetch the new resource from the data pod; the change needs to happen through Indico's web interface, so Indico can send the request to update it in the data pod, but also in their storage; Indico sends a request to all data pods on modification deadline day and updates the stored version. The latter solution of course needs validation, so that existing is not replaced with corrupt or invalid data, and it is also questionable what happens when the data pod is unavailable, but the data shows a resignation from the conference or anything similar. How is ensured that Indico and the user's intentions are aligned? The two systems need to be interconnected and it needs to be clear when updates happen. Availability and flow of communication or key aspects for this success.
+Storing a copy of the data is an interesting idea. The freezing of the data would require Indico to also save the data in their data stores. If information is modified directly on the data pod, Indico is not necessarily notified by the change. If the user who changed the data on their data pod wants Indico to use the latest version for their copy, Indico would have to be either notified so it can fetch the new resource from the data pod; the change needs to happen through Indico’s web interface, so Indico can send the request to update it in the data pod, but also in their storage; Indico sends a request to all data pods on modification deadline day and updates the stored version. The latter solution needs validation so that existing is not replaced with corrupt or invalid data, and it is also questionable what happens when the data pod is unavailable. Still, the data shows a resignation from the conference or anything similar. How is it ensured that Indico and the user's intentions are aligned? The two systems need to be interconnected, and it needs to be clear when updates happen---availability and flow of communication or critical aspects for this success.
 \vspace{0.5cm}
 \paragraph{Communication Flow}\mbox{}\\
 
-Not to cut off the previous issue, but to continue and nurture the aspect of flow in Solid. One crucial feature of conferences and the registration is the ability to reach out to people to let them know about next year's conference for instance. Consent would ideally only be given to the conference where one had actively sign up for and hence next year's conference would not be able to read the participant's list and connect with them and even if the list would be visible, how does the new conference know how to ask for consent to reach out them or do akin actions. Solid offers an \textit{inbox} and \textit{notifications} \cite{solid-inbox}. Solid-Inbox allows anyone in the Solid ecosystem with the public \textit{append} access control to connect with a WebID. The reached out agent gets a notification as soon as a new item is appended into their inbox. This pro-active initiation is not ideal, as the initiator does not know what data can be asked for. Only when owner actively says: “You are allowed to read this resource A and modify my resource B.”, does the application know about the existence of the data.
+Not to cut off the previous issue, but to continue and nurture the flow aspect in Solid. One crucial feature of conferences and registration is the ability to reach out to people to let them know about next year's conference. A user would ideally only consent to the conference where they had actively signed up. Hence, next year's conference would not be able to read the participant's list and connect with them, and even if the list would be visible, how does the new conference know how to ask for consent to reach out to them or do akin actions. Solid offers an \textit{inbox} and \textit{notifications} \cite{solid-inbox}, which allow anyone in the Solid ecosystem to connect and send a \textit{message} to a WebID. The reached-out agent gets a notification as soon as a new item is appended into their inbox. This pro-active initiation is not ideal, as the initiator does not know what data they can ask. Only when the owner actively says: “You are allowed to read this resource A and modify my resource B.” does the application know about the existence of the data.
 
-Solid-Inbox seems to be a decent solution for the use-case of Indico reaching out to previous participants. Another suggestion would be to escalate the access scope for Indico and conferences and the agent. Meaning, when a user signs up for a conference the registration asks for consent to allow future contacting.
+Solid-Inbox seems to be a decent solution for the use-case of Indico reaching out to previous participants. Another suggestion would be to escalate the access scope for Indico and conferences and the agent. Meaning, when a user signs up for a conference, the registration asks for consent to allow future contacting.
 TODO: more here
 \vspace{0.5cm}
 \paragraph{Performance of Large Conference}\mbox{}\\
