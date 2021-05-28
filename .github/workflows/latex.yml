@@ -21,6 +21,10 @@ jobs:
         uses: docker://pandoc/core:2.9
         with:
           args: "--bibliography=thesis/latex/bibliography.bib --to=plain --wrap=none --output=thesis.txt thesis/latex/thesis.tex"
+      - name: Build HTML version
+        uses: docker://pandoc/core:2.9
+        with:
+          args: "--bibliography=thesis/latex/bibliography.bib --to=html --wrap=none --output=index.html thesis/latex/thesis.tex"
       - name: Deploy report
         uses: peaceiris/actions-gh-pages@v3
         with:
