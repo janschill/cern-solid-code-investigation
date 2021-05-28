@@ -38,7 +38,7 @@ Solid aims to return data control to the users. To achieve full data sovereignty
 
 Goal
 
-The work presented in this paper will conclude the cern-Solid Code Investigation project (“CERN-Solid Code Investigation,” n.d.). Where the previous job done in (Schill 2020) focused on analyzing the Solid ecosystem, this body of work will focus on the remaining points defined in the project description (“CERN-Solid Code Investigation,” n.d.). The remaining issues include developing two modules integrating Solid principles programmatically into existing software from cern, these will be presented with their design choices, and the challenges met. Further, these developments will be evaluated and analyzed based on the quality attributes of security, performance, and usability. Followed by a section identifying the challenges with Solid in its current state and how traditional software, namely one from cern called Indico, has issues adopting a Solid-way of building software. The last section will introduce possible proceedings for cern as this project aims to determine how cern can be involved in the Solid ecosystem and the fate of the Web.
+The work presented in this paper will conclude the cern-Solid Code Investigation project (“CERN-Solid Code Investigation,” n.d.). Where the previous job done in (Schill 2020) focused on analyzing the Solid ecosystem, this body of work will focus on the remaining points defined in the project description (“CERN-Solid Code Investigation,” n.d.). The remaining issues include developing two modules integrating Solid principles programmatically into existing software from cern, these will be presented with their design choices, and the challenges met. Further, these developments will be evaluated and analyzed based on the quality attributes of security, performance, and usability. Followed by a section identifying the challenges with Solid in its current state and how traditional software, namely one from cern called Indico, has issues adopting a Solid-way of building software. The last section will introduce a possible continuation for cern as this project aims to determine how cern can be involved in the Solid ecosystem and the fate of the Web.
 
 Related Work
 
@@ -263,7 +263,7 @@ The communication flow with the data pod and the module would happen primarily f
 
 Microservice Approach
 
-The microservice approach would allow developing the needed Solid logic on a separate service, which proxies all Solid related traffic through it and enables the Solid functionality. Most of the libraries from the client implementation can be used as well, as both developments would be written in js. Only the authentication flow would work a bit differently.
+The microservice approach would allow developing the needed Solid logic on a separate service, which proxies all Solid related traffic and enables the Solid functionality. Most of the libraries from the client implementation can be used as well, as both developments would be written in js. Only the authentication flow would work a bit differently.
 
   Problem          Solution
   ---------------- --------------------------------------------------------------------------------------------------------------
@@ -275,13 +275,13 @@ The microservice approach would allow developing the needed Solid logic on a sep
 
   : Existing solutions to problems for a microservice approach.
 
-The microservice module would handle take all requests aimed at the data pod and make it compliant with the Solid server. It would provide the client with the proper solidoidc flow to attach the access token to all authenticated requests.
+The microservice module would handle all requests aimed at the data pod and make it compliant with the Solid server. It would provide the client with the proper solidoidc flow to attach the access token to all authenticated requests.
 
 [Communication flow for a module developed as a microservice.]
 
 Server Approach
 
-The goal of the server approach would be just like with the microservice approach to decouple the logic needed to work with Solid from the client and have it run on a server instance. The attractiveness for the server approach would be it could be fully integrated within Indico and be part of its Python codebase. The major drawbacks are no direct Solid libraries written in Python exist to allow a seamless integration into the ecosystem.
+The goal of the server approach would be just like with the microservice system to decouple the logic needed to work with Solid from the client and have it run on a server instance. The attractiveness for the server approach would be it could be fully integrated within Indico and be part of its Python codebase. Significant drawbacks are no Solid libraries written in Python exist to allow a seamless integration into the ecosystem.
 
   Problem          Solution
   ---------------- --------------------------------------------------------------------------------------------------------------
@@ -293,7 +293,7 @@ The goal of the server approach would be just like with the microservice approac
 
   : Existing solutions to problems for a server approach.
 
-The authentication library pyoidc allows authenticating with oidc systems but is missing a mandatory feature called dpop, which is needed to make requests to protected resources on a data pod. dpop is a technique to disallow replay attacks by attaching a dpop token to the request indicating for what data pod the token can be used. This means when a request with a valid authentication token is made to a malicious pod and the adversary steals this authentication token, the authentication token is signed with a target to this malicious pod, which means the adversary cannot take this intercepted token and use it for another address, as it is only valid for requests to this malicious pod. The dpop token therefore needs to newly generated on everything request (Fett et al. 2021).
+The authentication library pyoidc allows authenticating with oidc systems but is missing a mandatory feature called dpop, which is needed to request protected resources on a data pod. dpop is a technique to disallow replay attacks by attaching a dpop token to the request indicating what data pod the token can use. In a replay attack, an adversary intercepts the authentication token of an agent and uses the token to make authenticated requests to protected resources. With the usage of dpop tokens, the authentication token is signed with a target address. The target address defines the only valid address for which the token can be used. Meaning, when a request is made to a malicious pod, the interceptable token in the http header, can only be used to make requests to this data pod and not to any other pods. The dpop token therefore needs to be newly generated on everything request (Fett et al. 2021).
 
 [Communication flow for a module developed on the server.]
 
@@ -321,19 +321,19 @@ Benefits from developing the module for the client:
 
 Single Versus Multiple Resource(s) for Comments
 
-Storing the comments in rdf can be done in two ways: storing it in one file as a graph with a list of comments, or creating a file for every comment.
+Storing the comments in rdf can be done in two ways: holding it in one file as a graph with a list of comments or creating a file for every comment.
 
 [Comments being written in a single file resource on the data pod.]
 
 [Comments being written in multiple file resources on the data pod.]
 
-When fetching the container with all the comment resources the request returns a Turtle file describing the container, but not the actual content of the contained resources. The misconception of receiving the content as well was thought to be a problem, as it was assumed an initial request to the container reading its child resources had to be made, and then for each resource a request needed to be built to retrieve the resource. This overhead was later disproved as the application where this module is embedded maintains the list of resources to be fetched. Therefore, no manual building of requests to those resources had to be done. The next paragraph also lays out how this design would not work with the protection of the resources.
+When fetching the container with all the comment resources, the request returns a Turtle file describing the container but not the actual content of the contained resources. The misconception of receiving the content was thought to be a problem, as it was assumed an initial request to the container reading its child resources had to be made, and then for each resource, a request needed to be built to retrieve the resource. This overhead was later disproved as the application, where this module is embedded, maintains the list of resources to be fetched. Therefore, no manual building of requests to those resources had to be done. The following paragraph also lays out how this design would not work with the protection of the resources.
 
 Protection on Resource
 
-Every container and resource in Solid is protected with wac, which determines if specific agents, groups, or the world can have read, write, append, or control access. These control access modes are defined in acl files. The Solid acl inheritance algorithm looks for an acl file attached to a specific resource, if it cannot find one it goes recursively up the file hierarchy and looks for acls on the containers. Indico allows two general types of protection private and public on its events. Public means open to everyone, no Indico account or any type of authorization is needed to see the event. Whereas private can be as fine-grained as only to specific agents or groups. A comment module is only valuable if the comments can be read by anyone and be written by authorized users.
+Every container and resource in Solid is protected with wac, determining if specific agents, groups, or the world can have read, write, append, or control access. These control access modes are defined in acl files. The Solid acl inheritance algorithm looks for an acl file attached to a specific resource, if it cannot find one, it goes recursively up the file hierarchy and looks for acls on the containers. Indico allows two general types of protection, private and public, on its events. Public means open to everyone; no Indico account or authorization is needed to see the event. At the same time, private can be as fine-grained as only to specific agents or groups. A comment module is only valuable if anyone can read and be written by authorized users.
 
-In order for visitors of a private or public event in Indico to be able to see the comment, the comment’s acl needs to allow the public to read the resource. This can be achieved by using the public container, which comes with public-read by default on the nss or by creating a new container and setting the acl with:
+For visitors of a private or public event in Indico to see the comment, the comment’s acl needs to allow the public to read the resource. Public read can be achieved by using the public container, which comes with public-read by default on the nss, or by creating a new container and setting the acl with:
 
     @prefix acl: <http://www.w3.org/ns/auth/acl#>.
     @prefix foaf: <http://xmlns.com/foaf/0.1/>.
@@ -346,9 +346,9 @@ In order for visitors of a private or public event in Indico to be able to see t
         acl:accessTo <./>;
         acl:mode acl:Read.
 
-Every resource in this container is by definition readable by the public – if not otherwise stated in a more detailed resource acl. The above definition even allows the reading of the container’s content, meaning a request to the container would yield a list of resources in the container. This becomes unpleasant if the Indico event is private and the comments for this Indico event should not be read by the world, which is entirely possible when browsing to the location of a specific data pod and then looking into the public container.
+Every resource in this container is by definition readable by the public – if not otherwise stated in a more detailed resource acl. The above description even allows reading the container’s content, meaning a request to the container would yield a list of resources in the container. A publicly readable list becomes unpleasant if the Indico event is private and the comments for this Indico event should not be read by the world, which is entirely possible when browsing to the location of a specific data pod and then looking into the public container.
 
-To prevent a random agent to see the contents of a container, the container can be set to private, with the container’s resources still be public. This would allow everyone provided they have the url to browse to the public resource and read it, but not look into the resource’s parent container. To achieve this behavior with acl, the container needs to just define its owner and no specific rules for the public, as wac comes with a default private access control. Each child resource needs to define an acl now, allowing public read. The container’s acl would look like the following with just an owner defined:
+An acl defining private access to a container can prevent the problem of a random agent seeing a container’s content, with the container’s resources still public. The private access mode would allow everyone, provided they have the url, to read a resource in a private container but not look into the resource’s parent container. To achieve this behavior with acl, the container needs to define its owner and no specific rules for the public, as wac comes with a default private access control. Each child resource needs to define an acl now, allowing public read. The container’s acl would look like the following with just an owner specified:
 
     @prefix acl: <http://www.w3.org/ns/auth/acl#>.
 
@@ -373,7 +373,7 @@ A child resource would allow public read with:
         acl:agentClass foaf:Agent;
         acl:mode n0:Read.
 
-Another approach and the one implemented after iterating through the previous ones is to have the container’s acl resource define a default access mode for its child resources. This way one acl only needs to be created on the container and all resources have proper access modes for public read and are not listed publicly in the container’s description.
+Another approach and implemented after iterating through the previous ones is to have the container’s acl resource define a default access mode for its child resources. This way, one acl only needs to be created on the container, and all resources have proper access modes for public read and are not listed publicly in the container’s description.
 
     @prefix acl: <http://www.w3.org/ns/auth/acl#>.
     @prefix foaf: <http://xmlns.com/foaf/0.1/>.
@@ -387,59 +387,59 @@ Another approach and the one implemented after iterating through the previous on
 
 Preventing Unwanted Discovery for Resources
 
-With the resources having proper access modes but being publicly readable a simple naming convention of taking the iso 8601 string and using it as a filename for the resources created on the data pod does not suffice – even though it is a good strategy when looking for a reliable naming convention to prevent duplication. Considering performance improvements such as pagination for future iterations of the module, which would require some sort of iterative indication, a combination of randomness, but also an order indicator it was settled for using uuid plus the iso 8601 string to form a filename.
+With the resources having proper access modes but being publicly readable, a simple naming convention of taking the iso 8601 string and using it as a filename for the resources created on the data pod does not suffice – even though it is a good strategy when looking for a reliable naming convention to prevent duplication. Considering performance improvements such as pagination for future iterations of the module, which would require some iterative indication, a combination of randomness, and an order indicator, it was settled for using uuid plus the iso 8601 string to form a filename.
 
 Other ideas included hashing a random string with the timestamp to generate non-guessable filenames. The filename would need to use the same hash function to decipher the filename to figure out when the comment was generated. uuid is a reliable and easy-to-use system to generate truly globally unique strings.
 
 Modification of Resource From Data Pod
 
-When the users are in control of their data it means they can revoke access any time, or even change their data to their liking. This means when the comment is initially created through Indico and the commenting system’s ui it does not mean this comment needs to remain as is. Even if the interface of the system does not allow modification, a modification can still happen at the source of the storage of the comment.
+When the users control their data, they can revoke access or even change their data to their liking. The ability to modify data from within the data pod means the application cannot be guaranteed the same comment that was initially created and needs to be aware that data can be changed at any time. Even if the system’s interface does not allow modification, a modification can still happen at the source of the storage of the comment.
 
-Regular comment modules usually allow modifications of a submitted text throughout its existence. Twitter is an example where modifications are not allowed after posting (“New User Faq: Tweeting,” n.d.).
+Regular comment modules usually allow updates of a submitted text throughout its existence. Twitter is an example where an update is not allowed after posting (“New User Faq: Tweeting,” n.d.).
 
-When this aspect was discovered it was decided to allow this sort of behavior, as it seems to be natural in this context to be able to edit one’s own comments.
+When the development discovered this aspect, the relevant stakeholders and developer decided to allow this behavior, as it seems natural to edit one’s comments.
 
 Mitigation of Spam
 
-Enabling user input in form of a comment module without application authentication is a gateway to spam. Even though authentication with a Solid idp is necessary, it does not hinder a malicious actor to create a multitude of Solid accounts and spam into the application. In the first iteration of the module, only Solid authentication was integrated into the module and would therefore allow anyone with a Solid account to post comments and thus also spam the Indico event theoretically. In a second iteration of the module, another authentication layer was added to mitigate spam from outside Indico. For cern’s use-case, an authenticated Indico session was enough. This adds an extra step to the comment process and it is ensured only registered Indico users can comment.
+Enabling user input in the form of a comment module without application authentication is a spam gateway. Even though authentication with a Solid idp is necessary, it does not hinder a malicious actor from creating many Solid accounts and spam into the application. In the first iteration of the module, only Solid authentication was integrated into the module. Therefore, it would allow anyone with a Solid account to post comments and spam the Indico event theoretically. Another authentication layer was added in a second iteration of the module to mitigate spam from outside Indico. For cern’s use case, an authenticated Indico session was enough. An Indico session adds an extra step to the comment process, ensuring only registered Indico users can comment.
 
 Giving Application Full Control of Data Pod
 
-To create or change programmatically acls requires control access to the container. By default nss asks for the permissions when authenticating for the first time in the solidoidc flow between the solid-comment module and Solid idp. The permissions granted to the application are on the root container of the data pod. Meaning, giving an application control access allows the application to read, write, change acls on the entire data pod. This is obviously troubling, as a simple application as a commenting module needs to have control access to set the needed acls for the containers and resources it creates.
+An agent or application requires control access to the container to create or change acls programmatically in this container. By default, nss asks for the permissions when authenticating for the first time in the solidoidc flow between the solid-comment module and Solid idp. The permissions granted to the application are on the root container of the data pod. Giving an application control access allows the application to read, write, change acls on the entire data pod. As a simple application, this is troubling as a commenting module needs to have control access to set the necessary acls for the containers and resources it creates.
 
-The current implementation has not a built-in solution, but one way of solving it is the use of an application launcher, which is an application itself with full control access and then limits the access controls of the solid-comment module by creating a dedicated container for it and setting the needed acl for this specific container only.
+The current implementation has not a built-in solution. Still, one way of solving it is using an application launcher, an application itself with complete control access, and then limiting the access controls of the solid-comment module by creating a dedicated container for it and setting the needed acl for it this specific container only.
 
 Integration with Indico
 
-The need for integration with Indico is twofold: serving the module to the client and being the provider to the list of references to the comments that have been posted on a specific event.
+The need for integration with Indico is twofold: serving the module to the client and being the provider to the list of references to the comments posted on a specific event.
 
 Storing Reference to Comments in Indico
 
-Indico operates using the relational database PostgreSQL (“PostgreSQL: The World’s Most Advanced Open Source Relational Database,” n.d.). When a comment gets posted and stored on an external data pod a reference to the location of the comment needs to be kept in order for Indico to pull the comment and render it in its frontend. Several possibilities are imaginable.
+Indico operates using the relational database PostgreSQL (“PostgreSQL: The World’s Most Advanced Open Source Relational Database,” n.d.). When a comment gets posted and stored on an external data pod, a reference to the location of the comment needs to be kept for Indico to pull the comment and render it in its frontend. Several possibilities are imaginable.
 
-1.  Create new EventComments table
+1.  Create a new EventComments table
 
 2.  Store in an Indico data pod
 
-3.  Use existing EventSettings table
+3.  Use the existing EventSettings table
 
-One solution would be to create a new database table that associates with event using a foreign key and the event id and then stores every comment in its own row with all necessary meta information. The database schema would have to be updated in order to register the new table properly and then executed. A quicker alternative to this is the usage of an existing database table called EventSettings. EventSettings is for additional information for an event and is meant to be a lightweight key-value store for these extra data (often used with Indico plugins).
+One solution would be to create a new database table that associates with the event using a foreign key and the event id and then stores every comment in its row with all necessary meta information. The database schema would have to be updated to register the new table properly and then executed. A quicker alternative to this is the usage of an existing database table called EventSettings. EventSettings is for additional information for an event and is meant to be a lightweight key-value store for these extra data (often used with Indico plugins).
 
-Another option would be to leave the database alone and embrace the Solid way of storing the comment references by deploying an own Indico Solid data pod. The data pod could hold a resource for every event and link to the data pods where the comments can be found. This solution is definitely the most aligned with the Solid principles and could have been an interesting challenge to develop, but it was identified to late to actually push through.
+Another option would be to leave the database alone and embrace the Solid way of storing the comment references by deploying an Indico Solid data pod. The data pod could hold a resource for every event and link to the data pods where the comments reside. This solution is the most aligned with the Solid principles and could have been an interesting challenge to develop, but it was identified too late to push through.
 
 Enforce Authenticated Session For Posting Comments
 
-It was established through the iterations of the design with the stakeholders that an authenticated Indico session is deemed necessary in addition to the already authenticated Solid idp session with the data pod. The main motivation was to keep it as laborious as possible for spam to reach the system.
+It was established through the iterations of the design with the stakeholders that an authenticated Indico session is deemed necessary in addition to the already authenticated Solid idp session with the data pod. The primary motivation was to keep it as laborious as possible for spam to reach the system.
 
-The awkwardness in validating for an existing Indico session and then be able to send requests to a protected endpoint comes with the great decoupling of the comment module and Indico, which is admirable, but also make this feature more challenging to implement. Indico uses a framework called Axios (“Promise Based Http Client for the Browser and Node.js,” n.d.) for its http client request handling. In Indico Axios is configured with all necessary http headers and when a session exists also equipped with the auth-token. The comment module can simply be extended to allow the usage of a custom http client for sending requests to Indico. When the module is initialized the Axios client is already readily configured and needs to be passed over to the module. Both system are still decoupled and the comment module works with or without a custom http client.
+The awkwardness of validating a current Indico session and then sending requests to a protected endpoint comes with the great decoupling of the comment module and Indico, which is admirable and makes this feature more challenging to implement. Indico uses a framework called Axios (“Promise Based Http Client for the Browser and Node.js,” n.d.) for its http client request handling. In Indico Axios, is configured with all necessary http headers and, when a session exists, also equipped with the auth-token. The comment module can be extended to allow a custom http client to send requests to Indico. When the module is initialized, the Axios client is already readily configured and needs to be passed over to the module. Both systems are still decoupled, and the comment module works with or without a custom http client.
 
 Evaluation
 
-This section focuses on evaluating the system. This shall be done by iterating through the system’s requirements from the stakeholders and how the architecture lives up to those expectations. The evaluation is done with the help of the asqa framework to ensure continuous quality assessment and prioritizing with a lightweight technique (Christensen, Hansen, and Lindstrøm 2010). asqa contains seven process steps as shown in figure 3.9.
+This section focuses on evaluating the system. The evaluation shall be done by iterating through the stakeholders’ requirements and how the architecture lives up to those expectations. The assessment is done with the help of the asqa framework to ensure continuous quality assessment and prioritizing with a lightweight technique (Christensen, Hansen, and Lindstrøm 2010). asqa contains seven process steps, as shown in figure 3.9.
 
 [aSQA Process Steps from (Christensen, Hansen, and Lindstrøm 2010)]
 
-1.  Define Metrics to the components of the system. This can be done with qass, that may define the desired quality.
+1.  Define Metrics to the components of the system. This can be done with qass, which may define the desired quality.
 
 2.  Define Levels to measure the state of the system
 
@@ -451,7 +451,7 @@ This section focuses on evaluating the system. This shall be done by iterating t
 
 Metrics
 
-The defined qas are useful to know, but cannot be tested or often qualities of a system are hard to categorize with an adequate qa. A solution to the problem of untestability and overlapping concerns are qass. qass can be used to characterize qas (Bass, Clements, and Kazman 2012). Based on the scenarios the evaluation will be carried out. The scenarios will always have the qas in mind and are defined with the focus on those. The different scenarios are predicted to be the most common actions on the system and thus will stress the system and its architecture the most based on the qas.
+The defined qas are helpful to know but cannot be tested, or often qualities of a system are hard to categorize with an adequate qa. A solution to the problem of untestability and overlapping concerns is qass. qass can be used to characterize qas (Bass, Clements, and Kazman 2012). Based on the scenarios, the evaluation will be carried out. The scenarios will always have the qas in mind and are defined with the focus on those. The different scenarios are predicted to be the most common actions on the system and will stress the design and its architecture the most based on the qas.
 
 The previously picked qas are as follows:
 
@@ -463,29 +463,29 @@ The previously picked qas are as follows:
 
 Possible scenarios are centered around data not being available or altered or scenarios of malicious behavior from an adversary by injecting code to misuse the system in unintended ways:
 
-1.  As a user I expect after commenting to see my comment in Indico, but also in my data pod
+1.  As a user, I expect after commenting to see my comment in Indico, but also in my data pod
 
-2.  As a user I expect after deleting my comment in my data pod that the comment is not shown in Indico
+2.  As a user, I expect after deleting my comment in my data pod that the comment is not shown in Indico
 
-3.  As a user I expect after I edit my comment in my data pod that the comment will be updated in Indico
+3.  As a user, I expect after I edit my comment in my data pod that the comment will be updated in Indico
 
-4.  As a user I expect to be able to revoke access to my data pod for the application
+4.  As a user, I expect to be able to revoke access to my data pod for the application
 
-5.  As a user I expect to see others’ comments
+5.  As a user, I expect to see others’ comments
 
-6.  As a user I expect to only give access to the necessary data
+6.  As a user, I expect only to give access to the necessary data
 
 Levels
 
-The levels are used to measure the state of the architecture of system. These can be freely chosen, but follow an ordinal scale ranging from 1 to 5 in the original paper and will therefore be adapted (Christensen, Hansen, and Lindstrøm 2010). The levels will help to rate the quality of the system’s architecture, where 1 is the lowest quality and 5 the highest rating.
+The levels are used to measure the state of the architecture of the system. These can be freely chosen but follow an ordinal scale ranging from 1 to 5 in the original paper and adapted (Christensen, Hansen, and Lindstrøm 2010). The levels will help rate the quality of the system’s architecture, where one is the lowest quality and five the highest rating.
 
 Components
 
-To evaluate the security of the chosen architecture of the system it makes sense to look at certain components of the system. For this commenting system it would be sensible to analyze the auth package and the modules that interface the user input and the system. The user input modules can be found in the component package.
+To evaluate the security of the system’s chosen architecture, it makes sense to look at specific components of the system. It would be sensible to analyze the auth package and the modules that interface the user input and the design for this commenting system. The user input modules can be found in the component package.
 
 [The auth package with its classes.]
 
-The auth package holds classes handling the acl logic necessary. The logic ranges from checking for existing specific authorization modes or even creating new acl files for resources and updating existing resources. A careless architecture could result in either giving too much access control or allowing privilege escalation, where a flaw in the software can be used to elevate the access modes for an adversary.
+The auth package holds classes handling the acl logic necessary. The logic ranges from checking for existing specific authorization modes or creating new acl files for resources and updating existing resources. A careless architecture could either give too much access control or allow privilege escalation, where a flaw in the software can be used to elevate the access modes for an adversary.
 
 The auth package further holds the SolidClient class. The SolidClass is a wrapper class for the external authentication functions, which bring the authentication and session management for the Solid ecosystem. Naturally, all authentication modules need to be inspected and made sure no vulnerabilities are let in.
 
@@ -499,15 +499,15 @@ Evaluate
 
 -   Current: What is the current level?
 
--   Health: Where are the largest quality problems?
+-   Health: Where are the most considerable quality problems?
 
 -   Importance: How important is it to move from current to target level?
 
--   Focus: What are the largest and most important quality problems?
+-   Focus: What are the most significant and most essential quality problems?
 
 -   Valid level values: 1, 2, 3, 4, 5 (higher equals better)
 
-Health and focus are not set by the evaluator but rather calculated from other levels.
+Health and focus are not set by the evaluator but instead calculated from other levels.
 
 $$\begin{aligned}
     \text{\textit{health}}&=5 - \text{\textit{max}}(0, (\text{\textit{target}} - \text{\textit{current}}))\end{aligned}$$
@@ -965,7 +965,7 @@ Commercial and Open-Source Solutions
 
 What started with Sir Tim Berners-Lee as an idea and initial documentation of the idea has now evolved greatly. Today, Solid is an open standard driven by the Solid community. Everybody who wants to participate, help, steer the direction of the movement is welcome and can join at any time. The majority of work in done by Web enthusiasts in their spare time. Sometimes funding can be mobilized to reward developer’s work, like the eu, which has funded several Solid-related projects. A great number of startups have also spotted the potential for Solid and now hold large teams. The most notable is Sir Tim’s co-founded company Inrupt (“Inrupt,” n.d.), which focuses entirely on Solid. These companies are invaluable and necessary for the success of Solid, but also bring some complications. In recent progressions discrepancies were faced, which can be good and healthy to debate openly about solutions and find the best one, but discrepancies can likewise cause discomfort. Especially, when decisions are made without involving the community or using the market dominance to steer the movement against planned and defined goals. Solid being so lively with a community full of opinions can lead to a multitude contrasting Server implementation even though it is defined by technical reports and backed by a test-suite offering automatic auditing of implementations. Incidentally, harming the open-source idea for the same reason as mentioned in section 3.2.1, where open-source developers fear to drain their time by developing an idea, which gets then replaced or made redundant by a more resourceful entity.
 
-Proceedings in the CERN-Solid Collaboration
+Continuation in the CERN-Solid Collaboration
 
 With the two prototypes developed, integrated into Indico, and deployed to a running instance and showing a working solution with Solid principles in Indico, how can cern proceed with its collaboration attempt? In the following, the two fields of Solid specification implementations and Solid apps shall be looked at and debated what cern’s role in the future of Solid can be.
 
@@ -975,7 +975,7 @@ The in (Schill 2020) identified Solid implementations remain where they were whe
 
 The nss is maintained by a small team of unfunded open-source developers and can only fix critical bugs and keep the dependencies up-to-date. It is still the most used Solid implementation and recommended data pod solution in conjunction with one of the providers, namely solidcommunity.net (“Solid Community,” n.d.).
 
-cern has a number of options in its proceedings with Solid servers in their current status.
+cern has a number of options in its continuation with Solid servers in their current status.
 
 1.  Outstanding solution through solidcommunity.net
 
