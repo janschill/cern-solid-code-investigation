@@ -331,7 +331,6 @@ This module is compared to the other module relatively small and does not contai
     \caption{Evaluation of the autocomplete module based on the \glspl{qas}}
     \label{table:poc2-evaluation}
 \end{table}
-\vspace{0.5cm}
 \subsubsection{Analysis}\label{poc2:analysis}\mbox{}\\
 
 The analysis of the second \gls{poc} will explain the evaluation matrix \ref{poc2:evaluation} and then focus on the original design idea and what led to a change of mind. It will do so by looking at the relevant modules in Indico that caused the direction for the \gls{poc} to alter. It will also be analyzed, what role Solid's design played in the abandonment of the idea on storing the registration data in data pods and effectively giving up usage control.
@@ -339,10 +338,33 @@ The analysis of the second \gls{poc} will explain the evaluation matrix \ref{poc
 \vspace{0.5cm}
 
 Because the module does not use any authentication libraries to give users the opportunity to log in or store any data in a data pod. It simply fetches public documents, where the user interacting with the module decides what to fetch, no risk is involved. In regards to pulling in malicious documents from a thought trustworthy source the module is embedded into Indico which has validations and makes sure no malicious code is injected into their system.
-The performance of the module is also in good shape. Only one request happens when the system is doings its tasks. The dictionary for the mapping of values uses the \gls{js} \texttt{Object} data type. It allows constant \bigO(1) look ups of values. See listing \ref{lst:autocomplete-mapping} to see an example data store of values. One area of improvement for the performance is the \texttt{MutationObserver} that was explained in paragraph \ref{poc2-bind}. Indico throws an event when all dynamically created \gls{dom} elements have been rendered, which is perfect for the binding of the module to the Indico form. It was only later noticed this event exists.
-
+The performance of the module is also in good shape. Only one request happens when the system is doings its tasks. The dictionary for the mapping of values uses the \gls{js} \texttt{Object} data type. It allows constant $\bigO(1)$ look ups of values. See listing \ref{lst:autocomplete-mapping} to see an example data store of values. One area of improvement for the performance is the \texttt{MutationObserver} that was explained in paragraph \ref{poc2-bind}. Indico throws an event when all dynamically created \gls{dom} elements have been rendered, which is perfect for the binding of the module to the Indico form. It was only later noticed this event exists.
 \vspace{0.5cm}
+\paragraph{Iterations}\mbox{}\\
 
+As mentioned before this module went through two iterations of design. Up until the point of creating the architecture of the actual module it was undiscovered that the development of a module that sits on the registration form and allows the decentralized storage is not viable. In figure \ref{fig:poc-conference_registration_flow-sideways} the exact flow through the conference registration with Solid is shown. It checks if the user wants to register regularly and let Indico have and handle the registration data or if the user wants to use their WebID and thus store the data in their own data pod for maximum usage control.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{prototype/graphs/poc-conference_registration_flow-sideways.jpeg}
+    \caption{Flow through the registration flow using Solid account.}
+    \label{fig:poc-conference_registration_flow-sideways}
+\end{figure}
+
+A few challenges were unidentified at this point, but will be named and explained now.
+\vspace{0.5cm}
+\paragraph{Modification of Resource From Data Pod}\mbox{}\\
+
+As also realized in the first \gls{poc} when the application is decoupled from the data and receives it upon request the application hands over the control. This shift of control is core concept in Solid, but problematic for Indico. The use-case of registration data differs with the handling of comments. Comments are often desired to be changed and mostly comments are just presented in the user interface an no other interaction or processing happens. Registration data is much more complex and requires a lot of processing, such as the submission of abstracts. \textit{Call for abstracts} is a workflow in Indico, where conference speakers need to upload an abstract about the conference talk. Another are requirement for processing is the field of payments in the registration. A registration form can offer users an option to book an accommodation for example. These fields are called \textit{billable} fields and are hooked into a checkout process. In Indico's management section of a conference these actions can be checked for status.
+
+\begin{enumerate}
+    \item What happens now if this data is not kept in Indico anymore?
+    \item How is Indico validating a registrant has actually payed their bookings, if all registration information is kept outside of Indico?
+    \item What happens to generated registration tickets or receipts when a user changes the name on their data pod?
+\end{enumerate}
+
+
+TODO:
 
 
 * Gave up usage control
@@ -355,8 +377,6 @@ The performance of the module is also in good shape. Only one request happens wh
   * indico limits this
 * if indico in this way or more generally
 
-\vspace{0.5cm}
-\paragraph{Iterations}\mbox{}\\
 TODO:
 1st iteration, save data in pod
 2nd iteration, only pull data from pod
@@ -377,16 +397,6 @@ TODO: Include these somehow:
     \label{fig:poc-conference_registration_flow-server_side-sideways}
 \end{figure}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=1\textwidth]{prototype/graphs/poc-conference_registration_flow-sideways.jpeg}
-    \caption{TODO:}
-    \label{fig:poc-conference_registration_flow-sideways}
-\end{figure}
-\vspace{0.5cm}
-\paragraph{Modification of Resource From Data Pod}\mbox{}\\
-
-TODO:
 \vspace{0.5cm}
 \paragraph{Payment on Input Fields}\mbox{}\\
 
@@ -397,6 +407,10 @@ TODO:
 TODO:
 \vspace{0.5cm}
 \paragraph{Availability of Crucial User Data}\mbox{}\\
+
+TODO:
+\vspace{0.5cm}
+\paragraph{Communication Flow}\mbox{}\\
 
 TODO:
 
