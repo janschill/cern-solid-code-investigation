@@ -21,6 +21,8 @@ Course code: KISPECI1SE
 
 [image]
 
+[image]
+
 Computer Science
 IT University of Copenhagen
 Denmark
