@@ -26,6 +26,16 @@ IT University of Copenhagen
 Denmark
 01.06.2021
 
+Acknowledgment
+
+I want to express my sincere gratitude to my supervisor from CERN, Maria Dimou. Over the last nine months, I have learned beyond the content of this thesis; I would be incapable of putting the insights from these attainments into writing. I have enjoyed our weekly supervision meetings, which had often drifted from the planned agenda into exchanges over life beyond our solar system, the philosophy of ancient Greeks, intuitionism in mathematics, challenges in learning the German language, political decisions in tumultuous times, and much more. Thank you for teaching me so much; I will miss the weekly chat undoubtedly, but I am sure it is no goodbye.
+
+I had the great pleasure to work with Michiel De Jong for the longevity of this project. He has given me every needed resource to understand Solid and be part of the community. His deep understanding of the Web, political values, and immense motivation to build purposeful software for everyone is admirable and has become a role model to me.
+
+Adrian Mönnich, chief developer of Indico at CERN, provided me with answers to every possible question I could have asked in the context of Indico, technicalities at CERN, or general advice in Web engineering. Thank you for listening and giving me all the information I needed for this project.
+
+And one more expression of gratitude towards Sir Tim Berners-Lee for giving input on the possible scope developing the prototypes, showing curiosity towards my implementations, and providing feedback several times. It has been a great honor working so closely and on a project as impactful as Solid.
+
 Introduction
 
 Context
@@ -1023,7 +1033,7 @@ The current efforts from cern are rather limited in resources, general interest 
 
 Conclusion
 
-Decentralizing a centralized system is complex, and even developing and integrating small-scale Solid modules that harmonize with sophisticated software is. In this paper shown work has shown in an experimental approach how the Solid ecosystem can enrich cern software, its challenges and has laid out a possible future for the collaboration of the two.
+Decentralizing a centralized system is complex, and even developing and integrating small-scale Solid modules that harmonize with sophisticated software is. The in this paper shown work has shown in an experimental approach how the Solid ecosystem can enrich cern software, its challenges and has laid out a possible future for the collaboration of the two.
 
 The paper presented two working Solid apps embedded into Indico and has shown how data can reside in user’s control while still be served purposeful to others. The applications have also shown how existing information in one’s data pod can be used in other systems. These two insights from storing data outside of Indico and enabling information to flow back into the system has shown admirable features for the future of the Web: control through external data pods and reuse thanks to interoperable data formats of Linked Data. The third principle of Solid, decentralized authentication was also enabled and necessary for the development, but had a lesser impact due to restricting the prototype to only Indico and not guiding testing participants to other applications. Further, a decentralized sso service is already in use at cern.
 
