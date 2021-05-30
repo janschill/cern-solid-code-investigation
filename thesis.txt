@@ -264,12 +264,12 @@ Client Approach
 The module runs in the browser and is therefore written in js. A programming language that compiles to js, such as ts, is also possible. A browser solution means Indico remains primarily untouched but would have to serve the needed js to the client on traffic to an event endpoint where the comment module is integrated.
 
   Problem          Solution
-  ---------------- ------------------------------------------------------------------------------------------------
+  ---------------- --------------------------------------------------------------------------------------------------------------
   Language         js or ts
   Framework        Native js
   Client           solid-client-js (“Solid Javascript Client: Solid-Client,” n.d.)
   Authentication   solid-client-authn-browser (“Solid Javascript Authentication - Solid-Client-Authn,” n.d.a)
-  RDF              solid-common-vocab-js (“The Solid Common Vocab Library for Javascript,” n.d.), rdflib.js (???)
+  RDF              solid-common-vocab-js (“The Solid Common Vocab Library for Javascript,” n.d.), rdflib.js (“Rdflib.js,” n.d.)
 
   : Existing solutions to problems for a client approach.
 
@@ -282,12 +282,12 @@ Microservice Approach
 The microservice approach would allow developing the needed Solid logic on a separate service, which proxies all Solid related traffic and enables the Solid functionality. Most of the libraries from the client implementation can be used as well, as both developments would be written in js. Only the authentication flow would work a bit differently.
 
   Problem          Solution
-  ---------------- ------------------------------------------------------------------------------------------------
+  ---------------- --------------------------------------------------------------------------------------------------------------
   Language         js or ts
   Framework        Node.js
   Client           solid-client-js (“Solid Javascript Client: Solid-Client,” n.d.)
   Authentication   solid-client-authn-node (“Solid Javascript Authentication - Solid-Client-Authn,” n.d.b)
-  RDF              solid-common-vocab-js (“The Solid Common Vocab Library for Javascript,” n.d.), rdflib.js (???)
+  RDF              solid-common-vocab-js (“The Solid Common Vocab Library for Javascript,” n.d.), rdflib.js (“Rdflib.js,” n.d.)
 
   : Existing solutions to problems for a microservice approach.
 
@@ -300,12 +300,12 @@ Server Approach
 The goal of the server approach would be just like with the microservice system to decouple the logic needed to work with Solid from the client and have it run on a server instance. The attractiveness for the server approach would be that it could be fully integrated within Indico and be part of its Python codebase. Significant drawbacks are that no Solid libraries written in Python exist to allow a seamless integration into the ecosystem.
 
   Problem          Solution
-  ---------------- ------------------------------------------------------------------------------------------------
+  ---------------- --------------------------------------------------------------------------------------------------------------
   Language         Python
   Framework        Flask
   Client           -
   Authentication   pyoidc (“A Python Openid Connect Implementation,” n.d.) missing DPoP
-  RDF              solid-common-vocab-js (“The Solid Common Vocab Library for Javascript,” n.d.), rdflib.js (???)
+  RDF              solid-common-vocab-js (“The Solid Common Vocab Library for Javascript,” n.d.), rdflib.js (“Rdflib.js,” n.d.)
 
   : Existing solutions to problems for a server approach.
 
@@ -979,7 +979,7 @@ Commercial and Open-Source Solutions
 
 What started with Sir Tim Berners-Lee as an idea and initial documentation of the idea has evolved dramatically. Today, Solid is an open standard driven by the Solid community. Everybody who wants to participate, help, steer the direction of the movement is welcome and can join at any time. Web enthusiasts do the majority of work in their spare time. Sometimes foundations or governments reward the developer’s work, such as the eu, which has funded several Solid-related projects. A significant number of startups have also spotted the potential for Solid and now hold large teams. The most notable is Sir Tim’s co-founded company Inrupt (“Inrupt,” n.d.), which focuses entirely on Solid. These companies are invaluable and necessary for the success of Solid, but they also bring some complications. In recent progressions, discrepancies were faced, which can be good and healthy to debate openly about solutions and find the best one, but differences can likewise cause discomfort. Especially when decisions are made without involving the community or using their market dominance to steer the movement against planned and defined goals. Solid being so lively with a community full of opinions can lead to a multitude of contrasting Server implementation even though it is described by technical reports and backed by a test-suite offering automatic auditing of implementations. Incidentally, harming the open-source idea for the same reason as mentioned in section 3.2.1, where open-source developers fear to drain their time by developing an idea, which gets then replaced or made redundant by a more resourceful entity.
 
-Continuation in the cern-Solid Collaboration
+Continuation in the CERN-Solid Collaboration
 
 With the two prototypes developed, integrated into Indico, and deployed to a running instance and showing a working solution with Solid principles in Indico, how can cern proceed with its collaboration attempt? In the following, the two fields of Solid specification implementations and Solid apps shall be looked at and debated what cern’s role in the future of Solid can be.
 
