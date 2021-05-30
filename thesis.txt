@@ -40,9 +40,9 @@ Solid aims to return data control to the users. To achieve full data sovereignty
 
 Goal
 
-This paper tackles a portion of a project defined at at cern. The project in its entirety investigates how two architectural contrasting systems can be combined, or how a decentralized software ecosystem can integrate into a centralized one. The two systems are Indico, which acts in this context as the traditional and centralized software monolith, and Solid, the decentralized ecosystem, which decouples authentication, application, and data from each other. A first part of this cern-Solid Code Investigation project (“CERN-Solid Code Investigation,” n.d.) has been done in a previous research project (Schill 2020), where the two entities cern and Solid were introduced and an overview of both ecosystems was given. Further, the paper identified software at cern and generally analyzed it based on their quality and compatibility for an integration with Solid. The paper also looked at the Solid ecosystem and how the concept of data sovereignty is technically translated.
+This paper tackles a portion of a project defined at cern. The project in its entirety investigates how two architectural contrasting systems can be combined or how a decentralized software ecosystem can integrate into a centralized one. The two systems are Indico, which acts in this context as the traditional and centralized software monolith, and Solid, the decentralized ecosystem, which decouples authentication, application, and data from each other. The first part of this cern-Solid Code Investigation project (“CERN-Solid Code Investigation,” n.d.) has been done in a previous research project (Schill 2020), where the two entities cern and Solid were introduced, and an overview of both ecosystems was given. Further, the paper identified software at cern and generally analyzed it based on their quality and compatibility for integration with Solid. The paper also looked at the Solid ecosystem and how the concept of data sovereignty is technically translated.
 
-The next steps in the project are presented in this body of work. In an experimental approach two Solid modules are developed and embedded into cern’s Indico system. The adopted design of the modules is critically put into perspective with the many possibilities met, and its architecture is thoroughly evaluated. Challenges, advantages, and gaps in the programming and integration, but also in existing solutions are described and documented. A possible continuation of how cern can be involved in the Solid ecosystem and the fate of the Web is debated and a recommendation put in place.
+The following steps in the project are presented in this body of work. In an experimental approach, two Solid modules are developed and embedded into cern’s Indico system. The adopted design of the modules is critically put into perspective with the many possibilities met, and its architecture is thoroughly evaluated. Challenges, advantages, and gaps in programming and integration, and existing solutions are described and documented. A possible continuation of how cern can be involved in the Solid ecosystem and the fate of the Web is debated and a recommendation put in place.
 
 Related Work
 
@@ -1023,6 +1023,10 @@ The current efforts from cern are rather limited in resources, general interest 
 
 Conclusion
 
+* “you will get back to the problem definition and summarize what you have done”
+
+* plug and play does not work so good, closer to Indico -> Indico proxy
+
 * Solid lives through the community, when only one company does the implementation it will not thrive * vicious cycle *
 
 Solid from the community, for everyone start by the community get going, but breakthrough takes more -> CERN
@@ -1031,7 +1035,7 @@ community <-> company not just one company it won’t thrive
 
 software needs to be rethought major challenges: usability performance describing the world in Linked Data, can the data of the complex world be described for by machines? it takes entities as CERN to not let commercial companies built the products, otherwise Solids futures might be at stake? (a bit harsh)
 
-solid is still experimental and needs a lot of attention from developers startups are good the more the merier the community needs to remain as a driver high profile people help, but cannot be the motivator
+solid is still experimental and needs a lot of attention from developers startups are good the more the merrier the community needs to remain as a driver high profile people help, but cannot be the motivator
 
 build better and hybrid products for people where they might not even realize the decentralized benefits
 
