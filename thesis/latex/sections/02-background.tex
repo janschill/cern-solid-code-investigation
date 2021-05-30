@@ -5,7 +5,7 @@ This chapter will hold the parts of the project coming from the outside, all the
 
 \section{Background}
 
-The \textit{\gls{cern}-Solid Code Investigation} project \cite{cern-solid-code-investigation-project-description} aims at linking \gls{cern} with Solid. Some of this linkage has been done forming a status quo check of the Solid ecosystem in \cite{cern-solid-investigation-spec}. This previous work and the efforts around the two \glspl{poc} shall give insights into a symbiosis of \gls{cern} and Solid.
+The \textit{\gls{cern}-Solid Code Investigation} project \cite{cern-solid-code-investigation-project-description} aims at linking \gls{cern} with Solid. This linkage has been done, forming a status quo check of the Solid ecosystem in \cite{cern-solid-investigation-spec}. This previous work and the efforts around the two \glspl{poc} shall give insights into a symbiosis of \gls{cern} and Solid.
 
 The following sections in this chapter will introduce the two systems and their significant subsystems, modules, libraries, or techniques. 
 
@@ -76,7 +76,7 @@ For this simple reason, the programming of the \gls{poc} where Solid authenticat
 
 \subsection{Reading and Writing Linked Data}
 
-Data in Solid is stored as Linked Data \cite{Malhotra:15:LDP}. \gls{rdf} is a framework for representing Linked Data information in the Web \cite{Cyganiak:14:RCA}. The default file format implemented by the existing Solid servers is \textit{Turtle} \cite{Prud:hommeaux:14:RT}.
+Data in Solid is stored as Linked Data \cite{Malhotra:15:LDP}. \gls{rdf} is a framework for representing Linked Data information on the Web \cite{Cyganiak:14:RCA}. The default file format implemented by the existing Solid servers is \textit{Turtle} \cite{Prud:hommeaux:14:RT}.
 
 The graph-based data model from using \gls{rdf} also requires additional computation as it is not natively supported with helper functions in \gls{js}, such as \gls{json}. The benefit of using \gls{json} in \gls{js} is that a \gls{json} object is automatically parsed as an object and can be operated on by using the dot notation to access attributes of the \gls{json} data structure. For \gls{rdf}, this is not the case for an into the program loaded Turtle resource.
 
@@ -105,21 +105,21 @@ const fn = getStringNoLocale(myProfile, VCARD.fn);
 \end{lstlisting}
 
 \begin{enumerate}
-    \item \textbf{Fetching the Turtle resource at the given \gls{uri}}: Notice here the WebID profile document \gls{uri} is being loaded, referring to the document describing the agent behind the WebID \gls{uri}.
+    \item \textbf{Fetching the Turtle resource at the given \gls{uri}}: Notice here that the WebID profile document \gls{uri} is being loaded, referring to the document describing the agent behind the WebID \gls{uri}.
     \item \textbf{Loading triplet statement into a variable}: Now, the actual triplet statement containing information behind this specific agent is mapped to the \texttt{myProfile} variable.
     \item \textbf{Reading a value from a triplet}: Every subject and predicate is a \gls{uri}. The subject here is the loaded profile from the WebID \gls{uri} and the to be extracted value from the statement matching on the subject and predicate. When evaluated, the predicate \texttt{VCARD.fn} returns a \gls{uri}, which on dereferencing describes what kind of value can be obtained from the object.
 \end{enumerate}
 
 \subsection{Authorization Through WAC}
 
-The as per Solid specification decided authorization mechanism is through \gls{wac} \cite{wac}. The majority of Solid servers use \glspl{acl} to manage the access modes on containers and resources. An \gls{acl} contains all the users and their permitted access rights to the resources on the pod. It may include a \textit{default}, or \textit{public} entry but must contain a reference to who the owner is to what the \gls{acl} is describing. \glspl{acl} are convenient as they allow easy and fast access to who has access to a specific resource. In contrast, \textit{capability tickets} are the preferred technique when finding out what a particular user has access to \cite{stallings}.
+The as per Solid specification decided authorization mechanism is through \gls{wac} \cite{wac}. The majority of Solid servers use \glspl{acl} to manage the access modes on containers and resources. An \gls{acl} contains all the users and their permitted access rights to the resources on the pod. It may include a \textit{default} or \textit{public} entry but must contain a reference to who the owner is to what the \gls{acl} is describing. \glspl{acl} are convenient as they allow easy and fast access to who has access to a specific resource. In contrast, \textit{capability tickets} are the preferred technique when finding out what a particular user has access to \cite{stallings}.
 
 \subsection{Application Launcher}
 
-A so-called \textit{application launcher} can mitigate a later presented discovery of a flaw in assigning unnecessary full access controls. The inconvenience lies in the fact when an application asks the client for what the allowed scope to its data pod is, most often, complete access control on the root container is needed -- this is against the security principle or tactic called \textit{least privilege}. The least privilege means to give actors of a system only exactly as much access they need and never more. The reason why this finds its way into the \glspl{poc} will be presented in the chapter \ref{chapter:investigation}.
+A so-called \textit{application launcher} can mitigate a later presented discovery of a flaw in assigning unnecessary full access controls. The inconvenience lies in the fact that when an application asks the client for what the allowed scope to its data pod is, most often, complete access control on the root container is needed -- this is against the security principle or tactic called \textit{least privilege}. The least privilege means to give actors of a system only exactly as much access they need and never more. The reason why this finds its way into the \glspl{poc} will be presented in the chapter \ref{chapter:investigation}.
 
 For now, an implementation shall be introduced showing how the application launcher can avoid this problem. When an application wants to create \glspl{acl} on a data pod, it needs the before-mentioned \textit{control} access. \textit{Control} access is the highest access mode in \gls{wac}. An agent with \textit{control} access can read, write, and modify \gls{acl} resources -- meaning the owner of files can be changed as an example.
-In the initial \gls{solidoidc} flow, one step asks for the application's allowed access scope. The asked for scope is for the root container of the data pod -- a more fine-grained control to limit access on a specific child container does not exist. An application launcher is a Solid app that has full control of the pod and must be trusted. When a new application wants use a data pod and needs control access but could, in theory, be limited to a specific container, the application launcher will create the appropriate \gls{acl} files to only allow precisely this.
-This works because all access modes are defined in \gls{acl} files, which can be dynamically created. The application will, with this launcher, now have complete control of the container it operates and stores data in but cannot reach outside of its container.
+In the initial \gls{solidoidc} flow, one step asks for the application's allowed access scope. The asked for scope is for the root container of the data pod -- a more fine-grained control to limit access on a specific child container does not exist. An \textit{application launcher} is a Solid app that has full control of the pod and must be trusted. When a new application wants to use a data pod and needs control access but could, in theory, be limited to a specific container, the application launcher will create the appropriate \gls{acl} files to only allow precisely this.
+Launching an application like this works because all access modes are defined in \gls{acl} files, which can be dynamically created. The application will, with this launcher, now have complete control of the container it operates and stores data in but cannot reach outside of its container.
 
 The source code for a standalone application launcher in \gls{js} exists here \cite{app-launcher}.
