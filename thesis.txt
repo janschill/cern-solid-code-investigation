@@ -70,7 +70,7 @@ Indico is one of CERN’s most sophisticated software projects. It is an event m
 
 Events
 
-Being an event management tool at Indico’s core lies the Event class. The Event’s ui is presented in 2.1, showing all sorts of attachable information.
+Indico being an event management tool, one of its core entities is the Event. The Event’s ui is presented in 2.1, showing all sorts of attachable information. It gives a place for all relevant information surrounding an event.
 
 [ui of an Indico event.]
 
@@ -117,27 +117,27 @@ Reading and Writing Linked Data
 
 Data in Solid is stored as Linked Data (Malhotra, Speicher, and Arwe 2015). rdf is a framework for representing Linked Data information on the Web (Cyganiak, Wood, and Lanthaler 2014). The default file format implemented by the existing Solid servers is Turtle (Prud’hommeaux and Carothers 2014).
 
-The graph-based data model from using rdf also requires additional computation as it is not natively supported with helper functions in js, such as json. The benefit of using json in js is that a json object is automatically parsed as an object and can be operated on by using the dot notation to access attributes of the json data structure. For rdf, this is not the case for an into the program loaded Turtle resource.
+Graph-based data models such as rdf require libraries to work with them, as the extraction of data out of a graph model is not as trivial as with json, where the dot notation can easily pull out a value of a key.
 
 Fortunately, existing libraries come to the rescue allowing such operations on the rdf-based data type. Again Inrupt and the Solid Community offer solutions. For the same reasons, it was decided to use Inrupt’s solution for this development as it acts as a convenient wrapper to the bare bone Linked Data api implemented in rdflib.js (“Rdflib.js,” n.d.). Even though working with rdf can be quickly done using rdflib.js, Inrupt’s libraries tie nicely together and allow, for instance, a seamless passing of an authenticated session to its client library to enable authenticated requests to protected resources.
 
 As mentioned before and looked at in detail in (Schill 2020), the Turtle format is a graph data structure built up with triplets—a triplet statement in its simplest form a sequence of (subject, predicate, object) terms (Prud’hommeaux and Carothers 2014).
 
-Inrupt decided to call this construct a Thing, a data entity associated with a set of data or properties of this Thing (“Thing,” n.d.). A SolidDataset is a set of things (“SolidDataset,” n.d.).
+Inrupt decided to call this construct a Thing, a data entity associated with a set of data or properties of this Thing (“Thing,” n.d.). A SolidDataset is a set of Things (“SolidDataset,” n.d.).
 
 The following code listing shows how to use helper methods to extract data from a Turtle file loaded by sending a request to the WebID profile document uri.
 
     // Import statements omitted for this demonstration
-    // 1
+    // 1.
     const myDataset = await getSolidDataset(
       "https://janschill.net/profile/card"
     );
-    // 2
+    // 2.
     const myProfile = getThing(
       myDataset,
       "https://janschill.net/profile/card#me"
     );
-    // 3
+    // 3.
     const fn = getStringNoLocale(myProfile, VCARD.fn);
     // fn => "Jan Schill"
 
@@ -149,13 +149,13 @@ The following code listing shows how to use helper methods to extract data from 
 
 Authorization Through WAC
 
-The as per Solid specification decided authorization mechanism is through wac (“Web Access Control (Wac),” n.d.). The majority of Solid servers use acls to manage the access modes on containers and resources. An acl contains all the users and their permitted access rights to the resources on the pod. It may include a default or public entry but must contain a reference to who the owner is to what the acl is describing. acls are convenient as they allow easy and fast access to who has access to a specific resource. In contrast, capability tickets are the preferred technique when finding out what a particular user has access to (Stallings and Brown 2014).
+The Solid architects chose wac (“Web Access Control (Wac),” n.d.) as the authorization mechanism on the Solid data pod. The majority of Solid servers use acls to manage the access modes on containers and resources. An acl contains all the users and their permitted access rights to the resources on the pod. It may include a default or public entry but must contain a reference to who the owner is to what the acl is describing. acls are convenient as they allow easy and fast access to who has access to a specific resource. In contrast, capability tickets are the preferred technique when finding out what a particular user has access to (Stallings and Brown 2014).
 
 Application Launcher
 
-A so-called application launcher can mitigate a later presented discovery of a flaw in assigning unnecessary full access controls. The inconvenience lies in the fact that when an application asks the client for what the allowed scope to its data pod is, most often, complete access control on the root container is needed – this is against the security principle or tactic called least privilege. The least privilege means to give actors of a system only exactly as much access they need and never more. The reason why this finds its way into the pocs will be presented in the chapter 3.
+The Solid authentication flow has a design inconvenience, that only can only scope to the root container when handing out the access control to an asking application. The flow is initiated when a client wants to use an application and this application needs to be trusted to interact with the data pod, most often, a the control mode is needed – this is against the security principle or tactic called least privilege. The least privilege means to give actors of a system only exactly as much access they need and never more. The reason why this finds its way into the pocs will be presented in the chapter 3.
 
-For now, an implementation shall be introduced showing how the application launcher can avoid this problem. When an application wants to create acls on a data pod, it needs the before-mentioned control access. Control access is the highest access mode in wac. An agent with control access can read, write, and modify acl resources – meaning the owner of files can be changed as an example. In the initial solidoidc flow, one step asks for the application’s allowed access scope. The asked for scope is for the root container of the data pod – a more fine-grained control to limit access on a specific child container does not exist. An application launcher is a Solid app that has full control of the pod and must be trusted. When a new application wants to use a data pod and needs control access but could, in theory, be limited to a specific container, the application launcher will create the appropriate acl files to only allow precisely this. Launching an application like this works because all access modes are defined in acl files, which can be dynamically created. The application will, with this launcher, now have complete control of the container it operates and stores data in but cannot reach outside of its container.
+For now, an implementation shall be introduced showing how an application launcher can avoid this problem. When an application wants to create acls on a data pod, it needs the before-mentioned control access. Control access is the highest access mode in wac. An agent with control access can read, write, and modify acl resources – meaning the owner of files can be changed as an example. In the initial solidoidc flow, one step asks for the application’s allowed access scope. The asked for scope is for the root container of the data pod – a more fine-grained control to limit access on a specific child container does not exist. An application launcher is a Solid app that has full control of the pod and must be trusted. When a new application wants to use a data pod and needs control access but could, in theory, be limited to a specific container, the application launcher will create the appropriate acl files to only allow precisely this. Launching an application like this works because all access modes are defined in acl files, which can be dynamically created. The application will, with this launcher, now have complete control of the container it operates and stores data in but cannot reach outside of its container.
 
 The source code for a standalone application launcher in js exists here (“Solid-App-Launcher,” n.d.).
 
@@ -177,7 +177,7 @@ In this section, the architectural analysis will be looked into. The system’s 
 
 System Description
 
-The system aims at enabling commenting in web applications with decentralized storage on data pods. The system in the context of Indico intends to allow Indico users with a data pod to comment on specific Indico events. It thus needs to enable authentication with a Solid idp to obtain and manage an authenticated session with a data pod. The module requires an input field to receive user input, which can then be transformed to structured data in Linked Data and sent to the data pod. On an invalid session or wrongly put input, the module should appropriately tell the user. Comments need to be loaded from different data pods and be rendered into the dom. When a new comment is added, the interface needs to be updated accordingly.
+The system aims at enabling commenting in web applications with decentralized storage on data pods. The system in the context of Indico intends to allow Indico users with a data pod to comment on specific Indico events. It thus needs to enable authentication with a Solid idp to obtain and manage an authenticated session with a data pod. The module requires an input field to receive user input, which can then be transformed to structured data in Linked Data and sent to the data pod. On an invalid session or wrong input, the module should appropriately tell the user to either log in or try again. Comments need to be loaded from different data pods and be rendered into the dom. When a new comment is added, the interface needs to be updated accordingly.
 
 Features
 
@@ -215,13 +215,13 @@ Stakeholders
 
 This section covers the various stakeholders concerning the system. The stakeholders include active users and various external and internal stakeholders impacted by the system or who have a significant say in the development process.
 
-The product owner is responsible for the product, in this case, Indico. Usually, they plan repeated fixed time-boxes in which new features are developed, or the existing software is maintained. They are constantly evaluating the state of the software and try to satisfy other stakeholders such as investors or the system users themselves. The main concerns of the product owner are to stay innovative while no compromising the quality of the existing software.
+The product owner is responsible for the product, in this case, Indico. Usually, they plan repeated fixed time-boxes in which new features are developed, or the existing software is maintained. They are constantly evaluating the state of the software and try to satisfy other stakeholders such as investors or the system users themselves. The main concerns of the product owner are to stay innovative while not compromising the quality of the existing software.
 
 The internal developer is responsible for executing the decision made by, or together with, the product owner. The developer is also maintaining the software and is the one working with it daily and can make assumptions about the evolution of the software. Their concerns lie in the maintainability of the software through its evolutionary cycle and onboarding new developers.
 
 Drivers
 
-The architectural drivers or qas can be specified using “-illities”. These qas were defined with the stakeholders together in several meetings in which the existing qas of the system, where the comment module would be embedded into, were drawn up. Security and Performance are of utmost priority to the chief developer and product owner. For the collaboration manager, having used Solid for a while, it was clear that the module is usable, requires as little effort as possible, and causes the lowest friction.
+The architectural drivers or qas can be specified using “-illities”. These qas were defined with the stakeholders together in several meetings in which the existing qas of the system, where the comment module would be embedded into, were drawn up. Security and Performance are of utmost priority to the chief developer and product owner. For the collaboration manager, having used Solid for a while, it was clear that the module is usable, requires as little effort as possible, and causes the lowest friction. Making the Usability also an important qa to focus on. Therefore, the following qas will be the driving motivators:
 
 1.  Security
 
@@ -241,7 +241,7 @@ For various held meetings and presentations, a visual representation of the to-b
 
 Design
 
-For the implementation of this module, several design decisions had to be made from the fundamental choice of the module running on the client device or be computed on the server and then propagated to the client afterward or even with a microservice proxying all traffic to enable Solid without changing Indico. Other design challenges were around how to protect the resources holding the comment information. These resources reside on the external data pod and need to be fetched from the application and read by other agents. Can acls be configured to allow the specific use-case and other questions to come up and had to be considered?
+For the implementation of this module, several design decisions had to be made from the fundamental choice of the module running on the client device or be computed on the server and then propagated to the client afterward or even with a microservice proxying all traffic to enable Solid without changing Indico. Other design challenges were around how to protect the resources holding the comment information. These resources reside on the external data pod and need to be fetched from the application and read by other agents.
 
 Client- Versus Server-Side Versus Microservice
 
@@ -307,7 +307,7 @@ The goal of the server approach would be just like with the microservice system 
 
   : Existing solutions to problems for a server approach.
 
-The authentication library pyoidc allows authenticating with oidc systems but is missing a mandatory feature called dpop, which is needed to request protected resources on a data pod. dpop is a technique to disallow replay attacks by attaching a dpop token to the request indicating what data pod the token can use. In a replay attack, an adversary intercepts the authentication token of an agent and uses the token to make authenticated requests to protected resources. With the usage of dpop tokens, the authentication token is signed with a target address. The target address defines the only valid address for which the token can be used. Meaning, when a request is made to a malicious pod, the interceptable token in the http header can only be used to make requests to this data pod and not to any other pods. The dpop token therefore needs to be newly generated on everything request (Fett et al. 2021).
+The authentication library pyoidc allows authenticating with oidc systems but is missing a mandatory feature called dpop, which is needed to request protected resources on a data pod. dpop is a technique to disallow replay attacks by attaching a dpop token to the request indicating what data pod the token can use. In a replay attack, an adversary intercepts the authentication token of an agent and uses the token to make authenticated requests to protected resources. With the usage of dpop tokens, the authentication token is signed with a target address. The target address defines the only valid address for which the token can be used. Meaning, when a request is made to a malicious pod, the interceptable token in the http header can only be used to make requests to this data pod and not to any other pods. The dpop token therefore needs to be newly generated on every request (Fett et al. 2021).
 
 [Communication flow for a module developed on the server.]
 
@@ -401,9 +401,9 @@ Another approach and implemented after iterating through the previous ones is to
 
 Preventing Unwanted Discovery for Resources
 
-With the resources having proper access modes but being publicly readable, a simple naming convention of taking the iso 8601 string and using it as a filename for the resources created on the data pod does not suffice – even though it is a good strategy when looking for a reliable naming convention to prevent duplication. Considering performance improvements such as pagination for future iterations of the module, which would require some iterative indication, a combination of randomness, and an order indicator, it was settled for using uuid plus the iso 8601 string to form a filename.
+With the proper access modes for the resources in place, but still publicly readable. Anyone with the uri to the resource could read it. A simple naming convention of taking the iso 8601 string and using it as a filename for the resources created on the data pod does not suffice, because the resource names could be guessed or iterated – even though it is a good strategy when looking for a reliable naming convention to prevent duplication. Considering performance improvements such as pagination for future iterations of the module would require some iterative indication in the filename. A combination of randomness and an order indicator is a good solution. It was settled for using uuid prepended with an iso 8601 string to form a filename.
 
-Other ideas included hashing a random string with the timestamp to generate non-guessable filenames. The filename would need to use the same hash function to decipher the filename to figure out when the comment was generated. uuid is a reliable and easy-to-use system to generate truly globally unique strings.
+Other ideas include hashing a random string with the timestamp to generate non-guessable filenames. The filename would need to use the same hash function to decipher the filename to figure out when the comment was generated. uuid is a reliable and easy-to-use system to generate truly globally unique strings.
 
 Modification of Resource From Data Pod
 
@@ -433,9 +433,9 @@ Indico operates using the relational database PostgreSQL (“PostgreSQL: The Wor
 
 1.  Create a new EventComments table
 
-2.  Store in an Indico data pod
+2.  Use the existing EventSettings table
 
-3.  Use the existing EventSettings table
+3.  Store in an Indico data pod
 
 One solution would be to create a new database table that associates with the event using a foreign key and the event id and then stores every comment in its row with all necessary meta information. The database schema would have to be updated to register the new table properly and then executed. A quicker alternative to this is the usage of an existing database table called EventSettings. EventSettings is for additional information for an event and is meant to be a lightweight key-value store for these extra data (often used with Indico plugins).
 
@@ -570,9 +570,9 @@ The SolidClient class is part of the auth component package, which handles the s
 
 [fig:poc-comment-flow-set_comments]
 
-The application boot with successive comment fetching happens every time the system is loaded, which is in a minimum of four requests when no comments are loaded and n * 2 + 4 requests with n comments.
+The application boot followed with the comment fetching happens every time the system is loaded, which is in a minimum of four requests when no comments are loaded and n * 2 + 4 requests with n comments.
 
-Regarding availability for both looked at modules, if a data pod is unavailable, the auth module will not be able to do check whether a session is present. The http requests containing the session will respond with 40x http status codes and disallow any comment posting. A dedicated message has been implemented for the components module, which will hint at why a comment may not have loaded when a data pod is unreachable. The hint renders one long message guessing what has happened but is not clever about inferring the reason.
+Regarding Availability for both modules, if a data pod is unavailable, the auth module will not be able to do check whether a session is present. The http requests containing the session will respond with 40x http status codes and disallow any comment posting. A dedicated message has been implemented for the components module, which will hint at why a comment may not have loaded when a data pod is unreachable. The hint renders one long message guessing what has happened but is not clever about inferring the reason.
 
 [Hint when a comment could not be loaded]
 
@@ -586,7 +586,7 @@ The chosen technique of storing the comments is not as efficient as it could be.
 
 The first improvement to this approach could be pagination. Pagination limits the number of initially loaded comments to a defined amount. This can be achieved by utilizing the date and time from the file name of the comment. Only the most recent n comments by time will have to be fetched. When the user clicks on a load more comments button, n more comments will be loaded. In the same area of improvement, the ways the comments are rendered can also be improved. The comments will all be fetched, and only when all requests are made will the application render the comments in the dom. If the comments are separated from each other, and a comment is rendered as soon as it is successfully fetched, it would speed up until a user could start seeing comments.
 
-The second improvement could be a grouping of comments by the author. This way, the number of requests would now be bound to the number of authors. In the worst case, where all comments are from different authors, it would improve the initial architecture. The design for this would be to change the storage from the multi-file approach to a single-file approach. On the data pod, one file would exist holding all comments from one author for one event. This file can be fetched with one request containing multiple comments.
+An additional improvement could be a grouping of comments by the author. This way, the number of requests would now be bound to the number of authors. In the worst case, where all comments are from different authors, it would improve the initial architecture. The design for this would be to change the storage from the multi-file approach to a single-file approach. On the data pod, one file would exist holding all comments from one author for one event. This file can be fetched with one request containing multiple comments.
 
 Another enhancement can be attained by caching. In its current design, the comments are freshly fetched on each page load. Server-side http caching is out of control for the clients and relies on the Server implementations. By Solid specification, http caching is prescribed but not vital (Capadisli et al. 2020), which means it should implement it but does not have to. Regardless, the improvement would not be in the number of round trips the client has to complete, but rather in the time for the server to calculate the response it sends out (Fielding, Nottingham, and Reschke 2014). A real improvement on consecutive page visits is won by client-side http caching. Upon successive visits to a cached website, a previously fetched and browser’s local storage stored copy of the response would be served (Fielding, Nottingham, and Reschke 2014). The result would be immediately loaded but might not serve the latest and up-to-date asset from the server. The response’s freshness is controlled using the Cache-Control header in either the request or response of the http exchange between client and server (Fielding, Nottingham, and Reschke 2014).
 
