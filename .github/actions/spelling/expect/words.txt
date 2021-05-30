@@ -544,3 +544,5 @@ zenodo
 zl
 zlib
 zsu
+KISPECI
+onnich
