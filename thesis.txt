@@ -953,8 +953,6 @@ Two additional parts are necessary to make Indico and the poc modules work corre
 
 The second improvement to the installation was to enable sso allowing authentication through cern’s authentication service. sso enables all users with a valid cern account to authenticate with the freshly installed Indico instance and therefore provide an authenticated Indico session when needed. Activating SSO is as easy as adding the domain of the Indico staging instance, installing cern’s Python Flask authentication library called flask-multipass (“Flask-Multipass,” n.d.) appending some additional configuration to the Indico configuration file.
 
-TODO: deployment diagram?
-
 Challenges, Advantages, and Gaps of Existing Solid Solutions versus CERN Ones
 
 Lack of Solid Applications
