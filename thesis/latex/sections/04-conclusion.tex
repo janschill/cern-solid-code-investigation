@@ -14,42 +14,38 @@ The paper presented two working Solid apps embedded into Indico and has shown ho
 
 The implementation of Solid comes with imperfections. The detailed analysis and evaluation of the Solid apps have shown those flaws in the synergy between Indico and Solid principles. The flaws being mainly performance regressions in the retrieval and distribution of data from several external data pods. Where in centralized systems the data is stored in one place and can be processed and prepared for clients neatly, in a decentralized architecture several requests are required to retrieve the data first. The prototypes' design was as decoupled as possible from Indico to not infiltrate Indico's functionality and allow other systems to integrate the modules as well. The decoupling has proven that the two systems are too distant and implementations need to be closer to Indico. A more imminent solution means Indico is required to change too. The data flow from the data pod back in to Indico, as demonstrated in the second implementation of the \gls{poc}, is challenging by reason of lacking any semantic structure whatsoever in Indico.
 
-\vspace{1cm}
+The \glspl{poc} and analyses has displayed that decentralization brings many challenges for the development of applications, but as Tim Berners-Lee once said: “Data is a precious thing and will last longer than the systems themselves.” it is sensible to decouple applications from data to allow innovation not through owning data, but by building applications without relying on having the data.
 
-Solid as an ecosystem
+\vspace{0.5cm}
 
+Solid as an ecosystem is active, maturing, and to be closely followed. Startups are forming worldwide and innovate by developing applications for the Solid ecosystem. Governments in several countries show their interest by investing and funding Solid-related projects to enable its citizens data pods and opportunity for data control. 
 
+The ecosystem is still inexperienced due to scarcity in available applications for end-users to test and play around. An atrocious \gls{ui} for the currently most popular data pod implementation hinders newcomers to test Solid for private use. Whereas the \gls{ui} of the implementation can be fixed by using more obvious interactions with the system, Solid still has many usability challenges to account for. Applications and agents need workflows for sharing data so seamless and without being in doubt for a second when handling their sensitive personal information. The limited number of applications and developers actively participating makes Solid at the moment still very experimental and theoretical. A planned \textit{call-for-implementation} by the Solid technical writers will encounter these challenges and find solutions, also for the interesting performance complications found in the \gls{poc} development. There is no doubt that in the next years the Solid implementations and the use of it will skyrocket, but until then it will take more organizations, companies, and individuals to initiate a breakthrough. The products developed need to be clever and their benefits need to be clearly visible to the end-user. When the end-user cannot distinguish a decentralized from a centralized solution an no frictions are visible on use, Solid will be a success.
 
-\vspace{3cm}
+% * Solid lives through the community, when only one company does the implementation it will not thrive
+% * vicious cycle
+% * 
 
-* “you will get back to the problem definition and summarize what you have done”
+% Solid from the community, for everyone
+% start by the community
+% get going, but breakthrough takes more -> CERN
 
-* plug and play does not work so good, closer to Indico -> Indico proxy
+% community <-> company
+% not just one company it won't thrive
 
-* Solid lives through the community, when only one company does the implementation it will not thrive
-* vicious cycle
-* 
+% software needs to be rethought
+% major challenges:
+%     usability
+%     performance
+%     describing the world in Linked Data, can the data of the complex world be described for by machines?
+% it takes entities as CERN to not let commercial companies built the products, otherwise Solids futures might be at stake? (a bit harsh)
 
-Solid from the community, for everyone
-start by the community
-get going, but breakthrough takes more -> CERN
+% solid is still experimental and needs a lot of attention from developers
+% startups are good
+% the more the merrier
+% the community needs to remain as a driver
+% high profile people help, but cannot be the motivator
 
-community <-> company
-not just one company it won't thrive
+% build better and hybrid products for people where they might not even realize the decentralized benefits
 
-software needs to be rethought
-major challenges:
-    usability
-    performance
-    describing the world in Linked Data, can the data of the complex world be described for by machines?
-it takes entities as CERN to not let commercial companies built the products, otherwise Solids futures might be at stake? (a bit harsh)
-
-solid is still experimental and needs a lot of attention from developers
-startups are good
-the more the merrier
-the community needs to remain as a driver
-high profile people help, but cannot be the motivator
-
-build better and hybrid products for people where they might not even realize the decentralized benefits
-
-challenge the known
+% challenge the known
