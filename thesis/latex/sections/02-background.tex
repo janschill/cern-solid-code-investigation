@@ -15,7 +15,7 @@ Indico is one of CERN’s most sophisticated software projects. It is an event m
 
 \subsection{Events}
 
-Being an event management tool at Indico's core lies the \texttt{Event} class. The Event's \gls{ui} is presented in \ref{fig:indico-event-interface}, showing all sorts of attachable information. 
+Indico being an event management tool, one of its core entities is the \textit{Event}. The \textit{Event's} \gls{ui} is presented in \ref{fig:indico-event-interface}, showing all sorts of attachable information. It gives a place for all relevant information surrounding an event.
 
 \begin{figure}[H]
     \centering
@@ -78,28 +78,28 @@ For this simple reason, the programming of the \gls{poc} where Solid authenticat
 
 Data in Solid is stored as Linked Data \cite{Malhotra:15:LDP}. \gls{rdf} is a framework for representing Linked Data information on the Web \cite{Cyganiak:14:RCA}. The default file format implemented by the existing Solid servers is \textit{Turtle} \cite{Prud:hommeaux:14:RT}.
 
-The graph-based data model from using \gls{rdf} also requires additional computation as it is not natively supported with helper functions in \gls{js}, such as \gls{json}. The benefit of using \gls{json} in \gls{js} is that a \gls{json} object is automatically parsed as an object and can be operated on by using the dot notation to access attributes of the \gls{json} data structure. For \gls{rdf}, this is not the case for an into the program loaded Turtle resource.
+Graph-based data models such as \gls{rdf} require libraries to work with them, as the extraction of data out of a graph model is not as trivial as with \gls{json}, where the dot notation can easily pull out a value of a key.
 
 Fortunately, existing libraries come to the rescue allowing such operations on the \gls{rdf}-based data type. Again Inrupt and the Solid Community offer solutions. For the same reasons, it was decided to use Inrupt's solution for this development as it acts as a convenient wrapper to the bare bone Linked Data \gls{api} implemented in \texttt{rdflib.js} \cite{rdflib-js}. Even though working with \gls{rdf} can be quickly done using \texttt{rdflib.js}, Inrupt's libraries tie nicely together and allow, for instance, a seamless passing of an authenticated session to its client library to enable authenticated requests to protected resources.
 
 As mentioned before and looked at in detail in \cite{cern-solid-investigation-spec}, the Turtle format is a graph data structure built up with triplets---a triplet statement in its simplest form a sequence of (subject, predicate, object) terms \cite{Prud:hommeaux:14:RT}. 
 
-Inrupt decided to call this construct a \texttt{Thing}, a data entity associated with a set of data or properties of this \texttt{Thing} \cite{inrupt-thing}. A \texttt{SolidDataset} is a set of things \cite{inrupt-dataset}.
+Inrupt decided to call this construct a \texttt{Thing}, a data entity associated with a set of data or properties of this \texttt{Thing} \cite{inrupt-thing}. A \texttt{SolidDataset} is a set of \texttt{Things} \cite{inrupt-dataset}.
 
 The following code listing shows how to use helper methods to extract data from a Turtle file loaded by sending a request to the WebID profile document \gls{uri}.
 
 \begin{lstlisting}[language=Other,columns=fullflexible, caption={Basic usage of Inrupt's solid-client library.}, label={lst:2}]
 // Import statements omitted for this demonstration
-// 1
+// 1.
 const myDataset = await getSolidDataset(
   "https://janschill.net/profile/card"
 );
-// 2
+// 2.
 const myProfile = getThing(
   myDataset,
   "https://janschill.net/profile/card#me"
 );
-// 3
+// 3.
 const fn = getStringNoLocale(myProfile, VCARD.fn);
 // fn => "Jan Schill"
 \end{lstlisting}
@@ -112,13 +112,13 @@ const fn = getStringNoLocale(myProfile, VCARD.fn);
 
 \subsection{Authorization Through WAC}
 
-The as per Solid specification decided authorization mechanism is through \gls{wac} \cite{wac}. The majority of Solid servers use \glspl{acl} to manage the access modes on containers and resources. An \gls{acl} contains all the users and their permitted access rights to the resources on the pod. It may include a \textit{default} or \textit{public} entry but must contain a reference to who the owner is to what the \gls{acl} is describing. \glspl{acl} are convenient as they allow easy and fast access to who has access to a specific resource. In contrast, \textit{capability tickets} are the preferred technique when finding out what a particular user has access to \cite{stallings}.
+The Solid architects chose \gls{wac} \cite{wac} as the authorization mechanism on the Solid data pod. The majority of Solid servers use \glspl{acl} to manage the access modes on containers and resources. An \gls{acl} contains all the users and their permitted access rights to the resources on the pod. It may include a \textit{default} or \textit{public} entry but must contain a reference to who the owner is to what the \gls{acl} is describing. \glspl{acl} are convenient as they allow easy and fast access to who has access to a specific resource. In contrast, \textit{capability tickets} are the preferred technique when finding out what a particular user has access to \cite{stallings}.
 
 \subsection{Application Launcher}
 
-A so-called \textit{application launcher} can mitigate a later presented discovery of a flaw in assigning unnecessary full access controls. The inconvenience lies in the fact that when an application asks the client for what the allowed scope to its data pod is, most often, complete access control on the root container is needed -- this is against the security principle or tactic called \textit{least privilege}. The least privilege means to give actors of a system only exactly as much access they need and never more. The reason why this finds its way into the \glspl{poc} will be presented in the chapter \ref{chapter:investigation}.
+The Solid authentication flow has a design inconvenience, that only can only scope to the root container when handing out the access control to an asking application. The flow is initiated when a client wants to use an application and this application needs to be trusted to interact with the data pod, most often, a the \textit{control} mode is needed -- this is against the security principle or tactic called \textit{least privilege}. The least privilege means to give actors of a system only exactly as much access they need and never more. The reason why this finds its way into the \glspl{poc} will be presented in the chapter \ref{chapter:investigation}.
 
-For now, an implementation shall be introduced showing how the application launcher can avoid this problem. When an application wants to create \glspl{acl} on a data pod, it needs the before-mentioned \textit{control} access. \textit{Control} access is the highest access mode in \gls{wac}. An agent with \textit{control} access can read, write, and modify \gls{acl} resources -- meaning the owner of files can be changed as an example.
+For now, an implementation shall be introduced showing how an \textit{application launcher} can avoid this problem. When an application wants to create \glspl{acl} on a data pod, it needs the before-mentioned \textit{control} access. \textit{Control} access is the highest access mode in \gls{wac}. An agent with \textit{control} access can read, write, and modify \gls{acl} resources -- meaning the owner of files can be changed as an example.
 In the initial \gls{solidoidc} flow, one step asks for the application's allowed access scope. The asked for scope is for the root container of the data pod -- a more fine-grained control to limit access on a specific child container does not exist. An \textit{application launcher} is a Solid app that has full control of the pod and must be trusted. When a new application wants to use a data pod and needs control access but could, in theory, be limited to a specific container, the application launcher will create the appropriate \gls{acl} files to only allow precisely this.
 Launching an application like this works because all access modes are defined in \gls{acl} files, which can be dynamically created. The application will, with this launcher, now have complete control of the container it operates and stores data in but cannot reach outside of its container.
 
