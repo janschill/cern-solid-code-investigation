@@ -5,6 +5,14 @@
 \usepackage[inline]{enumitem}
 % hide link border
 \usepackage[hidelinks]{hyperref}
+\usepackage{csquotes}
+% abbreviations
+\usepackage[acronym]{glossaries}
+\makeglossaries
+\include{thesis/latex/glossary}
+% bibliography
+\usepackage[sorting=none]{biblatex}
+\addbibresource{thesis/latex/bibliography.bib}
 % reset section numbering in chapters
 \usepackage{bookmark}
 \bookmarksetup{
@@ -18,20 +26,14 @@
 \SetMathAlphabet{\mathcal}{bold}{OMS}{cmsy}{b}{n}
 \newcommand{\bigO}{\mathcal{O}}
 
-\usepackage{csquotes}
 % Allow sub-figures
 \usepackage{subcaption}
 
-\usepackage[acronym]{glossaries}
-\makeglossaries
-\include{thesis/latex/glossary}
 % \usepackage[acronym]{glossaries}
 % \include{thesis/latex/glossary}
 % \include{thesis/latex/terms}
 % \makeglossaries
 
-\usepackage[sorting=none]{biblatex}
-\addbibresource{thesis/latex/bibliography.bib}
 
 \usepackage{float}
 \usepackage{upquote}
@@ -122,6 +124,8 @@
 \begin{document}
 \input{thesis/latex/title-page}
 \newpage
+\input{thesis/latex/sections/00-abstract}
+\newpage
 \input{thesis/latex/sections/00-acknowledgement}
 \newpage
 \tableofcontents
@@ -132,10 +136,10 @@
 \input{thesis/latex/sections/03-investigation}
 \newpage
 \input{thesis/latex/sections/04-conclusion}
-% \newpage
+\newpage
 % \printglossary[type=\acronymtype]
 % \newpage
 % \printglossary
-\newpage
+% \newpage
 \printbibliography
 \end{document}
