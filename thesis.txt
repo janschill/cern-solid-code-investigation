@@ -223,7 +223,7 @@ The internal developer is responsible for executing the decision made by, or tog
 
 Drivers
 
-The architectural drivers or qas can be specified using “-illities”. These qas were defined with the stakeholders together in several meetings in which the existing qas of the system, where the comment module would be embedded into, were drawn up. Security and Performance are of utmost priority to the chief developer and product owner. For the collaboration manager, having used Solid for a while, it was clear that the module is usable, requires as little effort as possible, and causes the lowest friction. Making the Usability also an important qa to focus on. Therefore, the following qas will be the driving motivators:
+The architectural drivers or qas can be specified using “-illities”. These qas were defined with the stakeholders together in several meetings in which the existing qas of the system, where the comment module would be embedded into, were drawn up. Security and Performance are of utmost priority to the chief developer and product owner. For the collaboration manager, having used Solid for a while, it was clear that the module is usable, requires as little effort as possible, and causes the lowest friction. Making the Usability also an important qa to focus on. Therefore, the following qas will be the driving motivation:
 
 1.  Security
 
