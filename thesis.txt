@@ -1091,7 +1091,7 @@ Fielding, R., M. Nottingham, and J. Reschke. 2014. “Hypertext Transfer Protoco
 
 “General Data Protection Regulation.” n.d. https://gdpr-info.eu.
 
-“HEPiX Online.” n.d. https://www.hepix.org/.
+“HEPiX Online.” n.d. https://indico.cern.ch/event/995485/contributions/4256479/.
 
 “Independent Test Suite for Solid.” n.d. https://github.com/solid/test-suite/.
 
