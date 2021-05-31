@@ -170,6 +170,7 @@ hommeaux
 hostname
 hotos
 howto
+hspace
 hsts
 html
 http
@@ -227,6 +228,7 @@ Kaoudi
 Kazman
 keyout
 keypairs
+KISPECI
 Kjernsmo
 Kjetil
 ktbkxttfwfsm
@@ -314,6 +316,7 @@ odp
 OIDC
 onboarding
 oninput
+onnich
 openid
 openrc
 openssl
@@ -324,6 +327,7 @@ ouvertes
 owncloud
 panva
 panva's
+parindent
 Pavlik
 pcre
 pdf
@@ -544,5 +548,3 @@ zenodo
 zl
 zlib
 zsu
-KISPECI
-onnich
