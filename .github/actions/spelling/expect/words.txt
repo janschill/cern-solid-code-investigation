@@ -353,6 +353,7 @@ POC
 POCs
 podbrowser
 policykit
+popups
 postgre
 postgres
 postgresql
