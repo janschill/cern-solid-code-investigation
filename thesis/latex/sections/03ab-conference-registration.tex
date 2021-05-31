@@ -352,7 +352,7 @@ As mentioned before, this module went through two iterations of the design. Unti
 
 A few challenges were unidentified at this point but will be named and explained now.
 \vspace{0.5cm}
-\paragraph{Modification of Resource From Data Pod}\mbox{}\\
+\paragraph{Availability or Modification of Crucial Data From Data Pod}\mbox{}\\
 
 As also realized in the first \gls{poc}, when the application is decoupled from the data and receives it upon request, the application hands over the control. This shift of power is a core concept in Solid but problematic for Indico. The use-case of registration data differs with the handling of comments. Comments are often desired to be changed, and primarily comments are just presented in the \gls{ui}, and no other interaction or processing happens. Registration data is much more complex and requires a lot of processing, such as submitting abstracts. \textit{Call for abstracts} is a workflow in Indico, where conference speakers need to upload an abstract about the conference talk. Another is the requirement for processing in the field of payments in the registration. A registration form can offer users an option to book accommodation, for example. These fields are called \textit{billable} fields and are hooked into a checkout process. In Indico's management view of a conference, an administrator can check the status of these actions.
 
@@ -386,22 +386,3 @@ Another possibility to improve the performance of the data retrieval is to look 
 \paragraph{Modification of User Data by Management}\mbox{}\\
 
 Sometimes the conference management users may want or need to change data from the registrants. It is an interesting question if this should ever be allowed, no matter the extent of the modification on the data. An Indico developer explained a scenario when formatting names might be off, such as inputs being entirely upper- or lowercase. In this case, it is just aesthetics, but changing is understandable to ease data processing. Else, a user could provide input with offensive language -- it could, of course, be removed, but a modification or moderation over the data is helpful. A solution to these problems could be to parse, filter, and format the data within Indico. Indico could have a formatting function whenever a name is displayed or processed for the case with unformatted names. The Solid approach to this problem is to ask the user for consent to change the data. Asking for consent to change data is more accessible than the case where the application did not know what to ask for. In this example, the application knows whom to ask and what to ask.
-\vspace{0.5cm}
-\paragraph{Availability of Crucial User Data}\mbox{}\\
-
-TODO:
-\vspace{0.5cm}
-\paragraph{Payment on Input Fields}\mbox{}\\
-
-TODO:
-* Gave up usage control
-  * Why it didn't work, and **what is necessary to make it work**
-    * usage control
-    * question the choice of Indico usage control
-    * versioning of tag of personal data
-* high-level constraints
-* implementation
-  * indico limits this
-* if indico in this way or more generally
-
-TODO:
