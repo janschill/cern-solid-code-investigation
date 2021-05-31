@@ -339,9 +339,9 @@ Single Versus Multiple Resource(s) for Comments
 
 Storing the comments in rdf can be done in two ways: holding it in one file as a graph with a list of comments or creating a file for every comment.
 
-[Comments being written in a single file resource on the data pod.]
+[Comments being written in a single file on data pod.]
 
-[Comments being written in multiple file resources on the data pod.]
+[Comments being written in multiple file on data pod.]
 
 When fetching the container with all the comment resources, the request returns a Turtle file describing the container but not the actual content of the contained resources. The misconception of receiving the content was thought to be a problem, as it was assumed an initial request to the container reading its child resources had to be made, and then for each resource, a request needed to be built to retrieve the resource. This overhead was later disproved as the application, where this module is embedded, maintains the list of resources to be fetched. Therefore, no manual building of requests to those resources had to be done. The following paragraph also lays out how this design would not work with the protection of the resources.
 
@@ -507,7 +507,7 @@ The auth package further holds the SolidClient class. The SolidClass is a wrappe
 
 [The components package with its classes.]
 
-The second package, components, holds all elements in the ui that have to interact with the state management module. These classes range from the input field for the WebID uri to retrieve the address of the user’s idp to the rendered comments.
+The second package, components 3.11, holds all elements in the ui that have to interact with the state management module. These classes range from the input field for the WebID uri to retrieve the address of the user’s idp to the rendered comments.
 
 Evaluate
 
