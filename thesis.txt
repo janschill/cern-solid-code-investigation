@@ -933,15 +933,15 @@ Performance of Large Conference
 
 The identical performance issue from the first poc 3.1.1 would arise in the management part of the conference. Storing the source of truth for hundreds of registrations without a local copy in a remote data pod would mean they would have to be fetched. Even with caching improvements, this would still be problematic and would not be feasible – pods can be down or stored on slow web servers. To make this usable in Indico, a proxy is compulsory. The proxy would temporarily store the information and make it available in a single request for multiple conference managers on separate machines. Warming up the cache by requesting resources from hundreds of data pods would still take a long time. The key takeaway here is that Indico is also serving data to users. Indico is not only taking in the registration data and then processes it and enables some feature for a single user who is only interacting with his data. On the contrary, Indico also serves a subset of users, the conference managers, data. The progress of serving the data from others is the critical facet.
 
+Another possibility to improve the performance of the data retrieval is to look at the data pod providers. Most likely, users will not host their data pod from a computer at home but rather from a cloud provider. At the time of writing the report, a handful of such pod providers exist. Suppose the Solid server implementation running on the server of the pod provider would do optimizations, such as offering an endpoint where it would allow in one HTTP request to be asked for the data of multiple users. In that case, the server could bundle the data of such users and serve it to the application in one request-response cycle.
+
 Payment on Input Fields
 
-TODO:
-
-* Gave up usage control * Why it didn’t work, and **what is necessary to make it work** * usage control * question the choice of Indico usage control * versioning of tag of personal data * high-level constraints * implementation * indico limits this * if indico in this way or more generally
-
-TODO: 1st iteration, save data in pod 2nd iteration, only pull data from pod
+TODO: * Gave up usage control * Why it didn’t work, and **what is necessary to make it work** * usage control * question the choice of Indico usage control * versioning of tag of personal data * high-level constraints * implementation * indico limits this * if indico in this way or more generally
 
 Availability of Crucial User Data
+
+TODO:
 
 Deployment of Indico Instance
 
