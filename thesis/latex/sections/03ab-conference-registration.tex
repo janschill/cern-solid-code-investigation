@@ -381,7 +381,15 @@ Not to cut off the previous issue, but to continue and nurture the flow aspect i
 
 The identical performance issue from the first \gls{poc} \ref{poc1} would arise in the management part of the conference. Storing the source of truth for hundreds of registrations without a local copy in a remote data pod would mean they would have to be fetched. Even with caching improvements, this would still be problematic and would not be feasible -- pods can be down or stored on slow web servers. To make this usable in Indico, a proxy is compulsory. The proxy would temporarily store the information and make it available in a single request for multiple conference managers on separate machines. Warming up the cache by requesting resources from hundreds of data pods would still take a long time. The key takeaway here is that Indico is also serving data to users. Indico is not only taking in the registration data and then processes it and enables some feature for a single user who is only interacting with his data. On the contrary, Indico also serves a subset of users, the conference managers, data. The progress of serving the data from others is the critical facet.
 
-Another possibility to improve the performance of the data retrieval is to look at the data pod providers. Most likely, users will not host their data pod from a computer at home but rather from a cloud provider. At the time of writing the report, a handful of such pod providers exist. Suppose the Solid server implementation running on the server of the pod provider would do optimizations, such as offering an endpoint where it would allow in one HTTP request to be asked for the data of multiple users. In that case, the server could bundle the data of such users and serve it to the application in one request-response cycle.
+Another possibility to improve the performance of the data retrieval is to look at the data pod providers. Most likely, users will not host their data pod from a computer at home but rather from a cloud provider. At the time of writing the report, a handful of such pod providers exist. Suppose the Solid server implementation running on the server of the pod provider would do optimizations, such as offering an endpoint where it would allow in one \gls{http} request to be asked for the data of multiple users. In that case, the server could bundle the data of such users and serve it to the application in one request-response cycle.
+\vspace{0.5cm}
+\paragraph{Modification of User Data by Management}\mbox{}\\
+
+Sometimes the conference management users may want or need to change data from the registrants. It is an interesting question if this should ever be allowed, no matter the extent of the modification on the data. An Indico developer explained a scenario when formatting names might be off, such as inputs being entirely upper- or lowercase. In this case, it is just aesthetics, but changing is understandable to ease data processing. Else, a user could provide input with offensive language -- it could, of course, be removed, but a modification or moderation over the data is helpful. A solution to these problems could be to parse, filter, and format the data within Indico. Indico could have a formatting function whenever a name is displayed or processed for the case with unformatted names. The Solid approach to this problem is to ask the user for consent to change the data. Asking for consent to change data is more accessible than the case where the application did not know what to ask for. In this example, the application knows whom to ask and what to ask.
+\vspace{0.5cm}
+\paragraph{Availability of Crucial User Data}\mbox{}\\
+
+TODO:
 \vspace{0.5cm}
 \paragraph{Payment on Input Fields}\mbox{}\\
 
@@ -395,6 +403,5 @@ TODO:
 * implementation
   * indico limits this
 * if indico in this way or more generally
-\vspace{0.5cm}
-\paragraph{Availability of Crucial User Data}\mbox{}\\
+
 TODO:
