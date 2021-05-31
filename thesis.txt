@@ -1147,7 +1147,7 @@ Schill, Jan. 2020. “CERN-Solid Code Investigation: Specifications and Comparab
 
 “Solid Panels.” n.d. https://github.com/solid/process/blob/35396c6e5a1afce674361259f63ef1b485cf6d96/panels.md.
 
-“Solid Technical Reports.” n.d. https://solidproject.org/TR.
+“Solid Technical Reports.” n.d. https://solidproject.org/TR/.
 
 Stallings, William, and Lawrie Brown. 2014. Computer Security: Principles and Practice. 3rd ed. USA: Prentice Hall Press.
 
