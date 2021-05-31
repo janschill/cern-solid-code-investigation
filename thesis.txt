@@ -1029,7 +1029,7 @@ Recommendation
 
 Based on the previous, a recommendation about server implementation and application development for cern is as follows.
 
-The current efforts from cern are rather limited in resources, general interest is present, but many factors hinder further active involvement with Solid. A public communication channel used to share milestones in the investigation is left unread. Announcements and calls for testings of the pocs in cern internal email groups reaching hundreds of cern users are met with participation, compliments, and comments, but still small in number. A presentation given at the HEPiX (“HEPiX Online,” n.d.) was well received by international Information Technology staff from High Energy Physics and Nuclear Physics laboratories and institutes. So, a general curiosity exists, and a few enthusiasts are awaiting a Solid-like project to be supported by cern. Still, it seems more generally that cern is interested in an observing position as of now. University students are currently sought to work on the follow-up cern-Solid project (“CERN-Solid and the Slides’ App,” n.d.). Student projects will be beneficial for cern to understand the Solid ecosystem further and receive the latest developments in server implementations, specification evolution, and new exciting Solid apps. It will also benefit the students for their studies and experience in dealing with complex projects and environments. Once the Solid ecosystem has matured enough and has shown through other Solid app developments the possibilities and innovations with Solid, cern can reevaluate its position and consider participating more actively by either Solid app development or hosting Solid pods for its users.
+The current efforts from cern are rather limited in resources, general interest is present, but many factors hinder further active involvement with Solid. A public communication channel used to share milestones in the investigation is left unread (“Gitter Cern-Solid Community,” n.d.). Announcements and calls for testings of the pocs in cern internal email groups reaching hundreds of cern users are met with participation, compliments, and comments, but still small in number (“CERN-Solid,” n.d.). A presentation given at the HEPiX (“HEPiX Online,” n.d.) was well received by international Information Technology staff from High Energy Physics and Nuclear Physics laboratories and institutes. So, a general curiosity exists, and a few enthusiasts are awaiting a Solid-like project to be supported by cern. Still, it seems more generally that cern is interested in an observing position as of now. University students are currently sought to work on the follow-up cern-Solid project (“CERN-Solid and the Slides’ App,” n.d.). Student projects will be beneficial for cern to understand the Solid ecosystem further and receive the latest developments in server implementations, specification evolution, and new exciting Solid apps. It will also benefit the students for their studies and experience in dealing with complex projects and environments. Once the Solid ecosystem has matured enough and has shown through other Solid app developments the possibilities and innovations with Solid, cern can reevaluate its position and consider participating more actively by either Solid app development or hosting Solid pods for its users.
 
 Conclusion
 
@@ -1065,6 +1065,8 @@ CERN. 2020. “Indico.” 2020. https://getindico.org.
 
 “CERNBox Service.” n.d. https://information-technology.web.cern.ch/services/cernbox-service.
 
+“CERN-Solid.” n.d. http://solid.cern.ch/.
+
 “CERN-Solid and the Slides’ App.” n.d. https://it-student-projects.web.cern.ch/projects/cern-solid-and-slides-app.
 
 “CERN-Solid Code Investigation.” n.d. https://it-student-projects.web.cern.ch/projects/cern-solid-code-investigation.
@@ -1090,6 +1092,8 @@ Fielding, R., M. Nottingham, and J. Reschke. 2014. “Hypertext Transfer Protoco
 “Frequently Asked Questions.” n.d. https://solidproject.org/faqs.
 
 “General Data Protection Regulation.” n.d. https://gdpr-info.eu.
+
+“Gitter Cern-Solid Community.” n.d. https://gitter.im/cern-solid/community.
 
 “HEPiX Online.” n.d. https://indico.cern.ch/event/995485/contributions/4256479/.
 
