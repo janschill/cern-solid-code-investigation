@@ -248,7 +248,7 @@ function triggerInputEvent(inputs) {
 
 \subsubsection{Evaluation}\mbox{}\\
 
-Like with the first \gls{poc} from a section before \ref{poc1}, this \gls{poc} shall be evaluated using the same motivation and framework. The stakeholders and \glspl{qa} continue to be as is. An TODO:
+Like with the first \gls{poc} from a section before \ref{poc1}, this \gls{poc} shall be evaluated using the same motivation and framework. The stakeholders and \glspl{qa} are motivated for the same reasons as before.
 \vspace{0.5cm}
 \paragraph{Metrics}\mbox{}\\
 
@@ -366,17 +366,16 @@ Indico allows the editing of the registration up until a set modification deadli
 
 \begin{itemize}
     \item Store a copy of the registration data in Indico and freeze the copy on the modification deadline.
-    \item Only allow decentralized storage on data where a modification would not matter
+    \item Only allow decentralized storage on data where a modification would not matter.
 \end{itemize}
 
 Storing a copy of the data is an interesting idea. The freezing of the data would require Indico to also save the data in their data stores. If information is modified directly on the data pod, Indico is not necessarily notified by the change. If the user who changed the data on their data pod wants Indico to use the latest version for their copy, Indico would have to be either notified so it can fetch the new resource from the data pod; the change needs to happen through Indico’s web interface, so Indico can send the request to update it in the data pod, but also in their storage; Indico sends a request to all data pods on modification deadline day and updates the stored version. The latter solution needs validation so that existing is not replaced with corrupt or invalid data, and it is also questionable what happens when the data pod is unavailable. Still, the data shows a resignation from the conference or anything similar. How is it ensured that Indico and the user's intentions are aligned? The two systems need to be interconnected, and it needs to be clear when updates happen---availability and flow of communication or critical aspects for this success.
 \vspace{0.5cm}
 \paragraph{Communication Flow}\mbox{}\\
 
-Not to cut off the previous issue, but to continue and nurture the flow aspect in Solid. One crucial feature of conferences and registration is reaching out to people to let them know about next year's conference. A user would ideally only consent to the conference where they had actively signed up. Hence, next year's conference would not be able to read the participant's list and connect with them, and even if the list would be visible, how does the new conference know how to ask for consent to reach out to them or do akin actions. Solid offers an \textit{inbox} and \textit{notifications} \cite{solid-inbox}, which allow anyone in the Solid ecosystem to connect and send a \textit{message} to a WebID. The reached-out agent gets a notification as soon as a new item is appended into their inbox. This pro-active initiation is not ideal, as the initiator does not know what data they can ask. Only when the owner actively says: “You are allowed to read this resource A and modify my resource B.” does the application know about the existence of the data.
+Not to cut off the previous issue, but to continue and nurture the flow aspect in Solid to describe another issue. One crucial feature of conferences and registration is reaching out to people to let them know about next year's conference. A user would ideally only consent to the conference where they had actively signed up. Hence, next year's conference would not be able to read the participant's list and connect with them, and even if the list would be visible, how does the new conference know how to ask for consent to reach out to them or do akin actions. Solid offers an \textit{inbox} and \textit{notifications} \cite{solid-inbox}, which allow anyone in the Solid ecosystem to connect and send a \textit{message} to a WebID. The reached-out agent gets a notification as soon as a new item is appended into their inbox. This pro-active initiation is not ideal, as the initiator does not know what data they can ask. Only when the owner actively says: “You are allowed to read this resource A and modify my resource B.” does the application know about the existence of the data.
 
-Solid-Inbox seems to be a decent solution for the use-case of Indico reaching out to previous participants. Another suggestion would be to escalate the access scope for Indico and conferences and the agent. Meaning, when a user signs up for a conference, the registration asks for consent to allow future contacting.
-TODO: more here
+\textit{Solid-Inbox} seems to be a decent solution for the use-case of Indico reaching out to previous participants. Another suggestion would be to escalate the access scope for Indico and conferences and the agent. Meaning, when a user signs up for a conference, the registration asks for consent to allow future contacting. The user could get overwhelmed when the application asks for too many different reasons to get consent. The \textit{Usability} is at stake, and it could result in a similar situation, such as with \textit{cookie consents}. \textit{Cookie consents} are one of the main reasons browsing the web has become an unpleasant experience, due to websites flooding their visitors with complicated and obnoxious popups that need to be clicked.
 \vspace{0.5cm}
 \paragraph{Performance of Large Conference}\mbox{}\\
 
