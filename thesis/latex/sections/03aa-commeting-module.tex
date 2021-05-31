@@ -1,7 +1,7 @@
 \subsection{POC 1: Commenting Module for Events in Indico}\label{poc1}
 
 The first \gls{poc} is supposed to enrich the Indico system with some Solid-based content. The product owner and chief developer of Indico, the CERN-Solid project manager, and a Solid developer decided a commenting module for Indico events is an adequate solution to include data from an external storage entity, namely a data pod. The ability to allow users of Indico to leave a comment on an event, which then lives in a data pod wholly controlled by the author of the comment, was concluded to be an attractive feature for Indico.
-
+\vspace{0.5cm}
 \subsubsection{Architectural Analysis and Synthesis}\mbox{}\\
 
 In this section, the architectural analysis will be looked into. The system's scope and attributes will be defined based on the system description and the \glspl{qa} from the analysis of stakeholder needs.
@@ -356,7 +356,7 @@ Enabling user input in the form of a comment module without application authenti
 An agent or application requires \textit{control} access to the container to create or change \glspl{acl} programmatically in this container. By default, \gls{nss} asks for the permissions when authenticating for the first time in the \gls{solidoidc} flow between the \textit{solid-comment} module and Solid \gls{idp}. The permissions granted to the application are on the root container of the data pod. Giving an application control access allows the application to read, write, change \glspl{acl} on the entire data pod. As a simple application, this is troubling as a commenting module needs to have control access to set the necessary \glspl{acl} for the containers and resources it creates.
 
 The current implementation has not a built-in solution. Still, one way of solving it is using an application launcher, an application itself with complete control access, and then limiting the access controls of the solid-comment module by creating a dedicated container for it and setting the needed \gls{acl} for it this specific container only. 
-
+\vspace{0.5cm}
 \subsubsection{Integration with Indico}\mbox{}\\
 
 The need for integration with Indico is twofold: serving the module to the client and being the provider to the list of references to the comments posted on a specific event.
