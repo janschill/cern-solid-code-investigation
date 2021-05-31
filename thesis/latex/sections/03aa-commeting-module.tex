@@ -249,16 +249,16 @@ Storing the comments in \gls{rdf} can be done in two ways: holding it in one fil
     \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=0.7\textwidth]{prototype/graphs/poc-comment-single-resource-comments.png}
-      \caption{Comments being written in a single file resource on the data pod.}
+      \caption{Comments being written in a single file on data pod.}
       \label{fig:ppc-comment-single-resource-comments}
     \end{subfigure}%
     \begin{subfigure}{.5\textwidth}
       \centering
       \includegraphics[width=0.7\textwidth]{prototype/graphs/poc-comment-multiple-resources-comments.png}
-      \caption{Comments being written in multiple file resources on the data pod.}
+      \caption{Comments being written in multiple file on data pod.}
       \label{fig:poc-comment-multiple-resources-comments}
     \end{subfigure}
-    \caption{Two different ways of saving the comment on the data pod.}
+    \caption{Two different ways of saving the comments on a data pod.}
     \label{fig:save-resource}
 \end{figure}
 
@@ -400,7 +400,6 @@ This section focuses on evaluating the system. The evaluation shall be done by i
     \item \textbf{Analysis} will look at the areas where the value of focus is high
 \end{enumerate}
 
-\vspace{0.5cm}
 \paragraph{Metrics}\mbox{}\\
 
 The defined \glspl{qa} are helpful to know but cannot be tested, or often qualities of a system are hard to categorize with an adequate \gls{qa}. A solution to the problem of untestability and overlapping concerns is \glspl{qas}. \glspl{qas} can be used to characterize \glspl{qa} \cite{BassSoftwareArchitecture2003}. Based on the scenarios, the evaluation will be carried out. The scenarios will always have the \glspl{qa} in mind and are defined with the focus on those. The different scenarios are predicted to be the most common actions on the system and will stress the design and its architecture the most based on the \glspl{qa}.
@@ -432,7 +431,7 @@ The levels are used to measure the state of the architecture of the system. Thes
 
 To evaluate the security of the system's chosen architecture, it makes sense to look at specific components of the system. It would be sensible to analyze the \texttt{auth} package and the modules that interface the user input and the design for this commenting system. The user input modules can be found in the \texttt{component} package.
 
-\begin{figure}[!ht]
+\begin{figure}
     \centering
     \includegraphics[width=0.7\textwidth]{prototype/graphs/poc-comment-package-auth.png}
     \caption{The \texttt{auth} package with its classes.}
@@ -443,14 +442,14 @@ The \texttt{auth} package holds classes handling the \gls{acl} logic necessary. 
 
 The \texttt{auth} package further holds the \texttt{SolidClient} class. The \texttt{SolidClass} is a wrapper class for the external authentication functions, which bring the authentication and session management for the Solid ecosystem. Naturally, all authentication modules need to be inspected and made sure no vulnerabilities are let in.
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \includegraphics[width=0.7\textwidth]{prototype/graphs/poc-comment-package-components.png}
     \caption{The \texttt{components} package with its classes.}
     \label{fig:poc-comment-package-components}
 \end{figure}
 
-The second package, \texttt{components}, holds all elements in the \gls{ui} that have to interact with the state management module. These classes range from the input field for the WebID \gls{uri} to retrieve the address of the user's \gls{idp} to the rendered comments.
+The second package, \texttt{components} \ref{fig:poc-comment-package-components}, holds all elements in the \gls{ui} that have to interact with the state management module. These classes range from the input field for the WebID \gls{uri} to retrieve the address of the user's \gls{idp} to the rendered comments.
 % During a first iteration through the evaluation of the architecture it was established that splitting up and looking at the modules separately does not make sense in this case. Most of the time -- no matter -- which scenario is looked at all modules are being stressed. Often, the values would be the same even though another component was tried to be analyzed. Therefore, for the sake of simplicity and  
 \vspace{0.5cm}
 \paragraph{Evaluate}\mbox{}\\
