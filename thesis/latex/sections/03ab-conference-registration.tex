@@ -3,6 +3,8 @@
 The second prototype aims at connecting Solid with the conference registration module in Indico. When registering for a conference, an \gls{html} form is presented with fields previously defined by the conference manager, who deemed those fields necessary. A form always contains personal information of the name and email address, but is not limited to it and can even range to more sensitive information such as copies of personal identification documents. Information of this type has perfect motivation to remain in the owner's hand and not be stored in a remote data store, uncontrollable and unknown to the registrants.
 
 Therefore, the initial aim was to extend the registration module to allow the storage of practical information in a data pod. The user has full control and can handle the data to their liking. The stakeholders and developer decided that storage in a data pod was not viable for the prototype. Consequently, the prototype changed to allow the extraction of data from a data pod and then use it to map it to input fields of an Indico conference registration form -- the functionality to then store the data from the registration in the user's data pod, not in Indico was dropped. The reasons and comprehensive analysis will be shared after the architectural analysis, synthesis, and evaluation of the developed \gls{poc} in \textit{design} \ref{poc2:design} and \textit{analysis} \ref{poc2:analysis} sections of this chapter.
+
+The source code to the working prototype can be found on GitHub at \cite{solid-autocomplete} or under \gls{cern}'s GitLab instance at \cite{solid-autocomplete-cern}.
 \vspace{0.5cm}
 \subsubsection{Architectural Analysis and Synthesis}\mbox{}\\
 \paragraph{System Description}\mbox{}\\
