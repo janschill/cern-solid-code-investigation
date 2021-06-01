@@ -145,7 +145,7 @@ The communication flow with the data pod and the module would happen primarily f
     \label{fig:poc-infrastructure-frontend}
 \end{figure}
 \vspace{0.5cm}
-\paragraph{Microservice Approach}\mbox{}\\
+\paragraph{Microservice Approach}\label{microservice-approach}\mbox{}\\
 
 The microservice approach would allow developing the needed Solid logic on a separate service, which proxies all Solid related traffic and enables the Solid functionality. Most of the libraries from the client implementation can be used as well, as both developments would be written in \gls{js}. Only the authentication flow would work a bit differently.
 
@@ -582,3 +582,5 @@ Justification for implementing it in this way is a faster \textit{time-to-market
 \paragraph{Indico Solid Proxying}\mbox{}\\
 
 Indico could develop an \gls{api} that sits between Indico and the Solid data pods to make all the requests on behalf of the clients. A proxy would hide all the clients' \gls{ip} addresses and therefore disallow the logging of client \gls{ip} addresses by a malicious data pod. A performance improvement is also foreseeable as the Indico proxy could make the requests to the different data pods and cache the response and serve them from one request. By caching the requests to the data pods in this layer, a client only needs to make a single request to the Indico's proxy cache. Loading resources before they are requested by clients and then serving clients from a cache is called \textit{cache warming} \cite{cache-warming}. Another benefit of doing the requests using an Indico proxy is also that a malicious data pod or just one that wants to do some targeted advertisement, cannot identify the clients by their \gls{ip} addresses and therefore not send different responses upon requests from separate \gls{ip} addresses based on geolocation.
+
+This proxy equals the \textit{microservice} architecture described in \ref{microservice-approach}.
