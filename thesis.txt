@@ -173,6 +173,8 @@ POC 1: Commenting Module for Events in Indico
 
 The first poc is supposed to enrich the Indico system with some Solid-based content. The product owner and chief developer of Indico, the CERN-Solid project manager, and a Solid developer decided a commenting module for Indico events is an adequate solution to include data from an external storage entity, namely a data pod. The ability to allow users of Indico to leave a comment on an event, which then lives in a data pod wholly controlled by the author of the comment, was concluded to be an attractive feature for Indico.
 
+The source code to the working prototype can be found on GitHub at (“Solid-Comment,” n.d.a) or under cern’s GitLab instance at (“Solid-Comment,” n.d.b).
+
 Architectural Analysis and Synthesis
 
 In this section, the architectural analysis will be looked into. The system’s scope and attributes will be defined based on the system description and the qas from the analysis of stakeholder needs.
@@ -621,6 +623,8 @@ POC 2: Auto-Complete Form Inputs for Conference Registration in Indico
 The second prototype aims at connecting Solid with the conference registration module in Indico. When registering for a conference, an html form is presented with fields previously defined by the conference manager, who deemed those fields necessary. A form always contains personal information of the name and email address, but is not limited to it and can even range to more sensitive information such as copies of personal identification documents. Information of this type has perfect motivation to remain in the owner’s hand and not be stored in a remote data store, uncontrollable and unknown to the registrants.
 
 Therefore, the initial aim was to extend the registration module to allow the storage of practical information in a data pod. The user has full control and can handle the data to their liking. The stakeholders and developer decided that storage in a data pod was not viable for the prototype. Consequently, the prototype changed to allow the extraction of data from a data pod and then use it to map it to input fields of an Indico conference registration form – the functionality to then store the data from the registration in the user’s data pod, not in Indico was dropped. The reasons and comprehensive analysis will be shared after the architectural analysis, synthesis, and evaluation of the developed poc in design 3.1.2.3 and analysis 3.1.2.6 sections of this chapter.
+
+The source code to the working prototype can be found on GitHub at (“Solid-Autocomplete,” n.d.a) or under cern’s GitLab instance at (“Solid-Autocomplete,” n.d.b).
 
 Architectural Analysis and Synthesis
 
@@ -1128,6 +1132,14 @@ Prud’hommeaux, Eric, and Gavin Carothers. 2014. “RDF 1.1 Turtle.” W3C Reco
 Schill, Jan. 2020. “CERN-Solid Code Investigation: Specifications and Comparable Implementations.” WorkingPaper. IT University of Copenhagen.
 
 “Solid-App-Launcher.” n.d. https://github.com/ylebre/solid-app-launcher.
+
+“Solid-Autocomplete.” n.d.a. https://github.com/janschill/solid-autocomplete/.
+
+“Solid-Autocomplete.” n.d.b. https://gitlab.cern.ch/cern-solid/solid-autocomplete.
+
+“Solid-Comment.” n.d.a. https://github.com/janschill/solid-comment/.
+
+“Solid-Comment.” n.d.b. https://gitlab.cern.ch/cern-solid/solid-comment.
 
 “Solid Community.” n.d. https://solidcommunity.net.
 
