@@ -20,7 +20,7 @@ This directory holds all formally written reports. Reports include the “Resear
 | Issues | [Kanban](https://github.com/janschill/uni-research_project/projects/1) | [Kanban](https://github.com/janschill/uni-research_project/projects/2) |
 | Report notes | [report/report/](https://github.com/janschill/uni-research_project/tree/main/report/report) | [thesis/draft.md](https://github.com/janschill/uni-research_project/tree/main/thesis/draft.md) |
 | Final report (PDF) | [modified 2021-01-17](https://github.com/janschill/uni-research_project/blob/main/report/report.pdf) | [janschill.github.io](https://janschill.github.io/cern-solid-code-investigation/thesis.pdf) |
-| Final report submitted to university (PDF) | [modified 2020-12-15](https://github.com/janschill/uni-research_project/blob/main/report/report-submitted-to-university.pdf) | *N/A* |
+| Final report submitted to university (PDF) | [modified 2020-12-15](https://github.com/janschill/uni-research_project/blob/main/report/report-submitted-to-university.pdf) | [modified 2021-06-01](https://github.com/janschill/cern-solid-code-investigation/blob/434c503669b880cae336eb138b4d658f0b83a135/thesis/submission/2021-jan_schill-masters_thesis-cern-solid-code_investigation.pdf) |
 
 ## [Milestones](https://github.com/janschill/uni-research_project/milestones?direction=asc&sort=due_date&state=open)
 
