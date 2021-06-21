@@ -38,6 +38,7 @@ btc
 Bugiotti
 bzip
 cabee
+cae
 Capadisli
 cas
 cbc
@@ -104,6 +105,7 @@ DPo
 dpop
 dvcs
 DYYUQ
+eb
 eca
 ECDHE
 ECDSA
