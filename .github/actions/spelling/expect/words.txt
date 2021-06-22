@@ -28,6 +28,7 @@ backend
 bashrc
 bbc
 bc
+bcfae
 beed
 berners
 biblio
@@ -89,6 +90,7 @@ dda
 ddcb
 DDOS
 delinked
+dff
 dfn
 DHE
 digita
