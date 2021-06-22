@@ -9,3 +9,4 @@
 * Evaluation of the prototypes
   * NSS locally
   * Clients connect
+* Architectural Software Quality Assurance (aSQA)
