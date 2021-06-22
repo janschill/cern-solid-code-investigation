@@ -97,7 +97,6 @@ _Taken from: [https://www.w3.org/DesignIssues/CloudStorage.html](https://www.w3.
 
 ### Details on the Proof of Concept (PoC)
 
-
 ---
 
 ### Comments to Indico events via Solid pod authentication
