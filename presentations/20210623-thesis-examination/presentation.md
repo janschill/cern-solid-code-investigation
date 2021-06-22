@@ -100,19 +100,19 @@ _Taken from: [https://www.w3.org/DesignIssues/CloudStorage.html](https://www.w3.
 
 ---
 
-### Comments to Indico events via Solid pod authentication
+### Comments to Indico Events via Solid Pod Authentication
 
 ![](https://codimd.web.cern.ch/uploads/upload_0889dec0ae0b793c1f97deb912de31d4.png =600x)
 
 ---
 
-### What you see in your pod
+### What You See in Your Data Pod
 
 ![](https://codimd.web.cern.ch/uploads/upload_43756b69fc349d881b768cb9c8192dff.png)
 
 ---
 
-### Details on the code for _Comments_
+### Details on the Code for _Comments_
 
 * Client-side developed JavaScript application
 * Self-contained, can be re-used in other applications
@@ -123,7 +123,7 @@ _Taken from: [https://www.w3.org/DesignIssues/CloudStorage.html](https://www.w3.
 
 ---
 
-### Details on the code for _Comments_ (continued)
+### Details on the Code for _Comments_ (continued)
 
 * **Performance**: $n * 2+4$ requests with $n$-comments
     * Not mentioning slow running data pods
@@ -131,19 +131,19 @@ _Taken from: [https://www.w3.org/DesignIssues/CloudStorage.html](https://www.w3.
     * Cache the comment
     * or always fetch new?
 * **Usability**: Control access in authentication flow suboptimal
-* **Data Integrity**: Data can changed freely on data pod
+* **Data Integrity**: Data can be changed freely on data pod
     * Digital signatures
     * *Verifiable Credentials* (recently announced to collobarate with Solid)
 
 ---
 
-### Indico conference registration via Solid pod data - prompt
+### Indico Conference Registration via Solid Pod Data - Prompt
 
 ![](https://codimd.web.cern.ch/uploads/upload_bcfae0e3771587f3ca0179a6b17b084b.png =600x)
 
 ---
 
-### Indico conference registration via Solid pod data - Linked Data
+### Indico Conference Registration via Solid Pod Data - Linked Data
 
 | LD: Subject | LD: Predicate | LD: Object              | Indico form       |
 | ----------- | ------------- | ----------------------- | ----------------- |
@@ -156,7 +156,7 @@ _Taken from: [https://www.w3.org/DesignIssues/CloudStorage.html](https://www.w3.
 
 ---
 
-### Details on the code for _Conference Registrations_
+### Details on the Code for _Conference Registrations_
 
 * **Design of implemented module**: retrieve personal information **for** an Indico conference registration **from** data pod
 * Original idea to store personal information **of** conference registration **in** data pod abandoned due to:
@@ -169,7 +169,7 @@ _Taken from: [https://www.w3.org/DesignIssues/CloudStorage.html](https://www.w3.
 ## Challenges with Solid Status Today
 
 * Few applications using Solid pods so far
-* Encryption
+* No encryption at rest
     * CERN needs encryption or on-premise hosting
 * User interface mostly challenging
 * No formal support for the open source solutions.
