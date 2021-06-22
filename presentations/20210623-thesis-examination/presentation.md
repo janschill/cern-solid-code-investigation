@@ -14,15 +14,15 @@ Jan Schill (IT University Copenhagen)
 
 ## Overview
 
-* **Introduction**
-* **Solid**
-* **Indico**
-* **Proof of Concept**
-    1. _Comments_ in Indico events
-    2. Indico Conference _Registration_ from pod data.
-* **Challenges, Advantages, Gaps for CERN and Solid**
-* **Continuation in CERN-Solid Collaboration**
-* **Conclusion**
+1. **Introduction**
+1. **Solid**
+1. **Indico**
+1. **Proof of Concept**
+    * _Comments_ in Indico events
+    * Indico Conference _Registration_ from pod data.
+1. **Challenges, Advantages, Gaps for CERN and Solid**
+1. **Continuation in CERN-Solid Collaboration**
+1. **Conclusion**
 
 ---
 
@@ -96,6 +96,7 @@ _Taken from: [https://www.w3.org/DesignIssues/CloudStorage.html](https://www.w3.
 ---
 
 ### Details on the Proof of Concept (PoC)
+
 
 ---
 
@@ -200,5 +201,3 @@ _Taken from: [https://www.w3.org/DesignIssues/CloudStorage.html](https://www.w3.
     * Different CERN applications could be more (Solid-)suitable
 * Decentralization/Solid faces many challenges
 * Active development and new initiatives give hope in Solid
-
----
