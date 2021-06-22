@@ -188,8 +188,8 @@ _Taken from: [https://www.w3.org/DesignIssues/CloudStorage.html](https://www.w3.
     * Sandboxed Community Solid Server
     * Own Server Solution
 * Applications
-    * New application with Solid in mind
-    * Enrich existing with more prototypes
+    * New applications with Solid in mind
+    * Enrich existing applications with more prototypes
     * Structure existing data
 
 ---
