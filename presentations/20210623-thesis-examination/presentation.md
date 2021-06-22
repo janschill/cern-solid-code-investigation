@@ -133,7 +133,7 @@ _Taken from: [https://www.w3.org/DesignIssues/CloudStorage.html](https://www.w3.
 * **Usability**: Control access in authentication flow suboptimal
 * **Data Integrity**: Data can be changed freely on data pod
     * Digital signatures
-    * *Verifiable Credentials* (recently announced to collobarate with Solid)
+    * *Verifiable Credentials* (recently announced to collaborate with Solid)
 
 ---
 
