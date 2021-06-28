@@ -30,7 +30,7 @@ The defined milestones give detailed descriptions on what should be when achieve
 
 | Event | Date | Indico event page | Recording | Slides |
 | - | - | - | - | - |
-| Oral Defense | 2021-06-23 | N/A | N/A | N/A |
+| Oral Defense | 2021-06-23 | [indico.cern.ch](https://indico.cern.ch/event/1052445/) | N/A | [pdf](https://indico.cern.ch/event/1052445/attachments/2271778/3858344/presentation.pdf) |
 | [White Area](https://twiki.cern.ch/LCG/WhiteAreas) | 2021-05-31 | [indico.cern.ch](https://indico.cern.ch/event/1031678/) | [videos.cern.ch](https://videos.cern.ch/record/2770949) | [pdf](https://indico.cern.ch/event/1031678/attachments/2254874/3825853/WhiteArea-CERN-Solid-PoC-completion.pdf) |
 | [HEPiX](https://www.hepix.org/) | 2021-03-18 | [indico.cern.ch](https://indico.cern.ch/event/995485/overview) | [videos.cern.ch](https://videos.cern.ch/record/2758252) | [pdf](https://indico.cern.ch/event/995485/contributions/4256479/attachments/2211139/3742071/HEPiX-spring-2021-CERN-Solid-slides.pdf) |
 | [White Area](https://twiki.cern.ch/LCG/WhiteAreas) | 2021-01-25 | [indico.cern.ch](https://indico.cern.ch/event/979381/) | [videos.cern.ch](https://videos.cern.ch/record/2750253) | [pdf](https://indico.cern.ch/event/979381/attachments/2167014/3677214/WhiteArea-CERN-Solid-20210125-presentation.pdf) |
