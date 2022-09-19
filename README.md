@@ -80,8 +80,8 @@ The defined milestones give detailed descriptions on what should be when achieve
 
 ##### Solid Pod
 
-- [Docker Let's Encrypt & NGiNX-proxy](https://github.com/nginx-proxy/docker-letsencrypt-nginx-proxy-companion)
-- [DigitalOcean NGiNX reverse proxy](https://www.digitalocean.com/community/tutorials/how-to-configure-nginx-as-a-web-server-and-reverse-proxy-for-apache-on-one-ubuntu-20-04-server)
+- [Docker Let's Encrypt & NGINX-proxy](https://github.com/nginx-proxy/docker-letsencrypt-nginx-proxy-companion)
+- [DigitalOcean NGINX reverse proxy](https://www.digitalocean.com/community/tutorials/how-to-configure-nginx-as-a-web-server-and-reverse-proxy-for-apache-on-one-ubuntu-20-04-server)
 - [Let's Encrypt](https://letsencrypt.org/getting-started/)
 - [Node.js Solid server: HTTP request handling flow](https://github.com/solid/solid-architecture/blob/master/server/request-flow.md)
 - [Solid server – Selected architectural diagrams v1.3.0](https://rubenverborgh.github.io/solid-server-architecture/solid-architecture-v1-3-0.pdf)
