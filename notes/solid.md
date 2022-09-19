@@ -35,7 +35,7 @@ Notes and direct quotes from the paper "A Demonstration of the Solid Platform fo
 
 ## Abstract
 
-* "Users' data is managed independetly of the applications that create and consume this data."
+* "Users' data is managed independently of the applications that create and consume this data."
 * "Users store their data in a Web-accessible personal online datastore (pod)."
 * "Users can have multiple pods and easily switch between them."
 * "Applications access the data using defined protocols."

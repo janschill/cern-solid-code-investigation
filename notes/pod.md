@@ -4,7 +4,7 @@
 
 ### Containerized
 
-- [NGiNX proxy with Let's Encrypt certificates](https://github.com/evertramos/docker-compose-letsencrypt-nginx-proxy-companion), only problem when using this: [Running Solid behind a reverse proxy](#running-solid-behind-a-reverse-proxy)
+- [NGINX proxy with Let's Encrypt certificates](https://github.com/evertramos/docker-compose-letsencrypt-nginx-proxy-companion), only problem when using this: [Running Solid behind a reverse proxy](#running-solid-behind-a-reverse-proxy)
 - [https://github.com/angelo-v/docker-solid-server](https://github.com/angelo-v/docker-solid-server) provides a one-click solution. I think this uses single-user mode though.
 
 ### Running Solid behind a reverse proxy
@@ -54,10 +54,10 @@ This is strictly speaking not needed and at the moment not being capitalized. A 
 
 >One of Solid's authentication mechanisms is WebID-TLS: the client [sends its client certificate during the TLS handshake](https://blog.cloudflare.com/introducing-tls-client-auth/#handshakeswithtlsclientauth). However, by default, this requires the client to set up a TLS connection directly with the Solid server: if the TLS handshake is performed by an intermediary, the Solid server cannot see the client certificate [Source](https://github.com/solid/node-solid-server/wiki/Running-Solid-behind-a-reverse-proxy).
 
-Configuration for NGiNX as reverse proxy to make it work with the Node Solid Server (NSS).
+Configuration for NGINX as reverse proxy to make it work with the Node Solid Server (NSS).
 
 ```
-# Configuration for NGiNX as reverse proxy
+# Configuration for NGINX as reverse proxy
 # Nginx configuration for Solid on Port 8443
 ## Redirects all HTTP traffic to the HTTPS host
 server {
@@ -116,7 +116,7 @@ root /var/www/janschill.de; #webroot
 
 *[Source for the configuration](https://solidproject.org/for-developers/pod-server/nginx)*
 
-Restart NGiNX
+Restart NGINX
 
 ```bash
 systemctl restart nginx
@@ -177,8 +177,8 @@ mkdir /var/www/janschill.de/.db
 ## Lessons learned
 
 - Wildcard certificates are not available with the popular Let's Encrypt Docker image. This is because it does not support. More information around this, can be found in this [issue](https://github.com/nginx-proxy/docker-letsencrypt-nginx-proxy-companion/issues/319). Why was this needed in the first place? Because when wanting to set up and run a multiuser Solid pod, wildcard certificates are needed, as the server will create {username}.janschill.de subdomains to host their user base.
-  - [Docker NGiNX with Let's Encrypt](https://github.com/evertramos/docker-compose-letsencrypt-nginx-proxy-companion)
-  - [Docker with Solid pod, NGiNX reverse proxy, Let's Encrypt](https://github.com/angelo-v/docker-solid-server/blob/master/examples/docker-compose.all-in-one.yml). This is nice, but only allows single-user mode and not multiuser.
+  - [Docker NGINX with Let's Encrypt](https://github.com/evertramos/docker-compose-letsencrypt-nginx-proxy-companion)
+  - [Docker with Solid pod, NGINX reverse proxy, Let's Encrypt](https://github.com/angelo-v/docker-solid-server/blob/master/examples/docker-compose.all-in-one.yml). This is nice, but only allows single-user mode and not multiuser.
   - When setting up the one-click version use janschill.de as host
 - Running Solid behind a reverse proxy. [Source](https://github.com/solid/node-solid-server/wiki/Running-Solid-behind-a-reverse-proxy)
 - Do not use certbot-auto with Ubuntu

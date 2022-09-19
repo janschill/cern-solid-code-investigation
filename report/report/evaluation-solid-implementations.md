@@ -23,7 +23,7 @@ TODO: More here
 
 The original Solid server was developed at the Massachusetts Institute of Technology (MIT) by PhD students. This server is still to this day the only server that passes most test cases of the [Solid Test Suite](https://github.com/solid/test-suite), which is a set of checks developed to test an implementation against the Solid specifications. The Test Suite for Solid is also still in development and constantly extended by more tests for the different categories of a Solid server.\
 This server is completely open-source, written in JavaScript with the help of the web framework Node.js and is commonly referred to as Node Solid Server (NSS).\
-NSS implements a pod server and and identity provider (IDP), meaning users can register a WebID, create a data pod and authenticate with it.
+NSS implements a pod server and identity provider (IDP), meaning users can register a WebID, create a data pod and authenticate with it.
 https://inrupt.net/ and https://solidcommunity.net/ [[Source]](https://solidproject.org//users/get-a-pod) are currently the two domains hosting the NSS and allowing users to register and use these services.
 
 Because NSS was started as a research project, the code base was subject to a lot of experiments. These experiments were sometimes successful and improved the server experience by implementing useful functionality, but sometimes it would also introduce vulnerabilities or not yield the expected outcomes.
