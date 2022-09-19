@@ -184,7 +184,7 @@ function observeFormCreation() {
   const callback = (mutationsList, observer) => {
     // Contains all mutations in the targetNode
     for (const mutation of mutationsList) {
-      // Node has beed added or removed
+      // Node has been added or removed
       if (mutation.type === 'childList') {
         // Look at all added nodes
         for (const node of mutation.addedNodes) {
