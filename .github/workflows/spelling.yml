@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Check spelling
-        uses: check-spelling/check-spelling@0.0.16-alpha
+        uses: check-spelling/check-spelling@v0.0.19
         with:
           bucket: .github/actions
           project: spelling
